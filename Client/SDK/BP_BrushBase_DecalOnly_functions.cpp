@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void ABP_BrushBase_DecalOnly_C::AlignToGround()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BrushBase_DecalOnly_C", "AlignToGround");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AlignToGround", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -35,10 +33,8 @@ void ABP_BrushBase_DecalOnly_C::AlignToGround()
 
 void ABP_BrushBase_DecalOnly_C::SetTranslucency()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BrushBase_DecalOnly_C", "SetTranslucency");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetTranslucency", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

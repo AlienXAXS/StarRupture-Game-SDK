@@ -18,23 +18,25 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ResearchTerminal.BP_ResearchTerminal_C
-// 0x0048 (0x0710 - 0x06C8)
+// 0x0050 (0x0720 - 0x06D0)
 class ABP_ResearchTerminal_C final : public ACrResearchTerminal
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x06C8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UWidgetComponent*                       ResearchTerminalWidgetComponent;                   // 0x06D0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   SM_ResearchTerminal_main_body_addon;               // 0x06D8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   MainMesh;                                          // 0x06E0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	struct FColor                                 ColorPositive;                                     // 0x06E8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FColor                                 ColorNegative;                                     // 0x06EC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         AvailableUnlocks;                                  // 0x06F0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_6F4[0x4];                                      // 0x06F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UTextRenderComponent*>           ResearchPointsDigits;                              // 0x06F8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
-	class UWBP_ResearchTerminalWidget_C*          ResearchTerminalWidget;                            // 0x0708(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x06D0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UStaticMeshComponent*                   SM_ResearchTerminal_main_body_top;                 // 0x06D8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UWidgetComponent*                       ResearchTerminalWidgetComponent;                   // 0x06E0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   SM_ResearchTerminal_main_body_addon;               // 0x06E8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   MainMesh;                                          // 0x06F0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FColor                                 ColorPositive;                                     // 0x06F8(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FColor                                 ColorNegative;                                     // 0x06FC(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         AvailableUnlocks;                                  // 0x0700(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_704[0x4];                                      // 0x0704(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UTextRenderComponent*>           ResearchPointsDigits;                              // 0x0708(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
+	class UWBP_ResearchTerminalWidget_C*          ResearchTerminalWidget;                            // 0x0718(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_ResearchTerminal(int32 EntryPoint);
+	void OnBuildWithInsideWallCheck(bool bIsInsideWall);
 	void OnUIOpened(bool bOpened);
 	void ReceiveBeginPlay();
 

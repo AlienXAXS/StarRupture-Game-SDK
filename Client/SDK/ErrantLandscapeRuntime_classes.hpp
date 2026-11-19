@@ -12,9 +12,9 @@
 
 #include "DeveloperSettings_classes.hpp"
 #include "Engine_classes.hpp"
-#include "ErrantLandscapeRuntime_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "ErrantLandscapeRuntime_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -46,13 +46,44 @@ public:
 };
 DUMPER7_ASSERTS_UElProjectSettings;
 
+// Class ErrantLandscapeRuntime.ElRtBrushInterface
+// 0x0008 (0x0008 - 0x0000)
+class IElRtBrushInterface
+{
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("ElRtBrushInterface")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"ElRtBrushInterface")
+	}
+	static class IElRtBrushInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<IElRtBrushInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_IElRtBrushInterface;
+
 // Class ErrantLandscapeRuntime.ElRtBrushComponent
 // 0x0020 (0x0550 - 0x0530)
 #pragma pack(push, 0x1)
-class SDK_ALIGN(0x10) UElRtBrushComponent : public UPrimitiveComponent
+class SDK_ALIGN(0x10) UElRtBrushComponent : public UPrimitiveComponent, public IElRtBrushInterface
 {
 public:
-	uint8                                         Pad_530[0x8];                                      // 0x0530(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class UElRtWorldSubsystem*                    RtSubsystem;                                       // 0x0538(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
 	int32                                         BrushPriority;                                     // 0x0540(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_544[0x4];                                      // 0x0544(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -80,39 +111,13 @@ public:
 #pragma pack(pop)
 DUMPER7_ASSERTS_UElRtBrushComponent;
 
-// Class ErrantLandscapeRuntime.ElRtBrushInterface
-// 0x0000 (0x0000 - 0x0000)
-class IElRtBrushInterface final
+// Class ErrantLandscapeRuntime.ElRtBrushSystemInterface
+// 0x0008 (0x0008 - 0x0000)
+class IElRtBrushSystemInterface
 {
 public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("ElRtBrushInterface")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"ElRtBrushInterface")
-	}
-	static class IElRtBrushInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<IElRtBrushInterface>();
-	}
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
 
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_IElRtBrushInterface;
-
-// Class ErrantLandscapeRuntime.ElRtBrushSystemInterface
-// 0x0000 (0x0000 - 0x0000)
-class IElRtBrushSystemInterface final
-{
 public:
 	static class UClass* StaticClass()
 	{
@@ -283,10 +288,9 @@ DUMPER7_ASSERTS_UElRtStaticTextureStampBrushComponent;
 
 // Class ErrantLandscapeRuntime.ElRtStampBrushSubsystem
 // 0x0008 (0x0030 - 0x0028)
-class UElRtStampBrushSubsystem final : public UObject
+class UElRtStampBrushSubsystem final : public UObject, public IElRtBrushSystemInterface
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UBTTask_Animal_Panzerhund_NavmeshTest_C::ExecuteUbergraph_BTTask_Animal_Panzerhund_NavmeshTest(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTTask_Animal_Panzerhund_NavmeshTest_C", "ExecuteUbergraph_BTTask_Animal_Panzerhund_NavmeshTest");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BTTask_Animal_Panzerhund_NavmeshTest_C", "ExecuteUbergraph_BTTask_Animal_Panzerhund_NavmeshTest", FuncInfo);
 
 	Params::BTTask_Animal_Panzerhund_NavmeshTest_C_ExecuteUbergraph_BTTask_Animal_Panzerhund_NavmeshTest Parms{};
 
@@ -44,10 +42,8 @@ void UBTTask_Animal_Panzerhund_NavmeshTest_C::ExecuteUbergraph_BTTask_Animal_Pan
 
 void UBTTask_Animal_Panzerhund_NavmeshTest_C::ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTTask_Animal_Panzerhund_NavmeshTest_C", "ReceiveExecuteAI");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveExecuteAI", FnName));
 
 	Params::BTTask_Animal_Panzerhund_NavmeshTest_C_ReceiveExecuteAI Parms{};
 

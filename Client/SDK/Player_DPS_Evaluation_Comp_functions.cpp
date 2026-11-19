@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UPlayer_DPS_Evaluation_Comp_C::ExecuteUbergraph_Player_DPS_Evaluation_Comp(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Player_DPS_Evaluation_Comp_C", "ExecuteUbergraph_Player_DPS_Evaluation_Comp");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "Player_DPS_Evaluation_Comp_C", "ExecuteUbergraph_Player_DPS_Evaluation_Comp", FuncInfo);
 
 	Params::Player_DPS_Evaluation_Comp_C_ExecuteUbergraph_Player_DPS_Evaluation_Comp Parms{};
 
@@ -44,10 +42,8 @@ void UPlayer_DPS_Evaluation_Comp_C::ExecuteUbergraph_Player_DPS_Evaluation_Comp(
 
 void UPlayer_DPS_Evaluation_Comp_C::OnFired(bool Valid_Hit, double Damage)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Player_DPS_Evaluation_Comp_C", "OnFired");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFired", FnName));
 
 	Params::Player_DPS_Evaluation_Comp_C_OnFired Parms{};
 
@@ -65,10 +61,8 @@ void UPlayer_DPS_Evaluation_Comp_C::OnFired(bool Valid_Hit, double Damage)
 
 void UPlayer_DPS_Evaluation_Comp_C::ReceiveTick(float DeltaSeconds)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Player_DPS_Evaluation_Comp_C", "ReceiveTick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveTick", FnName));
 
 	Params::Player_DPS_Evaluation_Comp_C_ReceiveTick Parms{};
 
@@ -83,10 +77,8 @@ void UPlayer_DPS_Evaluation_Comp_C::ReceiveTick(float DeltaSeconds)
 
 void UPlayer_DPS_Evaluation_Comp_C::ResetTimer()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Player_DPS_Evaluation_Comp_C", "ResetTimer");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ResetTimer", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

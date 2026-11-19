@@ -26,10 +26,8 @@ SDK_NAMESPACE_START
 
 bool UBP_AnimNotifyState_ShowMeshOnNotifyEnd_C::Received_NotifyEnd(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, const struct FAnimNotifyEventReference& EventReference) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_AnimNotifyState_ShowMeshOnNotifyEnd_C", "Received_NotifyEnd");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Received_NotifyEnd", FnName));
 
 	Params::BP_AnimNotifyState_ShowMeshOnNotifyEnd_C_Received_NotifyEnd Parms{};
 

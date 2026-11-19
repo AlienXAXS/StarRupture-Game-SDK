@@ -6595,6 +6595,32 @@ public:
 };
 DUMPER7_ASSERTS_GeometryScriptLibrary_PointSetSamplingFunctions_UnflattenPoints;
 
+// Function GeometryScriptingCore.GeometryScriptLibrary_TextureMapFunctions.SampleTexture2DAtUVPositions
+// 0x0058 (0x0058 - 0x0000)
+struct GeometryScriptLibrary_TextureMapFunctions_SampleTexture2DAtUVPositions final
+{
+public:
+	struct FGeometryScriptUVList                  UVList;                                            // 0x0000(0x0010)(Parm, NativeAccessSpecifierPublic)
+	class UTexture2D*                             Texture;                                           // 0x0010(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGeometryScriptSampleTextureOptions    SampleOptions;                                     // 0x0018(0x0028)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGeometryScriptColorList               ColorList;                                         // 0x0040(0x0010)(Parm, OutParm, NativeAccessSpecifierPublic)
+	class UGeometryScriptDebug*                   Debug;                                             // 0x0050(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GeometryScriptLibrary_TextureMapFunctions_SampleTexture2DAtUVPositions;
+
+// Function GeometryScriptingCore.GeometryScriptLibrary_TextureMapFunctions.SampleTextureRenderTarget2DAtUVPositions
+// 0x0058 (0x0058 - 0x0000)
+struct GeometryScriptLibrary_TextureMapFunctions_SampleTextureRenderTarget2DAtUVPositions final
+{
+public:
+	struct FGeometryScriptUVList                  UVList;                                            // 0x0000(0x0010)(Parm, NativeAccessSpecifierPublic)
+	class UTextureRenderTarget2D*                 Texture;                                           // 0x0010(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGeometryScriptSampleTextureOptions    SampleOptions;                                     // 0x0018(0x0028)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGeometryScriptColorList               ColorList;                                         // 0x0040(0x0010)(Parm, OutParm, NativeAccessSpecifierPublic)
+	class UGeometryScriptDebug*                   Debug;                                             // 0x0050(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GeometryScriptLibrary_TextureMapFunctions_SampleTextureRenderTarget2DAtUVPositions;
+
 // Function GeometryScriptingCore.GeometryScriptLibrary_SimplePolygonFunctions.AddPolygonVertex
 // 0x0028 (0x0028 - 0x0000)
 struct GeometryScriptLibrary_SimplePolygonFunctions_AddPolygonVertex final
@@ -7782,32 +7808,6 @@ public:
 	uint8                                         Pad_52[0x6];                                       // 0x0052(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_GeometryScriptLibrary_BoxFunctions_TestPointInsideBox;
-
-// Function GeometryScriptingCore.GeometryScriptLibrary_TextureMapFunctions.SampleTexture2DAtUVPositions
-// 0x0058 (0x0058 - 0x0000)
-struct GeometryScriptLibrary_TextureMapFunctions_SampleTexture2DAtUVPositions final
-{
-public:
-	struct FGeometryScriptUVList                  UVList;                                            // 0x0000(0x0010)(Parm, NativeAccessSpecifierPublic)
-	class UTexture2D*                             Texture;                                           // 0x0010(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGeometryScriptSampleTextureOptions    SampleOptions;                                     // 0x0018(0x0028)(Parm, NoDestructor, NativeAccessSpecifierPublic)
-	struct FGeometryScriptColorList               ColorList;                                         // 0x0040(0x0010)(Parm, OutParm, NativeAccessSpecifierPublic)
-	class UGeometryScriptDebug*                   Debug;                                             // 0x0050(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GeometryScriptLibrary_TextureMapFunctions_SampleTexture2DAtUVPositions;
-
-// Function GeometryScriptingCore.GeometryScriptLibrary_TextureMapFunctions.SampleTextureRenderTarget2DAtUVPositions
-// 0x0058 (0x0058 - 0x0000)
-struct GeometryScriptLibrary_TextureMapFunctions_SampleTextureRenderTarget2DAtUVPositions final
-{
-public:
-	struct FGeometryScriptUVList                  UVList;                                            // 0x0000(0x0010)(Parm, NativeAccessSpecifierPublic)
-	class UTextureRenderTarget2D*                 Texture;                                           // 0x0010(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGeometryScriptSampleTextureOptions    SampleOptions;                                     // 0x0018(0x0028)(Parm, NoDestructor, NativeAccessSpecifierPublic)
-	struct FGeometryScriptColorList               ColorList;                                         // 0x0040(0x0010)(Parm, OutParm, NativeAccessSpecifierPublic)
-	class UGeometryScriptDebug*                   Debug;                                             // 0x0050(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GeometryScriptLibrary_TextureMapFunctions_SampleTextureRenderTarget2DAtUVPositions;
 
 // Function GeometryScriptingCore.GeometryScriptLibrary_VectorMathFunctions.ConstantScalarMultiply
 // 0x0028 (0x0028 - 0x0000)

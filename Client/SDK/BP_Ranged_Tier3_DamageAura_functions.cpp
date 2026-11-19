@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_Ranged_Tier3_DamageAura_C::ExecuteUbergraph_BP_Ranged_Tier3_DamageAura(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier3_DamageAura_C", "ExecuteUbergraph_BP_Ranged_Tier3_DamageAura");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Ranged_Tier3_DamageAura_C", "ExecuteUbergraph_BP_Ranged_Tier3_DamageAura", FuncInfo);
 
 	Params::BP_Ranged_Tier3_DamageAura_C_ExecuteUbergraph_BP_Ranged_Tier3_DamageAura Parms{};
 
@@ -43,10 +41,8 @@ void ABP_Ranged_Tier3_DamageAura_C::ExecuteUbergraph_BP_Ranged_Tier3_DamageAura(
 
 void ABP_Ranged_Tier3_DamageAura_C::ReceiveActorBeginOverlap(class AActor* OtherActor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier3_DamageAura_C", "ReceiveActorBeginOverlap");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveActorBeginOverlap", FnName));
 
 	Params::BP_Ranged_Tier3_DamageAura_C_ReceiveActorBeginOverlap Parms{};
 
@@ -63,10 +59,8 @@ void ABP_Ranged_Tier3_DamageAura_C::ReceiveActorBeginOverlap(class AActor* Other
 
 void ABP_Ranged_Tier3_DamageAura_C::ReceiveActorEndOverlap(class AActor* OtherActor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier3_DamageAura_C", "ReceiveActorEndOverlap");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveActorEndOverlap", FnName));
 
 	Params::BP_Ranged_Tier3_DamageAura_C_ReceiveActorEndOverlap Parms{};
 

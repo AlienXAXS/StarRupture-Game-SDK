@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UABP_Item_MiningTool_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Item_MiningTool_C", "AnimGraph");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimGraph", FnName));
 
 	Params::ABP_Item_MiningTool_C_AnimGraph Parms{};
 
@@ -42,10 +40,8 @@ void UABP_Item_MiningTool_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 
 void UABP_Item_MiningTool_C::BlueprintBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Item_MiningTool_C", "BlueprintBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BlueprintBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -58,10 +54,8 @@ void UABP_Item_MiningTool_C::BlueprintBeginPlay()
 
 void UABP_Item_MiningTool_C::BlueprintUpdateAnimation(float DeltaTimeX)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Item_MiningTool_C", "BlueprintUpdateAnimation");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BlueprintUpdateAnimation", FnName));
 
 	Params::ABP_Item_MiningTool_C_BlueprintUpdateAnimation Parms{};
 
@@ -76,10 +70,8 @@ void UABP_Item_MiningTool_C::BlueprintUpdateAnimation(float DeltaTimeX)
 
 void UABP_Item_MiningTool_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Item_MiningTool_AnimGraphNode_BlendListByBool_4D07FB904AA99126C2C13EBE37E78734()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Item_MiningTool_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Item_MiningTool_AnimGraphNode_BlendListByBool_4D07FB904AA99126C2C13EBE37E78734");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Item_MiningTool_AnimGraphNode_BlendListByBool_4D07FB904AA99126C2C13EBE37E78734", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -90,10 +82,8 @@ void UABP_Item_MiningTool_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ite
 
 void UABP_Item_MiningTool_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Item_MiningTool_AnimGraphNode_SequencePlayer_5D08C23141DC8982BD17368B3E21A03A()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Item_MiningTool_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Item_MiningTool_AnimGraphNode_SequencePlayer_5D08C23141DC8982BD17368B3E21A03A");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Item_MiningTool_AnimGraphNode_SequencePlayer_5D08C23141DC8982BD17368B3E21A03A", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -104,10 +94,8 @@ void UABP_Item_MiningTool_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ite
 
 void UABP_Item_MiningTool_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Item_MiningTool_AnimGraphNode_TransitionResult_5DFE5C97428C0B6B61B9009545176B24()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Item_MiningTool_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Item_MiningTool_AnimGraphNode_TransitionResult_5DFE5C97428C0B6B61B9009545176B24");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Item_MiningTool_AnimGraphNode_TransitionResult_5DFE5C97428C0B6B61B9009545176B24", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -118,10 +106,8 @@ void UABP_Item_MiningTool_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ite
 
 void UABP_Item_MiningTool_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Item_MiningTool_AnimGraphNode_TransitionResult_D0088D6A4B55292B6D00729D6533A2D7()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Item_MiningTool_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Item_MiningTool_AnimGraphNode_TransitionResult_D0088D6A4B55292B6D00729D6533A2D7");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Item_MiningTool_AnimGraphNode_TransitionResult_D0088D6A4B55292B6D00729D6533A2D7", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -134,10 +120,8 @@ void UABP_Item_MiningTool_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Ite
 
 void UABP_Item_MiningTool_C::ExecuteUbergraph_ABP_Item_MiningTool(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Item_MiningTool_C", "ExecuteUbergraph_ABP_Item_MiningTool");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "ABP_Item_MiningTool_C", "ExecuteUbergraph_ABP_Item_MiningTool", FuncInfo);
 
 	Params::ABP_Item_MiningTool_C_ExecuteUbergraph_ABP_Item_MiningTool Parms{};
 
@@ -154,10 +138,8 @@ void UABP_Item_MiningTool_C::ExecuteUbergraph_ABP_Item_MiningTool(int32 EntryPoi
 
 void UABP_Item_MiningTool_C::SetAimingAtHarvestable(bool bIsAimingAtHarvestable_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Item_MiningTool_C", "SetAimingAtHarvestable");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetAimingAtHarvestable", FnName));
 
 	Params::ABP_Item_MiningTool_C_SetAimingAtHarvestable Parms{};
 

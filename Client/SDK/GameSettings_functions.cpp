@@ -24,10 +24,8 @@ SDK_NAMESPACE_START
 
 void UGameSettingHeader::RegisterTab(class FName TabCollection, const class FText& TabName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameSettingHeader", "RegisterTab");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"RegisterTab", FnName));
 
 	Params::GameSettingHeader_RegisterTab Parms{};
 
@@ -45,10 +43,8 @@ void UGameSettingHeader::RegisterTab(class FName TabCollection, const class FTex
 
 void UGameSettingHeader::SelectTabByID(class FName TabId)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameSettingHeader", "SelectTabByID");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SelectTabByID", FnName));
 
 	Params::GameSettingHeader_SelectTabByID Parms{};
 
@@ -65,10 +61,8 @@ void UGameSettingHeader::SelectTabByID(class FName TabId)
 
 class UWidget* UGameSettingListEntryBase::GetPrimaryGamepadFocusWidget()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameSettingListEntryBase", "GetPrimaryGamepadFocusWidget");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetPrimaryGamepadFocusWidget", FnName));
 
 	Params::GameSettingListEntryBase_GetPrimaryGamepadFocusWidget Parms{};
 
@@ -85,14 +79,78 @@ class UWidget* UGameSettingListEntryBase::GetPrimaryGamepadFocusWidget()
 
 void UGameSettingListEntryBase::SetWidgetStyle(bool bIsFocused)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameSettingListEntryBase", "SetWidgetStyle");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetWidgetStyle", FnName));
 
 	Params::GameSettingListEntryBase_SetWidgetStyle Parms{};
 
 	Parms.bIsFocused = bIsFocused;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function UMG.UserObjectListEntry.OnListItemObjectSet
+// (RequiredAPI, Event, Protected, BlueprintEvent)
+// Parameters:
+// class UObject*                          ListItemObject                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGameSettingListEntryBase::OnListItemObjectSet(class UObject* ListItemObject)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnListItemObjectSet", FnName));
+
+	Params::UserObjectListEntry_OnListItemObjectSet Parms{};
+
+	Parms.ListItemObject = ListItemObject;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function UMG.UserListEntry.BP_OnEntryReleased
+// (RequiredAPI, Event, Protected, BlueprintEvent)
+
+void UGameSettingListEntryBase::BP_OnEntryReleased()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnEntryReleased", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function UMG.UserListEntry.BP_OnItemExpansionChanged
+// (RequiredAPI, Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bIsExpanded                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGameSettingListEntryBase::BP_OnItemExpansionChanged(bool bIsExpanded)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnItemExpansionChanged", FnName));
+
+	Params::UserListEntry_BP_OnItemExpansionChanged Parms{};
+
+	Parms.bIsExpanded = bIsExpanded;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function UMG.UserListEntry.BP_OnItemSelectionChanged
+// (RequiredAPI, Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bIsSelected                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGameSettingListEntryBase::BP_OnItemSelectionChanged(bool bIsSelected)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnItemSelectionChanged", FnName));
+
+	Params::UserListEntry_BP_OnItemSelectionChanged Parms{};
+
+	Parms.bIsSelected = bIsSelected;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -103,10 +161,8 @@ void UGameSettingListEntryBase::SetWidgetStyle(bool bIsFocused)
 
 void UGameSettingListEntry_Setting::AddSlashToHeader()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameSettingListEntry_Setting", "AddSlashToHeader");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AddSlashToHeader", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -117,12 +173,28 @@ void UGameSettingListEntry_Setting::AddSlashToHeader()
 
 void UGameSettingListEntry_Setting::EventPlaySound()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameSettingListEntry_Setting", "EventPlaySound");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EventPlaySound", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function GameSettings.GameSettingListEntry_Setting.ForceSetText
+// (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const class FText&                      Text                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UGameSettingListEntry_Setting::ForceSetText(const class FText& Text)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ForceSetText", FnName));
+
+	Params::GameSettingListEntry_Setting_ForceSetText Parms{};
+
+	Parms.Text = std::move(Text);
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -131,10 +203,8 @@ void UGameSettingListEntry_Setting::EventPlaySound()
 
 void UGameSettingListEntry_Setting::PlayHoverSound()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameSettingListEntry_Setting", "PlayHoverSound");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PlayHoverSound", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -147,10 +217,8 @@ void UGameSettingListEntry_Setting::PlayHoverSound()
 
 void UGameSettingListEntrySetting_Action::OnSettingAssigned(const class FText& ActionText)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameSettingListEntrySetting_Action", "OnSettingAssigned");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSettingAssigned", FnName));
 
 	Params::GameSettingListEntrySetting_Action_OnSettingAssigned Parms{};
 
@@ -168,10 +236,8 @@ void UGameSettingListEntrySetting_Action::OnSettingAssigned(const class FText& A
 
 void UGameSettingListEntrySetting_Discrete::SetUpButtonText(class UCommonButtonBase* Button, const class FText& InText)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameSettingListEntrySetting_Discrete", "SetUpButtonText");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetUpButtonText", FnName));
 
 	Params::GameSettingListEntrySetting_Discrete_SetUpButtonText Parms{};
 
@@ -189,10 +255,8 @@ void UGameSettingListEntrySetting_Discrete::SetUpButtonText(class UCommonButtonB
 
 void UGameSettingListEntrySetting_Navigation::OnSettingAssigned(const class FText& ActionText)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameSettingListEntrySetting_Navigation", "OnSettingAssigned");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSettingAssigned", FnName));
 
 	Params::GameSettingListEntrySetting_Navigation_OnSettingAssigned Parms{};
 
@@ -253,10 +317,8 @@ void UGameSettingListEntrySetting_Scalar::HandleSliderValueChanged(float Value)
 
 void UGameSettingListEntrySetting_Scalar::OnDefaultValueChanged(float DefaultValue)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameSettingListEntrySetting_Scalar", "OnDefaultValueChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnDefaultValueChanged", FnName));
 
 	Params::GameSettingListEntrySetting_Scalar_OnDefaultValueChanged Parms{};
 
@@ -273,10 +335,8 @@ void UGameSettingListEntrySetting_Scalar::OnDefaultValueChanged(float DefaultVal
 
 void UGameSettingListEntrySetting_Scalar::OnValueChanged(float Value)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameSettingListEntrySetting_Scalar", "OnValueChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnValueChanged", FnName));
 
 	Params::GameSettingListEntrySetting_Scalar_OnValueChanged Parms{};
 
@@ -324,15 +384,32 @@ void UGameSettingPressAnyKey::InputConfirm()
 }
 
 
+// Function GameSettings.GameSettingPressAnyKey.InputDefault
+// (Final, Native, Protected)
+
+void UGameSettingPressAnyKey::InputDefault()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GameSettingPressAnyKey", "InputDefault");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameSettings.GameSettingPressAnyKey.SetNormalText
 // (Event, Public, BlueprintEvent)
 
 void UGameSettingPressAnyKey::SetNormalText()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameSettingPressAnyKey", "SetNormalText");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetNormalText", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -345,10 +422,8 @@ void UGameSettingPressAnyKey::SetNormalText()
 
 void UGameSettingPressAnyKey::SetWarningText(const class FText& InWarning)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameSettingPressAnyKey", "SetWarningText");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetWarningText", FnName));
 
 	Params::GameSettingPressAnyKey_SetWarningText Parms{};
 
@@ -615,10 +690,8 @@ TArray<class FText> UGameSettingValueDiscrete::GetDiscreteOptions() const
 
 void UGameSettingDetailExtension::OnSettingAssigned(class UGameSetting* InSetting)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameSettingDetailExtension", "OnSettingAssigned");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSettingAssigned", FnName));
 
 	Params::GameSettingDetailExtension_OnSettingAssigned Parms{};
 
@@ -635,10 +708,8 @@ void UGameSettingDetailExtension::OnSettingAssigned(class UGameSetting* InSettin
 
 void UGameSettingDetailExtension::OnSettingValueChanged(class UGameSetting* InSetting)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameSettingDetailExtension", "OnSettingValueChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSettingValueChanged", FnName));
 
 	Params::GameSettingDetailExtension_OnSettingValueChanged Parms{};
 
@@ -825,10 +896,8 @@ void UGameSettingScreen::OnSelectedTabEvent(class FName TabId)
 
 void UGameSettingScreen::OnSettingsDirtyStateChanged(bool bSettingsDirty)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameSettingScreen", "OnSettingsDirtyStateChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSettingsDirtyStateChanged", FnName));
 
 	Params::GameSettingScreen_OnSettingsDirtyStateChanged Parms{};
 
@@ -877,10 +946,8 @@ bool UGameSettingScreen::HaveSettingsBeenChanged() const
 
 bool IGameSettingActionInterface::ExecuteActionForSetting(const struct FGameplayTag& ActionTag, class UGameSetting* InSetting)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("GameSettingActionInterface", "ExecuteActionForSetting");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"ExecuteActionForSetting", FnName));
 
 	Params::GameSettingActionInterface_ExecuteActionForSetting Parms{};
 
@@ -905,10 +972,8 @@ bool IGameSettingActionInterface::ExecuteActionForSetting(const struct FGameplay
 
 void UGameSettingRotator::BP_OnDefaultOptionSpecified(int32 DefaultOptionIndex)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameSettingRotator", "BP_OnDefaultOptionSpecified");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnDefaultOptionSpecified", FnName));
 
 	Params::GameSettingRotator_BP_OnDefaultOptionSpecified Parms{};
 
@@ -925,10 +990,8 @@ void UGameSettingRotator::BP_OnDefaultOptionSpecified(int32 DefaultOptionIndex)
 
 void UGameSettingRotator::Init(int32 Num)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameSettingRotator", "Init");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Init", FnName));
 
 	Params::GameSettingRotator_Init Parms{};
 
@@ -945,10 +1008,8 @@ void UGameSettingRotator::Init(int32 Num)
 
 void UGameSettingRotator::SetSelectedColor(const struct FColor& InColor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameSettingRotator", "SetSelectedColor");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetSelectedColor", FnName));
 
 	Params::GameSettingRotator_SetSelectedColor Parms{};
 

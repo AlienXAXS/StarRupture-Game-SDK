@@ -16,8 +16,8 @@
 SDK_NAMESPACE_START
 
 // AnimBlueprintGeneratedClass ALI_ItemAnimLayers.ALI_ItemAnimLayers_C
-// 0x0000 (0x0000 - 0x0000)
-class IALI_ItemAnimLayers_C final
+// 0x0000 (0x0008 - 0x0008)
+class IALI_ItemAnimLayers_C : public IAnimLayerInterface
 {
 public:
 	void FullBody_Aiming(const struct FPoseLink& PreAimPose, double AimYaw, double AimPitch, struct FPoseLink* FullBody_Aiming_0);

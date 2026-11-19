@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "ErrantBiomesRuntime_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "ErrantBiomesRuntime_structs.hpp"
 #include "Engine_classes.hpp"
 #include "DeveloperSettings_classes.hpp"
 
@@ -32,7 +32,8 @@ public:
 	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UTextureRenderTarget2D*                 RenderTarget;                                      // 0x0050(0x0008)(Edit, ZeroConstructor, Transient, EditConst, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	EBiomesMaskFlags                              MaskFlags;                                         // 0x0058(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, AssetRegistrySearchable, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5C[0x34];                                      // 0x005C(0x0034)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	EBiomesMaskDataLocation                       DataLocation;                                      // 0x005C(0x0001)(Edit, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5D[0x33];                                      // 0x005D(0x0033)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -109,6 +110,35 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UBiomesCustomMask;
+
+// Class ErrantBiomesRuntime.BiomesGPUOnlyISMComponent
+// 0x0060 (0x0690 - 0x0630)
+class UBiomesGPUOnlyISMComponent final : public UStaticMeshComponent
+{
+public:
+	int32                                         NumInstances;                                      // 0x0628(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	int32                                         NumCustomDataFloats;                               // 0x062C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	struct FBox                                   WorldBounds;                                       // 0x0630(0x0038)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	int32                                         InstanceMinDrawDistance;                           // 0x0668(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	int32                                         InstanceStartCullDistance;                         // 0x066C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	int32                                         InstanceEndCullDistance;                           // 0x0670(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_674[0x1C];                                     // 0x0674(0x001C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BiomesGPUOnlyISMComponent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BiomesGPUOnlyISMComponent")
+	}
+	static class UBiomesGPUOnlyISMComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UBiomesGPUOnlyISMComponent>();
+	}
+};
+DUMPER7_ASSERTS_UBiomesGPUOnlyISMComponent;
 
 // Class ErrantBiomesRuntime.BiomesHierarchicalInstancedStaticMeshComponent
 // 0x0000 (0x0B60 - 0x0B60)
@@ -474,11 +504,11 @@ public:
 DUMPER7_ASSERTS_UBiomesCustomMaskAsset;
 
 // Class ErrantBiomesRuntime.BiomesMaskEngineSubsystem
-// 0x0070 (0x00A0 - 0x0030)
+// 0x0160 (0x0190 - 0x0030)
 class UBiomesMaskEngineSubsystem final : public UEngineSubsystem
 {
 public:
-	uint8                                         Pad_30[0x70];                                      // 0x0030(0x0070)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x160];                                     // 0x0030(0x0160)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -517,16 +547,16 @@ public:
 DUMPER7_ASSERTS_UBiomesMaskTextureData;
 
 // Class ErrantBiomesRuntime.BiomesMaskWorldSubsystem
-// 0x04E0 (0x0520 - 0x0040)
+// 0x0510 (0x0550 - 0x0040)
 class UBiomesMaskWorldSubsystem final : public UTickableWorldSubsystem
 {
 public:
-	uint8                                         Pad_40[0x60];                                      // 0x0040(0x0060)(Fixing Size After Last Property [ Dumper-7 ])
-	class UBiomesMaskEngineSubsystem*             MaskEditorSubsystem;                               // 0x00A0(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_A8[0x330];                                     // 0x00A8(0x0330)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<EBiomesMaskType, class UTextureRenderTarget2D*> FallbackRenderTargets;                      // 0x03D8(0x0050)(Transient, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_428[0xF0];                                     // 0x0428(0x00F0)(Fixing Size After Last Property [ Dumper-7 ])
-	class UBiomesWorldInfo*                       BiomesWorldInfo;                                   // 0x0518(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_40[0x40];                                      // 0x0040(0x0040)(Fixing Size After Last Property [ Dumper-7 ])
+	class UBiomesMaskEngineSubsystem*             MaskEditorSubsystem;                               // 0x0080(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_88[0x330];                                     // 0x0088(0x0330)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<EBiomesMaskType, class UTextureRenderTarget2D*> FallbackRenderTargets;                      // 0x03B8(0x0050)(Transient, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_408[0x140];                                    // 0x0408(0x0140)(Fixing Size After Last Property [ Dumper-7 ])
+	class UBiomesWorldInfo*                       BiomesWorldInfo;                                   // 0x0548(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
 
 public:
 	static class UClass* StaticClass()
@@ -598,7 +628,8 @@ class UBiomesRuntimeProjectSettings final : public UDeveloperSettings
 {
 public:
 	bool                                          bEditorOnlyBiomeMasks;                             // 0x0038(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bGPUOnlyInstanceGeneration;                        // 0x0039(0x0001)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3A[0x6];                                       // 0x003A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -713,11 +744,14 @@ public:
 DUMPER7_ASSERTS_ABiomesRuntimeSpawner;
 
 // Class ErrantBiomesRuntime.BiomesRuntimeSpawningSubsystem
-// 0x0680 (0x06B0 - 0x0030)
-class UBiomesRuntimeSpawningSubsystem final : public UWorldSubsystem
+// 0x0740 (0x0770 - 0x0030)
+class alignas(0x10) UBiomesRuntimeSpawningSubsystem final : public UWorldSubsystem
 {
 public:
-	uint8                                         Pad_30[0x680];                                     // 0x0030(0x0680)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x6B8];                                     // 0x0030(0x06B8)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInterface*                     DebugCPUInstanceMaterial;                          // 0x06E8(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UMaterialInterface*                     DebugGPUOnlyInstanceMaterial;                      // 0x06F0(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	uint8                                         Pad_6F8[0x78];                                     // 0x06F8(0x0078)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

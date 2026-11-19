@@ -24,10 +24,8 @@ SDK_NAMESPACE_START
 
 class UObject* IMovieSceneBoundObjectProxy::BP_GetBoundObjectForSequencer(class UObject* ResolvedObject)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MovieSceneBoundObjectProxy", "BP_GetBoundObjectForSequencer");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"BP_GetBoundObjectForSequencer", FnName));
 
 	Params::MovieSceneBoundObjectProxy_BP_GetBoundObjectForSequencer Parms{};
 
@@ -47,10 +45,8 @@ class UObject* IMovieSceneBoundObjectProxy::BP_GetBoundObjectForSequencer(class 
 
 void IMovieSceneBindingEventReceiverInterface::OnObjectBoundBySequencer(class UMovieSceneSequencePlayer* Player, const struct FMovieSceneObjectBindingID& BindingID)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MovieSceneBindingEventReceiverInterface", "OnObjectBoundBySequencer");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"OnObjectBoundBySequencer", FnName));
 
 	Params::MovieSceneBindingEventReceiverInterface_OnObjectBoundBySequencer Parms{};
 
@@ -74,10 +70,8 @@ void IMovieSceneBindingEventReceiverInterface::OnObjectBoundBySequencer(class UM
 
 void IMovieSceneBindingEventReceiverInterface::OnObjectUnboundBySequencer(class UMovieSceneSequencePlayer* Player, const struct FMovieSceneObjectBindingID& BindingID)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MovieSceneBindingEventReceiverInterface", "OnObjectUnboundBySequencer");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"OnObjectUnboundBySequencer", FnName));
 
 	Params::MovieSceneBindingEventReceiverInterface_OnObjectUnboundBySequencer Parms{};
 
@@ -101,10 +95,8 @@ void IMovieSceneBindingEventReceiverInterface::OnObjectUnboundBySequencer(class 
 
 bool UMovieSceneCondition::BP_EvaluateCondition(const struct FMovieSceneConditionContext& ConditionContext) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MovieSceneCondition", "BP_EvaluateCondition");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_EvaluateCondition", FnName));
 
 	Params::MovieSceneCondition_BP_EvaluateCondition Parms{};
 
@@ -123,10 +115,8 @@ bool UMovieSceneCondition::BP_EvaluateCondition(const struct FMovieSceneConditio
 
 EMovieSceneConditionCheckFrequency UMovieSceneCondition::BP_GetCheckFrequency() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MovieSceneCondition", "BP_GetCheckFrequency");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_GetCheckFrequency", FnName));
 
 	Params::MovieSceneCondition_BP_GetCheckFrequency Parms{};
 
@@ -148,10 +138,8 @@ EMovieSceneConditionCheckFrequency UMovieSceneCondition::BP_GetCheckFrequency() 
 
 EMovieSceneConditionScope UMovieSceneCondition::BP_GetScope() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MovieSceneCondition", "BP_GetScope");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_GetScope", FnName));
 
 	Params::MovieSceneCondition_BP_GetScope Parms{};
 
@@ -224,10 +212,8 @@ int32 UMovieSceneCustomBinding::GetBaseEnginePriority()
 
 float IMovieSceneEasingFunction::OnEvaluate(float Interp) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MovieSceneEasingFunction", "OnEvaluate");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"OnEvaluate", FnName));
 
 	Params::MovieSceneEasingFunction_OnEvaluate Parms{};
 
@@ -793,6 +779,48 @@ void IMovieSceneCustomClockSource::OnTick(float DeltaSeconds, float InPlayRate)
 	AsUObject()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MovieScene.MovieSceneEasingFunction.OnEvaluate
+// (RequiredAPI, Event, Protected, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// float                                   Interp                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UMovieSceneBuiltInEasingFunction::OnEvaluate(float Interp) const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnEvaluate", FnName));
+
+	Params::MovieSceneEasingFunction_OnEvaluate Parms{};
+
+	Parms.Interp = Interp;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MovieScene.MovieSceneEasingFunction.OnEvaluate
+// (RequiredAPI, Event, Protected, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// float                                   Interp                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UMovieSceneEasingExternalCurve::OnEvaluate(float Interp) const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnEvaluate", FnName));
+
+	Params::MovieSceneEasingFunction_OnEvaluate Parms{};
+
+	Parms.Interp = Interp;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
 }
 
 

@@ -16,31 +16,51 @@
 
 SDK_NAMESPACE_START
 
+// Function BP_StandaloneMeteOreChunkBase.BP_StandaloneMeteOreChunkBase_C.BP_OnEnviroWaveStarted
+// (Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// EEnviroWave                             InWaveType                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EEnviroWaveStage                        InWaveStage                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FCrEnviroWaveSettings&     InWaveSettings                                         (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+// float                                   InWaveProgress                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_StandaloneMeteOreChunkBase_C::BP_OnEnviroWaveStarted(EEnviroWave InWaveType, EEnviroWaveStage InWaveStage, const struct FCrEnviroWaveSettings& InWaveSettings, float InWaveProgress)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnEnviroWaveStarted", FnName));
+
+	Params::BP_StandaloneMeteOreChunkBase_C_BP_OnEnviroWaveStarted Parms{};
+
+	Parms.InWaveType = InWaveType;
+	Parms.InWaveStage = InWaveStage;
+	Parms.InWaveSettings = std::move(InWaveSettings);
+	Parms.InWaveProgress = InWaveProgress;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_StandaloneMeteOreChunkBase.BP_StandaloneMeteOreChunkBase_C.BP_OnSpawnedWithResourceDepleted
 // (Event, Public, BlueprintEvent)
 
 void ABP_StandaloneMeteOreChunkBase_C::BP_OnSpawnedWithResourceDepleted()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneMeteOreChunkBase_C", "BP_OnSpawnedWithResourceDepleted");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnSpawnedWithResourceDepleted", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
 // Function BP_StandaloneMeteOreChunkBase.BP_StandaloneMeteOreChunkBase_C.ExecuteUbergraph_BP_StandaloneMeteOreChunkBase
-// (Final, UbergraphFunction)
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ABP_StandaloneMeteOreChunkBase_C::ExecuteUbergraph_BP_StandaloneMeteOreChunkBase(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneMeteOreChunkBase_C", "ExecuteUbergraph_BP_StandaloneMeteOreChunkBase");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_StandaloneMeteOreChunkBase_C", "ExecuteUbergraph_BP_StandaloneMeteOreChunkBase", FuncInfo);
 
 	Params::BP_StandaloneMeteOreChunkBase_C_ExecuteUbergraph_BP_StandaloneMeteOreChunkBase Parms{};
 
@@ -57,10 +77,8 @@ void ABP_StandaloneMeteOreChunkBase_C::ExecuteUbergraph_BP_StandaloneMeteOreChun
 
 void ABP_StandaloneMeteOreChunkBase_C::GetCurrentEnvironmentalWaveStage(EEnviroWaveStage* CurrentEnviroWaveStage)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneMeteOreChunkBase_C", "GetCurrentEnvironmentalWaveStage");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetCurrentEnvironmentalWaveStage", FnName));
 
 	Params::BP_StandaloneMeteOreChunkBase_C_GetCurrentEnvironmentalWaveStage Parms{};
 
@@ -71,6 +89,25 @@ void ABP_StandaloneMeteOreChunkBase_C::GetCurrentEnvironmentalWaveStage(EEnviroW
 }
 
 
+// Function BP_StandaloneMeteOreChunkBase.BP_StandaloneMeteOreChunkBase_C.GetCurrentEnvironmentalWaveType
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
+// Parameters:
+// EEnviroWave*                            CurrentEnviroWaveType                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_StandaloneMeteOreChunkBase_C::GetCurrentEnvironmentalWaveType(EEnviroWave* CurrentEnviroWaveType)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetCurrentEnvironmentalWaveType", FnName));
+
+	Params::BP_StandaloneMeteOreChunkBase_C_GetCurrentEnvironmentalWaveType Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (CurrentEnviroWaveType != nullptr)
+		*CurrentEnviroWaveType = Parms.CurrentEnviroWaveType;
+}
+
+
 // Function BP_StandaloneMeteOreChunkBase.BP_StandaloneMeteOreChunkBase_C.GetCurrentFadeoutSubstage
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, BlueprintPure)
 // Parameters:
@@ -78,10 +115,8 @@ void ABP_StandaloneMeteOreChunkBase_C::GetCurrentEnvironmentalWaveStage(EEnviroW
 
 void ABP_StandaloneMeteOreChunkBase_C::GetCurrentFadeoutSubstage(EEnviroWaveFadeoutSubstage* GrowbackSubstage)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneMeteOreChunkBase_C", "GetCurrentFadeoutSubstage");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetCurrentFadeoutSubstage", FnName));
 
 	Params::BP_StandaloneMeteOreChunkBase_C_GetCurrentFadeoutSubstage Parms{};
 
@@ -99,10 +134,8 @@ void ABP_StandaloneMeteOreChunkBase_C::GetCurrentFadeoutSubstage(EEnviroWaveFade
 
 void ABP_StandaloneMeteOreChunkBase_C::GetCurrentGrowbackSubstage(EEnviroWaveGrowbackSubstage* GrowbackSubstage)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneMeteOreChunkBase_C", "GetCurrentGrowbackSubstage");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetCurrentGrowbackSubstage", FnName));
 
 	Params::BP_StandaloneMeteOreChunkBase_C_GetCurrentGrowbackSubstage Parms{};
 
@@ -118,10 +151,8 @@ void ABP_StandaloneMeteOreChunkBase_C::GetCurrentGrowbackSubstage(EEnviroWaveGro
 
 void ABP_StandaloneMeteOreChunkBase_C::OnResourceDepletedCosmeticsStart()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneMeteOreChunkBase_C", "OnResourceDepletedCosmeticsStart");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnResourceDepletedCosmeticsStart", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -132,10 +163,8 @@ void ABP_StandaloneMeteOreChunkBase_C::OnResourceDepletedCosmeticsStart()
 
 void ABP_StandaloneMeteOreChunkBase_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneMeteOreChunkBase_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -146,10 +175,8 @@ void ABP_StandaloneMeteOreChunkBase_C::ReceiveBeginPlay()
 
 void ABP_StandaloneMeteOreChunkBase_C::Timeline__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneMeteOreChunkBase_C", "Timeline__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -160,10 +187,8 @@ void ABP_StandaloneMeteOreChunkBase_C::Timeline__FinishedFunc()
 
 void ABP_StandaloneMeteOreChunkBase_C::Timeline__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneMeteOreChunkBase_C", "Timeline__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

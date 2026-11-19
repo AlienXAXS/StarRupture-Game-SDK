@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UBTTask_BanTarget_C::ExecuteUbergraph_BTTask_BanTarget(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTTask_BanTarget_C", "ExecuteUbergraph_BTTask_BanTarget");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BTTask_BanTarget_C", "ExecuteUbergraph_BTTask_BanTarget", FuncInfo);
 
 	Params::BTTask_BanTarget_C_ExecuteUbergraph_BTTask_BanTarget Parms{};
 
@@ -44,10 +42,8 @@ void UBTTask_BanTarget_C::ExecuteUbergraph_BTTask_BanTarget(int32 EntryPoint)
 
 void UBTTask_BanTarget_C::ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTTask_BanTarget_C", "ReceiveExecuteAI");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveExecuteAI", FnName));
 
 	Params::BTTask_BanTarget_C_ReceiveExecuteAI Parms{};
 

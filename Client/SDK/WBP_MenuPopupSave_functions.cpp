@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_MenuPopupSave_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MenuPopupSave_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -37,10 +35,8 @@ void UWBP_MenuPopupSave_C::Construct()
 
 void UWBP_MenuPopupSave_C::ExecuteUbergraph_WBP_MenuPopupSave(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MenuPopupSave_C", "ExecuteUbergraph_WBP_MenuPopupSave");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_MenuPopupSave_C", "ExecuteUbergraph_WBP_MenuPopupSave", FuncInfo);
 
 	Params::WBP_MenuPopupSave_C_ExecuteUbergraph_WBP_MenuPopupSave Parms{};
 
@@ -59,10 +55,8 @@ void UWBP_MenuPopupSave_C::ExecuteUbergraph_WBP_MenuPopupSave(int32 EntryPoint)
 
 struct FEventReply UWBP_MenuPopupSave_C::OnMouseButtonDown_0(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MenuPopupSave_C", "OnMouseButtonDown_0");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnMouseButtonDown_0", FnName));
 
 	Params::WBP_MenuPopupSave_C_OnMouseButtonDown_0 Parms{};
 
@@ -82,14 +76,30 @@ struct FEventReply UWBP_MenuPopupSave_C::OnMouseButtonDown_0(const struct FGeome
 
 void UWBP_MenuPopupSave_C::SetColors(const struct FLinearColor& Orange)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MenuPopupSave_C", "SetColors");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetColors", FnName));
 
 	Params::WBP_MenuPopupSave_C_SetColors Parms{};
 
 	Parms.Orange = std::move(Orange);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_MenuPopupSave.WBP_MenuPopupSave_C.SetSaveImage
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// ECrSlotIconType                         IconType                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWBP_MenuPopupSave_C::SetSaveImage(ECrSlotIconType IconType)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetSaveImage", FnName));
+
+	Params::WBP_MenuPopupSave_C_SetSaveImage Parms{};
+
+	Parms.IconType = IconType;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

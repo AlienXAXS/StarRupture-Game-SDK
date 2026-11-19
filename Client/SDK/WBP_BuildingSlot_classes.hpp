@@ -18,14 +18,14 @@
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_BuildingSlot.WBP_BuildingSlot_C
-// 0x0030 (0x0A10 - 0x09E0)
+// 0x0030 (0x0A30 - 0x0A00)
 class UWBP_BuildingSlot_C final : public UCrUW_BuildingSlot
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x09E0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USizeBox*                               SizeBox;                                           // 0x09E8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UCommonTextBlock*                       NameField;                                         // 0x09F0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	struct FLinearColor                           HighlightColor;                                    // 0x09F8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0A00(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class USizeBox*                               SizeBox;                                           // 0x0A08(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UCommonTextBlock*                       NameField;                                         // 0x0A10(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	struct FLinearColor                           HighlightColor;                                    // 0x0A18(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_WBP_BuildingSlot(int32 EntryPoint);

@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_EncyclopediaMenu_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EncyclopediaMenu_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -37,10 +35,8 @@ void UWBP_EncyclopediaMenu_C::Construct()
 
 void UWBP_EncyclopediaMenu_C::ExecuteUbergraph_WBP_EncyclopediaMenu(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EncyclopediaMenu_C", "ExecuteUbergraph_WBP_EncyclopediaMenu");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_EncyclopediaMenu_C", "ExecuteUbergraph_WBP_EncyclopediaMenu", FuncInfo);
 
 	Params::WBP_EncyclopediaMenu_C_ExecuteUbergraph_WBP_EncyclopediaMenu Parms{};
 
@@ -57,10 +53,8 @@ void UWBP_EncyclopediaMenu_C::ExecuteUbergraph_WBP_EncyclopediaMenu(int32 EntryP
 
 void UWBP_EncyclopediaMenu_C::OnCategorySelected(class FName Category)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EncyclopediaMenu_C", "OnCategorySelected");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnCategorySelected", FnName));
 
 	Params::WBP_EncyclopediaMenu_C_OnCategorySelected Parms{};
 

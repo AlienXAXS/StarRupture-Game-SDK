@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_HabitatPostProcess_Quality_C::ExecuteUbergraph_BP_HabitatPostProcess_Quality(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HabitatPostProcess_Quality_C", "ExecuteUbergraph_BP_HabitatPostProcess_Quality");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_HabitatPostProcess_Quality_C", "ExecuteUbergraph_BP_HabitatPostProcess_Quality", FuncInfo);
 
 	Params::BP_HabitatPostProcess_Quality_C_ExecuteUbergraph_BP_HabitatPostProcess_Quality Parms{};
 
@@ -43,10 +41,8 @@ void ABP_HabitatPostProcess_Quality_C::ExecuteUbergraph_BP_HabitatPostProcess_Qu
 
 void ABP_HabitatPostProcess_Quality_C::OnGlobalIlluminationQualityChanged(int32 Quality)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HabitatPostProcess_Quality_C", "OnGlobalIlluminationQualityChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnGlobalIlluminationQualityChanged", FnName));
 
 	Params::BP_HabitatPostProcess_Quality_C_OnGlobalIlluminationQualityChanged Parms{};
 
@@ -61,10 +57,8 @@ void ABP_HabitatPostProcess_Quality_C::OnGlobalIlluminationQualityChanged(int32 
 
 void ABP_HabitatPostProcess_Quality_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HabitatPostProcess_Quality_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

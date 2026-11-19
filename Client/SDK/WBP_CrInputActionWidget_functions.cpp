@@ -16,21 +16,56 @@
 
 SDK_NAMESPACE_START
 
+// Function WBP_CrInputActionWidget.WBP_CrInputActionWidget_C.GetActionImage
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UImage**                          NewParam                                               (Parm, OutParm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+
+void UWBP_CrInputActionWidget_C::GetActionImage(class UImage** NewParam)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetActionImage", FnName));
+
+	Params::WBP_CrInputActionWidget_C_GetActionImage Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	if (NewParam != nullptr)
+		*NewParam = Parms.NewParam;
+}
+
+
 // Function WBP_CrInputActionWidget.WBP_CrInputActionWidget_C.SetFontSize
-// (Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // int32                                   InSize                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void UWBP_CrInputActionWidget_C::SetFontSize(int32 InSize)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CrInputActionWidget_C", "SetFontSize");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetFontSize", FnName));
 
 	Params::WBP_CrInputActionWidget_C_SetFontSize Parms{};
 
 	Parms.InSize = InSize;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_CrInputActionWidget.WBP_CrInputActionWidget_C.SetLongKeyVersion
+// (Event, Protected, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// bool                                    bInLongKey                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWBP_CrInputActionWidget_C::SetLongKeyVersion(bool bInLongKey) const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetLongKeyVersion", FnName));
+
+	Params::WBP_CrInputActionWidget_C_SetLongKeyVersion Parms{};
+
+	Parms.bInLongKey = bInLongKey;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

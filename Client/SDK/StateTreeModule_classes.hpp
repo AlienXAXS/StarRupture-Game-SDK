@@ -20,9 +20,12 @@
 SDK_NAMESPACE_START
 
 // Class StateTreeModule.StateTreeSchemaProvider
-// 0x0000 (0x0000 - 0x0000)
-class IStateTreeSchemaProvider final
+// 0x0008 (0x0008 - 0x0000)
+class IStateTreeSchemaProvider
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{

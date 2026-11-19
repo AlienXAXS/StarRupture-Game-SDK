@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UGE_CamEffect_Drain_C::ExecuteUbergraph_GE_CamEffect_Drain(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GE_CamEffect_Drain_C", "ExecuteUbergraph_GE_CamEffect_Drain");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "GE_CamEffect_Drain_C", "ExecuteUbergraph_GE_CamEffect_Drain", FuncInfo);
 
 	Params::GE_CamEffect_Drain_C_ExecuteUbergraph_GE_CamEffect_Drain Parms{};
 
@@ -45,10 +43,8 @@ void UGE_CamEffect_Drain_C::ExecuteUbergraph_GE_CamEffect_Drain(int32 EntryPoint
 
 void UGE_CamEffect_Drain_C::OnAttributeChanged_83EE8A464812640BC8229C92772B51DF(const struct FGameplayAttribute& Attribute, float NewValue, float OldValue)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GE_CamEffect_Drain_C", "OnAttributeChanged_83EE8A464812640BC8229C92772B51DF");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnAttributeChanged_83EE8A464812640BC8229C92772B51DF", FnName));
 
 	Params::GE_CamEffect_Drain_C_OnAttributeChanged_83EE8A464812640BC8229C92772B51DF Parms{};
 
@@ -69,10 +65,8 @@ void UGE_CamEffect_Drain_C::OnAttributeChanged_83EE8A464812640BC8229C92772B51DF(
 
 void UGE_CamEffect_Drain_C::OnInitialized(class UAbilitySystemComponent* AbilitySystemComponent, TSubclassOf<class UGameplayEffect> GameplayEffect, class USceneComponent* OwnerRootComponent)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GE_CamEffect_Drain_C", "OnInitialized");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnInitialized", FnName));
 
 	Params::GE_CamEffect_Drain_C_OnInitialized Parms{};
 

@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_TipMeteOre_C::ExecuteUbergraph_BP_TipMeteOre(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TipMeteOre_C", "ExecuteUbergraph_BP_TipMeteOre");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_TipMeteOre_C", "ExecuteUbergraph_BP_TipMeteOre", FuncInfo);
 
 	Params::BP_TipMeteOre_C_ExecuteUbergraph_BP_TipMeteOre Parms{};
 
@@ -41,10 +39,8 @@ void ABP_TipMeteOre_C::ExecuteUbergraph_BP_TipMeteOre(int32 EntryPoint)
 
 void ABP_TipMeteOre_C::OnBeginPlayDepletedStateStarted()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TipMeteOre_C", "OnBeginPlayDepletedStateStarted");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBeginPlayDepletedStateStarted", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -55,10 +51,8 @@ void ABP_TipMeteOre_C::OnBeginPlayDepletedStateStarted()
 
 void ABP_TipMeteOre_C::OnResourceDepletedCosmeticsStart()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TipMeteOre_C", "OnResourceDepletedCosmeticsStart");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnResourceDepletedCosmeticsStart", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -69,10 +63,8 @@ void ABP_TipMeteOre_C::OnResourceDepletedCosmeticsStart()
 
 void ABP_TipMeteOre_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TipMeteOre_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -83,10 +75,8 @@ void ABP_TipMeteOre_C::ReceiveBeginPlay()
 
 void ABP_TipMeteOre_C::Timeline__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TipMeteOre_C", "Timeline__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -97,10 +87,8 @@ void ABP_TipMeteOre_C::Timeline__FinishedFunc()
 
 void ABP_TipMeteOre_C::Timeline__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TipMeteOre_C", "Timeline__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -111,10 +99,8 @@ void ABP_TipMeteOre_C::Timeline__UpdateFunc()
 
 void ABP_TipMeteOre_C::TurnOffWalkableCollision()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TipMeteOre_C", "TurnOffWalkableCollision");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"TurnOffWalkableCollision", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

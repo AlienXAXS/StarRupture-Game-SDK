@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UGA_GenericAutoFire_C::Added_B8B45F6C4CA31C50D845FB90C5AC5AE9()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericAutoFire_C", "Added_B8B45F6C4CA31C50D845FB90C5AC5AE9");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Added_B8B45F6C4CA31C50D845FB90C5AC5AE9", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -37,10 +35,8 @@ void UGA_GenericAutoFire_C::Added_B8B45F6C4CA31C50D845FB90C5AC5AE9()
 
 void UGA_GenericAutoFire_C::CheckDPSEvaluatorHit(const struct FHitResult& Hit)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericAutoFire_C", "CheckDPSEvaluatorHit");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"CheckDPSEvaluatorHit", FnName));
 
 	Params::GA_GenericAutoFire_C_CheckDPSEvaluatorHit Parms{};
 
@@ -57,10 +53,8 @@ void UGA_GenericAutoFire_C::CheckDPSEvaluatorHit(const struct FHitResult& Hit)
 
 void UGA_GenericAutoFire_C::ExecuteUbergraph_GA_GenericAutoFire(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericAutoFire_C", "ExecuteUbergraph_GA_GenericAutoFire");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "GA_GenericAutoFire_C", "ExecuteUbergraph_GA_GenericAutoFire", FuncInfo);
 
 	Params::GA_GenericAutoFire_C_ExecuteUbergraph_GA_GenericAutoFire Parms{};
 
@@ -77,10 +71,8 @@ void UGA_GenericAutoFire_C::ExecuteUbergraph_GA_GenericAutoFire(int32 EntryPoint
 
 void UGA_GenericAutoFire_C::GetFireAnimPlayRate(double* Playrate)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericAutoFire_C", "GetFireAnimPlayRate");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetFireAnimPlayRate", FnName));
 
 	Params::GA_GenericAutoFire_C_GetFireAnimPlayRate Parms{};
 
@@ -96,10 +88,8 @@ void UGA_GenericAutoFire_C::GetFireAnimPlayRate(double* Playrate)
 
 void UGA_GenericAutoFire_C::K2_ActivateAbility()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericAutoFire_C", "K2_ActivateAbility");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_ActivateAbility", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -112,10 +102,8 @@ void UGA_GenericAutoFire_C::K2_ActivateAbility()
 
 void UGA_GenericAutoFire_C::K2_OnEndAbility(bool bWasCancelled)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericAutoFire_C", "K2_OnEndAbility");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_OnEndAbility", FnName));
 
 	Params::GA_GenericAutoFire_C_K2_OnEndAbility Parms{};
 
@@ -132,10 +120,8 @@ void UGA_GenericAutoFire_C::K2_OnEndAbility(bool bWasCancelled)
 
 void UGA_GenericAutoFire_C::OnCancelled_2B08750A4150850AB7B11B8BC1544130(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericAutoFire_C", "OnCancelled_2B08750A4150850AB7B11B8BC1544130");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnCancelled_2B08750A4150850AB7B11B8BC1544130", FnName));
 
 	Params::GA_GenericAutoFire_C_OnCancelled_2B08750A4150850AB7B11B8BC1544130 Parms{};
 
@@ -152,10 +138,8 @@ void UGA_GenericAutoFire_C::OnCancelled_2B08750A4150850AB7B11B8BC1544130(class F
 
 void UGA_GenericAutoFire_C::OnCancelled_E9EAAC22423DBF451A3A0D8990CF93C5(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericAutoFire_C", "OnCancelled_E9EAAC22423DBF451A3A0D8990CF93C5");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnCancelled_E9EAAC22423DBF451A3A0D8990CF93C5", FnName));
 
 	Params::GA_GenericAutoFire_C_OnCancelled_E9EAAC22423DBF451A3A0D8990CF93C5 Parms{};
 
@@ -174,10 +158,8 @@ void UGA_GenericAutoFire_C::OnCancelled_E9EAAC22423DBF451A3A0D8990CF93C5(class F
 
 void UGA_GenericAutoFire_C::OnClientTraceResult(const struct FAuTargetData& OutHits, const TArray<struct FHitResult>& RawHits, bool bServerConfirmed)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericAutoFire_C", "OnClientTraceResult");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnClientTraceResult", FnName));
 
 	Params::GA_GenericAutoFire_C_OnClientTraceResult Parms{};
 
@@ -197,10 +179,8 @@ void UGA_GenericAutoFire_C::OnClientTraceResult(const struct FAuTargetData& OutH
 
 void UGA_GenericAutoFire_C::OnCostCheckFailed_0E6849794CE62F5F48580D82ABC44E88(float TimeHeld, bool bEnded)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericAutoFire_C", "OnCostCheckFailed_0E6849794CE62F5F48580D82ABC44E88");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnCostCheckFailed_0E6849794CE62F5F48580D82ABC44E88", FnName));
 
 	Params::GA_GenericAutoFire_C_OnCostCheckFailed_0E6849794CE62F5F48580D82ABC44E88 Parms{};
 
@@ -219,10 +199,8 @@ void UGA_GenericAutoFire_C::OnCostCheckFailed_0E6849794CE62F5F48580D82ABC44E88(f
 
 void UGA_GenericAutoFire_C::OnEnded_0E6849794CE62F5F48580D82ABC44E88(float TimeHeld, bool bEnded)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericAutoFire_C", "OnEnded_0E6849794CE62F5F48580D82ABC44E88");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnEnded_0E6849794CE62F5F48580D82ABC44E88", FnName));
 
 	Params::GA_GenericAutoFire_C_OnEnded_0E6849794CE62F5F48580D82ABC44E88 Parms{};
 
@@ -238,10 +216,8 @@ void UGA_GenericAutoFire_C::OnEnded_0E6849794CE62F5F48580D82ABC44E88(float TimeH
 
 void UGA_GenericAutoFire_C::OnFinish_260A803D428ABB89BF3610807185470B()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericAutoFire_C", "OnFinish_260A803D428ABB89BF3610807185470B");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFinish_260A803D428ABB89BF3610807185470B", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -252,10 +228,8 @@ void UGA_GenericAutoFire_C::OnFinish_260A803D428ABB89BF3610807185470B()
 
 void UGA_GenericAutoFire_C::OnFinish_4444F23E3142CD91C036588398CC8AA1()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericAutoFire_C", "OnFinish_4444F23E3142CD91C036588398CC8AA1");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFinish_4444F23E3142CD91C036588398CC8AA1", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -268,10 +242,8 @@ void UGA_GenericAutoFire_C::OnFinish_4444F23E3142CD91C036588398CC8AA1()
 
 void UGA_GenericAutoFire_C::OnFppMontageBlendOut_2B08750A4150850AB7B11B8BC1544130(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericAutoFire_C", "OnFppMontageBlendOut_2B08750A4150850AB7B11B8BC1544130");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageBlendOut_2B08750A4150850AB7B11B8BC1544130", FnName));
 
 	Params::GA_GenericAutoFire_C_OnFppMontageBlendOut_2B08750A4150850AB7B11B8BC1544130 Parms{};
 
@@ -288,10 +260,8 @@ void UGA_GenericAutoFire_C::OnFppMontageBlendOut_2B08750A4150850AB7B11B8BC154413
 
 void UGA_GenericAutoFire_C::OnFppMontageBlendOut_E9EAAC22423DBF451A3A0D8990CF93C5(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericAutoFire_C", "OnFppMontageBlendOut_E9EAAC22423DBF451A3A0D8990CF93C5");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageBlendOut_E9EAAC22423DBF451A3A0D8990CF93C5", FnName));
 
 	Params::GA_GenericAutoFire_C_OnFppMontageBlendOut_E9EAAC22423DBF451A3A0D8990CF93C5 Parms{};
 
@@ -308,10 +278,8 @@ void UGA_GenericAutoFire_C::OnFppMontageBlendOut_E9EAAC22423DBF451A3A0D8990CF93C
 
 void UGA_GenericAutoFire_C::OnFppMontageEnded_2B08750A4150850AB7B11B8BC1544130(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericAutoFire_C", "OnFppMontageEnded_2B08750A4150850AB7B11B8BC1544130");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageEnded_2B08750A4150850AB7B11B8BC1544130", FnName));
 
 	Params::GA_GenericAutoFire_C_OnFppMontageEnded_2B08750A4150850AB7B11B8BC1544130 Parms{};
 
@@ -328,10 +296,8 @@ void UGA_GenericAutoFire_C::OnFppMontageEnded_2B08750A4150850AB7B11B8BC1544130(c
 
 void UGA_GenericAutoFire_C::OnFppMontageEnded_E9EAAC22423DBF451A3A0D8990CF93C5(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericAutoFire_C", "OnFppMontageEnded_E9EAAC22423DBF451A3A0D8990CF93C5");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageEnded_E9EAAC22423DBF451A3A0D8990CF93C5", FnName));
 
 	Params::GA_GenericAutoFire_C_OnFppMontageEnded_E9EAAC22423DBF451A3A0D8990CF93C5 Parms{};
 
@@ -348,10 +314,8 @@ void UGA_GenericAutoFire_C::OnFppMontageEnded_E9EAAC22423DBF451A3A0D8990CF93C5(c
 
 void UGA_GenericAutoFire_C::OnFppMontageNotifyBegin_2B08750A4150850AB7B11B8BC1544130(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericAutoFire_C", "OnFppMontageNotifyBegin_2B08750A4150850AB7B11B8BC1544130");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageNotifyBegin_2B08750A4150850AB7B11B8BC1544130", FnName));
 
 	Params::GA_GenericAutoFire_C_OnFppMontageNotifyBegin_2B08750A4150850AB7B11B8BC1544130 Parms{};
 
@@ -368,10 +332,8 @@ void UGA_GenericAutoFire_C::OnFppMontageNotifyBegin_2B08750A4150850AB7B11B8BC154
 
 void UGA_GenericAutoFire_C::OnFppMontageNotifyBegin_E9EAAC22423DBF451A3A0D8990CF93C5(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericAutoFire_C", "OnFppMontageNotifyBegin_E9EAAC22423DBF451A3A0D8990CF93C5");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageNotifyBegin_E9EAAC22423DBF451A3A0D8990CF93C5", FnName));
 
 	Params::GA_GenericAutoFire_C_OnFppMontageNotifyBegin_E9EAAC22423DBF451A3A0D8990CF93C5 Parms{};
 
@@ -388,10 +350,8 @@ void UGA_GenericAutoFire_C::OnFppMontageNotifyBegin_E9EAAC22423DBF451A3A0D8990CF
 
 void UGA_GenericAutoFire_C::OnFppMontageNotifyEnd_2B08750A4150850AB7B11B8BC1544130(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericAutoFire_C", "OnFppMontageNotifyEnd_2B08750A4150850AB7B11B8BC1544130");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageNotifyEnd_2B08750A4150850AB7B11B8BC1544130", FnName));
 
 	Params::GA_GenericAutoFire_C_OnFppMontageNotifyEnd_2B08750A4150850AB7B11B8BC1544130 Parms{};
 
@@ -408,10 +368,8 @@ void UGA_GenericAutoFire_C::OnFppMontageNotifyEnd_2B08750A4150850AB7B11B8BC15441
 
 void UGA_GenericAutoFire_C::OnFppMontageNotifyEnd_E9EAAC22423DBF451A3A0D8990CF93C5(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericAutoFire_C", "OnFppMontageNotifyEnd_E9EAAC22423DBF451A3A0D8990CF93C5");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageNotifyEnd_E9EAAC22423DBF451A3A0D8990CF93C5", FnName));
 
 	Params::GA_GenericAutoFire_C_OnFppMontageNotifyEnd_E9EAAC22423DBF451A3A0D8990CF93C5 Parms{};
 
@@ -428,10 +386,8 @@ void UGA_GenericAutoFire_C::OnFppMontageNotifyEnd_E9EAAC22423DBF451A3A0D8990CF93
 
 void UGA_GenericAutoFire_C::OnInterrupted_2B08750A4150850AB7B11B8BC1544130(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericAutoFire_C", "OnInterrupted_2B08750A4150850AB7B11B8BC1544130");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnInterrupted_2B08750A4150850AB7B11B8BC1544130", FnName));
 
 	Params::GA_GenericAutoFire_C_OnInterrupted_2B08750A4150850AB7B11B8BC1544130 Parms{};
 
@@ -448,10 +404,8 @@ void UGA_GenericAutoFire_C::OnInterrupted_2B08750A4150850AB7B11B8BC1544130(class
 
 void UGA_GenericAutoFire_C::OnInterrupted_E9EAAC22423DBF451A3A0D8990CF93C5(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericAutoFire_C", "OnInterrupted_E9EAAC22423DBF451A3A0D8990CF93C5");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnInterrupted_E9EAAC22423DBF451A3A0D8990CF93C5", FnName));
 
 	Params::GA_GenericAutoFire_C_OnInterrupted_E9EAAC22423DBF451A3A0D8990CF93C5 Parms{};
 
@@ -468,10 +422,8 @@ void UGA_GenericAutoFire_C::OnInterrupted_E9EAAC22423DBF451A3A0D8990CF93C5(class
 
 void UGA_GenericAutoFire_C::OnNotLocallyControlledTppMontageBlendOut_2B08750A4150850AB7B11B8BC1544130(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericAutoFire_C", "OnNotLocallyControlledTppMontageBlendOut_2B08750A4150850AB7B11B8BC1544130");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnNotLocallyControlledTppMontageBlendOut_2B08750A4150850AB7B11B8BC1544130", FnName));
 
 	Params::GA_GenericAutoFire_C_OnNotLocallyControlledTppMontageBlendOut_2B08750A4150850AB7B11B8BC1544130 Parms{};
 
@@ -488,10 +440,8 @@ void UGA_GenericAutoFire_C::OnNotLocallyControlledTppMontageBlendOut_2B08750A415
 
 void UGA_GenericAutoFire_C::OnNotLocallyControlledTppMontageBlendOut_E9EAAC22423DBF451A3A0D8990CF93C5(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericAutoFire_C", "OnNotLocallyControlledTppMontageBlendOut_E9EAAC22423DBF451A3A0D8990CF93C5");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnNotLocallyControlledTppMontageBlendOut_E9EAAC22423DBF451A3A0D8990CF93C5", FnName));
 
 	Params::GA_GenericAutoFire_C_OnNotLocallyControlledTppMontageBlendOut_E9EAAC22423DBF451A3A0D8990CF93C5 Parms{};
 
@@ -509,10 +459,8 @@ void UGA_GenericAutoFire_C::OnNotLocallyControlledTppMontageBlendOut_E9EAAC22423
 
 void UGA_GenericAutoFire_C::OnRelease_0E6849794CE62F5F48580D82ABC44E88(float TimeHeld, bool bEnded)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericAutoFire_C", "OnRelease_0E6849794CE62F5F48580D82ABC44E88");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnRelease_0E6849794CE62F5F48580D82ABC44E88", FnName));
 
 	Params::GA_GenericAutoFire_C_OnRelease_0E6849794CE62F5F48580D82ABC44E88 Parms{};
 
@@ -532,10 +480,8 @@ void UGA_GenericAutoFire_C::OnRelease_0E6849794CE62F5F48580D82ABC44E88(float Tim
 
 void UGA_GenericAutoFire_C::OnServerTraceResult(const struct FAuTargetData& OutHits, const TArray<struct FHitResult>& RawHits, bool bServerConfirmed)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericAutoFire_C", "OnServerTraceResult");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnServerTraceResult", FnName));
 
 	Params::GA_GenericAutoFire_C_OnServerTraceResult Parms{};
 
@@ -555,10 +501,8 @@ void UGA_GenericAutoFire_C::OnServerTraceResult(const struct FAuTargetData& OutH
 
 void UGA_GenericAutoFire_C::OnTick_0E6849794CE62F5F48580D82ABC44E88(float TimeHeld, bool bEnded)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericAutoFire_C", "OnTick_0E6849794CE62F5F48580D82ABC44E88");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnTick_0E6849794CE62F5F48580D82ABC44E88", FnName));
 
 	Params::GA_GenericAutoFire_C_OnTick_0E6849794CE62F5F48580D82ABC44E88 Parms{};
 
@@ -577,10 +521,8 @@ void UGA_GenericAutoFire_C::OnTick_0E6849794CE62F5F48580D82ABC44E88(float TimeHe
 
 void UGA_GenericAutoFire_C::OnTickNotLocalPlayer_0E6849794CE62F5F48580D82ABC44E88(float TimeHeld, bool bEnded)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericAutoFire_C", "OnTickNotLocalPlayer_0E6849794CE62F5F48580D82ABC44E88");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnTickNotLocalPlayer_0E6849794CE62F5F48580D82ABC44E88", FnName));
 
 	Params::GA_GenericAutoFire_C_OnTickNotLocalPlayer_0E6849794CE62F5F48580D82ABC44E88 Parms{};
 
@@ -596,10 +538,8 @@ void UGA_GenericAutoFire_C::OnTickNotLocalPlayer_0E6849794CE62F5F48580D82ABC44E8
 
 void UGA_GenericAutoFire_C::Removed_BA9B6F24428A5AA9C8C82D82CBB42554()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericAutoFire_C", "Removed_BA9B6F24428A5AA9C8C82D82CBB42554");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Removed_BA9B6F24428A5AA9C8C82D82CBB42554", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

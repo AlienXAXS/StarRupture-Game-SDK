@@ -24,10 +24,8 @@ SDK_NAMESPACE_START
 
 void ABP_DeuteriumExtractor_C::GetBuildingMeshes(class UMeshComponent** MainBody, TArray<class UMeshComponent*>* AdditionalMeshes) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DeuteriumExtractor_C", "GetBuildingMeshes");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetBuildingMeshes", FnName));
 
 	Params::BP_DeuteriumExtractor_C_GetBuildingMeshes Parms{};
 

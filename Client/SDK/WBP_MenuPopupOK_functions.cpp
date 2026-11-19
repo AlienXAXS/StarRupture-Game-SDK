@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_MenuPopupOK_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MenuPopupOK_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -37,10 +35,8 @@ void UWBP_MenuPopupOK_C::Construct()
 
 void UWBP_MenuPopupOK_C::ExecuteUbergraph_WBP_MenuPopupOK(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MenuPopupOK_C", "ExecuteUbergraph_WBP_MenuPopupOK");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_MenuPopupOK_C", "ExecuteUbergraph_WBP_MenuPopupOK", FuncInfo);
 
 	Params::WBP_MenuPopupOK_C_ExecuteUbergraph_WBP_MenuPopupOK Parms{};
 
@@ -59,10 +55,8 @@ void UWBP_MenuPopupOK_C::ExecuteUbergraph_WBP_MenuPopupOK(int32 EntryPoint)
 
 struct FEventReply UWBP_MenuPopupOK_C::OnMouseButtonDown_0(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MenuPopupOK_C", "OnMouseButtonDown_0");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnMouseButtonDown_0", FnName));
 
 	Params::WBP_MenuPopupOK_C_OnMouseButtonDown_0 Parms{};
 

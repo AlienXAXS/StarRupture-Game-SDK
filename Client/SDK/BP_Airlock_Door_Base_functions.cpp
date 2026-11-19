@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_Airlock_Door_Base_C::ExecuteUbergraph_BP_Airlock_Door_Base(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Airlock_Door_Base_C", "ExecuteUbergraph_BP_Airlock_Door_Base");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Airlock_Door_Base_C", "ExecuteUbergraph_BP_Airlock_Door_Base", FuncInfo);
 
 	Params::BP_Airlock_Door_Base_C_ExecuteUbergraph_BP_Airlock_Door_Base Parms{};
 
@@ -45,10 +43,8 @@ void ABP_Airlock_Door_Base_C::ExecuteUbergraph_BP_Airlock_Door_Base(int32 EntryP
 
 void ABP_Airlock_Door_Base_C::Get_EmissiveColor(EDoorState State, struct FSlateColor* Color, struct FLinearColor* Linear_Color)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Airlock_Door_Base_C", "Get_EmissiveColor");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Get_EmissiveColor", FnName));
 
 	Params::BP_Airlock_Door_Base_C_Get_EmissiveColor Parms{};
 
@@ -73,10 +69,8 @@ void ABP_Airlock_Door_Base_C::Get_EmissiveColor(EDoorState State, struct FSlateC
 
 void ABP_Airlock_Door_Base_C::Get_TerminalColor(EDoorState Door_State, struct FSlateColor* Color, struct FLinearColor* Linear_Color)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Airlock_Door_Base_C", "Get_TerminalColor");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Get_TerminalColor", FnName));
 
 	Params::BP_Airlock_Door_Base_C_Get_TerminalColor Parms{};
 
@@ -100,10 +94,8 @@ void ABP_Airlock_Door_Base_C::Get_TerminalColor(EDoorState Door_State, struct FS
 
 void ABP_Airlock_Door_Base_C::Get_TerminalIcon(EDoorState Door_State, class UTexture2D** Texture)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Airlock_Door_Base_C", "Get_TerminalIcon");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Get_TerminalIcon", FnName));
 
 	Params::BP_Airlock_Door_Base_C_Get_TerminalIcon Parms{};
 
@@ -124,10 +116,8 @@ void ABP_Airlock_Door_Base_C::Get_TerminalIcon(EDoorState Door_State, class UTex
 
 void ABP_Airlock_Door_Base_C::GetDoorTextureForDoorState(EDoorState Door_State, class UTexture2D** Texture)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Airlock_Door_Base_C", "GetDoorTextureForDoorState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetDoorTextureForDoorState", FnName));
 
 	Params::BP_Airlock_Door_Base_C_GetDoorTextureForDoorState Parms{};
 
@@ -145,10 +135,8 @@ void ABP_Airlock_Door_Base_C::GetDoorTextureForDoorState(EDoorState Door_State, 
 
 void ABP_Airlock_Door_Base_C::GetTextureForRequiredItem()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Airlock_Door_Base_C", "GetTextureForRequiredItem");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetTextureForRequiredItem", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -161,10 +149,8 @@ void ABP_Airlock_Door_Base_C::GetTextureForRequiredItem()
 
 bool ABP_Airlock_Door_Base_C::PlayDoorCloseSound()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Airlock_Door_Base_C", "PlayDoorCloseSound");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PlayDoorCloseSound", FnName));
 
 	Params::BP_Airlock_Door_Base_C_PlayDoorCloseSound Parms{};
 
@@ -181,10 +167,8 @@ bool ABP_Airlock_Door_Base_C::PlayDoorCloseSound()
 
 bool ABP_Airlock_Door_Base_C::PlayDoorOpenSound()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Airlock_Door_Base_C", "PlayDoorOpenSound");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PlayDoorOpenSound", FnName));
 
 	Params::BP_Airlock_Door_Base_C_PlayDoorOpenSound Parms{};
 
@@ -201,10 +185,8 @@ bool ABP_Airlock_Door_Base_C::PlayDoorOpenSound()
 
 bool ABP_Airlock_Door_Base_C::PlayInteractionSuccessfulSound()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Airlock_Door_Base_C", "PlayInteractionSuccessfulSound");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PlayInteractionSuccessfulSound", FnName));
 
 	Params::BP_Airlock_Door_Base_C_PlayInteractionSuccessfulSound Parms{};
 
@@ -221,10 +203,8 @@ bool ABP_Airlock_Door_Base_C::PlayInteractionSuccessfulSound()
 
 bool ABP_Airlock_Door_Base_C::PlayInteractionUnSuccessfulSound()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Airlock_Door_Base_C", "PlayInteractionUnSuccessfulSound");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PlayInteractionUnSuccessfulSound", FnName));
 
 	Params::BP_Airlock_Door_Base_C_PlayInteractionUnSuccessfulSound Parms{};
 
@@ -242,10 +222,8 @@ bool ABP_Airlock_Door_Base_C::PlayInteractionUnSuccessfulSound()
 
 void ABP_Airlock_Door_Base_C::SetDynamicMaterial(class UStaticMeshComponent* StaticMesh, class UMaterialInstanceDynamic* MaterialInstanceDynamic)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Airlock_Door_Base_C", "SetDynamicMaterial");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetDynamicMaterial", FnName));
 
 	Params::BP_Airlock_Door_Base_C_SetDynamicMaterial Parms{};
 
@@ -261,10 +239,8 @@ void ABP_Airlock_Door_Base_C::SetDynamicMaterial(class UStaticMeshComponent* Sta
 
 void ABP_Airlock_Door_Base_C::UpdateMaterials()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Airlock_Door_Base_C", "UpdateMaterials");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateMaterials", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -275,10 +251,8 @@ void ABP_Airlock_Door_Base_C::UpdateMaterials()
 
 void ABP_Airlock_Door_Base_C::UserConstructionScript()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Airlock_Door_Base_C", "UserConstructionScript");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UserConstructionScript", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

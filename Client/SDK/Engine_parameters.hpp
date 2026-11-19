@@ -10,17 +10,20 @@
 
 #include "Basic.hpp"
 
-#include "Chaos_structs.hpp"
 #include "Engine_structs.hpp"
+#include "Chaos_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "InputCore_structs.hpp"
 #include "AudioExtensions_structs.hpp"
+#include "AudioExtensions_parameters.hpp"
 #include "ImageCore_structs.hpp"
 #include "PhysicsCore_structs.hpp"
 #include "FieldNotification_structs.hpp"
 #include "UniversalObjectLocator_structs.hpp"
 #include "RenderCore_structs.hpp"
 #include "TypedElementFramework_structs.hpp"
+#include "TypedElementRuntime_structs.hpp"
+#include "TypedElementRuntime_parameters.hpp"
 #include "NetCore_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "Slate_structs.hpp"
@@ -150,6 +153,38 @@ public:
 	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_BlueprintInstancedStructLibrary_SetInstancedStructValue;
+
+// Function Engine.Interface_AssetUserData.AddAssetUserDataOfClass
+// 0x0010 (0x0010 - 0x0000)
+struct Interface_AssetUserData_AddAssetUserDataOfClass final
+{
+public:
+	TSubclassOf<class UAssetUserData>             InUserDataClass;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_Interface_AssetUserData_AddAssetUserDataOfClass;
+
+// Function Engine.Interface_AssetUserData.GetAssetUserDataOfClass
+// 0x0010 (0x0010 - 0x0000)
+struct Interface_AssetUserData_GetAssetUserDataOfClass final
+{
+public:
+	TSubclassOf<class UAssetUserData>             InUserDataClass;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAssetUserData*                         ReturnValue;                                       // 0x0008(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Interface_AssetUserData_GetAssetUserDataOfClass;
+
+// Function Engine.Interface_AssetUserData.HasAssetUserDataOfClass
+// 0x0010 (0x0010 - 0x0000)
+struct Interface_AssetUserData_HasAssetUserDataOfClass final
+{
+public:
+	TSubclassOf<class UAssetUserData>             InUserDataClass;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_Interface_AssetUserData_HasAssetUserDataOfClass;
 
 // Function Engine.SoundBase.IsAttenuationSettingsEditable
 // 0x0001 (0x0001 - 0x0000)
@@ -4635,6 +4670,44 @@ public:
 };
 DUMPER7_ASSERTS_PlayerCameraManager_GetOwningPlayerController;
 
+// Function Engine.LevelInstanceInterface.SetWorldAsset
+// 0x0030 (0x0030 - 0x0000)
+struct LevelInstanceInterface_SetWorldAsset final
+{
+public:
+	TSoftObjectPtr<class UWorld>                  WorldAsset;                                        // 0x0000(0x0028)(Parm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0028(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_LevelInstanceInterface_SetWorldAsset;
+
+// Function Engine.LevelInstanceInterface.GetLoadedLevel
+// 0x0008 (0x0008 - 0x0000)
+struct LevelInstanceInterface_GetLoadedLevel final
+{
+public:
+	class ULevel*                                 ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LevelInstanceInterface_GetLoadedLevel;
+
+// Function Engine.LevelInstanceInterface.GetWorldAsset
+// 0x0028 (0x0028 - 0x0000)
+struct LevelInstanceInterface_GetWorldAsset final
+{
+public:
+	TSoftObjectPtr<class UWorld>                  ReturnValue;                                       // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LevelInstanceInterface_GetWorldAsset;
+
+// Function Engine.LevelInstanceInterface.IsLoaded
+// 0x0001 (0x0001 - 0x0000)
+struct LevelInstanceInterface_IsLoaded final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_LevelInstanceInterface_IsLoaded;
+
 // Function Engine.CameraShakeBase.SetRootShakePattern
 // 0x0008 (0x0008 - 0x0000)
 struct CameraShakeBase_SetRootShakePattern final
@@ -7777,38 +7850,6 @@ public:
 	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FieldNotificationLibrary_SetPropertyValueAndBroadcastFields;
-
-// Function Engine.Interface_AssetUserData.AddAssetUserDataOfClass
-// 0x0010 (0x0010 - 0x0000)
-struct Interface_AssetUserData_AddAssetUserDataOfClass final
-{
-public:
-	TSubclassOf<class UAssetUserData>             InUserDataClass;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_Interface_AssetUserData_AddAssetUserDataOfClass;
-
-// Function Engine.Interface_AssetUserData.GetAssetUserDataOfClass
-// 0x0010 (0x0010 - 0x0000)
-struct Interface_AssetUserData_GetAssetUserDataOfClass final
-{
-public:
-	TSubclassOf<class UAssetUserData>             InUserDataClass;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UAssetUserData*                         ReturnValue;                                       // 0x0008(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Interface_AssetUserData_GetAssetUserDataOfClass;
-
-// Function Engine.Interface_AssetUserData.HasAssetUserDataOfClass
-// 0x0010 (0x0010 - 0x0000)
-struct Interface_AssetUserData_HasAssetUserDataOfClass final
-{
-public:
-	TSubclassOf<class UAssetUserData>             InUserDataClass;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_Interface_AssetUserData_HasAssetUserDataOfClass;
 
 // Function Engine.StaticMeshActor.SetMobility
 // 0x0001 (0x0001 - 0x0000)
@@ -13739,6 +13780,119 @@ public:
 };
 DUMPER7_ASSERTS_MovementComponent_IsExceedingMaxSpeed;
 
+// Function TypedElementRuntime.TypedElementSelectionInterface.AllowSelectionModifiers
+// 0x0020 (0x0020 - 0x0000)
+struct TypedElementSelectionInterface_AllowSelectionModifiers final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FScriptTypedElementListProxy           InSelectionSet;                                    // 0x0008(0x0010)(ConstParm, Parm, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_TypedElementSelectionInterface_AllowSelectionModifiers;
+
+// Function TypedElementRuntime.TypedElementSelectionInterface.CanDeselectElement
+// 0x0020 (0x0020 - 0x0000)
+struct TypedElementSelectionInterface_CanDeselectElement final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FTypedElementSelectionOptions          InSelectionOptions;                                // 0x0008(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_TypedElementSelectionInterface_CanDeselectElement;
+
+// Function TypedElementRuntime.TypedElementSelectionInterface.CanSelectElement
+// 0x0020 (0x0020 - 0x0000)
+struct TypedElementSelectionInterface_CanSelectElement final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FTypedElementSelectionOptions          InSelectionOptions;                                // 0x0008(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_TypedElementSelectionInterface_CanSelectElement;
+
+// Function TypedElementRuntime.TypedElementSelectionInterface.DeselectElement
+// 0x0030 (0x0030 - 0x0000)
+struct TypedElementSelectionInterface_DeselectElement final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FScriptTypedElementListProxy           InSelectionSet;                                    // 0x0008(0x0010)(Parm, NativeAccessSpecifierPublic)
+	struct FTypedElementSelectionOptions          InSelectionOptions;                                // 0x0018(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0028(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_TypedElementSelectionInterface_DeselectElement;
+
+// Function TypedElementRuntime.TypedElementSelectionInterface.GetSelectionElement
+// 0x0028 (0x0028 - 0x0000)
+struct TypedElementSelectionInterface_GetSelectionElement final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FScriptTypedElementListProxy           InCurrentSelection;                                // 0x0008(0x0010)(ConstParm, Parm, NativeAccessSpecifierPublic)
+	ETypedElementSelectionMethod                  InSelectionMethod;                                 // 0x0018(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FScriptTypedElementHandle              ReturnValue;                                       // 0x0020(0x0008)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_TypedElementSelectionInterface_GetSelectionElement;
+
+// Function TypedElementRuntime.TypedElementSelectionInterface.IsElementSelected
+// 0x0028 (0x0028 - 0x0000)
+struct TypedElementSelectionInterface_IsElementSelected final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FScriptTypedElementListProxy           InSelectionSet;                                    // 0x0008(0x0010)(ConstParm, Parm, NativeAccessSpecifierPublic)
+	struct FTypedElementIsSelectedOptions         InSelectionOptions;                                // 0x0018(0x000C)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0024(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_25[0x3];                                       // 0x0025(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_TypedElementSelectionInterface_IsElementSelected;
+
+// Function TypedElementRuntime.TypedElementSelectionInterface.SelectElement
+// 0x0030 (0x0030 - 0x0000)
+struct TypedElementSelectionInterface_SelectElement final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FScriptTypedElementListProxy           InSelectionSet;                                    // 0x0008(0x0010)(Parm, NativeAccessSpecifierPublic)
+	struct FTypedElementSelectionOptions          InSelectionOptions;                                // 0x0018(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0028(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_TypedElementSelectionInterface_SelectElement;
+
+// Function TypedElementRuntime.TypedElementPrimitiveCustomDataInterface.SetCustomData
+// 0x0020 (0x0020 - 0x0000)
+struct TypedElementPrimitiveCustomDataInterface_SetCustomData final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	TArray<float>                                 CustomDataFloats;                                  // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          bMarkRenderStateDirty;                             // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_TypedElementPrimitiveCustomDataInterface_SetCustomData;
+
+// Function TypedElementRuntime.TypedElementPrimitiveCustomDataInterface.SetCustomDataValue
+// 0x0018 (0x0018 - 0x0000)
+struct TypedElementPrimitiveCustomDataInterface_SetCustomDataValue final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	int32                                         CustomDataIndex;                                   // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CustomDataValue;                                   // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bMarkRenderStateDirty;                             // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_TypedElementPrimitiveCustomDataInterface_SetCustomDataValue;
+
 // Function Engine.Emitter.OnParticleSystemFinished
 // 0x0008 (0x0008 - 0x0000)
 struct Emitter_OnParticleSystemFinished final
@@ -13815,6 +13969,24 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_Emitter_IsActive;
+
+// Function Engine.CameraLensEffectInterface.GetParticleComponents
+// 0x0010 (0x0010 - 0x0000)
+struct CameraLensEffectInterface_GetParticleComponents final
+{
+public:
+	TArray<class UFXSystemComponent*>             ReturnValue;                                       // 0x0000(0x0010)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CameraLensEffectInterface_GetParticleComponents;
+
+// Function Engine.CameraLensEffectInterface.GetPrimaryParticleComponent
+// 0x0008 (0x0008 - 0x0000)
+struct CameraLensEffectInterface_GetPrimaryParticleComponent final
+{
+public:
+	class UFXSystemComponent*                     ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CameraLensEffectInterface_GetPrimaryParticleComponent;
 
 // Function Engine.Exporter.RunAssetExportTask
 // 0x0010 (0x0010 - 0x0000)
@@ -16308,6 +16480,256 @@ public:
 };
 DUMPER7_ASSERTS_AnimationDataModel_IsValidBoneTrackName;
 
+// Function Engine.TypedElementWorldInterface.CanDeleteElement
+// 0x0010 (0x0010 - 0x0000)
+struct TypedElementWorldInterface_CanDeleteElement final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_TypedElementWorldInterface_CanDeleteElement;
+
+// Function Engine.TypedElementWorldInterface.CanDuplicateElement
+// 0x0010 (0x0010 - 0x0000)
+struct TypedElementWorldInterface_CanDuplicateElement final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_TypedElementWorldInterface_CanDuplicateElement;
+
+// Function Engine.TypedElementWorldInterface.CanEditElement
+// 0x0010 (0x0010 - 0x0000)
+struct TypedElementWorldInterface_CanEditElement final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_TypedElementWorldInterface_CanEditElement;
+
+// Function Engine.TypedElementWorldInterface.CanMoveElement
+// 0x0010 (0x0010 - 0x0000)
+struct TypedElementWorldInterface_CanMoveElement final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	ETypedElementWorldType                        InWorldType;                                       // 0x0008(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0009(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_TypedElementWorldInterface_CanMoveElement;
+
+// Function Engine.TypedElementWorldInterface.CanPromoteElement
+// 0x0010 (0x0010 - 0x0000)
+struct TypedElementWorldInterface_CanPromoteElement final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_TypedElementWorldInterface_CanPromoteElement;
+
+// Function Engine.TypedElementWorldInterface.CanScaleElement
+// 0x0010 (0x0010 - 0x0000)
+struct TypedElementWorldInterface_CanScaleElement final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_TypedElementWorldInterface_CanScaleElement;
+
+// Function Engine.TypedElementWorldInterface.DeleteElement
+// 0x0020 (0x0020 - 0x0000)
+struct TypedElementWorldInterface_DeleteElement final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	class UWorld*                                 InWorld;                                           // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UTypedElementSelectionSet*              InSelectionSet;                                    // 0x0010(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTypedElementDeletionOptions           InDeletionOptions;                                 // 0x0018(0x0003)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x001B(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_TypedElementWorldInterface_DeleteElement;
+
+// Function Engine.TypedElementWorldInterface.DuplicateElement
+// 0x0030 (0x0030 - 0x0000)
+struct TypedElementWorldInterface_DuplicateElement final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	class UWorld*                                 InWorld;                                           // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                InLocationOffset;                                  // 0x0010(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FScriptTypedElementHandle              ReturnValue;                                       // 0x0028(0x0008)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_TypedElementWorldInterface_DuplicateElement;
+
+// Function Engine.TypedElementWorldInterface.GetBounds
+// 0x0048 (0x0048 - 0x0000)
+struct TypedElementWorldInterface_GetBounds final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FBoxSphereBounds                       OutBounds;                                         // 0x0008(0x0038)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0040(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_TypedElementWorldInterface_GetBounds;
+
+// Function Engine.TypedElementWorldInterface.GetOwnerLevel
+// 0x0010 (0x0010 - 0x0000)
+struct TypedElementWorldInterface_GetOwnerLevel final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	class ULevel*                                 ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_TypedElementWorldInterface_GetOwnerLevel;
+
+// Function Engine.TypedElementWorldInterface.GetOwnerWorld
+// 0x0010 (0x0010 - 0x0000)
+struct TypedElementWorldInterface_GetOwnerWorld final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	class UWorld*                                 ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_TypedElementWorldInterface_GetOwnerWorld;
+
+// Function Engine.TypedElementWorldInterface.GetPivotOffset
+// 0x0028 (0x0028 - 0x0000)
+struct TypedElementWorldInterface_GetPivotOffset final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FVector                                OutPivotOffset;                                    // 0x0008(0x0018)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_TypedElementWorldInterface_GetPivotOffset;
+
+// Function Engine.TypedElementWorldInterface.GetRelativeTransform
+// 0x0080 (0x0080 - 0x0000)
+struct TypedElementWorldInterface_GetRelativeTransform final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             OutTransform;                                      // 0x0010(0x0060)(Parm, OutParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0070(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_71[0xF];                                       // 0x0071(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_TypedElementWorldInterface_GetRelativeTransform;
+
+// Function Engine.TypedElementWorldInterface.GetWorldTransform
+// 0x0080 (0x0080 - 0x0000)
+struct TypedElementWorldInterface_GetWorldTransform final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             OutTransform;                                      // 0x0010(0x0060)(Parm, OutParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0070(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_71[0xF];                                       // 0x0071(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_TypedElementWorldInterface_GetWorldTransform;
+
+// Function Engine.TypedElementWorldInterface.IsTemplateElement
+// 0x0010 (0x0010 - 0x0000)
+struct TypedElementWorldInterface_IsTemplateElement final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_TypedElementWorldInterface_IsTemplateElement;
+
+// Function Engine.TypedElementWorldInterface.NotifyMovementEnded
+// 0x0008 (0x0008 - 0x0000)
+struct TypedElementWorldInterface_NotifyMovementEnded final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_TypedElementWorldInterface_NotifyMovementEnded;
+
+// Function Engine.TypedElementWorldInterface.NotifyMovementOngoing
+// 0x0008 (0x0008 - 0x0000)
+struct TypedElementWorldInterface_NotifyMovementOngoing final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_TypedElementWorldInterface_NotifyMovementOngoing;
+
+// Function Engine.TypedElementWorldInterface.NotifyMovementStarted
+// 0x0008 (0x0008 - 0x0000)
+struct TypedElementWorldInterface_NotifyMovementStarted final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_TypedElementWorldInterface_NotifyMovementStarted;
+
+// Function Engine.TypedElementWorldInterface.PromoteElement
+// 0x0018 (0x0018 - 0x0000)
+struct TypedElementWorldInterface_PromoteElement final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	class UWorld*                                 OverrideWorld;                                     // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FScriptTypedElementHandle              ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_TypedElementWorldInterface_PromoteElement;
+
+// Function Engine.TypedElementWorldInterface.SetPivotOffset
+// 0x0028 (0x0028 - 0x0000)
+struct TypedElementWorldInterface_SetPivotOffset final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FVector                                InPivotOffset;                                     // 0x0008(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_TypedElementWorldInterface_SetPivotOffset;
+
+// Function Engine.TypedElementWorldInterface.SetRelativeTransform
+// 0x0080 (0x0080 - 0x0000)
+struct TypedElementWorldInterface_SetRelativeTransform final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             InTransform;                                       // 0x0010(0x0060)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0070(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_71[0xF];                                       // 0x0071(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_TypedElementWorldInterface_SetRelativeTransform;
+
+// Function Engine.TypedElementWorldInterface.SetWorldTransform
+// 0x0080 (0x0080 - 0x0000)
+struct TypedElementWorldInterface_SetWorldTransform final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             InTransform;                                       // 0x0010(0x0060)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0070(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_71[0xF];                                       // 0x0071(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_TypedElementWorldInterface_SetWorldTransform;
+
 // Function Engine.AnimationCurveIdentifierExtensions.GetName
 // 0x0014 (0x0014 - 0x0000)
 struct AnimationCurveIdentifierExtensions_GetName final
@@ -16968,256 +17390,6 @@ public:
 	class FText                                   ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_KismetTextLibrary_TextTrimTrailing;
-
-// Function Engine.TypedElementWorldInterface.CanDeleteElement
-// 0x0010 (0x0010 - 0x0000)
-struct TypedElementWorldInterface_CanDeleteElement final
-{
-public:
-	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_TypedElementWorldInterface_CanDeleteElement;
-
-// Function Engine.TypedElementWorldInterface.CanDuplicateElement
-// 0x0010 (0x0010 - 0x0000)
-struct TypedElementWorldInterface_CanDuplicateElement final
-{
-public:
-	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_TypedElementWorldInterface_CanDuplicateElement;
-
-// Function Engine.TypedElementWorldInterface.CanEditElement
-// 0x0010 (0x0010 - 0x0000)
-struct TypedElementWorldInterface_CanEditElement final
-{
-public:
-	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_TypedElementWorldInterface_CanEditElement;
-
-// Function Engine.TypedElementWorldInterface.CanMoveElement
-// 0x0010 (0x0010 - 0x0000)
-struct TypedElementWorldInterface_CanMoveElement final
-{
-public:
-	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	ETypedElementWorldType                        InWorldType;                                       // 0x0008(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0009(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_TypedElementWorldInterface_CanMoveElement;
-
-// Function Engine.TypedElementWorldInterface.CanPromoteElement
-// 0x0010 (0x0010 - 0x0000)
-struct TypedElementWorldInterface_CanPromoteElement final
-{
-public:
-	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_TypedElementWorldInterface_CanPromoteElement;
-
-// Function Engine.TypedElementWorldInterface.CanScaleElement
-// 0x0010 (0x0010 - 0x0000)
-struct TypedElementWorldInterface_CanScaleElement final
-{
-public:
-	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_TypedElementWorldInterface_CanScaleElement;
-
-// Function Engine.TypedElementWorldInterface.DeleteElement
-// 0x0020 (0x0020 - 0x0000)
-struct TypedElementWorldInterface_DeleteElement final
-{
-public:
-	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	class UWorld*                                 InWorld;                                           // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UTypedElementSelectionSet*              InSelectionSet;                                    // 0x0010(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTypedElementDeletionOptions           InDeletionOptions;                                 // 0x0018(0x0003)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x001B(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_TypedElementWorldInterface_DeleteElement;
-
-// Function Engine.TypedElementWorldInterface.DuplicateElement
-// 0x0030 (0x0030 - 0x0000)
-struct TypedElementWorldInterface_DuplicateElement final
-{
-public:
-	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	class UWorld*                                 InWorld;                                           // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                InLocationOffset;                                  // 0x0010(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FScriptTypedElementHandle              ReturnValue;                                       // 0x0028(0x0008)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_TypedElementWorldInterface_DuplicateElement;
-
-// Function Engine.TypedElementWorldInterface.GetBounds
-// 0x0048 (0x0048 - 0x0000)
-struct TypedElementWorldInterface_GetBounds final
-{
-public:
-	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	struct FBoxSphereBounds                       OutBounds;                                         // 0x0008(0x0038)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0040(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_TypedElementWorldInterface_GetBounds;
-
-// Function Engine.TypedElementWorldInterface.GetOwnerLevel
-// 0x0010 (0x0010 - 0x0000)
-struct TypedElementWorldInterface_GetOwnerLevel final
-{
-public:
-	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	class ULevel*                                 ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_TypedElementWorldInterface_GetOwnerLevel;
-
-// Function Engine.TypedElementWorldInterface.GetOwnerWorld
-// 0x0010 (0x0010 - 0x0000)
-struct TypedElementWorldInterface_GetOwnerWorld final
-{
-public:
-	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	class UWorld*                                 ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_TypedElementWorldInterface_GetOwnerWorld;
-
-// Function Engine.TypedElementWorldInterface.GetPivotOffset
-// 0x0028 (0x0028 - 0x0000)
-struct TypedElementWorldInterface_GetPivotOffset final
-{
-public:
-	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	struct FVector                                OutPivotOffset;                                    // 0x0008(0x0018)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_TypedElementWorldInterface_GetPivotOffset;
-
-// Function Engine.TypedElementWorldInterface.GetRelativeTransform
-// 0x0080 (0x0080 - 0x0000)
-struct TypedElementWorldInterface_GetRelativeTransform final
-{
-public:
-	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             OutTransform;                                      // 0x0010(0x0060)(Parm, OutParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0070(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_71[0xF];                                       // 0x0071(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_TypedElementWorldInterface_GetRelativeTransform;
-
-// Function Engine.TypedElementWorldInterface.GetWorldTransform
-// 0x0080 (0x0080 - 0x0000)
-struct TypedElementWorldInterface_GetWorldTransform final
-{
-public:
-	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             OutTransform;                                      // 0x0010(0x0060)(Parm, OutParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0070(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_71[0xF];                                       // 0x0071(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_TypedElementWorldInterface_GetWorldTransform;
-
-// Function Engine.TypedElementWorldInterface.IsTemplateElement
-// 0x0010 (0x0010 - 0x0000)
-struct TypedElementWorldInterface_IsTemplateElement final
-{
-public:
-	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_TypedElementWorldInterface_IsTemplateElement;
-
-// Function Engine.TypedElementWorldInterface.NotifyMovementEnded
-// 0x0008 (0x0008 - 0x0000)
-struct TypedElementWorldInterface_NotifyMovementEnded final
-{
-public:
-	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_TypedElementWorldInterface_NotifyMovementEnded;
-
-// Function Engine.TypedElementWorldInterface.NotifyMovementOngoing
-// 0x0008 (0x0008 - 0x0000)
-struct TypedElementWorldInterface_NotifyMovementOngoing final
-{
-public:
-	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_TypedElementWorldInterface_NotifyMovementOngoing;
-
-// Function Engine.TypedElementWorldInterface.NotifyMovementStarted
-// 0x0008 (0x0008 - 0x0000)
-struct TypedElementWorldInterface_NotifyMovementStarted final
-{
-public:
-	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_TypedElementWorldInterface_NotifyMovementStarted;
-
-// Function Engine.TypedElementWorldInterface.PromoteElement
-// 0x0018 (0x0018 - 0x0000)
-struct TypedElementWorldInterface_PromoteElement final
-{
-public:
-	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	class UWorld*                                 OverrideWorld;                                     // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FScriptTypedElementHandle              ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_TypedElementWorldInterface_PromoteElement;
-
-// Function Engine.TypedElementWorldInterface.SetPivotOffset
-// 0x0028 (0x0028 - 0x0000)
-struct TypedElementWorldInterface_SetPivotOffset final
-{
-public:
-	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	struct FVector                                InPivotOffset;                                     // 0x0008(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_TypedElementWorldInterface_SetPivotOffset;
-
-// Function Engine.TypedElementWorldInterface.SetRelativeTransform
-// 0x0080 (0x0080 - 0x0000)
-struct TypedElementWorldInterface_SetRelativeTransform final
-{
-public:
-	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             InTransform;                                       // 0x0010(0x0060)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0070(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_71[0xF];                                       // 0x0071(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_TypedElementWorldInterface_SetRelativeTransform;
-
-// Function Engine.TypedElementWorldInterface.SetWorldTransform
-// 0x0080 (0x0080 - 0x0000)
-struct TypedElementWorldInterface_SetWorldTransform final
-{
-public:
-	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             InTransform;                                       // 0x0010(0x0060)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0070(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_71[0xF];                                       // 0x0071(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_TypedElementWorldInterface_SetWorldTransform;
 
 // Function Engine.World.K2_GetWorldSettings
 // 0x0008 (0x0008 - 0x0000)
@@ -31156,24 +31328,6 @@ public:
 };
 DUMPER7_ASSERTS_BlueprintSetLibrary_SetSetPropertyByName;
 
-// Function Engine.CameraLensEffectInterface.GetParticleComponents
-// 0x0010 (0x0010 - 0x0000)
-struct CameraLensEffectInterface_GetParticleComponents final
-{
-public:
-	TArray<class UFXSystemComponent*>             ReturnValue;                                       // 0x0000(0x0010)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CameraLensEffectInterface_GetParticleComponents;
-
-// Function Engine.CameraLensEffectInterface.GetPrimaryParticleComponent
-// 0x0008 (0x0008 - 0x0000)
-struct CameraLensEffectInterface_GetPrimaryParticleComponent final
-{
-public:
-	class UFXSystemComponent*                     ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CameraLensEffectInterface_GetPrimaryParticleComponent;
-
 // Function Engine.CameraModifier.BlueprintModifyCamera
 // 0x0078 (0x0078 - 0x0000)
 struct CameraModifier_BlueprintModifyCamera final
@@ -32499,6 +32653,94 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_AudioComponent_IsVirtualized;
+
+// Function AudioExtensions.AudioParameterControllerInterface.SetBoolArrayParameter
+// 0x0018 (0x0018 - 0x0000)
+struct AudioParameterControllerInterface_SetBoolArrayParameter final
+{
+public:
+	class FName                                   InName;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<bool>                                  InValue;                                           // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AudioParameterControllerInterface_SetBoolArrayParameter;
+
+// Function AudioExtensions.AudioParameterControllerInterface.SetFloatArrayParameter
+// 0x0018 (0x0018 - 0x0000)
+struct AudioParameterControllerInterface_SetFloatArrayParameter final
+{
+public:
+	class FName                                   InName;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<float>                                 InValue;                                           // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AudioParameterControllerInterface_SetFloatArrayParameter;
+
+// Function AudioExtensions.AudioParameterControllerInterface.SetIntArrayParameter
+// 0x0018 (0x0018 - 0x0000)
+struct AudioParameterControllerInterface_SetIntArrayParameter final
+{
+public:
+	class FName                                   InName;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<int32>                                 InValue;                                           // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AudioParameterControllerInterface_SetIntArrayParameter;
+
+// Function AudioExtensions.AudioParameterControllerInterface.SetObjectArrayParameter
+// 0x0018 (0x0018 - 0x0000)
+struct AudioParameterControllerInterface_SetObjectArrayParameter final
+{
+public:
+	class FName                                   InName;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class UObject*>                        InValue;                                           // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AudioParameterControllerInterface_SetObjectArrayParameter;
+
+// Function AudioExtensions.AudioParameterControllerInterface.SetObjectParameter
+// 0x0010 (0x0010 - 0x0000)
+struct AudioParameterControllerInterface_SetObjectParameter final
+{
+public:
+	class FName                                   InName;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObject*                                InValue;                                           // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AudioParameterControllerInterface_SetObjectParameter;
+
+// Function AudioExtensions.AudioParameterControllerInterface.SetParameters_Blueprint
+// 0x0010 (0x0010 - 0x0000)
+struct AudioParameterControllerInterface_SetParameters_Blueprint final
+{
+public:
+	TArray<struct FAudioParameter>                InParameters;                                      // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AudioParameterControllerInterface_SetParameters_Blueprint;
+
+// Function AudioExtensions.AudioParameterControllerInterface.SetStringArrayParameter
+// 0x0018 (0x0018 - 0x0000)
+struct AudioParameterControllerInterface_SetStringArrayParameter final
+{
+public:
+	class FName                                   InName;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FString>                         InValue;                                           // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AudioParameterControllerInterface_SetStringArrayParameter;
+
+// Function AudioExtensions.AudioParameterControllerInterface.SetStringParameter
+// 0x0018 (0x0018 - 0x0000)
+struct AudioParameterControllerInterface_SetStringParameter final
+{
+public:
+	class FName                                   InName;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 InValue;                                           // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AudioParameterControllerInterface_SetStringParameter;
+
+// Function AudioExtensions.AudioParameterControllerInterface.SetTriggerParameter
+// 0x0008 (0x0008 - 0x0000)
+struct AudioParameterControllerInterface_SetTriggerParameter final
+{
+public:
+	class FName                                   InName;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AudioParameterControllerInterface_SetTriggerParameter;
 
 // Function Engine.ShapeComponent.SetLineThickness
 // 0x0004 (0x0004 - 0x0000)
@@ -35122,6 +35364,70 @@ public:
 	class UStaticMeshComponent*                   StaticMeshComponent;                               // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_MeshVertexPainterKismetLibrary_RemovePaintedVertices;
+
+// Function TypedElementRuntime.TypedElementAssetDataInterface.GetAllReferencedAssetDatas
+// 0x0018 (0x0018 - 0x0000)
+struct TypedElementAssetDataInterface_GetAllReferencedAssetDatas final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	TArray<struct FAssetData>                     ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_TypedElementAssetDataInterface_GetAllReferencedAssetDatas;
+
+// Function TypedElementRuntime.TypedElementAssetDataInterface.GetAssetData
+// 0x0070 (0x0070 - 0x0000)
+struct TypedElementAssetDataInterface_GetAssetData final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FAssetData                             ReturnValue;                                       // 0x0008(0x0068)(Parm, OutParm, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_TypedElementAssetDataInterface_GetAssetData;
+
+// Function TypedElementRuntime.TypedElementHierarchyInterface.GetChildElements
+// 0x0020 (0x0020 - 0x0000)
+struct TypedElementHierarchyInterface_GetChildElements final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	TArray<struct FScriptTypedElementHandle>      OutElementHandles;                                 // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	bool                                          bAllowCreate;                                      // 0x0018(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_TypedElementHierarchyInterface_GetChildElements;
+
+// Function TypedElementRuntime.TypedElementHierarchyInterface.GetParentElement
+// 0x0018 (0x0018 - 0x0000)
+struct TypedElementHierarchyInterface_GetParentElement final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          bAllowCreate;                                      // 0x0008(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FScriptTypedElementHandle              ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_TypedElementHierarchyInterface_GetParentElement;
+
+// Function TypedElementRuntime.TypedElementObjectInterface.GetObject
+// 0x0010 (0x0010 - 0x0000)
+struct TypedElementObjectInterface_GetObject final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	class UObject*                                ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_TypedElementObjectInterface_GetObject;
+
+// Function TypedElementRuntime.TypedElementObjectInterface.GetObjectClass
+// 0x0010 (0x0010 - 0x0000)
+struct TypedElementObjectInterface_GetObjectClass final
+{
+public:
+	struct FScriptTypedElementHandle              InElementHandle;                                   // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	class UClass*                                 ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_TypedElementObjectInterface_GetObjectClass;
 
 // Function Engine.TypedElementCommonActions.CopyNormalizedElements
 // 0x0018 (0x0018 - 0x0000)
@@ -42341,44 +42647,6 @@ public:
 	float                                         ReturnValue;                                       // 0x000C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_ImportanceSamplingLibrary_RandomSobolFloat;
-
-// Function Engine.LevelInstanceInterface.SetWorldAsset
-// 0x0030 (0x0030 - 0x0000)
-struct LevelInstanceInterface_SetWorldAsset final
-{
-public:
-	TSoftObjectPtr<class UWorld>                  WorldAsset;                                        // 0x0000(0x0028)(Parm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0028(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_LevelInstanceInterface_SetWorldAsset;
-
-// Function Engine.LevelInstanceInterface.GetLoadedLevel
-// 0x0008 (0x0008 - 0x0000)
-struct LevelInstanceInterface_GetLoadedLevel final
-{
-public:
-	class ULevel*                                 ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LevelInstanceInterface_GetLoadedLevel;
-
-// Function Engine.LevelInstanceInterface.GetWorldAsset
-// 0x0028 (0x0028 - 0x0000)
-struct LevelInstanceInterface_GetWorldAsset final
-{
-public:
-	TSoftObjectPtr<class UWorld>                  ReturnValue;                                       // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LevelInstanceInterface_GetWorldAsset;
-
-// Function Engine.LevelInstanceInterface.IsLoaded
-// 0x0001 (0x0001 - 0x0000)
-struct LevelInstanceInterface_IsLoaded final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_LevelInstanceInterface_IsLoaded;
 
 // Function Engine.LevelScriptActor.RemoteEvent
 // 0x000C (0x000C - 0x0000)

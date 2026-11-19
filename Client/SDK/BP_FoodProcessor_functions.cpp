@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void ABP_FoodProcessor_C::CustomEvent()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FoodProcessor_C", "CustomEvent");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"CustomEvent", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -37,10 +35,8 @@ void ABP_FoodProcessor_C::CustomEvent()
 
 void ABP_FoodProcessor_C::ExecuteUbergraph_BP_FoodProcessor(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FoodProcessor_C", "ExecuteUbergraph_BP_FoodProcessor");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_FoodProcessor_C", "ExecuteUbergraph_BP_FoodProcessor", FuncInfo);
 
 	Params::BP_FoodProcessor_C_ExecuteUbergraph_BP_FoodProcessor Parms{};
 
@@ -57,10 +53,8 @@ void ABP_FoodProcessor_C::ExecuteUbergraph_BP_FoodProcessor(int32 EntryPoint)
 
 void ABP_FoodProcessor_C::OnBuildingStateChanged(ECrBuildingState InState)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FoodProcessor_C", "OnBuildingStateChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBuildingStateChanged", FnName));
 
 	Params::BP_FoodProcessor_C_OnBuildingStateChanged Parms{};
 
@@ -75,10 +69,8 @@ void ABP_FoodProcessor_C::OnBuildingStateChanged(ECrBuildingState InState)
 
 void ABP_FoodProcessor_C::OnItemCraftingComplete()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FoodProcessor_C", "OnItemCraftingComplete");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnItemCraftingComplete", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -91,10 +83,8 @@ void ABP_FoodProcessor_C::OnItemCraftingComplete()
 
 void ABP_FoodProcessor_C::OnUIOpened(bool bOpened)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FoodProcessor_C", "OnUIOpened");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnUIOpened", FnName));
 
 	Params::BP_FoodProcessor_C_OnUIOpened Parms{};
 
@@ -109,10 +99,8 @@ void ABP_FoodProcessor_C::OnUIOpened(bool bOpened)
 
 void ABP_FoodProcessor_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FoodProcessor_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -123,10 +111,8 @@ void ABP_FoodProcessor_C::ReceiveBeginPlay()
 
 void ABP_FoodProcessor_C::Timeline__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FoodProcessor_C", "Timeline__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -137,10 +123,8 @@ void ABP_FoodProcessor_C::Timeline__FinishedFunc()
 
 void ABP_FoodProcessor_C::Timeline__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FoodProcessor_C", "Timeline__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

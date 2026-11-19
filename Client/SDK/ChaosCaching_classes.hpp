@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "ChaosCaching_structs.hpp"
 #include "MovieSceneTracks_classes.hpp"
+#include "ChaosCaching_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "Engine_structs.hpp"
@@ -129,9 +129,12 @@ public:
 DUMPER7_ASSERTS_AChaosCachePlayer;
 
 // Class ChaosCaching.ChaosCacheData
-// 0x0000 (0x0000 - 0x0000)
-class IChaosCacheData final
+// 0x0008 (0x0008 - 0x0000)
+class IChaosCacheData
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -227,10 +230,9 @@ DUMPER7_ASSERTS_UMovieSceneChaosCacheSection;
 
 // Class ChaosCaching.MovieSceneChaosCacheTrack
 // 0x0018 (0x0130 - 0x0118)
-class UMovieSceneChaosCacheTrack final : public UMovieSceneNameableTrack
+class UMovieSceneChaosCacheTrack final : public UMovieSceneNameableTrack, public IMovieSceneTrackTemplateProducer
 {
 public:
-	uint8                                         Pad_118[0x8];                                      // 0x0118(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UMovieSceneSection*>             AnimationSections;                                 // 0x0120(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
 
 public:

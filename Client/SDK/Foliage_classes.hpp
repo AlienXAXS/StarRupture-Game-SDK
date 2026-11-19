@@ -489,10 +489,9 @@ DUMPER7_ASSERTS_UProceduralFoliageTile;
 
 // Class Foliage.ProceduralFoliageVolume
 // 0x0010 (0x02F0 - 0x02E0)
-class AProceduralFoliageVolume final : public AVolume
+class AProceduralFoliageVolume final : public AVolume, public IWorldPartitionActorLoaderInterface
 {
 public:
-	uint8                                         Pad_2E0[0x8];                                      // 0x02E0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class UProceduralFoliageComponent*            ProceduralComponent;                               // 0x02E8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 
 public:

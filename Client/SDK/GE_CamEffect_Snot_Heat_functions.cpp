@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UGE_CamEffect_Snot_Heat_C::ExecuteUbergraph_GE_CamEffect_Snot_Heat(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GE_CamEffect_Snot_Heat_C", "ExecuteUbergraph_GE_CamEffect_Snot_Heat");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "GE_CamEffect_Snot_Heat_C", "ExecuteUbergraph_GE_CamEffect_Snot_Heat", FuncInfo);
 
 	Params::GE_CamEffect_Snot_Heat_C_ExecuteUbergraph_GE_CamEffect_Snot_Heat Parms{};
 
@@ -45,10 +43,8 @@ void UGE_CamEffect_Snot_Heat_C::ExecuteUbergraph_GE_CamEffect_Snot_Heat(int32 En
 
 void UGE_CamEffect_Snot_Heat_C::OnAttributeChanged_005920A8448198C38A0C39B27109AE82(const struct FGameplayAttribute& Attribute, float NewValue, float OldValue)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GE_CamEffect_Snot_Heat_C", "OnAttributeChanged_005920A8448198C38A0C39B27109AE82");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnAttributeChanged_005920A8448198C38A0C39B27109AE82", FnName));
 
 	Params::GE_CamEffect_Snot_Heat_C_OnAttributeChanged_005920A8448198C38A0C39B27109AE82 Parms{};
 
@@ -69,10 +65,8 @@ void UGE_CamEffect_Snot_Heat_C::OnAttributeChanged_005920A8448198C38A0C39B27109A
 
 void UGE_CamEffect_Snot_Heat_C::OnInitialized(class UAbilitySystemComponent* AbilitySystemComponent, TSubclassOf<class UGameplayEffect> GameplayEffect, class USceneComponent* OwnerRootComponent)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GE_CamEffect_Snot_Heat_C", "OnInitialized");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnInitialized", FnName));
 
 	Params::GE_CamEffect_Snot_Heat_C_OnInitialized Parms{};
 

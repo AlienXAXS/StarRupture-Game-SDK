@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_HeaderLineCorporationLevel_C::ExecuteUbergraph_WBP_HeaderLineCorporationLevel(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeaderLineCorporationLevel_C", "ExecuteUbergraph_WBP_HeaderLineCorporationLevel");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_HeaderLineCorporationLevel_C", "ExecuteUbergraph_WBP_HeaderLineCorporationLevel", FuncInfo);
 
 	Params::WBP_HeaderLineCorporationLevel_C_ExecuteUbergraph_WBP_HeaderLineCorporationLevel Parms{};
 
@@ -41,10 +39,8 @@ void UWBP_HeaderLineCorporationLevel_C::ExecuteUbergraph_WBP_HeaderLineCorporati
 
 void UWBP_HeaderLineCorporationLevel_C::HideStatusFlag()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeaderLineCorporationLevel_C", "HideStatusFlag");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"HideStatusFlag", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -58,10 +54,8 @@ void UWBP_HeaderLineCorporationLevel_C::HideStatusFlag()
 
 void UWBP_HeaderLineCorporationLevel_C::SetColors(const struct FLinearColor& Orange, const struct FLinearColor& Blue)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeaderLineCorporationLevel_C", "SetColors");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetColors", FnName));
 
 	Params::WBP_HeaderLineCorporationLevel_C_SetColors Parms{};
 
@@ -79,10 +73,8 @@ void UWBP_HeaderLineCorporationLevel_C::SetColors(const struct FLinearColor& Ora
 
 void UWBP_HeaderLineCorporationLevel_C::SetLinesEnabled(bool Enabled)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeaderLineCorporationLevel_C", "SetLinesEnabled");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetLinesEnabled", FnName));
 
 	Params::WBP_HeaderLineCorporationLevel_C_SetLinesEnabled Parms{};
 
@@ -99,10 +91,8 @@ void UWBP_HeaderLineCorporationLevel_C::SetLinesEnabled(bool Enabled)
 
 void UWBP_HeaderLineCorporationLevel_C::SetTextStyle(bool isHighlight)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeaderLineCorporationLevel_C", "SetTextStyle");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetTextStyle", FnName));
 
 	Params::WBP_HeaderLineCorporationLevel_C_SetTextStyle Parms{};
 
@@ -119,10 +109,8 @@ void UWBP_HeaderLineCorporationLevel_C::SetTextStyle(bool isHighlight)
 
 void UWBP_HeaderLineCorporationLevel_C::SetTitle(const class FText& InTitle)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeaderLineCorporationLevel_C", "SetTitle");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetTitle", FnName));
 
 	Params::WBP_HeaderLineCorporationLevel_C_SetTitle Parms{};
 
@@ -137,10 +125,8 @@ void UWBP_HeaderLineCorporationLevel_C::SetTitle(const class FText& InTitle)
 
 void UWBP_HeaderLineCorporationLevel_C::ShowClaimedStatusFlag()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeaderLineCorporationLevel_C", "ShowClaimedStatusFlag");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ShowClaimedStatusFlag", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -151,10 +137,8 @@ void UWBP_HeaderLineCorporationLevel_C::ShowClaimedStatusFlag()
 
 void UWBP_HeaderLineCorporationLevel_C::ShowUnclaimedStatusFlag()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeaderLineCorporationLevel_C", "ShowUnclaimedStatusFlag");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ShowUnclaimedStatusFlag", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

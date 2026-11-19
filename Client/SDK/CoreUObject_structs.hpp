@@ -672,8 +672,8 @@ public:
 		: X(X), Y(Y), Z(Z)
 	{
 	}
-	constexpr FVector(const FVector& other)
-		: X(other.X), Y(other.Y), Z(other.Z)
+	constexpr FVector(const FVector& Other)
+		: X(Other.X), Y(Other.Y), Z(Other.Z)
 	{
 	}
 	FVector& Normalize()
@@ -718,11 +718,11 @@ public:
 	
 		return *this;
 	}
-	FVector& operator=(const FVector& other)
+	FVector& operator=(const FVector& Other)
 	{
-		X = other.X;
-		Y = other.Y;
-		Z = other.Z;
+		X = Other.X;
+		Y = Other.Y;
+		Z = Other.Z;
 	
 		return *this;
 	}
@@ -864,8 +864,8 @@ public:
 		: X(X), Y(Y)
 	{
 	}
-	constexpr FVector2D(const FVector2D& other)
-		: X(other.X), Y(other.Y)
+	constexpr FVector2D(const FVector2D& Other)
+		: X(Other.X), Y(Other.Y)
 	{
 	}
 	FVector2D& Normalize()
@@ -910,10 +910,10 @@ public:
 	
 		return *this;
 	}
-	FVector2D& operator=(const FVector2D& other)
+	FVector2D& operator=(const FVector2D& Other)
 	{
-		X = other.X;
-		Y = other.Y;
+		X = Other.X;
+		Y = Other.Y;
 	
 		return *this;
 	}
@@ -1072,6 +1072,15 @@ public:
 };
 DUMPER7_ASSERTS_FInterpCurveTwoVectors;
 
+// ScriptStruct CoreUObject.VerseSessionVar
+// 0x0020 (0x0020 - 0x0000)
+struct FVerseSessionVar final
+{
+public:
+	TFieldPath<class FMapProperty>                Property;                                          // 0x0000(0x0020)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FVerseSessionVar;
+
 // ScriptStruct CoreUObject.AssetBundleEntry
 // 0x0018 (0x0018 - 0x0000)
 struct FAssetBundleEntry final
@@ -1090,6 +1099,15 @@ public:
 	TArray<struct FAssetBundleEntry>              Bundles;                                           // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FAssetBundleData;
+
+// ScriptStruct CoreUObject.PropertyBagContainerTypes
+// 0x0003 (0x0003 - 0x0000)
+struct FPropertyBagContainerTypes final
+{
+public:
+	uint8                                         Pad_0[0x3];                                        // 0x0000(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FPropertyBagContainerTypes;
 
 // ScriptStruct CoreUObject.AssetData
 // 0x0068 (0x0068 - 0x0000)
@@ -1152,6 +1170,15 @@ public:
 };
 DUMPER7_ASSERTS_FAutomationExecutionEntry;
 
+// ScriptStruct CoreUObject.PerPlatformBool
+// 0x0001 (0x0001 - 0x0000)
+struct FPerPlatformBool final
+{
+public:
+	bool                                          Default;                                           // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FPerPlatformBool;
+
 // ScriptStruct CoreUObject.Box
 // 0x0038 (0x0038 - 0x0000)
 struct FBox final
@@ -1159,10 +1186,35 @@ struct FBox final
 public:
 	struct FVector                                Min;                                               // 0x0000(0x0018)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FVector                                Max;                                               // 0x0018(0x0018)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsValid;                                           // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsValid;                                          // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	constexpr FBox(const FVector& Min, const FVector& Max)
+		: Min(Min), Max(Max), bIsValid(true)
+	{
+	}
+	constexpr FBox(FVector::UnderlayingType MinX = 0, FVector::UnderlayingType MinY = 0, FVector::UnderlayingType MinZ = 0,
+		FVector::UnderlayingType MaxX = 0, FVector::UnderlayingType MaxY = 0, FVector::UnderlayingType MaxZ = 0)
+		: FBox(FVector(MinX, MinY, MinZ), FVector(MaxX, MaxY, MaxZ))
+	{
+	}
+	constexpr FBox(const FBox& Other)
+		: FBox(Other.Min, Other.Max)
+	{
+		bIsValid = Other.bIsValid;
+	}
 };
 DUMPER7_ASSERTS_FBox;
+
+// ScriptStruct CoreUObject.FieldCookedMetaDataKey
+// 0x0010 (0x0010 - 0x0000)
+struct FFieldCookedMetaDataKey final
+{
+public:
+	TArray<class FName>                           FieldPath;                                         // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FFieldCookedMetaDataKey;
 
 // ScriptStruct CoreUObject.Box2D
 // 0x0028 (0x0028 - 0x0000)
@@ -1173,6 +1225,22 @@ public:
 	struct FVector2D                              Max;                                               // 0x0010(0x0010)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIsValid;                                          // 0x0020(0x0001)(Edit, BlueprintVisible, ZeroConstructor, SaveGame, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	constexpr FBox2D(const FVector2D& Min, const FVector2D& Max)
+		: Min(Min), Max(Max), bIsValid(true)
+	{
+	}
+	constexpr FBox2D(FVector2D::UnderlayingType MinX = 0, FVector2D::UnderlayingType MinY = 0,
+		FVector2D::UnderlayingType MaxX = 0, FVector2D::UnderlayingType MaxY = 0)
+		: FBox2D(FVector2D(MinX, MinY), FVector2D(MaxX, MaxY))
+	{
+	}
+	constexpr FBox2D(const FBox2D& Other)
+		: FBox2D(Other.Min, Other.Max)
+	{
+		bIsValid = Other.bIsValid;
+	}
 };
 DUMPER7_ASSERTS_FBox2D;
 
@@ -2092,8 +2160,8 @@ public:
 		: Pitch(Pitch), Yaw(Yaw), Roll(Roll)
 	{
 	}
-	constexpr FRotator(const FRotator& other)
-		: Pitch(other.Pitch), Yaw(other.Yaw), Roll(other.Roll)
+	constexpr FRotator(const FRotator& Other)
+		: Pitch(Other.Pitch), Yaw(Other.Yaw), Roll(Other.Roll)
 	{
 	}
 	FRotator& Normalize()
@@ -2642,15 +2710,6 @@ public:
 };
 DUMPER7_ASSERTS_FInstancedStructContainer;
 
-// ScriptStruct CoreUObject.PropertyBagContainerTypes
-// 0x0003 (0x0003 - 0x0000)
-struct FPropertyBagContainerTypes final
-{
-public:
-	uint8                                         Pad_0[0x3];                                        // 0x0000(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FPropertyBagContainerTypes;
-
 // ScriptStruct CoreUObject.PropertyBagPropertyDescMetaData
 // 0x0018 (0x0018 - 0x0000)
 struct FPropertyBagPropertyDescMetaData final
@@ -2722,15 +2781,6 @@ public:
 };
 DUMPER7_ASSERTS_FObjectCookedMetaDataStore;
 
-// ScriptStruct CoreUObject.FieldCookedMetaDataKey
-// 0x0010 (0x0010 - 0x0000)
-struct FFieldCookedMetaDataKey final
-{
-public:
-	TArray<class FName>                           FieldPath;                                         // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FFieldCookedMetaDataKey;
-
 // ScriptStruct CoreUObject.FieldCookedMetaDataValue
 // 0x0050 (0x0050 - 0x0000)
 struct FFieldCookedMetaDataValue final
@@ -2787,15 +2837,6 @@ public:
 };
 DUMPER7_ASSERTS_FPerPlatformFloat;
 
-// ScriptStruct CoreUObject.PerPlatformBool
-// 0x0001 (0x0001 - 0x0000)
-struct FPerPlatformBool final
-{
-public:
-	bool                                          Default;                                           // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FPerPlatformBool;
-
 // ScriptStruct CoreUObject.PerPlatformFrameRate
 // 0x0008 (0x0008 - 0x0000)
 struct FPerPlatformFrameRate final
@@ -2814,15 +2855,6 @@ public:
 	TFieldPath<class FMapProperty>                Property;                                          // 0x0010(0x0020)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FVersePersistentVar;
-
-// ScriptStruct CoreUObject.VerseSessionVar
-// 0x0020 (0x0020 - 0x0000)
-struct FVerseSessionVar final
-{
-public:
-	TFieldPath<class FMapProperty>                Property;                                          // 0x0000(0x0020)(HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FVerseSessionVar;
 
 // ScriptStruct CoreUObject.VerseClassVarAccessor
 // 0x0010 (0x0010 - 0x0000)

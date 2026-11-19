@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_Analyzer_C::ExecuteUbergraph_BP_Analyzer(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Analyzer_C", "ExecuteUbergraph_BP_Analyzer");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Analyzer_C", "ExecuteUbergraph_BP_Analyzer", FuncInfo);
 
 	Params::BP_Analyzer_C_ExecuteUbergraph_BP_Analyzer Parms{};
 
@@ -43,10 +41,8 @@ void ABP_Analyzer_C::ExecuteUbergraph_BP_Analyzer(int32 EntryPoint)
 
 void ABP_Analyzer_C::OnUIOpened(bool bOpened)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Analyzer_C", "OnUIOpened");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnUIOpened", FnName));
 
 	Params::BP_Analyzer_C_OnUIOpened Parms{};
 

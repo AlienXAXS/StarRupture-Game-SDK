@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_DroneRailT3_SplineUniqueHelper.BP_DroneRailT3_SplineUniqueHelper_C
-// 0x0000 (0x0B60 - 0x0B60)
+// 0x0000 (0x0CD0 - 0x0CD0)
 class ABP_DroneRailT3_SplineUniqueHelper_C final : public ABP_DroneRailHelperT1_C
 {
 public:

@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void ABP_TurretTier1_C::BP_OnInventoryChanged()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TurretTier1_C", "BP_OnInventoryChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnInventoryChanged", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -35,10 +33,8 @@ void ABP_TurretTier1_C::BP_OnInventoryChanged()
 
 void ABP_TurretTier1_C::CosmeticDryFire()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TurretTier1_C", "CosmeticDryFire");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"CosmeticDryFire", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -51,10 +47,8 @@ void ABP_TurretTier1_C::CosmeticDryFire()
 
 void ABP_TurretTier1_C::CosmeticHit(const struct FHitResult& InHit)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TurretTier1_C", "CosmeticHit");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"CosmeticHit", FnName));
 
 	Params::BP_TurretTier1_C_CosmeticHit Parms{};
 
@@ -69,10 +63,8 @@ void ABP_TurretTier1_C::CosmeticHit(const struct FHitResult& InHit)
 
 void ABP_TurretTier1_C::CosmeticTurretMalfunctionEnded()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TurretTier1_C", "CosmeticTurretMalfunctionEnded");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"CosmeticTurretMalfunctionEnded", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -83,10 +75,8 @@ void ABP_TurretTier1_C::CosmeticTurretMalfunctionEnded()
 
 void ABP_TurretTier1_C::CosmeticTurretMalfunctionStarted()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TurretTier1_C", "CosmeticTurretMalfunctionStarted");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"CosmeticTurretMalfunctionStarted", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -99,10 +89,8 @@ void ABP_TurretTier1_C::CosmeticTurretMalfunctionStarted()
 
 void ABP_TurretTier1_C::ExecuteUbergraph_BP_TurretTier1(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TurretTier1_C", "ExecuteUbergraph_BP_TurretTier1");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_TurretTier1_C", "ExecuteUbergraph_BP_TurretTier1", FuncInfo);
 
 	Params::BP_TurretTier1_C_ExecuteUbergraph_BP_TurretTier1 Parms{};
 
@@ -117,10 +105,8 @@ void ABP_TurretTier1_C::ExecuteUbergraph_BP_TurretTier1(int32 EntryPoint)
 
 void ABP_TurretTier1_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TurretTier1_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -131,10 +117,8 @@ void ABP_TurretTier1_C::ReceiveBeginPlay()
 
 void ABP_TurretTier1_C::Timeline__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TurretTier1_C", "Timeline__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -145,10 +129,8 @@ void ABP_TurretTier1_C::Timeline__FinishedFunc()
 
 void ABP_TurretTier1_C::Timeline__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TurretTier1_C", "Timeline__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -159,10 +141,8 @@ void ABP_TurretTier1_C::Timeline__UpdateFunc()
 
 void ABP_TurretTier1_C::UpdateAmmoCounter()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TurretTier1_C", "UpdateAmmoCounter");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateAmmoCounter", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -175,10 +155,8 @@ void ABP_TurretTier1_C::UpdateAmmoCounter()
 
 void ABP_TurretTier1_C::UpdateCosmeticsBasedOnAttackDirection(const struct FVector& OutCurrentAttackDirection)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_TurretTier1_C", "UpdateCosmeticsBasedOnAttackDirection");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateCosmeticsBasedOnAttackDirection", FnName));
 
 	Params::BP_TurretTier1_C_UpdateCosmeticsBasedOnAttackDirection Parms{};
 

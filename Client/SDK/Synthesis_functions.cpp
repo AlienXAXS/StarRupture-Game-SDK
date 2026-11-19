@@ -2695,156 +2695,6 @@ void USourceEffectWaveShaperPreset::SetSettings(const struct FSourceEffectWaveSh
 }
 
 
-// Function Synthesis.Synth2DSlider.SetIndentHandle
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USynth2DSlider::SetIndentHandle(bool InValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Synth2DSlider", "SetIndentHandle");
-
-	Params::Synth2DSlider_SetIndentHandle Parms{};
-
-	Parms.InValue = InValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.Synth2DSlider.SetLocked
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USynth2DSlider::SetLocked(bool InValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Synth2DSlider", "SetLocked");
-
-	Params::Synth2DSlider_SetLocked Parms{};
-
-	Parms.InValue = InValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.Synth2DSlider.SetSliderHandleColor
-// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FLinearColor&              InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USynth2DSlider::SetSliderHandleColor(const struct FLinearColor& InValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Synth2DSlider", "SetSliderHandleColor");
-
-	Params::Synth2DSlider_SetSliderHandleColor Parms{};
-
-	Parms.InValue = std::move(InValue);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.Synth2DSlider.SetStepSize
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USynth2DSlider::SetStepSize(float InValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Synth2DSlider", "SetStepSize");
-
-	Params::Synth2DSlider_SetStepSize Parms{};
-
-	Parms.InValue = InValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.Synth2DSlider.SetValue
-// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FVector2D&                 InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USynth2DSlider::SetValue(const struct FVector2D& InValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Synth2DSlider", "SetValue");
-
-	Params::Synth2DSlider_SetValue Parms{};
-
-	Parms.InValue = std::move(InValue);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.Synth2DSlider.GetValue
-// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FVector2D USynth2DSlider::GetValue() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Synth2DSlider", "GetValue");
-
-	Params::Synth2DSlider_GetValue Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
 // Function Synthesis.SubmixEffectConvolutionReverbPreset.SetImpulseResponse
 // (Final, RequiredAPI, Native, Public, BlueprintCallable)
 // Parameters:
@@ -2988,6 +2838,683 @@ struct FSubmixEffectDelaySettings USubmixEffectDelayStatics::SetMaximumDelayLeng
 	DelaySettings = std::move(Parms.DelaySettings);
 
 	return Parms.ReturnValue;
+}
+
+
+// Function Synthesis.SubmixEffectDelayPreset.SetDefaultSettings
+// (Final, RequiredAPI, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FSubmixEffectDelaySettings&InSettings                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void USubmixEffectDelayPreset::SetDefaultSettings(const struct FSubmixEffectDelaySettings& InSettings)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SubmixEffectDelayPreset", "SetDefaultSettings");
+
+	Params::SubmixEffectDelayPreset_SetDefaultSettings Parms{};
+
+	Parms.InSettings = std::move(InSettings);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.SubmixEffectDelayPreset.SetDelay
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   Length                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USubmixEffectDelayPreset::SetDelay(float Length)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SubmixEffectDelayPreset", "SetDelay");
+
+	Params::SubmixEffectDelayPreset_SetDelay Parms{};
+
+	Parms.Length = Length;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.SubmixEffectDelayPreset.SetInterpolationTime
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   Time                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USubmixEffectDelayPreset::SetInterpolationTime(float Time)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SubmixEffectDelayPreset", "SetInterpolationTime");
+
+	Params::SubmixEffectDelayPreset_SetInterpolationTime Parms{};
+
+	Parms.Time = Time;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.SubmixEffectDelayPreset.SetSettings
+// (Final, RequiredAPI, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FSubmixEffectDelaySettings&InSettings                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void USubmixEffectDelayPreset::SetSettings(const struct FSubmixEffectDelaySettings& InSettings)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SubmixEffectDelayPreset", "SetSettings");
+
+	Params::SubmixEffectDelayPreset_SetSettings Parms{};
+
+	Parms.InSettings = std::move(InSettings);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.SubmixEffectDelayPreset.GetMaxDelayInMilliseconds
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float USubmixEffectDelayPreset::GetMaxDelayInMilliseconds() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SubmixEffectDelayPreset", "GetMaxDelayInMilliseconds");
+
+	Params::SubmixEffectDelayPreset_GetMaxDelayInMilliseconds Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Synthesis.SubmixEffectFilterPreset.SetFilterAlgorithm
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// ESubmixFilterAlgorithm                  InAlgorithm                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USubmixEffectFilterPreset::SetFilterAlgorithm(ESubmixFilterAlgorithm InAlgorithm)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SubmixEffectFilterPreset", "SetFilterAlgorithm");
+
+	Params::SubmixEffectFilterPreset_SetFilterAlgorithm Parms{};
+
+	Parms.InAlgorithm = InAlgorithm;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.SubmixEffectFilterPreset.SetFilterCutoffFrequency
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InFrequency                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USubmixEffectFilterPreset::SetFilterCutoffFrequency(float InFrequency)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SubmixEffectFilterPreset", "SetFilterCutoffFrequency");
+
+	Params::SubmixEffectFilterPreset_SetFilterCutoffFrequency Parms{};
+
+	Parms.InFrequency = InFrequency;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.SubmixEffectFilterPreset.SetFilterCutoffFrequencyMod
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InFrequency                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USubmixEffectFilterPreset::SetFilterCutoffFrequencyMod(float InFrequency)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SubmixEffectFilterPreset", "SetFilterCutoffFrequencyMod");
+
+	Params::SubmixEffectFilterPreset_SetFilterCutoffFrequencyMod Parms{};
+
+	Parms.InFrequency = InFrequency;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.SubmixEffectFilterPreset.SetFilterQ
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InQ                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USubmixEffectFilterPreset::SetFilterQ(float InQ)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SubmixEffectFilterPreset", "SetFilterQ");
+
+	Params::SubmixEffectFilterPreset_SetFilterQ Parms{};
+
+	Parms.InQ = InQ;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.SubmixEffectFilterPreset.SetFilterQMod
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InQ                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USubmixEffectFilterPreset::SetFilterQMod(float InQ)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SubmixEffectFilterPreset", "SetFilterQMod");
+
+	Params::SubmixEffectFilterPreset_SetFilterQMod Parms{};
+
+	Parms.InQ = InQ;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.SubmixEffectFilterPreset.SetFilterType
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// ESubmixFilterType                       InType                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USubmixEffectFilterPreset::SetFilterType(ESubmixFilterType InType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SubmixEffectFilterPreset", "SetFilterType");
+
+	Params::SubmixEffectFilterPreset_SetFilterType Parms{};
+
+	Parms.InType = InType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.SubmixEffectFilterPreset.SetSettings
+// (Final, RequiredAPI, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FSubmixEffectFilterSettings&InSettings                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void USubmixEffectFilterPreset::SetSettings(const struct FSubmixEffectFilterSettings& InSettings)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SubmixEffectFilterPreset", "SetSettings");
+
+	Params::SubmixEffectFilterPreset_SetSettings Parms{};
+
+	Parms.InSettings = std::move(InSettings);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.SubmixEffectFlexiverbPreset.SetSettings
+// (Final, RequiredAPI, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FSubmixEffectFlexiverbSettings&InSettings                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void USubmixEffectFlexiverbPreset::SetSettings(const struct FSubmixEffectFlexiverbSettings& InSettings)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SubmixEffectFlexiverbPreset", "SetSettings");
+
+	Params::SubmixEffectFlexiverbPreset_SetSettings Parms{};
+
+	Parms.InSettings = std::move(InSettings);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.SubmixEffectMultibandCompressorPreset.ResetKey
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+
+void USubmixEffectMultibandCompressorPreset::ResetKey()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SubmixEffectMultibandCompressorPreset", "ResetKey");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.SubmixEffectMultibandCompressorPreset.SetAudioBus
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// class UAudioBus*                        AudioBus                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USubmixEffectMultibandCompressorPreset::SetAudioBus(class UAudioBus* AudioBus)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SubmixEffectMultibandCompressorPreset", "SetAudioBus");
+
+	Params::SubmixEffectMultibandCompressorPreset_SetAudioBus Parms{};
+
+	Parms.AudioBus = AudioBus;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.SubmixEffectMultibandCompressorPreset.SetExternalSubmix
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// class USoundSubmix*                     Submix                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USubmixEffectMultibandCompressorPreset::SetExternalSubmix(class USoundSubmix* Submix)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SubmixEffectMultibandCompressorPreset", "SetExternalSubmix");
+
+	Params::SubmixEffectMultibandCompressorPreset_SetExternalSubmix Parms{};
+
+	Parms.Submix = Submix;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.SubmixEffectMultibandCompressorPreset.SetSettings
+// (Final, RequiredAPI, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FSubmixEffectMultibandCompressorSettings&InSettings                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void USubmixEffectMultibandCompressorPreset::SetSettings(const struct FSubmixEffectMultibandCompressorSettings& InSettings)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SubmixEffectMultibandCompressorPreset", "SetSettings");
+
+	Params::SubmixEffectMultibandCompressorPreset_SetSettings Parms{};
+
+	Parms.InSettings = std::move(InSettings);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.SubmixEffectStereoDelayPreset.SetSettings
+// (Final, RequiredAPI, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FSubmixEffectStereoDelaySettings&InSettings                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void USubmixEffectStereoDelayPreset::SetSettings(const struct FSubmixEffectStereoDelaySettings& InSettings)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SubmixEffectStereoDelayPreset", "SetSettings");
+
+	Params::SubmixEffectStereoDelayPreset_SetSettings Parms{};
+
+	Parms.InSettings = std::move(InSettings);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.SubmixEffectStereoToQuadPreset.SetSettings
+// (Final, RequiredAPI, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FSubmixEffectStereoToQuadSettings&InSettings                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void USubmixEffectStereoToQuadPreset::SetSettings(const struct FSubmixEffectStereoToQuadSettings& InSettings)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SubmixEffectStereoToQuadPreset", "SetSettings");
+
+	Params::SubmixEffectStereoToQuadPreset_SetSettings Parms{};
+
+	Parms.InSettings = std::move(InSettings);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.SubmixEffectTapDelayPreset.AddTap
+// (Final, RequiredAPI, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// int32*                                  TapId                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USubmixEffectTapDelayPreset::AddTap(int32* TapId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SubmixEffectTapDelayPreset", "AddTap");
+
+	Params::SubmixEffectTapDelayPreset_AddTap Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (TapId != nullptr)
+		*TapId = Parms.TapId;
+}
+
+
+// Function Synthesis.SubmixEffectTapDelayPreset.GetMaxDelayInMilliseconds
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float USubmixEffectTapDelayPreset::GetMaxDelayInMilliseconds()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SubmixEffectTapDelayPreset", "GetMaxDelayInMilliseconds");
+
+	Params::SubmixEffectTapDelayPreset_GetMaxDelayInMilliseconds Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Synthesis.SubmixEffectTapDelayPreset.GetTap
+// (Final, RequiredAPI, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// int32                                   TapId                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FTapDelayInfo*                   TapInfo                                                (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void USubmixEffectTapDelayPreset::GetTap(int32 TapId, struct FTapDelayInfo* TapInfo)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SubmixEffectTapDelayPreset", "GetTap");
+
+	Params::SubmixEffectTapDelayPreset_GetTap Parms{};
+
+	Parms.TapId = TapId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (TapInfo != nullptr)
+		*TapInfo = std::move(Parms.TapInfo);
+}
+
+
+// Function Synthesis.SubmixEffectTapDelayPreset.GetTapIds
+// (Final, RequiredAPI, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TArray<int32>*                          TapIds                                                 (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void USubmixEffectTapDelayPreset::GetTapIds(TArray<int32>* TapIds)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SubmixEffectTapDelayPreset", "GetTapIds");
+
+	Params::SubmixEffectTapDelayPreset_GetTapIds Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (TapIds != nullptr)
+		*TapIds = std::move(Parms.TapIds);
+}
+
+
+// Function Synthesis.SubmixEffectTapDelayPreset.RemoveTap
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   TapId                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USubmixEffectTapDelayPreset::RemoveTap(int32 TapId)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SubmixEffectTapDelayPreset", "RemoveTap");
+
+	Params::SubmixEffectTapDelayPreset_RemoveTap Parms{};
+
+	Parms.TapId = TapId;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.SubmixEffectTapDelayPreset.SetInterpolationTime
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   Time                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USubmixEffectTapDelayPreset::SetInterpolationTime(float Time)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SubmixEffectTapDelayPreset", "SetInterpolationTime");
+
+	Params::SubmixEffectTapDelayPreset_SetInterpolationTime Parms{};
+
+	Parms.Time = Time;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.SubmixEffectTapDelayPreset.SetSettings
+// (Final, RequiredAPI, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FSubmixEffectTapDelaySettings&InSettings                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void USubmixEffectTapDelayPreset::SetSettings(const struct FSubmixEffectTapDelaySettings& InSettings)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SubmixEffectTapDelayPreset", "SetSettings");
+
+	Params::SubmixEffectTapDelayPreset_SetSettings Parms{};
+
+	Parms.InSettings = std::move(InSettings);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.SubmixEffectTapDelayPreset.SetTap
+// (Final, RequiredAPI, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// int32                                   TapId                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FTapDelayInfo&             TapInfo                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void USubmixEffectTapDelayPreset::SetTap(int32 TapId, const struct FTapDelayInfo& TapInfo)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SubmixEffectTapDelayPreset", "SetTap");
+
+	Params::SubmixEffectTapDelayPreset_SetTap Parms{};
+
+	Parms.TapId = TapId;
+	Parms.TapInfo = std::move(TapInfo);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -3506,914 +4033,6 @@ bool UGranularSynth::IsLoaded() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function Synthesis.SubmixEffectDelayPreset.SetDefaultSettings
-// (Final, RequiredAPI, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FSubmixEffectDelaySettings&InSettings                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void USubmixEffectDelayPreset::SetDefaultSettings(const struct FSubmixEffectDelaySettings& InSettings)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SubmixEffectDelayPreset", "SetDefaultSettings");
-
-	Params::SubmixEffectDelayPreset_SetDefaultSettings Parms{};
-
-	Parms.InSettings = std::move(InSettings);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.SubmixEffectDelayPreset.SetDelay
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   Length                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USubmixEffectDelayPreset::SetDelay(float Length)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SubmixEffectDelayPreset", "SetDelay");
-
-	Params::SubmixEffectDelayPreset_SetDelay Parms{};
-
-	Parms.Length = Length;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.SubmixEffectDelayPreset.SetInterpolationTime
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   Time                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USubmixEffectDelayPreset::SetInterpolationTime(float Time)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SubmixEffectDelayPreset", "SetInterpolationTime");
-
-	Params::SubmixEffectDelayPreset_SetInterpolationTime Parms{};
-
-	Parms.Time = Time;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.SubmixEffectDelayPreset.SetSettings
-// (Final, RequiredAPI, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FSubmixEffectDelaySettings&InSettings                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void USubmixEffectDelayPreset::SetSettings(const struct FSubmixEffectDelaySettings& InSettings)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SubmixEffectDelayPreset", "SetSettings");
-
-	Params::SubmixEffectDelayPreset_SetSettings Parms{};
-
-	Parms.InSettings = std::move(InSettings);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.SubmixEffectDelayPreset.GetMaxDelayInMilliseconds
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float USubmixEffectDelayPreset::GetMaxDelayInMilliseconds() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SubmixEffectDelayPreset", "GetMaxDelayInMilliseconds");
-
-	Params::SubmixEffectDelayPreset_GetMaxDelayInMilliseconds Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Synthesis.SubmixEffectFilterPreset.SetFilterAlgorithm
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// ESubmixFilterAlgorithm                  InAlgorithm                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USubmixEffectFilterPreset::SetFilterAlgorithm(ESubmixFilterAlgorithm InAlgorithm)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SubmixEffectFilterPreset", "SetFilterAlgorithm");
-
-	Params::SubmixEffectFilterPreset_SetFilterAlgorithm Parms{};
-
-	Parms.InAlgorithm = InAlgorithm;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.SubmixEffectFilterPreset.SetFilterCutoffFrequency
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   InFrequency                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USubmixEffectFilterPreset::SetFilterCutoffFrequency(float InFrequency)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SubmixEffectFilterPreset", "SetFilterCutoffFrequency");
-
-	Params::SubmixEffectFilterPreset_SetFilterCutoffFrequency Parms{};
-
-	Parms.InFrequency = InFrequency;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.SubmixEffectFilterPreset.SetFilterCutoffFrequencyMod
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   InFrequency                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USubmixEffectFilterPreset::SetFilterCutoffFrequencyMod(float InFrequency)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SubmixEffectFilterPreset", "SetFilterCutoffFrequencyMod");
-
-	Params::SubmixEffectFilterPreset_SetFilterCutoffFrequencyMod Parms{};
-
-	Parms.InFrequency = InFrequency;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.SubmixEffectFilterPreset.SetFilterQ
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   InQ                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USubmixEffectFilterPreset::SetFilterQ(float InQ)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SubmixEffectFilterPreset", "SetFilterQ");
-
-	Params::SubmixEffectFilterPreset_SetFilterQ Parms{};
-
-	Parms.InQ = InQ;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.SubmixEffectFilterPreset.SetFilterQMod
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   InQ                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USubmixEffectFilterPreset::SetFilterQMod(float InQ)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SubmixEffectFilterPreset", "SetFilterQMod");
-
-	Params::SubmixEffectFilterPreset_SetFilterQMod Parms{};
-
-	Parms.InQ = InQ;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.SubmixEffectFilterPreset.SetFilterType
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// ESubmixFilterType                       InType                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USubmixEffectFilterPreset::SetFilterType(ESubmixFilterType InType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SubmixEffectFilterPreset", "SetFilterType");
-
-	Params::SubmixEffectFilterPreset_SetFilterType Parms{};
-
-	Parms.InType = InType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.SubmixEffectFilterPreset.SetSettings
-// (Final, RequiredAPI, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FSubmixEffectFilterSettings&InSettings                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void USubmixEffectFilterPreset::SetSettings(const struct FSubmixEffectFilterSettings& InSettings)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SubmixEffectFilterPreset", "SetSettings");
-
-	Params::SubmixEffectFilterPreset_SetSettings Parms{};
-
-	Parms.InSettings = std::move(InSettings);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.SubmixEffectFlexiverbPreset.SetSettings
-// (Final, RequiredAPI, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FSubmixEffectFlexiverbSettings&InSettings                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void USubmixEffectFlexiverbPreset::SetSettings(const struct FSubmixEffectFlexiverbSettings& InSettings)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SubmixEffectFlexiverbPreset", "SetSettings");
-
-	Params::SubmixEffectFlexiverbPreset_SetSettings Parms{};
-
-	Parms.InSettings = std::move(InSettings);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.SubmixEffectMultibandCompressorPreset.ResetKey
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-
-void USubmixEffectMultibandCompressorPreset::ResetKey()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SubmixEffectMultibandCompressorPreset", "ResetKey");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.SubmixEffectMultibandCompressorPreset.SetAudioBus
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// class UAudioBus*                        AudioBus                                               (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USubmixEffectMultibandCompressorPreset::SetAudioBus(class UAudioBus* AudioBus)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SubmixEffectMultibandCompressorPreset", "SetAudioBus");
-
-	Params::SubmixEffectMultibandCompressorPreset_SetAudioBus Parms{};
-
-	Parms.AudioBus = AudioBus;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.SubmixEffectMultibandCompressorPreset.SetExternalSubmix
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// class USoundSubmix*                     Submix                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USubmixEffectMultibandCompressorPreset::SetExternalSubmix(class USoundSubmix* Submix)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SubmixEffectMultibandCompressorPreset", "SetExternalSubmix");
-
-	Params::SubmixEffectMultibandCompressorPreset_SetExternalSubmix Parms{};
-
-	Parms.Submix = Submix;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.SubmixEffectMultibandCompressorPreset.SetSettings
-// (Final, RequiredAPI, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FSubmixEffectMultibandCompressorSettings&InSettings                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void USubmixEffectMultibandCompressorPreset::SetSettings(const struct FSubmixEffectMultibandCompressorSettings& InSettings)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SubmixEffectMultibandCompressorPreset", "SetSettings");
-
-	Params::SubmixEffectMultibandCompressorPreset_SetSettings Parms{};
-
-	Parms.InSettings = std::move(InSettings);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.SynthSamplePlayer.SeekToTime
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   TimeSec                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ESamplePlayerSeekType                   SeekType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bWrap                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USynthSamplePlayer::SeekToTime(float TimeSec, ESamplePlayerSeekType SeekType, bool bWrap)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SynthSamplePlayer", "SeekToTime");
-
-	Params::SynthSamplePlayer_SeekToTime Parms{};
-
-	Parms.TimeSec = TimeSec;
-	Parms.SeekType = SeekType;
-	Parms.bWrap = bWrap;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.SynthSamplePlayer.SetPitch
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   InPitch                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   TimeSec                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USynthSamplePlayer::SetPitch(float InPitch, float TimeSec)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SynthSamplePlayer", "SetPitch");
-
-	Params::SynthSamplePlayer_SetPitch Parms{};
-
-	Parms.InPitch = InPitch;
-	Parms.TimeSec = TimeSec;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.SynthSamplePlayer.SetScrubMode
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bScrubMode                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USynthSamplePlayer::SetScrubMode(bool bScrubMode)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SynthSamplePlayer", "SetScrubMode");
-
-	Params::SynthSamplePlayer_SetScrubMode Parms{};
-
-	Parms.bScrubMode = bScrubMode;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.SynthSamplePlayer.SetScrubTimeWidth
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   InScrubTimeWidthSec                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USynthSamplePlayer::SetScrubTimeWidth(float InScrubTimeWidthSec)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SynthSamplePlayer", "SetScrubTimeWidth");
-
-	Params::SynthSamplePlayer_SetScrubTimeWidth Parms{};
-
-	Parms.InScrubTimeWidthSec = InScrubTimeWidthSec;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.SynthSamplePlayer.SetSoundWave
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// class USoundWave*                       InSoundWave                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USynthSamplePlayer::SetSoundWave(class USoundWave* InSoundWave)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SynthSamplePlayer", "SetSoundWave");
-
-	Params::SynthSamplePlayer_SetSoundWave Parms{};
-
-	Parms.InSoundWave = InSoundWave;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.SynthSamplePlayer.GetCurrentPlaybackProgressPercent
-// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float USynthSamplePlayer::GetCurrentPlaybackProgressPercent() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SynthSamplePlayer", "GetCurrentPlaybackProgressPercent");
-
-	Params::SynthSamplePlayer_GetCurrentPlaybackProgressPercent Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Synthesis.SynthSamplePlayer.GetCurrentPlaybackProgressTime
-// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float USynthSamplePlayer::GetCurrentPlaybackProgressTime() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SynthSamplePlayer", "GetCurrentPlaybackProgressTime");
-
-	Params::SynthSamplePlayer_GetCurrentPlaybackProgressTime Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Synthesis.SynthSamplePlayer.GetSampleDuration
-// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float USynthSamplePlayer::GetSampleDuration() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SynthSamplePlayer", "GetSampleDuration");
-
-	Params::SynthSamplePlayer_GetSampleDuration Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Synthesis.SynthSamplePlayer.IsLoaded
-// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool USynthSamplePlayer::IsLoaded() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SynthSamplePlayer", "IsLoaded");
-
-	Params::SynthSamplePlayer_IsLoaded Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Synthesis.SubmixEffectStereoDelayPreset.SetSettings
-// (Final, RequiredAPI, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FSubmixEffectStereoDelaySettings&InSettings                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void USubmixEffectStereoDelayPreset::SetSettings(const struct FSubmixEffectStereoDelaySettings& InSettings)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SubmixEffectStereoDelayPreset", "SetSettings");
-
-	Params::SubmixEffectStereoDelayPreset_SetSettings Parms{};
-
-	Parms.InSettings = std::move(InSettings);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.SubmixEffectStereoToQuadPreset.SetSettings
-// (Final, RequiredAPI, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FSubmixEffectStereoToQuadSettings&InSettings                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void USubmixEffectStereoToQuadPreset::SetSettings(const struct FSubmixEffectStereoToQuadSettings& InSettings)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SubmixEffectStereoToQuadPreset", "SetSettings");
-
-	Params::SubmixEffectStereoToQuadPreset_SetSettings Parms{};
-
-	Parms.InSettings = std::move(InSettings);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.SubmixEffectTapDelayPreset.AddTap
-// (Final, RequiredAPI, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// int32*                                  TapId                                                  (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USubmixEffectTapDelayPreset::AddTap(int32* TapId)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SubmixEffectTapDelayPreset", "AddTap");
-
-	Params::SubmixEffectTapDelayPreset_AddTap Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (TapId != nullptr)
-		*TapId = Parms.TapId;
-}
-
-
-// Function Synthesis.SubmixEffectTapDelayPreset.GetMaxDelayInMilliseconds
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float USubmixEffectTapDelayPreset::GetMaxDelayInMilliseconds()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SubmixEffectTapDelayPreset", "GetMaxDelayInMilliseconds");
-
-	Params::SubmixEffectTapDelayPreset_GetMaxDelayInMilliseconds Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function Synthesis.SubmixEffectTapDelayPreset.GetTap
-// (Final, RequiredAPI, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// int32                                   TapId                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FTapDelayInfo*                   TapInfo                                                (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void USubmixEffectTapDelayPreset::GetTap(int32 TapId, struct FTapDelayInfo* TapInfo)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SubmixEffectTapDelayPreset", "GetTap");
-
-	Params::SubmixEffectTapDelayPreset_GetTap Parms{};
-
-	Parms.TapId = TapId;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (TapInfo != nullptr)
-		*TapInfo = std::move(Parms.TapInfo);
-}
-
-
-// Function Synthesis.SubmixEffectTapDelayPreset.GetTapIds
-// (Final, RequiredAPI, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TArray<int32>*                          TapIds                                                 (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-
-void USubmixEffectTapDelayPreset::GetTapIds(TArray<int32>* TapIds)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SubmixEffectTapDelayPreset", "GetTapIds");
-
-	Params::SubmixEffectTapDelayPreset_GetTapIds Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (TapIds != nullptr)
-		*TapIds = std::move(Parms.TapIds);
-}
-
-
-// Function Synthesis.SubmixEffectTapDelayPreset.RemoveTap
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   TapId                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USubmixEffectTapDelayPreset::RemoveTap(int32 TapId)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SubmixEffectTapDelayPreset", "RemoveTap");
-
-	Params::SubmixEffectTapDelayPreset_RemoveTap Parms{};
-
-	Parms.TapId = TapId;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.SubmixEffectTapDelayPreset.SetInterpolationTime
-// (Final, RequiredAPI, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   Time                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void USubmixEffectTapDelayPreset::SetInterpolationTime(float Time)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SubmixEffectTapDelayPreset", "SetInterpolationTime");
-
-	Params::SubmixEffectTapDelayPreset_SetInterpolationTime Parms{};
-
-	Parms.Time = Time;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.SubmixEffectTapDelayPreset.SetSettings
-// (Final, RequiredAPI, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FSubmixEffectTapDelaySettings&InSettings                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void USubmixEffectTapDelayPreset::SetSettings(const struct FSubmixEffectTapDelaySettings& InSettings)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SubmixEffectTapDelayPreset", "SetSettings");
-
-	Params::SubmixEffectTapDelayPreset_SetSettings Parms{};
-
-	Parms.InSettings = std::move(InSettings);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function Synthesis.SubmixEffectTapDelayPreset.SetTap
-// (Final, RequiredAPI, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// int32                                   TapId                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FTapDelayInfo&             TapInfo                                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void USubmixEffectTapDelayPreset::SetTap(int32 TapId, const struct FTapDelayInfo& TapInfo)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SubmixEffectTapDelayPreset", "SetTap");
-
-	Params::SubmixEffectTapDelayPreset_SetTap Parms{};
-
-	Parms.TapId = TapId;
-	Parms.TapInfo = std::move(TapInfo);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
@@ -5586,6 +5205,237 @@ void USynthComponentToneGenerator::SetVolume(float InVolume)
 }
 
 
+// Function Synthesis.SynthSamplePlayer.SeekToTime
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   TimeSec                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ESamplePlayerSeekType                   SeekType                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bWrap                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USynthSamplePlayer::SeekToTime(float TimeSec, ESamplePlayerSeekType SeekType, bool bWrap)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SynthSamplePlayer", "SeekToTime");
+
+	Params::SynthSamplePlayer_SeekToTime Parms{};
+
+	Parms.TimeSec = TimeSec;
+	Parms.SeekType = SeekType;
+	Parms.bWrap = bWrap;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.SynthSamplePlayer.SetPitch
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InPitch                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   TimeSec                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USynthSamplePlayer::SetPitch(float InPitch, float TimeSec)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SynthSamplePlayer", "SetPitch");
+
+	Params::SynthSamplePlayer_SetPitch Parms{};
+
+	Parms.InPitch = InPitch;
+	Parms.TimeSec = TimeSec;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.SynthSamplePlayer.SetScrubMode
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bScrubMode                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USynthSamplePlayer::SetScrubMode(bool bScrubMode)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SynthSamplePlayer", "SetScrubMode");
+
+	Params::SynthSamplePlayer_SetScrubMode Parms{};
+
+	Parms.bScrubMode = bScrubMode;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.SynthSamplePlayer.SetScrubTimeWidth
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InScrubTimeWidthSec                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USynthSamplePlayer::SetScrubTimeWidth(float InScrubTimeWidthSec)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SynthSamplePlayer", "SetScrubTimeWidth");
+
+	Params::SynthSamplePlayer_SetScrubTimeWidth Parms{};
+
+	Parms.InScrubTimeWidthSec = InScrubTimeWidthSec;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.SynthSamplePlayer.SetSoundWave
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// class USoundWave*                       InSoundWave                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USynthSamplePlayer::SetSoundWave(class USoundWave* InSoundWave)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SynthSamplePlayer", "SetSoundWave");
+
+	Params::SynthSamplePlayer_SetSoundWave Parms{};
+
+	Parms.InSoundWave = InSoundWave;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.SynthSamplePlayer.GetCurrentPlaybackProgressPercent
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float USynthSamplePlayer::GetCurrentPlaybackProgressPercent() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SynthSamplePlayer", "GetCurrentPlaybackProgressPercent");
+
+	Params::SynthSamplePlayer_GetCurrentPlaybackProgressPercent Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Synthesis.SynthSamplePlayer.GetCurrentPlaybackProgressTime
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float USynthSamplePlayer::GetCurrentPlaybackProgressTime() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SynthSamplePlayer", "GetCurrentPlaybackProgressTime");
+
+	Params::SynthSamplePlayer_GetCurrentPlaybackProgressTime Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Synthesis.SynthSamplePlayer.GetSampleDuration
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float USynthSamplePlayer::GetSampleDuration() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SynthSamplePlayer", "GetSampleDuration");
+
+	Params::SynthSamplePlayer_GetSampleDuration Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Synthesis.SynthSamplePlayer.IsLoaded
+// (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool USynthSamplePlayer::IsLoaded() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("SynthSamplePlayer", "IsLoaded");
+
+	Params::SynthSamplePlayer_IsLoaded Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function Synthesis.SynthesisUtilitiesBlueprintFunctionLibrary.GetLinearFrequency
 // (Final, Native, Static, Private, BlueprintCallable)
 // Parameters:
@@ -5651,6 +5501,156 @@ float USynthesisUtilitiesBlueprintFunctionLibrary::GetLogFrequency(float InLinea
 	Func->FunctionFlags |= 0x400;
 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Synthesis.Synth2DSlider.SetIndentHandle
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USynth2DSlider::SetIndentHandle(bool InValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Synth2DSlider", "SetIndentHandle");
+
+	Params::Synth2DSlider_SetIndentHandle Parms{};
+
+	Parms.InValue = InValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.Synth2DSlider.SetLocked
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USynth2DSlider::SetLocked(bool InValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Synth2DSlider", "SetLocked");
+
+	Params::Synth2DSlider_SetLocked Parms{};
+
+	Parms.InValue = InValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.Synth2DSlider.SetSliderHandleColor
+// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FLinearColor&              InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USynth2DSlider::SetSliderHandleColor(const struct FLinearColor& InValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Synth2DSlider", "SetSliderHandleColor");
+
+	Params::Synth2DSlider_SetSliderHandleColor Parms{};
+
+	Parms.InValue = std::move(InValue);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.Synth2DSlider.SetStepSize
+// (Final, RequiredAPI, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USynth2DSlider::SetStepSize(float InValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Synth2DSlider", "SetStepSize");
+
+	Params::Synth2DSlider_SetStepSize Parms{};
+
+	Parms.InValue = InValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.Synth2DSlider.SetValue
+// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FVector2D&                 InValue                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void USynth2DSlider::SetValue(const struct FVector2D& InValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Synth2DSlider", "SetValue");
+
+	Params::Synth2DSlider_SetValue Parms{};
+
+	Parms.InValue = std::move(InValue);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Synthesis.Synth2DSlider.GetValue
+// (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector2D USynth2DSlider::GetValue() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Synth2DSlider", "GetValue");
+
+	Params::Synth2DSlider_GetValue Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 

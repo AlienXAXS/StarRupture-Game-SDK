@@ -25,10 +25,8 @@ SDK_NAMESPACE_START
 
 struct FVector ABP_Exploder_Tier3_Prototype_CystSplineActor_C::AdjustPointToGround(const struct FVector& Point, const struct FVector& Deviation)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_CystSplineActor_C", "AdjustPointToGround");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AdjustPointToGround", FnName));
 
 	Params::BP_Exploder_Tier3_Prototype_CystSplineActor_C_AdjustPointToGround Parms{};
 
@@ -46,10 +44,8 @@ struct FVector ABP_Exploder_Tier3_Prototype_CystSplineActor_C::AdjustPointToGrou
 
 void ABP_Exploder_Tier3_Prototype_CystSplineActor_C::OnRep_SplineCystPathPoints()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_CystSplineActor_C", "OnRep_SplineCystPathPoints");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnRep_SplineCystPathPoints", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -60,10 +56,8 @@ void ABP_Exploder_Tier3_Prototype_CystSplineActor_C::OnRep_SplineCystPathPoints(
 
 void ABP_Exploder_Tier3_Prototype_CystSplineActor_C::PrepareSpline()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_CystSplineActor_C", "PrepareSpline");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PrepareSpline", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -74,10 +68,8 @@ void ABP_Exploder_Tier3_Prototype_CystSplineActor_C::PrepareSpline()
 
 void ABP_Exploder_Tier3_Prototype_CystSplineActor_C::PrepareSplineMeshes()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_CystSplineActor_C", "PrepareSplineMeshes");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PrepareSplineMeshes", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -88,10 +80,8 @@ void ABP_Exploder_Tier3_Prototype_CystSplineActor_C::PrepareSplineMeshes()
 
 void ABP_Exploder_Tier3_Prototype_CystSplineActor_C::PrepareSplinePoints()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_CystSplineActor_C", "PrepareSplinePoints");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PrepareSplinePoints", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

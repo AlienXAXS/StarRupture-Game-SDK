@@ -16,15 +16,6 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function BP_DroneVerticalConnector_Helper_T1.BP_DroneVerticalConnector_Helper_T1_C.OnSetReplacingExistingActor
-// 0x0001 (0x0001 - 0x0000)
-struct BP_DroneVerticalConnector_Helper_T1_C_OnSetReplacingExistingActor final
-{
-public:
-	bool                                          bSet;                                              // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-DUMPER7_ASSERTS_BP_DroneVerticalConnector_Helper_T1_C_OnSetReplacingExistingActor;
-
 // Function BP_DroneVerticalConnector_Helper_T1.BP_DroneVerticalConnector_Helper_T1_C.ExecuteUbergraph_BP_DroneVerticalConnector_Helper_T1
 // 0x0058 (0x0058 - 0x0000)
 struct BP_DroneVerticalConnector_Helper_T1_C_ExecuteUbergraph_BP_DroneVerticalConnector_Helper_T1 final
@@ -40,6 +31,15 @@ public:
 	struct FVector                                K2Node_Select_Default;                             // 0x0040(0x0018)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_DroneVerticalConnector_Helper_T1_C_ExecuteUbergraph_BP_DroneVerticalConnector_Helper_T1;
+
+// Function BP_DroneVerticalConnector_Helper_T1.BP_DroneVerticalConnector_Helper_T1_C.OnSetReplacingExistingActor
+// 0x0001 (0x0001 - 0x0000)
+struct BP_DroneVerticalConnector_Helper_T1_C_OnSetReplacingExistingActor final
+{
+public:
+	bool                                          bSet;                                              // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_DroneVerticalConnector_Helper_T1_C_OnSetReplacingExistingActor;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

@@ -16,6 +16,111 @@
 
 SDK_NAMESPACE_START
 
+// Function GeometryCache.GeometryCacheTrack_FlipbookAnimation.AddMeshSample
+// (Final, RequiredAPI, Native, Public, HasOutParams)
+// Parameters:
+// const struct FGeometryCacheMeshData&    MeshData                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const float                             SampleTime                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGeometryCacheTrack_FlipbookAnimation::AddMeshSample(const struct FGeometryCacheMeshData& MeshData, const float SampleTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GeometryCacheTrack_FlipbookAnimation", "AddMeshSample");
+
+	Params::GeometryCacheTrack_FlipbookAnimation_AddMeshSample Parms{};
+
+	Parms.MeshData = std::move(MeshData);
+	Parms.SampleTime = SampleTime;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.Interface_AssetUserData.AddAssetUserDataOfClass
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UAssetUserData>       InUserDataClass                                        (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UGeometryCache::AddAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AddAssetUserDataOfClass", FnName));
+
+	Params::Interface_AssetUserData_AddAssetUserDataOfClass Parms{};
+
+	Parms.InUserDataClass = InUserDataClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.Interface_AssetUserData.GetAssetUserDataOfClass
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UAssetUserData>       InUserDataClass                                        (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAssetUserData*                   ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UAssetUserData* UGeometryCache::GetAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetAssetUserDataOfClass", FnName));
+
+	Params::Interface_AssetUserData_GetAssetUserDataOfClass Parms{};
+
+	Parms.InUserDataClass = InUserDataClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.Interface_AssetUserData.HasAssetUserDataOfClass
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UAssetUserData>       InUserDataClass                                        (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UGeometryCache::HasAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"HasAssetUserDataOfClass", FnName));
+
+	Params::Interface_AssetUserData_HasAssetUserDataOfClass Parms{};
+
+	Parms.InUserDataClass = InUserDataClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function GeometryCache.GeometryCacheActor.GetGeometryCacheComponent
 // (Final, RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
@@ -38,6 +143,31 @@ class UGeometryCacheComponent* AGeometryCacheActor::GetGeometryCacheComponent() 
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function GeometryCache.GeometryCacheTrack_TransformAnimation.SetMesh
+// (Final, RequiredAPI, Native, Public, HasOutParams)
+// Parameters:
+// const struct FGeometryCacheMeshData&    NewMeshData                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UGeometryCacheTrack_TransformAnimation::SetMesh(const struct FGeometryCacheMeshData& NewMeshData)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GeometryCacheTrack_TransformAnimation", "SetMesh");
+
+	Params::GeometryCacheTrack_TransformAnimation_SetMesh Parms{};
+
+	Parms.NewMeshData = std::move(NewMeshData);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -761,58 +891,6 @@ bool UGeometryCacheComponent::IsPlayingReversed() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function GeometryCache.GeometryCacheTrack_FlipbookAnimation.AddMeshSample
-// (Final, RequiredAPI, Native, Public, HasOutParams)
-// Parameters:
-// const struct FGeometryCacheMeshData&    MeshData                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// const float                             SampleTime                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UGeometryCacheTrack_FlipbookAnimation::AddMeshSample(const struct FGeometryCacheMeshData& MeshData, const float SampleTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GeometryCacheTrack_FlipbookAnimation", "AddMeshSample");
-
-	Params::GeometryCacheTrack_FlipbookAnimation_AddMeshSample Parms{};
-
-	Parms.MeshData = std::move(MeshData);
-	Parms.SampleTime = SampleTime;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function GeometryCache.GeometryCacheTrack_TransformAnimation.SetMesh
-// (Final, RequiredAPI, Native, Public, HasOutParams)
-// Parameters:
-// const struct FGeometryCacheMeshData&    NewMeshData                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UGeometryCacheTrack_TransformAnimation::SetMesh(const struct FGeometryCacheMeshData& NewMeshData)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GeometryCacheTrack_TransformAnimation", "SetMesh");
-
-	Params::GeometryCacheTrack_TransformAnimation_SetMesh Parms{};
-
-	Parms.NewMeshData = std::move(NewMeshData);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 

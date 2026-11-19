@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_ToolTipWidget_C::AddDefaultActions()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ToolTipWidget_C", "AddDefaultActions");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AddDefaultActions", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -39,10 +37,8 @@ void UWBP_ToolTipWidget_C::AddDefaultActions()
 
 void UWBP_ToolTipWidget_C::AddEffect(int32 InValue, const struct FSlateBrush& InIcon, const class FText& InDescription)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ToolTipWidget_C", "AddEffect");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AddEffect", FnName));
 
 	Params::WBP_ToolTipWidget_C_AddEffect Parms{};
 
@@ -59,10 +55,8 @@ void UWBP_ToolTipWidget_C::AddEffect(int32 InValue, const struct FSlateBrush& In
 
 void UWBP_ToolTipWidget_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ToolTipWidget_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -75,10 +69,8 @@ void UWBP_ToolTipWidget_C::Construct()
 
 void UWBP_ToolTipWidget_C::ExecuteUbergraph_WBP_ToolTipWidget(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ToolTipWidget_C", "ExecuteUbergraph_WBP_ToolTipWidget");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_ToolTipWidget_C", "ExecuteUbergraph_WBP_ToolTipWidget", FuncInfo);
 
 	Params::WBP_ToolTipWidget_C_ExecuteUbergraph_WBP_ToolTipWidget Parms{};
 
@@ -93,10 +85,8 @@ void UWBP_ToolTipWidget_C::ExecuteUbergraph_WBP_ToolTipWidget(int32 EntryPoint)
 
 void UWBP_ToolTipWidget_C::RefreshActionBox()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ToolTipWidget_C", "RefreshActionBox");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"RefreshActionBox", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -109,10 +99,8 @@ void UWBP_ToolTipWidget_C::RefreshActionBox()
 
 void UWBP_ToolTipWidget_C::SetCraftedInVisibility(ESlateVisibility InVisibility)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ToolTipWidget_C", "SetCraftedInVisibility");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetCraftedInVisibility", FnName));
 
 	Params::WBP_ToolTipWidget_C_SetCraftedInVisibility Parms{};
 
@@ -129,10 +117,8 @@ void UWBP_ToolTipWidget_C::SetCraftedInVisibility(ESlateVisibility InVisibility)
 
 void UWBP_ToolTipWidget_C::SetGatheredFromVisibility(ESlateVisibility InVisibility)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ToolTipWidget_C", "SetGatheredFromVisibility");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetGatheredFromVisibility", FnName));
 
 	Params::WBP_ToolTipWidget_C_SetGatheredFromVisibility Parms{};
 
@@ -149,10 +135,8 @@ void UWBP_ToolTipWidget_C::SetGatheredFromVisibility(ESlateVisibility InVisibili
 
 void UWBP_ToolTipWidget_C::SetSupportTransfer(bool bSupport)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ToolTipWidget_C", "SetSupportTransfer");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetSupportTransfer", FnName));
 
 	Params::WBP_ToolTipWidget_C_SetSupportTransfer Parms{};
 
@@ -169,10 +153,8 @@ void UWBP_ToolTipWidget_C::SetSupportTransfer(bool bSupport)
 
 void UWBP_ToolTipWidget_C::SetupCraftingType(const EUICraftingType InType)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ToolTipWidget_C", "SetupCraftingType");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetupCraftingType", FnName));
 
 	Params::WBP_ToolTipWidget_C_SetupCraftingType Parms{};
 
@@ -189,10 +171,8 @@ void UWBP_ToolTipWidget_C::SetupCraftingType(const EUICraftingType InType)
 
 void UWBP_ToolTipWidget_C::SetupDataPoints(int32 Points)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ToolTipWidget_C", "SetupDataPoints");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetupDataPoints", FnName));
 
 	Params::WBP_ToolTipWidget_C_SetupDataPoints Parms{};
 
@@ -209,10 +189,8 @@ void UWBP_ToolTipWidget_C::SetupDataPoints(int32 Points)
 
 void UWBP_ToolTipWidget_C::SetupExpand(bool bSupport)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ToolTipWidget_C", "SetupExpand");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetupExpand", FnName));
 
 	Params::WBP_ToolTipWidget_C_SetupExpand Parms{};
 
@@ -233,10 +211,8 @@ void UWBP_ToolTipWidget_C::SetupExpand(bool bSupport)
 
 void UWBP_ToolTipWidget_C::SetupInfoBox(const class FText& Name_0, const int32 Number, const int32 Max, const EUIItemType UIType, const bool IsUsable)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ToolTipWidget_C", "SetupInfoBox");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetupInfoBox", FnName));
 
 	Params::WBP_ToolTipWidget_C_SetupInfoBox Parms{};
 
@@ -257,10 +233,8 @@ void UWBP_ToolTipWidget_C::SetupInfoBox(const class FText& Name_0, const int32 N
 
 void UWBP_ToolTipWidget_C::SetupMinimalVersion(bool bHideItemType)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ToolTipWidget_C", "SetupMinimalVersion");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetupMinimalVersion", FnName));
 
 	Params::WBP_ToolTipWidget_C_SetupMinimalVersion Parms{};
 

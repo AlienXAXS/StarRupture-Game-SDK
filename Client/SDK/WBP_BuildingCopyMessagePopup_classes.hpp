@@ -32,7 +32,7 @@ public:
 public:
 	void ExecuteUbergraph_WBP_BuildingCopyMessagePopup(int32 EntryPoint);
 	void Finished_32BEF69B45A552882AB8F0B7BE757B6F();
-	void SetupMessage(ECrCopyBuildingSettingsMessage MessageType);
+	void SetupMessage(ECrHUDMessage MessageType);
 	void TriggerFadeOut();
 
 public:

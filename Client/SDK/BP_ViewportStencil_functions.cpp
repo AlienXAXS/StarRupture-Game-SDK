@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_ViewportStencil_C::ExecuteUbergraph_BP_ViewportStencil(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ViewportStencil_C", "ExecuteUbergraph_BP_ViewportStencil");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_ViewportStencil_C", "ExecuteUbergraph_BP_ViewportStencil", FuncInfo);
 
 	Params::BP_ViewportStencil_C_ExecuteUbergraph_BP_ViewportStencil Parms{};
 
@@ -45,10 +43,8 @@ void ABP_ViewportStencil_C::ExecuteUbergraph_BP_ViewportStencil(int32 EntryPoint
 
 void ABP_ViewportStencil_C::OnEnviroWaveCanceled(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ViewportStencil_C", "OnEnviroWaveCanceled");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnEnviroWaveCanceled", FnName));
 
 	Params::BP_ViewportStencil_C_OnEnviroWaveCanceled Parms{};
 
@@ -68,10 +64,8 @@ void ABP_ViewportStencil_C::OnEnviroWaveCanceled(EEnviroWave WaveType, EEnviroWa
 
 void ABP_ViewportStencil_C::OnEnviroWaveFinished(EEnviroWave WaveType, const struct FCrEnviroWaveSettings& WaveSettings)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ViewportStencil_C", "OnEnviroWaveFinished");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnEnviroWaveFinished", FnName));
 
 	Params::BP_ViewportStencil_C_OnEnviroWaveFinished Parms{};
 
@@ -92,10 +86,8 @@ void ABP_ViewportStencil_C::OnEnviroWaveFinished(EEnviroWave WaveType, const str
 
 void ABP_ViewportStencil_C::OnEnviroWaveForced(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings, float WaveProgress)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ViewportStencil_C", "OnEnviroWaveForced");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnEnviroWaveForced", FnName));
 
 	Params::BP_ViewportStencil_C_OnEnviroWaveForced Parms{};
 
@@ -118,10 +110,8 @@ void ABP_ViewportStencil_C::OnEnviroWaveForced(EEnviroWave WaveType, EEnviroWave
 
 void ABP_ViewportStencil_C::OnEnviroWaveStarted(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings, float WaveProgress)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ViewportStencil_C", "OnEnviroWaveStarted");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnEnviroWaveStarted", FnName));
 
 	Params::BP_ViewportStencil_C_OnEnviroWaveStarted Parms{};
 
@@ -144,10 +134,8 @@ void ABP_ViewportStencil_C::OnEnviroWaveStarted(EEnviroWave WaveType, EEnviroWav
 
 void ABP_ViewportStencil_C::OnEnviroWaveTick(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings, float WaveProgress)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ViewportStencil_C", "OnEnviroWaveTick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnEnviroWaveTick", FnName));
 
 	Params::BP_ViewportStencil_C_OnEnviroWaveTick Parms{};
 
@@ -165,10 +153,8 @@ void ABP_ViewportStencil_C::OnEnviroWaveTick(EEnviroWave WaveType, EEnviroWaveSt
 
 void ABP_ViewportStencil_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ViewportStencil_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -179,10 +165,8 @@ void ABP_ViewportStencil_C::ReceiveBeginPlay()
 
 void ABP_ViewportStencil_C::UserConstructionScript()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ViewportStencil_C", "UserConstructionScript");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UserConstructionScript", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

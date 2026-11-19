@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_Melee_Tier3_Ragdoll_DeathSequenceActor_C::ExecuteUbergraph_BP_Melee_Tier3_Ragdoll_DeathSequenceActor(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Ragdoll_DeathSequenceActor_C", "ExecuteUbergraph_BP_Melee_Tier3_Ragdoll_DeathSequenceActor");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Melee_Tier3_Ragdoll_DeathSequenceActor_C", "ExecuteUbergraph_BP_Melee_Tier3_Ragdoll_DeathSequenceActor", FuncInfo);
 
 	Params::BP_Melee_Tier3_Ragdoll_DeathSequenceActor_C_ExecuteUbergraph_BP_Melee_Tier3_Ragdoll_DeathSequenceActor Parms{};
 
@@ -43,10 +41,8 @@ void ABP_Melee_Tier3_Ragdoll_DeathSequenceActor_C::ExecuteUbergraph_BP_Melee_Tie
 
 void ABP_Melee_Tier3_Ragdoll_DeathSequenceActor_C::OnDissolveProgressChanged(float DissolveProgress)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Ragdoll_DeathSequenceActor_C", "OnDissolveProgressChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnDissolveProgressChanged", FnName));
 
 	Params::BP_Melee_Tier3_Ragdoll_DeathSequenceActor_C_OnDissolveProgressChanged Parms{};
 
@@ -61,10 +57,8 @@ void ABP_Melee_Tier3_Ragdoll_DeathSequenceActor_C::OnDissolveProgressChanged(flo
 
 void ABP_Melee_Tier3_Ragdoll_DeathSequenceActor_C::OnPrepareRagdollType()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Ragdoll_DeathSequenceActor_C", "OnPrepareRagdollType");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPrepareRagdollType", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -75,10 +69,8 @@ void ABP_Melee_Tier3_Ragdoll_DeathSequenceActor_C::OnPrepareRagdollType()
 
 void ABP_Melee_Tier3_Ragdoll_DeathSequenceActor_C::OnRagdollStart()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Ragdoll_DeathSequenceActor_C", "OnRagdollStart");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnRagdollStart", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -91,10 +83,8 @@ void ABP_Melee_Tier3_Ragdoll_DeathSequenceActor_C::OnRagdollStart()
 
 void ABP_Melee_Tier3_Ragdoll_DeathSequenceActor_C::OnReuse(const struct FTransform& Transform)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Ragdoll_DeathSequenceActor_C", "OnReuse");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnReuse", FnName));
 
 	Params::BP_Melee_Tier3_Ragdoll_DeathSequenceActor_C_OnReuse Parms{};
 
@@ -109,10 +99,8 @@ void ABP_Melee_Tier3_Ragdoll_DeathSequenceActor_C::OnReuse(const struct FTransfo
 
 void ABP_Melee_Tier3_Ragdoll_DeathSequenceActor_C::OnTakenFromPool()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Ragdoll_DeathSequenceActor_C", "OnTakenFromPool");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnTakenFromPool", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

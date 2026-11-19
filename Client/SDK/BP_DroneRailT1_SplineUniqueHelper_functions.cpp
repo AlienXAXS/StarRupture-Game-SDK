@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void ABP_DroneRailT1_SplineUniqueHelper_C::BP_OnCollisionHitsChanged()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneRailT1_SplineUniqueHelper_C", "BP_OnCollisionHitsChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnCollisionHitsChanged", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -37,10 +35,8 @@ void ABP_DroneRailT1_SplineUniqueHelper_C::BP_OnCollisionHitsChanged()
 
 void ABP_DroneRailT1_SplineUniqueHelper_C::ExecuteUbergraph_BP_DroneRailT1_SplineUniqueHelper(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneRailT1_SplineUniqueHelper_C", "ExecuteUbergraph_BP_DroneRailT1_SplineUniqueHelper");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_DroneRailT1_SplineUniqueHelper_C", "ExecuteUbergraph_BP_DroneRailT1_SplineUniqueHelper", FuncInfo);
 
 	Params::BP_DroneRailT1_SplineUniqueHelper_C_ExecuteUbergraph_BP_DroneRailT1_SplineUniqueHelper Parms{};
 
@@ -57,10 +53,8 @@ void ABP_DroneRailT1_SplineUniqueHelper_C::ExecuteUbergraph_BP_DroneRailT1_Splin
 
 void ABP_DroneRailT1_SplineUniqueHelper_C::OnConfirmedPoint(const struct FAuAPConfirmPointData& NewPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneRailT1_SplineUniqueHelper_C", "OnConfirmedPoint");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnConfirmedPoint", FnName));
 
 	Params::BP_DroneRailT1_SplineUniqueHelper_C_OnConfirmedPoint Parms{};
 
@@ -77,10 +71,8 @@ void ABP_DroneRailT1_SplineUniqueHelper_C::OnConfirmedPoint(const struct FAuAPCo
 
 void ABP_DroneRailT1_SplineUniqueHelper_C::OnSetReplacingExistingActor(bool bSet)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneRailT1_SplineUniqueHelper_C", "OnSetReplacingExistingActor");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSetReplacingExistingActor", FnName));
 
 	Params::BP_DroneRailT1_SplineUniqueHelper_C_OnSetReplacingExistingActor Parms{};
 
@@ -97,10 +89,8 @@ void ABP_DroneRailT1_SplineUniqueHelper_C::OnSetReplacingExistingActor(bool bSet
 
 void ABP_DroneRailT1_SplineUniqueHelper_C::ReceiveTick(float DeltaSeconds)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneRailT1_SplineUniqueHelper_C", "ReceiveTick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveTick", FnName));
 
 	Params::BP_DroneRailT1_SplineUniqueHelper_C_ReceiveTick Parms{};
 
@@ -117,10 +107,8 @@ void ABP_DroneRailT1_SplineUniqueHelper_C::ReceiveTick(float DeltaSeconds)
 
 void ABP_DroneRailT1_SplineUniqueHelper_C::SetMeshColor(const struct FLinearColor& Color)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneRailT1_SplineUniqueHelper_C", "SetMeshColor");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetMeshColor", FnName));
 
 	Params::BP_DroneRailT1_SplineUniqueHelper_C_SetMeshColor Parms{};
 
@@ -139,10 +127,8 @@ void ABP_DroneRailT1_SplineUniqueHelper_C::SetMeshColor(const struct FLinearColo
 
 void ABP_DroneRailT1_SplineUniqueHelper_C::SetSplineSegment(class USplineMeshComponent* SplineMeshComponent, int32 FirstPointIndex, int32 SecondPointIndex)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneRailT1_SplineUniqueHelper_C", "SetSplineSegment");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetSplineSegment", FnName));
 
 	Params::BP_DroneRailT1_SplineUniqueHelper_C_SetSplineSegment Parms{};
 
@@ -159,10 +145,8 @@ void ABP_DroneRailT1_SplineUniqueHelper_C::SetSplineSegment(class USplineMeshCom
 
 void ABP_DroneRailT1_SplineUniqueHelper_C::UserConstructionScript()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneRailT1_SplineUniqueHelper_C", "UserConstructionScript");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UserConstructionScript", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

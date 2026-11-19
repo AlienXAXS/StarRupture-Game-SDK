@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "PBIK_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
+#include "PBIK_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -278,6 +278,43 @@ public:
 };
 DUMPER7_ASSERTS_FIKRetargetAlignPoleVectorOp;
 
+// ScriptStruct IKRig.IKRigSettingsBase
+// 0x0008 (0x0008 - 0x0000)
+struct alignas(0x08) FIKRigSettingsBase
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FIKRigSettingsBase;
+
+// ScriptStruct IKRig.IKRigSolverSettingsBase
+// 0x0000 (0x0008 - 0x0008)
+struct FIKRigSolverSettingsBase : public FIKRigSettingsBase
+{
+};
+DUMPER7_ASSERTS_FIKRigSolverSettingsBase;
+
+// ScriptStruct IKRig.IKRigBodyMoverSettings
+// 0x0038 (0x0040 - 0x0008)
+struct FIKRigBodyMoverSettings final : public FIKRigSolverSettingsBase
+{
+public:
+	class FName                                   StartBone;                                         // 0x0008(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PositionAlpha;                                     // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PositionPositiveX;                                 // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PositionNegativeX;                                 // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PositionPositiveY;                                 // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PositionNegativeY;                                 // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PositionPositiveZ;                                 // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PositionNegativeZ;                                 // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RotationAlpha;                                     // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RotateXAlpha;                                      // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RotateYAlpha;                                      // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         RotateZAlpha;                                      // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FIKRigBodyMoverSettings;
+
 // ScriptStruct IKRig.IKRetargetCopyBasePoseOpSettings
 // 0x0010 (0x0020 - 0x0010)
 struct FIKRetargetCopyBasePoseOpSettings final : public FIKRetargetOpSettingsBase
@@ -298,6 +335,15 @@ public:
 	struct FIKRetargetCopyBasePoseOpSettings      Settings;                                          // 0x0020(0x0020)(NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FIKRetargetCopyBasePoseOp;
+
+// ScriptStruct IKRig.IKRigGoalSettingsBase
+// 0x0008 (0x0010 - 0x0008)
+struct FIKRigGoalSettingsBase : public FIKRigSettingsBase
+{
+public:
+	class FName                                   Goal;                                              // 0x0008(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FIKRigGoalSettingsBase;
 
 // ScriptStruct IKRig.CurveRemapPair
 // 0x0010 (0x0010 - 0x0000)
@@ -346,6 +392,17 @@ public:
 	double                                        TranslationAlpha;                                  // 0x0020(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FRetargetFKChainSettings;
+
+// ScriptStruct IKRig.IKRigSolverBase
+// 0x0010 (0x0010 - 0x0000)
+struct alignas(0x08) FIKRigSolverBase
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bIsEnabled;                                        // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FIKRigSolverBase;
 
 // ScriptStruct IKRig.IKRetargetFKChainsOpSettings
 // 0x0030 (0x0040 - 0x0010)
@@ -743,6 +800,17 @@ public:
 };
 DUMPER7_ASSERTS_FRetargetSpeedPlantingSettings;
 
+// ScriptStruct IKRig.IKRigBodyMoverGoalSettings
+// 0x0010 (0x0020 - 0x0010)
+struct FIKRigBodyMoverGoalSettings final : public FIKRigGoalSettingsBase
+{
+public:
+	class FName                                   BoneName;                                          // 0x0010(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InfluenceMultiplier;                               // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FIKRigBodyMoverGoalSettings;
+
 // ScriptStruct IKRig.IKRetargetSpeedPlantingOpSettings
 // 0x0028 (0x0038 - 0x0010)
 struct FIKRetargetSpeedPlantingOpSettings final : public FIKRetargetOpSettingsBase
@@ -794,6 +862,17 @@ public:
 	double                                        DebugDrawThickness;                                // 0x0058(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FIKRetargetStrideWarpingOpSettings;
+
+// ScriptStruct IKRig.IKRigBodyMoverSolver
+// 0x0058 (0x0068 - 0x0010)
+struct FIKRigBodyMoverSolver final : public FIKRigSolverBase
+{
+public:
+	struct FIKRigBodyMoverSettings                Settings;                                          // 0x0010(0x0040)(NativeAccessSpecifierPublic)
+	TArray<struct FIKRigBodyMoverGoalSettings>    AllGoalSettings;                                   // 0x0050(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_60[0x8];                                       // 0x0060(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FIKRigBodyMoverSolver;
 
 // ScriptStruct IKRig.IKRetargetStrideWarpingOp
 // 0x0078 (0x0098 - 0x0020)
@@ -905,6 +984,21 @@ public:
 };
 DUMPER7_ASSERTS_FBoneChain;
 
+// ScriptStruct IKRig.IKRigFBIKGoalSettings
+// 0x0020 (0x0030 - 0x0010)
+struct FIKRigFBIKGoalSettings final : public FIKRigGoalSettingsBase
+{
+public:
+	class FName                                   BoneName;                                          // 0x0010(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ChainDepth;                                        // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         StrengthAlpha;                                     // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PullChainAlpha;                                    // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PinRotation;                                       // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         IndexInSolver;                                     // 0x0028(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FIKRigFBIKGoalSettings;
+
 // ScriptStruct IKRig.RetargetDefinition
 // 0x0018 (0x0018 - 0x0000)
 struct FRetargetDefinition final
@@ -947,100 +1041,6 @@ public:
 	uint8                                         Pad_60[0x10];                                      // 0x0060(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FIKRigSkeleton;
-
-// ScriptStruct IKRig.IKRigSettingsBase
-// 0x0008 (0x0008 - 0x0000)
-struct alignas(0x08) FIKRigSettingsBase
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FIKRigSettingsBase;
-
-// ScriptStruct IKRig.IKRigGoalSettingsBase
-// 0x0008 (0x0010 - 0x0008)
-struct FIKRigGoalSettingsBase : public FIKRigSettingsBase
-{
-public:
-	class FName                                   Goal;                                              // 0x0008(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FIKRigGoalSettingsBase;
-
-// ScriptStruct IKRig.IKRigBodyMoverGoalSettings
-// 0x0010 (0x0020 - 0x0010)
-struct FIKRigBodyMoverGoalSettings final : public FIKRigGoalSettingsBase
-{
-public:
-	class FName                                   BoneName;                                          // 0x0010(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         InfluenceMultiplier;                               // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FIKRigBodyMoverGoalSettings;
-
-// ScriptStruct IKRig.IKRigSolverSettingsBase
-// 0x0000 (0x0008 - 0x0008)
-struct FIKRigSolverSettingsBase : public FIKRigSettingsBase
-{
-};
-DUMPER7_ASSERTS_FIKRigSolverSettingsBase;
-
-// ScriptStruct IKRig.IKRigBodyMoverSettings
-// 0x0038 (0x0040 - 0x0008)
-struct FIKRigBodyMoverSettings final : public FIKRigSolverSettingsBase
-{
-public:
-	class FName                                   StartBone;                                         // 0x0008(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PositionAlpha;                                     // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PositionPositiveX;                                 // 0x0014(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PositionNegativeX;                                 // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PositionPositiveY;                                 // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PositionNegativeY;                                 // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PositionPositiveZ;                                 // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PositionNegativeZ;                                 // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RotationAlpha;                                     // 0x002C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RotateXAlpha;                                      // 0x0030(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RotateYAlpha;                                      // 0x0034(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         RotateZAlpha;                                      // 0x0038(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FIKRigBodyMoverSettings;
-
-// ScriptStruct IKRig.IKRigSolverBase
-// 0x0010 (0x0010 - 0x0000)
-struct alignas(0x08) FIKRigSolverBase
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	bool                                          bIsEnabled;                                        // 0x0008(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FIKRigSolverBase;
-
-// ScriptStruct IKRig.IKRigBodyMoverSolver
-// 0x0058 (0x0068 - 0x0010)
-struct FIKRigBodyMoverSolver final : public FIKRigSolverBase
-{
-public:
-	struct FIKRigBodyMoverSettings                Settings;                                          // 0x0010(0x0040)(NativeAccessSpecifierPublic)
-	TArray<struct FIKRigBodyMoverGoalSettings>    AllGoalSettings;                                   // 0x0050(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_60[0x8];                                       // 0x0060(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FIKRigBodyMoverSolver;
-
-// ScriptStruct IKRig.IKRigFBIKGoalSettings
-// 0x0020 (0x0030 - 0x0010)
-struct FIKRigFBIKGoalSettings final : public FIKRigGoalSettingsBase
-{
-public:
-	class FName                                   BoneName;                                          // 0x0010(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ChainDepth;                                        // 0x0018(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         StrengthAlpha;                                     // 0x001C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PullChainAlpha;                                    // 0x0020(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PinRotation;                                       // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         IndexInSolver;                                     // 0x0028(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FIKRigFBIKGoalSettings;
 
 // ScriptStruct IKRig.IKRigBoneSettingsBase
 // 0x0008 (0x0010 - 0x0008)

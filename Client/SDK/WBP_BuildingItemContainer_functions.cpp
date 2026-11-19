@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_BuildingItemContainer_C::SetAllSlotsEmptyBackground()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_BuildingItemContainer_C", "SetAllSlotsEmptyBackground");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetAllSlotsEmptyBackground", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

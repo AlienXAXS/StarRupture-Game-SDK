@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void ABP_Animal_GoldenBalloon_C::Emissive__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_GoldenBalloon_C", "Emissive__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Emissive__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -35,10 +33,8 @@ void ABP_Animal_GoldenBalloon_C::Emissive__FinishedFunc()
 
 void ABP_Animal_GoldenBalloon_C::Emissive__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_GoldenBalloon_C", "Emissive__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Emissive__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -51,10 +47,8 @@ void ABP_Animal_GoldenBalloon_C::Emissive__UpdateFunc()
 
 void ABP_Animal_GoldenBalloon_C::ExecuteUbergraph_BP_Animal_GoldenBalloon(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_GoldenBalloon_C", "ExecuteUbergraph_BP_Animal_GoldenBalloon");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Animal_GoldenBalloon_C", "ExecuteUbergraph_BP_Animal_GoldenBalloon", FuncInfo);
 
 	Params::BP_Animal_GoldenBalloon_C_ExecuteUbergraph_BP_Animal_GoldenBalloon Parms{};
 
@@ -69,10 +63,8 @@ void ABP_Animal_GoldenBalloon_C::ExecuteUbergraph_BP_Animal_GoldenBalloon(int32 
 
 void ABP_Animal_GoldenBalloon_C::OnRunAwayStartedVisuals()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_GoldenBalloon_C", "OnRunAwayStartedVisuals");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnRunAwayStartedVisuals", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -83,10 +75,8 @@ void ABP_Animal_GoldenBalloon_C::OnRunAwayStartedVisuals()
 
 void ABP_Animal_GoldenBalloon_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_GoldenBalloon_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

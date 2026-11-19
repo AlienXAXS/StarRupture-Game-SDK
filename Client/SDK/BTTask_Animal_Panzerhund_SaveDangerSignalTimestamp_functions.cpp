@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UBTTask_Animal_Panzerhund_SaveDangerSignalTimestamp_C::ExecuteUbergraph_BTTask_Animal_Panzerhund_SaveDangerSignalTimestamp(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTTask_Animal_Panzerhund_SaveDangerSignalTimestamp_C", "ExecuteUbergraph_BTTask_Animal_Panzerhund_SaveDangerSignalTimestamp");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BTTask_Animal_Panzerhund_SaveDangerSignalTimestamp_C", "ExecuteUbergraph_BTTask_Animal_Panzerhund_SaveDangerSignalTimestamp", FuncInfo);
 
 	Params::BTTask_Animal_Panzerhund_SaveDangerSignalTimestamp_C_ExecuteUbergraph_BTTask_Animal_Panzerhund_SaveDangerSignalTimestamp Parms{};
 
@@ -44,10 +42,8 @@ void UBTTask_Animal_Panzerhund_SaveDangerSignalTimestamp_C::ExecuteUbergraph_BTT
 
 void UBTTask_Animal_Panzerhund_SaveDangerSignalTimestamp_C::ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTTask_Animal_Panzerhund_SaveDangerSignalTimestamp_C", "ReceiveExecuteAI");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveExecuteAI", FnName));
 
 	Params::BTTask_Animal_Panzerhund_SaveDangerSignalTimestamp_C_ReceiveExecuteAI Parms{};
 

@@ -12,20 +12,21 @@
 
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "CommonGame_structs.hpp"
 #include "ChimeraUI_classes.hpp"
+#include "CommonGame_structs.hpp"
 
 
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_MenuButton.WBP_MenuButton_C
-// 0x0020 (0x16C0 - 0x16A0)
+// 0x0020 (0x16E0 - 0x16C0)
 class UWBP_MenuButton_C final : public UCrUW_ButtonBase
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x16A0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UImage*                                 Image;                                             // 0x16A8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	struct FLinearColor                           DefaultColor;                                      // 0x16B0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_16B8[0x8];                                     // 0x16B8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x16C0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UImage*                                 Image;                                             // 0x16C8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	struct FLinearColor                           DefaultColor;                                      // 0x16D0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void BP_OnClicked();

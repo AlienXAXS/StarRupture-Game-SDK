@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_CorporationRecipeSlot_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CorporationRecipeSlot_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -37,10 +35,8 @@ void UWBP_CorporationRecipeSlot_C::Construct()
 
 void UWBP_CorporationRecipeSlot_C::ExecuteUbergraph_WBP_CorporationRecipeSlot(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CorporationRecipeSlot_C", "ExecuteUbergraph_WBP_CorporationRecipeSlot");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_CorporationRecipeSlot_C", "ExecuteUbergraph_WBP_CorporationRecipeSlot", FuncInfo);
 
 	Params::WBP_CorporationRecipeSlot_C_ExecuteUbergraph_WBP_CorporationRecipeSlot Parms{};
 
@@ -57,10 +53,8 @@ void UWBP_CorporationRecipeSlot_C::ExecuteUbergraph_WBP_CorporationRecipeSlot(in
 
 void UWBP_CorporationRecipeSlot_C::SetColors(const struct FLinearColor& HighlightColor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CorporationRecipeSlot_C", "SetColors");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetColors", FnName));
 
 	Params::WBP_CorporationRecipeSlot_C_SetColors Parms{};
 
@@ -75,10 +69,8 @@ void UWBP_CorporationRecipeSlot_C::SetColors(const struct FLinearColor& Highligh
 
 void UWBP_CorporationRecipeSlot_C::SetFillAlignment()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CorporationRecipeSlot_C", "SetFillAlignment");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetFillAlignment", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -91,10 +83,8 @@ void UWBP_CorporationRecipeSlot_C::SetFillAlignment()
 
 void UWBP_CorporationRecipeSlot_C::SetRecipeDisabled(bool bLevelFinished)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CorporationRecipeSlot_C", "SetRecipeDisabled");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetRecipeDisabled", FnName));
 
 	Params::WBP_CorporationRecipeSlot_C_SetRecipeDisabled Parms{};
 
@@ -109,10 +99,8 @@ void UWBP_CorporationRecipeSlot_C::SetRecipeDisabled(bool bLevelFinished)
 
 void UWBP_CorporationRecipeSlot_C::SetRecipeLocked()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CorporationRecipeSlot_C", "SetRecipeLocked");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetRecipeLocked", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -125,10 +113,8 @@ void UWBP_CorporationRecipeSlot_C::SetRecipeLocked()
 
 void UWBP_CorporationRecipeSlot_C::ShowChooseText(bool Show)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CorporationRecipeSlot_C", "ShowChooseText");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ShowChooseText", FnName));
 
 	Params::WBP_CorporationRecipeSlot_C_ShowChooseText Parms{};
 
@@ -145,10 +131,8 @@ void UWBP_CorporationRecipeSlot_C::ShowChooseText(bool Show)
 
 void UWBP_CorporationRecipeSlot_C::ShowHighlight(bool bHighlight)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CorporationRecipeSlot_C", "ShowHighlight");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ShowHighlight", FnName));
 
 	Params::WBP_CorporationRecipeSlot_C_ShowHighlight Parms{};
 
@@ -165,10 +149,8 @@ void UWBP_CorporationRecipeSlot_C::ShowHighlight(bool bHighlight)
 
 void UWBP_CorporationRecipeSlot_C::ShowItemNameInIcon(const class FText& InText)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CorporationRecipeSlot_C", "ShowItemNameInIcon");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ShowItemNameInIcon", FnName));
 
 	Params::WBP_CorporationRecipeSlot_C_ShowItemNameInIcon Parms{};
 
@@ -186,10 +168,8 @@ void UWBP_CorporationRecipeSlot_C::ShowItemNameInIcon(const class FText& InText)
 
 void UWBP_CorporationRecipeSlot_C::ShowPoints(bool bShow, int32 Points_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CorporationRecipeSlot_C", "ShowPoints");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ShowPoints", FnName));
 
 	Params::WBP_CorporationRecipeSlot_C_ShowPoints Parms{};
 
@@ -207,10 +187,8 @@ void UWBP_CorporationRecipeSlot_C::ShowPoints(bool bShow, int32 Points_0)
 
 void UWBP_CorporationRecipeSlot_C::ShowSelection(bool bSelected)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CorporationRecipeSlot_C", "ShowSelection");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ShowSelection", FnName));
 
 	Params::WBP_CorporationRecipeSlot_C_ShowSelection Parms{};
 

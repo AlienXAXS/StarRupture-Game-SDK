@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UBTService_Exploder_Tier2_LOD0_UpdateAfterShotFiredPosition_C::ExecuteUbergraph_BTService_Exploder_Tier2_LOD0_UpdateAfterShotFiredPosition(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTService_Exploder_Tier2_LOD0_UpdateAfterShotFiredPosition_C", "ExecuteUbergraph_BTService_Exploder_Tier2_LOD0_UpdateAfterShotFiredPosition");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BTService_Exploder_Tier2_LOD0_UpdateAfterShotFiredPosition_C", "ExecuteUbergraph_BTService_Exploder_Tier2_LOD0_UpdateAfterShotFiredPosition", FuncInfo);
 
 	Params::BTService_Exploder_Tier2_LOD0_UpdateAfterShotFiredPosition_C_ExecuteUbergraph_BTService_Exploder_Tier2_LOD0_UpdateAfterShotFiredPosition Parms{};
 
@@ -44,10 +42,8 @@ void UBTService_Exploder_Tier2_LOD0_UpdateAfterShotFiredPosition_C::ExecuteUberg
 
 void UBTService_Exploder_Tier2_LOD0_UpdateAfterShotFiredPosition_C::ReceiveActivationAI(class AAIController* OwnerController, class APawn* ControlledPawn)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTService_Exploder_Tier2_LOD0_UpdateAfterShotFiredPosition_C", "ReceiveActivationAI");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveActivationAI", FnName));
 
 	Params::BTService_Exploder_Tier2_LOD0_UpdateAfterShotFiredPosition_C_ReceiveActivationAI Parms{};
 
@@ -66,10 +62,8 @@ void UBTService_Exploder_Tier2_LOD0_UpdateAfterShotFiredPosition_C::ReceiveActiv
 
 void UBTService_Exploder_Tier2_LOD0_UpdateAfterShotFiredPosition_C::UpdateAfterShotFiredPosition(class AActor* Pawn, class AAIController* Controller)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTService_Exploder_Tier2_LOD0_UpdateAfterShotFiredPosition_C", "UpdateAfterShotFiredPosition");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateAfterShotFiredPosition", FnName));
 
 	Params::BTService_Exploder_Tier2_LOD0_UpdateAfterShotFiredPosition_C_UpdateAfterShotFiredPosition Parms{};
 

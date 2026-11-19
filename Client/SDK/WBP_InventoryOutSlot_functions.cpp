@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_InventoryOutSlot_C::ExecuteUbergraph_WBP_InventoryOutSlot(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryOutSlot_C", "ExecuteUbergraph_WBP_InventoryOutSlot");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_InventoryOutSlot_C", "ExecuteUbergraph_WBP_InventoryOutSlot", FuncInfo);
 
 	Params::WBP_InventoryOutSlot_C_ExecuteUbergraph_WBP_InventoryOutSlot Parms{};
 
@@ -41,10 +39,8 @@ void UWBP_InventoryOutSlot_C::ExecuteUbergraph_WBP_InventoryOutSlot(int32 EntryP
 
 void UWBP_InventoryOutSlot_C::HideFullStackIcon()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryOutSlot_C", "HideFullStackIcon");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"HideFullStackIcon", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -57,10 +53,8 @@ void UWBP_InventoryOutSlot_C::HideFullStackIcon()
 
 void UWBP_InventoryOutSlot_C::SetBackgroundColor(const struct FColor& InColor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryOutSlot_C", "SetBackgroundColor");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetBackgroundColor", FnName));
 
 	Params::WBP_InventoryOutSlot_C_SetBackgroundColor Parms{};
 
@@ -75,10 +69,8 @@ void UWBP_InventoryOutSlot_C::SetBackgroundColor(const struct FColor& InColor)
 
 void UWBP_InventoryOutSlot_C::SetDefaultBrush()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryOutSlot_C", "SetDefaultBrush");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetDefaultBrush", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -91,10 +83,8 @@ void UWBP_InventoryOutSlot_C::SetDefaultBrush()
 
 void UWBP_InventoryOutSlot_C::SetSlotSize(const struct FVector2D& InSize)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryOutSlot_C", "SetSlotSize");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetSlotSize", FnName));
 
 	Params::WBP_InventoryOutSlot_C_SetSlotSize Parms{};
 
@@ -112,10 +102,8 @@ void UWBP_InventoryOutSlot_C::SetSlotSize(const struct FVector2D& InSize)
 
 void UWBP_InventoryOutSlot_C::ShowItemNameInIcon(const class FText& InText, bool Show)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryOutSlot_C", "ShowItemNameInIcon");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ShowItemNameInIcon", FnName));
 
 	Params::WBP_InventoryOutSlot_C_ShowItemNameInIcon Parms{};
 

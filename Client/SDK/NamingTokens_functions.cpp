@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UNamingTokens::OnPostEvaluate()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("NamingTokens", "OnPostEvaluate");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPostEvaluate", FnName));
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -42,10 +40,8 @@ void UNamingTokens::OnPostEvaluate()
 
 void UNamingTokens::OnPreEvaluate(const struct FNamingTokensEvaluationData& InEvaluationData)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("NamingTokens", "OnPreEvaluate");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPreEvaluate", FnName));
 
 	Params::NamingTokens_OnPreEvaluate Parms{};
 
@@ -92,10 +88,8 @@ class FText UNamingTokens::ProcessTokenTemplateFunction()
 
 struct FDateTime UNamingTokens::GetCurrentDateTime() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("NamingTokens", "GetCurrentDateTime");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetCurrentDateTime", FnName));
 
 	Params::NamingTokens_GetCurrentDateTime Parms{};
 

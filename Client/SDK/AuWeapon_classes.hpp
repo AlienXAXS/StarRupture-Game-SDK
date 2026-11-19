@@ -21,10 +21,10 @@
 #include "AuWeapon_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "AuCueTranslator_structs.hpp"
 #include "AuEquipment_classes.hpp"
 #include "AuCore_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "AuCueTranslator_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -465,9 +465,12 @@ public:
 DUMPER7_ASSERTS_UAuGE_SwapWeapon;
 
 // Class AuWeapon.AuItemWeaponInterface
-// 0x0000 (0x0000 - 0x0000)
-class IAuItemWeaponInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IAuItemWeaponInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -716,33 +719,33 @@ public:
 DUMPER7_ASSERTS_UAuWeaponAttributeSet;
 
 // Class AuWeapon.AuWeaponComponent
-// 0x06F8 (0x1148 - 0x0A50)
+// 0x06F8 (0x1160 - 0x0A68)
 class UAuWeaponComponent : public UAuEquipmentComponent
 {
 public:
-	TArray<struct FAuHolsterSocket>               HolsterSockets;                                    // 0x0A50(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPrivate)
-	struct FAuEquippedWeapon                      EquippedWeapon;                                    // 0x0A60(0x0100)(Net, RepNotify, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_B60[0x38];                                     // 0x0B60(0x0038)(Fixing Size After Last Property [ Dumper-7 ])
-	uint8                                         WeaponUnholsterRep;                                // 0x0B98(0x0001)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         WeaponHolsterRep;                                  // 0x0B99(0x0001)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	struct FAuReloadStateRep                      ReloadState;                                       // 0x0B9A(0x0002)(Net, RepNotify, NoDestructor, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_B9C[0x24C];                                    // 0x0B9C(0x024C)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(const struct FAuEquippedWeapon& NewWeapon, const struct FAuEquippedWeapon& OldWeapon)> OnWeaponEquipped; // 0x0DE8(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const struct FAuEquippedWeapon& EquippedWeapon)> OnWeaponUsed;     // 0x0E00(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const struct FAuEquippedWeapon& NewWeapon, const struct FAuEquippedWeapon& OldWeapon)> OnWeaponUnequiped; // 0x0E18(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_E30[0x80];                                     // 0x0E30(0x0080)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FAuItemSlot                            WantedEquipSlot;                                   // 0x0EB0(0x0030)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnTemplate, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_EE0[0x40];                                     // 0x0EE0(0x0040)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void()>              OnShotFiered;                                      // 0x0F20(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, Protected, NativeAccessSpecifierProtected)
-	uint8                                         Pad_F38[0xA0];                                     // 0x0F38(0x00A0)(Fixing Size After Last Property [ Dumper-7 ])
-	TScriptInterface<class IAuWeaponInterface>    WeaponInterface;                                   // 0x0FD8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_FE8[0x90];                                     // 0x0FE8(0x0090)(Fixing Size After Last Property [ Dumper-7 ])
-	uint8                                         bIsFiring : 1;                                     // 0x1078(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (BlueprintVisible, BlueprintReadOnly, Net, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
-	uint8                                         bIsAiming : 1;                                     // 0x1078(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (BlueprintVisible, BlueprintReadOnly, Net, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
-	uint8                                         StartFireCounter;                                  // 0x1079(0x0001)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         StopFireCounter;                                   // 0x107A(0x0001)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_107B[0xBD];                                    // 0x107B(0x00BD)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class AAuWeaponActor*>                 SpawnedFireCosmeticsActors;                        // 0x1138(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
+	TArray<struct FAuHolsterSocket>               HolsterSockets;                                    // 0x0A68(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPrivate)
+	struct FAuEquippedWeapon                      EquippedWeapon;                                    // 0x0A78(0x0100)(Net, RepNotify, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_B78[0x38];                                     // 0x0B78(0x0038)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         WeaponUnholsterRep;                                // 0x0BB0(0x0001)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         WeaponHolsterRep;                                  // 0x0BB1(0x0001)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	struct FAuReloadStateRep                      ReloadState;                                       // 0x0BB2(0x0002)(Net, RepNotify, NoDestructor, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_BB4[0x24C];                                    // 0x0BB4(0x024C)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(const struct FAuEquippedWeapon& NewWeapon, const struct FAuEquippedWeapon& OldWeapon)> OnWeaponEquipped; // 0x0E00(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FAuEquippedWeapon& EquippedWeapon)> OnWeaponUsed;     // 0x0E18(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const struct FAuEquippedWeapon& NewWeapon, const struct FAuEquippedWeapon& OldWeapon)> OnWeaponUnequiped; // 0x0E30(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_E48[0x80];                                     // 0x0E48(0x0080)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FAuItemSlot                            WantedEquipSlot;                                   // 0x0EC8(0x0030)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnTemplate, EditConst, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_EF8[0x40];                                     // 0x0EF8(0x0040)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void()>              OnShotFiered;                                      // 0x0F38(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, Protected, NativeAccessSpecifierProtected)
+	uint8                                         Pad_F50[0xA0];                                     // 0x0F50(0x00A0)(Fixing Size After Last Property [ Dumper-7 ])
+	TScriptInterface<class IAuWeaponInterface>    WeaponInterface;                                   // 0x0FF0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_1000[0x90];                                    // 0x1000(0x0090)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         bIsFiring : 1;                                     // 0x1090(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (BlueprintVisible, BlueprintReadOnly, Net, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
+	uint8                                         bIsAiming : 1;                                     // 0x1090(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (BlueprintVisible, BlueprintReadOnly, Net, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
+	uint8                                         StartFireCounter;                                  // 0x1091(0x0001)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         StopFireCounter;                                   // 0x1092(0x0001)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_1093[0xBD];                                    // 0x1093(0x00BD)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class AAuWeaponActor*>                 SpawnedFireCosmeticsActors;                        // 0x1150(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
 
 public:
 	static void ApplyWeaponApplyDamageEffectSpec(class UGameplayAbility* Ability, const struct FGameplayTag& EffectTag, const struct FAuTargetData& InHitResults, const struct FAuCustomTargetHandle& TargetingHandle, const struct FAuCustomTraceDataHandle& CustomData);
@@ -809,9 +812,12 @@ public:
 DUMPER7_ASSERTS_UAuWeaponComponent;
 
 // Class AuWeapon.AuWeaponInterface
-// 0x0000 (0x0000 - 0x0000)
-class IAuWeaponInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IAuWeaponInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -838,7 +844,7 @@ public:
 DUMPER7_ASSERTS_IAuWeaponInterface;
 
 // Class AuWeapon.AuWeaponItemDataBase
-// 0x09D0 (0x0DD0 - 0x0400)
+// 0x0A00 (0x0E00 - 0x0400)
 class UAuWeaponItemDataBase : public UAuEquipmentItemData
 {
 public:
@@ -865,70 +871,74 @@ public:
 	struct FScalableFloat                         HolsterSpeed;                                      // 0x0638(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
 	struct FScalableFloat                         UnholsterDuration;                                 // 0x0660(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
 	struct FScalableFloat                         Spread;                                            // 0x0688(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
-	struct FScalableFloat                         MaxAimSpreadMultiplierWhileMoving;                 // 0x06B0(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
-	struct FScalableFloat                         MaxRotationSpreadMultiplier;                       // 0x06D8(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
-	struct FScalableFloat                         MaxSpreadMultiplierWhileMoving;                    // 0x0700(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
-	struct FScalableFloat                         SpreadMultiplierWhileMoving;                       // 0x0728(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
-	struct FScalableFloat                         AimSpreadMultiplierWhileMoving;                    // 0x0750(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
-	struct FScalableFloat                         MaxSpread;                                         // 0x0778(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
-	struct FScalableFloat                         SpreadGain;                                        // 0x07A0(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
-	struct FScalableFloat                         SpreadRecoveryValue;                               // 0x07C8(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
-	struct FScalableFloat                         SpreadRecoveryDelayTime;                           // 0x07F0(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
-	struct FScalableFloat                         AimSpreadRecoveryDelayTime;                        // 0x0818(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
-	struct FScalableFloat                         SpreadGainInterpolationSpeed;                      // 0x0840(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
-	struct FScalableFloat                         AimSpreadGainInterpolationSpeed;                   // 0x0868(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
-	struct FScalableFloat                         DelayBeforeRotationSpread;                         // 0x0890(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
-	struct FScalableFloat                         YawMultiplier;                                     // 0x08B8(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
-	struct FScalableFloat                         PitchMultiplier;                                   // 0x08E0(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
-	class UCurveFloat*                            VerticalSwayCurve;                                 // 0x0908(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	struct FScalableFloat                         VerticalSwayMultiplier;                            // 0x0910(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Protected, NativeAccessSpecifierProtected)
-	struct FScalableFloat                         VerticalSwayInterpolationTime;                     // 0x0938(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Protected, NativeAccessSpecifierProtected)
-	struct FScalableFloat                         VerticalSwayDuration;                              // 0x0960(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Protected, NativeAccessSpecifierProtected)
-	class UCurveFloat*                            HorizontalSwayCurve;                               // 0x0988(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	struct FScalableFloat                         HorizontalSwayMultiplier;                          // 0x0990(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Protected, NativeAccessSpecifierProtected)
-	struct FScalableFloat                         HorizontalSwayInterpolationTime;                   // 0x09B8(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Protected, NativeAccessSpecifierProtected)
-	struct FScalableFloat                         HorizontalSwayDuration;                            // 0x09E0(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Protected, NativeAccessSpecifierProtected)
-	struct FScalableFloat                         RecoilDuration;                                    // 0x0A08(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
-	struct FScalableFloat                         RecoilRecoverySpeed;                               // 0x0A30(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
-	struct FScalableFloat                         RecoilRecoveryDelay;                               // 0x0A58(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
-	struct FScalableFloat                         VerticalInterpolationSpeed;                        // 0x0A80(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
-	struct FScalableFloat                         VerticalRecoilMultiplier;                          // 0x0AA8(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
-	class UCurveFloat*                            VerticalRecoilCurveMultiplier;                     // 0x0AD0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCurveFloat*                            VerticalRecoilCurve;                               // 0x0AD8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	struct FScalableFloat                         HorizontalInterpolationSpeed;                      // 0x0AE0(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, NativeAccessSpecifierPublic)
-	struct FScalableFloat                         HorizontalRecoilCurveMultiplier;                   // 0x0B08(0x0028)(Edit, NativeAccessSpecifierPublic)
-	class UCurveFloat*                            HorizontalRecoilCurve;                             // 0x0B30(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-	struct FScalableFloat                         RecoilWhileMovingMultiplier;                       // 0x0B38(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, NativeAccessSpecifierPublic)
-	struct FScalableFloat                         AimRecoilWhileMovingMultiplier;                    // 0x0B60(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, NativeAccessSpecifierPublic)
-	float                                         SpringArmModifier;                                 // 0x0B88(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxSpringArmModifier;                              // 0x0B8C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FOVModifier;                                       // 0x0B90(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MaxFOVModifier;                                    // 0x0B94(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CameraInterpolationSpeed;                          // 0x0B98(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B9C[0x4];                                      // 0x0B9C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FAuWeaponItemComponent>         Components;                                        // 0x0BA0(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
-	TArray<struct FAuWeaponItemComponent>         Mods;                                              // 0x0BB0(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
-	TSubclassOf<class UAnimInstance>              AnimLayer;                                         // 0x0BC0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	struct FAuGameplayAttribute                   AmmoAttribute;                                     // 0x0BC8(0x0040)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bSelectableWithScroll;                             // 0x0C08(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C09[0x7];                                      // 0x0C09(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayTagContainer                  TriggeringInputTags;                               // 0x0C10(0x0020)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
-	struct FAuCameraConfigSelect                  AimCamera2;                                        // 0x0C30(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, Config, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAuItemGameplayCueContainer            WeaponCues;                                        // 0x0C38(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	class FString                                 TagTranslation;                                    // 0x0C48(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FAuCueName                             CueTranslation;                                    // 0x0C58(0x0008)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           ImpactTag;                                         // 0x0C60(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FAuSocketName                          MuzzleSocket;                                      // 0x0C68(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
-	TSubclassOf<class UCameraShakeBase>           CameraShake;                                       // 0x0C70(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C78[0x8];                                      // 0x0C78(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             HolsteredTransform;                                // 0x0C80(0x0060)(Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             EquippedTransform;                                 // 0x0CE0(0x0060)(Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTransform                             RelaxedTransform;                                  // 0x0D40(0x0060)(Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class UAuItemDataBase>            RequiredItem;                                      // 0x0DA0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FAuAttributeRequirement>        AttributeRequirements;                             // 0x0DA8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	struct FGameplayAbilitySpecHandle             AbilitySpecHandle;                                 // 0x0DB8(0x0004)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_DBC[0x4];                                      // 0x0DBC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FAuWeaponAttachment>            WeaponClasses;                                     // 0x0DC0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FScalableFloat                         MinSpread;                                         // 0x06B0(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
+	bool                                          bUseConstantInterpolationForSpreadChanges;         // 0x06D8(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bResetSpreadOnAimStart;                            // 0x06D9(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Config, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_6DA[0x6];                                      // 0x06DA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FScalableFloat                         MaxAimSpreadMultiplierWhileMoving;                 // 0x06E0(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
+	struct FScalableFloat                         MaxRotationSpreadMultiplier;                       // 0x0708(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
+	struct FScalableFloat                         MaxSpreadMultiplierWhileMoving;                    // 0x0730(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
+	struct FScalableFloat                         SpreadMultiplierWhileMoving;                       // 0x0758(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
+	struct FScalableFloat                         AimSpreadMultiplierWhileMoving;                    // 0x0780(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
+	struct FScalableFloat                         MaxSpread;                                         // 0x07A8(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
+	struct FScalableFloat                         SpreadGain;                                        // 0x07D0(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
+	struct FScalableFloat                         SpreadRecoveryValue;                               // 0x07F8(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
+	struct FScalableFloat                         SpreadRecoveryDelayTime;                           // 0x0820(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
+	struct FScalableFloat                         AimSpreadRecoveryDelayTime;                        // 0x0848(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
+	struct FScalableFloat                         SpreadGainInterpolationSpeed;                      // 0x0870(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
+	struct FScalableFloat                         AimSpreadGainInterpolationSpeed;                   // 0x0898(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
+	struct FScalableFloat                         DelayBeforeRotationSpread;                         // 0x08C0(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
+	struct FScalableFloat                         YawMultiplier;                                     // 0x08E8(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
+	struct FScalableFloat                         PitchMultiplier;                                   // 0x0910(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
+	class UCurveFloat*                            VerticalSwayCurve;                                 // 0x0938(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	struct FScalableFloat                         VerticalSwayMultiplier;                            // 0x0940(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Protected, NativeAccessSpecifierProtected)
+	struct FScalableFloat                         VerticalSwayInterpolationTime;                     // 0x0968(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Protected, NativeAccessSpecifierProtected)
+	struct FScalableFloat                         VerticalSwayDuration;                              // 0x0990(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Protected, NativeAccessSpecifierProtected)
+	class UCurveFloat*                            HorizontalSwayCurve;                               // 0x09B8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	struct FScalableFloat                         HorizontalSwayMultiplier;                          // 0x09C0(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Protected, NativeAccessSpecifierProtected)
+	struct FScalableFloat                         HorizontalSwayInterpolationTime;                   // 0x09E8(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Protected, NativeAccessSpecifierProtected)
+	struct FScalableFloat                         HorizontalSwayDuration;                            // 0x0A10(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Protected, NativeAccessSpecifierProtected)
+	struct FScalableFloat                         RecoilDuration;                                    // 0x0A38(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
+	struct FScalableFloat                         RecoilRecoverySpeed;                               // 0x0A60(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
+	struct FScalableFloat                         RecoilRecoveryDelay;                               // 0x0A88(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
+	struct FScalableFloat                         VerticalInterpolationSpeed;                        // 0x0AB0(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
+	struct FScalableFloat                         VerticalRecoilMultiplier;                          // 0x0AD8(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, NativeAccessSpecifierProtected)
+	class UCurveFloat*                            VerticalRecoilCurveMultiplier;                     // 0x0B00(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCurveFloat*                            VerticalRecoilCurve;                               // 0x0B08(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	struct FScalableFloat                         HorizontalInterpolationSpeed;                      // 0x0B10(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, NativeAccessSpecifierPublic)
+	struct FScalableFloat                         HorizontalRecoilCurveMultiplier;                   // 0x0B38(0x0028)(Edit, NativeAccessSpecifierPublic)
+	class UCurveFloat*                            HorizontalRecoilCurve;                             // 0x0B60(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+	struct FScalableFloat                         RecoilWhileMovingMultiplier;                       // 0x0B68(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, NativeAccessSpecifierPublic)
+	struct FScalableFloat                         AimRecoilWhileMovingMultiplier;                    // 0x0B90(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Config, NativeAccessSpecifierPublic)
+	float                                         SpringArmModifier;                                 // 0x0BB8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxSpringArmModifier;                              // 0x0BBC(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FOVModifier;                                       // 0x0BC0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MaxFOVModifier;                                    // 0x0BC4(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CameraInterpolationSpeed;                          // 0x0BC8(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_BCC[0x4];                                      // 0x0BCC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FAuWeaponItemComponent>         Components;                                        // 0x0BD0(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
+	TArray<struct FAuWeaponItemComponent>         Mods;                                              // 0x0BE0(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, Protected, NativeAccessSpecifierProtected)
+	TSubclassOf<class UAnimInstance>              AnimLayer;                                         // 0x0BF0(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	struct FAuGameplayAttribute                   AmmoAttribute;                                     // 0x0BF8(0x0040)(Edit, BlueprintVisible, BlueprintReadOnly, Config, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bSelectableWithScroll;                             // 0x0C38(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C39[0x7];                                      // 0x0C39(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayTagContainer                  TriggeringInputTags;                               // 0x0C40(0x0020)(Edit, BlueprintVisible, BlueprintReadOnly, DisableEditOnInstance, NativeAccessSpecifierPublic)
+	struct FAuCameraConfigSelect                  AimCamera2;                                        // 0x0C60(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, Config, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAuItemGameplayCueContainer            WeaponCues;                                        // 0x0C68(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	class FString                                 TagTranslation;                                    // 0x0C78(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FAuCueName                             CueTranslation;                                    // 0x0C88(0x0008)(Edit, DisableEditOnInstance, NoDestructor, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           ImpactTag;                                         // 0x0C90(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FAuSocketName                          MuzzleSocket;                                      // 0x0C98(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
+	TSubclassOf<class UCameraShakeBase>           CameraShake;                                       // 0x0CA0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_CA8[0x8];                                      // 0x0CA8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTransform                             HolsteredTransform;                                // 0x0CB0(0x0060)(Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             EquippedTransform;                                 // 0x0D10(0x0060)(Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTransform                             RelaxedTransform;                                  // 0x0D70(0x0060)(Edit, BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UAuItemDataBase>            RequiredItem;                                      // 0x0DD0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FAuAttributeRequirement>        AttributeRequirements;                             // 0x0DD8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FGameplayAbilitySpecHandle             AbilitySpecHandle;                                 // 0x0DE8(0x0004)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_DEC[0x4];                                      // 0x0DEC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FAuWeaponAttachment>            WeaponClasses;                                     // 0x0DF0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 
 public:
 	bool K2_IsTool() const;

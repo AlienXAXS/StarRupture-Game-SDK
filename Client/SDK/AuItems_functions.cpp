@@ -260,10 +260,8 @@ void AAuItemPickupBase::MulticastPlayOnItemPickedEffects(class AActor* PickingAc
 
 void AAuItemPickupBase::OnFound(class APlayerController* FoundBy)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuItemPickupBase", "OnFound");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFound", FnName));
 
 	Params::AuItemPickupBase_OnFound Parms{};
 
@@ -280,10 +278,8 @@ void AAuItemPickupBase::OnFound(class APlayerController* FoundBy)
 
 void AAuItemPickupBase::OnItemPicked(class AActor* PickingActor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuItemPickupBase", "OnItemPicked");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnItemPicked", FnName));
 
 	Params::AuItemPickupBase_OnItemPicked Parms{};
 
@@ -838,6 +834,58 @@ void UAuItemsComponent::BP_SetItemOnSlot(const struct FAuItemId& Handle, const s
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AuItems.AuItemsComponent.ClientOnNewItemAddedToSlot
+// (Net, NetReliable, Native, Event, Public, NetClient)
+// Parameters:
+// const class UAuItemData*                NewItem                                                (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAuItemSlot&               Slot                                                   (ConstParm, Parm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAuItemsComponent::ClientOnNewItemAddedToSlot(const class UAuItemData* NewItem, const struct FAuItemSlot& Slot)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AuItemsComponent", "ClientOnNewItemAddedToSlot");
+
+	Params::AuItemsComponent_ClientOnNewItemAddedToSlot Parms{};
+
+	Parms.NewItem = NewItem;
+	Parms.Slot = std::move(Slot);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AuItems.AuItemsComponent.GetOnWeaponItemAssignedToSlot
+// (Final, Native, Public)
+// Parameters:
+// TMulticastInlineDelegate<void(const class UAuItemData* NewItem, const struct FAuItemSlot& WeaponSlot)>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NativeAccessSpecifierPublic)
+
+TMulticastInlineDelegate<void(const class UAuItemData* NewItem, const struct FAuItemSlot& WeaponSlot)> UAuItemsComponent::GetOnWeaponItemAssignedToSlot()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AuItemsComponent", "GetOnWeaponItemAssignedToSlot");
+
+	Params::AuItemsComponent_GetOnWeaponItemAssignedToSlot Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 

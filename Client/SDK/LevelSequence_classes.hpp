@@ -12,23 +12,23 @@
 
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "DeveloperSettings_classes.hpp"
+#include "MovieSceneTracks_classes.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "LevelSequence_structs.hpp"
 #include "MovieScene_structs.hpp"
 #include "MovieScene_classes.hpp"
 #include "UMG_classes.hpp"
-#include "DeveloperSettings_classes.hpp"
 
 
 SDK_NAMESPACE_START
 
 // Class LevelSequence.DefaultLevelSequenceInstanceData
 // 0x0078 (0x00A0 - 0x0028)
-class UDefaultLevelSequenceInstanceData final : public UObject
+class UDefaultLevelSequenceInstanceData final : public UObject, public IMovieSceneTransformOrigin
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class AActor*                                 TransformOriginActor;                              // 0x0030(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTransform                             TransformOrigin;                                   // 0x0040(0x0060)(Edit, BlueprintVisible, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -46,6 +46,9 @@ public:
 	{
 		return GetDefaultObjImpl<UDefaultLevelSequenceInstanceData>();
 	}
+
+public:
+	struct FTransform BP_GetTransformOrigin() const;
 };
 DUMPER7_ASSERTS_UDefaultLevelSequenceInstanceData;
 
@@ -132,10 +135,9 @@ DUMPER7_ASSERTS_UAnimSequenceLevelSequenceLink;
 
 // Class LevelSequence.LevelSequence
 // 0x0038 (0x00A8 - 0x0070)
-class ULevelSequence final : public UMovieSceneSequence
+class ULevelSequence final : public UMovieSceneSequence, public IInterface_AssetUserData
 {
 public:
-	uint8                                         Pad_70[0x8];                                       // 0x0070(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMovieScene*                            MovieScene;                                        // 0x0078(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	struct FUpgradedLevelSequenceBindingReferences BindingReferences;                                // 0x0080(0x0010)(ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
 	TSubclassOf<class UObject>                    DirectorClass;                                     // 0x0090(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
@@ -161,6 +163,11 @@ public:
 	{
 		return GetDefaultObjImpl<ULevelSequence>();
 	}
+
+public:
+	bool AddAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	class UAssetUserData* GetAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	bool HasAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
 };
 DUMPER7_ASSERTS_ULevelSequence;
 
@@ -215,10 +222,9 @@ DUMPER7_ASSERTS_ULevelSequenceBurnInOptions;
 
 // Class LevelSequence.LevelSequenceActor
 // 0x00A8 (0x0350 - 0x02A8)
-class ALevelSequenceActor : public AActor
+class ALevelSequenceActor : public AActor, public IMovieScenePlaybackClient, public IMovieSceneBindingOwnerInterface, public IWorldPartitionObjectResolver
 {
 public:
-	uint8                                         Pad_2A8[0x18];                                     // 0x02A8(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FMovieSceneSequencePlaybackSettings    PlaybackSettings;                                  // 0x02C0(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, ExposeOnSpawn, NativeAccessSpecifierPublic)
 	class ULevelSequencePlayer*                   SequencePlayer;                                    // 0x02E8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, Net, ZeroConstructor, Transient, InstancedReference, NoDestructor, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	class ULevelSequence*                         LevelSequenceAsset;                                // 0x02F0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, NoDestructor, ExposeOnSpawn, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
@@ -464,10 +470,9 @@ DUMPER7_ASSERTS_ULevelSequenceProjectSettings;
 
 // Class LevelSequence.LevelSequenceMediaController
 // 0x0028 (0x02D0 - 0x02A8)
-class ALevelSequenceMediaController final : public AActor
+class ALevelSequenceMediaController final : public AActor, public IMovieSceneCustomClockSource
 {
 public:
-	uint8                                         Pad_2A8[0x8];                                      // 0x02A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class ALevelSequenceActor*                    Sequence;                                          // 0x02B0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
 	class UMediaComponent*                        MediaComponent;                                    // 0x02B8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
 	float                                         ServerStartTimeSeconds;                            // 0x02C0(0x0004)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
@@ -494,6 +499,12 @@ public:
 	{
 		return GetDefaultObjImpl<ALevelSequenceMediaController>();
 	}
+
+public:
+	struct FFrameTime OnRequestCurrentTime(const struct FQualifiedFrameTime& InCurrentTime, float InPlayRate);
+	void OnStartPlaying(const struct FQualifiedFrameTime& InStartTime);
+	void OnStopPlaying(const struct FQualifiedFrameTime& InStopTime);
+	void OnTick(float DeltaSeconds, float InPlayRate);
 };
 DUMPER7_ASSERTS_ALevelSequenceMediaController;
 

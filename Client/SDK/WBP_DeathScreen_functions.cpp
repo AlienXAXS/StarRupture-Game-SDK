@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_DeathScreen_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_DeathScreen_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -37,10 +35,8 @@ void UWBP_DeathScreen_C::Construct()
 
 void UWBP_DeathScreen_C::ExecuteUbergraph_WBP_DeathScreen(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_DeathScreen_C", "ExecuteUbergraph_WBP_DeathScreen");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_DeathScreen_C", "ExecuteUbergraph_WBP_DeathScreen", FuncInfo);
 
 	Params::WBP_DeathScreen_C_ExecuteUbergraph_WBP_DeathScreen Parms{};
 
@@ -57,10 +53,8 @@ void UWBP_DeathScreen_C::ExecuteUbergraph_WBP_DeathScreen(int32 EntryPoint)
 
 class FText UWBP_DeathScreen_C::Get_Respawn_1_Text()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_DeathScreen_C", "Get_Respawn_1_Text");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Get_Respawn_1_Text", FnName));
 
 	Params::WBP_DeathScreen_C_Get_Respawn_1_Text Parms{};
 
@@ -75,10 +69,8 @@ class FText UWBP_DeathScreen_C::Get_Respawn_1_Text()
 
 void UWBP_DeathScreen_C::InitButtons()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_DeathScreen_C", "InitButtons");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"InitButtons", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -91,10 +83,8 @@ void UWBP_DeathScreen_C::InitButtons()
 
 void UWBP_DeathScreen_C::SetDeathScreenCloningBedState(ECrDeathScreenCloningBedState CloningBedState)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_DeathScreen_C", "SetDeathScreenCloningBedState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetDeathScreenCloningBedState", FnName));
 
 	Params::WBP_DeathScreen_C_SetDeathScreenCloningBedState Parms{};
 

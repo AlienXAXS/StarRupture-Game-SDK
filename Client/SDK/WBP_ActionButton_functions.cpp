@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_ActionButton_C::BndEvt__WBP_ActionButton_InputActionWidget_K2Node_ComponentBoundEvent_2_OnInputMethodChanged__DelegateSignature(bool bUsingGamepad)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ActionButton_C", "BndEvt__WBP_ActionButton_InputActionWidget_K2Node_ComponentBoundEvent_2_OnInputMethodChanged__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__WBP_ActionButton_InputActionWidget_K2Node_ComponentBoundEvent_2_OnInputMethodChanged__DelegateSignature", FnName));
 
 	Params::WBP_ActionButton_C_BndEvt__WBP_ActionButton_InputActionWidget_K2Node_ComponentBoundEvent_2_OnInputMethodChanged__DelegateSignature Parms{};
 
@@ -41,10 +39,8 @@ void UWBP_ActionButton_C::BndEvt__WBP_ActionButton_InputActionWidget_K2Node_Comp
 
 void UWBP_ActionButton_C::BndEvt__WBP_ActionButton_OverlayButton_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ActionButton_C", "BndEvt__WBP_ActionButton_OverlayButton_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__WBP_ActionButton_OverlayButton_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -55,10 +51,8 @@ void UWBP_ActionButton_C::BndEvt__WBP_ActionButton_OverlayButton_K2Node_Componen
 
 void UWBP_ActionButton_C::BndEvt__WBP_ActionButton_OverlayButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ActionButton_C", "BndEvt__WBP_ActionButton_OverlayButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__WBP_ActionButton_OverlayButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -69,10 +63,8 @@ void UWBP_ActionButton_C::BndEvt__WBP_ActionButton_OverlayButton_K2Node_Componen
 
 void UWBP_ActionButton_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ActionButton_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -85,10 +77,8 @@ void UWBP_ActionButton_C::Construct()
 
 void UWBP_ActionButton_C::ExecuteUbergraph_WBP_ActionButton(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ActionButton_C", "ExecuteUbergraph_WBP_ActionButton");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_ActionButton_C", "ExecuteUbergraph_WBP_ActionButton", FuncInfo);
 
 	Params::WBP_ActionButton_C_ExecuteUbergraph_WBP_ActionButton Parms{};
 
@@ -105,10 +95,8 @@ void UWBP_ActionButton_C::ExecuteUbergraph_WBP_ActionButton(int32 EntryPoint)
 
 void UWBP_ActionButton_C::GetHeightSize(double* Height)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ActionButton_C", "GetHeightSize");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetHeightSize", FnName));
 
 	Params::WBP_ActionButton_C_GetHeightSize Parms{};
 
@@ -126,10 +114,8 @@ void UWBP_ActionButton_C::GetHeightSize(double* Height)
 
 void UWBP_ActionButton_C::PreConstruct(bool IsDesignTime)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ActionButton_C", "PreConstruct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PreConstruct", FnName));
 
 	Params::WBP_ActionButton_C_PreConstruct Parms{};
 
@@ -146,10 +132,8 @@ void UWBP_ActionButton_C::PreConstruct(bool IsDesignTime)
 
 void UWBP_ActionButton_C::SetActionNamePadding(bool bSet)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ActionButton_C", "SetActionNamePadding");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetActionNamePadding", FnName));
 
 	Params::WBP_ActionButton_C_SetActionNamePadding Parms{};
 
@@ -166,14 +150,30 @@ void UWBP_ActionButton_C::SetActionNamePadding(bool bSet)
 
 void UWBP_ActionButton_C::SetAlignment(EHorizontalAlignment Alignment)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ActionButton_C", "SetAlignment");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetAlignment", FnName));
 
 	Params::WBP_ActionButton_C_SetAlignment Parms{};
 
 	Parms.Alignment = Alignment;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_ActionButton.WBP_ActionButton_C.SetAndApplayUseStyleColorsForText
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    InUseStyleColorsForText                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWBP_ActionButton_C::SetAndApplayUseStyleColorsForText(bool InUseStyleColorsForText)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetAndApplayUseStyleColorsForText", FnName));
+
+	Params::WBP_ActionButton_C_SetAndApplayUseStyleColorsForText Parms{};
+
+	Parms.InUseStyleColorsForText = InUseStyleColorsForText;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -186,10 +186,8 @@ void UWBP_ActionButton_C::SetAlignment(EHorizontalAlignment Alignment)
 
 void UWBP_ActionButton_C::SetButtonEnabled(bool bEnabled)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ActionButton_C", "SetButtonEnabled");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetButtonEnabled", FnName));
 
 	Params::WBP_ActionButton_C_SetButtonEnabled Parms{};
 
@@ -206,10 +204,8 @@ void UWBP_ActionButton_C::SetButtonEnabled(bool bEnabled)
 
 void UWBP_ActionButton_C::SetColors(const class UCrCommonUIColorsDevSettings* Settings)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ActionButton_C", "SetColors");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetColors", FnName));
 
 	Params::WBP_ActionButton_C_SetColors Parms{};
 
@@ -226,10 +222,8 @@ void UWBP_ActionButton_C::SetColors(const class UCrCommonUIColorsDevSettings* Se
 
 void UWBP_ActionButton_C::SetDefault(bool bInDefault)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ActionButton_C", "SetDefault");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetDefault", FnName));
 
 	Params::WBP_ActionButton_C_SetDefault Parms{};
 
@@ -247,10 +241,8 @@ void UWBP_ActionButton_C::SetDefault(bool bInDefault)
 
 void UWBP_ActionButton_C::SetFontSize(int32 FontSize, bool BoldFont)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ActionButton_C", "SetFontSize");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetFontSize", FnName));
 
 	Params::WBP_ActionButton_C_SetFontSize Parms{};
 
@@ -269,10 +261,8 @@ void UWBP_ActionButton_C::SetFontSize(int32 FontSize, bool BoldFont)
 
 void UWBP_ActionButton_C::SetSize(int32 Width, int32 Height)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ActionButton_C", "SetSize");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetSize", FnName));
 
 	Params::WBP_ActionButton_C_SetSize Parms{};
 
@@ -290,10 +280,8 @@ void UWBP_ActionButton_C::SetSize(int32 Width, int32 Height)
 
 void UWBP_ActionButton_C::SetText(const class FText& InText)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ActionButton_C", "SetText");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetText", FnName));
 
 	Params::WBP_ActionButton_C_SetText Parms{};
 
@@ -310,10 +298,8 @@ void UWBP_ActionButton_C::SetText(const class FText& InText)
 
 void UWBP_ActionButton_C::SetTextMaxWidth(int32 Size)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ActionButton_C", "SetTextMaxWidth");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetTextMaxWidth", FnName));
 
 	Params::WBP_ActionButton_C_SetTextMaxWidth Parms{};
 
@@ -333,10 +319,8 @@ void UWBP_ActionButton_C::SetTextMaxWidth(int32 Size)
 
 void UWBP_ActionButton_C::SetTextStyle(int32 FontSize, bool ToUpper, bool BlackFont, const struct FLinearColor& FontColor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ActionButton_C", "SetTextStyle");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetTextStyle", FnName));
 
 	Params::WBP_ActionButton_C_SetTextStyle Parms{};
 

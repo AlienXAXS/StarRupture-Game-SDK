@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UBTT_Exploder_Tier3_FindMoveBackLocation_C::ExecuteUbergraph_BTT_Exploder_Tier3_FindMoveBackLocation(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTT_Exploder_Tier3_FindMoveBackLocation_C", "ExecuteUbergraph_BTT_Exploder_Tier3_FindMoveBackLocation");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BTT_Exploder_Tier3_FindMoveBackLocation_C", "ExecuteUbergraph_BTT_Exploder_Tier3_FindMoveBackLocation", FuncInfo);
 
 	Params::BTT_Exploder_Tier3_FindMoveBackLocation_C_ExecuteUbergraph_BTT_Exploder_Tier3_FindMoveBackLocation Parms{};
 
@@ -44,10 +42,8 @@ void UBTT_Exploder_Tier3_FindMoveBackLocation_C::ExecuteUbergraph_BTT_Exploder_T
 
 void UBTT_Exploder_Tier3_FindMoveBackLocation_C::ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTT_Exploder_Tier3_FindMoveBackLocation_C", "ReceiveExecuteAI");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveExecuteAI", FnName));
 
 	Params::BTT_Exploder_Tier3_FindMoveBackLocation_C_ReceiveExecuteAI Parms{};
 

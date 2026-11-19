@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 bool IMassActorPoolableInterface::CanBePooled()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassActorPoolableInterface", "CanBePooled");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"CanBePooled", FnName));
 
 	Params::MassActorPoolableInterface_CanBePooled Parms{};
 
@@ -46,10 +44,8 @@ bool IMassActorPoolableInterface::CanBePooled()
 
 void IMassActorPoolableInterface::PrepareForGame()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassActorPoolableInterface", "PrepareForGame");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"PrepareForGame", FnName));
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -65,10 +61,8 @@ void IMassActorPoolableInterface::PrepareForGame()
 
 void IMassActorPoolableInterface::PrepareForPooling()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassActorPoolableInterface", "PrepareForPooling");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"PrepareForPooling", FnName));
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

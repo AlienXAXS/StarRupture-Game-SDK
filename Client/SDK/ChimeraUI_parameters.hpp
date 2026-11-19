@@ -14,41 +14,136 @@
 #include "ChimeraMassCommon_structs.hpp"
 #include "AuWeapon_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "AuItems_structs.hpp"
 #include "ChimeraUI_structs.hpp"
 #include "Chimera_structs.hpp"
-#include "GameplayAbilities_structs.hpp"
 #include "MassEntity_structs.hpp"
 #include "Engine_structs.hpp"
+#include "GameplayAbilities_structs.hpp"
 #include "AuActorPlacement_structs.hpp"
+#include "GameplayTags_structs.hpp"
 #include "CommonGame_structs.hpp"
-#include "AuItems_structs.hpp"
+#include "UMG_structs.hpp"
+#include "UMG_parameters.hpp"
 #include "InputCore_structs.hpp"
+#include "CommonInput_structs.hpp"
+#include "AuAbilities_structs.hpp"
 #include "AuNotification_structs.hpp"
 #include "CommonUser_structs.hpp"
-#include "CommonInput_structs.hpp"
-#include "UMG_structs.hpp"
+#include "GameSettings_parameters.hpp"
 
 
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
-// Function ChimeraUI.CrUW_CheatBuildindingCategoryButton.OnCategoryTypeChange
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_CheatBuildindingCategoryButton_OnCategoryTypeChange final
+// Function ChimeraUI.CrUW_BuildingInfoBuildingMenu.SetBuildingName
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_BuildingInfoBuildingMenu_SetBuildingName final
 {
 public:
-	ECrBuildingType                               InType;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FText                                   InName;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_CrUW_CheatBuildindingCategoryButton_OnCategoryTypeChange;
+DUMPER7_ASSERTS_CrUW_BuildingInfoBuildingMenu_SetBuildingName;
 
-// Function ChimeraUI.CrUW_CheatBuildindingCategoryButton.SetCategoryType
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_CheatBuildindingCategoryButton_SetCategoryType final
+// Function ChimeraUI.CrUW_GenericArmorySlot.SetColors
+// 0x0020 (0x0020 - 0x0000)
+struct CrUW_GenericArmorySlot_SetColors final
 {
 public:
-	ECrBuildingType                               InType;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           Orange;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           Blue;                                              // 0x0010(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_CrUW_CheatBuildindingCategoryButton_SetCategoryType;
+DUMPER7_ASSERTS_CrUW_GenericArmorySlot_SetColors;
+
+// Function ChimeraUI.CrUW_GenericArmorySlot.SetHasEnoughResources
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_GenericArmorySlot_SetHasEnoughResources final
+{
+public:
+	bool                                          bHas;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_GenericArmorySlot_SetHasEnoughResources;
+
+// Function ChimeraUI.CrUW_GenericArmorySlot.SetHoldTextVisibility
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_GenericArmorySlot_SetHoldTextVisibility final
+{
+public:
+	bool                                          InVisible;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_GenericArmorySlot_SetHoldTextVisibility;
+
+// Function ChimeraUI.CrUW_GenericArmorySlot.SetInUseStyle
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_GenericArmorySlot_SetInUseStyle final
+{
+public:
+	bool                                          Used;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_GenericArmorySlot_SetInUseStyle;
+
+// Function ChimeraUI.CrUW_GenericArmorySlot.SetLocked
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_GenericArmorySlot_SetLocked final
+{
+public:
+	bool                                          InLocked;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_GenericArmorySlot_SetLocked;
+
+// Function ChimeraUI.CrUW_GenericArmorySlot.SetPercent
+// 0x0004 (0x0004 - 0x0000)
+struct CrUW_GenericArmorySlot_SetPercent final
+{
+public:
+	float                                         InPercent;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_GenericArmorySlot_SetPercent;
+
+// Function ChimeraUI.CrUW_GenericArmorySlot.ShowCostBox
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_GenericArmorySlot_ShowCostBox final
+{
+public:
+	bool                                          InShow;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_GenericArmorySlot_ShowCostBox;
+
+// Function ChimeraUI.CrUW_ArmoryWeaponSlot.GetCostIcon
+// 0x00B0 (0x00B0 - 0x0000)
+struct CrUW_ArmoryWeaponSlot_GetCostIcon final
+{
+public:
+	struct FSlateBrush                            ReturnValue;                                       // 0x0000(0x00B0)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ArmoryWeaponSlot_GetCostIcon;
+
+// Function ChimeraUI.CrUW_ArmoryWeaponSlot.GetCostText
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_ArmoryWeaponSlot_GetCostText final
+{
+public:
+	class FText                                   ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ArmoryWeaponSlot_GetCostText;
+
+// Function ChimeraUI.CrUW_ArmoryWeaponSlot.SetWeaponIcon
+// 0x00B0 (0x00B0 - 0x0000)
+struct CrUW_ArmoryWeaponSlot_SetWeaponIcon final
+{
+public:
+	struct FSlateBrush                            InBrush;                                           // 0x0000(0x00B0)(Parm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ArmoryWeaponSlot_SetWeaponIcon;
+
+// Function ChimeraUI.CrUW_ArmoryWeaponSlot.UnlockWeapon
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_ArmoryWeaponSlot_UnlockWeapon final
+{
+public:
+	const class UCrWeaponItemDataBase*            Weapon;                                            // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ArmoryWeaponSlot_UnlockWeapon;
 
 // Function ChimeraUI.CrUW_ActivatableWidget.OnWidgetInitialized
 // 0x0010 (0x0010 - 0x0000)
@@ -60,256 +155,6 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_ActivatableWidget_OnWidgetInitialized;
 
-// Function ChimeraUI.CrUW_CloningBedPlayerInfo.SetPlayerInfo
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_CloningBedPlayerInfo_SetPlayerInfo final
-{
-public:
-	EProfessionType                               Profession;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_CloningBedPlayerInfo_SetPlayerInfo;
-
-// Function ChimeraUI.CrUW_CloningBedPlayerInfo.SetupDetails
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_CloningBedPlayerInfo_SetupDetails final
-{
-public:
-	EProfessionType                               Profession;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_CloningBedPlayerInfo_SetupDetails;
-
-// Function ChimeraUI.CrUW_BuildingMenuCategoryButton.OnCategoryTypeChange
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_BuildingMenuCategoryButton_OnCategoryTypeChange final
-{
-public:
-	ECrBuildingUIType                             InType;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_BuildingMenuCategoryButton_OnCategoryTypeChange;
-
-// Function ChimeraUI.CrUW_BuildingMenuCategoryButton.SetCategoryUIType
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_BuildingMenuCategoryButton_SetCategoryUIType final
-{
-public:
-	ECrBuildingUIType                             InType;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_BuildingMenuCategoryButton_SetCategoryUIType;
-
-// Function ChimeraUI.CrUW_BuildingPlacementIndicator.OnPlaceStateChange
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_BuildingPlacementIndicator_OnPlaceStateChange final
-{
-public:
-	EAuAPlacementConditionResult                  NewState;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_BuildingPlacementIndicator_OnPlaceStateChange;
-
-// Function ChimeraUI.CrUW_Cooler.SetColors
-// 0x0010 (0x0010 - 0x0000)
-struct CrUW_Cooler_SetColors final
-{
-public:
-	struct FLinearColor                           HighlightColor;                                    // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_Cooler_SetColors;
-
-// Function ChimeraUI.CrUW_InventorySlot.ActivateQuickActionsMenu
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_InventorySlot_ActivateQuickActionsMenu final
-{
-public:
-	class UUserWidget*                            ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_InventorySlot_ActivateQuickActionsMenu;
-
-// Function ChimeraUI.CrUW_InventorySlot.ActivateSplitWindow
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_InventorySlot_ActivateSplitWindow final
-{
-public:
-	class UUserWidget*                            ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_InventorySlot_ActivateSplitWindow;
-
-// Function ChimeraUI.CrUW_InventorySlot.ActivateTooltipActionsMenu
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_InventorySlot_ActivateTooltipActionsMenu final
-{
-public:
-	class UUserWidget*                            ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_InventorySlot_ActivateTooltipActionsMenu;
-
-// Function ChimeraUI.CrUW_InventorySlot.CloseQuickMenu
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_InventorySlot_CloseQuickMenu final
-{
-public:
-	ECrUIWindowMode                               Mode;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_InventorySlot_CloseQuickMenu;
-
-// Function ChimeraUI.CrUW_InventorySlot.CloseSplitWindow
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_InventorySlot_CloseSplitWindow final
-{
-public:
-	ECrUIWindowMode                               Mode;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_InventorySlot_CloseSplitWindow;
-
-// Function ChimeraUI.CrUW_InventorySlot.ConvertToGrayScale
-// 0x0014 (0x0014 - 0x0000)
-struct CrUW_InventorySlot_ConvertToGrayScale final
-{
-public:
-	struct FColor                                 InColor;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           ReturnValue;                                       // 0x0004(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_InventorySlot_ConvertToGrayScale;
-
-// Function ChimeraUI.CrUW_InventorySlot.GetAmount
-// 0x0004 (0x0004 - 0x0000)
-struct CrUW_InventorySlot_GetAmount final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_InventorySlot_GetAmount;
-
-// Function ChimeraUI.CrUW_InventorySlot.GetIconTypeColor
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_InventorySlot_GetIconTypeColor final
-{
-public:
-	EUIItemType                                   InType;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FColor                                 ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_InventorySlot_GetIconTypeColor;
-
-// Function ChimeraUI.CrUW_InventorySlot.GetWarningColor
-// 0x0010 (0x0010 - 0x0000)
-struct CrUW_InventorySlot_GetWarningColor final
-{
-public:
-	struct FLinearColor                           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_InventorySlot_GetWarningColor;
-
-// Function ChimeraUI.CrUW_InventorySlot.NativeGetTooltipWidget
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_InventorySlot_NativeGetTooltipWidget final
-{
-public:
-	class UUserWidget*                            ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_InventorySlot_NativeGetTooltipWidget;
-
-// Function ChimeraUI.CrUW_InventorySlot.OpenSplitWindow
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_InventorySlot_OpenSplitWindow final
-{
-public:
-	ECrUIWindowMode                               Mode;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_InventorySlot_OpenSplitWindow;
-
-// Function ChimeraUI.CrUW_InventorySlot.SetBackgroundColor
-// 0x0004 (0x0004 - 0x0000)
-struct CrUW_InventorySlot_SetBackgroundColor final
-{
-public:
-	struct FColor                                 InColor;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_InventorySlot_SetBackgroundColor;
-
-// Function ChimeraUI.CrUW_InventorySlot.SetFullStackColor
-// 0x0004 (0x0004 - 0x0000)
-struct CrUW_InventorySlot_SetFullStackColor final
-{
-public:
-	struct FColor                                 InColor;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_InventorySlot_SetFullStackColor;
-
-// Function ChimeraUI.CrUW_InventorySlot.SetGrayedNames
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_InventorySlot_SetGrayedNames final
-{
-public:
-	bool                                          bGray;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_InventorySlot_SetGrayedNames;
-
-// Function ChimeraUI.CrUW_InventorySlot.SetGrayedOut
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_InventorySlot_SetGrayedOut final
-{
-public:
-	bool                                          bVisible;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_InventorySlot_SetGrayedOut;
-
-// Function ChimeraUI.CrUW_InventorySlot.SetGrayScaleTex
-// 0x00B0 (0x00B0 - 0x0000)
-struct CrUW_InventorySlot_SetGrayScaleTex final
-{
-public:
-	struct FSlateBrush                            InBrush;                                           // 0x0000(0x00B0)(Parm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_InventorySlot_SetGrayScaleTex;
-
-// Function ChimeraUI.CrUW_InventorySlot.SetHighlightColor
-// 0x0010 (0x0010 - 0x0000)
-struct CrUW_InventorySlot_SetHighlightColor final
-{
-public:
-	struct FLinearColor                           InColor;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_InventorySlot_SetHighlightColor;
-
-// Function ChimeraUI.CrUW_InventorySlot.SetNewHighlight
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_InventorySlot_SetNewHighlight final
-{
-public:
-	bool                                          bIsHighlighted;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_InventorySlot_SetNewHighlight;
-
-// Function ChimeraUI.CrUW_InventorySlot.SetSlotIcon
-// 0x00C0 (0x00C0 - 0x0000)
-struct CrUW_InventorySlot_SetSlotIcon final
-{
-public:
-	struct FSlateBrush                            InBrush;                                           // 0x0000(0x00B0)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	EUIItemType                                   InUIType;                                          // 0x00B0(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B1[0xF];                                       // 0x00B1(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_CrUW_InventorySlot_SetSlotIcon;
-
-// Function ChimeraUI.CrUW_InventorySlot.ShowItemNameInIcon
-// 0x0018 (0x0018 - 0x0000)
-struct CrUW_InventorySlot_ShowItemNameInIcon final
-{
-public:
-	class FText                                   InText;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	bool                                          Show;                                              // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_CrUW_InventorySlot_ShowItemNameInIcon;
-
-// Function ChimeraUI.CrHUD.GetProfessionSelectionWidget
-// 0x0008 (0x0008 - 0x0000)
-struct CrHUD_GetProfessionSelectionWidget final
-{
-public:
-	class UCrUW_CharacterSelectionMenu*           ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrHUD_GetProfessionSelectionWidget;
-
 // Function ChimeraUI.CrUW_CheatMenu.OnCategoryLoaded
 // 0x0028 (0x0028 - 0x0000)
 struct CrUW_CheatMenu_OnCategoryLoaded final
@@ -319,23 +164,16 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_CheatMenu_OnCategoryLoaded;
 
-// Function ChimeraUI.CrMainMenuScalabilityOverrides.ApplyScalabilityOverrides
-// 0x0010 (0x0010 - 0x0000)
-struct CrMainMenuScalabilityOverrides_ApplyScalabilityOverrides final
+// Function ChimeraUI.CrUW_SettingsListEntrySetting_KeyboardInput.GetIconForKey
+// 0x00D0 (0x00D0 - 0x0000)
+struct CrUW_SettingsListEntrySetting_KeyboardInput_GetIconForKey final
 {
 public:
-	TArray<class FString>                         Commands;                                          // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+	struct FKey                                   InKey;                                             // 0x0000(0x0018)(Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_18[0x8];                                       // 0x0018(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateBrush                            ReturnValue;                                       // 0x0020(0x00B0)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_CrMainMenuScalabilityOverrides_ApplyScalabilityOverrides;
-
-// Function ChimeraUI.CrMainMenuScalabilityOverrides.ResetScalabilityOverrides
-// 0x0010 (0x0010 - 0x0000)
-struct CrMainMenuScalabilityOverrides_ResetScalabilityOverrides final
-{
-public:
-	TArray<class FString>                         Commands;                                          // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrMainMenuScalabilityOverrides_ResetScalabilityOverrides;
+DUMPER7_ASSERTS_CrUW_SettingsListEntrySetting_KeyboardInput_GetIconForKey;
 
 // Function ChimeraUI.CrMapManuSubsystem.AntennaUncoverPlayerFogOfWar
 // 0x0028 (0x0028 - 0x0000)
@@ -387,41 +225,180 @@ public:
 };
 DUMPER7_ASSERTS_CrMapManuSubsystem_OnGameStateSetEvent;
 
-// Function ChimeraUI.CrUW_ParamBarHud.OnPossess
+// Function ChimeraUI.CrUW_AttributeWarningIcon.OnPossessedPawnChanged
+// 0x0018 (0x0018 - 0x0000)
+struct CrUW_AttributeWarningIcon_OnPossessedPawnChanged final
+{
+public:
+	class APlayerState*                           Player;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class APawn*                                  NewPawn;                                           // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class APawn*                                  OldPawn;                                           // 0x0010(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_AttributeWarningIcon_OnPossessedPawnChanged;
+
+// Function ChimeraUI.CrUW_AttributeWarningIcon.SetPlayerState
 // 0x0008 (0x0008 - 0x0000)
-struct CrUW_ParamBarHud_OnPossess final
+struct CrUW_AttributeWarningIcon_SetPlayerState final
 {
 public:
-	class APawn*                                  InPawn;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class APlayerState*                           PlayerState_0;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_CrUW_ParamBarHud_OnPossess;
+DUMPER7_ASSERTS_CrUW_AttributeWarningIcon_SetPlayerState;
 
-// Function ChimeraUI.CrUW_ParamBarHud.OnProgressBarChanged
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_ParamBarHud_OnProgressBarChanged final
+// Function ChimeraUI.CrUW_CheatAttributeValueSlider.ApplyGameplayEffectSetByCaller
+// 0x0004 (0x0004 - 0x0000)
+struct CrUW_CheatAttributeValueSlider_ApplyGameplayEffectSetByCaller final
 {
 public:
-	bool                                          bIsRed;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Magnitude;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_CrUW_ParamBarHud_OnProgressBarChanged;
+DUMPER7_ASSERTS_CrUW_CheatAttributeValueSlider_ApplyGameplayEffectSetByCaller;
 
-// Function ChimeraUI.CrUW_CrosshairBase.CanShoot
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_CrosshairBase_CanShoot final
+// Function ChimeraUI.CrUW_CheatAttributeValueSlider.GetSliderValue
+// 0x0004 (0x0004 - 0x0000)
+struct CrUW_CheatAttributeValueSlider_GetSliderValue final
 {
 public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_CrUW_CrosshairBase_CanShoot;
+DUMPER7_ASSERTS_CrUW_CheatAttributeValueSlider_GetSliderValue;
 
-// Function ChimeraUI.CrUW_CrosshairBase.GetCrosshairColor
+// Function ChimeraUI.CrUW_ConfirmationScreen.HandleTapToCloseZoneMouseButtonDown
+// 0x0170 (0x0170 - 0x0000)
+struct CrUW_ConfirmationScreen_HandleTapToCloseZoneMouseButtonDown final
+{
+public:
+	struct FGeometry                              MyGeometry;                                        // 0x0000(0x0038)(Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FPointerEvent                          MouseEvent;                                        // 0x0038(0x0080)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FEventReply                            ReturnValue;                                       // 0x00B8(0x00B8)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ConfirmationScreen_HandleTapToCloseZoneMouseButtonDown;
+
+// Function ChimeraUI.CrUW_ConfirmationScreen.SetColors
 // 0x0010 (0x0010 - 0x0000)
-struct CrUW_CrosshairBase_GetCrosshairColor final
+struct CrUW_ConfirmationScreen_SetColors final
 {
 public:
-	struct FLinearColor                           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           Orange;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_CrUW_CrosshairBase_GetCrosshairColor;
+DUMPER7_ASSERTS_CrUW_ConfirmationScreen_SetColors;
+
+// Function ChimeraUI.CrUW_ConfirmationScreen.SetSaveImage
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_ConfirmationScreen_SetSaveImage final
+{
+public:
+	ECrSlotIconType                               IconType;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ConfirmationScreen_SetSaveImage;
+
+// Function ChimeraUI.CrUW_ButtonBase.GetColors
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_ButtonBase_GetColors final
+{
+public:
+	const class UCrCommonUIColorsDevSettings*     ReturnValue;                                       // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ButtonBase_GetColors;
+
+// Function ChimeraUI.CrUW_ButtonBase.HandleButtonFocus
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_ButtonBase_HandleButtonFocus final
+{
+public:
+	bool                                          bFocused;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ButtonBase_HandleButtonFocus;
+
+// Function ChimeraUI.CrUW_ButtonBase.SetButtonText
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_ButtonBase_SetButtonText final
+{
+public:
+	class FText                                   InText;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ButtonBase_SetButtonText;
+
+// Function ChimeraUI.CrUW_ButtonBase.UpdateButton
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_ButtonBase_UpdateButton final
+{
+public:
+	ECommonMessagingResult                        Action;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ButtonBase_UpdateButton;
+
+// Function ChimeraUI.CrUW_ButtonBase.UpdateButtonStyle
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_ButtonBase_UpdateButtonStyle final
+{
+public:
+	bool                                          bIsFocused;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ButtonBase_UpdateButtonStyle;
+
+// Function ChimeraUI.CrUW_ButtonBase.UpdateButtonText
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_ButtonBase_UpdateButtonText final
+{
+public:
+	class FText                                   InText;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ButtonBase_UpdateButtonText;
+
+// Function ChimeraUI.CrTabButtonInterface.SetTabLabelInfo
+// 0x00F0 (0x00F0 - 0x0000)
+struct CrTabButtonInterface_SetTabLabelInfo final
+{
+public:
+	struct FCrTabDescriptor                       TabDescriptor;                                     // 0x0000(0x00F0)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrTabButtonInterface_SetTabLabelInfo;
+
+// Function ChimeraUI.CrUW_TabButtonBase.SetTabLabelInfo_Implementation
+// 0x00F0 (0x00F0 - 0x0000)
+struct CrUW_TabButtonBase_SetTabLabelInfo_Implementation final
+{
+public:
+	struct FCrTabDescriptor                       TabLabelInfo;                                      // 0x0000(0x00F0)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_TabButtonBase_SetTabLabelInfo_Implementation;
+
+// Function ChimeraUI.CrHUD.GetProfessionSelectionWidget
+// 0x0008 (0x0008 - 0x0000)
+struct CrHUD_GetProfessionSelectionWidget final
+{
+public:
+	class UCrUW_CharacterSelectionMenu*           ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrHUD_GetProfessionSelectionWidget;
+
+// Function ChimeraUI.CrUW_SaveCompatibilityConfirmDialog.SetSaveIcon
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_SaveCompatibilityConfirmDialog_SetSaveIcon final
+{
+public:
+	ECrSlotIconType                               IconType;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_SaveCompatibilityConfirmDialog_SetSaveIcon;
+
+// Function ChimeraUI.CrMainMenuScalabilityOverrides.ApplyScalabilityOverrides
+// 0x0010 (0x0010 - 0x0000)
+struct CrMainMenuScalabilityOverrides_ApplyScalabilityOverrides final
+{
+public:
+	TArray<class FString>                         Commands;                                          // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrMainMenuScalabilityOverrides_ApplyScalabilityOverrides;
+
+// Function ChimeraUI.CrMainMenuScalabilityOverrides.ResetScalabilityOverrides
+// 0x0010 (0x0010 - 0x0000)
+struct CrMainMenuScalabilityOverrides_ResetScalabilityOverrides final
+{
+public:
+	TArray<class FString>                         Commands;                                          // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrMainMenuScalabilityOverrides_ResetScalabilityOverrides;
 
 // Function ChimeraUI.CrUIAudioData.GetSound
 // 0x0010 (0x0010 - 0x0000)
@@ -433,15 +410,6 @@ public:
 	class USoundBase*                             ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrUIAudioData_GetSound;
-
-// Function ChimeraUI.CrUW_CutsceneLetterBox.OnAnyInputKeyDetected
-// 0x0018 (0x0018 - 0x0000)
-struct CrUW_CutsceneLetterBox_OnAnyInputKeyDetected final
-{
-public:
-	struct FKey                                   Key;                                               // 0x0000(0x0018)(Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_CutsceneLetterBox_OnAnyInputKeyDetected;
 
 // Function ChimeraUI.CrUW_AbandonBaseCounter.SetFinishedTextStyle
 // 0x0001 (0x0001 - 0x0000)
@@ -497,69 +465,6 @@ public:
 	bool                                          bIsInfectionPresent;                               // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrUW_AbandonBaseInfo_SetInfectionStatus;
-
-// Function ChimeraUI.CrUW_CorporationRecipes.EnableLine
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_CorporationRecipes_EnableLine final
-{
-public:
-	bool                                          bEnabled;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_CorporationRecipes_EnableLine;
-
-// Function ChimeraUI.CrUW_CorporationRecipes.SetColors
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_CorporationRecipes_SetColors final
-{
-public:
-	const class UCrCommonUIColorsDevSettings*     Settings;                                          // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_CorporationRecipes_SetColors;
-
-// Function ChimeraUI.CrUW_CorporationRecipes.SetExpanded
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_CorporationRecipes_SetExpanded final
-{
-public:
-	bool                                          bExpand;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_CorporationRecipes_SetExpanded;
-
-// Function ChimeraUI.CrUW_CorporationRecipes.SetLevel
-// 0x0004 (0x0004 - 0x0000)
-struct CrUW_CorporationRecipes_SetLevel final
-{
-public:
-	int32                                         Level;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_CorporationRecipes_SetLevel;
-
-// Function ChimeraUI.CrUW_CorporationRecipes.SetLevelButtonFocus
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_CorporationRecipes_SetLevelButtonFocus final
-{
-public:
-	bool                                          bFocused;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_CorporationRecipes_SetLevelButtonFocus;
-
-// Function ChimeraUI.CrUW_CorporationRecipes.SetWidgetTitle
-// 0x0010 (0x0010 - 0x0000)
-struct CrUW_CorporationRecipes_SetWidgetTitle final
-{
-public:
-	class FText                                   Text;                                              // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_CorporationRecipes_SetWidgetTitle;
-
-// Function ChimeraUI.CrUW_CorporationRecipes.GetAllGridSlots
-// 0x0010 (0x0010 - 0x0000)
-struct CrUW_CorporationRecipes_GetAllGridSlots final
-{
-public:
-	TArray<class UWidget*>                        ReturnValue;                                       // 0x0000(0x0010)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_CorporationRecipes_GetAllGridSlots;
 
 // Function ChimeraUI.CrUW_ActionButton.GetOverlayButton
 // 0x0008 (0x0008 - 0x0000)
@@ -626,23 +531,14 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_ActionButton_SetInputActionWidgetVisibility;
 
-// Function ChimeraUI.CrUW_CraftingStatus.GetCraftingType
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_CraftingStatus_GetCraftingType final
+// Function ChimeraUI.CrUW_AdvanceInputActionWidget.SetLongKeyVersion
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_AdvanceInputActionWidget_SetLongKeyVersion final
 {
 public:
-	TSubclassOf<class ACrCrafter>                 CraftingClass;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInLongKey;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_CrUW_CraftingStatus_GetCraftingType;
-
-// Function ChimeraUI.CrUW_CraftingStatus.GetSelectedRecipe
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_CraftingStatus_GetSelectedRecipe final
-{
-public:
-	const class UCrItemRecipeData*                ReturnValue;                                       // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_CraftingStatus_GetSelectedRecipe;
+DUMPER7_ASSERTS_CrUW_AdvanceInputActionWidget_SetLongKeyVersion;
 
 // Function ChimeraUI.CrUW_AlienObeliskWarning.BP_SetAlienSignatures
 // 0x0010 (0x0010 - 0x0000)
@@ -699,15 +595,6 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_AlienObeliskWarning_SetCoreIntegrityBar;
 
-// Function ChimeraUI.CrUW_BaseOption.SetHoverVisuals
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_BaseOption_SetHoverVisuals final
-{
-public:
-	bool                                          bHovered;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_BaseOption_SetHoverVisuals;
-
 // Function ChimeraUI.CrUW_Analyzer.AddResultRow
 // 0x00D0 (0x00D0 - 0x0000)
 struct CrUW_Analyzer_AddResultRow final
@@ -753,26 +640,6 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_Analyzer_SetRecycleNumberText;
 
-// Function ChimeraUI.CrUW_ItemSelectionList.SearchBoxTextChanged
-// 0x0010 (0x0010 - 0x0000)
-struct CrUW_ItemSelectionList_SearchBoxTextChanged final
-{
-public:
-	class FText                                   InText;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_ItemSelectionList_SearchBoxTextChanged;
-
-// Function ChimeraUI.CrUW_ItemSelectionList.SetTitle
-// 0x0018 (0x0018 - 0x0000)
-struct CrUW_ItemSelectionList_SetTitle final
-{
-public:
-	bool                                          bVisible;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   InTitle;                                           // 0x0008(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_ItemSelectionList_SetTitle;
-
 // Function ChimeraUI.CrUW_AntennaActivated.OnAntennaActivated
 // 0x0020 (0x0020 - 0x0000)
 struct CrUW_AntennaActivated_OnAntennaActivated final
@@ -784,43 +651,6 @@ public:
 	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_CrUW_AntennaActivated_OnAntennaActivated;
-
-// Function ChimeraUI.CrUW_CraftingProgress.SetProgressStopButtonVisibility
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_CraftingProgress_SetProgressStopButtonVisibility final
-{
-public:
-	bool                                          bVisible;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_CraftingProgress_SetProgressStopButtonVisibility;
-
-// Function ChimeraUI.CrUW_CraftingProgress.UpdateProgress
-// 0x0004 (0x0004 - 0x0000)
-struct CrUW_CraftingProgress_UpdateProgress final
-{
-public:
-	float                                         InPercent;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_CraftingProgress_UpdateProgress;
-
-// Function ChimeraUI.CrUW_CraftingProgress.UpdateProgressByDigits
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_CraftingProgress_UpdateProgressByDigits final
-{
-public:
-	int32                                         Tens;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Ones;                                              // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_CraftingProgress_UpdateProgressByDigits;
-
-// Function ChimeraUI.CrUW_CraftingProgress.GetSelectedRecipe
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_CraftingProgress_GetSelectedRecipe final
-{
-public:
-	const class UCrItemRecipeData*                ReturnValue;                                       // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_CraftingProgress_GetSelectedRecipe;
 
 // Function ChimeraUI.CrUW_Armory.GetWeaponComponent
 // 0x0008 (0x0008 - 0x0000)
@@ -886,167 +716,6 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_Armory_UpdateAllCost;
 
-// Function ChimeraUI.CrUW_WeaponTooltip.SetItemInfo
-// 0x0020 (0x0020 - 0x0000)
-struct CrUW_WeaponTooltip_SetItemInfo final
-{
-public:
-	class FText                                   InName;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	class FText                                   InDescription;                                     // 0x0010(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_WeaponTooltip_SetItemInfo;
-
-// Function ChimeraUI.CrUW_WeaponTooltip.SetItemName
-// 0x0010 (0x0010 - 0x0000)
-struct CrUW_WeaponTooltip_SetItemName final
-{
-public:
-	class FText                                   InText;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_WeaponTooltip_SetItemName;
-
-// Function ChimeraUI.CrUW_LoadSessionMenu.ExpandedSessionChanged
-// 0x0004 (0x0004 - 0x0000)
-struct CrUW_LoadSessionMenu_ExpandedSessionChanged final
-{
-public:
-	int32                                         ExpandedIndex;                                     // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_LoadSessionMenu_ExpandedSessionChanged;
-
-// Function ChimeraUI.CrUW_LoadSessionMenu.HandleRotatorChangedValue
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_LoadSessionMenu_HandleRotatorChangedValue final
-{
-public:
-	int32                                         Value;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUserInitiated;                                    // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_CrUW_LoadSessionMenu_HandleRotatorChangedValue;
-
-// Function ChimeraUI.CrUW_LoadSessionMenu.PTRSavesCheckboxChanged
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_LoadSessionMenu_PTRSavesCheckboxChanged final
-{
-public:
-	bool                                          bin;                                               // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_LoadSessionMenu_PTRSavesCheckboxChanged;
-
-// Function ChimeraUI.CrUW_LoadSessionMenu.SelectedSaveChanged
-// 0x0028 (0x0028 - 0x0000)
-struct CrUW_LoadSessionMenu_SelectedSaveChanged final
-{
-public:
-	class FString                                 InSelectedItem;                                    // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ItemSession;                                       // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECrSlotType                                   InSlotType;                                        // 0x0020(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         InItemIndex;                                       // 0x0024(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_LoadSessionMenu_SelectedSaveChanged;
-
-// Function ChimeraUI.CrUW_LoadSessionMenu.SetSessionOnlineMode
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_LoadSessionMenu_SetSessionOnlineMode final
-{
-public:
-	ECrOnlineSessionMode                          InMode;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_LoadSessionMenu_SetSessionOnlineMode;
-
-// Function ChimeraUI.CrUW_LoadSessionMenu.SetupButtons
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_LoadSessionMenu_SetupButtons final
-{
-public:
-	bool                                          bLowerFont;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_LoadSessionMenu_SetupButtons;
-
-// Function ChimeraUI.CrUW_GenericArmorySlot.SetColors
-// 0x0020 (0x0020 - 0x0000)
-struct CrUW_GenericArmorySlot_SetColors final
-{
-public:
-	struct FLinearColor                           Orange;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           Blue;                                              // 0x0010(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_GenericArmorySlot_SetColors;
-
-// Function ChimeraUI.CrUW_GenericArmorySlot.SetHasEnoughResources
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_GenericArmorySlot_SetHasEnoughResources final
-{
-public:
-	bool                                          bHas;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_GenericArmorySlot_SetHasEnoughResources;
-
-// Function ChimeraUI.CrUW_GenericArmorySlot.SetHoldTextVisibility
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_GenericArmorySlot_SetHoldTextVisibility final
-{
-public:
-	bool                                          InVisible;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_GenericArmorySlot_SetHoldTextVisibility;
-
-// Function ChimeraUI.CrUW_GenericArmorySlot.SetInUseStyle
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_GenericArmorySlot_SetInUseStyle final
-{
-public:
-	bool                                          Used;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_GenericArmorySlot_SetInUseStyle;
-
-// Function ChimeraUI.CrUW_GenericArmorySlot.SetLocked
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_GenericArmorySlot_SetLocked final
-{
-public:
-	bool                                          InLocked;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_GenericArmorySlot_SetLocked;
-
-// Function ChimeraUI.CrUW_GenericArmorySlot.SetPercent
-// 0x0004 (0x0004 - 0x0000)
-struct CrUW_GenericArmorySlot_SetPercent final
-{
-public:
-	float                                         InPercent;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_GenericArmorySlot_SetPercent;
-
-// Function ChimeraUI.CrUW_GenericArmorySlot.ShowCostBox
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_GenericArmorySlot_ShowCostBox final
-{
-public:
-	bool                                          InShow;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_GenericArmorySlot_ShowCostBox;
-
-// Function ChimeraUI.CrUW_DatapadBaseWidget.OnDatapadRead
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_DatapadBaseWidget_OnDatapadRead final
-{
-public:
-	class FName                                   RowName;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_DatapadBaseWidget_OnDatapadRead;
-
-// Function ChimeraUI.CrUW_DatapadComputer.SetAuthor
-// 0x0010 (0x0010 - 0x0000)
-struct CrUW_DatapadComputer_SetAuthor final
-{
-public:
-	class FText                                   Author;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_DatapadComputer_SetAuthor;
-
 // Function ChimeraUI.CrUW_ArmorySlot.GetCostIcon
 // 0x00B0 (0x00B0 - 0x0000)
 struct CrUW_ArmorySlot_GetCostIcon final
@@ -1095,79 +764,6 @@ public:
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_CrUW_ArmoryWeaponDetails_IsWeaponUnlocked;
-
-// Function ChimeraUI.CrUW_MainMenuWidget.ButtonClicked
-// 0x0004 (0x0004 - 0x0000)
-struct CrUW_MainMenuWidget_ButtonClicked final
-{
-public:
-	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_MainMenuWidget_ButtonClicked;
-
-// Function ChimeraUI.CrUW_MainMenuWidget.OnContinueButtonClicked
-// 0x0004 (0x0004 - 0x0000)
-struct CrUW_MainMenuWidget_OnContinueButtonClicked final
-{
-public:
-	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_MainMenuWidget_OnContinueButtonClicked;
-
-// Function ChimeraUI.CrUW_MainMenuWidget.SetColors
-// 0x0010 (0x0010 - 0x0000)
-struct CrUW_MainMenuWidget_SetColors final
-{
-public:
-	struct FLinearColor                           OrangeColor;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_MainMenuWidget_SetColors;
-
-// Function ChimeraUI.CrUW_MainMenuWidget.SetContinueTimestamp
-// 0x0020 (0x0020 - 0x0000)
-struct CrUW_MainMenuWidget_SetContinueTimestamp final
-{
-public:
-	class FText                                   InText;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	class FText                                   InSessionName;                                     // 0x0010(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_MainMenuWidget_SetContinueTimestamp;
-
-// Function ChimeraUI.CrUW_ArmoryWeaponSlot.GetCostIcon
-// 0x00B0 (0x00B0 - 0x0000)
-struct CrUW_ArmoryWeaponSlot_GetCostIcon final
-{
-public:
-	struct FSlateBrush                            ReturnValue;                                       // 0x0000(0x00B0)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_ArmoryWeaponSlot_GetCostIcon;
-
-// Function ChimeraUI.CrUW_ArmoryWeaponSlot.GetCostText
-// 0x0010 (0x0010 - 0x0000)
-struct CrUW_ArmoryWeaponSlot_GetCostText final
-{
-public:
-	class FText                                   ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_ArmoryWeaponSlot_GetCostText;
-
-// Function ChimeraUI.CrUW_ArmoryWeaponSlot.SetWeaponIcon
-// 0x00B0 (0x00B0 - 0x0000)
-struct CrUW_ArmoryWeaponSlot_SetWeaponIcon final
-{
-public:
-	struct FSlateBrush                            InBrush;                                           // 0x0000(0x00B0)(Parm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_ArmoryWeaponSlot_SetWeaponIcon;
-
-// Function ChimeraUI.CrUW_ArmoryWeaponSlot.UnlockWeapon
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_ArmoryWeaponSlot_UnlockWeapon final
-{
-public:
-	const class UCrWeaponItemDataBase*            Weapon;                                            // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_ArmoryWeaponSlot_UnlockWeapon;
 
 // Function ChimeraUI.CrUW_AttributeBar.NativeGetTooltipWidget
 // 0x0008 (0x0008 - 0x0000)
@@ -1232,17 +828,6 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_AttributeBar_SetStatData;
 
-// Function ChimeraUI.CrUW_WeaponsToolsTab.AddModIcon
-// 0x0010 (0x0010 - 0x0000)
-struct CrUW_WeaponsToolsTab_AddModIcon final
-{
-public:
-	class UCrWeaponModDataAsset*                  ModDA;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         WeaponIndex;                                       // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_CrUW_WeaponsToolsTab_AddModIcon;
-
 // Function ChimeraUI.CrUW_AttributeStatsWidget.OnFoodItemHighlighted
 // 0x0010 (0x0010 - 0x0000)
 struct CrUW_AttributeStatsWidget_OnFoodItemHighlighted final
@@ -1278,44 +863,6 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_AttributeStatsWidget_SetupPlayerBar;
 
-// Function ChimeraUI.CrUW_EncyclopediaInfoMenu.SetEntryAuthorBP
-// 0x00D0 (0x00D0 - 0x0000)
-struct CrUW_EncyclopediaInfoMenu_SetEntryAuthorBP final
-{
-public:
-	struct FEncyclopediaEntryAuthor               AuthorData;                                        // 0x0000(0x00D0)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_EncyclopediaInfoMenu_SetEntryAuthorBP;
-
-// Function ChimeraUI.CrUW_EncyclopediaInfoMenu.SetEntryTitleBP
-// 0x0010 (0x0010 - 0x0000)
-struct CrUW_EncyclopediaInfoMenu_SetEntryTitleBP final
-{
-public:
-	class FText                                   Title;                                             // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_EncyclopediaInfoMenu_SetEntryTitleBP;
-
-// Function ChimeraUI.CrUW_AttributeWarningIcon.OnPossessedPawnChanged
-// 0x0018 (0x0018 - 0x0000)
-struct CrUW_AttributeWarningIcon_OnPossessedPawnChanged final
-{
-public:
-	class APlayerState*                           Player;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class APawn*                                  NewPawn;                                           // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class APawn*                                  OldPawn;                                           // 0x0010(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_AttributeWarningIcon_OnPossessedPawnChanged;
-
-// Function ChimeraUI.CrUW_AttributeWarningIcon.SetPlayerState
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_AttributeWarningIcon_SetPlayerState final
-{
-public:
-	class APlayerState*                           PlayerState_0;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_AttributeWarningIcon_SetPlayerState;
-
 // Function ChimeraUI.CrUW_AutosaveNotice.NativeOnAutosaveWarning
 // 0x0004 (0x0004 - 0x0000)
 struct CrUW_AutosaveNotice_NativeOnAutosaveWarning final
@@ -1333,33 +880,6 @@ public:
 	float                                         WarningDuration;                                   // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrUW_AutosaveNotice_OnAutosaveWarning;
-
-// Function ChimeraUI.CrUW_ChatHud.HandleTextChanged
-// 0x0010 (0x0010 - 0x0000)
-struct CrUW_ChatHud_HandleTextChanged final
-{
-public:
-	class FText                                   InText;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_ChatHud_HandleTextChanged;
-
-// Function ChimeraUI.CrUW_ChatHud.SetState
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_ChatHud_SetState final
-{
-public:
-	ECrChatHudState                               State;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_ChatHud_SetState;
-
-// Function ChimeraUI.CrUW_ChatHud.UpdateUI
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_ChatHud_UpdateUI final
-{
-public:
-	ECrChatHudState                               CurrentState;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_ChatHud_UpdateUI;
 
 // Function ChimeraUI.CrUW_BaseCoreCooling.BP_SetCapacityBar
 // 0x000C (0x000C - 0x0000)
@@ -1463,24 +983,6 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_BaseCoreDeconstruction_SetDeconstructionBlockerInfo;
 
-// Function ChimeraUI.CrUW_EncyclopediaEntryButton.GetIsEntryLocked
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_EncyclopediaEntryButton_GetIsEntryLocked final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_EncyclopediaEntryButton_GetIsEntryLocked;
-
-// Function ChimeraUI.CrUW_EncyclopediaEntryButton.GetIsSelected
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_EncyclopediaEntryButton_GetIsSelected final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_EncyclopediaEntryButton_GetIsSelected;
-
 // Function ChimeraUI.CrUW_BaseCoreDeconstructionBottomPanel.SetDeconstractionTime
 // 0x0004 (0x0004 - 0x0000)
 struct CrUW_BaseCoreDeconstructionBottomPanel_SetDeconstractionTime final
@@ -1489,6 +991,16 @@ public:
 	int32                                         TimeInSeconds;                                     // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrUW_BaseCoreDeconstructionBottomPanel_SetDeconstractionTime;
+
+// Function ChimeraUI.CrWidgetFactory.FindWidgetClassForData
+// 0x0010 (0x0010 - 0x0000)
+struct CrWidgetFactory_FindWidgetClassForData final
+{
+public:
+	const class UObject*                          Data;                                              // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UUserWidget>                ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrWidgetFactory_FindWidgetClassForData;
 
 // Function ChimeraUI.CrUW_BaseCoreDeconstructionProgress.OnBaseCoreDeconstructionCountAborted
 // 0x0008 (0x0008 - 0x0000)
@@ -1565,14 +1077,61 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_BaseCoreLevelWidget_BP_SetupUpgradeState;
 
-// Function ChimeraUI.CrUW_DroneJunctionFilterSelection.HandleOnFilterItemSelected
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_DroneJunctionFilterSelection_HandleOnFilterItemSelected final
+// Function ChimeraUI.CrUW_BoundActionButton.SetActionImageVisibility
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_BoundActionButton_SetActionImageVisibility final
 {
 public:
-	class UObject*                                ListItem;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESlateVisibility                              InVisibility;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_CrUW_DroneJunctionFilterSelection_HandleOnFilterItemSelected;
+DUMPER7_ASSERTS_CrUW_BoundActionButton_SetActionImageVisibility;
+
+// Function ChimeraUI.CrUW_BoundActionButton.SetButtonImageVisibility
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_BoundActionButton_SetButtonImageVisibility final
+{
+public:
+	ESlateVisibility                              InVisibility;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_BoundActionButton_SetButtonImageVisibility;
+
+// Function ChimeraUI.CrUW_BoundActionButton.SetLongIconText
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_BoundActionButton_SetLongIconText final
+{
+public:
+	bool                                          bLong;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_BoundActionButton_SetLongIconText;
+
+// Function ChimeraUI.CrUW_BoundActionButton.SetModIconData
+// 0x0018 (0x0018 - 0x0000)
+struct CrUW_BoundActionButton_SetModIconData final
+{
+public:
+	bool                                          bLong;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   InName;                                            // 0x0008(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_BoundActionButton_SetModIconData;
+
+// Function ChimeraUI.CrUW_BoundActionButton.SetTemporaryIconKey
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_BoundActionButton_SetTemporaryIconKey final
+{
+public:
+	class FText                                   InText;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_BoundActionButton_SetTemporaryIconKey;
+
+// Function ChimeraUI.CrUW_BoundActionButton.SetTemporaryIconVisibility
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_BoundActionButton_SetTemporaryIconVisibility final
+{
+public:
+	bool                                          bVisible;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_BoundActionButton_SetTemporaryIconVisibility;
 
 // Function ChimeraUI.CrUW_BaseCoreUpgrade.BP_DisplayCannotUpgradeReason
 // 0x0004 (0x0004 - 0x0000)
@@ -1626,11 +1185,11 @@ public:
 DUMPER7_ASSERTS_CrUW_BaseCoreUpgrade_BP_UpdateButtonChooseLevel;
 
 // Function ChimeraUI.CrUW_BaseCoreUpgrade.OnBaseCoreReplication
-// 0x0048 (0x0048 - 0x0000)
+// 0x0050 (0x0050 - 0x0000)
 struct CrUW_BaseCoreUpgrade_OnBaseCoreReplication final
 {
 public:
-	struct FCrBaseCoreData                        Data;                                              // 0x0000(0x0048)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FCrBaseCoreData                        Data;                                              // 0x0000(0x0050)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrUW_BaseCoreUpgrade_OnBaseCoreReplication;
 
@@ -1662,6 +1221,15 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_BaseCoreUpgrade_SetBaseCoreUpgradeDescription;
 
+// Function ChimeraUI.CrUW_BaseOption.SetHoverVisuals
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_BaseOption_SetHoverVisuals final
+{
+public:
+	bool                                          bHovered;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_BaseOption_SetHoverVisuals;
+
 // Function ChimeraUI.CrUW_BTConstrucionHud.OnPlaceStateChange
 // 0x0001 (0x0001 - 0x0000)
 struct CrUW_BTConstrucionHud_OnPlaceStateChange final
@@ -1689,88 +1257,78 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_BTConstrucionHud_SetStabilityText;
 
-// Function ChimeraUI.CrUW_ExportingWidget.OnExporterRecipeCrafted
-// 0x0004 (0x0004 - 0x0000)
-struct CrUW_ExportingWidget_OnExporterRecipeCrafted final
+// Function ChimeraUI.CrUW_TabListWidgetBase.GetPreregisteredTabInfo
+// 0x0110 (0x0110 - 0x0000)
+struct CrUW_TabListWidgetBase_GetPreregisteredTabInfo final
 {
 public:
-	int32                                         CraftMultipler;                                    // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   TabNameID;                                         // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCrTabDescriptor                       OutTabInfo;                                        // 0x0010(0x00F0)(Parm, OutParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0100(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_101[0xF];                                      // 0x0101(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_CrUW_ExportingWidget_OnExporterRecipeCrafted;
+DUMPER7_ASSERTS_CrUW_TabListWidgetBase_GetPreregisteredTabInfo;
 
-// Function ChimeraUI.CrUW_ExportingWidget.SetAnimationInProgress
+// Function ChimeraUI.CrUW_TabListWidgetBase.GetVisibleTabCount
+// 0x0004 (0x0004 - 0x0000)
+struct CrUW_TabListWidgetBase_GetVisibleTabCount final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_TabListWidgetBase_GetVisibleTabCount;
+
+// Function ChimeraUI.CrUW_TabListWidgetBase.IsTabVisible
+// 0x000C (0x000C - 0x0000)
+struct CrUW_TabListWidgetBase_IsTabVisible final
+{
+public:
+	class FName                                   TabId;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_CrUW_TabListWidgetBase_IsTabVisible;
+
+// Function ChimeraUI.CrUW_TabListWidgetBase.RegisterDynamicTab
+// 0x0100 (0x0100 - 0x0000)
+struct CrUW_TabListWidgetBase_RegisterDynamicTab final
+{
+public:
+	struct FCrTabDescriptor                       TabDescriptor;                                     // 0x0000(0x00F0)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x00F0(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_F1[0xF];                                       // 0x00F1(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_CrUW_TabListWidgetBase_RegisterDynamicTab;
+
+// Function ChimeraUI.CrUW_TabListWidgetBase.SetTabHiddenState
+// 0x000C (0x000C - 0x0000)
+struct CrUW_TabListWidgetBase_SetTabHiddenState final
+{
+public:
+	class FName                                   TabNameID;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHidden;                                           // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_CrUW_TabListWidgetBase_SetTabHiddenState;
+
+// Function ChimeraUI.CrUW_TabListWidgetBase.IsFirstTabActive
 // 0x0001 (0x0001 - 0x0000)
-struct CrUW_ExportingWidget_SetAnimationInProgress final
+struct CrUW_TabListWidgetBase_IsFirstTabActive final
 {
 public:
-	bool                                          InAnimationInProgress;                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_CrUW_ExportingWidget_SetAnimationInProgress;
+DUMPER7_ASSERTS_CrUW_TabListWidgetBase_IsFirstTabActive;
 
-// Function ChimeraUI.CrUW_ExportingWidget.SetBackgroundCorpoImage
-// 0x00B0 (0x00B0 - 0x0000)
-struct CrUW_ExportingWidget_SetBackgroundCorpoImage final
+// Function ChimeraUI.CrUW_TabListWidgetBase.IsLastTabActive
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_TabListWidgetBase_IsLastTabActive final
 {
 public:
-	struct FSlateBrush                            CorporationIcon;                                   // 0x0000(0x00B0)(Parm, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_CrUW_ExportingWidget_SetBackgroundCorpoImage;
-
-// Function ChimeraUI.CrUW_ExportingWidget.SetOutputPoints
-// 0x0004 (0x0004 - 0x0000)
-struct CrUW_ExportingWidget_SetOutputPoints final
-{
-public:
-	int32                                         Value;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_ExportingWidget_SetOutputPoints;
-
-// Function ChimeraUI.CrUW_ExportingWidget.SetPoints
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_ExportingWidget_SetPoints final
-{
-public:
-	int32                                         CurrentValue;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Max;                                               // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_ExportingWidget_SetPoints;
-
-// Function ChimeraUI.CrUW_ExportingWidget.SetupAnimation
-// 0x0004 (0x0004 - 0x0000)
-struct CrUW_ExportingWidget_SetupAnimation final
-{
-public:
-	int32                                         Number;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_ExportingWidget_SetupAnimation;
-
-// Function ChimeraUI.CrUW_ExportingWidget.SetupBackground
-// 0x0004 (0x0004 - 0x0000)
-struct CrUW_ExportingWidget_SetupBackground final
-{
-public:
-	struct FColor                                 InColor;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_ExportingWidget_SetupBackground;
-
-// Function ChimeraUI.CrUW_ExportingWidget.TriggerAnimation
-// 0x0004 (0x0004 - 0x0000)
-struct CrUW_ExportingWidget_TriggerAnimation final
-{
-public:
-	int32                                         Reputation;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_ExportingWidget_TriggerAnimation;
-
-// Function ChimeraUI.CrUW_ExportingWidget.UpdateSendProgress
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_ExportingWidget_UpdateSendProgress final
-{
-public:
-	int32                                         Tens;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Ones;                                              // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_ExportingWidget_UpdateSendProgress;
+DUMPER7_ASSERTS_CrUW_TabListWidgetBase_IsLastTabActive;
 
 // Function ChimeraUI.CrUW_BTDeconstrucionHud.OnPawnPossessedChanged
 // 0x0010 (0x0010 - 0x0000)
@@ -1791,41 +1349,14 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_BTDeconstrucionHud_SetInProgress;
 
-// Function ChimeraUI.CrUW_CorporationsList.SetDisabledOpacity
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_CorporationsList_SetDisabledOpacity final
-{
-public:
-	bool                                          bDisabled;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_CorporationsList_SetDisabledOpacity;
-
 // Function ChimeraUI.CrUW_BuildingCopyMessagePopup.SetupMessage
 // 0x0001 (0x0001 - 0x0000)
 struct CrUW_BuildingCopyMessagePopup_SetupMessage final
 {
 public:
-	ECrCopyBuildingSettingsMessage                MessageType;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrHUDMessage                                 MessageType;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrUW_BuildingCopyMessagePopup_SetupMessage;
-
-// Function ChimeraUI.CrUW_EffectsHud.OnPossess
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_EffectsHud_OnPossess final
-{
-public:
-	class APawn*                                  InPawn;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_EffectsHud_OnPossess;
-
-// Function ChimeraUI.CrUW_CrafterInterior.NativeGetTooltipWidget
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_CrafterInterior_NativeGetTooltipWidget final
-{
-public:
-	class UUserWidget*                            ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_CrafterInterior_NativeGetTooltipWidget;
 
 // Function ChimeraUI.CrUW_BuildingRefund.OnEntryCreated
 // 0x0008 (0x0008 - 0x0000)
@@ -1864,78 +1395,6 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_BuildingDeconstructionInfo_OnPawnPossessedChanged;
 
-// Function ChimeraUI.CrUW_ButtonBase.GetColors
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_ButtonBase_GetColors final
-{
-public:
-	const class UCrCommonUIColorsDevSettings*     ReturnValue;                                       // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_ButtonBase_GetColors;
-
-// Function ChimeraUI.CrUW_ButtonBase.HandleButtonFocus
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_ButtonBase_HandleButtonFocus final
-{
-public:
-	bool                                          bFocused;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_ButtonBase_HandleButtonFocus;
-
-// Function ChimeraUI.CrUW_ButtonBase.SetButtonText
-// 0x0010 (0x0010 - 0x0000)
-struct CrUW_ButtonBase_SetButtonText final
-{
-public:
-	class FText                                   InText;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_ButtonBase_SetButtonText;
-
-// Function ChimeraUI.CrUW_ButtonBase.UpdateButton
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_ButtonBase_UpdateButton final
-{
-public:
-	ECommonMessagingResult                        Action;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_ButtonBase_UpdateButton;
-
-// Function ChimeraUI.CrUW_ButtonBase.UpdateButtonStyle
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_ButtonBase_UpdateButtonStyle final
-{
-public:
-	bool                                          bIsFocused;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_ButtonBase_UpdateButtonStyle;
-
-// Function ChimeraUI.CrUW_ButtonBase.UpdateButtonText
-// 0x0010 (0x0010 - 0x0000)
-struct CrUW_ButtonBase_UpdateButtonText final
-{
-public:
-	class FText                                   InText;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_ButtonBase_UpdateButtonText;
-
-// Function ChimeraUI.CrUW_FriendsButton.SetButtonEmpty
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_FriendsButton_SetButtonEmpty final
-{
-public:
-	bool                                          bEmpty;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_FriendsButton_SetButtonEmpty;
-
-// Function ChimeraUI.CrUW_CraftingQueueListViewElement.HandleOnStoppedStatusChanged
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_CraftingQueueListViewElement_HandleOnStoppedStatusChanged final
-{
-public:
-	bool                                          bStopped;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_CraftingQueueListViewElement_HandleOnStoppedStatusChanged;
-
 // Function ChimeraUI.CrUW_BuildingInfo.HandleOnConnectionAdded
 // 0x0030 (0x0030 - 0x0000)
 struct CrUW_BuildingInfo_HandleOnConnectionAdded final
@@ -1955,60 +1414,6 @@ public:
 	struct FCrMassEntityReplicationHelper         InReceiver;                                        // 0x0018(0x0018)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrUW_BuildingInfo_HandleOnConnectionRemoved;
-
-// Function ChimeraUI.CrUW_BuildingInfoBuildingMenu.SetBuildingName
-// 0x0010 (0x0010 - 0x0000)
-struct CrUW_BuildingInfoBuildingMenu_SetBuildingName final
-{
-public:
-	class FText                                   InName;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_BuildingInfoBuildingMenu_SetBuildingName;
-
-// Function ChimeraUI.CrUW_EncyclopediaSubcategoryGrid.SetGridExpanded
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_EncyclopediaSubcategoryGrid_SetGridExpanded final
-{
-public:
-	bool                                          Expanded;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_EncyclopediaSubcategoryGrid_SetGridExpanded;
-
-// Function ChimeraUI.CrUW_EncyclopediaSubcategoryGrid.SetSubCategoryTitleBP
-// 0x0010 (0x0010 - 0x0000)
-struct CrUW_EncyclopediaSubcategoryGrid_SetSubCategoryTitleBP final
-{
-public:
-	class FText                                   Title;                                             // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_EncyclopediaSubcategoryGrid_SetSubCategoryTitleBP;
-
-// Function ChimeraUI.CrUW_EncyclopediaSubcategoryGrid.SetSubcategoryTitleStyleBP
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_EncyclopediaSubcategoryGrid_SetSubcategoryTitleStyleBP final
-{
-public:
-	bool                                          isHighlight;                                       // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_EncyclopediaSubcategoryGrid_SetSubcategoryTitleStyleBP;
-
-// Function ChimeraUI.CrUW_EncyclopediaSubcategoryGrid.SetUnreadStatusIcons
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_EncyclopediaSubcategoryGrid_SetUnreadStatusIcons final
-{
-public:
-	bool                                          Unread;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_EncyclopediaSubcategoryGrid_SetUnreadStatusIcons;
-
-// Function ChimeraUI.CrUW_EncyclopediaSubcategoryGrid.GetUniformGridPanel
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_EncyclopediaSubcategoryGrid_GetUniformGridPanel final
-{
-public:
-	class UUniformGridPanel*                      ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_EncyclopediaSubcategoryGrid_GetUniformGridPanel;
 
 // Function ChimeraUI.CrUW_BuildingInfoRow.InitRowName
 // 0x0010 (0x0010 - 0x0000)
@@ -2277,6 +1682,24 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_BuildingMenuButton_IsAffordable;
 
+// Function ChimeraUI.CrUW_BuildingMenuCategoryButton.OnCategoryTypeChange
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_BuildingMenuCategoryButton_OnCategoryTypeChange final
+{
+public:
+	ECrBuildingUIType                             InType;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_BuildingMenuCategoryButton_OnCategoryTypeChange;
+
+// Function ChimeraUI.CrUW_BuildingMenuCategoryButton.SetCategoryUIType
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_BuildingMenuCategoryButton_SetCategoryUIType final
+{
+public:
+	ECrBuildingUIType                             InType;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_BuildingMenuCategoryButton_SetCategoryUIType;
+
 // Function ChimeraUI.CrUW_BuildingOptionButtons.OnPossesed
 // 0x0008 (0x0008 - 0x0000)
 struct CrUW_BuildingOptionButtons_OnPossesed final
@@ -2313,6 +1736,15 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_BuildingOptionButtons_OnUnPossesed;
 
+// Function ChimeraUI.CrUW_BuildingPlacementIndicator.OnPlaceStateChange
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_BuildingPlacementIndicator_OnPlaceStateChange final
+{
+public:
+	EAuAPlacementConditionResult                  NewState;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_BuildingPlacementIndicator_OnPlaceStateChange;
+
 // Function ChimeraUI.CrUW_BuildingPriorityButton.UpdateVisuals
 // 0x0001 (0x0001 - 0x0000)
 struct CrUW_BuildingPriorityButton_UpdateVisuals final
@@ -2321,6 +1753,193 @@ public:
 	ECrLogisticsRequestPriority                   InPriority;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrUW_BuildingPriorityButton_UpdateVisuals;
+
+// Function ChimeraUI.CrUW_InventorySlot.ActivateQuickActionsMenu
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_InventorySlot_ActivateQuickActionsMenu final
+{
+public:
+	class UUserWidget*                            ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_InventorySlot_ActivateQuickActionsMenu;
+
+// Function ChimeraUI.CrUW_InventorySlot.ActivateSplitWindow
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_InventorySlot_ActivateSplitWindow final
+{
+public:
+	class UUserWidget*                            ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_InventorySlot_ActivateSplitWindow;
+
+// Function ChimeraUI.CrUW_InventorySlot.ActivateTooltipActionsMenu
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_InventorySlot_ActivateTooltipActionsMenu final
+{
+public:
+	class UUserWidget*                            ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_InventorySlot_ActivateTooltipActionsMenu;
+
+// Function ChimeraUI.CrUW_InventorySlot.CloseQuickMenu
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_InventorySlot_CloseQuickMenu final
+{
+public:
+	ECrUIWindowMode                               Mode;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_InventorySlot_CloseQuickMenu;
+
+// Function ChimeraUI.CrUW_InventorySlot.CloseSplitWindow
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_InventorySlot_CloseSplitWindow final
+{
+public:
+	ECrUIWindowMode                               Mode;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_InventorySlot_CloseSplitWindow;
+
+// Function ChimeraUI.CrUW_InventorySlot.ConvertToGrayScale
+// 0x0014 (0x0014 - 0x0000)
+struct CrUW_InventorySlot_ConvertToGrayScale final
+{
+public:
+	struct FColor                                 InColor;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           ReturnValue;                                       // 0x0004(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_InventorySlot_ConvertToGrayScale;
+
+// Function ChimeraUI.CrUW_InventorySlot.GetAmount
+// 0x0004 (0x0004 - 0x0000)
+struct CrUW_InventorySlot_GetAmount final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_InventorySlot_GetAmount;
+
+// Function ChimeraUI.CrUW_InventorySlot.GetIconTypeColor
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_InventorySlot_GetIconTypeColor final
+{
+public:
+	EUIItemType                                   InType;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FColor                                 ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_InventorySlot_GetIconTypeColor;
+
+// Function ChimeraUI.CrUW_InventorySlot.GetWarningColor
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_InventorySlot_GetWarningColor final
+{
+public:
+	struct FLinearColor                           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_InventorySlot_GetWarningColor;
+
+// Function ChimeraUI.CrUW_InventorySlot.NativeGetTooltipWidget
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_InventorySlot_NativeGetTooltipWidget final
+{
+public:
+	class UUserWidget*                            ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_InventorySlot_NativeGetTooltipWidget;
+
+// Function ChimeraUI.CrUW_InventorySlot.OpenSplitWindow
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_InventorySlot_OpenSplitWindow final
+{
+public:
+	ECrUIWindowMode                               Mode;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_InventorySlot_OpenSplitWindow;
+
+// Function ChimeraUI.CrUW_InventorySlot.SetBackgroundColor
+// 0x0004 (0x0004 - 0x0000)
+struct CrUW_InventorySlot_SetBackgroundColor final
+{
+public:
+	struct FColor                                 InColor;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_InventorySlot_SetBackgroundColor;
+
+// Function ChimeraUI.CrUW_InventorySlot.SetFullStackColor
+// 0x0004 (0x0004 - 0x0000)
+struct CrUW_InventorySlot_SetFullStackColor final
+{
+public:
+	struct FColor                                 InColor;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_InventorySlot_SetFullStackColor;
+
+// Function ChimeraUI.CrUW_InventorySlot.SetGrayedNames
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_InventorySlot_SetGrayedNames final
+{
+public:
+	bool                                          bGray;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_InventorySlot_SetGrayedNames;
+
+// Function ChimeraUI.CrUW_InventorySlot.SetGrayedOut
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_InventorySlot_SetGrayedOut final
+{
+public:
+	bool                                          bVisible;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_InventorySlot_SetGrayedOut;
+
+// Function ChimeraUI.CrUW_InventorySlot.SetGrayScaleTex
+// 0x00B0 (0x00B0 - 0x0000)
+struct CrUW_InventorySlot_SetGrayScaleTex final
+{
+public:
+	struct FSlateBrush                            InBrush;                                           // 0x0000(0x00B0)(Parm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_InventorySlot_SetGrayScaleTex;
+
+// Function ChimeraUI.CrUW_InventorySlot.SetHighlightColor
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_InventorySlot_SetHighlightColor final
+{
+public:
+	struct FLinearColor                           InColor;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_InventorySlot_SetHighlightColor;
+
+// Function ChimeraUI.CrUW_InventorySlot.SetNewHighlight
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_InventorySlot_SetNewHighlight final
+{
+public:
+	bool                                          bIsHighlighted;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_InventorySlot_SetNewHighlight;
+
+// Function ChimeraUI.CrUW_InventorySlot.SetSlotIcon
+// 0x00C0 (0x00C0 - 0x0000)
+struct CrUW_InventorySlot_SetSlotIcon final
+{
+public:
+	struct FSlateBrush                            InBrush;                                           // 0x0000(0x00B0)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	EUIItemType                                   InUIType;                                          // 0x00B0(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B1[0xF];                                       // 0x00B1(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_CrUW_InventorySlot_SetSlotIcon;
+
+// Function ChimeraUI.CrUW_InventorySlot.ShowItemNameInIcon
+// 0x0018 (0x0018 - 0x0000)
+struct CrUW_InventorySlot_ShowItemNameInIcon final
+{
+public:
+	class FText                                   InText;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          Show;                                              // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_CrUW_InventorySlot_ShowItemNameInIcon;
 
 // Function ChimeraUI.CrUW_BuildingTooltips.IsBuildingToolEquipped
 // 0x0001 (0x0001 - 0x0000)
@@ -2511,6 +2130,33 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_CharacterWidget_SetButtonState;
 
+// Function ChimeraUI.CrUW_ChatHud.HandleTextChanged
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_ChatHud_HandleTextChanged final
+{
+public:
+	class FText                                   InText;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ChatHud_HandleTextChanged;
+
+// Function ChimeraUI.CrUW_ChatHud.SetState
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_ChatHud_SetState final
+{
+public:
+	ECrChatHudState                               State;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ChatHud_SetState;
+
+// Function ChimeraUI.CrUW_ChatHud.UpdateUI
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_ChatHud_UpdateUI final
+{
+public:
+	ECrChatHudState                               CurrentState;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ChatHud_UpdateUI;
+
 // Function ChimeraUI.CrUW_CheatAITab.SpawnAI
 // 0x0008 (0x0008 - 0x0000)
 struct CrUW_CheatAITab_SpawnAI final
@@ -2575,6 +2221,24 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_CheatBuildingResourceGrid_SetResourceGrid;
 
+// Function ChimeraUI.CrUW_CheatBuildindingCategoryButton.OnCategoryTypeChange
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_CheatBuildindingCategoryButton_OnCategoryTypeChange final
+{
+public:
+	ECrBuildingType                               InType;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_CheatBuildindingCategoryButton_OnCategoryTypeChange;
+
+// Function ChimeraUI.CrUW_CheatBuildindingCategoryButton.SetCategoryType
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_CheatBuildindingCategoryButton_SetCategoryType final
+{
+public:
+	ECrBuildingType                               InType;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_CheatBuildindingCategoryButton_SetCategoryType;
+
 // Function ChimeraUI.CrUW_CheatBuildTab.OnCategoryButtonCreated
 // 0x0008 (0x0008 - 0x0000)
 struct CrUW_CheatBuildTab_OnCategoryButtonCreated final
@@ -2592,24 +2256,6 @@ public:
 	bool                                          bChecked;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrUW_CheatBuildTab_OnImmunityStateChanged;
-
-// Function ChimeraUI.CrUW_CheatAttributeValueSlider.ApplyGameplayEffectSetByCaller
-// 0x0004 (0x0004 - 0x0000)
-struct CrUW_CheatAttributeValueSlider_ApplyGameplayEffectSetByCaller final
-{
-public:
-	float                                         Magnitude;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_CheatAttributeValueSlider_ApplyGameplayEffectSetByCaller;
-
-// Function ChimeraUI.CrUW_CheatAttributeValueSlider.GetSliderValue
-// 0x0004 (0x0004 - 0x0000)
-struct CrUW_CheatAttributeValueSlider_GetSliderValue final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_CheatAttributeValueSlider_GetSliderValue;
 
 // Function ChimeraUI.CrUW_CheatAttributeImmunityCheckBox.HandleCheckBoxChanged
 // 0x0001 (0x0001 - 0x0000)
@@ -2750,6 +2396,52 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_CloningBedPanel_SetColors;
 
+// Function ChimeraUI.CrUW_MapMenuLegendButton.OnFilterButtonChanged
+// 0x0002 (0x0002 - 0x0000)
+struct CrUW_MapMenuLegendButton_OnFilterButtonChanged final
+{
+public:
+	ECrMapMenuMarkerFilter                        Filter;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Status;                                            // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_MapMenuLegendButton_OnFilterButtonChanged;
+
+// Function ChimeraUI.CrUW_MapMenuLegendButton.SetRightShift
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_MapMenuLegendButton_SetRightShift final
+{
+public:
+	bool                                          RightShift;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_MapMenuLegendButton_SetRightShift;
+
+// Function ChimeraUI.CrUW_MapMenuLegendButton.SetTopSpace
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_MapMenuLegendButton_SetTopSpace final
+{
+public:
+	bool                                          TopSpace;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_MapMenuLegendButton_SetTopSpace;
+
+// Function ChimeraUI.CrUW_CloningBedPlayerInfo.SetPlayerInfo
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_CloningBedPlayerInfo_SetPlayerInfo final
+{
+public:
+	EProfessionType                               Profession;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_CloningBedPlayerInfo_SetPlayerInfo;
+
+// Function ChimeraUI.CrUW_CloningBedPlayerInfo.SetupDetails
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_CloningBedPlayerInfo_SetupDetails final
+{
+public:
+	EProfessionType                               Profession;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_CloningBedPlayerInfo_SetupDetails;
+
 // Function ChimeraUI.CrUW_CodeText.SetColor
 // 0x0010 (0x0010 - 0x0000)
 struct CrUW_CodeText_SetColor final
@@ -2758,6 +2450,78 @@ public:
 	struct FLinearColor                           Color;                                             // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrUW_CodeText_SetColor;
+
+// Function ChimeraUI.CrUW_ResearchLevelWidget.SetColors
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_ResearchLevelWidget_SetColors final
+{
+public:
+	const class UCrCommonUIColorsDevSettings*     Settings;                                          // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ResearchLevelWidget_SetColors;
+
+// Function ChimeraUI.CrUW_ResearchLevelWidget.SetExpanded
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_ResearchLevelWidget_SetExpanded final
+{
+public:
+	bool                                          bExpand;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ResearchLevelWidget_SetExpanded;
+
+// Function ChimeraUI.CrUW_ResearchLevelWidget.SetLevel
+// 0x0004 (0x0004 - 0x0000)
+struct CrUW_ResearchLevelWidget_SetLevel final
+{
+public:
+	int32                                         InLevel;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ResearchLevelWidget_SetLevel;
+
+// Function ChimeraUI.CrUW_ResearchLevelWidget.SetLevelButtonFocus
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_ResearchLevelWidget_SetLevelButtonFocus final
+{
+public:
+	bool                                          bFocused;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ResearchLevelWidget_SetLevelButtonFocus;
+
+// Function ChimeraUI.CrUW_ResearchLevelWidget.SetLinesEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_ResearchLevelWidget_SetLinesEnabled final
+{
+public:
+	bool                                          InEnable;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ResearchLevelWidget_SetLinesEnabled;
+
+// Function ChimeraUI.CrUW_RecipeTableRecipeItem.GetTooltipWidget
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_RecipeTableRecipeItem_GetTooltipWidget final
+{
+public:
+	class UUserWidget*                            ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_RecipeTableRecipeItem_GetTooltipWidget;
+
+// Function ChimeraUI.CrUW_RecipeTableRecipeItem.SetHasEnoughResources
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_RecipeTableRecipeItem_SetHasEnoughResources final
+{
+public:
+	bool                                          bEnough;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_RecipeTableRecipeItem_SetHasEnoughResources;
+
+// Function ChimeraUI.CrUW_RecipeTableRecipeItem.SetHovered
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_RecipeTableRecipeItem_SetHovered final
+{
+public:
+	bool                                          bHovered;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_RecipeTableRecipeItem_SetHovered;
 
 // Function ChimeraUI.CrUW_ConeSpreadPatternEditor.EditPattern
 // 0x0008 (0x0008 - 0x0000)
@@ -2785,6 +2549,96 @@ public:
 	class FText                                   Text;                                              // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrUW_ConnectToServer_OnTextChanged;
+
+// Function ChimeraUI.CrUW_MapMenuCrosshair.HandleInputMethodChanged
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_MapMenuCrosshair_HandleInputMethodChanged final
+{
+public:
+	ECommonInputType                              NewInputMethod;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_MapMenuCrosshair_HandleInputMethodChanged;
+
+// Function ChimeraUI.CrUW_Cooler.SetColors
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_Cooler_SetColors final
+{
+public:
+	struct FLinearColor                           HighlightColor;                                    // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_Cooler_SetColors;
+
+// Function ChimeraUI.CrUW_MapMenu.ZoomValueFromSlider
+// 0x0004 (0x0004 - 0x0000)
+struct CrUW_MapMenu_ZoomValueFromSlider final
+{
+public:
+	float                                         ZoomValue;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_MapMenu_ZoomValueFromSlider;
+
+// Function ChimeraUI.CrUW_CorporationRecipes.EnableLine
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_CorporationRecipes_EnableLine final
+{
+public:
+	bool                                          bEnabled;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_CorporationRecipes_EnableLine;
+
+// Function ChimeraUI.CrUW_CorporationRecipes.SetColors
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_CorporationRecipes_SetColors final
+{
+public:
+	const class UCrCommonUIColorsDevSettings*     Settings;                                          // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_CorporationRecipes_SetColors;
+
+// Function ChimeraUI.CrUW_CorporationRecipes.SetExpanded
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_CorporationRecipes_SetExpanded final
+{
+public:
+	bool                                          bExpand;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_CorporationRecipes_SetExpanded;
+
+// Function ChimeraUI.CrUW_CorporationRecipes.SetLevel
+// 0x0004 (0x0004 - 0x0000)
+struct CrUW_CorporationRecipes_SetLevel final
+{
+public:
+	int32                                         Level;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_CorporationRecipes_SetLevel;
+
+// Function ChimeraUI.CrUW_CorporationRecipes.SetLevelButtonFocus
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_CorporationRecipes_SetLevelButtonFocus final
+{
+public:
+	bool                                          bFocused;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_CorporationRecipes_SetLevelButtonFocus;
+
+// Function ChimeraUI.CrUW_CorporationRecipes.SetWidgetTitle
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_CorporationRecipes_SetWidgetTitle final
+{
+public:
+	class FText                                   Text;                                              // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_CorporationRecipes_SetWidgetTitle;
+
+// Function ChimeraUI.CrUW_CorporationRecipes.GetAllGridSlots
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_CorporationRecipes_GetAllGridSlots final
+{
+public:
+	TArray<class UWidget*>                        ReturnValue;                                       // 0x0000(0x0010)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_CorporationRecipes_GetAllGridSlots;
 
 // Function ChimeraUI.CrUW_CorporationScreenWidget.HasAllRewardsClaimed
 // 0x0001 (0x0001 - 0x0000)
@@ -2830,6 +2684,15 @@ public:
 	float                                         InPercent;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrUW_CorporationScreenWidget_UpdateCorporationPercent;
+
+// Function ChimeraUI.CrUW_CorporationsList.SetDisabledOpacity
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_CorporationsList_SetDisabledOpacity final
+{
+public:
+	bool                                          bDisabled;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_CorporationsList_SetDisabledOpacity;
 
 // Function ChimeraUI.CrUW_CorporationSlot.SendingStatusChanged
 // 0x0001 (0x0001 - 0x0000)
@@ -2914,6 +2777,97 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_CorporationSlot_ShowUnclaimedRewardsIcon;
 
+// Function ChimeraUI.CrUW_MessagesHud.OnAttackedBaseResult
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_MessagesHud_OnAttackedBaseResult final
+{
+public:
+	bool                                          Secured;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_MessagesHud_OnAttackedBaseResult;
+
+// Function ChimeraUI.CrUW_MessagesHud.OnPossess
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_MessagesHud_OnPossess final
+{
+public:
+	class APawn*                                  InPawn;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_MessagesHud_OnPossess;
+
+// Function ChimeraUI.CrUW_MessagesHud.SetupAttackedBaseInfo
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_MessagesHud_SetupAttackedBaseInfo final
+{
+public:
+	struct FMassEntityHandle                      AttackedBase;                                      // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_MessagesHud_SetupAttackedBaseInfo;
+
+// Function ChimeraUI.CrUW_ParamBarHud.OnPossess
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_ParamBarHud_OnPossess final
+{
+public:
+	class APawn*                                  InPawn;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ParamBarHud_OnPossess;
+
+// Function ChimeraUI.CrUW_ParamBarHud.OnProgressBarChanged
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_ParamBarHud_OnProgressBarChanged final
+{
+public:
+	bool                                          bIsRed;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ParamBarHud_OnProgressBarChanged;
+
+// Function ChimeraUI.CrUW_CrafterInterior.NativeGetTooltipWidget
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_CrafterInterior_NativeGetTooltipWidget final
+{
+public:
+	class UUserWidget*                            ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_CrafterInterior_NativeGetTooltipWidget;
+
+// Function ChimeraUI.CrUW_CraftingProgress.SetProgressStopButtonVisibility
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_CraftingProgress_SetProgressStopButtonVisibility final
+{
+public:
+	bool                                          bVisible;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_CraftingProgress_SetProgressStopButtonVisibility;
+
+// Function ChimeraUI.CrUW_CraftingProgress.UpdateProgress
+// 0x0004 (0x0004 - 0x0000)
+struct CrUW_CraftingProgress_UpdateProgress final
+{
+public:
+	float                                         InPercent;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_CraftingProgress_UpdateProgress;
+
+// Function ChimeraUI.CrUW_CraftingProgress.UpdateProgressByDigits
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_CraftingProgress_UpdateProgressByDigits final
+{
+public:
+	int32                                         Tens;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Ones;                                              // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_CraftingProgress_UpdateProgressByDigits;
+
+// Function ChimeraUI.CrUW_CraftingProgress.GetSelectedRecipe
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_CraftingProgress_GetSelectedRecipe final
+{
+public:
+	const class UCrItemRecipeData*                ReturnValue;                                       // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_CraftingProgress_GetSelectedRecipe;
+
 // Function ChimeraUI.CrUW_CraftingProgressInterior.SetColors
 // 0x0008 (0x0008 - 0x0000)
 struct CrUW_CraftingProgressInterior_SetColors final
@@ -2941,6 +2895,15 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_CraftingProgressInterior_GetSelectedRecipe;
 
+// Function ChimeraUI.CrUW_CraftingQueueListViewElement.HandleOnStoppedStatusChanged
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_CraftingQueueListViewElement_HandleOnStoppedStatusChanged final
+{
+public:
+	bool                                          bStopped;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_CraftingQueueListViewElement_HandleOnStoppedStatusChanged;
+
 // Function ChimeraUI.CrUW_CraftingQueue.HandleOnQueueElementClicked
 // 0x0008 (0x0008 - 0x0000)
 struct CrUW_CraftingQueue_HandleOnQueueElementClicked final
@@ -2958,6 +2921,17 @@ public:
 	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrUW_CraftingQueue_GetCraftingProgress;
+
+// Function ChimeraUI.CrUW_MarketingWidget.HighlightDot
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_MarketingWidget_HighlightDot final
+{
+public:
+	int32                                         InIndex;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsHighlighted;                                    // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_CrUW_MarketingWidget_HighlightDot;
 
 // Function ChimeraUI.CrUW_CraftingRecipeSlot.GetTooltipWidget
 // 0x0008 (0x0008 - 0x0000)
@@ -3051,6 +3025,104 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_CraftingSelectionWidget_SearchBoxTextChanged;
 
+// Function ChimeraUI.CrUW_PackageSender.HandleConnectionChanged
+// 0x0018 (0x0018 - 0x0000)
+struct CrUW_PackageSender_HandleConnectionChanged final
+{
+public:
+	struct FCrMassEntityReplicationHelper         InConnection;                                      // 0x0000(0x0018)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_PackageSender_HandleConnectionChanged;
+
+// Function ChimeraUI.CrUW_PackageSender.HandleReceiverStateChanged
+// 0x0018 (0x0018 - 0x0000)
+struct CrUW_PackageSender_HandleReceiverStateChanged final
+{
+public:
+	struct FCrMassEntityReplicationHelper         InReceiver;                                        // 0x0000(0x0018)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_PackageSender_HandleReceiverStateChanged;
+
+// Function ChimeraUI.CrUW_PackageSender.OnConnectionChanged
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_PackageSender_OnConnectionChanged final
+{
+public:
+	const class UAuItemDataBase*                  InItem;                                            // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bReceiverValid;                                    // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_CrUW_PackageSender_OnConnectionChanged;
+
+// Function ChimeraUI.CrUW_PackageSender.SetBuildingStatus
+// 0x0003 (0x0003 - 0x0000)
+struct CrUW_PackageSender_SetBuildingStatus final
+{
+public:
+	bool                                          bPowerOk;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bTemperatureOk;                                    // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInventoryOk;                                      // 0x0002(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_PackageSender_SetBuildingStatus;
+
+// Function ChimeraUI.CrUW_PackageSender.SetProgress
+// 0x0004 (0x0004 - 0x0000)
+struct CrUW_PackageSender_SetProgress final
+{
+public:
+	float                                         Progress;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_PackageSender_SetProgress;
+
+// Function ChimeraUI.CrUW_PackageSender.SetReceiverData
+// 0x0020 (0x0020 - 0x0000)
+struct CrUW_PackageSender_SetReceiverData final
+{
+public:
+	bool                                          bInReceiverValid;                                  // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 InName;                                            // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         InDistance;                                        // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_CrUW_PackageSender_SetReceiverData;
+
+// Function ChimeraUI.CrUW_CraftingStatus.GetCraftingType
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_CraftingStatus_GetCraftingType final
+{
+public:
+	TSubclassOf<class ACrCrafter>                 CraftingClass;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_CraftingStatus_GetCraftingType;
+
+// Function ChimeraUI.CrUW_CraftingStatus.GetSelectedRecipe
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_CraftingStatus_GetSelectedRecipe final
+{
+public:
+	const class UCrItemRecipeData*                ReturnValue;                                       // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_CraftingStatus_GetSelectedRecipe;
+
+// Function ChimeraUI.CrUW_CrosshairBase.CanShoot
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_CrosshairBase_CanShoot final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_CrosshairBase_CanShoot;
+
+// Function ChimeraUI.CrUW_CrosshairBase.GetCrosshairColor
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_CrosshairBase_GetCrosshairColor final
+{
+public:
+	struct FLinearColor                           ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_CrosshairBase_GetCrosshairColor;
+
 // Function ChimeraUI.CrUW_CustomGame.AddCategoryLine
 // 0x0001 (0x0001 - 0x0000)
 struct CrUW_CustomGame_AddCategoryLine final
@@ -3059,6 +3131,15 @@ public:
 	ECrCustomGameCategory                         InCategory;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrUW_CustomGame_AddCategoryLine;
+
+// Function ChimeraUI.CrUW_CustomGame.ApplayHeaderLineDesctiption
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_CustomGame_ApplayHeaderLineDesctiption final
+{
+public:
+	class FText                                   HeaderText;                                        // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_CustomGame_ApplayHeaderLineDesctiption;
 
 // Function ChimeraUI.CrUW_CustomGame.OnOptionChanged
 // 0x0008 (0x0008 - 0x0000)
@@ -3082,6 +3163,82 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_CustomGame_OnOptionHighlighted;
 
+// Function ChimeraUI.CrUW_CustomGame.ShowNewGameOnlyWarning
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_CustomGame_ShowNewGameOnlyWarning final
+{
+public:
+	bool                                          Show;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_CustomGame_ShowNewGameOnlyWarning;
+
+// Function ChimeraUI.CrUW_OnScreenBuildingResultNotification.OnPlacementResultNotif
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_OnScreenBuildingResultNotification_OnPlacementResultNotif final
+{
+public:
+	EAuAPPlacementResult                          PlacementResult;                                   // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_OnScreenBuildingResultNotification_OnPlacementResultNotif;
+
+// Function ChimeraUI.CrUW_CutsceneLetterBox.OnAnyInputKeyDetected
+// 0x0018 (0x0018 - 0x0000)
+struct CrUW_CutsceneLetterBox_OnAnyInputKeyDetected final
+{
+public:
+	struct FKey                                   Key;                                               // 0x0000(0x0018)(Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_CutsceneLetterBox_OnAnyInputKeyDetected;
+
+// Function ChimeraUI.CrUW_DatapadBaseWidget.OnDatapadRead
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_DatapadBaseWidget_OnDatapadRead final
+{
+public:
+	class FName                                   RowName;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_DatapadBaseWidget_OnDatapadRead;
+
+// Function ChimeraUI.CrUW_PlayerProgressionSkill.SetSkillIcon
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_PlayerProgressionSkill_SetSkillIcon final
+{
+public:
+	ECrPlayerProgressionSkill                     InSkill;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_PlayerProgressionSkill_SetSkillIcon;
+
+// Function ChimeraUI.CrUW_PlayerProgressionSkill.UpdateExperience
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_PlayerProgressionSkill_UpdateExperience final
+{
+public:
+	ECrPlayerProgressionSkill                     InSkill;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         InExperience;                                      // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_PlayerProgressionSkill_UpdateExperience;
+
+// Function ChimeraUI.CrUW_PlayerProgressionSkill.UpdateLevel
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_PlayerProgressionSkill_UpdateLevel final
+{
+public:
+	ECrPlayerProgressionSkill                     InSkill;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         InLevel;                                           // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_PlayerProgressionSkill_UpdateLevel;
+
+// Function ChimeraUI.CrUW_DatapadComputer.SetAuthor
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_DatapadComputer_SetAuthor final
+{
+public:
+	class FText                                   Author;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_DatapadComputer_SetAuthor;
+
 // Function ChimeraUI.CrUW_DatapadMessage.SetTitle
 // 0x0020 (0x0020 - 0x0000)
 struct CrUW_DatapadMessage_SetTitle final
@@ -3091,6 +3248,54 @@ public:
 	class FText                                   Date;                                              // 0x0010(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrUW_DatapadMessage_SetTitle;
+
+// Function ChimeraUI.CrUW_PauseMenuMainScreen.EnableBlur
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_PauseMenuMainScreen_EnableBlur final
+{
+public:
+	bool                                          bEnable;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_PauseMenuMainScreen_EnableBlur;
+
+// Function ChimeraUI.CrUW_PauseMenuMainScreen.EnableUpAndDownFrame
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_PauseMenuMainScreen_EnableUpAndDownFrame final
+{
+public:
+	bool                                          bEnable;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_PauseMenuMainScreen_EnableUpAndDownFrame;
+
+// Function ChimeraUI.CrUW_PauseMenuMainScreen.GetWidgetsData
+// 0x0048 (0x0048 - 0x0000)
+struct CrUW_PauseMenuMainScreen_GetWidgetsData final
+{
+public:
+	ECrMenuType                                   Type;                                              // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCrMenuConfig                          ReturnValue;                                       // 0x0008(0x0040)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_PauseMenuMainScreen_GetWidgetsData;
+
+// Function ChimeraUI.CrUW_PauseMenuMainScreen.OnActionTriggered
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_PauseMenuMainScreen_OnActionTriggered final
+{
+public:
+	ECrMenuType                                   MenuType;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_PauseMenuMainScreen_OnActionTriggered;
+
+// Function ChimeraUI.CrUW_PauseMenuMainScreen.TabChanged
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_PauseMenuMainScreen_TabChanged final
+{
+public:
+	int32                                         Old;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Active;                                            // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_PauseMenuMainScreen_TabChanged;
 
 // Function ChimeraUI.CrUW_DeathScreen.GetDeathDistanceToHubSpawnPoint
 // 0x0020 (0x0020 - 0x0000)
@@ -3121,6 +3326,15 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_DeathScreen_SetDeathScreenCloningBedState;
 
+// Function ChimeraUI.CrUW_DroneJunctionFilterSelection.HandleOnFilterItemSelected
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_DroneJunctionFilterSelection_HandleOnFilterItemSelected final
+{
+public:
+	class UObject*                                ListItem;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_DroneJunctionFilterSelection_HandleOnFilterItemSelected;
+
 // Function ChimeraUI.CrUW_DroneJunctionInfo.OnFilterWidgetAdded
 // 0x0010 (0x0010 - 0x0000)
 struct CrUW_DroneJunctionInfo_OnFilterWidgetAdded final
@@ -3132,6 +3346,15 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_DroneJunctionInfo_OnFilterWidgetAdded;
 
+// Function ChimeraUI.CrUW_PlayerPingHud.OnPlayerPingChanged
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_PlayerPingHud_OnPlayerPingChanged final
+{
+public:
+	TArray<struct FCrPlayerPingData>              PlayerPingData;                                    // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_PlayerPingHud_OnPlayerPingChanged;
+
 // Function ChimeraUI.CrUW_DroneRailFilterSelection.HandleOnFilterItemSelected
 // 0x0008 (0x0008 - 0x0000)
 struct CrUW_DroneRailFilterSelection_HandleOnFilterItemSelected final
@@ -3140,6 +3363,15 @@ public:
 	class UObject*                                ListItem;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrUW_DroneRailFilterSelection_HandleOnFilterItemSelected;
+
+// Function ChimeraUI.CrUW_RecipeImage.GetTooltipWidget
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_RecipeImage_GetTooltipWidget final
+{
+public:
+	class UUserWidget*                            ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_RecipeImage_GetTooltipWidget;
 
 // Function ChimeraUI.CrUW_DynamicCoopWidget.SetStatusVisibility
 // 0x0002 (0x0002 - 0x0000)
@@ -3160,6 +3392,25 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_DynamicCoopWidget_GetWidgetSize;
 
+// Function ChimeraUI.CrUW_PowerGenerator.SetStateColor
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_PowerGenerator_SetStateColor final
+{
+public:
+	bool                                          bWorking;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_PowerGenerator_SetStateColor;
+
+// Function ChimeraUI.CrUW_PowerGenerator.UpdateGridPower
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_PowerGenerator_UpdateGridPower final
+{
+public:
+	float                                         PowerUsedInGrid;                                   // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PowerGeneratedByGrid;                              // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_PowerGenerator_UpdateGridPower;
+
 // Function ChimeraUI.CrUW_DynamicFallenCoop.SetArrowAngle
 // 0x0004 (0x0004 - 0x0000)
 struct CrUW_DynamicFallenCoop_SetArrowAngle final
@@ -3177,6 +3428,24 @@ public:
 	struct FVector2D                              ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrUW_DynamicFallenCoop_GetWidgetSize;
+
+// Function ChimeraUI.CrUW_PlayerParamsHud.OnPossess
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_PlayerParamsHud_OnPossess final
+{
+public:
+	class APawn*                                  InPawn;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_PlayerParamsHud_OnPossess;
+
+// Function ChimeraUI.CrUW_EffectsHud.OnPossess
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_EffectsHud_OnPossess final
+{
+public:
+	class APawn*                                  InPawn;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_EffectsHud_OnPossess;
 
 // Function ChimeraUI.CrUW_EncyclopediaAudiologInfoMenu.SetEntryTitleBP
 // 0x0010 (0x0010 - 0x0000)
@@ -3204,6 +3473,98 @@ public:
 	class FText                                   Title;                                             // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrUW_EncyclopediaDatapadInfoMenu_SetEntryTitleBP;
+
+// Function ChimeraUI.CrUW_ItemSelectionList.SearchBoxTextChanged
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_ItemSelectionList_SearchBoxTextChanged final
+{
+public:
+	class FText                                   InText;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ItemSelectionList_SearchBoxTextChanged;
+
+// Function ChimeraUI.CrUW_ItemSelectionList.SetTitle
+// 0x0018 (0x0018 - 0x0000)
+struct CrUW_ItemSelectionList_SetTitle final
+{
+public:
+	bool                                          bVisible;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   InTitle;                                           // 0x0008(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ItemSelectionList_SetTitle;
+
+// Function ChimeraUI.CrUW_EncyclopediaEntryButton.GetIsEntryLocked
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_EncyclopediaEntryButton_GetIsEntryLocked final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_EncyclopediaEntryButton_GetIsEntryLocked;
+
+// Function ChimeraUI.CrUW_EncyclopediaEntryButton.GetIsSelected
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_EncyclopediaEntryButton_GetIsSelected final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_EncyclopediaEntryButton_GetIsSelected;
+
+// Function ChimeraUI.CrUW_RecipeTableCrafter.SetDropDownFocus
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_RecipeTableCrafter_SetDropDownFocus final
+{
+public:
+	bool                                          bHasFocus;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_RecipeTableCrafter_SetDropDownFocus;
+
+// Function ChimeraUI.CrUW_RecipeTableCrafter.SetHovered
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_RecipeTableCrafter_SetHovered final
+{
+public:
+	bool                                          bHovered;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_RecipeTableCrafter_SetHovered;
+
+// Function ChimeraUI.CrUW_RecipeTableCrafter.SetResourceAvailable
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_RecipeTableCrafter_SetResourceAvailable final
+{
+public:
+	bool                                          bAvailable;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_RecipeTableCrafter_SetResourceAvailable;
+
+// Function ChimeraUI.CrUW_RecipeTableCrafter.ShowActionPossibleIcon
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_RecipeTableCrafter_ShowActionPossibleIcon final
+{
+public:
+	bool                                          bShow;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_RecipeTableCrafter_ShowActionPossibleIcon;
+
+// Function ChimeraUI.CrUW_EncyclopediaInfoMenu.SetEntryAuthorBP
+// 0x00D0 (0x00D0 - 0x0000)
+struct CrUW_EncyclopediaInfoMenu_SetEntryAuthorBP final
+{
+public:
+	struct FEncyclopediaEntryAuthor               AuthorData;                                        // 0x0000(0x00D0)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_EncyclopediaInfoMenu_SetEntryAuthorBP;
+
+// Function ChimeraUI.CrUW_EncyclopediaInfoMenu.SetEntryTitleBP
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_EncyclopediaInfoMenu_SetEntryTitleBP final
+{
+public:
+	class FText                                   Title;                                             // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_EncyclopediaInfoMenu_SetEntryTitleBP;
 
 // Function ChimeraUI.CrUW_EncyclopediaMenu.OnCategoryButtonPressed
 // 0x0008 (0x0008 - 0x0000)
@@ -3268,6 +3629,60 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_EncyclopediaMenu_OnHyperlinkPressed;
 
+// Function ChimeraUI.CrUW_QuickUseEntry.OnDataRefresh
+// 0x0004 (0x0004 - 0x0000)
+struct CrUW_QuickUseEntry_OnDataRefresh final
+{
+public:
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_QuickUseEntry_OnDataRefresh;
+
+// Function ChimeraUI.CrUW_EncyclopediaSubcategoryGrid.SetGridExpanded
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_EncyclopediaSubcategoryGrid_SetGridExpanded final
+{
+public:
+	bool                                          Expanded;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_EncyclopediaSubcategoryGrid_SetGridExpanded;
+
+// Function ChimeraUI.CrUW_EncyclopediaSubcategoryGrid.SetSubCategoryTitleBP
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_EncyclopediaSubcategoryGrid_SetSubCategoryTitleBP final
+{
+public:
+	class FText                                   Title;                                             // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_EncyclopediaSubcategoryGrid_SetSubCategoryTitleBP;
+
+// Function ChimeraUI.CrUW_EncyclopediaSubcategoryGrid.SetSubcategoryTitleStyleBP
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_EncyclopediaSubcategoryGrid_SetSubcategoryTitleStyleBP final
+{
+public:
+	bool                                          isHighlight;                                       // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_EncyclopediaSubcategoryGrid_SetSubcategoryTitleStyleBP;
+
+// Function ChimeraUI.CrUW_EncyclopediaSubcategoryGrid.SetUnreadStatusIcons
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_EncyclopediaSubcategoryGrid_SetUnreadStatusIcons final
+{
+public:
+	bool                                          Unread;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_EncyclopediaSubcategoryGrid_SetUnreadStatusIcons;
+
+// Function ChimeraUI.CrUW_EncyclopediaSubcategoryGrid.GetUniformGridPanel
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_EncyclopediaSubcategoryGrid_GetUniformGridPanel final
+{
+public:
+	class UUniformGridPanel*                      ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_EncyclopediaSubcategoryGrid_GetUniformGridPanel;
+
 // Function ChimeraUI.CrUW_EnergyHud.InitEnergyChangeDelegate
 // 0x0008 (0x0008 - 0x0000)
 struct CrUW_EnergyHud_InitEnergyChangeDelegate final
@@ -3294,6 +3709,125 @@ public:
 	class APawn*                                  InPawn;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrUW_EnergyHud_OnUnPossesed;
+
+// Function ChimeraUI.Cr_UW_InventoryToolTip.AddEffect
+// 0x00D0 (0x00D0 - 0x0000)
+struct Cr_UW_InventoryToolTip_AddEffect final
+{
+public:
+	int32                                         InValue;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0xC];                                        // 0x0004(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateBrush                            InIcon;                                            // 0x0010(0x00B0)(Parm, NativeAccessSpecifierPublic)
+	class FText                                   InDescription;                                     // 0x00C0(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Cr_UW_InventoryToolTip_AddEffect;
+
+// Function ChimeraUI.Cr_UW_InventoryToolTip.GetTypeText
+// 0x0018 (0x0018 - 0x0000)
+struct Cr_UW_InventoryToolTip_GetTypeText final
+{
+public:
+	EUIItemType                                   Type;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Cr_UW_InventoryToolTip_GetTypeText;
+
+// Function ChimeraUI.Cr_UW_InventoryToolTip.SetCraftedInVisibility
+// 0x0001 (0x0001 - 0x0000)
+struct Cr_UW_InventoryToolTip_SetCraftedInVisibility final
+{
+public:
+	ESlateVisibility                              InVisibility;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Cr_UW_InventoryToolTip_SetCraftedInVisibility;
+
+// Function ChimeraUI.Cr_UW_InventoryToolTip.SetGatheredFromVisibility
+// 0x0001 (0x0001 - 0x0000)
+struct Cr_UW_InventoryToolTip_SetGatheredFromVisibility final
+{
+public:
+	ESlateVisibility                              InVisibility;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Cr_UW_InventoryToolTip_SetGatheredFromVisibility;
+
+// Function ChimeraUI.Cr_UW_InventoryToolTip.SetSupportTransfer
+// 0x0001 (0x0001 - 0x0000)
+struct Cr_UW_InventoryToolTip_SetSupportTransfer final
+{
+public:
+	bool                                          bSupport;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Cr_UW_InventoryToolTip_SetSupportTransfer;
+
+// Function ChimeraUI.Cr_UW_InventoryToolTip.SetupCraftingType
+// 0x0001 (0x0001 - 0x0000)
+struct Cr_UW_InventoryToolTip_SetupCraftingType final
+{
+public:
+	EUICraftingType                               InType;                                            // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Cr_UW_InventoryToolTip_SetupCraftingType;
+
+// Function ChimeraUI.Cr_UW_InventoryToolTip.SetupDataPoints
+// 0x0004 (0x0004 - 0x0000)
+struct Cr_UW_InventoryToolTip_SetupDataPoints final
+{
+public:
+	int32                                         Points;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Cr_UW_InventoryToolTip_SetupDataPoints;
+
+// Function ChimeraUI.Cr_UW_InventoryToolTip.SetupEffectTooltip
+// 0x00E0 (0x00E0 - 0x0000)
+struct Cr_UW_InventoryToolTip_SetupEffectTooltip final
+{
+public:
+	struct FFoodEffectData                        InEffect;                                          // 0x0000(0x00E0)(Parm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Cr_UW_InventoryToolTip_SetupEffectTooltip;
+
+// Function ChimeraUI.Cr_UW_InventoryToolTip.SetupExpand
+// 0x0001 (0x0001 - 0x0000)
+struct Cr_UW_InventoryToolTip_SetupExpand final
+{
+public:
+	bool                                          bSupport;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Cr_UW_InventoryToolTip_SetupExpand;
+
+// Function ChimeraUI.Cr_UW_InventoryToolTip.SetupInfoBox
+// 0x0020 (0x0020 - 0x0000)
+struct Cr_UW_InventoryToolTip_SetupInfoBox final
+{
+public:
+	class FText                                   Name_0;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	int32                                         Number;                                            // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Max;                                               // 0x0014(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EUIItemType                                   UIType;                                            // 0x0018(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsUsable;                                          // 0x0019(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1A[0x6];                                       // 0x001A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_Cr_UW_InventoryToolTip_SetupInfoBox;
+
+// Function ChimeraUI.Cr_UW_InventoryToolTip.SetupMinimalTooltip
+// 0x0020 (0x0020 - 0x0000)
+struct Cr_UW_InventoryToolTip_SetupMinimalTooltip final
+{
+public:
+	class FText                                   InDescription;                                     // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	class FText                                   Title;                                             // 0x0010(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Cr_UW_InventoryToolTip_SetupMinimalTooltip;
+
+// Function ChimeraUI.Cr_UW_InventoryToolTip.SetupMinimalVersion
+// 0x0001 (0x0001 - 0x0000)
+struct Cr_UW_InventoryToolTip_SetupMinimalVersion final
+{
+public:
+	bool                                          bHideItemType;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Cr_UW_InventoryToolTip_SetupMinimalVersion;
 
 // Function ChimeraUI.CrUW_ExportingSelectionWidget.SetCorpoColor
 // 0x0004 (0x0004 - 0x0000)
@@ -3322,6 +3856,154 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_ExportingSelectionWidget_SetNoCorpoSelectedState;
 
+// Function ChimeraUI.CrUW_Storage.IsUniversalStorage
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_Storage_IsUniversalStorage final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_Storage_IsUniversalStorage;
+
+// Function ChimeraUI.CrUW_Storage.SetColors
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_Storage_SetColors final
+{
+public:
+	const class UCrCommonUIColorsDevSettings*     Settings;                                          // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_Storage_SetColors;
+
+// Function ChimeraUI.CrUW_ResourceRedistributor.UpdateStoragLevelVisuals
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_ResourceRedistributor_UpdateStoragLevelVisuals final
+{
+public:
+	ECrStorageLevel                               StorageLevel;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ResourceRedistributor_UpdateStoragLevelVisuals;
+
+// Function ChimeraUI.CrUW_ExportingWidget.OnExporterRecipeCrafted
+// 0x0004 (0x0004 - 0x0000)
+struct CrUW_ExportingWidget_OnExporterRecipeCrafted final
+{
+public:
+	int32                                         CraftMultipler;                                    // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ExportingWidget_OnExporterRecipeCrafted;
+
+// Function ChimeraUI.CrUW_ExportingWidget.SetAnimationInProgress
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_ExportingWidget_SetAnimationInProgress final
+{
+public:
+	bool                                          InAnimationInProgress;                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ExportingWidget_SetAnimationInProgress;
+
+// Function ChimeraUI.CrUW_ExportingWidget.SetBackgroundCorpoImage
+// 0x00B0 (0x00B0 - 0x0000)
+struct CrUW_ExportingWidget_SetBackgroundCorpoImage final
+{
+public:
+	struct FSlateBrush                            CorporationIcon;                                   // 0x0000(0x00B0)(Parm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ExportingWidget_SetBackgroundCorpoImage;
+
+// Function ChimeraUI.CrUW_ExportingWidget.SetOutputPoints
+// 0x0004 (0x0004 - 0x0000)
+struct CrUW_ExportingWidget_SetOutputPoints final
+{
+public:
+	int32                                         Value;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ExportingWidget_SetOutputPoints;
+
+// Function ChimeraUI.CrUW_ExportingWidget.SetPoints
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_ExportingWidget_SetPoints final
+{
+public:
+	int32                                         CurrentValue;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Max;                                               // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ExportingWidget_SetPoints;
+
+// Function ChimeraUI.CrUW_ExportingWidget.SetupAnimation
+// 0x0004 (0x0004 - 0x0000)
+struct CrUW_ExportingWidget_SetupAnimation final
+{
+public:
+	int32                                         Number;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ExportingWidget_SetupAnimation;
+
+// Function ChimeraUI.CrUW_ExportingWidget.SetupBackground
+// 0x0004 (0x0004 - 0x0000)
+struct CrUW_ExportingWidget_SetupBackground final
+{
+public:
+	struct FColor                                 InColor;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ExportingWidget_SetupBackground;
+
+// Function ChimeraUI.CrUW_ExportingWidget.TriggerAnimation
+// 0x0004 (0x0004 - 0x0000)
+struct CrUW_ExportingWidget_TriggerAnimation final
+{
+public:
+	int32                                         Reputation;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ExportingWidget_TriggerAnimation;
+
+// Function ChimeraUI.CrUW_ExportingWidget.UpdateSendProgress
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_ExportingWidget_UpdateSendProgress final
+{
+public:
+	int32                                         Tens;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Ones;                                              // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ExportingWidget_UpdateSendProgress;
+
+// Function ChimeraUI.CrUW_ExtractionEncounterFinished.OnEncounterFinished
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_ExtractionEncounterFinished_OnEncounterFinished final
+{
+public:
+	bool                                          bSuccess;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ExtractionEncounterFinished_OnEncounterFinished;
+
+// Function ChimeraUI.CrUW_ExtractionEncounterFinished.UpdateVisuals
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_ExtractionEncounterFinished_UpdateVisuals final
+{
+public:
+	bool                                          bSuccess;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ExtractionEncounterFinished_UpdateVisuals;
+
+// Function ChimeraUI.UIItemTypesColors.GetTypeColor
+// 0x0008 (0x0008 - 0x0000)
+struct UIItemTypesColors_GetTypeColor final
+{
+public:
+	EUIItemType                                   Type;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FColor                                 ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_UIItemTypesColors_GetTypeColor;
+
+// Function ChimeraUI.CrUW_ExtractionEncounterInfo.UpdateWidget
+// 0x0040 (0x0040 - 0x0000)
+struct CrUW_ExtractionEncounterInfo_UpdateWidget final
+{
+public:
+	struct FCrExtractionState                     ExtractionState;                                   // 0x0000(0x0040)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ExtractionEncounterInfo_UpdateWidget;
+
 // Function ChimeraUI.CrUW_FEDisplay.GetWidgetHeight
 // 0x0004 (0x0004 - 0x0000)
 struct CrUW_FEDisplay_GetWidgetHeight final
@@ -3339,6 +4021,51 @@ public:
 	class UUserWidget*                            ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrUW_FoodEffectHud_NativeGetTooltipWidget;
+
+// Function ChimeraUI.CrUW_SenderReceiverButton.UpdateVisuals
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_SenderReceiverButton_UpdateVisuals final
+{
+public:
+	bool                                          bVisible;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_SenderReceiverButton_UpdateVisuals;
+
+// Function ChimeraUI.CrUW_RewardItem.HighlightSlot
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_RewardItem_HighlightSlot final
+{
+public:
+	bool                                          bHighlight;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_RewardItem_HighlightSlot;
+
+// Function ChimeraUI.CrUW_RewardItem.SetColors
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_RewardItem_SetColors final
+{
+public:
+	struct FLinearColor                           Blue;                                              // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_RewardItem_SetColors;
+
+// Function ChimeraUI.CrUW_RewardItem.SetLocked
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_RewardItem_SetLocked final
+{
+public:
+	bool                                          InLocked;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_RewardItem_SetLocked;
+
+// Function ChimeraUI.CrUW_FriendsButton.SetButtonEmpty
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_FriendsButton_SetButtonEmpty final
+{
+public:
+	bool                                          bEmpty;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_FriendsButton_SetButtonEmpty;
 
 // Function ChimeraUI.CrUW_GemInventorySlot.HandleSkillLevelChanged
 // 0x0008 (0x0008 - 0x0000)
@@ -3361,6 +4088,47 @@ public:
 	int32                                         Level;                                             // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrUW_GemInventorySlot_UpdateVisuals;
+
+// Function ChimeraUI.CrUW_ResearchTerminalInfo.SetCorpoColor
+// 0x0004 (0x0004 - 0x0000)
+struct CrUW_ResearchTerminalInfo_SetCorpoColor final
+{
+public:
+	struct FColor                                 InColor;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ResearchTerminalInfo_SetCorpoColor;
+
+// Function ChimeraUI.CrUW_ResearchTerminalInfo.SetItemName
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_ResearchTerminalInfo_SetItemName final
+{
+public:
+	class FText                                   InText;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ResearchTerminalInfo_SetItemName;
+
+// Function ChimeraUI.CrUW_ResearchTerminalInfo.SetupBuildingInCollection
+// 0x00D0 (0x00D0 - 0x0000)
+struct CrUW_ResearchTerminalInfo_SetupBuildingInCollection final
+{
+public:
+	struct FSlateBrush                            Icon;                                              // 0x0000(0x00B0)(Parm, NativeAccessSpecifierPublic)
+	class FText                                   BuildingName;                                      // 0x00B0(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          Unlocked;                                          // 0x00C0(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C1[0x3];                                       // 0x00C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Reputation;                                        // 0x00C4(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UCrUW_RewardCollectionRow*              ReturnValue;                                       // 0x00C8(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ResearchTerminalInfo_SetupBuildingInCollection;
+
+// Function ChimeraUI.CrUW_GenericAmmoCounter.SetOwningWeaponType
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_GenericAmmoCounter_SetOwningWeaponType final
+{
+public:
+	struct FGameplayTag                           NewWeaponType;                                     // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_GenericAmmoCounter_SetOwningWeaponType;
 
 // Function ChimeraUI.CrUW_GenericAmmoCounter.GetCurrentAmmoCount
 // 0x0004 (0x0004 - 0x0000)
@@ -3398,14 +4166,101 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_GenericAmmoCounter_GetEquippedWeaponAmmoItemType;
 
-// Function ChimeraUI.CrUW_SkillsTab.SetWarningIconColor
+// Function ChimeraUI.CrUW_SenderReceiver.HandleNameChanged
 // 0x0010 (0x0010 - 0x0000)
-struct CrUW_SkillsTab_SetWarningIconColor final
+struct CrUW_SenderReceiver_HandleNameChanged final
 {
 public:
-	struct FLinearColor                           InColor;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 InName;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_CrUW_SkillsTab_SetWarningIconColor;
+DUMPER7_ASSERTS_CrUW_SenderReceiver_HandleNameChanged;
+
+// Function ChimeraUI.CrUW_SenderReceiver.HandleStateChanged
+// 0x0018 (0x0018 - 0x0000)
+struct CrUW_SenderReceiver_HandleStateChanged final
+{
+public:
+	struct FCrMassEntityReplicationHelper         InReceiver;                                        // 0x0000(0x0018)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_SenderReceiver_HandleStateChanged;
+
+// Function ChimeraUI.CrUW_SenderReceiver.SetBuildingStatus
+// 0x0003 (0x0003 - 0x0000)
+struct CrUW_SenderReceiver_SetBuildingStatus final
+{
+public:
+	bool                                          bPowerOk;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bTemperatureOk;                                    // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStandby;                                          // 0x0002(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_SenderReceiver_SetBuildingStatus;
+
+// Function ChimeraUI.CrUW_SenderReceiver.SetEntityEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_SenderReceiver_SetEntityEnabled final
+{
+public:
+	bool                                          bEnabled;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_SenderReceiver_SetEntityEnabled;
+
+// Function ChimeraUI.CrUW_SenderReceiver.SetNoConnection
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_SenderReceiver_SetNoConnection final
+{
+public:
+	const class UCrItemDataBase*                  ItemType;                                          // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_SenderReceiver_SetNoConnection;
+
+// Function ChimeraUI.CrUW_SenderReceiver.SetReceiverData
+// 0x0018 (0x0018 - 0x0000)
+struct CrUW_SenderReceiver_SetReceiverData final
+{
+public:
+	class FString                                 ConnectionName;                                    // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	const class UCrItemDataBase*                  ItemType;                                          // 0x0010(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_SenderReceiver_SetReceiverData;
+
+// Function ChimeraUI.CrUW_SenderReceiver.SetSenderData
+// 0x0018 (0x0018 - 0x0000)
+struct CrUW_SenderReceiver_SetSenderData final
+{
+public:
+	class FString                                 ConnectionName;                                    // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	const class UCrItemDataBase*                  ItemType;                                          // 0x0010(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_SenderReceiver_SetSenderData;
+
+// Function ChimeraUI.CrUW_SenderReceiver.ShowHighlightFrame
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_SenderReceiver_ShowHighlightFrame final
+{
+public:
+	bool                                          bShow;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_SenderReceiver_ShowHighlightFrame;
+
+// Function ChimeraUI.CrUW_SenderReceiver.ShowSelectedFrame
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_SenderReceiver_ShowSelectedFrame final
+{
+public:
+	bool                                          bShow;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_SenderReceiver_ShowSelectedFrame;
+
+// Function ChimeraUI.CrUW_SenderReceiver.GetItemColor
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_SenderReceiver_GetItemColor final
+{
+public:
+	const class UCrItemDataBase*                  Item;                                              // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FColor                                 ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_CrUW_SenderReceiver_GetItemColor;
 
 // Function ChimeraUI.CrUW_HarvesterHud.OnBoostLevelChanged
 // 0x0008 (0x0008 - 0x0000)
@@ -3471,6 +4326,15 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_HealingHud_SetProgress;
 
+// Function ChimeraUI.CrUW_ShowPlaytestEndVideoWidget.OnMediaOpened
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_ShowPlaytestEndVideoWidget_OnMediaOpened final
+{
+public:
+	class FString                                 OpenedUrl;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ShowPlaytestEndVideoWidget_OnMediaOpened;
+
 // Function ChimeraUI.CrUW_HealthHud.OnPossess
 // 0x0008 (0x0008 - 0x0000)
 struct CrUW_HealthHud_OnPossess final
@@ -3525,25 +4389,59 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_HeaterCoolerInfo_GetTotalSocketNum;
 
-// Function ChimeraUI.CrUW_ShotgunAmmoCounter.GetAmmoText
-// 0x0010 (0x0010 - 0x0000)
-struct CrUW_ShotgunAmmoCounter_GetAmmoText final
+// Function ChimeraUI.CrUW_SessionBox.ExpandSession
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_SessionBox_ExpandSession final
 {
 public:
-	class FText                                   ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+	bool                                          bExpand;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_CrUW_ShotgunAmmoCounter_GetAmmoText;
+DUMPER7_ASSERTS_CrUW_SessionBox_ExpandSession;
 
-// Function ChimeraUI.CrUW_ShotgunAmmoCounter.SetBulletState
+// Function ChimeraUI.CrUW_SessionBox.SetColors
 // 0x0008 (0x0008 - 0x0000)
-struct CrUW_ShotgunAmmoCounter_SetBulletState final
+struct CrUW_SessionBox_SetColors final
 {
 public:
-	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          HasBullet;                                         // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	const class UCrCommonUIColorsDevSettings*     Settings;                                          // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_CrUW_ShotgunAmmoCounter_SetBulletState;
+DUMPER7_ASSERTS_CrUW_SessionBox_SetColors;
+
+// Function ChimeraUI.CrUW_SessionBox.SetExpanded
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_SessionBox_SetExpanded final
+{
+public:
+	bool                                          bExpand;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_SessionBox_SetExpanded;
+
+// Function ChimeraUI.CrUW_SessionBox.SetSessionButtonFocus
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_SessionBox_SetSessionButtonFocus final
+{
+public:
+	bool                                          bFocused;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_SessionBox_SetSessionButtonFocus;
+
+// Function ChimeraUI.CrUW_SessionBox.SetSessionButtonHighlight
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_SessionBox_SetSessionButtonHighlight final
+{
+public:
+	bool                                          bHighlighted;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_SessionBox_SetSessionButtonHighlight;
+
+// Function ChimeraUI.CrUW_SessionBox.SetSessionTitle
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_SessionBox_SetSessionTitle final
+{
+public:
+	class FString                                 Timestamp;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_SessionBox_SetSessionTitle;
 
 // Function ChimeraUI.CrUW_HintHUD.DisplayHint
 // 0x0010 (0x0010 - 0x0000)
@@ -3592,23 +4490,172 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_HitIndicator_CreateHitIndicator;
 
-// Function ChimeraUI.CrUW_SubObjectiveEntry.OnKeyProfileChanged
+// Function ChimeraUI.CrUW_ShieldHud.OnPossess
 // 0x0008 (0x0008 - 0x0000)
-struct CrUW_SubObjectiveEntry_OnKeyProfileChanged final
+struct CrUW_ShieldHud_OnPossess final
 {
 public:
-	const class UEnhancedPlayerMappableKeyProfile* InNewProfile;                                     // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class APawn*                                  InPawn;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_CrUW_SubObjectiveEntry_OnKeyProfileChanged;
+DUMPER7_ASSERTS_CrUW_ShieldHud_OnPossess;
 
-// Function ChimeraUI.CrUW_SubObjectiveEntry.OnUserSettingsChanged
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_SubObjectiveEntry_OnUserSettingsChanged final
+// Function ChimeraUI.CrUW_Hotbar.OnActionTriggeredStart
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_Hotbar_OnActionTriggeredStart final
 {
 public:
-	class UEnhancedInputUserSettings*             InSettings;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<int32>                                 Indexes;                                           // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_CrUW_SubObjectiveEntry_OnUserSettingsChanged;
+DUMPER7_ASSERTS_CrUW_Hotbar_OnActionTriggeredStart;
+
+// Function ChimeraUI.CrUW_Hotbar.OnActionTriggeredStop
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_Hotbar_OnActionTriggeredStop final
+{
+public:
+	TArray<int32>                                 Indexes;                                           // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_Hotbar_OnActionTriggeredStop;
+
+// Function ChimeraUI.CrUW_Hotbar.OnActiveHotbarChanged
+// 0x0018 (0x0018 - 0x0000)
+struct CrUW_Hotbar_OnActiveHotbarChanged final
+{
+public:
+	TArray<struct FHotbarInternalSlotData>        NewHotbarSlotsArray;                               // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x0010(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_CrUW_Hotbar_OnActiveHotbarChanged;
+
+// Function ChimeraUI.CrUW_Hotbar.OnBuildingAssignToHotbar
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_Hotbar_OnBuildingAssignToHotbar final
+{
+public:
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCrBuildingData*                        InBuilding;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_Hotbar_OnBuildingAssignToHotbar;
+
+// Function ChimeraUI.CrUW_Hotbar.OnDuplicatedItemsRemoved
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_Hotbar_OnDuplicatedItemsRemoved final
+{
+public:
+	TArray<int32>                                 Indexes;                                           // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_Hotbar_OnDuplicatedItemsRemoved;
+
+// Function ChimeraUI.CrUW_Hotbar.OnForceShowInMenu
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_Hotbar_OnForceShowInMenu final
+{
+public:
+	bool                                          bShown;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_Hotbar_OnForceShowInMenu;
+
+// Function ChimeraUI.CrUW_Hotbar.OnItemAssignedToHotbar
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_Hotbar_OnItemAssignedToHotbar final
+{
+public:
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCrEdibleItemBase*                      ConsumableItem;                                    // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_Hotbar_OnItemAssignedToHotbar;
+
+// Function ChimeraUI.CrUW_Hotbar.OnItemWithZeroCountUsed
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_Hotbar_OnItemWithZeroCountUsed final
+{
+public:
+	TArray<int32>                                 Indexes;                                           // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_Hotbar_OnItemWithZeroCountUsed;
+
+// Function ChimeraUI.CrUW_Hotbar.OnOneOffActionTriggered
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_Hotbar_OnOneOffActionTriggered final
+{
+public:
+	TArray<int32>                                 Indexes;                                           // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_Hotbar_OnOneOffActionTriggered;
+
+// Function ChimeraUI.CrUW_Hotbar.OnWeaponAssignToHotbar
+// 0x0038 (0x0038 - 0x0000)
+struct CrUW_Hotbar_OnWeaponAssignToHotbar final
+{
+public:
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FAuItemSlot                            WeaponSlot;                                        // 0x0008(0x0030)(ConstParm, Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_Hotbar_OnWeaponAssignToHotbar;
+
+// Function ChimeraUI.CrUW_Hotbar.OnWeaponOnSlotChanged
+// 0x0038 (0x0038 - 0x0000)
+struct CrUW_Hotbar_OnWeaponOnSlotChanged final
+{
+public:
+	const class UAuItemData*                      NewItem;                                           // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FAuItemSlot                            WeaponSlot;                                        // 0x0008(0x0030)(ConstParm, Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_Hotbar_OnWeaponOnSlotChanged;
+
+// Function ChimeraUI.CrUW_HotbarSlot.OnWeaponOnSlotChanged
+// 0x0038 (0x0038 - 0x0000)
+struct CrUW_HotbarSlot_OnWeaponOnSlotChanged final
+{
+public:
+	const class UAuItemData*                      NewItem;                                           // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FAuItemSlot                            WeaponSlot;                                        // 0x0008(0x0030)(ConstParm, Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_HotbarSlot_OnWeaponOnSlotChanged;
+
+// Function ChimeraUI.CrUW_HotbarSlot.OnWeaponShot
+// 0x0198 (0x0198 - 0x0000)
+struct CrUW_HotbarSlot_OnWeaponShot final
+{
+public:
+	struct FAuEquippedWeapon                      EquippedWeapon;                                    // 0x0000(0x0100)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FAuTargetData                          Hits;                                              // 0x0100(0x0078)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FAuCustomTargetHandle                  TargetingHandle;                                   // 0x0178(0x0001)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_179[0x7];                                      // 0x0179(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FAuCustomTraceDataHandle               CustomData;                                        // 0x0180(0x0018)(Parm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_HotbarSlot_OnWeaponShot;
+
+// Function ChimeraUI.CrUW_HotbarSlot.SetWarningColor
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_HotbarSlot_SetWarningColor final
+{
+public:
+	bool                                          bWarning;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_HotbarSlot_SetWarningColor;
+
+// Function ChimeraUI.CrUW_StoryItemSlot.OpenTooltip
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_StoryItemSlot_OpenTooltip final
+{
+public:
+	class UUserWidget*                            ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_StoryItemSlot_OpenTooltip;
+
+// Function ChimeraUI.CrUW_StoryItemSlot.SetAmount
+// 0x0004 (0x0004 - 0x0000)
+struct CrUW_StoryItemSlot_SetAmount final
+{
+public:
+	int32                                         InAmount;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_StoryItemSlot_SetAmount;
 
 // Function ChimeraUI.CrUW_HUDCentralNotification.OnAbandonBaseCompleted
 // 0x0078 (0x0078 - 0x0000)
@@ -3680,6 +4727,15 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_HUDLayout_OnSystemMessage;
 
+// Function ChimeraUI.CrUW_HUDLayout.SetSubtitlesPadding
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_HUDLayout_SetSubtitlesPadding final
+{
+public:
+	bool                                          bUp;                                               // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_HUDLayout_SetSubtitlesPadding;
+
 // Function ChimeraUI.CrUW_HUDLayout.ShowBlur
 // 0x0001 (0x0001 - 0x0000)
 struct CrUW_HUDLayout_ShowBlur final
@@ -3698,89 +4754,61 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_HudRoundTimer_SetProgress;
 
-// Function ChimeraUI.CrUW_SettingsProxy.AttemptToPopNavigation
+// Function ChimeraUI.CrUW_SessionWidget.ShowHighlight
 // 0x0001 (0x0001 - 0x0000)
-struct CrUW_SettingsProxy_AttemptToPopNavigation final
+struct CrUW_SessionWidget_ShowHighlight final
 {
 public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShow;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_CrUW_SettingsProxy_AttemptToPopNavigation;
+DUMPER7_ASSERTS_CrUW_SessionWidget_ShowHighlight;
 
-// Function ChimeraUI.CrUW_SettingsProxy.GetSettingCollection
-// 0x0018 (0x0018 - 0x0000)
-struct CrUW_SettingsProxy_GetSettingCollection final
-{
-public:
-	class FName                                   SettingDevName;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          HasAnySettings;                                    // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UGameSettingCollection*                 ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_SettingsProxy_GetSettingCollection;
-
-// Function ChimeraUI.CrUW_SettingsProxy.NavigateToSetting
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_SettingsProxy_NavigateToSetting final
-{
-public:
-	class FName                                   SettingDevName;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_SettingsProxy_NavigateToSetting;
-
-// Function ChimeraUI.CrUW_SettingsProxy.NavigateToSettings
-// 0x0010 (0x0010 - 0x0000)
-struct CrUW_SettingsProxy_NavigateToSettings final
-{
-public:
-	TArray<class FName>                           SettingDevNames;                                   // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_SettingsProxy_NavigateToSettings;
-
-// Function ChimeraUI.CrUW_SettingsProxy.OnSelectedTabEvent
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_SettingsProxy_OnSelectedTabEvent final
-{
-public:
-	class FName                                   TabId;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_SettingsProxy_OnSelectedTabEvent;
-
-// Function ChimeraUI.CrUW_SettingsProxy.OnSettingsDirtyStateChanged
+// Function ChimeraUI.CrUW_SessionWidget.ShowSelection
 // 0x0001 (0x0001 - 0x0000)
-struct CrUW_SettingsProxy_OnSettingsDirtyStateChanged final
+struct CrUW_SessionWidget_ShowSelection final
 {
 public:
-	bool                                          bSettingsDirty;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bShow;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_CrUW_SettingsProxy_OnSettingsDirtyStateChanged;
+DUMPER7_ASSERTS_CrUW_SessionWidget_ShowSelection;
 
-// Function ChimeraUI.CrUW_SettingsProxy.HaveSettingsBeenChanged
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_SettingsProxy_HaveSettingsBeenChanged final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_SettingsProxy_HaveSettingsBeenChanged;
-
-// Function ChimeraUI.CrUW_StoryItemSlot.OpenTooltip
+// Function ChimeraUI.CrUW_MultiplayerWidget.HandleRotatorChangedValue
 // 0x0008 (0x0008 - 0x0000)
-struct CrUW_StoryItemSlot_OpenTooltip final
+struct CrUW_MultiplayerWidget_HandleRotatorChangedValue final
 {
 public:
-	class UUserWidget*                            ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Value;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUserInitiated;                                    // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_CrUW_StoryItemSlot_OpenTooltip;
+DUMPER7_ASSERTS_CrUW_MultiplayerWidget_HandleRotatorChangedValue;
 
-// Function ChimeraUI.CrUW_StoryItemSlot.SetAmount
-// 0x0004 (0x0004 - 0x0000)
-struct CrUW_StoryItemSlot_SetAmount final
+// Function ChimeraUI.CrUW_MultiplayerWidget.OnCreateSessionComplete
+// 0x0028 (0x0028 - 0x0000)
+struct CrUW_MultiplayerWidget_OnCreateSessionComplete final
 {
 public:
-	int32                                         InAmount;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FOnlineResultInformation               Result;                                            // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_CrUW_StoryItemSlot_SetAmount;
+DUMPER7_ASSERTS_CrUW_MultiplayerWidget_OnCreateSessionComplete;
+
+// Function ChimeraUI.CrUW_MultiplayerWidget.ProfessionStateChanged
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_MultiplayerWidget_ProfessionStateChanged final
+{
+public:
+	EProfessionType                               Profession;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_MultiplayerWidget_ProfessionStateChanged;
+
+// Function ChimeraUI.CrUW_MultiplayerWidget.SetOnlineModeVisibility
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_MultiplayerWidget_SetOnlineModeVisibility final
+{
+public:
+	bool                                          bVisible;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_MultiplayerWidget_SetOnlineModeVisibility;
 
 // Function ChimeraUI.CrUW_InGameMenu.SetTargetSessionOnlineMode
 // 0x0001 (0x0001 - 0x0000)
@@ -3818,23 +4846,63 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_InputTextPopup_InputTextChanged;
 
-// Function ChimeraUI.CrUW_TakeRemainingItems.SetBackgroundColor
-// 0x0004 (0x0004 - 0x0000)
-struct CrUW_TakeRemainingItems_SetBackgroundColor final
-{
-public:
-	struct FColor                                 Color;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_TakeRemainingItems_SetBackgroundColor;
-
-// Function ChimeraUI.CrUW_StorageInventory.HandleOnFilterItemSelected
+// Function ChimeraUI.CrUW_NotificationsHud.OnCheatHUDShowNotification
 // 0x0008 (0x0008 - 0x0000)
-struct CrUW_StorageInventory_HandleOnFilterItemSelected final
+struct CrUW_NotificationsHud_OnCheatHUDShowNotification final
 {
 public:
-	class UObject*                                ListItem;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EFAuNotificationType                          NotificationType;                                  // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          Show;                                              // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-DUMPER7_ASSERTS_CrUW_StorageInventory_HandleOnFilterItemSelected;
+DUMPER7_ASSERTS_CrUW_NotificationsHud_OnCheatHUDShowNotification;
+
+// Function ChimeraUI.CrUW_NotificationsHud.OnCorporationQuestItemAdded
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_NotificationsHud_OnCorporationQuestItemAdded final
+{
+public:
+	const class UCrItemDataBase*                  Data;                                              // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_NotificationsHud_OnCorporationQuestItemAdded;
+
+// Function ChimeraUI.CrUW_NotificationsHud.OnPossesed
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_NotificationsHud_OnPossesed final
+{
+public:
+	class APawn*                                  InPawn;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_NotificationsHud_OnPossesed;
+
+// Function ChimeraUI.CrUW_NotificationsHud.OnUnlockedFeaturesChanged
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_NotificationsHud_OnUnlockedFeaturesChanged final
+{
+public:
+	TArray<ECrCorporationUnlockedFeatures>        UnlockedFeatures;                                  // 0x0000(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_NotificationsHud_OnUnlockedFeaturesChanged;
+
+// Function ChimeraUI.CrUW_MissingPartDevice.SetColors
+// 0x0030 (0x0030 - 0x0000)
+struct CrUW_MissingPartDevice_SetColors final
+{
+public:
+	struct FLinearColor                           NormalOrangeColor;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           OrangeHighlightColor;                              // 0x0010(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           NormalColor;                                       // 0x0020(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_MissingPartDevice_SetColors;
+
+// Function ChimeraUI.CrUW_MissingPartDevice.SetProgressPercent
+// 0x0004 (0x0004 - 0x0000)
+struct CrUW_MissingPartDevice_SetProgressPercent final
+{
+public:
+	float                                         InPercent;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_MissingPartDevice_SetProgressPercent;
 
 // Function ChimeraUI.CrUW_InputPasswordPopup.OnTextChanged
 // 0x0010 (0x0010 - 0x0000)
@@ -3881,16 +4949,50 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_InteractionInfo_OnSetupInfo;
 
-// Function ChimeraUI.CrUW_UpgradeStationPanel.OnActorEndPlay
-// 0x0010 (0x0010 - 0x0000)
-struct CrUW_UpgradeStationPanel_OnActorEndPlay final
+// Function ChimeraUI.CrUW_UpgradeBuildingWidget.HandleOnTaskUpgradeTaskCompleted
+// 0x0068 (0x0068 - 0x0000)
+struct CrUW_UpgradeBuildingWidget_HandleOnTaskUpgradeTaskCompleted final
 {
 public:
-	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EEndPlayReason                                Reason;                                            // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FCrBuildingUpgradeTask                 InTask;                                            // 0x0000(0x0068)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_CrUW_UpgradeStationPanel_OnActorEndPlay;
+DUMPER7_ASSERTS_CrUW_UpgradeBuildingWidget_HandleOnTaskUpgradeTaskCompleted;
+
+// Function ChimeraUI.CrUW_UpgradeBuildingWidget.RequiredLevelReached
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_UpgradeBuildingWidget_RequiredLevelReached final
+{
+public:
+	bool                                          bReached;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_UpgradeBuildingWidget_RequiredLevelReached;
+
+// Function ChimeraUI.CrUW_UpgradeBuildingWidget.SetColors
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_UpgradeBuildingWidget_SetColors final
+{
+public:
+	const class UCrCommonUIColorsDevSettings*     Settings;                                          // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_UpgradeBuildingWidget_SetColors;
+
+// Function ChimeraUI.CrUW_UpgradeBuildingWidget.SetLevel
+// 0x0004 (0x0004 - 0x0000)
+struct CrUW_UpgradeBuildingWidget_SetLevel final
+{
+public:
+	int32                                         InLevel;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_UpgradeBuildingWidget_SetLevel;
+
+// Function ChimeraUI.CrUW_UpgradeBuildingWidget.SetLevelButtonFocus
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_UpgradeBuildingWidget_SetLevelButtonFocus final
+{
+public:
+	bool                                          bFocused;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_UpgradeBuildingWidget_SetLevelButtonFocus;
 
 // Function ChimeraUI.CrUW_InventoryContainer.ExecuteOnDropForSlot
 // 0x00C8 (0x00C8 - 0x0000)
@@ -3952,32 +5054,14 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_InventoryFilterSelection_HandleOnFilterItemSelected;
 
-// Function ChimeraUI.CrUW_TooltipPrompt.SetShowTooltip
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_TooltipPrompt_SetShowTooltip final
+// Function ChimeraUI.CrUW_TakeRemainingItems.SetBackgroundColor
+// 0x0004 (0x0004 - 0x0000)
+struct CrUW_TakeRemainingItems_SetBackgroundColor final
 {
 public:
-	bool                                          bShow;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FColor                                 Color;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_CrUW_TooltipPrompt_SetShowTooltip;
-
-// Function ChimeraUI.CrUW_TooltipPrompt.SetSupportTransfer
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_TooltipPrompt_SetSupportTransfer final
-{
-public:
-	bool                                          bSupport;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_TooltipPrompt_SetSupportTransfer;
-
-// Function ChimeraUI.CrUW_TooltipPrompt.SetupExpand
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_TooltipPrompt_SetupExpand final
-{
-public:
-	bool                                          bSupport;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_TooltipPrompt_SetupExpand;
+DUMPER7_ASSERTS_CrUW_TakeRemainingItems_SetBackgroundColor;
 
 // Function ChimeraUI.CrUW_InventoryScreen.AddAdditionalWidget
 // 0x0008 (0x0008 - 0x0000)
@@ -4108,14 +5192,24 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_InventorySplitWindow_UpdateAmountText;
 
-// Function ChimeraUI.CrUW_WidgetOptionSlider.OnSliderValueChanged
-// 0x0004 (0x0004 - 0x0000)
-struct CrUW_WidgetOptionSlider_OnSliderValueChanged final
+// Function ChimeraUI.CrUW_WeaponTooltip.SetItemInfo
+// 0x0020 (0x0020 - 0x0000)
+struct CrUW_WeaponTooltip_SetItemInfo final
 {
 public:
-	float                                         InValue;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FText                                   InName;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	class FText                                   InDescription;                                     // 0x0010(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_CrUW_WidgetOptionSlider_OnSliderValueChanged;
+DUMPER7_ASSERTS_CrUW_WeaponTooltip_SetItemInfo;
+
+// Function ChimeraUI.CrUW_WeaponTooltip.SetItemName
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_WeaponTooltip_SetItemName final
+{
+public:
+	class FText                                   InText;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_WeaponTooltip_SetItemName;
 
 // Function ChimeraUI.CrUW_ItemSelectionGroup.EnableLine
 // 0x0001 (0x0001 - 0x0000)
@@ -4161,6 +5255,44 @@ public:
 	TArray<class UWidget*>                        ReturnValue;                                       // 0x0000(0x0010)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrUW_ItemSelectionGroup_GetAllGridSlots;
+
+// Function ChimeraUI.CrUW_UpgradeStationPanel.OnActorEndPlay
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_UpgradeStationPanel_OnActorEndPlay final
+{
+public:
+	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EEndPlayReason                                Reason;                                            // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_CrUW_UpgradeStationPanel_OnActorEndPlay;
+
+// Function ChimeraUI.CrUW_TooltipPrompt.SetShowTooltip
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_TooltipPrompt_SetShowTooltip final
+{
+public:
+	bool                                          bShow;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_TooltipPrompt_SetShowTooltip;
+
+// Function ChimeraUI.CrUW_TooltipPrompt.SetSupportTransfer
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_TooltipPrompt_SetSupportTransfer final
+{
+public:
+	bool                                          bSupport;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_TooltipPrompt_SetSupportTransfer;
+
+// Function ChimeraUI.CrUW_TooltipPrompt.SetupExpand
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_TooltipPrompt_SetupExpand final
+{
+public:
+	bool                                          bSupport;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_TooltipPrompt_SetupExpand;
 
 // Function ChimeraUI.CrUW_ItemSelectionSlot.GetTooltipWidget
 // 0x0008 (0x0008 - 0x0000)
@@ -4235,6 +5367,24 @@ public:
 	bool                                          bSelected;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrUW_ItemSelectionSlot_ShowSelection;
+
+// Function ChimeraUI.CrUW_WeaponSlot.GetTooltip
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_WeaponSlot_GetTooltip final
+{
+public:
+	class UUserWidget*                            ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_WeaponSlot_GetTooltip;
+
+// Function ChimeraUI.CrUW_WeaponSlot.SetIcon
+// 0x00B0 (0x00B0 - 0x0000)
+struct CrUW_WeaponSlot_SetIcon final
+{
+public:
+	struct FSlateBrush                            InBrush;                                           // 0x0000(0x00B0)(Parm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_WeaponSlot_SetIcon;
 
 // Function ChimeraUI.CrUW_JoinSessionMenu.ConfirmInputClicked
 // 0x0020 (0x0020 - 0x0000)
@@ -4313,6 +5463,97 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_JoinSessionMenu_ShowSearchingInProgress;
 
+// Function ChimeraUI.CrUW_LoadSessionMenu.ExpandedSessionChanged
+// 0x0004 (0x0004 - 0x0000)
+struct CrUW_LoadSessionMenu_ExpandedSessionChanged final
+{
+public:
+	int32                                         ExpandedIndex;                                     // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_LoadSessionMenu_ExpandedSessionChanged;
+
+// Function ChimeraUI.CrUW_LoadSessionMenu.HandleRotatorChangedValue
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_LoadSessionMenu_HandleRotatorChangedValue final
+{
+public:
+	int32                                         Value;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUserInitiated;                                    // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_CrUW_LoadSessionMenu_HandleRotatorChangedValue;
+
+// Function ChimeraUI.CrUW_LoadSessionMenu.PTRSavesCheckboxChanged
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_LoadSessionMenu_PTRSavesCheckboxChanged final
+{
+public:
+	bool                                          bin;                                               // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_LoadSessionMenu_PTRSavesCheckboxChanged;
+
+// Function ChimeraUI.CrUW_LoadSessionMenu.SelectedSaveChanged
+// 0x0030 (0x0030 - 0x0000)
+struct CrUW_LoadSessionMenu_SelectedSaveChanged final
+{
+public:
+	class FString                                 InSelectedItem;                                    // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ItemSession;                                       // 0x0010(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrSlotType                                   InSlotType;                                        // 0x0020(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         InItemIndex;                                       // 0x0024(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrSlotIconType                               IconType;                                          // 0x0028(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_CrUW_LoadSessionMenu_SelectedSaveChanged;
+
+// Function ChimeraUI.CrUW_LoadSessionMenu.SetCustomGameWarningVisible
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_LoadSessionMenu_SetCustomGameWarningVisible final
+{
+public:
+	bool                                          CustomGameVisible;                                 // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_LoadSessionMenu_SetCustomGameWarningVisible;
+
+// Function ChimeraUI.CrUW_LoadSessionMenu.SetSessionOnlineMode
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_LoadSessionMenu_SetSessionOnlineMode final
+{
+public:
+	ECrOnlineSessionMode                          InMode;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_LoadSessionMenu_SetSessionOnlineMode;
+
+// Function ChimeraUI.CrUW_LoadSessionMenu.SetTutorialGameWarningVisible
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_LoadSessionMenu_SetTutorialGameWarningVisible final
+{
+public:
+	bool                                          TutorialGameVisible;                               // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_LoadSessionMenu_SetTutorialGameWarningVisible;
+
+// Function ChimeraUI.CrUW_LoadSessionMenu.SetupButtons
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_LoadSessionMenu_SetupButtons final
+{
+public:
+	bool                                          bLowerFont;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_LoadSessionMenu_SetupButtons;
+
+// Function ChimeraUI.SurvivalStatsData.GetStatData
+// 0x0030 (0x0030 - 0x0000)
+struct SurvivalStatsData_GetStatData final
+{
+public:
+	EAttributeType                                InType;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FCrSurvivalStat                        ReturnValue;                                       // 0x0008(0x0028)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SurvivalStatsData_GetStatData;
+
 // Function ChimeraUI.CrUW_Lobby.ButtonClicked
 // 0x0004 (0x0004 - 0x0000)
 struct CrUW_Lobby_ButtonClicked final
@@ -4358,17 +5599,6 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_Lobby_SetCurrentSessionIndex;
 
-// Function ChimeraUI.UIItemTypesColors.GetTypeColor
-// 0x0008 (0x0008 - 0x0000)
-struct UIItemTypesColors_GetTypeColor final
-{
-public:
-	EUIItemType                                   Type;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FColor                                 ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_UIItemTypesColors_GetTypeColor;
-
 // Function ChimeraUI.CrUW_LootboxMenu.SetTitleText
 // 0x0010 (0x0010 - 0x0000)
 struct CrUW_LootboxMenu_SetTitleText final
@@ -4377,6 +5607,79 @@ public:
 	class FText                                   InText;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrUW_LootboxMenu_SetTitleText;
+
+// Function ChimeraUI.CrUW_WidgetOptionSlider.OnSliderValueChanged
+// 0x0004 (0x0004 - 0x0000)
+struct CrUW_WidgetOptionSlider_OnSliderValueChanged final
+{
+public:
+	float                                         InValue;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_WidgetOptionSlider_OnSliderValueChanged;
+
+// Function ChimeraUI.CrUW_WidgetOptionSlider.SetInternalEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_WidgetOptionSlider_SetInternalEnabled final
+{
+public:
+	bool                                          bEnabled;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_WidgetOptionSlider_SetInternalEnabled;
+
+// Function ChimeraUI.CrUW_MainMenuWidget.ButtonClicked
+// 0x0004 (0x0004 - 0x0000)
+struct CrUW_MainMenuWidget_ButtonClicked final
+{
+public:
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_MainMenuWidget_ButtonClicked;
+
+// Function ChimeraUI.CrUW_MainMenuWidget.OnContinueButtonClicked
+// 0x0004 (0x0004 - 0x0000)
+struct CrUW_MainMenuWidget_OnContinueButtonClicked final
+{
+public:
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_MainMenuWidget_OnContinueButtonClicked;
+
+// Function ChimeraUI.CrUW_MainMenuWidget.SetColors
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_MainMenuWidget_SetColors final
+{
+public:
+	struct FLinearColor                           OrangeColor;                                       // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_MainMenuWidget_SetColors;
+
+// Function ChimeraUI.CrUW_MainMenuWidget.SetContinueTimestamp
+// 0x0020 (0x0020 - 0x0000)
+struct CrUW_MainMenuWidget_SetContinueTimestamp final
+{
+public:
+	class FText                                   InText;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	class FText                                   InSessionName;                                     // 0x0010(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_MainMenuWidget_SetContinueTimestamp;
+
+// Function ChimeraUI.CrUW_UpgradeStationTask.OnTaskCompleted
+// 0x0068 (0x0068 - 0x0000)
+struct CrUW_UpgradeStationTask_OnTaskCompleted final
+{
+public:
+	struct FCrBuildingUpgradeTask                 InTask;                                            // 0x0000(0x0068)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_UpgradeStationTask_OnTaskCompleted;
+
+// Function ChimeraUI.CrUW_UpgradeStationTask.OnTaskUpdated
+// 0x0068 (0x0068 - 0x0000)
+struct CrUW_UpgradeStationTask_OnTaskUpdated final
+{
+public:
+	struct FCrBuildingUpgradeTask                 InTask;                                            // 0x0000(0x0068)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_UpgradeStationTask_OnTaskUpdated;
 
 // Function ChimeraUI.CrUW_ManagerServerScreen.ChangeStateToInitial
 // 0x0001 (0x0001 - 0x0000)
@@ -4460,91 +5763,6 @@ public:
 	EUIAction                                     NewStatus;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrUW_ManagerServerScreen_OnUIActionChanged;
-
-// Function ChimeraUI.CrUW_WeaponSlot.GetTooltip
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_WeaponSlot_GetTooltip final
-{
-public:
-	class UUserWidget*                            ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_WeaponSlot_GetTooltip;
-
-// Function ChimeraUI.CrUW_WeaponSlot.SetIcon
-// 0x00B0 (0x00B0 - 0x0000)
-struct CrUW_WeaponSlot_SetIcon final
-{
-public:
-	struct FSlateBrush                            InBrush;                                           // 0x0000(0x00B0)(Parm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_WeaponSlot_SetIcon;
-
-// Function ChimeraUI.CrUW_MapMenu.ZoomValueFromSlider
-// 0x0004 (0x0004 - 0x0000)
-struct CrUW_MapMenu_ZoomValueFromSlider final
-{
-public:
-	float                                         ZoomValue;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_MapMenu_ZoomValueFromSlider;
-
-// Function ChimeraUI.SurvivalStatsData.GetStatData
-// 0x0030 (0x0030 - 0x0000)
-struct SurvivalStatsData_GetStatData final
-{
-public:
-	EAttributeType                                InType;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCrSurvivalStat                        ReturnValue;                                       // 0x0008(0x0028)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SurvivalStatsData_GetStatData;
-
-// Function ChimeraUI.CrUW_MapMenuCrosshair.HandleInputMethodChanged
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_MapMenuCrosshair_HandleInputMethodChanged final
-{
-public:
-	ECommonInputType                              NewInputMethod;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_MapMenuCrosshair_HandleInputMethodChanged;
-
-// Function ChimeraUI.CrWidgetFactory.FindWidgetClassForData
-// 0x0010 (0x0010 - 0x0000)
-struct CrWidgetFactory_FindWidgetClassForData final
-{
-public:
-	const class UObject*                          Data;                                              // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class UUserWidget>                ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrWidgetFactory_FindWidgetClassForData;
-
-// Function ChimeraUI.CrUW_MapMenuLegendButton.OnFilterButtonChanged
-// 0x0002 (0x0002 - 0x0000)
-struct CrUW_MapMenuLegendButton_OnFilterButtonChanged final
-{
-public:
-	ECrMapMenuMarkerFilter                        Filter;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          Status;                                            // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_MapMenuLegendButton_OnFilterButtonChanged;
-
-// Function ChimeraUI.CrUW_MapMenuLegendButton.SetRightShift
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_MapMenuLegendButton_SetRightShift final
-{
-public:
-	bool                                          RightShift;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_MapMenuLegendButton_SetRightShift;
-
-// Function ChimeraUI.CrUW_MapMenuLegendButton.SetTopSpace
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_MapMenuLegendButton_SetTopSpace final
-{
-public:
-	bool                                          TopSpace;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_MapMenuLegendButton_SetTopSpace;
 
 // Function ChimeraUI.CrUW_MapMenuMapArea.OnBaseAttackMarkerAdded
 // 0x0030 (0x0030 - 0x0000)
@@ -4691,125 +5909,6 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_MapMenuMapArea_OnWarningLocation;
 
-// Function ChimeraUI.Cr_UW_InventoryToolTip.AddEffect
-// 0x00D0 (0x00D0 - 0x0000)
-struct Cr_UW_InventoryToolTip_AddEffect final
-{
-public:
-	int32                                         InValue;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0xC];                                        // 0x0004(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateBrush                            InIcon;                                            // 0x0010(0x00B0)(Parm, NativeAccessSpecifierPublic)
-	class FText                                   InDescription;                                     // 0x00C0(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Cr_UW_InventoryToolTip_AddEffect;
-
-// Function ChimeraUI.Cr_UW_InventoryToolTip.GetTypeText
-// 0x0018 (0x0018 - 0x0000)
-struct Cr_UW_InventoryToolTip_GetTypeText final
-{
-public:
-	EUIItemType                                   Type;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Cr_UW_InventoryToolTip_GetTypeText;
-
-// Function ChimeraUI.Cr_UW_InventoryToolTip.SetCraftedInVisibility
-// 0x0001 (0x0001 - 0x0000)
-struct Cr_UW_InventoryToolTip_SetCraftedInVisibility final
-{
-public:
-	ESlateVisibility                              InVisibility;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Cr_UW_InventoryToolTip_SetCraftedInVisibility;
-
-// Function ChimeraUI.Cr_UW_InventoryToolTip.SetGatheredFromVisibility
-// 0x0001 (0x0001 - 0x0000)
-struct Cr_UW_InventoryToolTip_SetGatheredFromVisibility final
-{
-public:
-	ESlateVisibility                              InVisibility;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Cr_UW_InventoryToolTip_SetGatheredFromVisibility;
-
-// Function ChimeraUI.Cr_UW_InventoryToolTip.SetSupportTransfer
-// 0x0001 (0x0001 - 0x0000)
-struct Cr_UW_InventoryToolTip_SetSupportTransfer final
-{
-public:
-	bool                                          bSupport;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Cr_UW_InventoryToolTip_SetSupportTransfer;
-
-// Function ChimeraUI.Cr_UW_InventoryToolTip.SetupCraftingType
-// 0x0001 (0x0001 - 0x0000)
-struct Cr_UW_InventoryToolTip_SetupCraftingType final
-{
-public:
-	EUICraftingType                               InType;                                            // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Cr_UW_InventoryToolTip_SetupCraftingType;
-
-// Function ChimeraUI.Cr_UW_InventoryToolTip.SetupDataPoints
-// 0x0004 (0x0004 - 0x0000)
-struct Cr_UW_InventoryToolTip_SetupDataPoints final
-{
-public:
-	int32                                         Points;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Cr_UW_InventoryToolTip_SetupDataPoints;
-
-// Function ChimeraUI.Cr_UW_InventoryToolTip.SetupEffectTooltip
-// 0x00E0 (0x00E0 - 0x0000)
-struct Cr_UW_InventoryToolTip_SetupEffectTooltip final
-{
-public:
-	struct FFoodEffectData                        InEffect;                                          // 0x0000(0x00E0)(Parm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Cr_UW_InventoryToolTip_SetupEffectTooltip;
-
-// Function ChimeraUI.Cr_UW_InventoryToolTip.SetupExpand
-// 0x0001 (0x0001 - 0x0000)
-struct Cr_UW_InventoryToolTip_SetupExpand final
-{
-public:
-	bool                                          bSupport;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Cr_UW_InventoryToolTip_SetupExpand;
-
-// Function ChimeraUI.Cr_UW_InventoryToolTip.SetupInfoBox
-// 0x0020 (0x0020 - 0x0000)
-struct Cr_UW_InventoryToolTip_SetupInfoBox final
-{
-public:
-	class FText                                   Name_0;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	int32                                         Number;                                            // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Max;                                               // 0x0014(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EUIItemType                                   UIType;                                            // 0x0018(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsUsable;                                          // 0x0019(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A[0x6];                                       // 0x001A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_Cr_UW_InventoryToolTip_SetupInfoBox;
-
-// Function ChimeraUI.Cr_UW_InventoryToolTip.SetupMinimalTooltip
-// 0x0020 (0x0020 - 0x0000)
-struct Cr_UW_InventoryToolTip_SetupMinimalTooltip final
-{
-public:
-	class FText                                   InDescription;                                     // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	class FText                                   Title;                                             // 0x0010(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Cr_UW_InventoryToolTip_SetupMinimalTooltip;
-
-// Function ChimeraUI.Cr_UW_InventoryToolTip.SetupMinimalVersion
-// 0x0001 (0x0001 - 0x0000)
-struct Cr_UW_InventoryToolTip_SetupMinimalVersion final
-{
-public:
-	bool                                          bHideItemType;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Cr_UW_InventoryToolTip_SetupMinimalVersion;
-
 // Function ChimeraUI.CrUW_MapMenuMarkersList.OnMarkerDetachFromParent
 // 0x0008 (0x0008 - 0x0000)
 struct CrUW_MapMenuMarkersList_OnMarkerDetachFromParent final
@@ -4828,15 +5927,6 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_MapMenuMarkersList_OnMarkerPriorityChange;
 
-// Function ChimeraUI.CrTabButtonInterface.SetTabLabelInfo
-// 0x00F0 (0x00F0 - 0x0000)
-struct CrTabButtonInterface_SetTabLabelInfo final
-{
-public:
-	struct FCrTabDescriptor                       TabDescriptor;                                     // 0x0000(0x00F0)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrTabButtonInterface_SetTabLabelInfo;
-
 // Function ChimeraUI.CrUW_MapMenuZoomSlider.OnMapMenuZoomValueChangedExternal
 // 0x0004 (0x0004 - 0x0000)
 struct CrUW_MapMenuZoomSlider_OnMapMenuZoomValueChangedExternal final
@@ -4854,17 +5944,6 @@ public:
 	float                                         Value;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrUW_MapMenuZoomSlider_OnSliderValueChange;
-
-// Function ChimeraUI.CrUW_MarketingWidget.HighlightDot
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_MarketingWidget_HighlightDot final
-{
-public:
-	int32                                         InIndex;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsHighlighted;                                    // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_CrUW_MarketingWidget_HighlightDot;
 
 // Function ChimeraUI.CrUW_Message.SetColors
 // 0x0040 (0x0040 - 0x0000)
@@ -4895,91 +5974,6 @@ public:
 	EMessageState                                 State;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrUW_Message_SetStateIcon;
-
-// Function ChimeraUI.CrUW_MessagesHud.OnAttackedBaseResult
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_MessagesHud_OnAttackedBaseResult final
-{
-public:
-	bool                                          Secured;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_MessagesHud_OnAttackedBaseResult;
-
-// Function ChimeraUI.CrUW_MessagesHud.OnPossess
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_MessagesHud_OnPossess final
-{
-public:
-	class APawn*                                  InPawn;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_MessagesHud_OnPossess;
-
-// Function ChimeraUI.CrUW_MessagesHud.SetupAttackedBaseInfo
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_MessagesHud_SetupAttackedBaseInfo final
-{
-public:
-	struct FMassEntityHandle                      AttackedBase;                                      // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_MessagesHud_SetupAttackedBaseInfo;
-
-// Function ChimeraUI.CrUW_MissingPartDevice.SetColors
-// 0x0030 (0x0030 - 0x0000)
-struct CrUW_MissingPartDevice_SetColors final
-{
-public:
-	struct FLinearColor                           NormalOrangeColor;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           OrangeHighlightColor;                              // 0x0010(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           NormalColor;                                       // 0x0020(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_MissingPartDevice_SetColors;
-
-// Function ChimeraUI.CrUW_MissingPartDevice.SetProgressPercent
-// 0x0004 (0x0004 - 0x0000)
-struct CrUW_MissingPartDevice_SetProgressPercent final
-{
-public:
-	float                                         InPercent;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_MissingPartDevice_SetProgressPercent;
-
-// Function ChimeraUI.CrUW_MultiplayerWidget.HandleRotatorChangedValue
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_MultiplayerWidget_HandleRotatorChangedValue final
-{
-public:
-	int32                                         Value;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUserInitiated;                                    // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_CrUW_MultiplayerWidget_HandleRotatorChangedValue;
-
-// Function ChimeraUI.CrUW_MultiplayerWidget.OnCreateSessionComplete
-// 0x0028 (0x0028 - 0x0000)
-struct CrUW_MultiplayerWidget_OnCreateSessionComplete final
-{
-public:
-	struct FOnlineResultInformation               Result;                                            // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_MultiplayerWidget_OnCreateSessionComplete;
-
-// Function ChimeraUI.CrUW_MultiplayerWidget.ProfessionStateChanged
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_MultiplayerWidget_ProfessionStateChanged final
-{
-public:
-	EProfessionType                               Profession;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_MultiplayerWidget_ProfessionStateChanged;
-
-// Function ChimeraUI.CrUW_MultiplayerWidget.SetOnlineModeVisibility
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_MultiplayerWidget_SetOnlineModeVisibility final
-{
-public:
-	bool                                          bVisible;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_MultiplayerWidget_SetOnlineModeVisibility;
 
 // Function ChimeraUI.CrUW_NewSessionMenu.GrayoutSessionTypeText
 // 0x0001 (0x0001 - 0x0000)
@@ -5037,44 +6031,6 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_NewSessionMenu_SkipTutorialStateChanged;
 
-// Function ChimeraUI.CrUW_NotificationsHud.OnCheatHUDShowNotification
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_NotificationsHud_OnCheatHUDShowNotification final
-{
-public:
-	EFAuNotificationType                          NotificationType;                                  // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          Show;                                              // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_CrUW_NotificationsHud_OnCheatHUDShowNotification;
-
-// Function ChimeraUI.CrUW_NotificationsHud.OnCorporationQuestItemAdded
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_NotificationsHud_OnCorporationQuestItemAdded final
-{
-public:
-	const class UCrItemDataBase*                  Data;                                              // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_NotificationsHud_OnCorporationQuestItemAdded;
-
-// Function ChimeraUI.CrUW_NotificationsHud.OnPossesed
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_NotificationsHud_OnPossesed final
-{
-public:
-	class APawn*                                  InPawn;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_NotificationsHud_OnPossesed;
-
-// Function ChimeraUI.CrUW_NotificationsHud.OnUnlockedFeaturesChanged
-// 0x0010 (0x0010 - 0x0000)
-struct CrUW_NotificationsHud_OnUnlockedFeaturesChanged final
-{
-public:
-	TArray<ECrCorporationUnlockedFeatures>        UnlockedFeatures;                                  // 0x0000(0x0010)(Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_NotificationsHud_OnUnlockedFeaturesChanged;
-
 // Function ChimeraUI.CrUW_ObjectivesHUD.OnKeyProfileChanged
 // 0x0008 (0x0008 - 0x0000)
 struct CrUW_ObjectivesHUD_OnKeyProfileChanged final
@@ -5128,15 +6084,6 @@ public:
 	class UEnhancedInputUserSettings*             InSettings;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrUW_ObjectivesHUD_OnUserSettingsChanged;
-
-// Function ChimeraUI.CrUW_OnScreenBuildingResultNotification.OnPlacementResultNotif
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_OnScreenBuildingResultNotification_OnPlacementResultNotif final
-{
-public:
-	EAuAPPlacementResult                          PlacementResult;                                   // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_OnScreenBuildingResultNotification_OnPlacementResultNotif;
 
 // Function ChimeraUI.CrUW_PackageReceiver.HandleConnectionChanged
 // 0x0018 (0x0018 - 0x0000)
@@ -5200,68 +6147,6 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_PackageReceiver_SetSenderData;
 
-// Function ChimeraUI.CrUW_PackageSender.HandleConnectionChanged
-// 0x0018 (0x0018 - 0x0000)
-struct CrUW_PackageSender_HandleConnectionChanged final
-{
-public:
-	struct FCrMassEntityReplicationHelper         InConnection;                                      // 0x0000(0x0018)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_PackageSender_HandleConnectionChanged;
-
-// Function ChimeraUI.CrUW_PackageSender.HandleReceiverStateChanged
-// 0x0018 (0x0018 - 0x0000)
-struct CrUW_PackageSender_HandleReceiverStateChanged final
-{
-public:
-	struct FCrMassEntityReplicationHelper         InReceiver;                                        // 0x0000(0x0018)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_PackageSender_HandleReceiverStateChanged;
-
-// Function ChimeraUI.CrUW_PackageSender.OnConnectionChanged
-// 0x0010 (0x0010 - 0x0000)
-struct CrUW_PackageSender_OnConnectionChanged final
-{
-public:
-	const class UAuItemDataBase*                  InItem;                                            // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bReceiverValid;                                    // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_CrUW_PackageSender_OnConnectionChanged;
-
-// Function ChimeraUI.CrUW_PackageSender.SetBuildingStatus
-// 0x0003 (0x0003 - 0x0000)
-struct CrUW_PackageSender_SetBuildingStatus final
-{
-public:
-	bool                                          bPowerOk;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bTemperatureOk;                                    // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInventoryOk;                                      // 0x0002(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_PackageSender_SetBuildingStatus;
-
-// Function ChimeraUI.CrUW_PackageSender.SetProgress
-// 0x0004 (0x0004 - 0x0000)
-struct CrUW_PackageSender_SetProgress final
-{
-public:
-	float                                         Progress;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_PackageSender_SetProgress;
-
-// Function ChimeraUI.CrUW_PackageSender.SetReceiverData
-// 0x0020 (0x0020 - 0x0000)
-struct CrUW_PackageSender_SetReceiverData final
-{
-public:
-	bool                                          bInReceiverValid;                                  // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 InName;                                            // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         InDistance;                                        // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_CrUW_PackageSender_SetReceiverData;
-
 // Function ChimeraUI.CrUW_PauseMenu.ButtonClicked
 // 0x0004 (0x0004 - 0x0000)
 struct CrUW_PauseMenu_ButtonClicked final
@@ -5298,54 +6183,6 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_PauseMenu_SetColors;
 
-// Function ChimeraUI.CrUW_PauseMenuMainScreen.EnableBlur
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_PauseMenuMainScreen_EnableBlur final
-{
-public:
-	bool                                          bEnable;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_PauseMenuMainScreen_EnableBlur;
-
-// Function ChimeraUI.CrUW_PauseMenuMainScreen.EnableUpAndDownFrame
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_PauseMenuMainScreen_EnableUpAndDownFrame final
-{
-public:
-	bool                                          bEnable;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_PauseMenuMainScreen_EnableUpAndDownFrame;
-
-// Function ChimeraUI.CrUW_PauseMenuMainScreen.GetWidgetsData
-// 0x0048 (0x0048 - 0x0000)
-struct CrUW_PauseMenuMainScreen_GetWidgetsData final
-{
-public:
-	ECrMenuType                                   Type;                                              // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCrMenuConfig                          ReturnValue;                                       // 0x0008(0x0040)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_PauseMenuMainScreen_GetWidgetsData;
-
-// Function ChimeraUI.CrUW_PauseMenuMainScreen.OnActionTriggered
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_PauseMenuMainScreen_OnActionTriggered final
-{
-public:
-	ECrMenuType                                   MenuType;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_PauseMenuMainScreen_OnActionTriggered;
-
-// Function ChimeraUI.CrUW_PauseMenuMainScreen.TabChanged
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_PauseMenuMainScreen_TabChanged final
-{
-public:
-	int32                                         Old;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Active;                                            // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_PauseMenuMainScreen_TabChanged;
-
 // Function ChimeraUI.CrUW_PlayerInfoWidget.InitPlayerState
 // 0x0001 (0x0001 - 0x0000)
 struct CrUW_PlayerInfoWidget_InitPlayerState final
@@ -5365,15 +6202,6 @@ public:
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_CrUW_PlayerInfoWidget_OnFoodItemHighlighted;
-
-// Function ChimeraUI.CrUW_PlayerParamsHud.OnPossess
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_PlayerParamsHud_OnPossess final
-{
-public:
-	class APawn*                                  InPawn;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_PlayerParamsHud_OnPossess;
 
 // Function ChimeraUI.CrUW_PlayerPingItem.SetArrowRotation
 // 0x0004 (0x0004 - 0x0000)
@@ -5411,15 +6239,6 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_PlayerPingItem_GetWidgetSize;
 
-// Function ChimeraUI.CrUW_PlayerPingHud.OnPlayerPingChanged
-// 0x0010 (0x0010 - 0x0000)
-struct CrUW_PlayerPingHud_OnPlayerPingChanged final
-{
-public:
-	TArray<struct FCrPlayerPingData>              PlayerPingData;                                    // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_PlayerPingHud_OnPlayerPingChanged;
-
 // Function ChimeraUI.CrUW_PlayerProgression.SetWarningIconColor
 // 0x0010 (0x0010 - 0x0000)
 struct CrUW_PlayerProgression_SetWarningIconColor final
@@ -5428,56 +6247,6 @@ public:
 	struct FLinearColor                           InColor;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrUW_PlayerProgression_SetWarningIconColor;
-
-// Function ChimeraUI.CrUW_PlayerProgressionSkill.SetSkillIcon
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_PlayerProgressionSkill_SetSkillIcon final
-{
-public:
-	ECrPlayerProgressionSkill                     InSkill;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_PlayerProgressionSkill_SetSkillIcon;
-
-// Function ChimeraUI.CrUW_PlayerProgressionSkill.UpdateExperience
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_PlayerProgressionSkill_UpdateExperience final
-{
-public:
-	ECrPlayerProgressionSkill                     InSkill;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         InExperience;                                      // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_PlayerProgressionSkill_UpdateExperience;
-
-// Function ChimeraUI.CrUW_PlayerProgressionSkill.UpdateLevel
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_PlayerProgressionSkill_UpdateLevel final
-{
-public:
-	ECrPlayerProgressionSkill                     InSkill;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         InLevel;                                           // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_PlayerProgressionSkill_UpdateLevel;
-
-// Function ChimeraUI.CrUW_PowerGenerator.SetStateColor
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_PowerGenerator_SetStateColor final
-{
-public:
-	bool                                          bWorking;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_PowerGenerator_SetStateColor;
-
-// Function ChimeraUI.CrUW_PowerGenerator.UpdateGridPower
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_PowerGenerator_UpdateGridPower final
-{
-public:
-	float                                         PowerUsedInGrid;                                   // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PowerGeneratedByGrid;                              // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_PowerGenerator_UpdateGridPower;
 
 // Function ChimeraUI.CrUW_QuickActionsMenu.AddAction
 // 0x0010 (0x0010 - 0x0000)
@@ -5510,15 +6279,6 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_QuickActionsMenu_SetUsableWidget;
 
-// Function ChimeraUI.CrUW_QuickUseEntry.OnDataRefresh
-// 0x0004 (0x0004 - 0x0000)
-struct CrUW_QuickUseEntry_OnDataRefresh final
-{
-public:
-	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_QuickUseEntry_OnDataRefresh;
-
 // Function ChimeraUI.CrUW_QuickUseMenu.OnCurrentEntryIndexChange
 // 0x000C (0x000C - 0x0000)
 struct CrUW_QuickUseMenu_OnCurrentEntryIndexChange final
@@ -5530,51 +6290,6 @@ public:
 	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_CrUW_QuickUseMenu_OnCurrentEntryIndexChange;
-
-// Function ChimeraUI.CrUW_UpgradeBuildingWidget.HandleOnTaskUpgradeTaskCompleted
-// 0x0068 (0x0068 - 0x0000)
-struct CrUW_UpgradeBuildingWidget_HandleOnTaskUpgradeTaskCompleted final
-{
-public:
-	struct FCrBuildingUpgradeTask                 InTask;                                            // 0x0000(0x0068)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_UpgradeBuildingWidget_HandleOnTaskUpgradeTaskCompleted;
-
-// Function ChimeraUI.CrUW_UpgradeBuildingWidget.RequiredLevelReached
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_UpgradeBuildingWidget_RequiredLevelReached final
-{
-public:
-	bool                                          bReached;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_UpgradeBuildingWidget_RequiredLevelReached;
-
-// Function ChimeraUI.CrUW_UpgradeBuildingWidget.SetColors
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_UpgradeBuildingWidget_SetColors final
-{
-public:
-	const class UCrCommonUIColorsDevSettings*     Settings;                                          // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_UpgradeBuildingWidget_SetColors;
-
-// Function ChimeraUI.CrUW_UpgradeBuildingWidget.SetLevel
-// 0x0004 (0x0004 - 0x0000)
-struct CrUW_UpgradeBuildingWidget_SetLevel final
-{
-public:
-	int32                                         InLevel;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_UpgradeBuildingWidget_SetLevel;
-
-// Function ChimeraUI.CrUW_UpgradeBuildingWidget.SetLevelButtonFocus
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_UpgradeBuildingWidget_SetLevelButtonFocus final
-{
-public:
-	bool                                          bFocused;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_UpgradeBuildingWidget_SetLevelButtonFocus;
 
 // Function ChimeraUI.CrUW_RecipeDetails.AddOrderName
 // 0x0010 (0x0010 - 0x0000)
@@ -5594,96 +6309,6 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_RecipeDetails_SetRecipeName;
 
-// Function ChimeraUI.CrUW_RecipeImage.GetTooltipWidget
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_RecipeImage_GetTooltipWidget final
-{
-public:
-	class UUserWidget*                            ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_RecipeImage_GetTooltipWidget;
-
-// Function ChimeraUI.CrUW_UpgradeStationTask.OnTaskCompleted
-// 0x0068 (0x0068 - 0x0000)
-struct CrUW_UpgradeStationTask_OnTaskCompleted final
-{
-public:
-	struct FCrBuildingUpgradeTask                 InTask;                                            // 0x0000(0x0068)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_UpgradeStationTask_OnTaskCompleted;
-
-// Function ChimeraUI.CrUW_UpgradeStationTask.OnTaskUpdated
-// 0x0068 (0x0068 - 0x0000)
-struct CrUW_UpgradeStationTask_OnTaskUpdated final
-{
-public:
-	struct FCrBuildingUpgradeTask                 InTask;                                            // 0x0000(0x0068)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_UpgradeStationTask_OnTaskUpdated;
-
-// Function ChimeraUI.CrUW_RecipeTableCrafter.SetDropDownFocus
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_RecipeTableCrafter_SetDropDownFocus final
-{
-public:
-	bool                                          bHasFocus;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_RecipeTableCrafter_SetDropDownFocus;
-
-// Function ChimeraUI.CrUW_RecipeTableCrafter.SetHovered
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_RecipeTableCrafter_SetHovered final
-{
-public:
-	bool                                          bHovered;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_RecipeTableCrafter_SetHovered;
-
-// Function ChimeraUI.CrUW_RecipeTableCrafter.SetResourceAvailable
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_RecipeTableCrafter_SetResourceAvailable final
-{
-public:
-	bool                                          bAvailable;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_RecipeTableCrafter_SetResourceAvailable;
-
-// Function ChimeraUI.CrUW_RecipeTableCrafter.ShowActionPossibleIcon
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_RecipeTableCrafter_ShowActionPossibleIcon final
-{
-public:
-	bool                                          bShow;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_RecipeTableCrafter_ShowActionPossibleIcon;
-
-// Function ChimeraUI.CrUW_RecipeTableRecipeItem.GetTooltipWidget
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_RecipeTableRecipeItem_GetTooltipWidget final
-{
-public:
-	class UUserWidget*                            ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_RecipeTableRecipeItem_GetTooltipWidget;
-
-// Function ChimeraUI.CrUW_RecipeTableRecipeItem.SetHasEnoughResources
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_RecipeTableRecipeItem_SetHasEnoughResources final
-{
-public:
-	bool                                          bEnough;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_RecipeTableRecipeItem_SetHasEnoughResources;
-
-// Function ChimeraUI.CrUW_RecipeTableRecipeItem.SetHovered
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_RecipeTableRecipeItem_SetHovered final
-{
-public:
-	bool                                          bHovered;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_RecipeTableRecipeItem_SetHovered;
-
 // Function ChimeraUI.CrUW_RenameBuilding.OnBuildingNameTextChanged
 // 0x0010 (0x0010 - 0x0000)
 struct CrUW_RenameBuilding_OnBuildingNameTextChanged final
@@ -5701,51 +6326,6 @@ public:
 	class ACrBuildingActorBase*                   InActor;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrUW_RenameBuilding_SetBuildingActor;
-
-// Function ChimeraUI.CrUW_ResearchLevelWidget.SetColors
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_ResearchLevelWidget_SetColors final
-{
-public:
-	const class UCrCommonUIColorsDevSettings*     Settings;                                          // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_ResearchLevelWidget_SetColors;
-
-// Function ChimeraUI.CrUW_ResearchLevelWidget.SetExpanded
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_ResearchLevelWidget_SetExpanded final
-{
-public:
-	bool                                          bExpand;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_ResearchLevelWidget_SetExpanded;
-
-// Function ChimeraUI.CrUW_ResearchLevelWidget.SetLevel
-// 0x0004 (0x0004 - 0x0000)
-struct CrUW_ResearchLevelWidget_SetLevel final
-{
-public:
-	int32                                         InLevel;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_ResearchLevelWidget_SetLevel;
-
-// Function ChimeraUI.CrUW_ResearchLevelWidget.SetLevelButtonFocus
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_ResearchLevelWidget_SetLevelButtonFocus final
-{
-public:
-	bool                                          bFocused;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_ResearchLevelWidget_SetLevelButtonFocus;
-
-// Function ChimeraUI.CrUW_ResearchLevelWidget.SetLinesEnabled
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_ResearchLevelWidget_SetLinesEnabled final
-{
-public:
-	bool                                          InEnable;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_ResearchLevelWidget_SetLinesEnabled;
 
 // Function ChimeraUI.CrUW_ResearchTerminal.CurrentProgressPercent
 // 0x0004 (0x0004 - 0x0000)
@@ -5858,38 +6438,6 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_ResearchTerminal_UpdateButtonState;
 
-// Function ChimeraUI.CrUW_ResearchTerminalInfo.SetCorpoColor
-// 0x0004 (0x0004 - 0x0000)
-struct CrUW_ResearchTerminalInfo_SetCorpoColor final
-{
-public:
-	struct FColor                                 InColor;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_ResearchTerminalInfo_SetCorpoColor;
-
-// Function ChimeraUI.CrUW_ResearchTerminalInfo.SetItemName
-// 0x0010 (0x0010 - 0x0000)
-struct CrUW_ResearchTerminalInfo_SetItemName final
-{
-public:
-	class FText                                   InText;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_ResearchTerminalInfo_SetItemName;
-
-// Function ChimeraUI.CrUW_ResearchTerminalInfo.SetupBuildingInCollection
-// 0x00D0 (0x00D0 - 0x0000)
-struct CrUW_ResearchTerminalInfo_SetupBuildingInCollection final
-{
-public:
-	struct FSlateBrush                            Icon;                                              // 0x0000(0x00B0)(Parm, NativeAccessSpecifierPublic)
-	class FText                                   BuildingName;                                      // 0x00B0(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	bool                                          Unlocked;                                          // 0x00C0(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C1[0x3];                                       // 0x00C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Reputation;                                        // 0x00C4(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UCrUW_RewardCollectionRow*              ReturnValue;                                       // 0x00C8(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_ResearchTerminalInfo_SetupBuildingInCollection;
-
 // Function ChimeraUI.CrUW_ResearchTerminalPanel.OnActorEndPlay
 // 0x0010 (0x0010 - 0x0000)
 struct CrUW_ResearchTerminalPanel_OnActorEndPlay final
@@ -5900,33 +6448,6 @@ public:
 	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_CrUW_ResearchTerminalPanel_OnActorEndPlay;
-
-// Function ChimeraUI.CrUW_Storage.IsUniversalStorage
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_Storage_IsUniversalStorage final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_Storage_IsUniversalStorage;
-
-// Function ChimeraUI.CrUW_Storage.SetColors
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_Storage_SetColors final
-{
-public:
-	const class UCrCommonUIColorsDevSettings*     Settings;                                          // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_Storage_SetColors;
-
-// Function ChimeraUI.CrUW_ResourceRedistributor.UpdateStoragLevelVisuals
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_ResourceRedistributor_UpdateStoragLevelVisuals final
-{
-public:
-	ECrStorageLevel                               StorageLevel;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_ResourceRedistributor_UpdateStoragLevelVisuals;
 
 // Function ChimeraUI.CrUW_RewardCollectionRow.Desaturate
 // 0x0001 (0x0001 - 0x0000)
@@ -5955,33 +6476,6 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_RewardCollectionRow_SetFinishedViusal;
 
-// Function ChimeraUI.CrUW_RewardItem.HighlightSlot
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_RewardItem_HighlightSlot final
-{
-public:
-	bool                                          bHighlight;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_RewardItem_HighlightSlot;
-
-// Function ChimeraUI.CrUW_RewardItem.SetColors
-// 0x0010 (0x0010 - 0x0000)
-struct CrUW_RewardItem_SetColors final
-{
-public:
-	struct FLinearColor                           Blue;                                              // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_RewardItem_SetColors;
-
-// Function ChimeraUI.CrUW_RewardItem.SetLocked
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_RewardItem_SetLocked final
-{
-public:
-	bool                                          InLocked;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_RewardItem_SetLocked;
-
 // Function ChimeraUI.CrUW_SaveElement.HighlightSlot
 // 0x0001 (0x0001 - 0x0000)
 struct CrUW_SaveElement_HighlightSlot final
@@ -5990,6 +6484,15 @@ public:
 	bool                                          InHighlight;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrUW_SaveElement_HighlightSlot;
+
+// Function ChimeraUI.CrUW_SaveElement.NativeGetTooltipWidget
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_SaveElement_NativeGetTooltipWidget final
+{
+public:
+	class UUserWidget*                            ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_SaveElement_NativeGetTooltipWidget;
 
 // Function ChimeraUI.CrUW_SaveElement.SetColors
 // 0x0020 (0x0020 - 0x0000)
@@ -6047,7 +6550,7 @@ public:
 DUMPER7_ASSERTS_CrUW_SaveSessionMenu_ExpandedSessionChanged;
 
 // Function ChimeraUI.CrUW_SaveSessionMenu.SelectedSaveChanged
-// 0x0028 (0x0028 - 0x0000)
+// 0x0030 (0x0030 - 0x0000)
 struct CrUW_SaveSessionMenu_SelectedSaveChanged final
 {
 public:
@@ -6056,6 +6559,8 @@ public:
 	ECrSlotType                                   InType;                                            // 0x0020(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         InNewIndex;                                        // 0x0024(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrSlotIconType                               IconType;                                          // 0x0028(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_CrUW_SaveSessionMenu_SelectedSaveChanged;
 
@@ -6067,102 +6572,6 @@ public:
 	bool                                          bLowerFont;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrUW_SaveSessionMenu_SetupButtons;
-
-// Function ChimeraUI.CrUW_SenderReceiver.HandleNameChanged
-// 0x0010 (0x0010 - 0x0000)
-struct CrUW_SenderReceiver_HandleNameChanged final
-{
-public:
-	class FString                                 InName;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_SenderReceiver_HandleNameChanged;
-
-// Function ChimeraUI.CrUW_SenderReceiver.HandleStateChanged
-// 0x0018 (0x0018 - 0x0000)
-struct CrUW_SenderReceiver_HandleStateChanged final
-{
-public:
-	struct FCrMassEntityReplicationHelper         InReceiver;                                        // 0x0000(0x0018)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_SenderReceiver_HandleStateChanged;
-
-// Function ChimeraUI.CrUW_SenderReceiver.SetBuildingStatus
-// 0x0003 (0x0003 - 0x0000)
-struct CrUW_SenderReceiver_SetBuildingStatus final
-{
-public:
-	bool                                          bPowerOk;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bTemperatureOk;                                    // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStandby;                                          // 0x0002(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_SenderReceiver_SetBuildingStatus;
-
-// Function ChimeraUI.CrUW_SenderReceiver.SetEntityEnabled
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_SenderReceiver_SetEntityEnabled final
-{
-public:
-	bool                                          bEnabled;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_SenderReceiver_SetEntityEnabled;
-
-// Function ChimeraUI.CrUW_SenderReceiver.SetNoConnection
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_SenderReceiver_SetNoConnection final
-{
-public:
-	const class UCrItemDataBase*                  ItemType;                                          // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_SenderReceiver_SetNoConnection;
-
-// Function ChimeraUI.CrUW_SenderReceiver.SetReceiverData
-// 0x0018 (0x0018 - 0x0000)
-struct CrUW_SenderReceiver_SetReceiverData final
-{
-public:
-	class FString                                 ConnectionName;                                    // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	const class UCrItemDataBase*                  ItemType;                                          // 0x0010(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_SenderReceiver_SetReceiverData;
-
-// Function ChimeraUI.CrUW_SenderReceiver.SetSenderData
-// 0x0018 (0x0018 - 0x0000)
-struct CrUW_SenderReceiver_SetSenderData final
-{
-public:
-	class FString                                 ConnectionName;                                    // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	const class UCrItemDataBase*                  ItemType;                                          // 0x0010(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_SenderReceiver_SetSenderData;
-
-// Function ChimeraUI.CrUW_SenderReceiver.ShowHighlightFrame
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_SenderReceiver_ShowHighlightFrame final
-{
-public:
-	bool                                          bShow;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_SenderReceiver_ShowHighlightFrame;
-
-// Function ChimeraUI.CrUW_SenderReceiver.ShowSelectedFrame
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_SenderReceiver_ShowSelectedFrame final
-{
-public:
-	bool                                          bShow;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_SenderReceiver_ShowSelectedFrame;
-
-// Function ChimeraUI.CrUW_SenderReceiver.GetItemColor
-// 0x0010 (0x0010 - 0x0000)
-struct CrUW_SenderReceiver_GetItemColor final
-{
-public:
-	const class UCrItemDataBase*                  Item;                                              // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FColor                                 ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_CrUW_SenderReceiver_GetItemColor;
 
 // Function ChimeraUI.CrUW_SenderReceiverActionList.HandleOnItemPressed
 // 0x0001 (0x0001 - 0x0000)
@@ -6190,15 +6599,6 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrUW_SenderReceiverActionList_IsSender;
-
-// Function ChimeraUI.CrUW_SenderReceiverButton.UpdateVisuals
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_SenderReceiverButton_UpdateVisuals final
-{
-public:
-	bool                                          bVisible;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_SenderReceiverButton_UpdateVisuals;
 
 // Function ChimeraUI.CrUW_SenderReceiversList.HandleConfirmSwitchConnection
 // 0x0001 (0x0001 - 0x0000)
@@ -6267,95 +6667,127 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_SenderReceiversList_SetDisabledOpacity;
 
-// Function ChimeraUI.CrUW_SessionBox.ExpandSession
+// Function ChimeraUI.CrUW_SettingsProxy.AttemptToPopNavigation
 // 0x0001 (0x0001 - 0x0000)
-struct CrUW_SessionBox_ExpandSession final
+struct CrUW_SettingsProxy_AttemptToPopNavigation final
 {
 public:
-	bool                                          bExpand;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_CrUW_SessionBox_ExpandSession;
+DUMPER7_ASSERTS_CrUW_SettingsProxy_AttemptToPopNavigation;
 
-// Function ChimeraUI.CrUW_SessionBox.SetColors
+// Function ChimeraUI.CrUW_SettingsProxy.GetSettingCollection
+// 0x0018 (0x0018 - 0x0000)
+struct CrUW_SettingsProxy_GetSettingCollection final
+{
+public:
+	class FName                                   SettingDevName;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          HasAnySettings;                                    // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UGameSettingCollection*                 ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_SettingsProxy_GetSettingCollection;
+
+// Function ChimeraUI.CrUW_SettingsProxy.NavigateToSetting
 // 0x0008 (0x0008 - 0x0000)
-struct CrUW_SessionBox_SetColors final
+struct CrUW_SettingsProxy_NavigateToSetting final
+{
+public:
+	class FName                                   SettingDevName;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_SettingsProxy_NavigateToSetting;
+
+// Function ChimeraUI.CrUW_SettingsProxy.NavigateToSettings
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_SettingsProxy_NavigateToSettings final
+{
+public:
+	TArray<class FName>                           SettingDevNames;                                   // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_SettingsProxy_NavigateToSettings;
+
+// Function ChimeraUI.CrUW_SettingsProxy.OnSelectedTabEvent
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_SettingsProxy_OnSelectedTabEvent final
+{
+public:
+	class FName                                   TabId;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_SettingsProxy_OnSelectedTabEvent;
+
+// Function ChimeraUI.CrUW_SettingsProxy.OnSettingsDirtyStateChanged
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_SettingsProxy_OnSettingsDirtyStateChanged final
+{
+public:
+	bool                                          bSettingsDirty;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_SettingsProxy_OnSettingsDirtyStateChanged;
+
+// Function ChimeraUI.CrUW_SettingsProxy.HaveSettingsBeenChanged
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_SettingsProxy_HaveSettingsBeenChanged final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_SettingsProxy_HaveSettingsBeenChanged;
+
+// Function ChimeraUI.CrUW_ShotgunAmmoCounter.GetAmmoText
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_ShotgunAmmoCounter_GetAmmoText final
+{
+public:
+	class FText                                   ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_ShotgunAmmoCounter_GetAmmoText;
+
+// Function ChimeraUI.CrUW_ShotgunAmmoCounter.SetBulletState
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_ShotgunAmmoCounter_SetBulletState final
+{
+public:
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          HasBullet;                                         // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_CrUW_ShotgunAmmoCounter_SetBulletState;
+
+// Function ChimeraUI.CrUW_SkillsTab.SetWarningIconColor
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_SkillsTab_SetWarningIconColor final
+{
+public:
+	struct FLinearColor                           InColor;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_SkillsTab_SetWarningIconColor;
+
+// Function ChimeraUI.CrUW_StorageInventory.HandleOnFilterItemSelected
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_StorageInventory_HandleOnFilterItemSelected final
+{
+public:
+	class UObject*                                ListItem;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_StorageInventory_HandleOnFilterItemSelected;
+
+// Function ChimeraUI.CrUW_StorageShareable.SetColors
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_StorageShareable_SetColors final
 {
 public:
 	const class UCrCommonUIColorsDevSettings*     Settings;                                          // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_CrUW_SessionBox_SetColors;
+DUMPER7_ASSERTS_CrUW_StorageShareable_SetColors;
 
-// Function ChimeraUI.CrUW_SessionBox.SetExpanded
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_SessionBox_SetExpanded final
+// Function ChimeraUI.CrUW_StorageShareable.UpdateTabIndex
+// 0x0004 (0x0004 - 0x0000)
+struct CrUW_StorageShareable_UpdateTabIndex final
 {
 public:
-	bool                                          bExpand;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         InTabIndex;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_CrUW_SessionBox_SetExpanded;
-
-// Function ChimeraUI.CrUW_SessionBox.SetSessionButtonFocus
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_SessionBox_SetSessionButtonFocus final
-{
-public:
-	bool                                          bFocused;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_SessionBox_SetSessionButtonFocus;
-
-// Function ChimeraUI.CrUW_SessionBox.SetSessionButtonHighlight
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_SessionBox_SetSessionButtonHighlight final
-{
-public:
-	bool                                          bHighlighted;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_SessionBox_SetSessionButtonHighlight;
-
-// Function ChimeraUI.CrUW_SessionBox.SetSessionTitle
-// 0x0010 (0x0010 - 0x0000)
-struct CrUW_SessionBox_SetSessionTitle final
-{
-public:
-	class FString                                 Timestamp;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_SessionBox_SetSessionTitle;
-
-// Function ChimeraUI.CrUW_SessionWidget.ShowHighlight
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_SessionWidget_ShowHighlight final
-{
-public:
-	bool                                          bShow;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_SessionWidget_ShowHighlight;
-
-// Function ChimeraUI.CrUW_SessionWidget.ShowSelection
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_SessionWidget_ShowSelection final
-{
-public:
-	bool                                          bShow;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_SessionWidget_ShowSelection;
-
-// Function ChimeraUI.CrUW_ShieldHud.OnPossess
-// 0x0008 (0x0008 - 0x0000)
-struct CrUW_ShieldHud_OnPossess final
-{
-public:
-	class APawn*                                  InPawn;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_ShieldHud_OnPossess;
-
-// Function ChimeraUI.CrUW_ShowPlaytestEndVideoWidget.OnMediaOpened
-// 0x0010 (0x0010 - 0x0000)
-struct CrUW_ShowPlaytestEndVideoWidget_OnMediaOpened final
-{
-public:
-	class FString                                 OpenedUrl;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_ShowPlaytestEndVideoWidget_OnMediaOpened;
+DUMPER7_ASSERTS_CrUW_StorageShareable_UpdateTabIndex;
 
 // Function ChimeraUI.CrUW_StorageSizeAdjustment.UpdateElectricityValues
 // 0x0008 (0x0008 - 0x0000)
@@ -6366,6 +6798,24 @@ public:
 	int32                                         Minus;                                             // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrUW_StorageSizeAdjustment_UpdateElectricityValues;
+
+// Function ChimeraUI.CrUW_SubObjectiveEntry.OnKeyProfileChanged
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_SubObjectiveEntry_OnKeyProfileChanged final
+{
+public:
+	const class UEnhancedPlayerMappableKeyProfile* InNewProfile;                                     // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_SubObjectiveEntry_OnKeyProfileChanged;
+
+// Function ChimeraUI.CrUW_SubObjectiveEntry.OnUserSettingsChanged
+// 0x0008 (0x0008 - 0x0000)
+struct CrUW_SubObjectiveEntry_OnUserSettingsChanged final
+{
+public:
+	class UEnhancedInputUserSettings*             InSettings;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_SubObjectiveEntry_OnUserSettingsChanged;
 
 // Function ChimeraUI.CrUW_TeleporterMenu.NativeOnTeleporterAdded
 // 0x0018 (0x0018 - 0x0000)
@@ -6612,6 +7062,28 @@ public:
 };
 DUMPER7_ASSERTS_CrUW_WaveTimeCounter_GetPause;
 
+// Function ChimeraUI.CrUW_WeaponsToolsTab.AddModIcon
+// 0x0010 (0x0010 - 0x0000)
+struct CrUW_WeaponsToolsTab_AddModIcon final
+{
+public:
+	class UCrWeaponModDataAsset*                  ModDA;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         WeaponIndex;                                       // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_CrUW_WeaponsToolsTab_AddModIcon;
+
+// Function ChimeraUI.CrUW_WeaponsToolsTab.OnWeaponSlotHovered
+// 0x0038 (0x0038 - 0x0000)
+struct CrUW_WeaponsToolsTab_OnWeaponSlotHovered final
+{
+public:
+	struct FAuItemSlot                            InSlot;                                            // 0x0000(0x0030)(Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHovered;                                          // 0x0030(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_CrUW_WeaponsToolsTab_OnWeaponSlotHovered;
+
 // Function ChimeraUI.CrUW_WidgetOptionRotator.OnRotatorValueChanged
 // 0x0008 (0x0008 - 0x0000)
 struct CrUW_WidgetOptionRotator_OnRotatorValueChanged final
@@ -6622,6 +7094,24 @@ public:
 	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_CrUW_WidgetOptionRotator_OnRotatorValueChanged;
+
+// Function ChimeraUI.CrUW_WidgetOptionRotator.SetInternalEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_WidgetOptionRotator_SetInternalEnabled final
+{
+public:
+	bool                                          bEnabled;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_WidgetOptionRotator_SetInternalEnabled;
+
+// Function ChimeraUI.CrUW_WidgetOptionToggle.SetInternalEnabled
+// 0x0001 (0x0001 - 0x0000)
+struct CrUW_WidgetOptionToggle_SetInternalEnabled final
+{
+public:
+	bool                                          bEnabled;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrUW_WidgetOptionToggle_SetInternalEnabled;
 
 // Function ChimeraUI.TabButton.GetSettings
 // 0x0008 (0x0008 - 0x0000)
@@ -6685,164 +7175,6 @@ public:
 	bool                                          Show;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_TabButton_ShowWarningIcon;
-
-// Function ChimeraUI.CrUW_BoundActionButton.SetActionImageVisibility
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_BoundActionButton_SetActionImageVisibility final
-{
-public:
-	ESlateVisibility                              InVisibility;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_BoundActionButton_SetActionImageVisibility;
-
-// Function ChimeraUI.CrUW_BoundActionButton.SetButtonImageVisibility
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_BoundActionButton_SetButtonImageVisibility final
-{
-public:
-	ESlateVisibility                              InVisibility;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_BoundActionButton_SetButtonImageVisibility;
-
-// Function ChimeraUI.CrUW_BoundActionButton.SetLongIconText
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_BoundActionButton_SetLongIconText final
-{
-public:
-	bool                                          bLong;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_BoundActionButton_SetLongIconText;
-
-// Function ChimeraUI.CrUW_BoundActionButton.SetModIconData
-// 0x0018 (0x0018 - 0x0000)
-struct CrUW_BoundActionButton_SetModIconData final
-{
-public:
-	bool                                          bLong;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   InName;                                            // 0x0008(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_BoundActionButton_SetModIconData;
-
-// Function ChimeraUI.CrUW_BoundActionButton.SetTemporaryIconKey
-// 0x0010 (0x0010 - 0x0000)
-struct CrUW_BoundActionButton_SetTemporaryIconKey final
-{
-public:
-	class FText                                   InText;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_BoundActionButton_SetTemporaryIconKey;
-
-// Function ChimeraUI.CrUW_BoundActionButton.SetTemporaryIconVisibility
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_BoundActionButton_SetTemporaryIconVisibility final
-{
-public:
-	bool                                          bVisible;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_BoundActionButton_SetTemporaryIconVisibility;
-
-// Function ChimeraUI.CrUW_TabButtonBase.SetTabLabelInfo_Implementation
-// 0x00F0 (0x00F0 - 0x0000)
-struct CrUW_TabButtonBase_SetTabLabelInfo_Implementation final
-{
-public:
-	struct FCrTabDescriptor                       TabLabelInfo;                                      // 0x0000(0x00F0)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_TabButtonBase_SetTabLabelInfo_Implementation;
-
-// Function ChimeraUI.CrUW_TabListWidgetBase.GetPreregisteredTabInfo
-// 0x0110 (0x0110 - 0x0000)
-struct CrUW_TabListWidgetBase_GetPreregisteredTabInfo final
-{
-public:
-	class FName                                   TabNameID;                                         // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_8[0x8];                                        // 0x0008(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FCrTabDescriptor                       OutTabInfo;                                        // 0x0010(0x00F0)(Parm, OutParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0100(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_101[0xF];                                      // 0x0101(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_CrUW_TabListWidgetBase_GetPreregisteredTabInfo;
-
-// Function ChimeraUI.CrUW_TabListWidgetBase.GetVisibleTabCount
-// 0x0004 (0x0004 - 0x0000)
-struct CrUW_TabListWidgetBase_GetVisibleTabCount final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_TabListWidgetBase_GetVisibleTabCount;
-
-// Function ChimeraUI.CrUW_TabListWidgetBase.IsTabVisible
-// 0x000C (0x000C - 0x0000)
-struct CrUW_TabListWidgetBase_IsTabVisible final
-{
-public:
-	class FName                                   TabId;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_CrUW_TabListWidgetBase_IsTabVisible;
-
-// Function ChimeraUI.CrUW_TabListWidgetBase.RegisterDynamicTab
-// 0x0100 (0x0100 - 0x0000)
-struct CrUW_TabListWidgetBase_RegisterDynamicTab final
-{
-public:
-	struct FCrTabDescriptor                       TabDescriptor;                                     // 0x0000(0x00F0)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x00F0(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_F1[0xF];                                       // 0x00F1(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_CrUW_TabListWidgetBase_RegisterDynamicTab;
-
-// Function ChimeraUI.CrUW_TabListWidgetBase.SetTabHiddenState
-// 0x000C (0x000C - 0x0000)
-struct CrUW_TabListWidgetBase_SetTabHiddenState final
-{
-public:
-	class FName                                   TabNameID;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bHidden;                                           // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_CrUW_TabListWidgetBase_SetTabHiddenState;
-
-// Function ChimeraUI.CrUW_TabListWidgetBase.IsFirstTabActive
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_TabListWidgetBase_IsFirstTabActive final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_TabListWidgetBase_IsFirstTabActive;
-
-// Function ChimeraUI.CrUW_TabListWidgetBase.IsLastTabActive
-// 0x0001 (0x0001 - 0x0000)
-struct CrUW_TabListWidgetBase_IsLastTabActive final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_TabListWidgetBase_IsLastTabActive;
-
-// Function ChimeraUI.CrUW_ConfirmationScreen.HandleTapToCloseZoneMouseButtonDown
-// 0x0170 (0x0170 - 0x0000)
-struct CrUW_ConfirmationScreen_HandleTapToCloseZoneMouseButtonDown final
-{
-public:
-	struct FGeometry                              MyGeometry;                                        // 0x0000(0x0038)(Parm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FPointerEvent                          MouseEvent;                                        // 0x0038(0x0080)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	struct FEventReply                            ReturnValue;                                       // 0x00B8(0x00B8)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_ConfirmationScreen_HandleTapToCloseZoneMouseButtonDown;
-
-// Function ChimeraUI.CrUW_ConfirmationScreen.SetColors
-// 0x0010 (0x0010 - 0x0000)
-struct CrUW_ConfirmationScreen_SetColors final
-{
-public:
-	struct FLinearColor                           Orange;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_CrUW_ConfirmationScreen_SetColors;
 
 // Function ChimeraUI.CrUW_SettingScreen.PlayClickSound
 // 0x0001 (0x0001 - 0x0000)

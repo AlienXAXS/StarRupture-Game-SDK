@@ -16,6 +16,24 @@
 
 SDK_NAMESPACE_START
 
+// Function MovieSceneTracks.MovieSceneTransformOrigin.BP_GetTransformOrigin
+// (RequiredAPI, Event, Protected, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// struct FTransform                       ReturnValue                                            (Parm, OutParm, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FTransform UDefaultLevelSequenceInstanceData::BP_GetTransformOrigin() const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_GetTransformOrigin", FnName));
+
+	Params::MovieSceneTransformOrigin_BP_GetTransformOrigin Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
 // Function LevelSequence.LevelSequenceShotMetaDataLibrary.ClearFavoriteRating
 // (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -1110,6 +1128,84 @@ class UObject* ULevelSequence::FindMetaDataByClass(TSubclassOf<class UObject> In
 }
 
 
+// Function Engine.Interface_AssetUserData.AddAssetUserDataOfClass
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UAssetUserData>       InUserDataClass                                        (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ULevelSequence::AddAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AddAssetUserDataOfClass", FnName));
+
+	Params::Interface_AssetUserData_AddAssetUserDataOfClass Parms{};
+
+	Parms.InUserDataClass = InUserDataClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.Interface_AssetUserData.GetAssetUserDataOfClass
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UAssetUserData>       InUserDataClass                                        (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAssetUserData*                   ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UAssetUserData* ULevelSequence::GetAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetAssetUserDataOfClass", FnName));
+
+	Params::Interface_AssetUserData_GetAssetUserDataOfClass Parms{};
+
+	Parms.InUserDataClass = InUserDataClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Engine.Interface_AssetUserData.HasAssetUserDataOfClass
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UAssetUserData>       InUserDataClass                                        (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ULevelSequence::HasAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"HasAssetUserDataOfClass", FnName));
+
+	Params::Interface_AssetUserData_HasAssetUserDataOfClass Parms{};
+
+	Parms.InUserDataClass = InUserDataClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function LevelSequence.LevelSequenceBurnInOptions.SetBurnIn
 // (Final, RequiredAPI, Native, Public, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -1550,10 +1646,8 @@ class ULevelSequencePlayer* ALevelSequenceActor::GetSequencePlayer() const
 
 void ULevelSequenceBurnIn::SetSettings(class UObject* InSettings)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LevelSequenceBurnIn", "SetSettings");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetSettings", FnName));
 
 	Params::LevelSequenceBurnIn_SetSettings Parms{};
 
@@ -1570,10 +1664,8 @@ void ULevelSequenceBurnIn::SetSettings(class UObject* InSettings)
 
 TSubclassOf<class ULevelSequenceBurnInInitSettings> ULevelSequenceBurnIn::GetSettingsClass() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LevelSequenceBurnIn", "GetSettingsClass");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetSettingsClass", FnName));
 
 	Params::LevelSequenceBurnIn_GetSettingsClass Parms{};
 
@@ -1730,10 +1822,8 @@ class UMovieSceneSequence* ULevelSequenceDirector::GetSequence()
 
 void ULevelSequenceDirector::OnCreated()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LevelSequenceDirector", "OnCreated");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnCreated", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1960,6 +2050,105 @@ class ALevelSequenceActor* ALevelSequenceMediaController::GetSequence() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function MovieScene.MovieSceneCustomClockSource.OnRequestCurrentTime
+// (Native, Public, HasOutParams)
+// Parameters:
+// const struct FQualifiedFrameTime&       InCurrentTime                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// float                                   InPlayRate                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FFrameTime                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FFrameTime ALevelSequenceMediaController::OnRequestCurrentTime(const struct FQualifiedFrameTime& InCurrentTime, float InPlayRate)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnRequestCurrentTime", FnName));
+
+	Params::MovieSceneCustomClockSource_OnRequestCurrentTime Parms{};
+
+	Parms.InCurrentTime = std::move(InCurrentTime);
+	Parms.InPlayRate = InPlayRate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MovieScene.MovieSceneCustomClockSource.OnStartPlaying
+// (Native, Public, HasOutParams)
+// Parameters:
+// const struct FQualifiedFrameTime&       InStartTime                                            (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void ALevelSequenceMediaController::OnStartPlaying(const struct FQualifiedFrameTime& InStartTime)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnStartPlaying", FnName));
+
+	Params::MovieSceneCustomClockSource_OnStartPlaying Parms{};
+
+	Parms.InStartTime = std::move(InStartTime);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MovieScene.MovieSceneCustomClockSource.OnStopPlaying
+// (Native, Public, HasOutParams)
+// Parameters:
+// const struct FQualifiedFrameTime&       InStopTime                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void ALevelSequenceMediaController::OnStopPlaying(const struct FQualifiedFrameTime& InStopTime)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnStopPlaying", FnName));
+
+	Params::MovieSceneCustomClockSource_OnStopPlaying Parms{};
+
+	Parms.InStopTime = std::move(InStopTime);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MovieScene.MovieSceneCustomClockSource.OnTick
+// (Native, Public)
+// Parameters:
+// float                                   DeltaSeconds                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InPlayRate                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ALevelSequenceMediaController::OnTick(float DeltaSeconds, float InPlayRate)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnTick", FnName));
+
+	Params::MovieSceneCustomClockSource_OnTick Parms{};
+
+	Parms.DeltaSeconds = DeltaSeconds;
+	Parms.InPlayRate = InPlayRate;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 

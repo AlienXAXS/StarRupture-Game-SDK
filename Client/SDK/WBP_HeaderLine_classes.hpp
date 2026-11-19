@@ -34,8 +34,6 @@ public:
 public:
 	void HideItemType();
 	void Set_Item_Data(const class FText& InName, int32 InNumber, int32 InMax, const class FText& UIType, const struct FLinearColor& Color);
-	void Setup_Split_Window_Version(const class FText& ItemName_0);
-	void SetupResizeStackVersion(const class FText& Title);
 
 public:
 	static class UClass* StaticClass()

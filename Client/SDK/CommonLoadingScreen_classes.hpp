@@ -19,9 +19,12 @@
 SDK_NAMESPACE_START
 
 // Class CommonLoadingScreen.LoadingProcessInterface
-// 0x0000 (0x0000 - 0x0000)
-class ILoadingProcessInterface final
+// 0x0008 (0x0008 - 0x0000)
+class ILoadingProcessInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -111,10 +114,10 @@ DUMPER7_ASSERTS_ULoadingScreenManager;
 
 // Class CommonLoadingScreen.LoadingProcessTask
 // 0x0018 (0x0040 - 0x0028)
-class ULoadingProcessTask final : public UObject
+class ULoadingProcessTask final : public UObject, public ILoadingProcessInterface
 {
 public:
-	uint8                                         Pad_28[0x18];                                      // 0x0028(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x10];                                      // 0x0030(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class ULoadingProcessTask* CreateLoadingScreenProcessTask(class UObject* WorldContextObject, const class FString& ShowLoadingScreenReason);

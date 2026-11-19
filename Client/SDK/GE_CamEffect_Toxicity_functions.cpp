@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UGE_CamEffect_Toxicity_C::ExecuteUbergraph_GE_CamEffect_Toxicity(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GE_CamEffect_Toxicity_C", "ExecuteUbergraph_GE_CamEffect_Toxicity");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "GE_CamEffect_Toxicity_C", "ExecuteUbergraph_GE_CamEffect_Toxicity", FuncInfo);
 
 	Params::GE_CamEffect_Toxicity_C_ExecuteUbergraph_GE_CamEffect_Toxicity Parms{};
 
@@ -45,10 +43,8 @@ void UGE_CamEffect_Toxicity_C::ExecuteUbergraph_GE_CamEffect_Toxicity(int32 Entr
 
 void UGE_CamEffect_Toxicity_C::OnAttributeChanged_A4A28E1642D1C6B685D41AB7D42333B7(const struct FGameplayAttribute& Attribute, float NewValue, float OldValue)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GE_CamEffect_Toxicity_C", "OnAttributeChanged_A4A28E1642D1C6B685D41AB7D42333B7");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnAttributeChanged_A4A28E1642D1C6B685D41AB7D42333B7", FnName));
 
 	Params::GE_CamEffect_Toxicity_C_OnAttributeChanged_A4A28E1642D1C6B685D41AB7D42333B7 Parms{};
 
@@ -69,10 +65,8 @@ void UGE_CamEffect_Toxicity_C::OnAttributeChanged_A4A28E1642D1C6B685D41AB7D42333
 
 void UGE_CamEffect_Toxicity_C::OnInitialized(class UAbilitySystemComponent* AbilitySystemComponent, TSubclassOf<class UGameplayEffect> GameplayEffect, class USceneComponent* OwnerRootComponent)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GE_CamEffect_Toxicity_C", "OnInitialized");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnInitialized", FnName));
 
 	Params::GE_CamEffect_Toxicity_C_OnInitialized Parms{};
 

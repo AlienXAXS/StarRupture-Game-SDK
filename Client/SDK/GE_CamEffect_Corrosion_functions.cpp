@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UGE_CamEffect_Corrosion_C::ExecuteUbergraph_GE_CamEffect_Corrosion(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GE_CamEffect_Corrosion_C", "ExecuteUbergraph_GE_CamEffect_Corrosion");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "GE_CamEffect_Corrosion_C", "ExecuteUbergraph_GE_CamEffect_Corrosion", FuncInfo);
 
 	Params::GE_CamEffect_Corrosion_C_ExecuteUbergraph_GE_CamEffect_Corrosion Parms{};
 
@@ -45,10 +43,8 @@ void UGE_CamEffect_Corrosion_C::ExecuteUbergraph_GE_CamEffect_Corrosion(int32 En
 
 void UGE_CamEffect_Corrosion_C::OnAttributeChanged_987CD6BD43C0487E1D5069849F1AB46E(const struct FGameplayAttribute& Attribute, float NewValue, float OldValue)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GE_CamEffect_Corrosion_C", "OnAttributeChanged_987CD6BD43C0487E1D5069849F1AB46E");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnAttributeChanged_987CD6BD43C0487E1D5069849F1AB46E", FnName));
 
 	Params::GE_CamEffect_Corrosion_C_OnAttributeChanged_987CD6BD43C0487E1D5069849F1AB46E Parms{};
 
@@ -69,10 +65,8 @@ void UGE_CamEffect_Corrosion_C::OnAttributeChanged_987CD6BD43C0487E1D5069849F1AB
 
 void UGE_CamEffect_Corrosion_C::OnInitialized(class UAbilitySystemComponent* AbilitySystemComponent, TSubclassOf<class UGameplayEffect> GameplayEffect, class USceneComponent* OwnerRootComponent)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GE_CamEffect_Corrosion_C", "OnInitialized");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnInitialized", FnName));
 
 	Params::GE_CamEffect_Corrosion_C_OnInitialized Parms{};
 

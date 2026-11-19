@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_BuildingInfo_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_BuildingInfo_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -37,10 +35,8 @@ void UWBP_BuildingInfo_C::Construct()
 
 void UWBP_BuildingInfo_C::ExecuteUbergraph_WBP_BuildingInfo(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_BuildingInfo_C", "ExecuteUbergraph_WBP_BuildingInfo");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_BuildingInfo_C", "ExecuteUbergraph_WBP_BuildingInfo", FuncInfo);
 
 	Params::WBP_BuildingInfo_C_ExecuteUbergraph_WBP_BuildingInfo Parms{};
 
@@ -55,10 +51,8 @@ void UWBP_BuildingInfo_C::ExecuteUbergraph_WBP_BuildingInfo(int32 EntryPoint)
 
 void UWBP_BuildingInfo_C::HideEfficiencyBox()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_BuildingInfo_C", "HideEfficiencyBox");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"HideEfficiencyBox", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -69,10 +63,8 @@ void UWBP_BuildingInfo_C::HideEfficiencyBox()
 
 void UWBP_BuildingInfo_C::HideSendersBox()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_BuildingInfo_C", "HideSendersBox");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"HideSendersBox", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

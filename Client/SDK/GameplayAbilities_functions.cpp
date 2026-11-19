@@ -16,6 +16,107 @@
 
 SDK_NAMESPACE_START
 
+// Function GameplayTags.GameplayTagAssetInterface.BP_GetOwnedGameplayTags
+// (RequiredAPI, Native, Protected, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FGameplayTagContainer            ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FGameplayTagContainer UGameplayEffect::BP_GetOwnedGameplayTags() const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_GetOwnedGameplayTags", FnName));
+
+	Params::GameplayTagAssetInterface_BP_GetOwnedGameplayTags Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayTags.GameplayTagAssetInterface.HasAllMatchingGameplayTags
+// (RequiredAPI, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const struct FGameplayTagContainer&     TagContainer                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UGameplayEffect::HasAllMatchingGameplayTags(const struct FGameplayTagContainer& TagContainer) const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"HasAllMatchingGameplayTags", FnName));
+
+	Params::GameplayTagAssetInterface_HasAllMatchingGameplayTags Parms{};
+
+	Parms.TagContainer = std::move(TagContainer);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayTags.GameplayTagAssetInterface.HasAnyMatchingGameplayTags
+// (RequiredAPI, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const struct FGameplayTagContainer&     TagContainer                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UGameplayEffect::HasAnyMatchingGameplayTags(const struct FGameplayTagContainer& TagContainer) const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"HasAnyMatchingGameplayTags", FnName));
+
+	Params::GameplayTagAssetInterface_HasAnyMatchingGameplayTags Parms{};
+
+	Parms.TagContainer = std::move(TagContainer);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayTags.GameplayTagAssetInterface.HasMatchingGameplayTag
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const struct FGameplayTag&              TagToCheck                                             (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UGameplayEffect::HasMatchingGameplayTag(const struct FGameplayTag& TagToCheck) const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"HasMatchingGameplayTag", FnName));
+
+	Params::GameplayTagAssetInterface_HasMatchingGameplayTag Parms{};
+
+	Parms.TagToCheck = std::move(TagToCheck);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function GameplayAbilities.AbilityTask_WaitAbilityActivate.WaitForAbilityActivate
 // (Final, RequiredAPI, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -546,10 +647,8 @@ class UAbilityTask_WaitGameplayTagCountChanged* UAbilityTask_WaitGameplayTagCoun
 
 void UGameplayCueNotify_Static::K2_HandleGameplayCue(class AActor* MyTarget, EGameplayCueEvent EventType, const struct FGameplayCueParameters& Parameters) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayCueNotify_Static", "K2_HandleGameplayCue");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_HandleGameplayCue", FnName));
 
 	Params::GameplayCueNotify_Static_K2_HandleGameplayCue Parms{};
 
@@ -570,10 +669,8 @@ void UGameplayCueNotify_Static::K2_HandleGameplayCue(class AActor* MyTarget, EGa
 
 bool UGameplayCueNotify_Static::OnActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayCueNotify_Static", "OnActive");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnActive", FnName));
 
 	Params::GameplayCueNotify_Static_OnActive Parms{};
 
@@ -600,10 +697,8 @@ bool UGameplayCueNotify_Static::OnActive(class AActor* MyTarget, const struct FG
 
 bool UGameplayCueNotify_Static::OnExecute(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayCueNotify_Static", "OnExecute");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnExecute", FnName));
 
 	Params::GameplayCueNotify_Static_OnExecute Parms{};
 
@@ -630,10 +725,8 @@ bool UGameplayCueNotify_Static::OnExecute(class AActor* MyTarget, const struct F
 
 bool UGameplayCueNotify_Static::OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayCueNotify_Static", "OnRemove");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnRemove", FnName));
 
 	Params::GameplayCueNotify_Static_OnRemove Parms{};
 
@@ -660,10 +753,8 @@ bool UGameplayCueNotify_Static::OnRemove(class AActor* MyTarget, const struct FG
 
 bool UGameplayCueNotify_Static::WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayCueNotify_Static", "WhileActive");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"WhileActive", FnName));
 
 	Params::GameplayCueNotify_Static_WhileActive Parms{};
 
@@ -1137,10 +1228,8 @@ void UGameplayAbility::EndTaskByInstanceName(class FName InstanceName)
 
 void UGameplayAbility::K2_ActivateAbility()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayAbility", "K2_ActivateAbility");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_ActivateAbility", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1153,10 +1242,8 @@ void UGameplayAbility::K2_ActivateAbility()
 
 void UGameplayAbility::K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayAbility", "K2_ActivateAbilityFromEvent");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_ActivateAbilityFromEvent", FnName));
 
 	Params::GameplayAbility_K2_ActivateAbilityFromEvent Parms{};
 
@@ -1439,10 +1526,8 @@ bool UGameplayAbility::K2_CommitAbilityCost(bool BroadcastCommitEvent)
 
 void UGameplayAbility::K2_CommitExecute()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayAbility", "K2_CommitExecute");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_CommitExecute", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1547,10 +1632,8 @@ void UGameplayAbility::K2_ExecuteGameplayCueWithParams(const struct FGameplayTag
 
 void UGameplayAbility::K2_OnEndAbility(bool bWasCancelled)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayAbility", "K2_OnEndAbility");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_OnEndAbility", FnName));
 
 	Params::GameplayAbility_K2_OnEndAbility Parms{};
 
@@ -2203,10 +2286,8 @@ bool UGameplayAbility::IsLocallyControlled() const
 
 bool UGameplayAbility::K2_CanActivateAbility(const struct FGameplayAbilityActorInfo& ActorInfo, const struct FGameplayAbilitySpecHandle& Handle, struct FGameplayTagContainer* RelevantTags) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayAbility", "K2_CanActivateAbility");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_CanActivateAbility", FnName));
 
 	Params::GameplayAbility_K2_CanActivateAbility Parms{};
 
@@ -2256,10 +2337,8 @@ bool UGameplayAbility::K2_HasAuthority() const
 
 bool UGameplayAbility::K2_ShouldAbilityRespondToEvent(const struct FGameplayAbilityActorInfo& ActorInfo, const struct FGameplayEventData& Payload) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayAbility", "K2_ShouldAbilityRespondToEvent");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_ShouldAbilityRespondToEvent", FnName));
 
 	Params::GameplayAbility_K2_ShouldAbilityRespondToEvent Parms{};
 
@@ -2370,10 +2449,8 @@ void AGameplayAbilityWorldReticle::FaceTowardSource(bool bFaceIn2D)
 
 void AGameplayAbilityWorldReticle::OnParametersInitialized()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayAbilityWorldReticle", "OnParametersInitialized");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnParametersInitialized", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -2386,10 +2463,8 @@ void AGameplayAbilityWorldReticle::OnParametersInitialized()
 
 void AGameplayAbilityWorldReticle::OnTargetingAnActor(bool bNewValue)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayAbilityWorldReticle", "OnTargetingAnActor");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnTargetingAnActor", FnName));
 
 	Params::GameplayAbilityWorldReticle_OnTargetingAnActor Parms{};
 
@@ -2406,10 +2481,8 @@ void AGameplayAbilityWorldReticle::OnTargetingAnActor(bool bNewValue)
 
 void AGameplayAbilityWorldReticle::OnValidTargetChanged(bool bNewValue)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayAbilityWorldReticle", "OnValidTargetChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnValidTargetChanged", FnName));
 
 	Params::GameplayAbilityWorldReticle_OnValidTargetChanged Parms{};
 
@@ -2427,10 +2500,8 @@ void AGameplayAbilityWorldReticle::OnValidTargetChanged(bool bNewValue)
 
 void AGameplayAbilityWorldReticle::SetReticleMaterialParamFloat(class FName ParamName, float Value)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayAbilityWorldReticle", "SetReticleMaterialParamFloat");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetReticleMaterialParamFloat", FnName));
 
 	Params::GameplayAbilityWorldReticle_SetReticleMaterialParamFloat Parms{};
 
@@ -2449,10 +2520,8 @@ void AGameplayAbilityWorldReticle::SetReticleMaterialParamFloat(class FName Para
 
 void AGameplayAbilityWorldReticle::SetReticleMaterialParamVector(class FName ParamName, const struct FVector& Value)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayAbilityWorldReticle", "SetReticleMaterialParamVector");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetReticleMaterialParamVector", FnName));
 
 	Params::GameplayAbilityWorldReticle_SetReticleMaterialParamVector Parms{};
 
@@ -10538,6 +10607,183 @@ struct FGameplayEffectSpecHandle UAbilitySystemComponent::MakeOutgoingSpec(TSubc
 }
 
 
+// Function GameplayTags.GameplayTagAssetInterface.BP_GetOwnedGameplayTags
+// (RequiredAPI, Native, Protected, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FGameplayTagContainer            ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FGameplayTagContainer UAbilitySystemComponent::BP_GetOwnedGameplayTags() const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_GetOwnedGameplayTags", FnName));
+
+	Params::GameplayTagAssetInterface_BP_GetOwnedGameplayTags Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayTags.GameplayTagAssetInterface.HasAllMatchingGameplayTags
+// (RequiredAPI, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const struct FGameplayTagContainer&     TagContainer                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UAbilitySystemComponent::HasAllMatchingGameplayTags(const struct FGameplayTagContainer& TagContainer) const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"HasAllMatchingGameplayTags", FnName));
+
+	Params::GameplayTagAssetInterface_HasAllMatchingGameplayTags Parms{};
+
+	Parms.TagContainer = std::move(TagContainer);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayTags.GameplayTagAssetInterface.HasAnyMatchingGameplayTags
+// (RequiredAPI, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const struct FGameplayTagContainer&     TagContainer                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UAbilitySystemComponent::HasAnyMatchingGameplayTags(const struct FGameplayTagContainer& TagContainer) const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"HasAnyMatchingGameplayTags", FnName));
+
+	Params::GameplayTagAssetInterface_HasAnyMatchingGameplayTags Parms{};
+
+	Parms.TagContainer = std::move(TagContainer);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayTags.GameplayTagAssetInterface.HasMatchingGameplayTag
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const struct FGameplayTag&              TagToCheck                                             (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UAbilitySystemComponent::HasMatchingGameplayTag(const struct FGameplayTag& TagToCheck) const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"HasMatchingGameplayTag", FnName));
+
+	Params::GameplayTagAssetInterface_HasMatchingGameplayTag Parms{};
+
+	Parms.TagToCheck = std::move(TagToCheck);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayAbilities.GameplayCueInterface.BlueprintCustomHandler
+// (RequiredAPI, BlueprintCosmetic, Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// EGameplayCueEvent                       EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void IGameplayCueInterface::BlueprintCustomHandler(EGameplayCueEvent EventType, const struct FGameplayCueParameters& Parameters)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"BlueprintCustomHandler", FnName));
+
+	Params::GameplayCueInterface_BlueprintCustomHandler Parms{};
+
+	Parms.EventType = EventType;
+	Parms.Parameters = std::move(Parameters);
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameplayAbilities.GameplayCueInterface.ForwardGameplayCueToParent
+// (RequiredAPI, BlueprintCosmetic, Native, Public, BlueprintCallable)
+
+void IGameplayCueInterface::ForwardGameplayCueToParent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("GameplayCueInterface", "ForwardGameplayCueToParent");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function GameplayAbilities.GameplayCueInterface.BlueprintCustomHandler
+// (RequiredAPI, BlueprintCosmetic, Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// EGameplayCueEvent                       EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void AAbilitySystemTestPawn::BlueprintCustomHandler(EGameplayCueEvent EventType, const struct FGameplayCueParameters& Parameters)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BlueprintCustomHandler", FnName));
+
+	Params::GameplayCueInterface_BlueprintCustomHandler Parms{};
+
+	Parms.EventType = EventType;
+	Parms.Parameters = std::move(Parameters);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function GameplayAbilities.GameplayCueInterface.ForwardGameplayCueToParent
+// (RequiredAPI, BlueprintCosmetic, Native, Public, BlueprintCallable)
+
+void AAbilitySystemTestPawn::ForwardGameplayCueToParent()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ForwardGameplayCueToParent", FnName));
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function GameplayAbilities.GameplayCueFunctionLibrary.AddGameplayCueOnActor
 // (Final, RequiredAPI, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
@@ -10653,47 +10899,6 @@ void UGameplayCueFunctionLibrary::RemoveGameplayCueOnActor(class AActor* Target,
 }
 
 
-// Function GameplayAbilities.GameplayCueInterface.BlueprintCustomHandler
-// (RequiredAPI, BlueprintCosmetic, Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// EGameplayCueEvent                       EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FGameplayCueParameters&    Parameters                                             (ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void IGameplayCueInterface::BlueprintCustomHandler(EGameplayCueEvent EventType, const struct FGameplayCueParameters& Parameters)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("GameplayCueInterface", "BlueprintCustomHandler");
-
-	Params::GameplayCueInterface_BlueprintCustomHandler Parms{};
-
-	Parms.EventType = EventType;
-	Parms.Parameters = std::move(Parameters);
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-}
-
-
-// Function GameplayAbilities.GameplayCueInterface.ForwardGameplayCueToParent
-// (RequiredAPI, BlueprintCosmetic, Native, Public, BlueprintCallable)
-
-void IGameplayCueInterface::ForwardGameplayCueToParent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("GameplayCueInterface", "ForwardGameplayCueToParent");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function GameplayAbilities.GameplayCueNotify_Actor.K2_EndGameplayCue
 // (RequiredAPI, Native, Public, BlueprintCallable)
 
@@ -10722,10 +10927,8 @@ void AGameplayCueNotify_Actor::K2_EndGameplayCue()
 
 void AGameplayCueNotify_Actor::K2_HandleGameplayCue(class AActor* MyTarget, EGameplayCueEvent EventType, const struct FGameplayCueParameters& Parameters)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayCueNotify_Actor", "K2_HandleGameplayCue");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_HandleGameplayCue", FnName));
 
 	Params::GameplayCueNotify_Actor_K2_HandleGameplayCue Parms{};
 
@@ -10746,10 +10949,8 @@ void AGameplayCueNotify_Actor::K2_HandleGameplayCue(class AActor* MyTarget, EGam
 
 bool AGameplayCueNotify_Actor::OnActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayCueNotify_Actor", "OnActive");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnActive", FnName));
 
 	Params::GameplayCueNotify_Actor_OnActive Parms{};
 
@@ -10776,10 +10977,8 @@ bool AGameplayCueNotify_Actor::OnActive(class AActor* MyTarget, const struct FGa
 
 bool AGameplayCueNotify_Actor::OnExecute(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayCueNotify_Actor", "OnExecute");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnExecute", FnName));
 
 	Params::GameplayCueNotify_Actor_OnExecute Parms{};
 
@@ -10831,10 +11030,8 @@ void AGameplayCueNotify_Actor::OnOwnerDestroyed(class AActor* DestroyedActor)
 
 bool AGameplayCueNotify_Actor::OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayCueNotify_Actor", "OnRemove");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnRemove", FnName));
 
 	Params::GameplayCueNotify_Actor_OnRemove Parms{};
 
@@ -10861,10 +11058,8 @@ bool AGameplayCueNotify_Actor::OnRemove(class AActor* MyTarget, const struct FGa
 
 bool AGameplayCueNotify_Actor::WhileActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayCueNotify_Actor", "WhileActive");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"WhileActive", FnName));
 
 	Params::GameplayCueNotify_Actor_WhileActive Parms{};
 
@@ -10891,10 +11086,8 @@ bool AGameplayCueNotify_Actor::WhileActive(class AActor* MyTarget, const struct 
 
 void UGameplayCueNotify_Burst::OnBurst(class AActor* Target, const struct FGameplayCueParameters& Parameters, const struct FGameplayCueNotify_SpawnResult& SpawnResults) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayCueNotify_Burst", "OnBurst");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBurst", FnName));
 
 	Params::GameplayCueNotify_Burst_OnBurst Parms{};
 
@@ -10915,10 +11108,8 @@ void UGameplayCueNotify_Burst::OnBurst(class AActor* Target, const struct FGamep
 
 void AGameplayCueNotify_BurstLatent::OnBurst(class AActor* Target, const struct FGameplayCueParameters& Parameters, const struct FGameplayCueNotify_SpawnResult& SpawnResults)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayCueNotify_BurstLatent", "OnBurst");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBurst", FnName));
 
 	Params::GameplayCueNotify_BurstLatent_OnBurst Parms{};
 
@@ -10939,10 +11130,8 @@ void AGameplayCueNotify_BurstLatent::OnBurst(class AActor* Target, const struct 
 
 void AGameplayCueNotify_Looping::OnApplication(class AActor* Target, const struct FGameplayCueParameters& Parameters, const struct FGameplayCueNotify_SpawnResult& SpawnResults)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayCueNotify_Looping", "OnApplication");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnApplication", FnName));
 
 	Params::GameplayCueNotify_Looping_OnApplication Parms{};
 
@@ -10963,10 +11152,8 @@ void AGameplayCueNotify_Looping::OnApplication(class AActor* Target, const struc
 
 void AGameplayCueNotify_Looping::OnLoopingStart(class AActor* Target, const struct FGameplayCueParameters& Parameters, const struct FGameplayCueNotify_SpawnResult& SpawnResults)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayCueNotify_Looping", "OnLoopingStart");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnLoopingStart", FnName));
 
 	Params::GameplayCueNotify_Looping_OnLoopingStart Parms{};
 
@@ -10987,10 +11174,8 @@ void AGameplayCueNotify_Looping::OnLoopingStart(class AActor* Target, const stru
 
 void AGameplayCueNotify_Looping::OnRecurring(class AActor* Target, const struct FGameplayCueParameters& Parameters, const struct FGameplayCueNotify_SpawnResult& SpawnResults)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayCueNotify_Looping", "OnRecurring");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnRecurring", FnName));
 
 	Params::GameplayCueNotify_Looping_OnRecurring Parms{};
 
@@ -11011,10 +11196,8 @@ void AGameplayCueNotify_Looping::OnRecurring(class AActor* Target, const struct 
 
 void AGameplayCueNotify_Looping::OnRemoval(class AActor* Target, const struct FGameplayCueParameters& Parameters, const struct FGameplayCueNotify_SpawnResult& SpawnResults)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayCueNotify_Looping", "OnRemoval");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnRemoval", FnName));
 
 	Params::GameplayCueNotify_Looping_OnRemoval Parms{};
 
@@ -11036,10 +11219,8 @@ void AGameplayCueNotify_Looping::OnRemoval(class AActor* Target, const struct FG
 
 bool UGameplayEffectCustomApplicationRequirement::CanApplyGameplayEffect(const class UGameplayEffect* GameplayEffect, const struct FGameplayEffectSpec& Spec, class UAbilitySystemComponent* ASC) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayEffectCustomApplicationRequirement", "CanApplyGameplayEffect");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"CanApplyGameplayEffect", FnName));
 
 	Params::GameplayEffectCustomApplicationRequirement_CanApplyGameplayEffect Parms{};
 
@@ -11066,10 +11247,8 @@ bool UGameplayEffectCustomApplicationRequirement::CanApplyGameplayEffect(const c
 
 void UGameplayEffectExecutionCalculation::Execute(const struct FGameplayEffectCustomExecutionParameters& ExecutionParams, struct FGameplayEffectCustomExecutionOutput* OutExecutionOutput) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayEffectExecutionCalculation", "Execute");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Execute", FnName));
 
 	Params::GameplayEffectExecutionCalculation_Execute Parms{};
 
@@ -11095,10 +11274,8 @@ void UGameplayEffectExecutionCalculation::Execute(const struct FGameplayEffectCu
 
 float UGameplayModMagnitudeCalculation::CalculateBaseMagnitude(const struct FGameplayEffectSpec& Spec) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GameplayModMagnitudeCalculation", "CalculateBaseMagnitude");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"CalculateBaseMagnitude", FnName));
 
 	Params::GameplayModMagnitudeCalculation_CalculateBaseMagnitude Parms{};
 

@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "InteractiveToolsFramework_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "PhysicsCore_structs.hpp"
@@ -44,9 +45,12 @@ public:
 DUMPER7_ASSERTS_UDynamicMeshProcessorBlueprint;
 
 // Class GeometryFramework.MeshCommandChangeTarget
-// 0x0000 (0x0000 - 0x0000)
-class IMeshCommandChangeTarget final
+// 0x0008 (0x0008 - 0x0000)
+class IMeshCommandChangeTarget
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -73,9 +77,12 @@ public:
 DUMPER7_ASSERTS_IMeshCommandChangeTarget;
 
 // Class GeometryFramework.MeshReplacementCommandChangeTarget
-// 0x0000 (0x0000 - 0x0000)
-class IMeshReplacementCommandChangeTarget final
+// 0x0008 (0x0008 - 0x0000)
+class IMeshReplacementCommandChangeTarget
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -102,9 +109,12 @@ public:
 DUMPER7_ASSERTS_IMeshReplacementCommandChangeTarget;
 
 // Class GeometryFramework.MeshVertexCommandChangeTarget
-// 0x0000 (0x0000 - 0x0000)
-class IMeshVertexCommandChangeTarget final
+// 0x0008 (0x0008 - 0x0000)
+class IMeshVertexCommandChangeTarget
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -132,10 +142,10 @@ DUMPER7_ASSERTS_IMeshVertexCommandChangeTarget;
 
 // Class GeometryFramework.BaseDynamicMeshComponent
 // 0x0080 (0x0600 - 0x0580)
-class UBaseDynamicMeshComponent : public UMeshComponent
+#pragma pack(push, 0x1)
+class SDK_ALIGN(0x10) UBaseDynamicMeshComponent : public UMeshComponent, public IToolFrameworkComponent, public IMeshVertexCommandChangeTarget, public IMeshCommandChangeTarget, public IMeshReplacementCommandChangeTarget
 {
 public:
-	uint8                                         Pad_578[0x20];                                     // 0x0578(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          bExplicitShowWireframe;                            // 0x0598(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_599[0x3];                                      // 0x0599(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FLinearColor                           WireframeColor;                                    // 0x059C(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -156,7 +166,6 @@ public:
 	EDynamicMeshComponentDistanceFieldMode        DistanceFieldMode;                                 // 0x05E2(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_5E3[0x5];                                      // 0x05E3(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UMaterialInterface*>             BaseMaterials;                                     // 0x05E8(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-	uint8                                         Pad_5F8[0x8];                                      // 0x05F8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void ClearOverrideRenderMaterial();
@@ -211,11 +220,12 @@ public:
 		return GetDefaultObjImpl<UBaseDynamicMeshComponent>();
 	}
 };
+#pragma pack(pop)
 DUMPER7_ASSERTS_UBaseDynamicMeshComponent;
 
 // Class GeometryFramework.DynamicMeshComponent
 // 0x0330 (0x0930 - 0x0600)
-class UDynamicMeshComponent final : public UBaseDynamicMeshComponent
+class UDynamicMeshComponent final : public UBaseDynamicMeshComponent, public IInterface_CollisionDataProvider
 {
 public:
 	class UDynamicMesh*                           MeshObject;                                        // 0x0600(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
@@ -326,10 +336,10 @@ DUMPER7_ASSERTS_UDynamicMeshGenerator;
 
 // Class GeometryFramework.DynamicMesh
 // 0x00A8 (0x00D0 - 0x0028)
-class UDynamicMesh final : public UObject
+class UDynamicMesh final : public UObject, public IMeshVertexCommandChangeTarget, public IMeshCommandChangeTarget, public IMeshReplacementCommandChangeTarget
 {
 public:
-	uint8                                         Pad_28[0x58];                                      // 0x0028(0x0058)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_40[0x40];                                      // 0x0040(0x0040)(Fixing Size After Last Property [ Dumper-7 ])
 	TMulticastInlineDelegate<void(class UDynamicMesh* Mesh)> MeshModifiedBPEvent;                    // 0x0080(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	uint8                                         Pad_98[0x28];                                      // 0x0098(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
 	class UDynamicMeshGenerator*                  MeshGenerator;                                     // 0x00C0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)

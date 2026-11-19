@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UBTService_Melee_Tier3_Actor_UpdateAnimState_C::ExecuteUbergraph_BTService_Melee_Tier3_Actor_UpdateAnimState(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTService_Melee_Tier3_Actor_UpdateAnimState_C", "ExecuteUbergraph_BTService_Melee_Tier3_Actor_UpdateAnimState");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BTService_Melee_Tier3_Actor_UpdateAnimState_C", "ExecuteUbergraph_BTService_Melee_Tier3_Actor_UpdateAnimState", FuncInfo);
 
 	Params::BTService_Melee_Tier3_Actor_UpdateAnimState_C_ExecuteUbergraph_BTService_Melee_Tier3_Actor_UpdateAnimState Parms{};
 
@@ -45,10 +43,8 @@ void UBTService_Melee_Tier3_Actor_UpdateAnimState_C::ExecuteUbergraph_BTService_
 
 void UBTService_Melee_Tier3_Actor_UpdateAnimState_C::ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTService_Melee_Tier3_Actor_UpdateAnimState_C", "ReceiveTickAI");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveTickAI", FnName));
 
 	Params::BTService_Melee_Tier3_Actor_UpdateAnimState_C_ReceiveTickAI Parms{};
 

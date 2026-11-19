@@ -19,9 +19,12 @@
 SDK_NAMESPACE_START
 
 // Class AuCamera.AuCameraInterface
-// 0x0000 (0x0000 - 0x0000)
-class IAuCameraInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IAuCameraInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	void AddAdditiveModifier(const struct FAuCameraAdditiveHandle& InNewConfig);
 	void RemoveAdditiveModifier(const struct FAuCameraAdditiveHandle& InNewConfig);

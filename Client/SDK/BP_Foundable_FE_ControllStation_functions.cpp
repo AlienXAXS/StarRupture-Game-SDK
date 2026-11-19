@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_Foundable_FE_ControllStation_C::ExecuteUbergraph_BP_Foundable_FE_ControllStation(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Foundable_FE_ControllStation_C", "ExecuteUbergraph_BP_Foundable_FE_ControllStation");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Foundable_FE_ControllStation_C", "ExecuteUbergraph_BP_Foundable_FE_ControllStation", FuncInfo);
 
 	Params::BP_Foundable_FE_ControllStation_C_ExecuteUbergraph_BP_Foundable_FE_ControllStation Parms{};
 
@@ -41,10 +39,8 @@ void ABP_Foundable_FE_ControllStation_C::ExecuteUbergraph_BP_Foundable_FE_Contro
 
 void ABP_Foundable_FE_ControllStation_C::OnStarageEmpriedEvent()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Foundable_FE_ControllStation_C", "OnStarageEmpriedEvent");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnStarageEmpriedEvent", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -57,10 +53,8 @@ void ABP_Foundable_FE_ControllStation_C::OnStarageEmpriedEvent()
 
 bool ABP_Foundable_FE_ControllStation_C::OnStorageEmptied()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Foundable_FE_ControllStation_C", "OnStorageEmptied");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnStorageEmptied", FnName));
 
 	Params::BP_Foundable_FE_ControllStation_C_OnStorageEmptied Parms{};
 
@@ -75,10 +69,8 @@ bool ABP_Foundable_FE_ControllStation_C::OnStorageEmptied()
 
 void ABP_Foundable_FE_ControllStation_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Foundable_FE_ControllStation_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -89,10 +81,8 @@ void ABP_Foundable_FE_ControllStation_C::ReceiveBeginPlay()
 
 void ABP_Foundable_FE_ControllStation_C::Timeline_0__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Foundable_FE_ControllStation_C", "Timeline_0__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline_0__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -103,10 +93,8 @@ void ABP_Foundable_FE_ControllStation_C::Timeline_0__FinishedFunc()
 
 void ABP_Foundable_FE_ControllStation_C::Timeline_0__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Foundable_FE_ControllStation_C", "Timeline_0__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline_0__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -117,10 +105,8 @@ void ABP_Foundable_FE_ControllStation_C::Timeline_0__UpdateFunc()
 
 void ABP_Foundable_FE_ControllStation_C::Timeline__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Foundable_FE_ControllStation_C", "Timeline__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -131,10 +117,8 @@ void ABP_Foundable_FE_ControllStation_C::Timeline__FinishedFunc()
 
 void ABP_Foundable_FE_ControllStation_C::Timeline__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Foundable_FE_ControllStation_C", "Timeline__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

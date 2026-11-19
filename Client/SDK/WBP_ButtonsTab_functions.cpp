@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_ButtonsTab_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ButtonsTab_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -37,10 +35,8 @@ void UWBP_ButtonsTab_C::Construct()
 
 void UWBP_ButtonsTab_C::ExecuteUbergraph_WBP_ButtonsTab(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ButtonsTab_C", "ExecuteUbergraph_WBP_ButtonsTab");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_ButtonsTab_C", "ExecuteUbergraph_WBP_ButtonsTab", FuncInfo);
 
 	Params::WBP_ButtonsTab_C_ExecuteUbergraph_WBP_ButtonsTab Parms{};
 
@@ -58,10 +54,8 @@ void UWBP_ButtonsTab_C::ExecuteUbergraph_WBP_ButtonsTab(int32 EntryPoint)
 
 void UWBP_ButtonsTab_C::IndexToButton(int32 InButton, class UButton** OutButton)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ButtonsTab_C", "IndexToButton");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IndexToButton", FnName));
 
 	Params::WBP_ButtonsTab_C_IndexToButton Parms{};
 
@@ -81,10 +75,8 @@ void UWBP_ButtonsTab_C::IndexToButton(int32 InButton, class UButton** OutButton)
 
 void UWBP_ButtonsTab_C::Set_Alignment(EHorizontalAlignment InAlignment)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ButtonsTab_C", "Set Alignment");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Set Alignment", FnName));
 
 	Params::WBP_ButtonsTab_C_Set_Alignment Parms{};
 

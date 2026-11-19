@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_PlayerInfoBackground_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_PlayerInfoBackground_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -37,10 +35,8 @@ void UWBP_PlayerInfoBackground_C::Construct()
 
 void UWBP_PlayerInfoBackground_C::ExecuteUbergraph_WBP_PlayerInfoBackground(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_PlayerInfoBackground_C", "ExecuteUbergraph_WBP_PlayerInfoBackground");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_PlayerInfoBackground_C", "ExecuteUbergraph_WBP_PlayerInfoBackground", FuncInfo);
 
 	Params::WBP_PlayerInfoBackground_C_ExecuteUbergraph_WBP_PlayerInfoBackground Parms{};
 

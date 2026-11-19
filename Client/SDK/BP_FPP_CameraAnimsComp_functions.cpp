@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UBP_FPP_CameraAnimsComp_C::ExecuteUbergraph_BP_FPP_CameraAnimsComp(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FPP_CameraAnimsComp_C", "ExecuteUbergraph_BP_FPP_CameraAnimsComp");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_FPP_CameraAnimsComp_C", "ExecuteUbergraph_BP_FPP_CameraAnimsComp", FuncInfo);
 
 	Params::BP_FPP_CameraAnimsComp_C_ExecuteUbergraph_BP_FPP_CameraAnimsComp Parms{};
 
@@ -43,10 +41,8 @@ void UBP_FPP_CameraAnimsComp_C::ExecuteUbergraph_BP_FPP_CameraAnimsComp(int32 En
 
 void UBP_FPP_CameraAnimsComp_C::GetOwningCameraSpringArm(class USpringArmComponent** Camera)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FPP_CameraAnimsComp_C", "GetOwningCameraSpringArm");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetOwningCameraSpringArm", FnName));
 
 	Params::BP_FPP_CameraAnimsComp_C_GetOwningCameraSpringArm Parms{};
 
@@ -64,10 +60,8 @@ void UBP_FPP_CameraAnimsComp_C::GetOwningCameraSpringArm(class USpringArmCompone
 
 void UBP_FPP_CameraAnimsComp_C::GetOwningPlayerController(class APlayerController** Player_Controller)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FPP_CameraAnimsComp_C", "GetOwningPlayerController");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetOwningPlayerController", FnName));
 
 	Params::BP_FPP_CameraAnimsComp_C_GetOwningPlayerController Parms{};
 
@@ -85,10 +79,8 @@ void UBP_FPP_CameraAnimsComp_C::GetOwningPlayerController(class APlayerControlle
 
 void UBP_FPP_CameraAnimsComp_C::GetOwningSkeletalMeshComponent(class USkeletalMeshComponent** Skeletal_Mesh_Comp)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FPP_CameraAnimsComp_C", "GetOwningSkeletalMeshComponent");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetOwningSkeletalMeshComponent", FnName));
 
 	Params::BP_FPP_CameraAnimsComp_C_GetOwningSkeletalMeshComponent Parms{};
 
@@ -106,10 +98,8 @@ void UBP_FPP_CameraAnimsComp_C::GetOwningSkeletalMeshComponent(class USkeletalMe
 
 void UBP_FPP_CameraAnimsComp_C::ReceiveTick(float DeltaSeconds)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FPP_CameraAnimsComp_C", "ReceiveTick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveTick", FnName));
 
 	Params::BP_FPP_CameraAnimsComp_C_ReceiveTick Parms{};
 
@@ -126,10 +116,8 @@ void UBP_FPP_CameraAnimsComp_C::ReceiveTick(float DeltaSeconds)
 
 void UBP_FPP_CameraAnimsComp_C::SetCameraAnimEnabled(bool New_Enabled)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FPP_CameraAnimsComp_C", "SetCameraAnimEnabled");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetCameraAnimEnabled", FnName));
 
 	Params::BP_FPP_CameraAnimsComp_C_SetCameraAnimEnabled Parms{};
 
@@ -146,10 +134,8 @@ void UBP_FPP_CameraAnimsComp_C::SetCameraAnimEnabled(bool New_Enabled)
 
 void UBP_FPP_CameraAnimsComp_C::UpdateCameraLocation(double Delta_Seconds)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FPP_CameraAnimsComp_C", "UpdateCameraLocation");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateCameraLocation", FnName));
 
 	Params::BP_FPP_CameraAnimsComp_C_UpdateCameraLocation Parms{};
 
@@ -166,10 +152,8 @@ void UBP_FPP_CameraAnimsComp_C::UpdateCameraLocation(double Delta_Seconds)
 
 void UBP_FPP_CameraAnimsComp_C::UpdateCameraRotation(double Delta_Seconds)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FPP_CameraAnimsComp_C", "UpdateCameraRotation");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateCameraRotation", FnName));
 
 	Params::BP_FPP_CameraAnimsComp_C_UpdateCameraRotation Parms{};
 
@@ -184,10 +168,8 @@ void UBP_FPP_CameraAnimsComp_C::UpdateCameraRotation(double Delta_Seconds)
 
 void UBP_FPP_CameraAnimsComp_C::ZeroBlendPitch()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FPP_CameraAnimsComp_C", "ZeroBlendPitch");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ZeroBlendPitch", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -198,10 +180,8 @@ void UBP_FPP_CameraAnimsComp_C::ZeroBlendPitch()
 
 void UBP_FPP_CameraAnimsComp_C::ZeroBlendPitchTimer()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FPP_CameraAnimsComp_C", "ZeroBlendPitchTimer");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ZeroBlendPitchTimer", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

@@ -657,10 +657,8 @@ void AAuAbilityActor::NativeOnActorOverlapStart(class UPrimitiveComponent* Overl
 
 void AAuAbilityActor::OnActorHit(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, const struct FVector& NormalImpulse, const struct FHitResult& Hit)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuAbilityActor", "OnActorHit");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnActorHit", FnName));
 
 	Params::AuAbilityActor_OnActorHit Parms{};
 
@@ -684,10 +682,8 @@ void AAuAbilityActor::OnActorHit(class UPrimitiveComponent* HitComponent, class 
 
 void AAuAbilityActor::OnActorOverlapEnd(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuAbilityActor", "OnActorOverlapEnd");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnActorOverlapEnd", FnName));
 
 	Params::AuAbilityActor_OnActorOverlapEnd Parms{};
 
@@ -712,10 +708,8 @@ void AAuAbilityActor::OnActorOverlapEnd(class UPrimitiveComponent* OverlappedCom
 
 void AAuAbilityActor::OnActorOverlapStart(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuAbilityActor", "OnActorOverlapStart");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnActorOverlapStart", FnName));
 
 	Params::AuAbilityActor_OnActorOverlapStart Parms{};
 
@@ -1570,10 +1564,8 @@ TArray<struct FActiveGameplayEffectHandle> UAuGameplayAbility::ApplyEffectsFromI
 
 void UAuGameplayAbility::BP_OnAvatarSet(const struct FGameplayAbilityActorInfo& ActorInfo, const struct FGameplayAbilitySpec& Spec)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuGameplayAbility", "BP_OnAvatarSet");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnAvatarSet", FnName));
 
 	Params::AuGameplayAbility_BP_OnAvatarSet Parms{};
 
@@ -1592,10 +1584,8 @@ void UAuGameplayAbility::BP_OnAvatarSet(const struct FGameplayAbilityActorInfo& 
 
 void UAuGameplayAbility::BP_OnGiveAbility(const struct FGameplayAbilityActorInfo& ActorInfo, const struct FGameplayAbilitySpec& Spec)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuGameplayAbility", "BP_OnGiveAbility");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnGiveAbility", FnName));
 
 	Params::AuGameplayAbility_BP_OnGiveAbility Parms{};
 
@@ -1611,10 +1601,8 @@ void UAuGameplayAbility::BP_OnGiveAbility(const struct FGameplayAbilityActorInfo
 
 void UAuGameplayAbility::BP_OnItemAssigned()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuGameplayAbility", "BP_OnItemAssigned");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnItemAssigned", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1627,10 +1615,8 @@ void UAuGameplayAbility::BP_OnItemAssigned()
 
 void UAuGameplayAbility::BP_OnRemoveAbility(const struct FGameplayAbilitySpec& AbilitySpec)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuGameplayAbility", "BP_OnRemoveAbility");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnRemoveAbility", FnName));
 
 	Params::AuGameplayAbility_BP_OnRemoveAbility Parms{};
 
@@ -1726,10 +1712,8 @@ struct FActiveGameplayEffectHandle UAuGameplayAbility::GetGrantedEffectHandle()
 
 void UAuGameplayAbility::OnClientTraceResult(const struct FAuTargetData& OutHits, const TArray<struct FHitResult>& RawHits, bool bServerConfirmed)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuGameplayAbility", "OnClientTraceResult");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnClientTraceResult", FnName));
 
 	Params::AuGameplayAbility_OnClientTraceResult Parms{};
 
@@ -1750,10 +1734,8 @@ void UAuGameplayAbility::OnClientTraceResult(const struct FAuTargetData& OutHits
 
 void UAuGameplayAbility::OnServerTraceResult(const struct FAuTargetData& OutHits, const TArray<struct FHitResult>& RawHits, bool bServerConfirmed)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuGameplayAbility", "OnServerTraceResult");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnServerTraceResult", FnName));
 
 	Params::AuGameplayAbility_OnServerTraceResult Parms{};
 
@@ -1944,10 +1926,8 @@ void UAuGameplayAbility::StartCustomTargetTrace(const struct FAuCustomTraceDataH
 
 void UAuGameplayAbility::BP_OnCanActivateAbilityFailed() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuGameplayAbility", "BP_OnCanActivateAbilityFailed");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnCanActivateAbilityFailed", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1958,10 +1938,8 @@ void UAuGameplayAbility::BP_OnCanActivateAbilityFailed() const
 
 void UAuGameplayAbility::BP_OnCanActivateAbilitySuccess() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuGameplayAbility", "BP_OnCanActivateAbilitySuccess");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnCanActivateAbilitySuccess", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1972,10 +1950,8 @@ void UAuGameplayAbility::BP_OnCanActivateAbilitySuccess() const
 
 void UAuGameplayAbility::BP_OnCheckCostFailed() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuGameplayAbility", "BP_OnCheckCostFailed");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnCheckCostFailed", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1986,10 +1962,8 @@ void UAuGameplayAbility::BP_OnCheckCostFailed() const
 
 void UAuGameplayAbility::BP_OnCheckCostSuccess() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuGameplayAbility", "BP_OnCheckCostSuccess");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnCheckCostSuccess", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -2483,10 +2457,8 @@ void UAuActorGameplayAbility::NativeSpawnedActorOverlapHitEvent(class UPrimitive
 
 void UAuActorGameplayAbility::OnSpawnedActorOverlapBeginEvent(class AActor* Owner, class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuActorGameplayAbility", "OnSpawnedActorOverlapBeginEvent");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSpawnedActorOverlapBeginEvent", FnName));
 
 	Params::AuActorGameplayAbility_OnSpawnedActorOverlapBeginEvent Parms{};
 
@@ -2513,10 +2485,8 @@ void UAuActorGameplayAbility::OnSpawnedActorOverlapBeginEvent(class AActor* Owne
 
 void UAuActorGameplayAbility::OnSpawnedActorOverlapEndEvent(class AActor* Owner, class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuActorGameplayAbility", "OnSpawnedActorOverlapEndEvent");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSpawnedActorOverlapEndEvent", FnName));
 
 	Params::AuActorGameplayAbility_OnSpawnedActorOverlapEndEvent Parms{};
 
@@ -2542,10 +2512,8 @@ void UAuActorGameplayAbility::OnSpawnedActorOverlapEndEvent(class AActor* Owner,
 
 void UAuActorGameplayAbility::OnSpawnedActorOverlapHitEvent(class AActor* Owner, class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, const struct FVector& NormalImpulse, const struct FHitResult& Hit)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuActorGameplayAbility", "OnSpawnedActorOverlapHitEvent");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSpawnedActorOverlapHitEvent", FnName));
 
 	Params::AuActorGameplayAbility_OnSpawnedActorOverlapHitEvent Parms{};
 

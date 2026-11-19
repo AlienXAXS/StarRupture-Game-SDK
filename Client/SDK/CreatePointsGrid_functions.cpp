@@ -25,10 +25,8 @@ SDK_NAMESPACE_START
 
 void UCreatePointsGrid_C::ExecuteWithContext(struct FPCGContext& InContext, const struct FPCGDataCollection& Input, struct FPCGDataCollection* Output)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CreatePointsGrid_C", "ExecuteWithContext");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ExecuteWithContext", FnName));
 
 	Params::CreatePointsGrid_C_ExecuteWithContext Parms{};
 
@@ -51,10 +49,8 @@ void UCreatePointsGrid_C::ExecuteWithContext(struct FPCGContext& InContext, cons
 
 bool UCreatePointsGrid_C::IsCacheableOverride() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CreatePointsGrid_C", "IsCacheableOverride");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IsCacheableOverride", FnName));
 
 	Params::CreatePointsGrid_C_IsCacheableOverride Parms{};
 
@@ -77,10 +73,8 @@ bool UCreatePointsGrid_C::IsCacheableOverride() const
 
 bool UCreatePointsGrid_C::IterationLoopBody(const struct FPCGContext& InContext, int64 Iteration, const class UPCGSpatialData* InA, const class UPCGSpatialData* InB, struct FPCGPoint* OutPoint, class UPCGMetadata* OutMetadata) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CreatePointsGrid_C", "IterationLoopBody");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IterationLoopBody", FnName));
 
 	Params::CreatePointsGrid_C_IterationLoopBody Parms{};
 
@@ -106,10 +100,8 @@ bool UCreatePointsGrid_C::IterationLoopBody(const struct FPCGContext& InContext,
 
 struct FLinearColor UCreatePointsGrid_C::NodeColorOverride() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CreatePointsGrid_C", "NodeColorOverride");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"NodeColorOverride", FnName));
 
 	Params::CreatePointsGrid_C_NodeColorOverride Parms{};
 
@@ -126,10 +118,8 @@ struct FLinearColor UCreatePointsGrid_C::NodeColorOverride() const
 
 class FName UCreatePointsGrid_C::NodeTitleOverride() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CreatePointsGrid_C", "NodeTitleOverride");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"NodeTitleOverride", FnName));
 
 	Params::CreatePointsGrid_C_NodeTitleOverride Parms{};
 

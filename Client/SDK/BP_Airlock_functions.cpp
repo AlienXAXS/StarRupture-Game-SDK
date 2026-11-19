@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_Airlock_C::ExecuteUbergraph_BP_Airlock(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Airlock_C", "ExecuteUbergraph_BP_Airlock");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Airlock_C", "ExecuteUbergraph_BP_Airlock", FuncInfo);
 
 	Params::BP_Airlock_C_ExecuteUbergraph_BP_Airlock Parms{};
 
@@ -43,10 +41,8 @@ void ABP_Airlock_C::ExecuteUbergraph_BP_Airlock(int32 EntryPoint)
 
 void ABP_Airlock_C::OnOpenStateChanged(bool bInOpen)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Airlock_C", "OnOpenStateChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnOpenStateChanged", FnName));
 
 	Params::BP_Airlock_C_OnOpenStateChanged Parms{};
 
@@ -63,10 +59,8 @@ void ABP_Airlock_C::OnOpenStateChanged(bool bInOpen)
 
 void ABP_Airlock_C::PlayInteractionUnSuccessfulSound(EDoorState DoorState)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Airlock_C", "PlayInteractionUnSuccessfulSound");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PlayInteractionUnSuccessfulSound", FnName));
 
 	Params::BP_Airlock_C_PlayInteractionUnSuccessfulSound Parms{};
 
@@ -83,10 +77,8 @@ void ABP_Airlock_C::PlayInteractionUnSuccessfulSound(EDoorState DoorState)
 
 void ABP_Airlock_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Airlock_C", "PostPlayBuildingEffect");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PostPlayBuildingEffect", FnName));
 
 	Params::BP_Airlock_C_PostPlayBuildingEffect Parms{};
 
@@ -101,10 +93,8 @@ void ABP_Airlock_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed)
 
 void ABP_Airlock_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Airlock_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -117,10 +107,8 @@ void ABP_Airlock_C::ReceiveBeginPlay()
 
 const class UShapeComponent* ABP_Airlock_C::GetAirlockHabitatExteriorComponent() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Airlock_C", "GetAirlockHabitatExteriorComponent");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetAirlockHabitatExteriorComponent", FnName));
 
 	Params::BP_Airlock_C_GetAirlockHabitatExteriorComponent Parms{};
 
@@ -137,10 +125,8 @@ const class UShapeComponent* ABP_Airlock_C::GetAirlockHabitatExteriorComponent()
 
 const class UShapeComponent* ABP_Airlock_C::GetAirlockInteriorComponent() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Airlock_C", "GetAirlockInteriorComponent");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetAirlockInteriorComponent", FnName));
 
 	Params::BP_Airlock_C_GetAirlockInteriorComponent Parms{};
 

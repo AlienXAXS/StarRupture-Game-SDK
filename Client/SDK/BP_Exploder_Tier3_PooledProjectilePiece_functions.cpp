@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_Exploder_Tier3_PooledProjectilePiece_C::AddInstantInfectionToCharacter(class ACharacter* InCharacter)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectilePiece_C", "AddInstantInfectionToCharacter");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AddInstantInfectionToCharacter", FnName));
 
 	Params::BP_Exploder_Tier3_PooledProjectilePiece_C_AddInstantInfectionToCharacter Parms{};
 
@@ -43,10 +41,8 @@ void ABP_Exploder_Tier3_PooledProjectilePiece_C::AddInstantInfectionToCharacter(
 
 void ABP_Exploder_Tier3_PooledProjectilePiece_C::ExecuteUbergraph_BP_Exploder_Tier3_PooledProjectilePiece(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectilePiece_C", "ExecuteUbergraph_BP_Exploder_Tier3_PooledProjectilePiece");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Exploder_Tier3_PooledProjectilePiece_C", "ExecuteUbergraph_BP_Exploder_Tier3_PooledProjectilePiece", FuncInfo);
 
 	Params::BP_Exploder_Tier3_PooledProjectilePiece_C_ExecuteUbergraph_BP_Exploder_Tier3_PooledProjectilePiece Parms{};
 
@@ -63,10 +59,8 @@ void ABP_Exploder_Tier3_PooledProjectilePiece_C::ExecuteUbergraph_BP_Exploder_Ti
 
 void ABP_Exploder_Tier3_PooledProjectilePiece_C::OnHit(const struct FHitResult& HitResult)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectilePiece_C", "OnHit");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnHit", FnName));
 
 	Params::BP_Exploder_Tier3_PooledProjectilePiece_C_OnHit Parms{};
 
@@ -83,10 +77,8 @@ void ABP_Exploder_Tier3_PooledProjectilePiece_C::OnHit(const struct FHitResult& 
 
 void ABP_Exploder_Tier3_PooledProjectilePiece_C::OnProjectileShot(const struct FCrAiProjectileParameters& InProjectileParameters)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectilePiece_C", "OnProjectileShot");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnProjectileShot", FnName));
 
 	Params::BP_Exploder_Tier3_PooledProjectilePiece_C_OnProjectileShot Parms{};
 

@@ -11,6 +11,7 @@
 #include "Basic.hpp"
 
 #include "GameplayTags_structs.hpp"
+#include "GameplayTags_parameters.hpp"
 #include "GameplayAbilities_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
@@ -18,6 +19,48 @@
 
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
+
+// Function GameplayTags.GameplayTagAssetInterface.BP_GetOwnedGameplayTags
+// 0x0020 (0x0020 - 0x0000)
+struct GameplayTagAssetInterface_BP_GetOwnedGameplayTags final
+{
+public:
+	struct FGameplayTagContainer                  ReturnValue;                                       // 0x0000(0x0020)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GameplayTagAssetInterface_BP_GetOwnedGameplayTags;
+
+// Function GameplayTags.GameplayTagAssetInterface.HasAllMatchingGameplayTags
+// 0x0028 (0x0028 - 0x0000)
+struct GameplayTagAssetInterface_HasAllMatchingGameplayTags final
+{
+public:
+	struct FGameplayTagContainer                  TagContainer;                                      // 0x0000(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_GameplayTagAssetInterface_HasAllMatchingGameplayTags;
+
+// Function GameplayTags.GameplayTagAssetInterface.HasAnyMatchingGameplayTags
+// 0x0028 (0x0028 - 0x0000)
+struct GameplayTagAssetInterface_HasAnyMatchingGameplayTags final
+{
+public:
+	struct FGameplayTagContainer                  TagContainer;                                      // 0x0000(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_GameplayTagAssetInterface_HasAnyMatchingGameplayTags;
+
+// Function GameplayTags.GameplayTagAssetInterface.HasMatchingGameplayTag
+// 0x000C (0x000C - 0x0000)
+struct GameplayTagAssetInterface_HasMatchingGameplayTag final
+{
+public:
+	struct FGameplayTag                           TagToCheck;                                        // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_GameplayTagAssetInterface_HasMatchingGameplayTag;
 
 // Function GameplayAbilities.AbilityTask_WaitAbilityActivate.WaitForAbilityActivate
 // 0x0028 (0x0028 - 0x0000)
@@ -3865,6 +3908,17 @@ public:
 };
 DUMPER7_ASSERTS_AbilitySystemComponent_MakeOutgoingSpec;
 
+// Function GameplayAbilities.GameplayCueInterface.BlueprintCustomHandler
+// 0x00E0 (0x00E0 - 0x0000)
+struct GameplayCueInterface_BlueprintCustomHandler final
+{
+public:
+	EGameplayCueEvent                             EventType;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x00D8)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GameplayCueInterface_BlueprintCustomHandler;
+
 // Function GameplayAbilities.GameplayCueFunctionLibrary.AddGameplayCueOnActor
 // 0x00E8 (0x00E8 - 0x0000)
 struct GameplayCueFunctionLibrary_AddGameplayCueOnActor final
@@ -3907,17 +3961,6 @@ public:
 	struct FGameplayCueParameters                 Parameters;                                        // 0x0010(0x00D8)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_GameplayCueFunctionLibrary_RemoveGameplayCueOnActor;
-
-// Function GameplayAbilities.GameplayCueInterface.BlueprintCustomHandler
-// 0x00E0 (0x00E0 - 0x0000)
-struct GameplayCueInterface_BlueprintCustomHandler final
-{
-public:
-	EGameplayCueEvent                             EventType;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FGameplayCueParameters                 Parameters;                                        // 0x0008(0x00D8)(ConstParm, Parm, OutParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_GameplayCueInterface_BlueprintCustomHandler;
 
 // Function GameplayAbilities.GameplayCueNotify_Actor.K2_HandleGameplayCue
 // 0x00E8 (0x00E8 - 0x0000)

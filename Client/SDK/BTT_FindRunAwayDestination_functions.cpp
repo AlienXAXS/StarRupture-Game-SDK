@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UBTT_FindRunAwayDestination_C::ExecuteUbergraph_BTT_FindRunAwayDestination(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTT_FindRunAwayDestination_C", "ExecuteUbergraph_BTT_FindRunAwayDestination");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BTT_FindRunAwayDestination_C", "ExecuteUbergraph_BTT_FindRunAwayDestination", FuncInfo);
 
 	Params::BTT_FindRunAwayDestination_C_ExecuteUbergraph_BTT_FindRunAwayDestination Parms{};
 
@@ -44,10 +42,8 @@ void UBTT_FindRunAwayDestination_C::ExecuteUbergraph_BTT_FindRunAwayDestination(
 
 void UBTT_FindRunAwayDestination_C::ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTT_FindRunAwayDestination_C", "ReceiveExecuteAI");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveExecuteAI", FnName));
 
 	Params::BTT_FindRunAwayDestination_C_ReceiveExecuteAI Parms{};
 

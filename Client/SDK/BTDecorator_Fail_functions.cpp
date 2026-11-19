@@ -24,10 +24,8 @@ SDK_NAMESPACE_START
 
 bool UBTDecorator_Fail_C::PerformConditionCheck(class AActor* OwnerActor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTDecorator_Fail_C", "PerformConditionCheck");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PerformConditionCheck", FnName));
 
 	Params::BTDecorator_Fail_C_PerformConditionCheck Parms{};
 

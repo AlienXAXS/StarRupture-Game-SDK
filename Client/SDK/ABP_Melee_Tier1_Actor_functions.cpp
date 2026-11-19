@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UABP_Melee_Tier1_Actor_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "AnimGraph");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimGraph", FnName));
 
 	Params::ABP_Melee_Tier1_Actor_C_AnimGraph Parms{};
 
@@ -42,10 +40,8 @@ void UABP_Melee_Tier1_Actor_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 
 void UABP_Melee_Tier1_Actor_C::AnimNotify_AnimationFinishedEvent()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "AnimNotify_AnimationFinishedEvent");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_AnimationFinishedEvent", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -56,10 +52,8 @@ void UABP_Melee_Tier1_Actor_C::AnimNotify_AnimationFinishedEvent()
 
 void UABP_Melee_Tier1_Actor_C::AnimNotify_DealDamage()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "AnimNotify_DealDamage");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_DealDamage", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -70,10 +64,8 @@ void UABP_Melee_Tier1_Actor_C::AnimNotify_DealDamage()
 
 void UABP_Melee_Tier1_Actor_C::AnimNotify_EndAnimAction()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "AnimNotify_EndAnimAction");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_EndAnimAction", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -84,10 +76,8 @@ void UABP_Melee_Tier1_Actor_C::AnimNotify_EndAnimAction()
 
 void UABP_Melee_Tier1_Actor_C::AnimNotify_HitVO_Start()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "AnimNotify_HitVO_Start");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_HitVO_Start", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -98,10 +88,8 @@ void UABP_Melee_Tier1_Actor_C::AnimNotify_HitVO_Start()
 
 void UABP_Melee_Tier1_Actor_C::AnimNotify_HitVO_Start2()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "AnimNotify_HitVO_Start2");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_HitVO_Start2", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -112,10 +100,8 @@ void UABP_Melee_Tier1_Actor_C::AnimNotify_HitVO_Start2()
 
 void UABP_Melee_Tier1_Actor_C::AnimNotify_HitVO_Start3()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "AnimNotify_HitVO_Start3");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_HitVO_Start3", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -126,10 +112,8 @@ void UABP_Melee_Tier1_Actor_C::AnimNotify_HitVO_Start3()
 
 void UABP_Melee_Tier1_Actor_C::AnimNotify_HitVO_Start4()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "AnimNotify_HitVO_Start4");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_HitVO_Start4", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -140,10 +124,8 @@ void UABP_Melee_Tier1_Actor_C::AnimNotify_HitVO_Start4()
 
 void UABP_Melee_Tier1_Actor_C::AnimNotify_HitVO_Start5()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "AnimNotify_HitVO_Start5");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_HitVO_Start5", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -154,10 +136,8 @@ void UABP_Melee_Tier1_Actor_C::AnimNotify_HitVO_Start5()
 
 void UABP_Melee_Tier1_Actor_C::AnimNotify_Jumped()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "AnimNotify_Jumped");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_Jumped", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -168,10 +148,8 @@ void UABP_Melee_Tier1_Actor_C::AnimNotify_Jumped()
 
 void UABP_Melee_Tier1_Actor_C::AnimNotify_OnAiLanded()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "AnimNotify_OnAiLanded");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_OnAiLanded", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -182,10 +160,8 @@ void UABP_Melee_Tier1_Actor_C::AnimNotify_OnAiLanded()
 
 void UABP_Melee_Tier1_Actor_C::AnimNotify_OnAttackEnd()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "AnimNotify_OnAttackEnd");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_OnAttackEnd", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -196,10 +172,8 @@ void UABP_Melee_Tier1_Actor_C::AnimNotify_OnAttackEnd()
 
 void UABP_Melee_Tier1_Actor_C::AnimNotify_OnAttackInPlaceEnd()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "AnimNotify_OnAttackInPlaceEnd");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_OnAttackInPlaceEnd", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -210,10 +184,8 @@ void UABP_Melee_Tier1_Actor_C::AnimNotify_OnAttackInPlaceEnd()
 
 void UABP_Melee_Tier1_Actor_C::AnimNotify_OnTransition_AttackInPlace()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "AnimNotify_OnTransition_AttackInPlace");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_OnTransition_AttackInPlace", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -224,10 +196,8 @@ void UABP_Melee_Tier1_Actor_C::AnimNotify_OnTransition_AttackInPlace()
 
 void UABP_Melee_Tier1_Actor_C::AnimNotify_OnTransition_Dead()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "AnimNotify_OnTransition_Dead");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_OnTransition_Dead", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -238,10 +208,8 @@ void UABP_Melee_Tier1_Actor_C::AnimNotify_OnTransition_Dead()
 
 void UABP_Melee_Tier1_Actor_C::AnimNotify_OnTransition_IdleA()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "AnimNotify_OnTransition_IdleA");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_OnTransition_IdleA", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -252,10 +220,8 @@ void UABP_Melee_Tier1_Actor_C::AnimNotify_OnTransition_IdleA()
 
 void UABP_Melee_Tier1_Actor_C::AnimNotify_OnTransition_IdleBEnd()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "AnimNotify_OnTransition_IdleBEnd");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_OnTransition_IdleBEnd", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -266,10 +232,8 @@ void UABP_Melee_Tier1_Actor_C::AnimNotify_OnTransition_IdleBEnd()
 
 void UABP_Melee_Tier1_Actor_C::AnimNotify_OnTransition_IdleBLoop()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "AnimNotify_OnTransition_IdleBLoop");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_OnTransition_IdleBLoop", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -280,10 +244,8 @@ void UABP_Melee_Tier1_Actor_C::AnimNotify_OnTransition_IdleBLoop()
 
 void UABP_Melee_Tier1_Actor_C::AnimNotify_OnTransition_IdleBStart()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "AnimNotify_OnTransition_IdleBStart");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_OnTransition_IdleBStart", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -294,10 +256,8 @@ void UABP_Melee_Tier1_Actor_C::AnimNotify_OnTransition_IdleBStart()
 
 void UABP_Melee_Tier1_Actor_C::AnimNotify_OnTransition_IdleCEnd()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "AnimNotify_OnTransition_IdleCEnd");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_OnTransition_IdleCEnd", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -308,10 +268,8 @@ void UABP_Melee_Tier1_Actor_C::AnimNotify_OnTransition_IdleCEnd()
 
 void UABP_Melee_Tier1_Actor_C::AnimNotify_OnTransition_IdleCLoop()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "AnimNotify_OnTransition_IdleCLoop");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_OnTransition_IdleCLoop", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -322,10 +280,8 @@ void UABP_Melee_Tier1_Actor_C::AnimNotify_OnTransition_IdleCLoop()
 
 void UABP_Melee_Tier1_Actor_C::AnimNotify_OnTransition_IdleCStart()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "AnimNotify_OnTransition_IdleCStart");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_OnTransition_IdleCStart", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -336,10 +292,8 @@ void UABP_Melee_Tier1_Actor_C::AnimNotify_OnTransition_IdleCStart()
 
 void UABP_Melee_Tier1_Actor_C::AnimNotify_OnTransition_Jump()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "AnimNotify_OnTransition_Jump");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_OnTransition_Jump", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -350,10 +304,8 @@ void UABP_Melee_Tier1_Actor_C::AnimNotify_OnTransition_Jump()
 
 void UABP_Melee_Tier1_Actor_C::AnimNotify_OnTransition_JumpAttack()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "AnimNotify_OnTransition_JumpAttack");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_OnTransition_JumpAttack", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -364,10 +316,8 @@ void UABP_Melee_Tier1_Actor_C::AnimNotify_OnTransition_JumpAttack()
 
 void UABP_Melee_Tier1_Actor_C::AnimNotify_OnTransition_RangedAttack()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "AnimNotify_OnTransition_RangedAttack");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_OnTransition_RangedAttack", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -378,10 +328,8 @@ void UABP_Melee_Tier1_Actor_C::AnimNotify_OnTransition_RangedAttack()
 
 void UABP_Melee_Tier1_Actor_C::AnimNotify_OnTransition_Spawn()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "AnimNotify_OnTransition_Spawn");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_OnTransition_Spawn", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -392,10 +340,8 @@ void UABP_Melee_Tier1_Actor_C::AnimNotify_OnTransition_Spawn()
 
 void UABP_Melee_Tier1_Actor_C::AnimNotify_OnTransition_Strafe()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "AnimNotify_OnTransition_Strafe");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_OnTransition_Strafe", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -406,10 +352,8 @@ void UABP_Melee_Tier1_Actor_C::AnimNotify_OnTransition_Strafe()
 
 void UABP_Melee_Tier1_Actor_C::AnimNotify_OnTransition_Taunt()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "AnimNotify_OnTransition_Taunt");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_OnTransition_Taunt", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -420,10 +364,8 @@ void UABP_Melee_Tier1_Actor_C::AnimNotify_OnTransition_Taunt()
 
 void UABP_Melee_Tier1_Actor_C::AnimNotify_OnTransition_Walk()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "AnimNotify_OnTransition_Walk");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_OnTransition_Walk", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -437,10 +379,8 @@ void UABP_Melee_Tier1_Actor_C::AnimNotify_OnTransition_Walk()
 
 void UABP_Melee_Tier1_Actor_C::AttackConduitOnUpdate(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "AttackConduitOnUpdate");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AttackConduitOnUpdate", FnName));
 
 	Params::ABP_Melee_Tier1_Actor_C_AttackConduitOnUpdate Parms{};
 
@@ -456,10 +396,8 @@ void UABP_Melee_Tier1_Actor_C::AttackConduitOnUpdate(const struct FAnimUpdateCon
 
 void UABP_Melee_Tier1_Actor_C::BlueprintBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "BlueprintBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BlueprintBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -472,10 +410,8 @@ void UABP_Melee_Tier1_Actor_C::BlueprintBeginPlay()
 
 void UABP_Melee_Tier1_Actor_C::BlueprintUpdateAnimation(float DeltaTimeX)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "BlueprintUpdateAnimation");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BlueprintUpdateAnimation", FnName));
 
 	Params::ABP_Melee_Tier1_Actor_C_BlueprintUpdateAnimation Parms{};
 
@@ -493,10 +429,8 @@ void UABP_Melee_Tier1_Actor_C::BlueprintUpdateAnimation(float DeltaTimeX)
 
 void UABP_Melee_Tier1_Actor_C::BPOnAttackTypeChanged(ECrEnemyAttackType OldAttackType, ECrEnemyAttackType NewAttackType)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "BPOnAttackTypeChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BPOnAttackTypeChanged", FnName));
 
 	Params::ABP_Melee_Tier1_Actor_C_BPOnAttackTypeChanged Parms{};
 
@@ -512,10 +446,8 @@ void UABP_Melee_Tier1_Actor_C::BPOnAttackTypeChanged(ECrEnemyAttackType OldAttac
 
 void UABP_Melee_Tier1_Actor_C::BPOnDamageReceived()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "BPOnDamageReceived");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BPOnDamageReceived", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -529,10 +461,8 @@ void UABP_Melee_Tier1_Actor_C::BPOnDamageReceived()
 
 void UABP_Melee_Tier1_Actor_C::BPOnLocomotionTypeChanged(ECrEnemyLocomotionType OldLocomotionType, ECrEnemyLocomotionType NewLocomotionType)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "BPOnLocomotionTypeChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BPOnLocomotionTypeChanged", FnName));
 
 	Params::ABP_Melee_Tier1_Actor_C_BPOnLocomotionTypeChanged Parms{};
 
@@ -550,10 +480,8 @@ void UABP_Melee_Tier1_Actor_C::BPOnLocomotionTypeChanged(ECrEnemyLocomotionType 
 
 bool UABP_Melee_Tier1_Actor_C::CanUseAddWalkAdditive()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "CanUseAddWalkAdditive");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"CanUseAddWalkAdditive", FnName));
 
 	Params::ABP_Melee_Tier1_Actor_C_CanUseAddWalkAdditive Parms{};
 
@@ -568,10 +496,8 @@ bool UABP_Melee_Tier1_Actor_C::CanUseAddWalkAdditive()
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_BlendListByBool_2040AA4A44CBA72E035D738429D5D73D()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_BlendListByBool_2040AA4A44CBA72E035D738429D5D73D");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_BlendListByBool_2040AA4A44CBA72E035D738429D5D73D", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -582,10 +508,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_BlendListByBool_478531C5489FC81172876288B5972219()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_BlendListByBool_478531C5489FC81172876288B5972219");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_BlendListByBool_478531C5489FC81172876288B5972219", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -596,10 +520,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_BlendListByBool_498E55864D44957B994629B3E4B8D0B8()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_BlendListByBool_498E55864D44957B994629B3E4B8D0B8");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_BlendListByBool_498E55864D44957B994629B3E4B8D0B8", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -610,10 +532,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_BlendListByBool_7AC8E5214D1CE6F20B7685835D1F2CCD()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_BlendListByBool_7AC8E5214D1CE6F20B7685835D1F2CCD");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_BlendListByBool_7AC8E5214D1CE6F20B7685835D1F2CCD", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -624,10 +544,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_BlendListByBool_A9D98E684608A14FAF1D30BD23D89A9F()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_BlendListByBool_A9D98E684608A14FAF1D30BD23D89A9F");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_BlendListByBool_A9D98E684608A14FAF1D30BD23D89A9F", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -638,10 +556,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_BlendListByBool_B85FD48C4F49BDDEEEB33EBC2FDD7E00()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_BlendListByBool_B85FD48C4F49BDDEEEB33EBC2FDD7E00");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_BlendListByBool_B85FD48C4F49BDDEEEB33EBC2FDD7E00", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -652,10 +568,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_BlendListByBool_F4E2BBB846BBA5373CA0E380EF4D51FB()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_BlendListByBool_F4E2BBB846BBA5373CA0E380EF4D51FB");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_BlendListByBool_F4E2BBB846BBA5373CA0E380EF4D51FB", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -666,10 +580,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_BlendListByBool_F55E7EA94007B7853EA86EA6B02BB4DF()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_BlendListByBool_F55E7EA94007B7853EA86EA6B02BB4DF");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_BlendListByBool_F55E7EA94007B7853EA86EA6B02BB4DF", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -680,10 +592,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_BlendSpacePlayer_80349342460E933F867466A5F3D019A1()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_BlendSpacePlayer_80349342460E933F867466A5F3D019A1");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_BlendSpacePlayer_80349342460E933F867466A5F3D019A1", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -694,10 +604,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_0C90B7E64EDFF202D621A9A0E712154B()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_0C90B7E64EDFF202D621A9A0E712154B");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_0C90B7E64EDFF202D621A9A0E712154B", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -708,10 +616,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_15B204DE4A9B2DFAE75FB7AAE971E803()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_15B204DE4A9B2DFAE75FB7AAE971E803");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_15B204DE4A9B2DFAE75FB7AAE971E803", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -722,10 +628,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_161D897647FDCD3FFD507891ED059FDA()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_161D897647FDCD3FFD507891ED059FDA");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_161D897647FDCD3FFD507891ED059FDA", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -736,10 +640,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_163E1B0443912722B5FAA986DF01E9F6()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_163E1B0443912722B5FAA986DF01E9F6");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_163E1B0443912722B5FAA986DF01E9F6", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -750,10 +652,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_186387924C6941F56FEE2D960C8D9CAE()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_186387924C6941F56FEE2D960C8D9CAE");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_186387924C6941F56FEE2D960C8D9CAE", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -764,10 +664,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_18F26D984F5E93E15F1D7184B16E4A0D()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_18F26D984F5E93E15F1D7184B16E4A0D");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_18F26D984F5E93E15F1D7184B16E4A0D", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -778,10 +676,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_2BB1379448C85C3D0B2FD5860E082A0B()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_2BB1379448C85C3D0B2FD5860E082A0B");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_2BB1379448C85C3D0B2FD5860E082A0B", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -792,10 +688,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_3090BB8E4214EFCB007EC5B08FF20122()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_3090BB8E4214EFCB007EC5B08FF20122");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_3090BB8E4214EFCB007EC5B08FF20122", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -806,10 +700,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_3610FE8943BDB62A8F48BA8B7E549701()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_3610FE8943BDB62A8F48BA8B7E549701");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_3610FE8943BDB62A8F48BA8B7E549701", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -820,10 +712,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_39E44AE547BF565D29A4DB83D6A03DFF()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_39E44AE547BF565D29A4DB83D6A03DFF");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_39E44AE547BF565D29A4DB83D6A03DFF", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -834,10 +724,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_3EC3779A42908C3371558AA71B61174E()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_3EC3779A42908C3371558AA71B61174E");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_3EC3779A42908C3371558AA71B61174E", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -848,10 +736,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_42BDCF4D4903FADB3A3696A756022CD9()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_42BDCF4D4903FADB3A3696A756022CD9");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_42BDCF4D4903FADB3A3696A756022CD9", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -862,10 +748,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_432F4F654D741906970DB4B4EB040AB3()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_432F4F654D741906970DB4B4EB040AB3");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_432F4F654D741906970DB4B4EB040AB3", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -876,10 +760,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_4DD90A3F49F2176E9A930B821F800A92()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_4DD90A3F49F2176E9A930B821F800A92");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_4DD90A3F49F2176E9A930B821F800A92", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -890,10 +772,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_5517E5D942ED5918050DFABD645D6068()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_5517E5D942ED5918050DFABD645D6068");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_5517E5D942ED5918050DFABD645D6068", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -904,10 +784,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_60821E0F4DDE03BA49141E8724BE2F4E()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_60821E0F4DDE03BA49141E8724BE2F4E");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_60821E0F4DDE03BA49141E8724BE2F4E", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -918,10 +796,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_62D3F83644F89A1FBAF03D81F9305B67()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_62D3F83644F89A1FBAF03D81F9305B67");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_62D3F83644F89A1FBAF03D81F9305B67", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -932,10 +808,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_680861034527E5F2249565B86A750867()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_680861034527E5F2249565B86A750867");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_680861034527E5F2249565B86A750867", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -946,10 +820,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_69524C0F4C5A878AB16996980AB814D2()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_69524C0F4C5A878AB16996980AB814D2");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_69524C0F4C5A878AB16996980AB814D2", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -960,10 +832,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_6AA78A504C741FD73EC2DCA9E655253A()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_6AA78A504C741FD73EC2DCA9E655253A");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_6AA78A504C741FD73EC2DCA9E655253A", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -974,10 +844,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_71050E2740253A10862D91BA8E891DF1()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_71050E2740253A10862D91BA8E891DF1");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_71050E2740253A10862D91BA8E891DF1", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -988,10 +856,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_72996BD64F99A018D01E4AA5955975AD()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_72996BD64F99A018D01E4AA5955975AD");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_72996BD64F99A018D01E4AA5955975AD", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1002,10 +868,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_798D76344985D2DF06A59A876D7E006A()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_798D76344985D2DF06A59A876D7E006A");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_798D76344985D2DF06A59A876D7E006A", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1016,10 +880,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_7CAC9FF142B884DD8FA45AA12147B095()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_7CAC9FF142B884DD8FA45AA12147B095");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_7CAC9FF142B884DD8FA45AA12147B095", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1030,10 +892,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_89176BFC4B548823F26133934689D146()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_89176BFC4B548823F26133934689D146");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_89176BFC4B548823F26133934689D146", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1044,10 +904,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_8981E9B648D4851F90EFF5A91B6451A9()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_8981E9B648D4851F90EFF5A91B6451A9");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_8981E9B648D4851F90EFF5A91B6451A9", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1058,10 +916,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_8E290D8F4D1C6CE3D70ECD8DBA15790E()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_8E290D8F4D1C6CE3D70ECD8DBA15790E");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_8E290D8F4D1C6CE3D70ECD8DBA15790E", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1072,10 +928,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_909300764DD38989BD9106878ED5D839()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_909300764DD38989BD9106878ED5D839");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_909300764DD38989BD9106878ED5D839", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1086,10 +940,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_957D4A8644938086CF8DAFA7025EC5F1()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_957D4A8644938086CF8DAFA7025EC5F1");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_957D4A8644938086CF8DAFA7025EC5F1", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1100,10 +952,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_97B8C3264D685386CE2CED9036024BFC()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_97B8C3264D685386CE2CED9036024BFC");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_97B8C3264D685386CE2CED9036024BFC", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1114,10 +964,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_985EE23249F2FAF44E268F8AE8C207B6()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_985EE23249F2FAF44E268F8AE8C207B6");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_985EE23249F2FAF44E268F8AE8C207B6", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1128,10 +976,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_9C4AD5174488B78B8EB5E5A94D2C2830()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_9C4AD5174488B78B8EB5E5A94D2C2830");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_9C4AD5174488B78B8EB5E5A94D2C2830", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1142,10 +988,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_9FA947544D6668BC098919B160D7EEEF()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_9FA947544D6668BC098919B160D7EEEF");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_9FA947544D6668BC098919B160D7EEEF", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1156,10 +1000,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_AFCF5DA547351AA44E5D8A91A2500668()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_AFCF5DA547351AA44E5D8A91A2500668");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_AFCF5DA547351AA44E5D8A91A2500668", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1170,10 +1012,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_B3EFBAA2492FD2866DF3429A61616B9B()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_B3EFBAA2492FD2866DF3429A61616B9B");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_B3EFBAA2492FD2866DF3429A61616B9B", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1184,10 +1024,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_B771CFEF4A270B498669BBAEC1C99A2D()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_B771CFEF4A270B498669BBAEC1C99A2D");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_B771CFEF4A270B498669BBAEC1C99A2D", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1198,10 +1036,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_BDC83EA04C5D6B2C8AA6948B7B8CB523()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_BDC83EA04C5D6B2C8AA6948B7B8CB523");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_BDC83EA04C5D6B2C8AA6948B7B8CB523", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1212,10 +1048,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_C1BBB9D84C9DD052F9592C88A97D7092()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_C1BBB9D84C9DD052F9592C88A97D7092");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_C1BBB9D84C9DD052F9592C88A97D7092", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1226,10 +1060,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_CFDB541441DCE1FD78F3EDB5C0717503()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_CFDB541441DCE1FD78F3EDB5C0717503");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_CFDB541441DCE1FD78F3EDB5C0717503", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1240,10 +1072,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_DB528E4A41CB3C6BA49866BB9A0A0C61()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_DB528E4A41CB3C6BA49866BB9A0A0C61");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_DB528E4A41CB3C6BA49866BB9A0A0C61", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1254,10 +1084,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_E0CEF457432101636B571296ECAEEE99()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_E0CEF457432101636B571296ECAEEE99");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_E0CEF457432101636B571296ECAEEE99", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1268,10 +1096,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_E884CDCA4C888DF93425FC92D29A98D1()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_E884CDCA4C888DF93425FC92D29A98D1");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_E884CDCA4C888DF93425FC92D29A98D1", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1282,10 +1108,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_F5DA8CFB44406D26C6EFEBBEB76842A5()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_F5DA8CFB44406D26C6EFEBBEB76842A5");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_F5DA8CFB44406D26C6EFEBBEB76842A5", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1296,10 +1120,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_F7DF5C554FC70221EEBAA398759A9024()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_F7DF5C554FC70221EEBAA398759A9024");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_F7DF5C554FC70221EEBAA398759A9024", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1310,10 +1132,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_FFCFF9FE470A19D60216DFB13B52B8EC()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_FFCFF9FE470A19D60216DFB13B52B8EC");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier1_Actor_AnimGraphNode_TransitionResult_FFCFF9FE470A19D60216DFB13B52B8EC", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1326,10 +1146,8 @@ void UABP_Melee_Tier1_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_M
 
 void UABP_Melee_Tier1_Actor_C::ExecuteUbergraph_ABP_Melee_Tier1_Actor(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "ExecuteUbergraph_ABP_Melee_Tier1_Actor");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "ABP_Melee_Tier1_Actor_C", "ExecuteUbergraph_ABP_Melee_Tier1_Actor", FuncInfo);
 
 	Params::ABP_Melee_Tier1_Actor_C_ExecuteUbergraph_ABP_Melee_Tier1_Actor Parms{};
 
@@ -1347,10 +1165,8 @@ void UABP_Melee_Tier1_Actor_C::ExecuteUbergraph_ABP_Melee_Tier1_Actor(int32 Entr
 
 void UABP_Melee_Tier1_Actor_C::ResetSyncedAnimProgress(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "ResetSyncedAnimProgress");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ResetSyncedAnimProgress", FnName));
 
 	Params::ABP_Melee_Tier1_Actor_C_ResetSyncedAnimProgress Parms{};
 
@@ -1369,10 +1185,8 @@ void UABP_Melee_Tier1_Actor_C::ResetSyncedAnimProgress(const struct FAnimUpdateC
 
 void UABP_Melee_Tier1_Actor_C::UpdateYawRotationRateForAttackType(ECrEnemyAttackType OldAttackType, ECrEnemyAttackType NewAttackType)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "UpdateYawRotationRateForAttackType");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateYawRotationRateForAttackType", FnName));
 
 	Params::ABP_Melee_Tier1_Actor_C_UpdateYawRotationRateForAttackType Parms{};
 
@@ -1391,10 +1205,8 @@ void UABP_Melee_Tier1_Actor_C::UpdateYawRotationRateForAttackType(ECrEnemyAttack
 
 void UABP_Melee_Tier1_Actor_C::UpdateYawRotationRateForLocomotionState(ECrEnemyLocomotionType OldLocomotionType, ECrEnemyLocomotionType NewLocomotionType)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier1_Actor_C", "UpdateYawRotationRateForLocomotionState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateYawRotationRateForLocomotionState", FnName));
 
 	Params::ABP_Melee_Tier1_Actor_C_UpdateYawRotationRateForLocomotionState Parms{};
 

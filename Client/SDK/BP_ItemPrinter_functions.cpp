@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_ItemPrinter_C::ExecuteUbergraph_BP_ItemPrinter(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ItemPrinter_C", "ExecuteUbergraph_BP_ItemPrinter");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_ItemPrinter_C", "ExecuteUbergraph_BP_ItemPrinter", FuncInfo);
 
 	Params::BP_ItemPrinter_C_ExecuteUbergraph_BP_ItemPrinter Parms{};
 
@@ -45,10 +43,8 @@ void ABP_ItemPrinter_C::ExecuteUbergraph_BP_ItemPrinter(int32 EntryPoint)
 
 void ABP_ItemPrinter_C::Get_Meshes(class USceneComponent* Static_0, class USceneComponent* Animated_0, TArray<class UMeshComponent*>* NewParam)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ItemPrinter_C", "Get Meshes");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Get Meshes", FnName));
 
 	Params::BP_ItemPrinter_C_Get_Meshes Parms{};
 
@@ -69,10 +65,8 @@ void ABP_ItemPrinter_C::Get_Meshes(class USceneComponent* Static_0, class UScene
 
 void ABP_ItemPrinter_C::OnBuildingStateChanged(ECrBuildingState InState)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ItemPrinter_C", "OnBuildingStateChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBuildingStateChanged", FnName));
 
 	Params::BP_ItemPrinter_C_OnBuildingStateChanged Parms{};
 
@@ -87,10 +81,8 @@ void ABP_ItemPrinter_C::OnBuildingStateChanged(ECrBuildingState InState)
 
 void ABP_ItemPrinter_C::OnItemCraftingComplete()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ItemPrinter_C", "OnItemCraftingComplete");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnItemCraftingComplete", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -103,10 +95,8 @@ void ABP_ItemPrinter_C::OnItemCraftingComplete()
 
 void ABP_ItemPrinter_C::OnUIOpened(bool bOpened)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ItemPrinter_C", "OnUIOpened");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnUIOpened", FnName));
 
 	Params::BP_ItemPrinter_C_OnUIOpened Parms{};
 
@@ -121,10 +111,8 @@ void ABP_ItemPrinter_C::OnUIOpened(bool bOpened)
 
 void ABP_ItemPrinter_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ItemPrinter_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -135,10 +123,8 @@ void ABP_ItemPrinter_C::ReceiveBeginPlay()
 
 void ABP_ItemPrinter_C::SetupSkeletalMesh()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ItemPrinter_C", "SetupSkeletalMesh");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetupSkeletalMesh", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

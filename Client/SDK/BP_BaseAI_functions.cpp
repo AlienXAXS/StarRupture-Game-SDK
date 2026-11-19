@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_BaseAI_C::CanChangeEyeColor(bool* Result)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseAI_C", "CanChangeEyeColor");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"CanChangeEyeColor", FnName));
 
 	Params::BP_BaseAI_C_CanChangeEyeColor Parms{};
 
@@ -44,10 +42,8 @@ void ABP_BaseAI_C::CanChangeEyeColor(bool* Result)
 
 void ABP_BaseAI_C::ExecuteUbergraph_BP_BaseAI(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseAI_C", "ExecuteUbergraph_BP_BaseAI");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_BaseAI_C", "ExecuteUbergraph_BP_BaseAI", FuncInfo);
 
 	Params::BP_BaseAI_C_ExecuteUbergraph_BP_BaseAI Parms{};
 
@@ -64,10 +60,8 @@ void ABP_BaseAI_C::ExecuteUbergraph_BP_BaseAI(int32 EntryPoint)
 
 void ABP_BaseAI_C::GetNiagaraEyeSystem(class UNiagaraComponent** NewParam)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseAI_C", "GetNiagaraEyeSystem");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetNiagaraEyeSystem", FnName));
 
 	Params::BP_BaseAI_C_GetNiagaraEyeSystem Parms{};
 
@@ -86,10 +80,8 @@ void ABP_BaseAI_C::GetNiagaraEyeSystem(class UNiagaraComponent** NewParam)
 
 void ABP_BaseAI_C::NotifyAggroTargetChanged(bool bHasAggroTarget, bool bSetAggroFlare)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseAI_C", "NotifyAggroTargetChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"NotifyAggroTargetChanged", FnName));
 
 	Params::BP_BaseAI_C_NotifyAggroTargetChanged Parms{};
 
@@ -107,10 +99,8 @@ void ABP_BaseAI_C::NotifyAggroTargetChanged(bool bHasAggroTarget, bool bSetAggro
 
 bool ABP_BaseAI_C::NotifyNearbyPlayerCharactersAboutSpawn()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseAI_C", "NotifyNearbyPlayerCharactersAboutSpawn");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"NotifyNearbyPlayerCharactersAboutSpawn", FnName));
 
 	Params::BP_BaseAI_C_NotifyNearbyPlayerCharactersAboutSpawn Parms{};
 
@@ -128,10 +118,8 @@ bool ABP_BaseAI_C::NotifyNearbyPlayerCharactersAboutSpawn()
 
 void ABP_BaseAI_C::OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseAI_C", "OnAiDied");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnAiDied", FnName));
 
 	Params::BP_BaseAI_C_OnAiDied Parms{};
 
@@ -151,10 +139,8 @@ void ABP_BaseAI_C::OnAiDied(const struct FHitResult& HitResult, const struct FGa
 
 void ABP_BaseAI_C::OnDamage(class AActor* Actor, const struct FHitResult& HitResult, float InDamage)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseAI_C", "OnDamage");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnDamage", FnName));
 
 	Params::BP_BaseAI_C_OnDamage Parms{};
 
@@ -171,10 +157,8 @@ void ABP_BaseAI_C::OnDamage(class AActor* Actor, const struct FHitResult& HitRes
 
 void ABP_BaseAI_C::OnEnterActorPool()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseAI_C", "OnEnterActorPool");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnEnterActorPool", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -185,10 +169,8 @@ void ABP_BaseAI_C::OnEnterActorPool()
 
 void ABP_BaseAI_C::OnExitActorPool()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseAI_C", "OnExitActorPool");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnExitActorPool", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -201,10 +183,8 @@ void ABP_BaseAI_C::OnExitActorPool()
 
 void ABP_BaseAI_C::OnEyeStateColorGradientChanged(float NewGetEyeStateColorGradientCoord)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseAI_C", "OnEyeStateColorGradientChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnEyeStateColorGradientChanged", FnName));
 
 	Params::BP_BaseAI_C_OnEyeStateColorGradientChanged Parms{};
 
@@ -219,10 +199,8 @@ void ABP_BaseAI_C::OnEyeStateColorGradientChanged(float NewGetEyeStateColorGradi
 
 void ABP_BaseAI_C::OnPrepareForGame()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseAI_C", "OnPrepareForGame");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPrepareForGame", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -233,10 +211,8 @@ void ABP_BaseAI_C::OnPrepareForGame()
 
 void ABP_BaseAI_C::OnPrepareForPooling()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseAI_C", "OnPrepareForPooling");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPrepareForPooling", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -249,10 +225,8 @@ void ABP_BaseAI_C::OnPrepareForPooling()
 
 void ABP_BaseAI_C::PostSetupPooledActorData(bool bNewIsInPool)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseAI_C", "PostSetupPooledActorData");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PostSetupPooledActorData", FnName));
 
 	Params::BP_BaseAI_C_PostSetupPooledActorData Parms{};
 
@@ -267,10 +241,8 @@ void ABP_BaseAI_C::PostSetupPooledActorData(bool bNewIsInPool)
 
 void ABP_BaseAI_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseAI_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -281,10 +253,8 @@ void ABP_BaseAI_C::ReceiveBeginPlay()
 
 void ABP_BaseAI_C::SetAggroFlare()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseAI_C", "SetAggroFlare");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetAggroFlare", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -295,10 +265,8 @@ void ABP_BaseAI_C::SetAggroFlare()
 
 void ABP_BaseAI_C::SetBoostFlare()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseAI_C", "SetBoostFlare");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetBoostFlare", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -311,10 +279,8 @@ void ABP_BaseAI_C::SetBoostFlare()
 
 void ABP_BaseAI_C::SetIsAggroEyeColor(bool NewIsAggro)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseAI_C", "SetIsAggroEyeColor");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetIsAggroEyeColor", FnName));
 
 	Params::BP_BaseAI_C_SetIsAggroEyeColor Parms{};
 
@@ -331,10 +297,8 @@ void ABP_BaseAI_C::SetIsAggroEyeColor(bool NewIsAggro)
 
 void ABP_BaseAI_C::SetIsBoostedEyeColor(bool NewIsBoosted)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseAI_C", "SetIsBoostedEyeColor");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetIsBoostedEyeColor", FnName));
 
 	Params::BP_BaseAI_C_SetIsBoostedEyeColor Parms{};
 
@@ -351,10 +315,8 @@ void ABP_BaseAI_C::SetIsBoostedEyeColor(bool NewIsBoosted)
 
 void ABP_BaseAI_C::SetIsJumpEyeBehaviour(bool NewIsJumpEyeBehaviour)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseAI_C", "SetIsJumpEyeBehaviour");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetIsJumpEyeBehaviour", FnName));
 
 	Params::BP_BaseAI_C_SetIsJumpEyeBehaviour Parms{};
 
@@ -371,10 +333,8 @@ void ABP_BaseAI_C::SetIsJumpEyeBehaviour(bool NewIsJumpEyeBehaviour)
 
 struct FColor ABP_BaseAI_C::GetIdleEyeColor() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseAI_C", "GetIdleEyeColor");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetIdleEyeColor", FnName));
 
 	Params::BP_BaseAI_C_GetIdleEyeColor Parms{};
 

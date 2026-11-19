@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_DroneRailT1_C::ExecuteUbergraph_BP_DroneRailT1(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneRailT1_C", "ExecuteUbergraph_BP_DroneRailT1");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_DroneRailT1_C", "ExecuteUbergraph_BP_DroneRailT1", FuncInfo);
 
 	Params::BP_DroneRailT1_C_ExecuteUbergraph_BP_DroneRailT1 Parms{};
 
@@ -41,10 +39,8 @@ void ABP_DroneRailT1_C::ExecuteUbergraph_BP_DroneRailT1(int32 EntryPoint)
 
 void ABP_DroneRailT1_C::OnSetItemFilter()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneRailT1_C", "OnSetItemFilter");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSetItemFilter", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -58,10 +54,8 @@ void ABP_DroneRailT1_C::OnSetItemFilter()
 
 void ABP_DroneRailT1_C::SetColorTint(const int32 Color, int32 PrimitiveDataIndex)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneRailT1_C", "SetColorTint");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetColorTint", FnName));
 
 	Params::BP_DroneRailT1_C_SetColorTint Parms{};
 
@@ -77,10 +71,8 @@ void ABP_DroneRailT1_C::SetColorTint(const int32 Color, int32 PrimitiveDataIndex
 
 void ABP_DroneRailT1_C::UpdateMaterialForSelectedFilter()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneRailT1_C", "UpdateMaterialForSelectedFilter");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateMaterialForSelectedFilter", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

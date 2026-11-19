@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void ABP_PackageSender_C::Door_Timeline__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PackageSender_C", "Door_Timeline__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Door_Timeline__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -35,10 +33,8 @@ void ABP_PackageSender_C::Door_Timeline__FinishedFunc()
 
 void ABP_PackageSender_C::Door_Timeline__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PackageSender_C", "Door_Timeline__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Door_Timeline__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -49,10 +45,8 @@ void ABP_PackageSender_C::Door_Timeline__UpdateFunc()
 
 void ABP_PackageSender_C::Drone_start()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PackageSender_C", "Drone_start");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Drone_start", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -65,10 +59,8 @@ void ABP_PackageSender_C::Drone_start()
 
 void ABP_PackageSender_C::ExecuteUbergraph_BP_PackageSender(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PackageSender_C", "ExecuteUbergraph_BP_PackageSender");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_PackageSender_C", "ExecuteUbergraph_BP_PackageSender", FuncInfo);
 
 	Params::BP_PackageSender_C_ExecuteUbergraph_BP_PackageSender Parms{};
 
@@ -87,10 +79,8 @@ void ABP_PackageSender_C::ExecuteUbergraph_BP_PackageSender(int32 EntryPoint)
 
 void ABP_PackageSender_C::Get_Meshes(class USceneComponent* Static_0, class USceneComponent* Dynamic, TArray<class USceneComponent*>* NewParam)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PackageSender_C", "Get Meshes");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Get Meshes", FnName));
 
 	Params::BP_PackageSender_C_Get_Meshes Parms{};
 
@@ -109,10 +99,8 @@ void ABP_PackageSender_C::Get_Meshes(class USceneComponent* Static_0, class USce
 
 void ABP_PackageSender_C::OnItemsSent()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PackageSender_C", "OnItemsSent");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnItemsSent", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -125,10 +113,8 @@ void ABP_PackageSender_C::OnItemsSent()
 
 void ABP_PackageSender_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PackageSender_C", "PostPlayBuildingEffect");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PostPlayBuildingEffect", FnName));
 
 	Params::BP_PackageSender_C_PostPlayBuildingEffect Parms{};
 
@@ -143,10 +129,8 @@ void ABP_PackageSender_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed)
 
 void ABP_PackageSender_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PackageSender_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -157,10 +141,8 @@ void ABP_PackageSender_C::ReceiveBeginPlay()
 
 void ABP_PackageSender_C::SetupSkeletalMesh()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PackageSender_C", "SetupSkeletalMesh");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetupSkeletalMesh", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -171,10 +153,8 @@ void ABP_PackageSender_C::SetupSkeletalMesh()
 
 void ABP_PackageSender_C::Timeline__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PackageSender_C", "Timeline__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -185,10 +165,8 @@ void ABP_PackageSender_C::Timeline__FinishedFunc()
 
 void ABP_PackageSender_C::Timeline__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PackageSender_C", "Timeline__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

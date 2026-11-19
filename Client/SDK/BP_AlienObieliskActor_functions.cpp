@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_AlienObieliskActor_C::ExecuteUbergraph_BP_AlienObieliskActor(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_AlienObieliskActor_C", "ExecuteUbergraph_BP_AlienObieliskActor");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_AlienObieliskActor_C", "ExecuteUbergraph_BP_AlienObieliskActor", FuncInfo);
 
 	Params::BP_AlienObieliskActor_C_ExecuteUbergraph_BP_AlienObieliskActor Parms{};
 
@@ -41,10 +39,8 @@ void ABP_AlienObieliskActor_C::ExecuteUbergraph_BP_AlienObieliskActor(int32 Entr
 
 void ABP_AlienObieliskActor_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_AlienObieliskActor_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -55,10 +51,8 @@ void ABP_AlienObieliskActor_C::ReceiveBeginPlay()
 
 void ABP_AlienObieliskActor_C::SequencerTrigger()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_AlienObieliskActor_C", "SequencerTrigger");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SequencerTrigger", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -69,10 +63,8 @@ void ABP_AlienObieliskActor_C::SequencerTrigger()
 
 void ABP_AlienObieliskActor_C::TimeRemap__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_AlienObieliskActor_C", "TimeRemap__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"TimeRemap__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -83,10 +75,8 @@ void ABP_AlienObieliskActor_C::TimeRemap__FinishedFunc()
 
 void ABP_AlienObieliskActor_C::TimeRemap__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_AlienObieliskActor_C", "TimeRemap__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"TimeRemap__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

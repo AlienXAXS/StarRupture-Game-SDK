@@ -608,6 +608,30 @@ public:
 };
 DUMPER7_ASSERTS_UMovieSceneScriptingIntegerChannel;
 
+// Class SequencerScripting.MovieSceneDoubleVectorTrackExtensions
+// 0x0000 (0x0028 - 0x0028)
+class UMovieSceneDoubleVectorTrackExtensions final : public UBlueprintFunctionLibrary
+{
+public:
+	static int32 GetNumChannelsUsed(class UMovieSceneDoubleVectorTrack* Track);
+	static void SetNumChannelsUsed(class UMovieSceneDoubleVectorTrack* Track, int32 InNumChannelsUsed);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MovieSceneDoubleVectorTrackExtensions")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MovieSceneDoubleVectorTrackExtensions")
+	}
+	static class UMovieSceneDoubleVectorTrackExtensions* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMovieSceneDoubleVectorTrackExtensions>();
+	}
+};
+DUMPER7_ASSERTS_UMovieSceneDoubleVectorTrackExtensions;
+
 // Class SequencerScripting.MovieSceneScriptingObjectPathKey
 // 0x0020 (0x0060 - 0x0040)
 class UMovieSceneScriptingObjectPathKey final : public UMovieSceneScriptingKey
@@ -1216,30 +1240,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UMovieSceneFloatVectorTrackExtensions;
-
-// Class SequencerScripting.MovieSceneDoubleVectorTrackExtensions
-// 0x0000 (0x0028 - 0x0028)
-class UMovieSceneDoubleVectorTrackExtensions final : public UBlueprintFunctionLibrary
-{
-public:
-	static int32 GetNumChannelsUsed(class UMovieSceneDoubleVectorTrack* Track);
-	static void SetNumChannelsUsed(class UMovieSceneDoubleVectorTrack* Track, int32 InNumChannelsUsed);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MovieSceneDoubleVectorTrackExtensions")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MovieSceneDoubleVectorTrackExtensions")
-	}
-	static class UMovieSceneDoubleVectorTrackExtensions* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMovieSceneDoubleVectorTrackExtensions>();
-	}
-};
-DUMPER7_ASSERTS_UMovieSceneDoubleVectorTrackExtensions;
 
 // Class SequencerScripting.SequencerScriptingRangeExtensions
 // 0x0000 (0x0028 - 0x0028)

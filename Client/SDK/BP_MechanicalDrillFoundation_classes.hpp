@@ -10,20 +10,20 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "BP_Modular_Foundation_Unique_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_MechanicalDrillFoundation.BP_MechanicalDrillFoundation_C
-// 0x0018 (0x08C8 - 0x08B0)
+// 0x0018 (0x08D8 - 0x08C0)
 class ABP_MechanicalDrillFoundation_C final : public ABP_Modular_Foundation_Unique_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_MechanicalDrillFoundation_C;     // 0x08B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UBoxComponent*                          SnapCollider3;                                     // 0x08B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UBoxComponent*                          SnapCollider2;                                     // 0x08C0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_MechanicalDrillFoundation_C;     // 0x08C0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UBoxComponent*                          SnapCollider3;                                     // 0x08C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UBoxComponent*                          SnapCollider2;                                     // 0x08D0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_MechanicalDrillFoundation(int32 EntryPoint);

@@ -17,16 +17,16 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_PersonalStorageBig.BP_PersonalStorageBig_C
-// 0x0030 (0x08A8 - 0x0878)
+// 0x0030 (0x08B8 - 0x0888)
 class ABP_PersonalStorageBig_C final : public ACrCustomBuilding
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0878(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UWidgetComponent*                       Widget_Name;                                       // 0x0880(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   Plane;                                             // 0x0888(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   SM_PersonalStorage_back;                           // 0x0890(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   SM_PersonalStorage_door;                           // 0x0898(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USkeletalMeshComponent*                 SK_PersonalStorage;                                // 0x08A0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0888(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UWidgetComponent*                       Widget_Name;                                       // 0x0890(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   Plane;                                             // 0x0898(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   SM_PersonalStorage_back;                           // 0x08A0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   SM_PersonalStorage_door;                           // 0x08A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USkeletalMeshComponent*                 SK_PersonalStorage;                                // 0x08B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_PersonalStorageBig(int32 EntryPoint);

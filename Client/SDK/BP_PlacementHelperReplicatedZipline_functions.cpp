@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_PlacementHelperReplicatedZipline_C::ExecuteUbergraph_BP_PlacementHelperReplicatedZipline(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperReplicatedZipline_C", "ExecuteUbergraph_BP_PlacementHelperReplicatedZipline");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_PlacementHelperReplicatedZipline_C", "ExecuteUbergraph_BP_PlacementHelperReplicatedZipline", FuncInfo);
 
 	Params::BP_PlacementHelperReplicatedZipline_C_ExecuteUbergraph_BP_PlacementHelperReplicatedZipline Parms{};
 
@@ -45,10 +43,8 @@ void ABP_PlacementHelperReplicatedZipline_C::ExecuteUbergraph_BP_PlacementHelper
 
 void ABP_PlacementHelperReplicatedZipline_C::OnConnectionsModified(const TArray<struct FVector>& NewAcceptedLocations, const TArray<struct FVector>& NewObstructedLocations, const TArray<struct FVector>& NewBlockedLocations)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperReplicatedZipline_C", "OnConnectionsModified");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnConnectionsModified", FnName));
 
 	Params::BP_PlacementHelperReplicatedZipline_C_OnConnectionsModified Parms{};
 
@@ -65,10 +61,8 @@ void ABP_PlacementHelperReplicatedZipline_C::OnConnectionsModified(const TArray<
 
 void ABP_PlacementHelperReplicatedZipline_C::TurnOffBeams()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperReplicatedZipline_C", "TurnOffBeams");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"TurnOffBeams", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -79,10 +73,8 @@ void ABP_PlacementHelperReplicatedZipline_C::TurnOffBeams()
 
 void ABP_PlacementHelperReplicatedZipline_C::TurnOnBeams()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperReplicatedZipline_C", "TurnOnBeams");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"TurnOnBeams", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -93,10 +85,8 @@ void ABP_PlacementHelperReplicatedZipline_C::TurnOnBeams()
 
 void ABP_PlacementHelperReplicatedZipline_C::UpdateAcceptedBeamLocations()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperReplicatedZipline_C", "UpdateAcceptedBeamLocations");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateAcceptedBeamLocations", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -107,10 +97,8 @@ void ABP_PlacementHelperReplicatedZipline_C::UpdateAcceptedBeamLocations()
 
 void ABP_PlacementHelperReplicatedZipline_C::UpdateBeamsLocations()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperReplicatedZipline_C", "UpdateBeamsLocations");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateBeamsLocations", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -121,10 +109,8 @@ void ABP_PlacementHelperReplicatedZipline_C::UpdateBeamsLocations()
 
 void ABP_PlacementHelperReplicatedZipline_C::UpdateBlockedBeamLocations()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperReplicatedZipline_C", "UpdateBlockedBeamLocations");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateBlockedBeamLocations", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

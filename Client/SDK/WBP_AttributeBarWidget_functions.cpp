@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_AttributeBarWidget_C::ExecuteUbergraph_WBP_AttributeBarWidget(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_AttributeBarWidget_C", "ExecuteUbergraph_WBP_AttributeBarWidget");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_AttributeBarWidget_C", "ExecuteUbergraph_WBP_AttributeBarWidget", FuncInfo);
 
 	Params::WBP_AttributeBarWidget_C_ExecuteUbergraph_WBP_AttributeBarWidget Parms{};
 
@@ -43,10 +41,8 @@ void UWBP_AttributeBarWidget_C::ExecuteUbergraph_WBP_AttributeBarWidget(int32 En
 
 void UWBP_AttributeBarWidget_C::SetAttributeIcon(EAttributeType InType)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_AttributeBarWidget_C", "SetAttributeIcon");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetAttributeIcon", FnName));
 
 	Params::WBP_AttributeBarWidget_C_SetAttributeIcon Parms{};
 

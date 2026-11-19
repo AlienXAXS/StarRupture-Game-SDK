@@ -16,6 +16,24 @@
 
 SDK_NAMESPACE_START
 
+// Function BP_MilitaryCrafter.BP_MilitaryCrafter_C.ExecuteUbergraph_BP_MilitaryCrafter
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_MilitaryCrafter_C::ExecuteUbergraph_BP_MilitaryCrafter(int32 EntryPoint)
+{
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_MilitaryCrafter_C", "ExecuteUbergraph_BP_MilitaryCrafter", FuncInfo);
+
+	Params::BP_MilitaryCrafter_C_ExecuteUbergraph_BP_MilitaryCrafter Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_MilitaryCrafter.BP_MilitaryCrafter_C.Get Meshes
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -25,10 +43,8 @@ SDK_NAMESPACE_START
 
 void ABP_MilitaryCrafter_C::Get_Meshes(class USceneComponent* Static_0, class USceneComponent* Animated, TArray<class UMeshComponent*>* NewParam)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MilitaryCrafter_C", "Get Meshes");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Get Meshes", FnName));
 
 	Params::BP_MilitaryCrafter_C_Get_Meshes Parms{};
 
@@ -39,6 +55,72 @@ void ABP_MilitaryCrafter_C::Get_Meshes(class USceneComponent* Static_0, class US
 
 	if (NewParam != nullptr)
 		*NewParam = std::move(Parms.NewParam);
+}
+
+
+// Function BP_MilitaryCrafter.BP_MilitaryCrafter_C.OnBuildingStateChanged
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// ECrBuildingState                        InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_MilitaryCrafter_C::OnBuildingStateChanged(ECrBuildingState InState)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBuildingStateChanged", FnName));
+
+	Params::BP_MilitaryCrafter_C_OnBuildingStateChanged Parms{};
+
+	Parms.InState = InState;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_MilitaryCrafter.BP_MilitaryCrafter_C.OnItemCraftingComplete
+// (Event, Public, BlueprintEvent)
+
+void ABP_MilitaryCrafter_C::OnItemCraftingComplete()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnItemCraftingComplete", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_MilitaryCrafter.BP_MilitaryCrafter_C.PackageSender__FinishedFunc
+// (BlueprintEvent)
+
+void ABP_MilitaryCrafter_C::PackageSender__FinishedFunc()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PackageSender__FinishedFunc", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_MilitaryCrafter.BP_MilitaryCrafter_C.PackageSender__UpdateFunc
+// (BlueprintEvent)
+
+void ABP_MilitaryCrafter_C::PackageSender__UpdateFunc()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PackageSender__UpdateFunc", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_MilitaryCrafter.BP_MilitaryCrafter_C.SetupSkeletalMesh
+// (Event, Public, BlueprintEvent)
+
+void ABP_MilitaryCrafter_C::SetupSkeletalMesh()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetupSkeletalMesh", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_DoubleLine_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_DoubleLine_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -37,10 +35,8 @@ void UWBP_DoubleLine_C::Construct()
 
 void UWBP_DoubleLine_C::ExecuteUbergraph_WBP_DoubleLine(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_DoubleLine_C", "ExecuteUbergraph_WBP_DoubleLine");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_DoubleLine_C", "ExecuteUbergraph_WBP_DoubleLine", FuncInfo);
 
 	Params::WBP_DoubleLine_C_ExecuteUbergraph_WBP_DoubleLine Parms{};
 
@@ -57,10 +53,8 @@ void UWBP_DoubleLine_C::ExecuteUbergraph_WBP_DoubleLine(int32 EntryPoint)
 
 void UWBP_DoubleLine_C::Set_Text_Size(class UClass* InStyle)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_DoubleLine_C", "Set Text Size");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Set Text Size", FnName));
 
 	Params::WBP_DoubleLine_C_Set_Text_Size Parms{};
 
@@ -77,10 +71,8 @@ void UWBP_DoubleLine_C::Set_Text_Size(class UClass* InStyle)
 
 void UWBP_DoubleLine_C::SetTextStyle(bool isHighlight)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_DoubleLine_C", "SetTextStyle");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetTextStyle", FnName));
 
 	Params::WBP_DoubleLine_C_SetTextStyle Parms{};
 
@@ -97,10 +89,8 @@ void UWBP_DoubleLine_C::SetTextStyle(bool isHighlight)
 
 void UWBP_DoubleLine_C::SetTitle(const class FText& InTitle)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_DoubleLine_C", "SetTitle");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetTitle", FnName));
 
 	Params::WBP_DoubleLine_C_SetTitle Parms{};
 

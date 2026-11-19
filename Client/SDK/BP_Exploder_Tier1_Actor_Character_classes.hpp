@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "BP_BaseAI_classes.hpp"
 #include "Engine_structs.hpp"
+#include "BP_BaseAI_classes.hpp"
 
 
 SDK_NAMESPACE_START
@@ -41,6 +41,9 @@ public:
 	void OnExitActorPool();
 	void OnPrepareForGame();
 	void OnPrepareForPooling();
+	void OnProjectileDestroyed(class FName SocketName);
+	void OnProjectileLaunched(class FName SocketName);
+	void OnProjectileLoaded(class FName SocketName, class AActor* Projectile);
 	void ReceiveTick(float DeltaSeconds);
 	void StartActivationTimer();
 	void StartExplosionTimer();

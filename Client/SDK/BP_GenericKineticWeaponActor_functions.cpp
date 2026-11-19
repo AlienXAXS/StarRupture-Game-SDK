@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_GenericKineticWeaponActor_C::BP_SpawnFireHitImpactCosmetics(const struct FHitResult& ConfirmedHit)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GenericKineticWeaponActor_C", "BP_SpawnFireHitImpactCosmetics");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_SpawnFireHitImpactCosmetics", FnName));
 
 	Params::BP_GenericKineticWeaponActor_C_BP_SpawnFireHitImpactCosmetics Parms{};
 
@@ -43,10 +41,8 @@ void ABP_GenericKineticWeaponActor_C::BP_SpawnFireHitImpactCosmetics(const struc
 
 void ABP_GenericKineticWeaponActor_C::ExecuteUbergraph_BP_GenericKineticWeaponActor(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GenericKineticWeaponActor_C", "ExecuteUbergraph_BP_GenericKineticWeaponActor");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_GenericKineticWeaponActor_C", "ExecuteUbergraph_BP_GenericKineticWeaponActor", FuncInfo);
 
 	Params::BP_GenericKineticWeaponActor_C_ExecuteUbergraph_BP_GenericKineticWeaponActor Parms{};
 
@@ -64,10 +60,8 @@ void ABP_GenericKineticWeaponActor_C::ExecuteUbergraph_BP_GenericKineticWeaponAc
 
 void ABP_GenericKineticWeaponActor_C::GetMuzzleSocketLocation(struct FVector* Location, class USceneComponent** Target_Scene)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GenericKineticWeaponActor_C", "GetMuzzleSocketLocation");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetMuzzleSocketLocation", FnName));
 
 	Params::BP_GenericKineticWeaponActor_C_GetMuzzleSocketLocation Parms{};
 
@@ -89,10 +83,8 @@ void ABP_GenericKineticWeaponActor_C::GetMuzzleSocketLocation(struct FVector* Lo
 
 void ABP_GenericKineticWeaponActor_C::GetMuzzleSocketRotation(struct FRotator* Rotation, class USceneComponent** Target_Scene)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GenericKineticWeaponActor_C", "GetMuzzleSocketRotation");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetMuzzleSocketRotation", FnName));
 
 	Params::BP_GenericKineticWeaponActor_C_GetMuzzleSocketRotation Parms{};
 
@@ -111,10 +103,8 @@ void ABP_GenericKineticWeaponActor_C::GetMuzzleSocketRotation(struct FRotator* R
 
 void ABP_GenericKineticWeaponActor_C::OnAutoFireLoopEnd()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GenericKineticWeaponActor_C", "OnAutoFireLoopEnd");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnAutoFireLoopEnd", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -127,10 +117,8 @@ void ABP_GenericKineticWeaponActor_C::OnAutoFireLoopEnd()
 
 void ABP_GenericKineticWeaponActor_C::OnAutoFireLoopHitsConfirmed(const TArray<struct FHitResult>& Confirmed_Hit_Results)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GenericKineticWeaponActor_C", "OnAutoFireLoopHitsConfirmed");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnAutoFireLoopHitsConfirmed", FnName));
 
 	Params::BP_GenericKineticWeaponActor_C_OnAutoFireLoopHitsConfirmed Parms{};
 
@@ -145,10 +133,8 @@ void ABP_GenericKineticWeaponActor_C::OnAutoFireLoopHitsConfirmed(const TArray<s
 
 void ABP_GenericKineticWeaponActor_C::OnAutoFireLoopStart()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GenericKineticWeaponActor_C", "OnAutoFireLoopStart");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnAutoFireLoopStart", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -159,10 +145,20 @@ void ABP_GenericKineticWeaponActor_C::OnAutoFireLoopStart()
 
 void ABP_GenericKineticWeaponActor_C::OnAutoFireShotExecuted()
 {
-	static class UFunction* Func = nullptr;
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnAutoFireShotExecuted", FnName));
 
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GenericKineticWeaponActor_C", "OnAutoFireShotExecuted");
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_GenericKineticWeaponActor.BP_GenericKineticWeaponActor_C.OnBPWeaponPreUnequip
+// (Event, Public, BlueprintEvent)
+
+void ABP_GenericKineticWeaponActor_C::OnBPWeaponPreUnequip()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBPWeaponPreUnequip", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -173,10 +169,8 @@ void ABP_GenericKineticWeaponActor_C::OnAutoFireShotExecuted()
 
 void ABP_GenericKineticWeaponActor_C::OnDryFireStart()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GenericKineticWeaponActor_C", "OnDryFireStart");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnDryFireStart", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -187,10 +181,8 @@ void ABP_GenericKineticWeaponActor_C::OnDryFireStart()
 
 void ABP_GenericKineticWeaponActor_C::OnProjectileFireStarted()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GenericKineticWeaponActor_C", "OnProjectileFireStarted");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnProjectileFireStarted", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -201,10 +193,8 @@ void ABP_GenericKineticWeaponActor_C::OnProjectileFireStarted()
 
 void ABP_GenericKineticWeaponActor_C::OnReloadFailedCosmeticStart()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GenericKineticWeaponActor_C", "OnReloadFailedCosmeticStart");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnReloadFailedCosmeticStart", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -217,10 +207,8 @@ void ABP_GenericKineticWeaponActor_C::OnReloadFailedCosmeticStart()
 
 void ABP_GenericKineticWeaponActor_C::OnSingleFireStartHitsConfirmed(const TArray<struct FHitResult>& ConfirmedHits)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GenericKineticWeaponActor_C", "OnSingleFireStartHitsConfirmed");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSingleFireStartHitsConfirmed", FnName));
 
 	Params::BP_GenericKineticWeaponActor_C_OnSingleFireStartHitsConfirmed Parms{};
 
@@ -235,10 +223,8 @@ void ABP_GenericKineticWeaponActor_C::OnSingleFireStartHitsConfirmed(const TArra
 
 void ABP_GenericKineticWeaponActor_C::OnSpawnCosmeticEffectsOnFireEnd()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GenericKineticWeaponActor_C", "OnSpawnCosmeticEffectsOnFireEnd");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSpawnCosmeticEffectsOnFireEnd", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -249,10 +235,8 @@ void ABP_GenericKineticWeaponActor_C::OnSpawnCosmeticEffectsOnFireEnd()
 
 void ABP_GenericKineticWeaponActor_C::OnSpawnCosmeticEffectsOnFireStart()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GenericKineticWeaponActor_C", "OnSpawnCosmeticEffectsOnFireStart");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSpawnCosmeticEffectsOnFireStart", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -265,10 +249,8 @@ void ABP_GenericKineticWeaponActor_C::OnSpawnCosmeticEffectsOnFireStart()
 
 void ABP_GenericKineticWeaponActor_C::OnSpawnCosmeticEffectsWhileFire(const TArray<struct FHitResult>& Hits)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GenericKineticWeaponActor_C", "OnSpawnCosmeticEffectsWhileFire");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSpawnCosmeticEffectsWhileFire", FnName));
 
 	Params::BP_GenericKineticWeaponActor_C_OnSpawnCosmeticEffectsWhileFire Parms{};
 
@@ -283,10 +265,8 @@ void ABP_GenericKineticWeaponActor_C::OnSpawnCosmeticEffectsWhileFire(const TArr
 
 void ABP_GenericKineticWeaponActor_C::PlayeConfrimedHitCameraShake()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GenericKineticWeaponActor_C", "PlayeConfrimedHitCameraShake");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PlayeConfrimedHitCameraShake", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -297,10 +277,8 @@ void ABP_GenericKineticWeaponActor_C::PlayeConfrimedHitCameraShake()
 
 void ABP_GenericKineticWeaponActor_C::PlayEjectShellParticles()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GenericKineticWeaponActor_C", "PlayEjectShellParticles");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PlayEjectShellParticles", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -314,10 +292,8 @@ void ABP_GenericKineticWeaponActor_C::PlayEjectShellParticles()
 
 struct FRotator ABP_GenericKineticWeaponActor_C::RandomDecalRotation(const struct FRotator& InRot)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GenericKineticWeaponActor_C", "RandomDecalRotation");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"RandomDecalRotation", FnName));
 
 	Params::BP_GenericKineticWeaponActor_C_RandomDecalRotation Parms{};
 
@@ -334,10 +310,8 @@ struct FRotator ABP_GenericKineticWeaponActor_C::RandomDecalRotation(const struc
 
 void ABP_GenericKineticWeaponActor_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GenericKineticWeaponActor_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -350,10 +324,8 @@ void ABP_GenericKineticWeaponActor_C::ReceiveBeginPlay()
 
 void ABP_GenericKineticWeaponActor_C::UpdateDecalFlipbook(class UMaterialInstanceDynamic* DynamicMaterialInstance)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GenericKineticWeaponActor_C", "UpdateDecalFlipbook");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateDecalFlipbook", FnName));
 
 	Params::BP_GenericKineticWeaponActor_C_UpdateDecalFlipbook Parms{};
 
@@ -370,10 +342,8 @@ void ABP_GenericKineticWeaponActor_C::UpdateDecalFlipbook(class UMaterialInstanc
 
 void ABP_GenericKineticWeaponActor_C::GetCurrentWeaponFireType(EFireType* Return_Value) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GenericKineticWeaponActor_C", "GetCurrentWeaponFireType");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetCurrentWeaponFireType", FnName));
 
 	Params::BP_GenericKineticWeaponActor_C_GetCurrentWeaponFireType Parms{};
 
@@ -392,10 +362,8 @@ void ABP_GenericKineticWeaponActor_C::GetCurrentWeaponFireType(EFireType* Return
 
 void ABP_GenericKineticWeaponActor_C::GetMagazineCountInfo(double* CurrentAmmoCount, double* MaxMagazine) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GenericKineticWeaponActor_C", "GetMagazineCountInfo");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetMagazineCountInfo", FnName));
 
 	Params::BP_GenericKineticWeaponActor_C_GetMagazineCountInfo Parms{};
 
@@ -416,10 +384,8 @@ void ABP_GenericKineticWeaponActor_C::GetMagazineCountInfo(double* CurrentAmmoCo
 
 class UNiagaraSystem* ABP_GenericKineticWeaponActor_C::GetPiercingCosmeticsNiagaraSystem() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GenericKineticWeaponActor_C", "GetPiercingCosmeticsNiagaraSystem");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetPiercingCosmeticsNiagaraSystem", FnName));
 
 	Params::BP_GenericKineticWeaponActor_C_GetPiercingCosmeticsNiagaraSystem Parms{};
 
@@ -436,10 +402,8 @@ class UNiagaraSystem* ABP_GenericKineticWeaponActor_C::GetPiercingCosmeticsNiaga
 
 float ABP_GenericKineticWeaponActor_C::GetPiercingCosmeticsRibbonWidth() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GenericKineticWeaponActor_C", "GetPiercingCosmeticsRibbonWidth");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetPiercingCosmeticsRibbonWidth", FnName));
 
 	Params::BP_GenericKineticWeaponActor_C_GetPiercingCosmeticsRibbonWidth Parms{};
 
@@ -456,10 +420,8 @@ float ABP_GenericKineticWeaponActor_C::GetPiercingCosmeticsRibbonWidth() const
 
 void ABP_GenericKineticWeaponActor_C::HasEnoughAmmoLeft(bool* Return_Value) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GenericKineticWeaponActor_C", "HasEnoughAmmoLeft");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"HasEnoughAmmoLeft", FnName));
 
 	Params::BP_GenericKineticWeaponActor_C_HasEnoughAmmoLeft Parms{};
 
@@ -477,10 +439,8 @@ void ABP_GenericKineticWeaponActor_C::HasEnoughAmmoLeft(bool* Return_Value) cons
 
 void ABP_GenericKineticWeaponActor_C::IsFPPLocallyControlled(bool* Return_Value) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GenericKineticWeaponActor_C", "IsFPPLocallyControlled");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IsFPPLocallyControlled", FnName));
 
 	Params::BP_GenericKineticWeaponActor_C_IsFPPLocallyControlled Parms{};
 

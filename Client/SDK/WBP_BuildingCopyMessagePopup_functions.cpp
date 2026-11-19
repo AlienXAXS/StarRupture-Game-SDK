@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_BuildingCopyMessagePopup_C::ExecuteUbergraph_WBP_BuildingCopyMessagePopup(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_BuildingCopyMessagePopup_C", "ExecuteUbergraph_WBP_BuildingCopyMessagePopup");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_BuildingCopyMessagePopup_C", "ExecuteUbergraph_WBP_BuildingCopyMessagePopup", FuncInfo);
 
 	Params::WBP_BuildingCopyMessagePopup_C_ExecuteUbergraph_WBP_BuildingCopyMessagePopup Parms{};
 
@@ -41,10 +39,8 @@ void UWBP_BuildingCopyMessagePopup_C::ExecuteUbergraph_WBP_BuildingCopyMessagePo
 
 void UWBP_BuildingCopyMessagePopup_C::Finished_32BEF69B45A552882AB8F0B7BE757B6F()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_BuildingCopyMessagePopup_C", "Finished_32BEF69B45A552882AB8F0B7BE757B6F");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Finished_32BEF69B45A552882AB8F0B7BE757B6F", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -53,14 +49,12 @@ void UWBP_BuildingCopyMessagePopup_C::Finished_32BEF69B45A552882AB8F0B7BE757B6F(
 // Function WBP_BuildingCopyMessagePopup.WBP_BuildingCopyMessagePopup_C.SetupMessage
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// ECrCopyBuildingSettingsMessage          MessageType                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrHUDMessage                           MessageType                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_BuildingCopyMessagePopup_C::SetupMessage(ECrCopyBuildingSettingsMessage MessageType)
+void UWBP_BuildingCopyMessagePopup_C::SetupMessage(ECrHUDMessage MessageType)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_BuildingCopyMessagePopup_C", "SetupMessage");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetupMessage", FnName));
 
 	Params::WBP_BuildingCopyMessagePopup_C_SetupMessage Parms{};
 
@@ -75,10 +69,8 @@ void UWBP_BuildingCopyMessagePopup_C::SetupMessage(ECrCopyBuildingSettingsMessag
 
 void UWBP_BuildingCopyMessagePopup_C::TriggerFadeOut()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_BuildingCopyMessagePopup_C", "TriggerFadeOut");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"TriggerFadeOut", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

@@ -51,10 +51,8 @@ void UAIAsyncTaskBlueprintProxy::OnMoveCompleted(const struct FAIRequestID& Requ
 
 void UGeneratedNavLinksProxy::ReceiveSmartLinkReached(class AActor* Agent, const struct FVector& Destination)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GeneratedNavLinksProxy", "ReceiveSmartLinkReached");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveSmartLinkReached", FnName));
 
 	Params::GeneratedNavLinksProxy_ReceiveSmartLinkReached Parms{};
 
@@ -631,10 +629,8 @@ void AAIController::OnGameplayTaskResourcesClaimed(const struct FGameplayResourc
 
 void AAIController::OnUsingBlackBoard(class UBlackboardComponent* BlackboardComp, class UBlackboardData* BlackboardAsset)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AIController", "OnUsingBlackBoard");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnUsingBlackBoard", FnName));
 
 	Params::AIController_OnUsingBlackBoard Parms{};
 
@@ -996,6 +992,54 @@ void UAISystem::AILoggingVerbose()
 }
 
 
+// Function AIModule.BlackboardAssetProvider.GetBlackboardAsset
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UBlackboardData*                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UBlackboardData* IBlackboardAssetProvider::GetBlackboardAsset() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("BlackboardAssetProvider", "GetBlackboardAsset");
+
+	Params::BlackboardAssetProvider_GetBlackboardAsset Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function AIModule.BlackboardAssetProvider.GetBlackboardAsset
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UBlackboardData*                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UBlackboardData* UBehaviorTree::GetBlackboardAsset() const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetBlackboardAsset", FnName));
+
+	Params::BlackboardAssetProvider_GetBlackboardAsset Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function AIModule.BrainComponent.RestartLogic
 // (RequiredAPI, Native, Public, BlueprintCallable)
 
@@ -1117,10 +1161,8 @@ bool UBrainComponent::IsRunning() const
 
 void ANavLinkProxy::ReceiveSmartLinkReached(class AActor* Agent, const struct FVector& Destination)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("NavLinkProxy", "ReceiveSmartLinkReached");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveSmartLinkReached", FnName));
 
 	Params::NavLinkProxy_ReceiveSmartLinkReached Parms{};
 
@@ -1308,31 +1350,6 @@ double UBehaviorTreeComponent::GetTagCooldownEndTime(const struct FGameplayTag& 
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function AIModule.BlackboardAssetProvider.GetBlackboardAsset
-// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UBlackboardData*                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UBlackboardData* IBlackboardAssetProvider::GetBlackboardAsset() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("BlackboardAssetProvider", "GetBlackboardAsset");
-
-	Params::BlackboardAssetProvider_GetBlackboardAsset Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 
@@ -3069,10 +3086,8 @@ void UBTFunctionLibrary::StopUsingExternalEvent(class UBTNode* NodeOwner)
 
 bool UBTDecorator_BlueprintBase::PerformConditionCheck(class AActor* OwnerActor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTDecorator_BlueprintBase", "PerformConditionCheck");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PerformConditionCheck", FnName));
 
 	Params::BTDecorator_BlueprintBase_PerformConditionCheck Parms{};
 
@@ -3093,10 +3108,8 @@ bool UBTDecorator_BlueprintBase::PerformConditionCheck(class AActor* OwnerActor)
 
 bool UBTDecorator_BlueprintBase::PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTDecorator_BlueprintBase", "PerformConditionCheckAI");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PerformConditionCheckAI", FnName));
 
 	Params::BTDecorator_BlueprintBase_PerformConditionCheckAI Parms{};
 
@@ -3117,10 +3130,8 @@ bool UBTDecorator_BlueprintBase::PerformConditionCheckAI(class AAIController* Ow
 
 void UBTDecorator_BlueprintBase::ReceiveExecutionFinish(class AActor* OwnerActor, EBTNodeResult NodeResult)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTDecorator_BlueprintBase", "ReceiveExecutionFinish");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveExecutionFinish", FnName));
 
 	Params::BTDecorator_BlueprintBase_ReceiveExecutionFinish Parms{};
 
@@ -3140,10 +3151,8 @@ void UBTDecorator_BlueprintBase::ReceiveExecutionFinish(class AActor* OwnerActor
 
 void UBTDecorator_BlueprintBase::ReceiveExecutionFinishAI(class AAIController* OwnerController, class APawn* ControlledPawn, EBTNodeResult NodeResult)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTDecorator_BlueprintBase", "ReceiveExecutionFinishAI");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveExecutionFinishAI", FnName));
 
 	Params::BTDecorator_BlueprintBase_ReceiveExecutionFinishAI Parms{};
 
@@ -3162,10 +3171,8 @@ void UBTDecorator_BlueprintBase::ReceiveExecutionFinishAI(class AAIController* O
 
 void UBTDecorator_BlueprintBase::ReceiveExecutionStart(class AActor* OwnerActor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTDecorator_BlueprintBase", "ReceiveExecutionStart");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveExecutionStart", FnName));
 
 	Params::BTDecorator_BlueprintBase_ReceiveExecutionStart Parms{};
 
@@ -3183,10 +3190,8 @@ void UBTDecorator_BlueprintBase::ReceiveExecutionStart(class AActor* OwnerActor)
 
 void UBTDecorator_BlueprintBase::ReceiveExecutionStartAI(class AAIController* OwnerController, class APawn* ControlledPawn)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTDecorator_BlueprintBase", "ReceiveExecutionStartAI");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveExecutionStartAI", FnName));
 
 	Params::BTDecorator_BlueprintBase_ReceiveExecutionStartAI Parms{};
 
@@ -3204,10 +3209,8 @@ void UBTDecorator_BlueprintBase::ReceiveExecutionStartAI(class AAIController* Ow
 
 void UBTDecorator_BlueprintBase::ReceiveObserverActivated(class AActor* OwnerActor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTDecorator_BlueprintBase", "ReceiveObserverActivated");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveObserverActivated", FnName));
 
 	Params::BTDecorator_BlueprintBase_ReceiveObserverActivated Parms{};
 
@@ -3225,10 +3228,8 @@ void UBTDecorator_BlueprintBase::ReceiveObserverActivated(class AActor* OwnerAct
 
 void UBTDecorator_BlueprintBase::ReceiveObserverActivatedAI(class AAIController* OwnerController, class APawn* ControlledPawn)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTDecorator_BlueprintBase", "ReceiveObserverActivatedAI");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveObserverActivatedAI", FnName));
 
 	Params::BTDecorator_BlueprintBase_ReceiveObserverActivatedAI Parms{};
 
@@ -3246,10 +3247,8 @@ void UBTDecorator_BlueprintBase::ReceiveObserverActivatedAI(class AAIController*
 
 void UBTDecorator_BlueprintBase::ReceiveObserverDeactivated(class AActor* OwnerActor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTDecorator_BlueprintBase", "ReceiveObserverDeactivated");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveObserverDeactivated", FnName));
 
 	Params::BTDecorator_BlueprintBase_ReceiveObserverDeactivated Parms{};
 
@@ -3267,10 +3266,8 @@ void UBTDecorator_BlueprintBase::ReceiveObserverDeactivated(class AActor* OwnerA
 
 void UBTDecorator_BlueprintBase::ReceiveObserverDeactivatedAI(class AAIController* OwnerController, class APawn* ControlledPawn)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTDecorator_BlueprintBase", "ReceiveObserverDeactivatedAI");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveObserverDeactivatedAI", FnName));
 
 	Params::BTDecorator_BlueprintBase_ReceiveObserverDeactivatedAI Parms{};
 
@@ -3289,10 +3286,8 @@ void UBTDecorator_BlueprintBase::ReceiveObserverDeactivatedAI(class AAIControlle
 
 void UBTDecorator_BlueprintBase::ReceiveTick(class AActor* OwnerActor, float DeltaSeconds)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTDecorator_BlueprintBase", "ReceiveTick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveTick", FnName));
 
 	Params::BTDecorator_BlueprintBase_ReceiveTick Parms{};
 
@@ -3312,10 +3307,8 @@ void UBTDecorator_BlueprintBase::ReceiveTick(class AActor* OwnerActor, float Del
 
 void UBTDecorator_BlueprintBase::ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTDecorator_BlueprintBase", "ReceiveTickAI");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveTickAI", FnName));
 
 	Params::BTDecorator_BlueprintBase_ReceiveTickAI Parms{};
 
@@ -3384,10 +3377,8 @@ bool UBTDecorator_BlueprintBase::IsDecoratorObserverActive() const
 
 void UBTService_BlueprintBase::ReceiveActivation(class AActor* OwnerActor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTService_BlueprintBase", "ReceiveActivation");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveActivation", FnName));
 
 	Params::BTService_BlueprintBase_ReceiveActivation Parms{};
 
@@ -3405,10 +3396,8 @@ void UBTService_BlueprintBase::ReceiveActivation(class AActor* OwnerActor)
 
 void UBTService_BlueprintBase::ReceiveActivationAI(class AAIController* OwnerController, class APawn* ControlledPawn)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTService_BlueprintBase", "ReceiveActivationAI");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveActivationAI", FnName));
 
 	Params::BTService_BlueprintBase_ReceiveActivationAI Parms{};
 
@@ -3426,10 +3415,8 @@ void UBTService_BlueprintBase::ReceiveActivationAI(class AAIController* OwnerCon
 
 void UBTService_BlueprintBase::ReceiveDeactivation(class AActor* OwnerActor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTService_BlueprintBase", "ReceiveDeactivation");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveDeactivation", FnName));
 
 	Params::BTService_BlueprintBase_ReceiveDeactivation Parms{};
 
@@ -3447,10 +3434,8 @@ void UBTService_BlueprintBase::ReceiveDeactivation(class AActor* OwnerActor)
 
 void UBTService_BlueprintBase::ReceiveDeactivationAI(class AAIController* OwnerController, class APawn* ControlledPawn)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTService_BlueprintBase", "ReceiveDeactivationAI");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveDeactivationAI", FnName));
 
 	Params::BTService_BlueprintBase_ReceiveDeactivationAI Parms{};
 
@@ -3468,10 +3453,8 @@ void UBTService_BlueprintBase::ReceiveDeactivationAI(class AAIController* OwnerC
 
 void UBTService_BlueprintBase::ReceiveSearchStart(class AActor* OwnerActor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTService_BlueprintBase", "ReceiveSearchStart");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveSearchStart", FnName));
 
 	Params::BTService_BlueprintBase_ReceiveSearchStart Parms{};
 
@@ -3489,10 +3472,8 @@ void UBTService_BlueprintBase::ReceiveSearchStart(class AActor* OwnerActor)
 
 void UBTService_BlueprintBase::ReceiveSearchStartAI(class AAIController* OwnerController, class APawn* ControlledPawn)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTService_BlueprintBase", "ReceiveSearchStartAI");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveSearchStartAI", FnName));
 
 	Params::BTService_BlueprintBase_ReceiveSearchStartAI Parms{};
 
@@ -3511,10 +3492,8 @@ void UBTService_BlueprintBase::ReceiveSearchStartAI(class AAIController* OwnerCo
 
 void UBTService_BlueprintBase::ReceiveTick(class AActor* OwnerActor, float DeltaSeconds)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTService_BlueprintBase", "ReceiveTick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveTick", FnName));
 
 	Params::BTService_BlueprintBase_ReceiveTick Parms{};
 
@@ -3534,10 +3513,8 @@ void UBTService_BlueprintBase::ReceiveTick(class AActor* OwnerActor, float Delta
 
 void UBTService_BlueprintBase::ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTService_BlueprintBase", "ReceiveTickAI");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveTickAI", FnName));
 
 	Params::BTService_BlueprintBase_ReceiveTickAI Parms{};
 
@@ -3625,10 +3602,8 @@ void UBTTask_BlueprintBase::FinishExecute(bool bSuccess)
 
 void UBTTask_BlueprintBase::ReceiveAbort(class AActor* OwnerActor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTTask_BlueprintBase", "ReceiveAbort");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveAbort", FnName));
 
 	Params::BTTask_BlueprintBase_ReceiveAbort Parms{};
 
@@ -3646,10 +3621,8 @@ void UBTTask_BlueprintBase::ReceiveAbort(class AActor* OwnerActor)
 
 void UBTTask_BlueprintBase::ReceiveAbortAI(class AAIController* OwnerController, class APawn* ControlledPawn)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTTask_BlueprintBase", "ReceiveAbortAI");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveAbortAI", FnName));
 
 	Params::BTTask_BlueprintBase_ReceiveAbortAI Parms{};
 
@@ -3667,10 +3640,8 @@ void UBTTask_BlueprintBase::ReceiveAbortAI(class AAIController* OwnerController,
 
 void UBTTask_BlueprintBase::ReceiveExecute(class AActor* OwnerActor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTTask_BlueprintBase", "ReceiveExecute");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveExecute", FnName));
 
 	Params::BTTask_BlueprintBase_ReceiveExecute Parms{};
 
@@ -3688,10 +3659,8 @@ void UBTTask_BlueprintBase::ReceiveExecute(class AActor* OwnerActor)
 
 void UBTTask_BlueprintBase::ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTTask_BlueprintBase", "ReceiveExecuteAI");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveExecuteAI", FnName));
 
 	Params::BTTask_BlueprintBase_ReceiveExecuteAI Parms{};
 
@@ -3710,10 +3679,8 @@ void UBTTask_BlueprintBase::ReceiveExecuteAI(class AAIController* OwnerControlle
 
 void UBTTask_BlueprintBase::ReceiveTick(class AActor* OwnerActor, float DeltaSeconds)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTTask_BlueprintBase", "ReceiveTick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveTick", FnName));
 
 	Params::BTTask_BlueprintBase_ReceiveTick Parms{};
 
@@ -3733,10 +3700,8 @@ void UBTTask_BlueprintBase::ReceiveTick(class AActor* OwnerActor, float DeltaSec
 
 void UBTTask_BlueprintBase::ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTTask_BlueprintBase", "ReceiveTickAI");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveTickAI", FnName));
 
 	Params::BTTask_BlueprintBase_ReceiveTickAI Parms{};
 
@@ -4332,10 +4297,8 @@ void UAIBlueprintHelperLibrary::UnlockAIResourcesWithAnimation(class UAnimInstan
 
 void UEnvQueryContext_BlueprintBase::ProvideActorsSet(class UObject* QuerierObject, class AActor* QuerierActor, TArray<class AActor*>* ResultingActorsSet) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("EnvQueryContext_BlueprintBase", "ProvideActorsSet");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ProvideActorsSet", FnName));
 
 	Params::EnvQueryContext_BlueprintBase_ProvideActorsSet Parms{};
 
@@ -4358,10 +4321,8 @@ void UEnvQueryContext_BlueprintBase::ProvideActorsSet(class UObject* QuerierObje
 
 void UEnvQueryContext_BlueprintBase::ProvideLocationsSet(class UObject* QuerierObject, class AActor* QuerierActor, TArray<struct FVector>* ResultingLocationSet) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("EnvQueryContext_BlueprintBase", "ProvideLocationsSet");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ProvideLocationsSet", FnName));
 
 	Params::EnvQueryContext_BlueprintBase_ProvideLocationsSet Parms{};
 
@@ -4384,10 +4345,8 @@ void UEnvQueryContext_BlueprintBase::ProvideLocationsSet(class UObject* QuerierO
 
 void UEnvQueryContext_BlueprintBase::ProvideSingleActor(class UObject* QuerierObject, class AActor* QuerierActor, class AActor** ResultingActor) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("EnvQueryContext_BlueprintBase", "ProvideSingleActor");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ProvideSingleActor", FnName));
 
 	Params::EnvQueryContext_BlueprintBase_ProvideSingleActor Parms{};
 
@@ -4410,10 +4369,8 @@ void UEnvQueryContext_BlueprintBase::ProvideSingleActor(class UObject* QuerierOb
 
 void UEnvQueryContext_BlueprintBase::ProvideSingleLocation(class UObject* QuerierObject, class AActor* QuerierActor, struct FVector* ResultingLocation) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("EnvQueryContext_BlueprintBase", "ProvideSingleLocation");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ProvideSingleLocation", FnName));
 
 	Params::EnvQueryContext_BlueprintBase_ProvideSingleLocation Parms{};
 
@@ -4683,10 +4640,8 @@ void UEnvQueryGenerator_BlueprintBase::AddGeneratedVector(const struct FVector& 
 
 void UEnvQueryGenerator_BlueprintBase::DoItemGeneration(const TArray<struct FVector>& ContextLocations) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("EnvQueryGenerator_BlueprintBase", "DoItemGeneration");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"DoItemGeneration", FnName));
 
 	Params::EnvQueryGenerator_BlueprintBase_DoItemGeneration Parms{};
 
@@ -4703,10 +4658,8 @@ void UEnvQueryGenerator_BlueprintBase::DoItemGeneration(const TArray<struct FVec
 
 void UEnvQueryGenerator_BlueprintBase::DoItemGenerationFromActors(const TArray<class AActor*>& ContextActors) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("EnvQueryGenerator_BlueprintBase", "DoItemGenerationFromActors");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"DoItemGenerationFromActors", FnName));
 
 	Params::EnvQueryGenerator_BlueprintBase_DoItemGenerationFromActors Parms{};
 
@@ -5348,10 +5301,8 @@ void UAIPerceptionStimuliSourceComponent::UnregisterFromSense(TSubclassOf<class 
 
 void UAISense_Blueprint::K2_OnNewPawn(class APawn* NewPawn)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AISense_Blueprint", "K2_OnNewPawn");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_OnNewPawn", FnName));
 
 	Params::AISense_Blueprint_K2_OnNewPawn Parms{};
 
@@ -5369,10 +5320,8 @@ void UAISense_Blueprint::K2_OnNewPawn(class APawn* NewPawn)
 
 void UAISense_Blueprint::OnListenerRegistered(class AActor* ActorListener, class UAIPerceptionComponent* PerceptionComponent)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AISense_Blueprint", "OnListenerRegistered");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnListenerRegistered", FnName));
 
 	Params::AISense_Blueprint_OnListenerRegistered Parms{};
 
@@ -5391,10 +5340,8 @@ void UAISense_Blueprint::OnListenerRegistered(class AActor* ActorListener, class
 
 void UAISense_Blueprint::OnListenerUnregistered(class AActor* ActorListener, class UAIPerceptionComponent* PerceptionComponent)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AISense_Blueprint", "OnListenerUnregistered");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnListenerUnregistered", FnName));
 
 	Params::AISense_Blueprint_OnListenerUnregistered Parms{};
 
@@ -5413,10 +5360,8 @@ void UAISense_Blueprint::OnListenerUnregistered(class AActor* ActorListener, cla
 
 void UAISense_Blueprint::OnListenerUpdated(class AActor* ActorListener, class UAIPerceptionComponent* PerceptionComponent)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AISense_Blueprint", "OnListenerUpdated");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnListenerUpdated", FnName));
 
 	Params::AISense_Blueprint_OnListenerUpdated Parms{};
 
@@ -5435,10 +5380,8 @@ void UAISense_Blueprint::OnListenerUpdated(class AActor* ActorListener, class UA
 
 float UAISense_Blueprint::OnUpdate(const TArray<class UAISenseEvent*>& EventsToProcess)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AISense_Blueprint", "OnUpdate");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnUpdate", FnName));
 
 	Params::AISense_Blueprint_OnUpdate Parms{};
 

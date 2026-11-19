@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_Ranged_Tier3_Actor_AiController_C::ExecuteUbergraph_BP_Ranged_Tier3_Actor_AiController(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier3_Actor_AiController_C", "ExecuteUbergraph_BP_Ranged_Tier3_Actor_AiController");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Ranged_Tier3_Actor_AiController_C", "ExecuteUbergraph_BP_Ranged_Tier3_Actor_AiController", FuncInfo);
 
 	Params::BP_Ranged_Tier3_Actor_AiController_C_ExecuteUbergraph_BP_Ranged_Tier3_Actor_AiController Parms{};
 
@@ -41,10 +39,8 @@ void ABP_Ranged_Tier3_Actor_AiController_C::ExecuteUbergraph_BP_Ranged_Tier3_Act
 
 void ABP_Ranged_Tier3_Actor_AiController_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier3_Actor_AiController_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

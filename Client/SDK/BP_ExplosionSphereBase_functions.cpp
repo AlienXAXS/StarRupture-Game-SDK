@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_ExplosionSphereBase_C::SetSphereRadius(double SphereRadius)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ExplosionSphereBase_C", "SetSphereRadius");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetSphereRadius", FnName));
 
 	Params::BP_ExplosionSphereBase_C_SetSphereRadius Parms{};
 

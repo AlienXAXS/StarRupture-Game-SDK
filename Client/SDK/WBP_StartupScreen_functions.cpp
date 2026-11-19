@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_StartupScreen_C::BndEvt__BW_LyraFrontEnd_PressStartButton_K2Node_ComponentBoundEvent_5_CommonButtonBaseClicked__DelegateSignature(class UCommonButtonBase* Button)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_StartupScreen_C", "BndEvt__BW_LyraFrontEnd_PressStartButton_K2Node_ComponentBoundEvent_5_CommonButtonBaseClicked__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__BW_LyraFrontEnd_PressStartButton_K2Node_ComponentBoundEvent_5_CommonButtonBaseClicked__DelegateSignature", FnName));
 
 	Params::WBP_StartupScreen_C_BndEvt__BW_LyraFrontEnd_PressStartButton_K2Node_ComponentBoundEvent_5_CommonButtonBaseClicked__DelegateSignature Parms{};
 
@@ -41,10 +39,8 @@ void UWBP_StartupScreen_C::BndEvt__BW_LyraFrontEnd_PressStartButton_K2Node_Compo
 
 void UWBP_StartupScreen_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_StartupScreen_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -57,10 +53,8 @@ void UWBP_StartupScreen_C::Construct()
 
 void UWBP_StartupScreen_C::ExecuteUbergraph_WBP_StartupScreen(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_StartupScreen_C", "ExecuteUbergraph_WBP_StartupScreen");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_StartupScreen_C", "ExecuteUbergraph_WBP_StartupScreen", FuncInfo);
 
 	Params::WBP_StartupScreen_C_ExecuteUbergraph_WBP_StartupScreen Parms{};
 
@@ -81,10 +75,8 @@ void UWBP_StartupScreen_C::ExecuteUbergraph_WBP_StartupScreen(int32 EntryPoint)
 
 void UWBP_StartupScreen_C::HandleUserInitialize(const class UCommonUserInfo* UserInfo, bool bSuccess, const class FText& Error, ECommonUserPrivilege RequestedPrivilege, ECommonUserOnlineContext OnlineContext)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_StartupScreen_C", "HandleUserInitialize");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"HandleUserInitialize", FnName));
 
 	Params::WBP_StartupScreen_C_HandleUserInitialize Parms{};
 
@@ -109,10 +101,8 @@ void UWBP_StartupScreen_C::HandleUserInitialize(const class UCommonUserInfo* Use
 
 void UWBP_StartupScreen_C::OnInitializationComplete_E61382A84AF220AC05C22B82F14AA87F(const class UCommonUserInfo* UserInfo, bool bSuccess, const class FText& Error, ECommonUserPrivilege RequestedPrivilege, ECommonUserOnlineContext OnlineContext)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_StartupScreen_C", "OnInitializationComplete_E61382A84AF220AC05C22B82F14AA87F");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnInitializationComplete_E61382A84AF220AC05C22B82F14AA87F", FnName));
 
 	Params::WBP_StartupScreen_C_OnInitializationComplete_E61382A84AF220AC05C22B82F14AA87F Parms{};
 
@@ -133,10 +123,8 @@ void UWBP_StartupScreen_C::OnInitializationComplete_E61382A84AF220AC05C22B82F14A
 
 void UWBP_StartupScreen_C::SetListenForLoginInput(bool bShouldListen)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_StartupScreen_C", "SetListenForLoginInput");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetListenForLoginInput", FnName));
 
 	Params::WBP_StartupScreen_C_SetListenForLoginInput Parms{};
 
@@ -151,10 +139,8 @@ void UWBP_StartupScreen_C::SetListenForLoginInput(bool bShouldListen)
 
 void UWBP_StartupScreen_C::SwitchToFullMenu()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_StartupScreen_C", "SwitchToFullMenu");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SwitchToFullMenu", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -165,10 +151,8 @@ void UWBP_StartupScreen_C::SwitchToFullMenu()
 
 void UWBP_StartupScreen_C::SwitchToPressStart()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_StartupScreen_C", "SwitchToPressStart");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SwitchToPressStart", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -181,10 +165,8 @@ void UWBP_StartupScreen_C::SwitchToPressStart()
 
 class UWidget* UWBP_StartupScreen_C::BP_GetDesiredFocusTarget() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_StartupScreen_C", "BP_GetDesiredFocusTarget");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_GetDesiredFocusTarget", FnName));
 
 	Params::WBP_StartupScreen_C_BP_GetDesiredFocusTarget Parms{};
 

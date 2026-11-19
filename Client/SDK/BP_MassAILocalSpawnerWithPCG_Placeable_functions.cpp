@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_MassAILocalSpawnerWithPCG_Placeable_C::ExecuteUbergraph_BP_MassAILocalSpawnerWithPCG_Placeable(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MassAILocalSpawnerWithPCG_Placeable_C", "ExecuteUbergraph_BP_MassAILocalSpawnerWithPCG_Placeable");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_MassAILocalSpawnerWithPCG_Placeable_C", "ExecuteUbergraph_BP_MassAILocalSpawnerWithPCG_Placeable", FuncInfo);
 
 	Params::BP_MassAILocalSpawnerWithPCG_Placeable_C_ExecuteUbergraph_BP_MassAILocalSpawnerWithPCG_Placeable Parms{};
 
@@ -43,10 +41,8 @@ void ABP_MassAILocalSpawnerWithPCG_Placeable_C::ExecuteUbergraph_BP_MassAILocalS
 
 void ABP_MassAILocalSpawnerWithPCG_Placeable_C::NotifyShowDebugVariableChanged(bool ShouldShowDebug)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MassAILocalSpawnerWithPCG_Placeable_C", "NotifyShowDebugVariableChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"NotifyShowDebugVariableChanged", FnName));
 
 	Params::BP_MassAILocalSpawnerWithPCG_Placeable_C_NotifyShowDebugVariableChanged Parms{};
 
@@ -61,10 +57,8 @@ void ABP_MassAILocalSpawnerWithPCG_Placeable_C::NotifyShowDebugVariableChanged(b
 
 void ABP_MassAILocalSpawnerWithPCG_Placeable_C::OnDebugTick()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MassAILocalSpawnerWithPCG_Placeable_C", "OnDebugTick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnDebugTick", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -75,10 +69,8 @@ void ABP_MassAILocalSpawnerWithPCG_Placeable_C::OnDebugTick()
 
 void ABP_MassAILocalSpawnerWithPCG_Placeable_C::RotateStatusTextTowardsPlayer()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MassAILocalSpawnerWithPCG_Placeable_C", "RotateStatusTextTowardsPlayer");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"RotateStatusTextTowardsPlayer", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -89,10 +81,8 @@ void ABP_MassAILocalSpawnerWithPCG_Placeable_C::RotateStatusTextTowardsPlayer()
 
 void ABP_MassAILocalSpawnerWithPCG_Placeable_C::UpdateStatusText()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MassAILocalSpawnerWithPCG_Placeable_C", "UpdateStatusText");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateStatusText", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

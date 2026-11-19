@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UBTT_PlaySoundAtLocation_C::ExecuteUbergraph_BTT_PlaySoundAtLocation(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTT_PlaySoundAtLocation_C", "ExecuteUbergraph_BTT_PlaySoundAtLocation");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BTT_PlaySoundAtLocation_C", "ExecuteUbergraph_BTT_PlaySoundAtLocation", FuncInfo);
 
 	Params::BTT_PlaySoundAtLocation_C_ExecuteUbergraph_BTT_PlaySoundAtLocation Parms{};
 
@@ -44,10 +42,8 @@ void UBTT_PlaySoundAtLocation_C::ExecuteUbergraph_BTT_PlaySoundAtLocation(int32 
 
 void UBTT_PlaySoundAtLocation_C::ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTT_PlaySoundAtLocation_C", "ReceiveExecuteAI");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveExecuteAI", FnName));
 
 	Params::BTT_PlaySoundAtLocation_C_ReceiveExecuteAI Parms{};
 

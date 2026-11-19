@@ -78,10 +78,8 @@ void UPCGDynamicMeshData::SetMaterials(const TArray<class UMaterialInterface*>& 
 
 void UPCGGeometryBlueprintElement::ProcessDynamicMesh(class UDynamicMesh* InDynMesh, TArray<class FString>* OutTags)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGGeometryBlueprintElement", "ProcessDynamicMesh");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ProcessDynamicMesh", FnName));
 
 	Params::PCGGeometryBlueprintElement_ProcessDynamicMesh Parms{};
 

@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UABP_PanzerHund_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_PanzerHund_C", "AnimGraph");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimGraph", FnName));
 
 	Params::ABP_PanzerHund_C_AnimGraph Parms{};
 
@@ -42,10 +40,8 @@ void UABP_PanzerHund_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 
 void UABP_PanzerHund_C::AnimNotify_EndAnim()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_PanzerHund_C", "AnimNotify_EndAnim");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_EndAnim", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -56,10 +52,8 @@ void UABP_PanzerHund_C::AnimNotify_EndAnim()
 
 void UABP_PanzerHund_C::AnimNotify_EndAnimAction()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_PanzerHund_C", "AnimNotify_EndAnimAction");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_EndAnimAction", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -72,10 +66,8 @@ void UABP_PanzerHund_C::AnimNotify_EndAnimAction()
 
 void UABP_PanzerHund_C::BlueprintThreadSafeUpdateAnimation(float DeltaTime)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_PanzerHund_C", "BlueprintThreadSafeUpdateAnimation");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BlueprintThreadSafeUpdateAnimation", FnName));
 
 	Params::ABP_PanzerHund_C_BlueprintThreadSafeUpdateAnimation Parms{};
 
@@ -93,10 +85,8 @@ void UABP_PanzerHund_C::BlueprintThreadSafeUpdateAnimation(float DeltaTime)
 
 void UABP_PanzerHund_C::BPOnLocomotionTypeChanged(ECrEnemyLocomotionType OldLocomotionType, ECrEnemyLocomotionType NewLocomotionType)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_PanzerHund_C", "BPOnLocomotionTypeChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BPOnLocomotionTypeChanged", FnName));
 
 	Params::ABP_PanzerHund_C_BPOnLocomotionTypeChanged Parms{};
 
@@ -112,10 +102,8 @@ void UABP_PanzerHund_C::BPOnLocomotionTypeChanged(ECrEnemyLocomotionType OldLoco
 
 void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_BlendListByBool_2B80C4C24105DC5A74E560BEC5E5B115()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_PanzerHund_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_BlendListByBool_2B80C4C24105DC5A74E560BEC5E5B115");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_BlendListByBool_2B80C4C24105DC5A74E560BEC5E5B115", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -126,10 +114,8 @@ void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHu
 
 void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_27A2A8374D0CA89334D57BAA78C89F53()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_PanzerHund_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_27A2A8374D0CA89334D57BAA78C89F53");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_27A2A8374D0CA89334D57BAA78C89F53", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -140,10 +126,8 @@ void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHu
 
 void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_27F76AF94367732BF993B6A30F87DE58()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_PanzerHund_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_27F76AF94367732BF993B6A30F87DE58");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_27F76AF94367732BF993B6A30F87DE58", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -154,10 +138,8 @@ void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHu
 
 void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_359A59E542F2562DBDE186B92E55F8AF()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_PanzerHund_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_359A59E542F2562DBDE186B92E55F8AF");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_359A59E542F2562DBDE186B92E55F8AF", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -168,10 +150,8 @@ void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHu
 
 void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_5326C34B4A66B352494F2CB0ADF7C38A()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_PanzerHund_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_5326C34B4A66B352494F2CB0ADF7C38A");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_5326C34B4A66B352494F2CB0ADF7C38A", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -182,10 +162,8 @@ void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHu
 
 void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_71A78BD34FCCA8BD7E6FC98C8A2B5E3C()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_PanzerHund_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_71A78BD34FCCA8BD7E6FC98C8A2B5E3C");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_71A78BD34FCCA8BD7E6FC98C8A2B5E3C", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -196,10 +174,8 @@ void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHu
 
 void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_90CD82ED49415B8A4DEFA186CB86A8E8()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_PanzerHund_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_90CD82ED49415B8A4DEFA186CB86A8E8");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_90CD82ED49415B8A4DEFA186CB86A8E8", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -210,10 +186,8 @@ void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHu
 
 void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_9903681940ED80EA8C5AEB81918B1CA2()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_PanzerHund_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_9903681940ED80EA8C5AEB81918B1CA2");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_9903681940ED80EA8C5AEB81918B1CA2", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -224,10 +198,8 @@ void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHu
 
 void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_9A404664478112ED230BF8A28C3BA19D()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_PanzerHund_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_9A404664478112ED230BF8A28C3BA19D");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_9A404664478112ED230BF8A28C3BA19D", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -238,10 +210,8 @@ void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHu
 
 void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_B15AFD2C4A23111A3410BD9C57AE601F()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_PanzerHund_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_B15AFD2C4A23111A3410BD9C57AE601F");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_B15AFD2C4A23111A3410BD9C57AE601F", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -252,10 +222,8 @@ void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHu
 
 void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_B3512C734A4CA868589A3FBA9029C5D0()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_PanzerHund_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_B3512C734A4CA868589A3FBA9029C5D0");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_B3512C734A4CA868589A3FBA9029C5D0", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -266,10 +234,8 @@ void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHu
 
 void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_B98D7E1049D3D4B2EB89119440EB9691()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_PanzerHund_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_B98D7E1049D3D4B2EB89119440EB9691");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_B98D7E1049D3D4B2EB89119440EB9691", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -280,10 +246,8 @@ void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHu
 
 void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_BB26A058460D440C220A39A576A45AF9()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_PanzerHund_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_BB26A058460D440C220A39A576A45AF9");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_BB26A058460D440C220A39A576A45AF9", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -294,10 +258,8 @@ void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHu
 
 void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_CB8CD5034E8382664C4022A06E1E1429()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_PanzerHund_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_CB8CD5034E8382664C4022A06E1E1429");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_CB8CD5034E8382664C4022A06E1E1429", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -308,10 +270,8 @@ void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHu
 
 void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_FB8492694E4AD31DAC9BAFBE3ACB0BA7()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_PanzerHund_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_FB8492694E4AD31DAC9BAFBE3ACB0BA7");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHund_AnimGraphNode_TransitionResult_FB8492694E4AD31DAC9BAFBE3ACB0BA7", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -324,10 +284,8 @@ void UABP_PanzerHund_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_PanzerHu
 
 void UABP_PanzerHund_C::ExecuteUbergraph_ABP_PanzerHund(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_PanzerHund_C", "ExecuteUbergraph_ABP_PanzerHund");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "ABP_PanzerHund_C", "ExecuteUbergraph_ABP_PanzerHund", FuncInfo);
 
 	Params::ABP_PanzerHund_C_ExecuteUbergraph_ABP_PanzerHund Parms{};
 
@@ -345,10 +303,8 @@ void UABP_PanzerHund_C::ExecuteUbergraph_ABP_PanzerHund(int32 EntryPoint)
 
 void UABP_PanzerHund_C::UpdateYawRotationRateForLocomotionState(ECrEnemyLocomotionType OldLocomotionType, ECrEnemyLocomotionType NewLocomotionType)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_PanzerHund_C", "UpdateYawRotationRateForLocomotionState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateYawRotationRateForLocomotionState", FnName));
 
 	Params::ABP_PanzerHund_C_UpdateYawRotationRateForLocomotionState Parms{};
 

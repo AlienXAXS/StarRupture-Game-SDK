@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_EncyclopediaSubcategoryGrid_C::BndEvt__WBP_EncyclopediaSubcategoryGrid_DropDownButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EncyclopediaSubcategoryGrid_C", "BndEvt__WBP_EncyclopediaSubcategoryGrid_DropDownButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__WBP_EncyclopediaSubcategoryGrid_DropDownButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -35,10 +33,8 @@ void UWBP_EncyclopediaSubcategoryGrid_C::BndEvt__WBP_EncyclopediaSubcategoryGrid
 
 void UWBP_EncyclopediaSubcategoryGrid_C::BndEvt__WBP_EncyclopediaSubcategoryGrid_LevelButton_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EncyclopediaSubcategoryGrid_C", "BndEvt__WBP_EncyclopediaSubcategoryGrid_LevelButton_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__WBP_EncyclopediaSubcategoryGrid_LevelButton_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -51,10 +47,8 @@ void UWBP_EncyclopediaSubcategoryGrid_C::BndEvt__WBP_EncyclopediaSubcategoryGrid
 
 void UWBP_EncyclopediaSubcategoryGrid_C::ExecuteUbergraph_WBP_EncyclopediaSubcategoryGrid(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EncyclopediaSubcategoryGrid_C", "ExecuteUbergraph_WBP_EncyclopediaSubcategoryGrid");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_EncyclopediaSubcategoryGrid_C", "ExecuteUbergraph_WBP_EncyclopediaSubcategoryGrid", FuncInfo);
 
 	Params::WBP_EncyclopediaSubcategoryGrid_C_ExecuteUbergraph_WBP_EncyclopediaSubcategoryGrid Parms{};
 
@@ -71,10 +65,8 @@ void UWBP_EncyclopediaSubcategoryGrid_C::ExecuteUbergraph_WBP_EncyclopediaSubcat
 
 void UWBP_EncyclopediaSubcategoryGrid_C::SetGridExpanded(bool Expanded_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EncyclopediaSubcategoryGrid_C", "SetGridExpanded");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetGridExpanded", FnName));
 
 	Params::WBP_EncyclopediaSubcategoryGrid_C_SetGridExpanded Parms{};
 
@@ -91,10 +83,8 @@ void UWBP_EncyclopediaSubcategoryGrid_C::SetGridExpanded(bool Expanded_0)
 
 void UWBP_EncyclopediaSubcategoryGrid_C::SetSubCategoryTitleBP(const class FText& Title)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EncyclopediaSubcategoryGrid_C", "SetSubCategoryTitleBP");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetSubCategoryTitleBP", FnName));
 
 	Params::WBP_EncyclopediaSubcategoryGrid_C_SetSubCategoryTitleBP Parms{};
 
@@ -111,10 +101,8 @@ void UWBP_EncyclopediaSubcategoryGrid_C::SetSubCategoryTitleBP(const class FText
 
 void UWBP_EncyclopediaSubcategoryGrid_C::SetSubcategoryTitleStyleBP(const bool isHighlight)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EncyclopediaSubcategoryGrid_C", "SetSubcategoryTitleStyleBP");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetSubcategoryTitleStyleBP", FnName));
 
 	Params::WBP_EncyclopediaSubcategoryGrid_C_SetSubcategoryTitleStyleBP Parms{};
 
@@ -131,10 +119,8 @@ void UWBP_EncyclopediaSubcategoryGrid_C::SetSubcategoryTitleStyleBP(const bool i
 
 void UWBP_EncyclopediaSubcategoryGrid_C::SetUnreadStatusIcons(bool Unread)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EncyclopediaSubcategoryGrid_C", "SetUnreadStatusIcons");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetUnreadStatusIcons", FnName));
 
 	Params::WBP_EncyclopediaSubcategoryGrid_C_SetUnreadStatusIcons Parms{};
 
@@ -149,10 +135,8 @@ void UWBP_EncyclopediaSubcategoryGrid_C::SetUnreadStatusIcons(bool Unread)
 
 void UWBP_EncyclopediaSubcategoryGrid_C::SwitchExpand()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EncyclopediaSubcategoryGrid_C", "SwitchExpand");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SwitchExpand", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

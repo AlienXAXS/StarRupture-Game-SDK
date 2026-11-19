@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
-#include "Engine_classes.hpp"
-#include "MassSpawner_classes.hpp"
-#include "CrAiRangedRuntime_structs.hpp"
-#include "Chimera_classes.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_classes.hpp"
+#include "Engine_classes.hpp"
+#include "Chimera_classes.hpp"
+#include "CrAiRangedRuntime_structs.hpp"
+#include "MassSpawner_classes.hpp"
 
 
 SDK_NAMESPACE_START
@@ -88,12 +88,12 @@ public:
 DUMPER7_ASSERTS_ARangedClientBubbleInfo;
 
 // Class CrAiRangedRuntime.CrAiRangedDataAsset
-// 0x0018 (0x0778 - 0x0760)
+// 0x0018 (0x0798 - 0x0780)
 class UCrAiRangedDataAsset final : public UMassEnemyDataAsset
 {
 public:
-	struct FAiFloatConfigurationValue             MinRangedAttackRange;                              // 0x0760(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FAiFloatConfigurationValue             MaxRangedAttackRange;                              // 0x076C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FAiFloatConfigurationValue             MinRangedAttackRange;                              // 0x0780(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FAiFloatConfigurationValue             MaxRangedAttackRange;                              // 0x078C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()

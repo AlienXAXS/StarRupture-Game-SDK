@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UABP_Melee_Tier0_Ragdoll_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier0_Ragdoll_C", "AnimGraph");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimGraph", FnName));
 
 	Params::ABP_Melee_Tier0_Ragdoll_C_AnimGraph Parms{};
 

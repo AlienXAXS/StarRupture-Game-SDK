@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_Purplant_C::BP_OnLightsVisualsTriggered(bool bLightsOn)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Purplant_C", "BP_OnLightsVisualsTriggered");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnLightsVisualsTriggered", FnName));
 
 	Params::BP_Purplant_C_BP_OnLightsVisualsTriggered Parms{};
 
@@ -43,10 +41,8 @@ void ABP_Purplant_C::BP_OnLightsVisualsTriggered(bool bLightsOn)
 
 void ABP_Purplant_C::ExecuteUbergraph_BP_Purplant(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Purplant_C", "ExecuteUbergraph_BP_Purplant");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Purplant_C", "ExecuteUbergraph_BP_Purplant", FuncInfo);
 
 	Params::BP_Purplant_C_ExecuteUbergraph_BP_Purplant Parms{};
 

@@ -18,9 +18,12 @@
 SDK_NAMESPACE_START
 
 // Class AuGear.AuGearInterface
-// 0x0000 (0x0000 - 0x0000)
-class IAuGearInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IAuGearInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{

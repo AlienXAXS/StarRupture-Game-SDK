@@ -291,13 +291,6 @@ public:
 };
 DUMPER7_ASSERTS_FCameraActorAttachmentInfo;
 
-// ScriptStruct GameplayCameras.GameplayCamerasStateTreeTask
-// 0x0000 (0x0028 - 0x0028)
-struct FGameplayCamerasStateTreeTask : public FStateTreeTaskBase
-{
-};
-DUMPER7_ASSERTS_FGameplayCamerasStateTreeTask;
-
 // ScriptStruct GameplayCameras.CameraActorTargetInfo
 // 0x0028 (0x0028 - 0x0000)
 struct FCameraActorTargetInfo final
@@ -347,15 +340,6 @@ public:
 };
 DUMPER7_ASSERTS_FCameraContextDataTableAllocationInfo;
 
-// ScriptStruct GameplayCameras.GameplayCamerasActivateCameraRigViaProxyTaskInstanceData
-// 0x0008 (0x0008 - 0x0000)
-struct FGameplayCamerasActivateCameraRigViaProxyTaskInstanceData final
-{
-public:
-	class UCameraRigProxyAsset*                   CameraRigProxy;                                    // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FGameplayCamerasActivateCameraRigViaProxyTaskInstanceData;
-
 // ScriptStruct GameplayCameras.CameraFramingZone
 // 0x0020 (0x0020 - 0x0000)
 struct FCameraFramingZone final
@@ -397,19 +381,6 @@ public:
 	int16                                         MaxAlignof;                                        // 0x0002(0x0002)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCameraNodeEvaluatorAllocationInfo;
-
-// ScriptStruct GameplayCameras.SplineOrbitControlPoint
-// 0x0050 (0x0050 - 0x0000)
-struct FSplineOrbitControlPoint final
-{
-public:
-	struct FVector3d                              LocationOffset;                                    // 0x0000(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector3d                              TargetOffset;                                      // 0x0018(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRotator3d                             RotationOffset;                                    // 0x0030(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	float                                         PitchAngle;                                        // 0x0048(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FSplineOrbitControlPoint;
 
 // ScriptStruct GameplayCameras.CameraObjectInterfaceParameterDefinition
 // 0x0048 (0x0048 - 0x0000)
@@ -1242,6 +1213,13 @@ public:
 };
 DUMPER7_ASSERTS_FCameraDirectorStateTreeEvaluationData;
 
+// ScriptStruct GameplayCameras.GameplayCamerasStateTreeTask
+// 0x0000 (0x0028 - 0x0028)
+struct FGameplayCamerasStateTreeTask : public FStateTreeTaskBase
+{
+};
+DUMPER7_ASSERTS_FGameplayCamerasStateTreeTask;
+
 // ScriptStruct GameplayCameras.GameplayCamerasStateTreeCondition
 // 0x0000 (0x0028 - 0x0028)
 struct FGameplayCamerasStateTreeCondition final : public FStateTreeConditionBase
@@ -1268,6 +1246,15 @@ public:
 	uint8                                         Pad_2F[0x1];                                       // 0x002F(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FGameplayCamerasActivateCameraRigTask;
+
+// ScriptStruct GameplayCameras.GameplayCamerasActivateCameraRigViaProxyTaskInstanceData
+// 0x0008 (0x0008 - 0x0000)
+struct FGameplayCamerasActivateCameraRigViaProxyTaskInstanceData final
+{
+public:
+	class UCameraRigProxyAsset*                   CameraRigProxy;                                    // 0x0000(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FGameplayCamerasActivateCameraRigViaProxyTaskInstanceData;
 
 // ScriptStruct GameplayCameras.GameplayCamerasActivateCameraRigViaProxyTask
 // 0x0008 (0x0030 - 0x0028)
@@ -1323,5 +1310,18 @@ public:
 	float                                         Frequency;                                         // 0x0004(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FPerlinNoiseData;
+
+// ScriptStruct GameplayCameras.SplineOrbitControlPoint
+// 0x0050 (0x0050 - 0x0000)
+struct FSplineOrbitControlPoint final
+{
+public:
+	struct FVector3d                              LocationOffset;                                    // 0x0000(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector3d                              TargetOffset;                                      // 0x0018(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator3d                             RotationOffset;                                    // 0x0030(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         PitchAngle;                                        // 0x0048(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FSplineOrbitControlPoint;
 
 SDK_NAMESPACE_END

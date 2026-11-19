@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_InventorySingleItemContainer_C::ExecuteUbergraph_WBP_InventorySingleItemContainer(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventorySingleItemContainer_C", "ExecuteUbergraph_WBP_InventorySingleItemContainer");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_InventorySingleItemContainer_C", "ExecuteUbergraph_WBP_InventorySingleItemContainer", FuncInfo);
 
 	Params::WBP_InventorySingleItemContainer_C_ExecuteUbergraph_WBP_InventorySingleItemContainer Parms{};
 
@@ -41,10 +39,8 @@ void UWBP_InventorySingleItemContainer_C::ExecuteUbergraph_WBP_InventorySingleIt
 
 void UWBP_InventorySingleItemContainer_C::HideFullStackIcon()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventorySingleItemContainer_C", "HideFullStackIcon");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"HideFullStackIcon", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -55,10 +51,8 @@ void UWBP_InventorySingleItemContainer_C::HideFullStackIcon()
 
 void UWBP_InventorySingleItemContainer_C::SetItemEmptyBrush()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventorySingleItemContainer_C", "SetItemEmptyBrush");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetItemEmptyBrush", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -71,10 +65,8 @@ void UWBP_InventorySingleItemContainer_C::SetItemEmptyBrush()
 
 void UWBP_InventorySingleItemContainer_C::SetItemSize(double InSize)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventorySingleItemContainer_C", "SetItemSize");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetItemSize", FnName));
 
 	Params::WBP_InventorySingleItemContainer_C_SetItemSize Parms{};
 
@@ -92,10 +84,8 @@ void UWBP_InventorySingleItemContainer_C::SetItemSize(double InSize)
 
 void UWBP_InventorySingleItemContainer_C::SetRecipeOutSlot(const struct FSlateBrush& InBrush, EUIItemType InUIType)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventorySingleItemContainer_C", "SetRecipeOutSlot");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetRecipeOutSlot", FnName));
 
 	Params::WBP_InventorySingleItemContainer_C_SetRecipeOutSlot Parms{};
 

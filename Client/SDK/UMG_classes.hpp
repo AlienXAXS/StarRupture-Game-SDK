@@ -13,14 +13,15 @@
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "UMG_structs.hpp"
+#include "FieldNotification_classes.hpp"
 #include "SlateCore_structs.hpp"
-#include "DeveloperSettings_classes.hpp"
 #include "MovieSceneTracks_classes.hpp"
 #include "Slate_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "MovieScene_structs.hpp"
 #include "MovieScene_classes.hpp"
+#include "DeveloperSettings_classes.hpp"
 #include "InputCore_structs.hpp"
 
 
@@ -48,10 +49,9 @@ DUMPER7_ASSERTS_UVisual;
 
 // Class UMG.Widget
 // 0x0168 (0x0190 - 0x0028)
-class UWidget : public UVisual
+class UWidget : public UVisual, public INotifyFieldValueChanged
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class UPanelSlot*                             Slot;                                              // 0x0030(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, TextExportTransient, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	TDelegate<void()>                             bIsEnabledDelegate;                                // 0x0038(0x0018)(ZeroConstructor, InstancedReference, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TDelegate<void()>                             ToolTipTextDelegate;                               // 0x0050(0x0018)(ZeroConstructor, InstancedReference, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -543,10 +543,9 @@ DUMPER7_ASSERTS_USlateAccessibleWidgetData;
 
 // Class UMG.UIComponent
 // 0x0028 (0x0050 - 0x0028)
-class UUIComponent final : public UObject
+class UUIComponent final : public UObject, public INotifyFieldValueChanged
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TWeakObjectPtr<class UWidget>                 Owner;                                             // 0x0030(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, DuplicateTransient, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_38[0x18];                                      // 0x0038(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
@@ -589,12 +588,44 @@ public:
 };
 DUMPER7_ASSERTS_UUIComponentContainer;
 
-// Class UMG.UserWidget
-// 0x0210 (0x03A0 - 0x0190)
-class UUserWidget : public UWidget
+// Class UMG.NamedSlotInterface
+// 0x0008 (0x0008 - 0x0000)
+class INamedSlotInterface
 {
 public:
-	uint8                                         Pad_190[0x48];                                     // 0x0190(0x0048)(Fixing Size After Last Property [ Dumper-7 ])
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("NamedSlotInterface")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"NamedSlotInterface")
+	}
+	static class INamedSlotInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<INamedSlotInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_INamedSlotInterface;
+
+// Class UMG.UserWidget
+// 0x0210 (0x03A0 - 0x0190)
+class UUserWidget : public UWidget, public INamedSlotInterface
+{
+public:
+	uint8                                         Pad_198[0x40];                                     // 0x0198(0x0040)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FLinearColor                           ColorAndOpacity;                                   // 0x01D8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TDelegate<void()>                             ColorAndOpacityDelegate;                           // 0x01E8(0x0018)(ZeroConstructor, InstancedReference, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FSlateColor                            ForegroundColor;                                   // 0x0200(0x0014)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
@@ -953,10 +984,9 @@ DUMPER7_ASSERTS_UMovieScene2DTransformPropertySystem;
 
 // Class UMG.MovieScene2DTransformSection
 // 0x0828 (0x0938 - 0x0110)
-class UMovieScene2DTransformSection final : public UMovieSceneSection
+class UMovieScene2DTransformSection final : public UMovieSceneSection, public IMovieSceneEntityProvider
 {
 public:
-	uint8                                         Pad_110[0x8];                                      // 0x0110(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FMovieScene2DTransformMask             TransformMask;                                     // 0x0118(0x0004)(NoDestructor, NativeAccessSpecifierPublic)
 	uint8                                         Pad_11C[0x4];                                      // 0x011C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FMovieSceneFloatChannel                Translation[0x2];                                  // 0x0120(0x0128)(NativeAccessSpecifierPublic)
@@ -1022,10 +1052,9 @@ DUMPER7_ASSERTS_UMovieSceneMarginPropertySystem;
 
 // Class UMG.MovieSceneMarginSection
 // 0x04A8 (0x05B8 - 0x0110)
-class UMovieSceneMarginSection final : public UMovieSceneSection
+class UMovieSceneMarginSection final : public UMovieSceneSection, public IMovieSceneEntityProvider
 {
 public:
-	uint8                                         Pad_110[0x8];                                      // 0x0110(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FMovieSceneFloatChannel                TopCurve;                                          // 0x0118(0x0128)(NativeAccessSpecifierPublic)
 	struct FMovieSceneFloatChannel                LeftCurve;                                         // 0x0240(0x0128)(NativeAccessSpecifierPublic)
 	struct FMovieSceneFloatChannel                RightCurve;                                        // 0x0368(0x0128)(NativeAccessSpecifierPublic)
@@ -1069,10 +1098,10 @@ DUMPER7_ASSERTS_UMovieSceneMarginTrack;
 
 // Class UMG.MovieSceneWidgetMaterialSystem
 // 0x01C8 (0x0208 - 0x0040)
-class UMovieSceneWidgetMaterialSystem final : public UMovieSceneEntitySystem
+class UMovieSceneWidgetMaterialSystem final : public UMovieSceneEntitySystem, public IMovieScenePreAnimatedStateSystemInterface
 {
 public:
-	uint8                                         Pad_40[0x1C8];                                     // 0x0040(0x01C8)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_48[0x1C0];                                     // 0x0048(0x01C0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -1092,10 +1121,9 @@ DUMPER7_ASSERTS_UMovieSceneWidgetMaterialSystem;
 
 // Class UMG.MovieSceneWidgetMaterialTrack
 // 0x0028 (0x0158 - 0x0130)
-class UMovieSceneWidgetMaterialTrack final : public UMovieSceneMaterialTrack
+class UMovieSceneWidgetMaterialTrack final : public UMovieSceneMaterialTrack, public IMovieSceneEntityProvider, public IMovieSceneParameterSectionExtender
 {
 public:
-	uint8                                         Pad_130[0x10];                                     // 0x0130(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class FName>                           BrushPropertyNamePath;                             // 0x0140(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
 	class FName                                   TrackName;                                         // 0x0150(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
@@ -1734,9 +1762,12 @@ public:
 DUMPER7_ASSERTS_UGameViewportSubsystem;
 
 // Class UMG.UserListEntry
-// 0x0000 (0x0000 - 0x0000)
-class IUserListEntry final
+// 0x0008 (0x0008 - 0x0000)
+class IUserListEntry
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	void BP_OnEntryReleased();
 	void BP_OnItemExpansionChanged(bool bIsExpanded);
@@ -1793,8 +1824,8 @@ public:
 DUMPER7_ASSERTS_UUserListEntryLibrary;
 
 // Class UMG.UserObjectListEntry
-// 0x0000 (0x0000 - 0x0000)
-class IUserObjectListEntry final
+// 0x0000 (0x0008 - 0x0008)
+class IUserObjectListEntry : public IUserListEntry
 {
 public:
 	void OnListItemObjectSet(class UObject* ListItemObject);
@@ -2496,10 +2527,10 @@ DUMPER7_ASSERTS_UEditableTextBox;
 
 // Class UMG.ExpandableArea
 // 0x02C0 (0x0450 - 0x0190)
-class UExpandableArea final : public UWidget
+class UExpandableArea final : public UWidget, public INamedSlotInterface
 {
 public:
-	uint8                                         Pad_190[0x10];                                     // 0x0190(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_198[0x8];                                      // 0x0198(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FExpandableAreaStyle                   Style;                                             // 0x01A0(0x0180)(Edit, NativeAccessSpecifierPublic)
 	struct FSlateBrush                            BorderBrush;                                       // 0x0320(0x00B0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	struct FSlateColor                            BorderColor;                                       // 0x03D0(0x0014)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
@@ -2998,35 +3029,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UNamedSlot;
-
-// Class UMG.NamedSlotInterface
-// 0x0000 (0x0000 - 0x0000)
-class INamedSlotInterface final
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("NamedSlotInterface")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"NamedSlotInterface")
-	}
-	static class INamedSlotInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<INamedSlotInterface>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_INamedSlotInterface;
 
 // Class UMG.NativeWidgetHost
 // 0x0010 (0x01A0 - 0x0190)
@@ -4944,10 +4946,9 @@ DUMPER7_ASSERTS_UWidgetLayoutLibrary;
 
 // Class UMG.WidgetTree
 // 0x0060 (0x0088 - 0x0028)
-class UWidgetTree final : public UObject
+class UWidgetTree final : public UObject, public INamedSlotInterface
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class UWidget*                                RootWidget;                                        // 0x0030(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	TMap<class FName, class UWidget*>             NamedSlotBindings;                                 // 0x0038(0x0050)(ExportObject, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
 

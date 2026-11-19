@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_MiningBoost_Counter_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MiningBoost_Counter_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -35,10 +33,8 @@ void UWBP_MiningBoost_Counter_C::Construct()
 
 void UWBP_MiningBoost_Counter_C::Destruct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MiningBoost_Counter_C", "Destruct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Destruct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -51,10 +47,8 @@ void UWBP_MiningBoost_Counter_C::Destruct()
 
 void UWBP_MiningBoost_Counter_C::ExecuteUbergraph_WBP_MiningBoost_Counter(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MiningBoost_Counter_C", "ExecuteUbergraph_WBP_MiningBoost_Counter");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_MiningBoost_Counter_C", "ExecuteUbergraph_WBP_MiningBoost_Counter", FuncInfo);
 
 	Params::WBP_MiningBoost_Counter_C_ExecuteUbergraph_WBP_MiningBoost_Counter Parms{};
 
@@ -69,10 +63,8 @@ void UWBP_MiningBoost_Counter_C::ExecuteUbergraph_WBP_MiningBoost_Counter(int32 
 
 void UWBP_MiningBoost_Counter_C::SequenceEvent__ENTRYPOINTWBP_MiningBoost_Counter()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MiningBoost_Counter_C", "SequenceEvent__ENTRYPOINTWBP_MiningBoost_Counter");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SequenceEvent__ENTRYPOINTWBP_MiningBoost_Counter", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -83,10 +75,8 @@ void UWBP_MiningBoost_Counter_C::SequenceEvent__ENTRYPOINTWBP_MiningBoost_Counte
 
 void UWBP_MiningBoost_Counter_C::UpdateBoostDurationProgressBarRound()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MiningBoost_Counter_C", "UpdateBoostDurationProgressBarRound");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateBoostDurationProgressBarRound", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

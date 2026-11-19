@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_AttributeStatsWidget_C::Destruct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_AttributeStatsWidget_C", "Destruct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Destruct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -37,10 +35,8 @@ void UWBP_AttributeStatsWidget_C::Destruct()
 
 void UWBP_AttributeStatsWidget_C::ExecuteUbergraph_WBP_AttributeStatsWidget(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_AttributeStatsWidget_C", "ExecuteUbergraph_WBP_AttributeStatsWidget");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_AttributeStatsWidget_C", "ExecuteUbergraph_WBP_AttributeStatsWidget", FuncInfo);
 
 	Params::WBP_AttributeStatsWidget_C_ExecuteUbergraph_WBP_AttributeStatsWidget Parms{};
 

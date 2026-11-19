@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 bool ABP_Animal_Crab_Character_C::AreTentaclesHidden()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_Crab_Character_C", "AreTentaclesHidden");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AreTentaclesHidden", FnName));
 
 	Params::BP_Animal_Crab_Character_C_AreTentaclesHidden Parms{};
 
@@ -47,10 +45,8 @@ bool ABP_Animal_Crab_Character_C::AreTentaclesHidden()
 
 void ABP_Animal_Crab_Character_C::BndEvt__BP_Animal_Crab_Character_CapsuleComponent_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, const struct FVector& NormalImpulse, const struct FHitResult& Hit)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_Crab_Character_C", "BndEvt__BP_Animal_Crab_Character_CapsuleComponent_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__BP_Animal_Crab_Character_CapsuleComponent_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature", FnName));
 
 	Params::BP_Animal_Crab_Character_C_BndEvt__BP_Animal_Crab_Character_CapsuleComponent_K2Node_ComponentBoundEvent_0_ComponentHitSignature__DelegateSignature Parms{};
 
@@ -71,10 +67,8 @@ void ABP_Animal_Crab_Character_C::BndEvt__BP_Animal_Crab_Character_CapsuleCompon
 
 void ABP_Animal_Crab_Character_C::ExecuteUbergraph_BP_Animal_Crab_Character(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_Crab_Character_C", "ExecuteUbergraph_BP_Animal_Crab_Character");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Animal_Crab_Character_C", "ExecuteUbergraph_BP_Animal_Crab_Character", FuncInfo);
 
 	Params::BP_Animal_Crab_Character_C_ExecuteUbergraph_BP_Animal_Crab_Character Parms{};
 
@@ -91,10 +85,8 @@ void ABP_Animal_Crab_Character_C::ExecuteUbergraph_BP_Animal_Crab_Character(int3
 
 class UCrAiAnimalCrabUpdateStateComponent* ABP_Animal_Crab_Character_C::GetCrabUpdateStateComponent()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_Crab_Character_C", "GetCrabUpdateStateComponent");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetCrabUpdateStateComponent", FnName));
 
 	Params::BP_Animal_Crab_Character_C_GetCrabUpdateStateComponent Parms{};
 
@@ -109,10 +101,8 @@ class UCrAiAnimalCrabUpdateStateComponent* ABP_Animal_Crab_Character_C::GetCrabU
 
 void ABP_Animal_Crab_Character_C::OnPrepareForGame()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_Crab_Character_C", "OnPrepareForGame");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPrepareForGame", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -123,10 +113,8 @@ void ABP_Animal_Crab_Character_C::OnPrepareForGame()
 
 void ABP_Animal_Crab_Character_C::OnPrepareForPooling()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_Crab_Character_C", "OnPrepareForPooling");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPrepareForPooling", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -137,10 +125,8 @@ void ABP_Animal_Crab_Character_C::OnPrepareForPooling()
 
 void ABP_Animal_Crab_Character_C::OnRep_AreTentaclesHiddenState()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_Crab_Character_C", "OnRep_AreTentaclesHiddenState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnRep_AreTentaclesHiddenState", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -151,10 +137,8 @@ void ABP_Animal_Crab_Character_C::OnRep_AreTentaclesHiddenState()
 
 void ABP_Animal_Crab_Character_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_Crab_Character_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -167,10 +151,8 @@ void ABP_Animal_Crab_Character_C::ReceiveBeginPlay()
 
 void ABP_Animal_Crab_Character_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_Crab_Character_C", "ReceiveEndPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveEndPlay", FnName));
 
 	Params::BP_Animal_Crab_Character_C_ReceiveEndPlay Parms{};
 
@@ -187,10 +169,8 @@ void ABP_Animal_Crab_Character_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 
 void ABP_Animal_Crab_Character_C::ReceiveTick(float DeltaSeconds_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_Crab_Character_C", "ReceiveTick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveTick", FnName));
 
 	Params::BP_Animal_Crab_Character_C_ReceiveTick Parms{};
 
@@ -207,10 +187,8 @@ void ABP_Animal_Crab_Character_C::ReceiveTick(float DeltaSeconds_0)
 
 void ABP_Animal_Crab_Character_C::RegisterFXEvent(const struct FGameplayTag& FXEventTag)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_Crab_Character_C", "RegisterFXEvent");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"RegisterFXEvent", FnName));
 
 	Params::BP_Animal_Crab_Character_C_RegisterFXEvent Parms{};
 
@@ -227,10 +205,8 @@ void ABP_Animal_Crab_Character_C::RegisterFXEvent(const struct FGameplayTag& FXE
 
 void ABP_Animal_Crab_Character_C::SetNiagaraActivity(bool NewActive)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_Crab_Character_C", "SetNiagaraActivity");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetNiagaraActivity", FnName));
 
 	Params::BP_Animal_Crab_Character_C_SetNiagaraActivity Parms{};
 
@@ -247,10 +223,8 @@ void ABP_Animal_Crab_Character_C::SetNiagaraActivity(bool NewActive)
 
 void ABP_Animal_Crab_Character_C::SetTentaclesHidden(bool bHidden_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_Crab_Character_C", "SetTentaclesHidden");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetTentaclesHidden", FnName));
 
 	Params::BP_Animal_Crab_Character_C_SetTentaclesHidden Parms{};
 
@@ -265,10 +239,8 @@ void ABP_Animal_Crab_Character_C::SetTentaclesHidden(bool bHidden_0)
 
 void ABP_Animal_Crab_Character_C::SimulateCatch()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_Crab_Character_C", "SimulateCatch");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SimulateCatch", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -279,10 +251,8 @@ void ABP_Animal_Crab_Character_C::SimulateCatch()
 
 void ABP_Animal_Crab_Character_C::SimulateCatchTimeline__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_Crab_Character_C", "SimulateCatchTimeline__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SimulateCatchTimeline__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -293,10 +263,8 @@ void ABP_Animal_Crab_Character_C::SimulateCatchTimeline__FinishedFunc()
 
 void ABP_Animal_Crab_Character_C::SimulateCatchTimeline__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_Crab_Character_C", "SimulateCatchTimeline__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SimulateCatchTimeline__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -307,10 +275,8 @@ void ABP_Animal_Crab_Character_C::SimulateCatchTimeline__UpdateFunc()
 
 void ABP_Animal_Crab_Character_C::StopCatach()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_Crab_Character_C", "StopCatach");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"StopCatach", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -323,10 +289,8 @@ void ABP_Animal_Crab_Character_C::StopCatach()
 
 void ABP_Animal_Crab_Character_C::OnMeshVisibilityUpdated(bool bIsMeshHidden) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_Crab_Character_C", "OnMeshVisibilityUpdated");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnMeshVisibilityUpdated", FnName));
 
 	Params::BP_Animal_Crab_Character_C_OnMeshVisibilityUpdated Parms{};
 

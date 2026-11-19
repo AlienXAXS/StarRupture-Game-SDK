@@ -14,6 +14,7 @@
 #include "Engine_classes.hpp"
 #include "CoreUObject_classes.hpp"
 #include "AudioExtensions_structs.hpp"
+#include "AudioExtensions_classes.hpp"
 
 
 SDK_NAMESPACE_START
@@ -42,9 +43,12 @@ public:
 DUMPER7_ASSERTS_UAudioAssetUserData;
 
 // Class AudioGameplay.AudioComponentGroupExtension
-// 0x0000 (0x0000 - 0x0000)
-class IAudioComponentGroupExtension final
+// 0x0008 (0x0008 - 0x0000)
+class IAudioComponentGroupExtension
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -71,9 +75,12 @@ public:
 DUMPER7_ASSERTS_IAudioComponentGroupExtension;
 
 // Class AudioGameplay.AudioGameplayCondition
-// 0x0000 (0x0000 - 0x0000)
-class IAudioGameplayCondition final
+// 0x0008 (0x0008 - 0x0000)
+class IAudioGameplayCondition
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	bool ConditionMet() const;
 	bool ConditionMet_Position(const struct FVector& Position) const;
@@ -104,9 +111,12 @@ public:
 DUMPER7_ASSERTS_IAudioGameplayCondition;
 
 // Class AudioGameplay.AudioGameplayVolumeInteraction
-// 0x0000 (0x0000 - 0x0000)
-class IAudioGameplayVolumeInteraction final
+// 0x0008 (0x0008 - 0x0000)
+class IAudioGameplayVolumeInteraction
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	void OnListenerEnter();
 	void OnListenerExit();
@@ -138,10 +148,10 @@ DUMPER7_ASSERTS_IAudioGameplayVolumeInteraction;
 
 // Class AudioGameplay.SoundHandleSubsystem
 // 0x00B0 (0x00E0 - 0x0030)
-class USoundHandleSubsystem final : public UAudioEngineSubsystem
+class USoundHandleSubsystem final : public UAudioEngineSubsystem, public IActiveSoundUpdateInterface
 {
 public:
-	uint8                                         Pad_30[0xB0];                                      // 0x0030(0x00B0)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0xA8];                                      // 0x0038(0x00A8)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -161,10 +171,9 @@ DUMPER7_ASSERTS_USoundHandleSubsystem;
 
 // Class AudioGameplay.AudioComponentGroup
 // 0x01D0 (0x0420 - 0x0250)
-class UAudioComponentGroup final : public USceneComponent
+class UAudioComponentGroup final : public USceneComponent, public IAudioParameterControllerInterface
 {
 public:
-	uint8                                         Pad_250[0x8];                                      // 0x0250(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TMulticastInlineDelegate<void()>              OnStopped;                                         // 0x0258(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnKilled;                                          // 0x0270(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 	TMulticastInlineDelegate<void()>              OnVirtualized;                                     // 0x0288(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
@@ -215,6 +224,21 @@ public:
 	{
 		return GetDefaultObjImpl<UAudioComponentGroup>();
 	}
+
+public:
+	void ResetParameters();
+	void SetBoolArrayParameter(class FName InName, const TArray<bool>& InValue);
+	void SetBoolParameter(class FName InName, bool InBool);
+	void SetFloatArrayParameter(class FName InName, const TArray<float>& InValue);
+	void SetFloatParameter(class FName InName, float InFloat);
+	void SetIntArrayParameter(class FName InName, const TArray<int32>& InValue);
+	void SetIntParameter(class FName InName, int32 inInt);
+	void SetObjectArrayParameter(class FName InName, const TArray<class UObject*>& InValue);
+	void SetObjectParameter(class FName InName, class UObject* InValue);
+	void SetParameters_Blueprint(const TArray<struct FAudioParameter>& InParameters);
+	void SetStringArrayParameter(class FName InName, const TArray<class FString>& InValue);
+	void SetStringParameter(class FName InName, const class FString& InValue);
+	void SetTriggerParameter(class FName InName);
 };
 DUMPER7_ASSERTS_UAudioComponentGroup;
 
@@ -289,10 +313,9 @@ DUMPER7_ASSERTS_UAudioGameplayTagCacheSubsystem;
 
 // Class AudioGameplay.AudioParameterComponent
 // 0x0030 (0x00F0 - 0x00C0)
-class UAudioParameterComponent final : public UAudioGameplayComponent
+class UAudioParameterComponent final : public UAudioGameplayComponent, public IAudioParameterControllerInterface, public IActorSoundParameterInterface
 {
 public:
-	uint8                                         Pad_C0[0x10];                                      // 0x00C0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<TWeakObjectPtr<class UAudioComponent>> ActiveComponents;                                  // 0x00D0(0x0010)(ExportObject, ZeroConstructor, Transient, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate)
 	TArray<struct FAudioParameter>                Parameters;                                        // 0x00E0(0x0010)(Edit, ZeroConstructor, DisableEditOnInstance, NativeAccessSpecifierPrivate)
 
@@ -312,6 +335,22 @@ public:
 	{
 		return GetDefaultObjImpl<UAudioParameterComponent>();
 	}
+
+public:
+	void ResetParameters();
+	void SetBoolArrayParameter(class FName InName, const TArray<bool>& InValue);
+	void SetBoolParameter(class FName InName, bool InBool);
+	void SetFloatArrayParameter(class FName InName, const TArray<float>& InValue);
+	void SetFloatParameter(class FName InName, float InFloat);
+	void SetIntArrayParameter(class FName InName, const TArray<int32>& InValue);
+	void SetIntParameter(class FName InName, int32 inInt);
+	void SetObjectArrayParameter(class FName InName, const TArray<class UObject*>& InValue);
+	void SetObjectParameter(class FName InName, class UObject* InValue);
+	void SetParameters_Blueprint(const TArray<struct FAudioParameter>& InParameters);
+	void SetStringArrayParameter(class FName InName, const TArray<class FString>& InValue);
+	void SetStringParameter(class FName InName, const class FString& InValue);
+	void SetTriggerParameter(class FName InName);
+	void GetActorSoundParams(TArray<struct FAudioParameter>* Params_0) const;
 };
 DUMPER7_ASSERTS_UAudioParameterComponent;
 

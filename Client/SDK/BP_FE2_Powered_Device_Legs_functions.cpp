@@ -16,6 +16,42 @@
 
 SDK_NAMESPACE_START
 
+// Function BP_FE2_Powered_Device_Legs.BP_FE2_Powered_Device_Legs_C.ExecuteUbergraph_BP_FE2_Powered_Device_Legs
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_FE2_Powered_Device_Legs_C::ExecuteUbergraph_BP_FE2_Powered_Device_Legs(int32 EntryPoint)
+{
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_FE2_Powered_Device_Legs_C", "ExecuteUbergraph_BP_FE2_Powered_Device_Legs", FuncInfo);
+
+	Params::BP_FE2_Powered_Device_Legs_C_ExecuteUbergraph_BP_FE2_Powered_Device_Legs Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_FE2_Powered_Device_Legs.BP_FE2_Powered_Device_Legs_C.OnBuildingStateChanged
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// ECrBuildingState                        InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_FE2_Powered_Device_Legs_C::OnBuildingStateChanged(ECrBuildingState InState)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBuildingStateChanged", FnName));
+
+	Params::BP_FE2_Powered_Device_Legs_C_OnBuildingStateChanged Parms{};
+
+	Parms.InState = InState;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_FE2_Powered_Device_Legs.BP_FE2_Powered_Device_Legs_C.Get Meshes
 // (Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
@@ -25,10 +61,8 @@ SDK_NAMESPACE_START
 
 void ABP_FE2_Powered_Device_Legs_C::Get_Meshes(class USceneComponent* Static_0, class USceneComponent* Animated, TArray<class UMeshComponent*>* NewParam) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Powered_Device_Legs_C", "Get Meshes");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Get Meshes", FnName));
 
 	Params::BP_FE2_Powered_Device_Legs_C_Get_Meshes Parms{};
 

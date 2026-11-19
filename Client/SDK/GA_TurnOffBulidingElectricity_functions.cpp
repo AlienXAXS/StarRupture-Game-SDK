@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UGA_TurnOffBulidingElectricity_C::ExecuteUbergraph_GA_TurnOffBulidingElectricity(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_TurnOffBulidingElectricity_C", "ExecuteUbergraph_GA_TurnOffBulidingElectricity");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "GA_TurnOffBulidingElectricity_C", "ExecuteUbergraph_GA_TurnOffBulidingElectricity", FuncInfo);
 
 	Params::GA_TurnOffBulidingElectricity_C_ExecuteUbergraph_GA_TurnOffBulidingElectricity Parms{};
 
@@ -45,10 +43,8 @@ void UGA_TurnOffBulidingElectricity_C::ExecuteUbergraph_GA_TurnOffBulidingElectr
 
 bool UGA_TurnOffBulidingElectricity_C::IsActivable(class AActor* Avatar, class ACrPlayerControllerBase* User)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_TurnOffBulidingElectricity_C", "IsActivable");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IsActivable", FnName));
 
 	Params::GA_TurnOffBulidingElectricity_C_IsActivable Parms{};
 
@@ -70,10 +66,8 @@ bool UGA_TurnOffBulidingElectricity_C::IsActivable(class AActor* Avatar, class A
 
 bool UGA_TurnOffBulidingElectricity_C::IsVisible(class AActor* Avatar, class ACrPlayerControllerBase* User)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_TurnOffBulidingElectricity_C", "IsVisible");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IsVisible", FnName));
 
 	Params::GA_TurnOffBulidingElectricity_C_IsVisible Parms{};
 
@@ -93,10 +87,8 @@ bool UGA_TurnOffBulidingElectricity_C::IsVisible(class AActor* Avatar, class ACr
 
 void UGA_TurnOffBulidingElectricity_C::K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_TurnOffBulidingElectricity_C", "K2_ActivateAbilityFromEvent");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_ActivateAbilityFromEvent", FnName));
 
 	Params::GA_TurnOffBulidingElectricity_C_K2_ActivateAbilityFromEvent Parms{};
 

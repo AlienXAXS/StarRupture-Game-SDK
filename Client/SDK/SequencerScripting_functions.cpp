@@ -3595,6 +3595,61 @@ bool UMovieSceneScriptingIntegerChannel::HasDefault() const
 }
 
 
+// Function SequencerScripting.MovieSceneDoubleVectorTrackExtensions.GetNumChannelsUsed
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UMovieSceneDoubleVectorTrack*     Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UMovieSceneDoubleVectorTrackExtensions::GetNumChannelsUsed(class UMovieSceneDoubleVectorTrack* Track)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneDoubleVectorTrackExtensions", "GetNumChannelsUsed");
+
+	Params::MovieSceneDoubleVectorTrackExtensions_GetNumChannelsUsed Parms{};
+
+	Parms.Track = Track;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function SequencerScripting.MovieSceneDoubleVectorTrackExtensions.SetNumChannelsUsed
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// class UMovieSceneDoubleVectorTrack*     Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InNumChannelsUsed                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMovieSceneDoubleVectorTrackExtensions::SetNumChannelsUsed(class UMovieSceneDoubleVectorTrack* Track, int32 InNumChannelsUsed)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MovieSceneDoubleVectorTrackExtensions", "SetNumChannelsUsed");
+
+	Params::MovieSceneDoubleVectorTrackExtensions_SetNumChannelsUsed Parms{};
+
+	Parms.Track = Track;
+	Parms.InNumChannelsUsed = InNumChannelsUsed;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function SequencerScripting.MovieSceneScriptingObjectPathKey.SetTime
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -9492,61 +9547,6 @@ void UMovieSceneFloatVectorTrackExtensions::SetNumChannelsUsed(class UMovieScene
 		Func = StaticClass()->GetFunction("MovieSceneFloatVectorTrackExtensions", "SetNumChannelsUsed");
 
 	Params::MovieSceneFloatVectorTrackExtensions_SetNumChannelsUsed Parms{};
-
-	Parms.Track = Track;
-	Parms.InNumChannelsUsed = InNumChannelsUsed;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function SequencerScripting.MovieSceneDoubleVectorTrackExtensions.GetNumChannelsUsed
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UMovieSceneDoubleVectorTrack*     Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UMovieSceneDoubleVectorTrackExtensions::GetNumChannelsUsed(class UMovieSceneDoubleVectorTrack* Track)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneDoubleVectorTrackExtensions", "GetNumChannelsUsed");
-
-	Params::MovieSceneDoubleVectorTrackExtensions_GetNumChannelsUsed Parms{};
-
-	Parms.Track = Track;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function SequencerScripting.MovieSceneDoubleVectorTrackExtensions.SetNumChannelsUsed
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// class UMovieSceneDoubleVectorTrack*     Track                                                  (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   InNumChannelsUsed                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMovieSceneDoubleVectorTrackExtensions::SetNumChannelsUsed(class UMovieSceneDoubleVectorTrack* Track, int32 InNumChannelsUsed)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MovieSceneDoubleVectorTrackExtensions", "SetNumChannelsUsed");
-
-	Params::MovieSceneDoubleVectorTrackExtensions_SetNumChannelsUsed Parms{};
 
 	Parms.Track = Track;
 	Parms.InNumChannelsUsed = InNumChannelsUsed;

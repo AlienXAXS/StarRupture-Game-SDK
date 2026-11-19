@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_EncyclopediaDatapadInfoMenu_C::ExecuteUbergraph_WBP_EncyclopediaDatapadInfoMenu(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EncyclopediaDatapadInfoMenu_C", "ExecuteUbergraph_WBP_EncyclopediaDatapadInfoMenu");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_EncyclopediaDatapadInfoMenu_C", "ExecuteUbergraph_WBP_EncyclopediaDatapadInfoMenu", FuncInfo);
 
 	Params::WBP_EncyclopediaDatapadInfoMenu_C_ExecuteUbergraph_WBP_EncyclopediaDatapadInfoMenu Parms{};
 
@@ -43,10 +41,8 @@ void UWBP_EncyclopediaDatapadInfoMenu_C::ExecuteUbergraph_WBP_EncyclopediaDatapa
 
 void UWBP_EncyclopediaDatapadInfoMenu_C::SetEntryAuthorTextBP(const class FText& Author)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EncyclopediaDatapadInfoMenu_C", "SetEntryAuthorTextBP");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetEntryAuthorTextBP", FnName));
 
 	Params::WBP_EncyclopediaDatapadInfoMenu_C_SetEntryAuthorTextBP Parms{};
 
@@ -63,10 +59,8 @@ void UWBP_EncyclopediaDatapadInfoMenu_C::SetEntryAuthorTextBP(const class FText&
 
 void UWBP_EncyclopediaDatapadInfoMenu_C::SetEntryTitleBP(const class FText& Title)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EncyclopediaDatapadInfoMenu_C", "SetEntryTitleBP");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetEntryTitleBP", FnName));
 
 	Params::WBP_EncyclopediaDatapadInfoMenu_C_SetEntryTitleBP Parms{};
 

@@ -24,10 +24,8 @@ SDK_NAMESPACE_START
 
 void ABP_Modular_StairsBarrierFlatL_C::GetBuildingMeshes(class UMeshComponent** MainBody, TArray<class UMeshComponent*>* AdditionalMeshes) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Modular_StairsBarrierFlatL_C", "GetBuildingMeshes");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetBuildingMeshes", FnName));
 
 	Params::BP_Modular_StairsBarrierFlatL_C_GetBuildingMeshes Parms{};
 
@@ -50,10 +48,8 @@ void ABP_Modular_StairsBarrierFlatL_C::GetBuildingMeshes(class UMeshComponent** 
 
 void ABP_Modular_StairsBarrierFlatL_C::GetBuildingProgressMeshes(float BuildingProgressPercentage, TArray<class UMeshComponent*>* OutMeshesToHide, TArray<class UMeshComponent*>* OutMeshesToShow) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Modular_StairsBarrierFlatL_C", "GetBuildingProgressMeshes");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetBuildingProgressMeshes", FnName));
 
 	Params::BP_Modular_StairsBarrierFlatL_C_GetBuildingProgressMeshes Parms{};
 

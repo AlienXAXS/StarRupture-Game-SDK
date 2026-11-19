@@ -16,6 +16,36 @@
 
 SDK_NAMESPACE_START
 
+// Function BP_HabitatBig.BP_HabitatBig_C.ExecuteUbergraph_BP_HabitatBig
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_HabitatBig_C::ExecuteUbergraph_BP_HabitatBig(int32 EntryPoint)
+{
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_HabitatBig_C", "ExecuteUbergraph_BP_HabitatBig", FuncInfo);
+
+	Params::BP_HabitatBig_C_ExecuteUbergraph_BP_HabitatBig Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_HabitatBig.BP_HabitatBig_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_HabitatBig_C::ReceiveBeginPlay()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_HabitatBig.BP_HabitatBig_C.GetBuildingMeshes
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
@@ -23,10 +53,8 @@ SDK_NAMESPACE_START
 
 void ABP_HabitatBig_C::GetBuildingMeshes(class UMeshComponent** MainBody) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HabitatBig_C", "GetBuildingMeshes");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetBuildingMeshes", FnName));
 
 	Params::BP_HabitatBig_C_GetBuildingMeshes Parms{};
 

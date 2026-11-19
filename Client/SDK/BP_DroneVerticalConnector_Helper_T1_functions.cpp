@@ -16,26 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function BP_DroneVerticalConnector_Helper_T1.BP_DroneVerticalConnector_Helper_T1_C.OnSetReplacingExistingActor
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bSet                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_DroneVerticalConnector_Helper_T1_C::OnSetReplacingExistingActor(bool bSet)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneVerticalConnector_Helper_T1_C", "OnSetReplacingExistingActor");
-
-	Params::BP_DroneVerticalConnector_Helper_T1_C_OnSetReplacingExistingActor Parms{};
-
-	Parms.bSet = bSet;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BP_DroneVerticalConnector_Helper_T1.BP_DroneVerticalConnector_Helper_T1_C.ExecuteUbergraph_BP_DroneVerticalConnector_Helper_T1
 // (Final, UbergraphFunction)
 // Parameters:
@@ -43,14 +23,30 @@ void ABP_DroneVerticalConnector_Helper_T1_C::OnSetReplacingExistingActor(bool bS
 
 void ABP_DroneVerticalConnector_Helper_T1_C::ExecuteUbergraph_BP_DroneVerticalConnector_Helper_T1(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneVerticalConnector_Helper_T1_C", "ExecuteUbergraph_BP_DroneVerticalConnector_Helper_T1");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_DroneVerticalConnector_Helper_T1_C", "ExecuteUbergraph_BP_DroneVerticalConnector_Helper_T1", FuncInfo);
 
 	Params::BP_DroneVerticalConnector_Helper_T1_C_ExecuteUbergraph_BP_DroneVerticalConnector_Helper_T1 Parms{};
 
 	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_DroneVerticalConnector_Helper_T1.BP_DroneVerticalConnector_Helper_T1_C.OnSetReplacingExistingActor
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bSet                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_DroneVerticalConnector_Helper_T1_C::OnSetReplacingExistingActor(bool bSet)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSetReplacingExistingActor", FnName));
+
+	Params::BP_DroneVerticalConnector_Helper_T1_C_OnSetReplacingExistingActor Parms{};
+
+	Parms.bSet = bSet;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

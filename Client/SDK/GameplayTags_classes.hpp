@@ -78,9 +78,12 @@ public:
 DUMPER7_ASSERTS_UBlueprintGameplayTagLibrary;
 
 // Class GameplayTags.GameplayTagAssetInterface
-// 0x0000 (0x0000 - 0x0000)
-class IGameplayTagAssetInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IGameplayTagAssetInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	struct FGameplayTagContainer BP_GetOwnedGameplayTags() const;
 	bool HasAllMatchingGameplayTags(const struct FGameplayTagContainer& TagContainer) const;

@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UGA_ZiplineTravelStarted_C::ExecuteUbergraph_GA_ZiplineTravelStarted(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_ZiplineTravelStarted_C", "ExecuteUbergraph_GA_ZiplineTravelStarted");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "GA_ZiplineTravelStarted_C", "ExecuteUbergraph_GA_ZiplineTravelStarted", FuncInfo);
 
 	Params::GA_ZiplineTravelStarted_C_ExecuteUbergraph_GA_ZiplineTravelStarted Parms{};
 
@@ -41,10 +39,8 @@ void UGA_ZiplineTravelStarted_C::ExecuteUbergraph_GA_ZiplineTravelStarted(int32 
 
 void UGA_ZiplineTravelStarted_C::K2_ActivateAbility()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_ZiplineTravelStarted_C", "K2_ActivateAbility");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_ActivateAbility", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -57,10 +53,8 @@ void UGA_ZiplineTravelStarted_C::K2_ActivateAbility()
 
 void UGA_ZiplineTravelStarted_C::OnCancelled_F088488449056A4F888E89BCB4C129EB(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_ZiplineTravelStarted_C", "OnCancelled_F088488449056A4F888E89BCB4C129EB");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnCancelled_F088488449056A4F888E89BCB4C129EB", FnName));
 
 	Params::GA_ZiplineTravelStarted_C_OnCancelled_F088488449056A4F888E89BCB4C129EB Parms{};
 
@@ -77,10 +71,8 @@ void UGA_ZiplineTravelStarted_C::OnCancelled_F088488449056A4F888E89BCB4C129EB(cl
 
 void UGA_ZiplineTravelStarted_C::OnFppMontageBlendOut_F088488449056A4F888E89BCB4C129EB(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_ZiplineTravelStarted_C", "OnFppMontageBlendOut_F088488449056A4F888E89BCB4C129EB");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageBlendOut_F088488449056A4F888E89BCB4C129EB", FnName));
 
 	Params::GA_ZiplineTravelStarted_C_OnFppMontageBlendOut_F088488449056A4F888E89BCB4C129EB Parms{};
 
@@ -97,10 +89,8 @@ void UGA_ZiplineTravelStarted_C::OnFppMontageBlendOut_F088488449056A4F888E89BCB4
 
 void UGA_ZiplineTravelStarted_C::OnFppMontageEnded_F088488449056A4F888E89BCB4C129EB(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_ZiplineTravelStarted_C", "OnFppMontageEnded_F088488449056A4F888E89BCB4C129EB");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageEnded_F088488449056A4F888E89BCB4C129EB", FnName));
 
 	Params::GA_ZiplineTravelStarted_C_OnFppMontageEnded_F088488449056A4F888E89BCB4C129EB Parms{};
 
@@ -117,10 +107,8 @@ void UGA_ZiplineTravelStarted_C::OnFppMontageEnded_F088488449056A4F888E89BCB4C12
 
 void UGA_ZiplineTravelStarted_C::OnFppMontageNotifyBegin_F088488449056A4F888E89BCB4C129EB(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_ZiplineTravelStarted_C", "OnFppMontageNotifyBegin_F088488449056A4F888E89BCB4C129EB");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageNotifyBegin_F088488449056A4F888E89BCB4C129EB", FnName));
 
 	Params::GA_ZiplineTravelStarted_C_OnFppMontageNotifyBegin_F088488449056A4F888E89BCB4C129EB Parms{};
 
@@ -137,10 +125,8 @@ void UGA_ZiplineTravelStarted_C::OnFppMontageNotifyBegin_F088488449056A4F888E89B
 
 void UGA_ZiplineTravelStarted_C::OnFppMontageNotifyEnd_F088488449056A4F888E89BCB4C129EB(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_ZiplineTravelStarted_C", "OnFppMontageNotifyEnd_F088488449056A4F888E89BCB4C129EB");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageNotifyEnd_F088488449056A4F888E89BCB4C129EB", FnName));
 
 	Params::GA_ZiplineTravelStarted_C_OnFppMontageNotifyEnd_F088488449056A4F888E89BCB4C129EB Parms{};
 
@@ -157,10 +143,8 @@ void UGA_ZiplineTravelStarted_C::OnFppMontageNotifyEnd_F088488449056A4F888E89BCB
 
 void UGA_ZiplineTravelStarted_C::OnInterrupted_F088488449056A4F888E89BCB4C129EB(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_ZiplineTravelStarted_C", "OnInterrupted_F088488449056A4F888E89BCB4C129EB");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnInterrupted_F088488449056A4F888E89BCB4C129EB", FnName));
 
 	Params::GA_ZiplineTravelStarted_C_OnInterrupted_F088488449056A4F888E89BCB4C129EB Parms{};
 
@@ -177,10 +161,8 @@ void UGA_ZiplineTravelStarted_C::OnInterrupted_F088488449056A4F888E89BCB4C129EB(
 
 void UGA_ZiplineTravelStarted_C::OnNotLocallyControlledTppMontageBlendOut_F088488449056A4F888E89BCB4C129EB(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_ZiplineTravelStarted_C", "OnNotLocallyControlledTppMontageBlendOut_F088488449056A4F888E89BCB4C129EB");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnNotLocallyControlledTppMontageBlendOut_F088488449056A4F888E89BCB4C129EB", FnName));
 
 	Params::GA_ZiplineTravelStarted_C_OnNotLocallyControlledTppMontageBlendOut_F088488449056A4F888E89BCB4C129EB Parms{};
 

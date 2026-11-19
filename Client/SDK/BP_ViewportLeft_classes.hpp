@@ -10,21 +10,26 @@
 
 #include "Basic.hpp"
 
+#include "Engine_structs.hpp"
 #include "Chimera_classes.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ViewportLeft.BP_ViewportLeft_C
-// 0x0018 (0x0890 - 0x0878)
+// 0x0020 (0x08A8 - 0x0888)
 class ABP_ViewportLeft_C final : public ACrCustomBuilding
 {
 public:
-	class UChildActorComponent*                   BP_ViewportStencil;                                // 0x0878(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   Glass;                                             // 0x0880(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	double                                        DoorAlignment;                                     // 0x0888(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0888(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UChildActorComponent*                   BP_ViewportStencil;                                // 0x0890(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   Glass;                                             // 0x0898(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	double                                        DoorAlignment;                                     // 0x08A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
+	void ExecuteUbergraph_BP_ViewportLeft(int32 EntryPoint);
+	void ReceiveBeginPlay();
+
 	void GetBuildingMeshes(class UMeshComponent** MainBody, TArray<class UMeshComponent*>* AdditionalMeshes) const;
 
 public:

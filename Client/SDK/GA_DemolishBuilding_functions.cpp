@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UGA_DemolishBuilding_C::ExecuteUbergraph_GA_DemolishBuilding(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_DemolishBuilding_C", "ExecuteUbergraph_GA_DemolishBuilding");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "GA_DemolishBuilding_C", "ExecuteUbergraph_GA_DemolishBuilding", FuncInfo);
 
 	Params::GA_DemolishBuilding_C_ExecuteUbergraph_GA_DemolishBuilding Parms{};
 
@@ -43,10 +41,8 @@ void UGA_DemolishBuilding_C::ExecuteUbergraph_GA_DemolishBuilding(int32 EntryPoi
 
 void UGA_DemolishBuilding_C::K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_DemolishBuilding_C", "K2_ActivateAbilityFromEvent");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_ActivateAbilityFromEvent", FnName));
 
 	Params::GA_DemolishBuilding_C_K2_ActivateAbilityFromEvent Parms{};
 

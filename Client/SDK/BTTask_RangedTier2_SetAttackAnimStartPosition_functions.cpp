@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UBTTask_RangedTier2_SetAttackAnimStartPosition_C::ExecuteUbergraph_BTTask_RangedTier2_SetAttackAnimStartPosition(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTTask_RangedTier2_SetAttackAnimStartPosition_C", "ExecuteUbergraph_BTTask_RangedTier2_SetAttackAnimStartPosition");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BTTask_RangedTier2_SetAttackAnimStartPosition_C", "ExecuteUbergraph_BTTask_RangedTier2_SetAttackAnimStartPosition", FuncInfo);
 
 	Params::BTTask_RangedTier2_SetAttackAnimStartPosition_C_ExecuteUbergraph_BTTask_RangedTier2_SetAttackAnimStartPosition Parms{};
 
@@ -44,10 +42,8 @@ void UBTTask_RangedTier2_SetAttackAnimStartPosition_C::ExecuteUbergraph_BTTask_R
 
 void UBTTask_RangedTier2_SetAttackAnimStartPosition_C::ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTTask_RangedTier2_SetAttackAnimStartPosition_C", "ReceiveExecuteAI");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveExecuteAI", FnName));
 
 	Params::BTTask_RangedTier2_SetAttackAnimStartPosition_C_ReceiveExecuteAI Parms{};
 

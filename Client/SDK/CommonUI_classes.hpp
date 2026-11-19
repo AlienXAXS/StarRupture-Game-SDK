@@ -25,9 +25,12 @@
 SDK_NAMESPACE_START
 
 // Class CommonUI.CommonBoundActionButtonInterface
-// 0x0000 (0x0000 - 0x0000)
-class ICommonBoundActionButtonInterface final
+// 0x0008 (0x0008 - 0x0000)
+class ICommonBoundActionButtonInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -78,9 +81,12 @@ public:
 DUMPER7_ASSERTS_UAnalogSlider;
 
 // Class CommonUI.CommonActionHandlerInterface
-// 0x0000 (0x0000 - 0x0000)
-class ICommonActionHandlerInterface final
+// 0x0008 (0x0008 - 0x0000)
+class ICommonActionHandlerInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -1059,9 +1065,12 @@ public:
 DUMPER7_ASSERTS_UCommonNumericTextBlock;
 
 // Class CommonUI.CommonPoolableWidgetInterface
-// 0x0000 (0x0000 - 0x0000)
-class ICommonPoolableWidgetInterface final
+// 0x0008 (0x0008 - 0x0000)
+class ICommonPoolableWidgetInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	void OnAcquireFromPool();
 	void OnReleaseToPool();
@@ -1508,9 +1517,12 @@ public:
 DUMPER7_ASSERTS_UCommonInputMetadata;
 
 // Class CommonUI.CommonMappingContextMetadataInterface
-// 0x0000 (0x0000 - 0x0000)
-class ICommonMappingContextMetadataInterface final
+// 0x0008 (0x0008 - 0x0000)
+class ICommonMappingContextMetadataInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -1538,10 +1550,9 @@ DUMPER7_ASSERTS_ICommonMappingContextMetadataInterface;
 
 // Class CommonUI.CommonMappingContextMetadata
 // 0x0060 (0x0090 - 0x0030)
-class UCommonMappingContextMetadata final : public UDataAsset
+class UCommonMappingContextMetadata final : public UDataAsset, public ICommonMappingContextMetadataInterface
 {
 public:
-	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class UCommonInputMetadata*                   EnhancedInputMetadata;                             // 0x0038(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, PersistentInstance, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	TMap<class UInputAction*, class UCommonInputMetadata*> PerActionEnhancedInputMetadata;           // 0x0040(0x0050)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
 
@@ -1947,10 +1958,9 @@ DUMPER7_ASSERTS_UCommonBoundActionBar;
 
 // Class CommonUI.CommonBoundActionButton
 // 0x0010 (0x1660 - 0x1650)
-class UCommonBoundActionButton : public UCommonButtonBase
+class UCommonBoundActionButton : public UCommonButtonBase, public ICommonBoundActionButtonInterface
 {
 public:
-	uint8                                         Pad_1648[0x8];                                     // 0x1648(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class UCommonTextBlock*                       Text_ActionName;                                   // 0x1650(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
 	bool                                          bLinkRequiresHoldToBindingHold;                    // 0x1658(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_1659[0x7];                                     // 0x1659(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])

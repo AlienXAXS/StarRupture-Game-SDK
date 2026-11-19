@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void ABP_CloudsHorizon_C::UserConstructionScript()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloudsHorizon_C", "UserConstructionScript");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UserConstructionScript", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -35,10 +33,8 @@ void ABP_CloudsHorizon_C::UserConstructionScript()
 
 void ABP_CloudsHorizon_C::Update_From_Material_Texture()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloudsHorizon_C", "Update From Material Texture");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Update From Material Texture", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -49,10 +45,8 @@ void ABP_CloudsHorizon_C::Update_From_Material_Texture()
 
 void ABP_CloudsHorizon_C::Timeline__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloudsHorizon_C", "Timeline__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -63,10 +57,8 @@ void ABP_CloudsHorizon_C::Timeline__UpdateFunc()
 
 void ABP_CloudsHorizon_C::Timeline__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloudsHorizon_C", "Timeline__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -77,10 +69,8 @@ void ABP_CloudsHorizon_C::Timeline__FinishedFunc()
 
 void ABP_CloudsHorizon_C::SetupPrimParams()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloudsHorizon_C", "SetupPrimParams");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetupPrimParams", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -93,10 +83,8 @@ void ABP_CloudsHorizon_C::SetupPrimParams()
 
 void ABP_CloudsHorizon_C::SetCurrentDensity(double Multiplyer)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloudsHorizon_C", "SetCurrentDensity");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetCurrentDensity", FnName));
 
 	Params::BP_CloudsHorizon_C_SetCurrentDensity Parms{};
 
@@ -111,10 +99,8 @@ void ABP_CloudsHorizon_C::SetCurrentDensity(double Multiplyer)
 
 void ABP_CloudsHorizon_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloudsHorizon_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -127,10 +113,8 @@ void ABP_CloudsHorizon_C::ReceiveBeginPlay()
 
 void ABP_CloudsHorizon_C::OnDataLayerDeactivate_Exec(bool FromLoad_OnDataLayerDeactivate_Exec)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloudsHorizon_C", "OnDataLayerDeactivate_Exec");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnDataLayerDeactivate_Exec", FnName));
 
 	Params::BP_CloudsHorizon_C_OnDataLayerDeactivate_Exec Parms{};
 
@@ -147,10 +131,8 @@ void ABP_CloudsHorizon_C::OnDataLayerDeactivate_Exec(bool FromLoad_OnDataLayerDe
 
 void ABP_CloudsHorizon_C::OnDataLayerActivate_Exec(bool FromLoad_OnDataLayerActivate_Exec)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloudsHorizon_C", "OnDataLayerActivate_Exec");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnDataLayerActivate_Exec", FnName));
 
 	Params::BP_CloudsHorizon_C_OnDataLayerActivate_Exec Parms{};
 
@@ -168,10 +150,8 @@ void ABP_CloudsHorizon_C::OnDataLayerActivate_Exec(bool FromLoad_OnDataLayerActi
 
 void ABP_CloudsHorizon_C::Is_Current_Data_Layer(class UDataLayerInstance* DataLayer, bool* Result)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloudsHorizon_C", "Is Current Data Layer");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Is Current Data Layer", FnName));
 
 	Params::BP_CloudsHorizon_C_Is_Current_Data_Layer Parms{};
 
@@ -191,10 +171,8 @@ void ABP_CloudsHorizon_C::Is_Current_Data_Layer(class UDataLayerInstance* DataLa
 
 void ABP_CloudsHorizon_C::ExecuteUbergraph_BP_CloudsHorizon(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloudsHorizon_C", "ExecuteUbergraph_BP_CloudsHorizon");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_CloudsHorizon_C", "ExecuteUbergraph_BP_CloudsHorizon", FuncInfo);
 
 	Params::BP_CloudsHorizon_C_ExecuteUbergraph_BP_CloudsHorizon Parms{};
 

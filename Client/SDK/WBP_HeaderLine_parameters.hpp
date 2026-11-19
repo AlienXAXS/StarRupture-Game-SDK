@@ -38,23 +38,5 @@ public:
 };
 DUMPER7_ASSERTS_WBP_HeaderLine_C_Set_Item_Data;
 
-// Function WBP_HeaderLine.WBP_HeaderLine_C.Setup Split Window Version
-// 0x0010 (0x0010 - 0x0000)
-struct WBP_HeaderLine_C_Setup_Split_Window_Version final
-{
-public:
-	class FText                                   ItemName_0;                                        // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm)
-};
-DUMPER7_ASSERTS_WBP_HeaderLine_C_Setup_Split_Window_Version;
-
-// Function WBP_HeaderLine.WBP_HeaderLine_C.SetupResizeStackVersion
-// 0x0010 (0x0010 - 0x0000)
-struct WBP_HeaderLine_C_SetupResizeStackVersion final
-{
-public:
-	class FText                                   Title;                                             // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm)
-};
-DUMPER7_ASSERTS_WBP_HeaderLine_C_SetupResizeStackVersion;
-
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

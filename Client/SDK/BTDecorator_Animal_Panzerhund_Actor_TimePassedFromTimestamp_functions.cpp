@@ -25,10 +25,8 @@ SDK_NAMESPACE_START
 
 bool UBTDecorator_Animal_Panzerhund_Actor_TimePassedFromTimestamp_C::PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTDecorator_Animal_Panzerhund_Actor_TimePassedFromTimestamp_C", "PerformConditionCheckAI");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PerformConditionCheckAI", FnName));
 
 	Params::BTDecorator_Animal_Panzerhund_Actor_TimePassedFromTimestamp_C_PerformConditionCheckAI Parms{};
 

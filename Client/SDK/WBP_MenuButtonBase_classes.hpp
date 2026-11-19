@@ -10,40 +10,42 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "SlateCore_structs.hpp"
+#include "Engine_structs.hpp"
 #include "ChimeraUI_classes.hpp"
 
 
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_MenuButtonBase.WBP_MenuButtonBase_C
-// 0x0230 (0x18D0 - 0x16A0)
+// 0x0230 (0x18F0 - 0x16C0)
 class UWBP_MenuButtonBase_C final : public UCrUW_ButtonBase
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x16A0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UOverlay*                               TextOvr;                                           // 0x16A8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UWidgetSwitcher*                        TextIconSwitch;                                    // 0x16B0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UOverlay*                               IconOvr;                                           // 0x16B8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UImage*                                 Icon;                                              // 0x16C0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	double                                        TextLeftRightPadding;                              // 0x16C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        HitTestPadding_X;                                  // 0x16D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        HitTestPadding_Y;                                  // 0x16D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        PressProgress;                                     // 0x16E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSlateFontInfo                         Font;                                              // 0x16E8(0x0060)(Edit, BlueprintVisible, HasGetValueTypeHash)
-	uint8                                         Pad_1748[0x8];                                     // 0x1748(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateBrush                            ButtonBorderBrush;                                 // 0x1750(0x00B0)(Edit, BlueprintVisible)
-	struct FSlateBrush                            IconBrush;                                         // 0x1800(0x00B0)(Edit, BlueprintVisible)
-	ETextTransformPolicy                          TextCase;                                          // 0x18B0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          FlipIconXDimension;                                // 0x18B1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          IsDisabled;                                        // 0x18B2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          UseImageOverlays;                                  // 0x18B3(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          UseScaleChangeSpacers;                             // 0x18B4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          UseIconOverride;                                   // 0x18B5(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EHorizontalAlignment                          InputHorzAlignment;                                // 0x18B6(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EVerticalAlignment                            InputVertAlignment;                                // 0x18B7(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FMargin                                InputPadding;                                      // 0x18B8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_16B8[0x8];                                     // 0x16B8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x16C0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UOverlay*                               TextOvr;                                           // 0x16C8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UOverlay*                               TextAndIcon;                                       // 0x16D0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UOverlay*                               IconOvr;                                           // 0x16D8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UImage*                                 Icon;                                              // 0x16E0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	double                                        TextLeftRightPadding;                              // 0x16E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        HitTestPadding_X;                                  // 0x16F0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        HitTestPadding_Y;                                  // 0x16F8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        PressProgress;                                     // 0x1700(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSlateFontInfo                         Font;                                              // 0x1708(0x0060)(Edit, BlueprintVisible, HasGetValueTypeHash)
+	uint8                                         Pad_1768[0x8];                                     // 0x1768(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateBrush                            ButtonBorderBrush;                                 // 0x1770(0x00B0)(Edit, BlueprintVisible)
+	struct FSlateBrush                            IconBrush;                                         // 0x1820(0x00B0)(Edit, BlueprintVisible)
+	ETextTransformPolicy                          TextCase;                                          // 0x18D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          FlipIconXDimension;                                // 0x18D1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          IsDisabled;                                        // 0x18D2(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          UseImageOverlays;                                  // 0x18D3(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          UseScaleChangeSpacers;                             // 0x18D4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          UseIconOverride;                                   // 0x18D5(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EHorizontalAlignment                          InputHorzAlignment;                                // 0x18D6(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EVerticalAlignment                            InputVertAlignment;                                // 0x18D7(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FMargin                                InputPadding;                                      // 0x18D8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          Rotated180ButtonImage;                             // 0x18E8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void BP_OnClicked();

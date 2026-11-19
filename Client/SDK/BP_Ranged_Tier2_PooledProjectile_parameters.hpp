@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "GameplayAbilities_structs.hpp"
 #include "Chimera_structs.hpp"
+#include "GameplayAbilities_structs.hpp"
 #include "Engine_structs.hpp"
 
 
@@ -20,7 +20,7 @@ SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
 // Function BP_Ranged_Tier2_PooledProjectile.BP_Ranged_Tier2_PooledProjectile_C.AddInstantHeatToCharacter
-// 0x0048 (0x0048 - 0x0000)
+// 0x0040 (0x0040 - 0x0000)
 struct BP_Ranged_Tier2_PooledProjectile_C_AddInstantHeatToCharacter final
 {
 public:
@@ -31,7 +31,6 @@ public:
 	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGameplayEffectSpecHandle              CallFunc_AssignTagSetByCallerMagnitude_ReturnValue; // 0x0028(0x0010)()
 	struct FActiveGameplayEffectHandle            CallFunc_BP_ApplyGameplayEffectSpecToSelf_ReturnValue; // 0x0038(0x0008)(NoDestructor, HasGetValueTypeHash)
-	struct FActiveGameplayEffectHandle            CallFunc_BP_ApplyGameplayEffectToSelf_ReturnValue; // 0x0040(0x0008)(NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_Ranged_Tier2_PooledProjectile_C_AddInstantHeatToCharacter;
 

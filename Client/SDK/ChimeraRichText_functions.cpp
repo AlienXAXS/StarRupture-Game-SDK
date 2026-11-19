@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UCrRichTextBlockHyperlinkDecorator::RichTextBlockClickHyperlinkBP(const class FString& ID)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrRichTextBlockHyperlinkDecorator", "RichTextBlockClickHyperlinkBP");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"RichTextBlockClickHyperlinkBP", FnName));
 
 	Params::CrRichTextBlockHyperlinkDecorator_RichTextBlockClickHyperlinkBP Parms{};
 

@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_FE_entrance_door_C::ExecuteUbergraph_BP_FE_entrance_door(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE_entrance_door_C", "ExecuteUbergraph_BP_FE_entrance_door");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_FE_entrance_door_C", "ExecuteUbergraph_BP_FE_entrance_door", FuncInfo);
 
 	Params::BP_FE_entrance_door_C_ExecuteUbergraph_BP_FE_entrance_door Parms{};
 
@@ -41,10 +39,8 @@ void ABP_FE_entrance_door_C::ExecuteUbergraph_BP_FE_entrance_door(int32 EntryPoi
 
 void ABP_FE_entrance_door_C::HideBattery()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE_entrance_door_C", "HideBattery");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"HideBattery", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -62,10 +58,8 @@ void ABP_FE_entrance_door_C::HideBattery()
 
 void ABP_FE_entrance_door_C::OnPlayerEntered(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE_entrance_door_C", "OnPlayerEntered");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPlayerEntered", FnName));
 
 	Params::BP_FE_entrance_door_C_OnPlayerEntered Parms{};
 
@@ -90,10 +84,8 @@ void ABP_FE_entrance_door_C::OnPlayerEntered(class UPrimitiveComponent* Overlapp
 
 void ABP_FE_entrance_door_C::OnPlayerExited(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE_entrance_door_C", "OnPlayerExited");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPlayerExited", FnName));
 
 	Params::BP_FE_entrance_door_C_OnPlayerExited Parms{};
 
@@ -113,10 +105,8 @@ void ABP_FE_entrance_door_C::OnPlayerExited(class UPrimitiveComponent* Overlappe
 
 void ABP_FE_entrance_door_C::OnUnlocked(class AActor* ActorActivating)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE_entrance_door_C", "OnUnlocked");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnUnlocked", FnName));
 
 	Params::BP_FE_entrance_door_C_OnUnlocked Parms{};
 
@@ -131,10 +121,8 @@ void ABP_FE_entrance_door_C::OnUnlocked(class AActor* ActorActivating)
 
 void ABP_FE_entrance_door_C::OnUpdateDoorOpenState()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE_entrance_door_C", "OnUpdateDoorOpenState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnUpdateDoorOpenState", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -145,10 +133,8 @@ void ABP_FE_entrance_door_C::OnUpdateDoorOpenState()
 
 void ABP_FE_entrance_door_C::OnUpdateDoorOpenStateImmediate()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE_entrance_door_C", "OnUpdateDoorOpenStateImmediate");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnUpdateDoorOpenStateImmediate", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -159,10 +145,8 @@ void ABP_FE_entrance_door_C::OnUpdateDoorOpenStateImmediate()
 
 void ABP_FE_entrance_door_C::OnUpdateDoorVisuals()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE_entrance_door_C", "OnUpdateDoorVisuals");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnUpdateDoorVisuals", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -173,10 +157,8 @@ void ABP_FE_entrance_door_C::OnUpdateDoorVisuals()
 
 void ABP_FE_entrance_door_C::PlayClose()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE_entrance_door_C", "PlayClose");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PlayClose", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -187,10 +169,8 @@ void ABP_FE_entrance_door_C::PlayClose()
 
 void ABP_FE_entrance_door_C::PlayOpen()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE_entrance_door_C", "PlayOpen");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PlayOpen", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -201,10 +181,8 @@ void ABP_FE_entrance_door_C::PlayOpen()
 
 void ABP_FE_entrance_door_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE_entrance_door_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -215,10 +193,8 @@ void ABP_FE_entrance_door_C::ReceiveBeginPlay()
 
 void ABP_FE_entrance_door_C::ShowBattery()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE_entrance_door_C", "ShowBattery");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ShowBattery", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -229,10 +205,8 @@ void ABP_FE_entrance_door_C::ShowBattery()
 
 void ABP_FE_entrance_door_C::Timeline__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE_entrance_door_C", "Timeline__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -243,10 +217,8 @@ void ABP_FE_entrance_door_C::Timeline__FinishedFunc()
 
 void ABP_FE_entrance_door_C::Timeline__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE_entrance_door_C", "Timeline__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

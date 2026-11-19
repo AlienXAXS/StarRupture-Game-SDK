@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_WeaponTooltip_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_WeaponTooltip_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -37,10 +35,8 @@ void UWBP_WeaponTooltip_C::Construct()
 
 void UWBP_WeaponTooltip_C::ExecuteUbergraph_WBP_WeaponTooltip(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_WeaponTooltip_C", "ExecuteUbergraph_WBP_WeaponTooltip");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_WeaponTooltip_C", "ExecuteUbergraph_WBP_WeaponTooltip", FuncInfo);
 
 	Params::WBP_WeaponTooltip_C_ExecuteUbergraph_WBP_WeaponTooltip Parms{};
 
@@ -57,10 +53,8 @@ void UWBP_WeaponTooltip_C::ExecuteUbergraph_WBP_WeaponTooltip(int32 EntryPoint)
 
 void UWBP_WeaponTooltip_C::SetItemName(const class FText& InText)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_WeaponTooltip_C", "SetItemName");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetItemName", FnName));
 
 	Params::WBP_WeaponTooltip_C_SetItemName Parms{};
 

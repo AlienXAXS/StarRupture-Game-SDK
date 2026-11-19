@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UAuUW_NotificationContainer::OnNotificationAdded(class UAuUW_NotificationBase* NewNotification)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuUW_NotificationContainer", "OnNotificationAdded");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnNotificationAdded", FnName));
 
 	Params::AuUW_NotificationContainer_OnNotificationAdded Parms{};
 
@@ -43,10 +41,8 @@ void UAuUW_NotificationContainer::OnNotificationAdded(class UAuUW_NotificationBa
 
 void UAuUW_NotificationContainer::OnNotificationRemoved(class UAuUW_NotificationBase* NewNotification)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuUW_NotificationContainer", "OnNotificationRemoved");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnNotificationRemoved", FnName));
 
 	Params::AuUW_NotificationContainer_OnNotificationRemoved Parms{};
 

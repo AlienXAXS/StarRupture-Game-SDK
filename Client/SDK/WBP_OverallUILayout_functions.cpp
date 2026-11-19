@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_OverallUILayout_C::ExecuteUbergraph_WBP_OverallUILayout(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_OverallUILayout_C", "ExecuteUbergraph_WBP_OverallUILayout");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_OverallUILayout_C", "ExecuteUbergraph_WBP_OverallUILayout", FuncInfo);
 
 	Params::WBP_OverallUILayout_C_ExecuteUbergraph_WBP_OverallUILayout Parms{};
 
@@ -41,10 +39,8 @@ void UWBP_OverallUILayout_C::ExecuteUbergraph_WBP_OverallUILayout(int32 EntryPoi
 
 void UWBP_OverallUILayout_C::OnInitialized()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_OverallUILayout_C", "OnInitialized");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnInitialized", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

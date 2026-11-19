@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UGA_InsetResourceToBuilding_C::ExecuteUbergraph_GA_InsetResourceToBuilding(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_InsetResourceToBuilding_C", "ExecuteUbergraph_GA_InsetResourceToBuilding");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "GA_InsetResourceToBuilding_C", "ExecuteUbergraph_GA_InsetResourceToBuilding", FuncInfo);
 
 	Params::GA_InsetResourceToBuilding_C_ExecuteUbergraph_GA_InsetResourceToBuilding Parms{};
 
@@ -41,10 +39,8 @@ void UGA_InsetResourceToBuilding_C::ExecuteUbergraph_GA_InsetResourceToBuilding(
 
 void UGA_InsetResourceToBuilding_C::K2_ActivateAbility()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_InsetResourceToBuilding_C", "K2_ActivateAbility");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_ActivateAbility", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

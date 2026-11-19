@@ -26,10 +26,8 @@ SDK_NAMESPACE_START
 
 void ABP_MeteOreBase_C::BP_OnEnviroWaveStarted(EEnviroWave InWaveType, EEnviroWaveStage InWaveStage, const struct FCrEnviroWaveSettings& InWaveSettings, float InWaveProgress)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MeteOreBase_C", "BP_OnEnviroWaveStarted");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnEnviroWaveStarted", FnName));
 
 	Params::BP_MeteOreBase_C_BP_OnEnviroWaveStarted Parms{};
 
@@ -47,10 +45,8 @@ void ABP_MeteOreBase_C::BP_OnEnviroWaveStarted(EEnviroWave InWaveType, EEnviroWa
 
 void ABP_MeteOreBase_C::BP_OnOreActivated()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MeteOreBase_C", "BP_OnOreActivated");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnOreActivated", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -61,10 +57,8 @@ void ABP_MeteOreBase_C::BP_OnOreActivated()
 
 void ABP_MeteOreBase_C::BP_OnPostBecameInsignificant()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MeteOreBase_C", "BP_OnPostBecameInsignificant");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnPostBecameInsignificant", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -75,10 +69,8 @@ void ABP_MeteOreBase_C::BP_OnPostBecameInsignificant()
 
 void ABP_MeteOreBase_C::BP_OnPostBecameSignificant()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MeteOreBase_C", "BP_OnPostBecameSignificant");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnPostBecameSignificant", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -89,10 +81,8 @@ void ABP_MeteOreBase_C::BP_OnPostBecameSignificant()
 
 void ABP_MeteOreBase_C::BP_OnSpawnedWithResourceDepleted()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MeteOreBase_C", "BP_OnSpawnedWithResourceDepleted");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnSpawnedWithResourceDepleted", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -103,10 +93,8 @@ void ABP_MeteOreBase_C::BP_OnSpawnedWithResourceDepleted()
 
 void ABP_MeteOreBase_C::CheckIfStreamingIsComplete()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MeteOreBase_C", "CheckIfStreamingIsComplete");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"CheckIfStreamingIsComplete", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -119,10 +107,8 @@ void ABP_MeteOreBase_C::CheckIfStreamingIsComplete()
 
 void ABP_MeteOreBase_C::ExecuteUbergraph_BP_MeteOreBase(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MeteOreBase_C", "ExecuteUbergraph_BP_MeteOreBase");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_MeteOreBase_C", "ExecuteUbergraph_BP_MeteOreBase", FuncInfo);
 
 	Params::BP_MeteOreBase_C_ExecuteUbergraph_BP_MeteOreBase Parms{};
 
@@ -139,10 +125,8 @@ void ABP_MeteOreBase_C::ExecuteUbergraph_BP_MeteOreBase(int32 EntryPoint)
 
 void ABP_MeteOreBase_C::OnMiningWeakSpotDepletedCosmeticsStart(const struct FTransform& CosmeticTransform)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MeteOreBase_C", "OnMiningWeakSpotDepletedCosmeticsStart");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnMiningWeakSpotDepletedCosmeticsStart", FnName));
 
 	Params::BP_MeteOreBase_C_OnMiningWeakSpotDepletedCosmeticsStart Parms{};
 
@@ -157,10 +141,8 @@ void ABP_MeteOreBase_C::OnMiningWeakSpotDepletedCosmeticsStart(const struct FTra
 
 void ABP_MeteOreBase_C::OnResourceDepletedCosmeticsStart()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MeteOreBase_C", "OnResourceDepletedCosmeticsStart");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnResourceDepletedCosmeticsStart", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -173,10 +155,8 @@ void ABP_MeteOreBase_C::OnResourceDepletedCosmeticsStart()
 
 void ABP_MeteOreBase_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MeteOreBase_C", "ReceiveEndPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveEndPlay", FnName));
 
 	Params::BP_MeteOreBase_C_ReceiveEndPlay Parms{};
 
@@ -193,10 +173,8 @@ void ABP_MeteOreBase_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 
 void ABP_MeteOreBase_C::ReceiveTick(float DeltaSeconds)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MeteOreBase_C", "ReceiveTick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveTick", FnName));
 
 	Params::BP_MeteOreBase_C_ReceiveTick Parms{};
 
@@ -213,10 +191,8 @@ void ABP_MeteOreBase_C::ReceiveTick(float DeltaSeconds)
 
 void ABP_MeteOreBase_C::ShouldSpawnForListenServer(bool* bShouldSpawnForLS)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MeteOreBase_C", "ShouldSpawnForListenServer");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ShouldSpawnForListenServer", FnName));
 
 	Params::BP_MeteOreBase_C_ShouldSpawnForListenServer Parms{};
 
@@ -232,10 +208,8 @@ void ABP_MeteOreBase_C::ShouldSpawnForListenServer(bool* bShouldSpawnForLS)
 
 void ABP_MeteOreBase_C::TurnOffWalkableCollision()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MeteOreBase_C", "TurnOffWalkableCollision");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"TurnOffWalkableCollision", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

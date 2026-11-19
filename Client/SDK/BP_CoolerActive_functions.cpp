@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_CoolerActive_C::ExecuteUbergraph_BP_CoolerActive(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CoolerActive_C", "ExecuteUbergraph_BP_CoolerActive");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_CoolerActive_C", "ExecuteUbergraph_BP_CoolerActive", FuncInfo);
 
 	Params::BP_CoolerActive_C_ExecuteUbergraph_BP_CoolerActive Parms{};
 
@@ -43,10 +41,8 @@ void ABP_CoolerActive_C::ExecuteUbergraph_BP_CoolerActive(int32 EntryPoint)
 
 void ABP_CoolerActive_C::OnHeaterCoolerConnectionsChanged(const TArray<class FName>& ConnectedSockets)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CoolerActive_C", "OnHeaterCoolerConnectionsChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnHeaterCoolerConnectionsChanged", FnName));
 
 	Params::BP_CoolerActive_C_OnHeaterCoolerConnectionsChanged Parms{};
 
@@ -63,10 +59,8 @@ void ABP_CoolerActive_C::OnHeaterCoolerConnectionsChanged(const TArray<class FNa
 
 void ABP_CoolerActive_C::OnHeaterCoolerInventoryChanged(float UsedSpaceNormalized)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CoolerActive_C", "OnHeaterCoolerInventoryChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnHeaterCoolerInventoryChanged", FnName));
 
 	Params::BP_CoolerActive_C_OnHeaterCoolerInventoryChanged Parms{};
 
@@ -83,10 +77,8 @@ void ABP_CoolerActive_C::OnHeaterCoolerInventoryChanged(float UsedSpaceNormalize
 
 void ABP_CoolerActive_C::OnHeaterCoolerStateChanged(ECrMassHeaterCoolerState State)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CoolerActive_C", "OnHeaterCoolerStateChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnHeaterCoolerStateChanged", FnName));
 
 	Params::BP_CoolerActive_C_OnHeaterCoolerStateChanged Parms{};
 
@@ -103,10 +95,8 @@ void ABP_CoolerActive_C::OnHeaterCoolerStateChanged(ECrMassHeaterCoolerState Sta
 
 void ABP_CoolerActive_C::OnSocketConnected(class FName SocketName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CoolerActive_C", "OnSocketConnected");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSocketConnected", FnName));
 
 	Params::BP_CoolerActive_C_OnSocketConnected Parms{};
 
@@ -123,10 +113,8 @@ void ABP_CoolerActive_C::OnSocketConnected(class FName SocketName)
 
 void ABP_CoolerActive_C::OnSocketDisconnected(class FName SocketName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CoolerActive_C", "OnSocketDisconnected");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSocketDisconnected", FnName));
 
 	Params::BP_CoolerActive_C_OnSocketDisconnected Parms{};
 

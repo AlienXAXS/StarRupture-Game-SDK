@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UBTT_AddToInt_C::ExecuteUbergraph_BTT_AddToInt(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTT_AddToInt_C", "ExecuteUbergraph_BTT_AddToInt");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BTT_AddToInt_C", "ExecuteUbergraph_BTT_AddToInt", FuncInfo);
 
 	Params::BTT_AddToInt_C_ExecuteUbergraph_BTT_AddToInt Parms{};
 
@@ -44,10 +42,8 @@ void UBTT_AddToInt_C::ExecuteUbergraph_BTT_AddToInt(int32 EntryPoint)
 
 void UBTT_AddToInt_C::ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTT_AddToInt_C", "ReceiveExecuteAI");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveExecuteAI", FnName));
 
 	Params::BTT_AddToInt_C_ReceiveExecuteAI Parms{};
 

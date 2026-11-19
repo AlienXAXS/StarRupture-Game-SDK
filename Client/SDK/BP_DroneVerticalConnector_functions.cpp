@@ -17,16 +17,14 @@
 SDK_NAMESPACE_START
 
 // Function BP_DroneVerticalConnector.BP_DroneVerticalConnector_C.ExecuteUbergraph_BP_DroneVerticalConnector
-// (Final, UbergraphFunction, HasDefaults)
+// (Final, UbergraphFunction)
 // Parameters:
 // int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 void ABP_DroneVerticalConnector_C::ExecuteUbergraph_BP_DroneVerticalConnector(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneVerticalConnector_C", "ExecuteUbergraph_BP_DroneVerticalConnector");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_DroneVerticalConnector_C", "ExecuteUbergraph_BP_DroneVerticalConnector", FuncInfo);
 
 	Params::BP_DroneVerticalConnector_C_ExecuteUbergraph_BP_DroneVerticalConnector Parms{};
 
@@ -43,10 +41,8 @@ void ABP_DroneVerticalConnector_C::ExecuteUbergraph_BP_DroneVerticalConnector(in
 
 void ABP_DroneVerticalConnector_C::OnTierSet(int32 NewTier)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneVerticalConnector_C", "OnTierSet");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnTierSet", FnName));
 
 	Params::BP_DroneVerticalConnector_C_OnTierSet Parms{};
 

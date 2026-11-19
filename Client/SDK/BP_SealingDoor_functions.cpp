@@ -28,10 +28,8 @@ SDK_NAMESPACE_START
 
 void ABP_SealingDoor_C::BndEvt__BP_SealingDoor_DoorTrigger_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SealingDoor_C", "BndEvt__BP_SealingDoor_DoorTrigger_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__BP_SealingDoor_DoorTrigger_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature", FnName));
 
 	Params::BP_SealingDoor_C_BndEvt__BP_SealingDoor_DoorTrigger_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature Parms{};
 
@@ -56,10 +54,8 @@ void ABP_SealingDoor_C::BndEvt__BP_SealingDoor_DoorTrigger_K2Node_ComponentBound
 
 void ABP_SealingDoor_C::BndEvt__BP_SealingDoor_DoorTrigger_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SealingDoor_C", "BndEvt__BP_SealingDoor_DoorTrigger_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__BP_SealingDoor_DoorTrigger_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature", FnName));
 
 	Params::BP_SealingDoor_C_BndEvt__BP_SealingDoor_DoorTrigger_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature Parms{};
 
@@ -77,10 +73,8 @@ void ABP_SealingDoor_C::BndEvt__BP_SealingDoor_DoorTrigger_K2Node_ComponentBound
 
 void ABP_SealingDoor_C::Door_Movement_out__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SealingDoor_C", "Door_Movement_out__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Door_Movement_out__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -91,10 +85,8 @@ void ABP_SealingDoor_C::Door_Movement_out__FinishedFunc()
 
 void ABP_SealingDoor_C::Door_Movement_out__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SealingDoor_C", "Door_Movement_out__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Door_Movement_out__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -107,10 +99,8 @@ void ABP_SealingDoor_C::Door_Movement_out__UpdateFunc()
 
 void ABP_SealingDoor_C::ExecuteUbergraph_BP_SealingDoor(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SealingDoor_C", "ExecuteUbergraph_BP_SealingDoor");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_SealingDoor_C", "ExecuteUbergraph_BP_SealingDoor", FuncInfo);
 
 	Params::BP_SealingDoor_C_ExecuteUbergraph_BP_SealingDoor Parms{};
 
@@ -125,10 +115,8 @@ void ABP_SealingDoor_C::ExecuteUbergraph_BP_SealingDoor(int32 EntryPoint)
 
 void ABP_SealingDoor_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SealingDoor_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

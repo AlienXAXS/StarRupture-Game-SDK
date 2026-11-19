@@ -16,15 +16,69 @@
 
 SDK_NAMESPACE_START
 
+// Function BP_FE2_Pillar.BP_FE2_Pillar_C.Set_Display_State
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ECrAntennaState                         AntennaState                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FLinearColor&              Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_FE2_Pillar_C::Set_Display_State(ECrAntennaState AntennaState, const struct FLinearColor& Color)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Set_Display_State", FnName));
+
+	Params::BP_FE2_Pillar_C_Set_Display_State Parms{};
+
+	Parms.AntennaState = AntennaState;
+	Parms.Color = std::move(Color);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_FE2_Pillar.BP_FE2_Pillar_C.PlayInteractionUnSuccessfulSound
+// (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+bool ABP_FE2_Pillar_C::PlayInteractionUnSuccessfulSound()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PlayInteractionUnSuccessfulSound", FnName));
+
+	Params::BP_FE2_Pillar_C_PlayInteractionUnSuccessfulSound Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BP_FE2_Pillar.BP_FE2_Pillar_C.PlayInteractionSuccessfulSound
+// (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+bool ABP_FE2_Pillar_C::PlayInteractionSuccessfulSound()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PlayInteractionSuccessfulSound", FnName));
+
+	Params::BP_FE2_Pillar_C_PlayInteractionSuccessfulSound Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
 // Function BP_FE2_Pillar.BP_FE2_Pillar_C.Activation_progress__FinishedFunc
 // (BlueprintEvent)
 
 void ABP_FE2_Pillar_C::Activation_progress__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Pillar_C", "Activation_progress__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Activation_progress__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -35,32 +89,10 @@ void ABP_FE2_Pillar_C::Activation_progress__FinishedFunc()
 
 void ABP_FE2_Pillar_C::Activation_progress__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Pillar_C", "Activation_progress__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Activation_progress__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_FE2_Pillar.BP_FE2_Pillar_C.ExecuteUbergraph_BP_FE2_Pillar
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_FE2_Pillar_C::ExecuteUbergraph_BP_FE2_Pillar(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Pillar_C", "ExecuteUbergraph_BP_FE2_Pillar");
-
-	Params::BP_FE2_Pillar_C_ExecuteUbergraph_BP_FE2_Pillar Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -69,10 +101,8 @@ void ABP_FE2_Pillar_C::ExecuteUbergraph_BP_FE2_Pillar(int32 EntryPoint)
 
 void ABP_FE2_Pillar_C::Finalization_progress__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Pillar_C", "Finalization_progress__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Finalization_progress__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -83,10 +113,44 @@ void ABP_FE2_Pillar_C::Finalization_progress__FinishedFunc()
 
 void ABP_FE2_Pillar_C::Finalization_progress__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Finalization_progress__UpdateFunc", FnName));
 
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Pillar_C", "Finalization_progress__UpdateFunc");
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_FE2_Pillar.BP_FE2_Pillar_C.Timeline__FinishedFunc
+// (BlueprintEvent)
+
+void ABP_FE2_Pillar_C::Timeline__FinishedFunc()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__FinishedFunc", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_FE2_Pillar.BP_FE2_Pillar_C.Timeline__UpdateFunc
+// (BlueprintEvent)
+
+void ABP_FE2_Pillar_C::Timeline__UpdateFunc()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__UpdateFunc", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_FE2_Pillar.BP_FE2_Pillar_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_FE2_Pillar_C::ReceiveBeginPlay()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -97,24 +161,8 @@ void ABP_FE2_Pillar_C::Finalization_progress__UpdateFunc()
 
 void ABP_FE2_Pillar_C::OnActivated()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Pillar_C", "OnActivated");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_FE2_Pillar.BP_FE2_Pillar_C.OnActivatedFromLoad
-// (Event, Protected, BlueprintEvent)
-
-void ABP_FE2_Pillar_C::OnActivatedFromLoad()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Pillar_C", "OnActivatedFromLoad");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnActivated", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -127,14 +175,44 @@ void ABP_FE2_Pillar_C::OnActivatedFromLoad()
 
 void ABP_FE2_Pillar_C::OnChargingProgressUpdate(float Progress)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Pillar_C", "OnChargingProgressUpdate");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnChargingProgressUpdate", FnName));
 
 	Params::BP_FE2_Pillar_C_OnChargingProgressUpdate Parms{};
 
 	Parms.Progress = Progress;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_FE2_Pillar.BP_FE2_Pillar_C.StopLoopSound
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_FE2_Pillar_C::StopLoopSound()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"StopLoopSound", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_FE2_Pillar.BP_FE2_Pillar_C.SetUI
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// ECrAntennaState                         InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const struct FLinearColor&              InColor                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_FE2_Pillar_C::SetUI(ECrAntennaState InState, const struct FLinearColor& InColor)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetUI", FnName));
+
+	Params::BP_FE2_Pillar_C_SetUI Parms{};
+
+	Parms.InState = InState;
+	Parms.InColor = std::move(InColor);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -145,10 +223,20 @@ void ABP_FE2_Pillar_C::OnChargingProgressUpdate(float Progress)
 
 void ABP_FE2_Pillar_C::OnInfectionTaken()
 {
-	static class UFunction* Func = nullptr;
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnInfectionTaken", FnName));
 
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Pillar_C", "OnInfectionTaken");
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_FE2_Pillar.BP_FE2_Pillar_C.OnActivatedFromLoad
+// (Event, Protected, BlueprintEvent)
+
+void ABP_FE2_Pillar_C::OnActivatedFromLoad()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnActivatedFromLoad", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -161,70 +249,14 @@ void ABP_FE2_Pillar_C::OnInfectionTaken()
 
 void ABP_FE2_Pillar_C::OnStateChanged(ECrAntennaState NewState)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Pillar_C", "OnStateChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnStateChanged", FnName));
 
 	Params::BP_FE2_Pillar_C_OnStateChanged Parms{};
 
 	Parms.NewState = NewState;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_FE2_Pillar.BP_FE2_Pillar_C.PlayInteractionSuccessfulSound
-// (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-bool ABP_FE2_Pillar_C::PlayInteractionSuccessfulSound()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Pillar_C", "PlayInteractionSuccessfulSound");
-
-	Params::BP_FE2_Pillar_C_PlayInteractionSuccessfulSound Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BP_FE2_Pillar.BP_FE2_Pillar_C.PlayInteractionUnSuccessfulSound
-// (Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-bool ABP_FE2_Pillar_C::PlayInteractionUnSuccessfulSound()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Pillar_C", "PlayInteractionUnSuccessfulSound");
-
-	Params::BP_FE2_Pillar_C_PlayInteractionUnSuccessfulSound Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BP_FE2_Pillar.BP_FE2_Pillar_C.ReceiveBeginPlay
-// (Event, Protected, BlueprintEvent)
-
-void ABP_FE2_Pillar_C::ReceiveBeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Pillar_C", "ReceiveBeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -235,10 +267,8 @@ void ABP_FE2_Pillar_C::ReceiveBeginPlay()
 
 void ABP_FE2_Pillar_C::ReceiveTick(float DeltaSeconds)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Pillar_C", "ReceiveTick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveTick", FnName));
 
 	Params::BP_FE2_Pillar_C_ReceiveTick Parms{};
 
@@ -248,61 +278,105 @@ void ABP_FE2_Pillar_C::ReceiveTick(float DeltaSeconds)
 }
 
 
-// Function BP_FE2_Pillar.BP_FE2_Pillar_C.Set_Display_State
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// ECrAntennaState                         AntennaState                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FLinearColor&              Color                                                  (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_FE2_Pillar_C::Set_Display_State(ECrAntennaState AntennaState, const struct FLinearColor& Color)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Pillar_C", "Set_Display_State");
-
-	Params::BP_FE2_Pillar_C_Set_Display_State Parms{};
-
-	Parms.AntennaState = AntennaState;
-	Parms.Color = std::move(Color);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_FE2_Pillar.BP_FE2_Pillar_C.SetUI
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// ECrAntennaState                         InState                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FLinearColor&              InColor                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void ABP_FE2_Pillar_C::SetUI(ECrAntennaState InState, const struct FLinearColor& InColor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Pillar_C", "SetUI");
-
-	Params::BP_FE2_Pillar_C_SetUI Parms{};
-
-	Parms.InState = InState;
-	Parms.InColor = std::move(InColor);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_FE2_Pillar.BP_FE2_Pillar_C.StopLoopSound
+// Function BP_FE2_Pillar.BP_FE2_Pillar_C.SlideUp
 // (BlueprintCallable, BlueprintEvent)
 
-void ABP_FE2_Pillar_C::StopLoopSound()
+void ABP_FE2_Pillar_C::SlideUp()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Pillar_C", "StopLoopSound");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SlideUp", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_FE2_Pillar.BP_FE2_Pillar_C.SlideDown
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_FE2_Pillar_C::SlideDown()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SlideDown", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_FE2_Pillar.BP_FE2_Pillar_C.OpenPillar
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_FE2_Pillar_C::OpenPillar()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OpenPillar", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_FE2_Pillar.BP_FE2_Pillar_C.FuelError
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_FE2_Pillar_C::FuelError()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"FuelError", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_FE2_Pillar.BP_FE2_Pillar_C.FixedFuel
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_FE2_Pillar_C::FixedFuel()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"FixedFuel", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_FE2_Pillar.BP_FE2_Pillar_C.SetLightON
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_FE2_Pillar_C::SetLightON()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetLightON", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_FE2_Pillar.BP_FE2_Pillar_C.SetLightError
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_FE2_Pillar_C::SetLightError()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetLightError", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_FE2_Pillar.BP_FE2_Pillar_C.ExecuteUbergraph_BP_FE2_Pillar
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_FE2_Pillar_C::ExecuteUbergraph_BP_FE2_Pillar(int32 EntryPoint)
+{
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_FE2_Pillar_C", "ExecuteUbergraph_BP_FE2_Pillar", FuncInfo);
+
+	Params::BP_FE2_Pillar_C_ExecuteUbergraph_BP_FE2_Pillar Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 

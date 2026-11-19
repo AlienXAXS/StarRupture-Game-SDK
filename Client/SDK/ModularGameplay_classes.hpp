@@ -89,9 +89,12 @@ public:
 DUMPER7_ASSERTS_UGameFrameworkComponentManager;
 
 // Class ModularGameplay.GameFrameworkInitStateInterface
-// 0x0000 (0x0000 - 0x0000)
-class IGameFrameworkInitStateInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IGameFrameworkInitStateInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	bool RegisterAndCallForInitStateChange(const struct FGameplayTag& RequiredState, TDelegate<void(const struct FActorInitStateChangedParams& Params_0)> Delegate, bool bCallImmediately);
 	bool UnregisterInitStateDelegate(TDelegate<void(const struct FActorInitStateChangedParams& Params_0)> Delegate);

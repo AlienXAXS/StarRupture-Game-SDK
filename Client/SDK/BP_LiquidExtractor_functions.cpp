@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_LiquidExtractor_C::ExecuteUbergraph_BP_LiquidExtractor(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_LiquidExtractor_C", "ExecuteUbergraph_BP_LiquidExtractor");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_LiquidExtractor_C", "ExecuteUbergraph_BP_LiquidExtractor", FuncInfo);
 
 	Params::BP_LiquidExtractor_C_ExecuteUbergraph_BP_LiquidExtractor Parms{};
 
@@ -43,10 +41,8 @@ void ABP_LiquidExtractor_C::ExecuteUbergraph_BP_LiquidExtractor(int32 EntryPoint
 
 void ABP_LiquidExtractor_C::OnBuildingStateChanged(ECrBuildingState InState)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_LiquidExtractor_C", "OnBuildingStateChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBuildingStateChanged", FnName));
 
 	Params::BP_LiquidExtractor_C_OnBuildingStateChanged Parms{};
 
@@ -61,10 +57,8 @@ void ABP_LiquidExtractor_C::OnBuildingStateChanged(ECrBuildingState InState)
 
 void ABP_LiquidExtractor_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_LiquidExtractor_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

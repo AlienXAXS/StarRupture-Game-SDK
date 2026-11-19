@@ -37,6 +37,16 @@ enum class EBiomesBrushShape : uint8
 	Max                                      = 3,
 };
 
+// Enum ErrantBiomesRuntime.EBiomesGPUOnlyInstanceGeneration
+// NumValues: 0x0004
+enum class EBiomesGPUOnlyInstanceGeneration : uint8
+{
+	ProjectDefault                           = 0,
+	Enabled                                  = 1,
+	Disabled                                 = 2,
+	EBiomesGPUOnlyInstanceGeneration_MAX     = 3,
+};
+
 // Enum ErrantBiomesRuntime.EBiomesRuntimeSpawning
 // NumValues: 0x0004
 enum class EBiomesRuntimeSpawning : uint8
@@ -87,6 +97,17 @@ enum class EBiomesMaskFlags : uint32
 	None                                     = 0,
 	Empty                                    = 1,
 	EBiomesMaskFlags_MAX                     = 2,
+};
+
+// Enum ErrantBiomesRuntime.EBiomesMaskDataLocation
+// NumValues: 0x0005
+enum class EBiomesMaskDataLocation : uint8
+{
+	None                                     = 0,
+	Raw                                      = 1,
+	Atlas                                    = 2,
+	RenderTarget                             = 3,
+	EBiomesMaskDataLocation_MAX              = 4,
 };
 
 // Enum ErrantBiomesRuntime.EBiomesMaskType
@@ -170,7 +191,8 @@ public:
 	int32                                         MaxInstancesPerRuntimeInstanceComponent;           // 0x003C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EBiomesRuntimeScalability                     RuntimeScalability;                                // 0x0040(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EBiomesRuntimeSpawning                        RuntimeSpawning;                                   // 0x0041(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_42[0x6];                                       // 0x0042(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	EBiomesGPUOnlyInstanceGeneration              GPUOnlyInstanceGeneration;                         // 0x0042(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_43[0x5];                                       // 0x0043(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	TSet<class FName>                             DEPRECATED_DataLayers;                             // 0x0048(0x0050)(NativeAccessSpecifierPrivate)
 	bool                                          bCastsShadow;                                      // 0x0098(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	bool                                          bHasPhysics;                                       // 0x0099(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
@@ -193,15 +215,6 @@ public:
 };
 DUMPER7_ASSERTS_FBiomesManualSpawnPointsTagPoints;
 
-// ScriptStruct ErrantBiomesRuntime.BiomesMaskAssetInfo
-// 0x0014 (0x0014 - 0x0000)
-struct alignas(0x04) FBiomesMaskAssetInfo final
-{
-public:
-	uint8                                         Pad_0[0x14];                                       // 0x0000(0x0014)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FBiomesMaskAssetInfo;
-
 // ScriptStruct ErrantBiomesRuntime.BiomesMaskInfo
 // 0x0020 (0x0020 - 0x0000)
 struct alignas(0x04) FBiomesMaskInfo final
@@ -210,6 +223,15 @@ public:
 	uint8                                         Pad_0[0x20];                                       // 0x0000(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FBiomesMaskInfo;
+
+// ScriptStruct ErrantBiomesRuntime.BiomesMaskAssetInfo
+// 0x0014 (0x0014 - 0x0000)
+struct alignas(0x04) FBiomesMaskAssetInfo final
+{
+public:
+	uint8                                         Pad_0[0x14];                                       // 0x0000(0x0014)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FBiomesMaskAssetInfo;
 
 // ScriptStruct ErrantBiomesRuntime.BiomesRandomScale
 // 0x0018 (0x0018 - 0x0000)
@@ -232,14 +254,15 @@ public:
 DUMPER7_ASSERTS_FBiomesRandomRotation;
 
 // ScriptStruct ErrantBiomesRuntime.BiomesInstanceComponentPartitions
-// 0x0040 (0x0040 - 0x0000)
+// 0x0050 (0x0050 - 0x0000)
 struct FBiomesInstanceComponentPartitions final
 {
 public:
 	TArray<class UInstancedStaticMeshComponent*>  RuntimeInstanceComponents;                         // 0x0000(0x0010)(Edit, ExportObject, ZeroConstructor, Transient, EditConst, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
-	TArray<struct FBox2D>                         PartitionBounds;                                   // 0x0010(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
-	uint8                                         Pad_20[0x10];                                      // 0x0020(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<TSoftObjectPtr<class UInstancedStaticMeshComponent>> InstanceComponents;                  // 0x0030(0x0010)(ExportObject, ZeroConstructor, Deprecated, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic)
+	TArray<class UBiomesGPUOnlyISMComponent*>     RuntimeGPUOnlyInstanceComponents;                  // 0x0010(0x0010)(Edit, ExportObject, ZeroConstructor, Transient, EditConst, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
+	TArray<struct FBox2D>                         PartitionBounds;                                   // 0x0020(0x0010)(Edit, ZeroConstructor, EditConst, NativeAccessSpecifierPublic)
+	uint8                                         Pad_30[0x10];                                      // 0x0030(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<TSoftObjectPtr<class UInstancedStaticMeshComponent>> InstanceComponents;                  // 0x0040(0x0010)(ExportObject, ZeroConstructor, Deprecated, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FBiomesInstanceComponentPartitions;
 

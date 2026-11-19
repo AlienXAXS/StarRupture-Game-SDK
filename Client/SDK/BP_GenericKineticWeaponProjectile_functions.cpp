@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_GenericKineticWeaponProjectile_C::ExecuteUbergraph_BP_GenericKineticWeaponProjectile(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GenericKineticWeaponProjectile_C", "ExecuteUbergraph_BP_GenericKineticWeaponProjectile");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_GenericKineticWeaponProjectile_C", "ExecuteUbergraph_BP_GenericKineticWeaponProjectile", FuncInfo);
 
 	Params::BP_GenericKineticWeaponProjectile_C_ExecuteUbergraph_BP_GenericKineticWeaponProjectile Parms{};
 
@@ -41,10 +39,8 @@ void ABP_GenericKineticWeaponProjectile_C::ExecuteUbergraph_BP_GenericKineticWea
 
 void ABP_GenericKineticWeaponProjectile_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GenericKineticWeaponProjectile_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -57,10 +53,8 @@ void ABP_GenericKineticWeaponProjectile_C::ReceiveBeginPlay()
 
 void ABP_GenericKineticWeaponProjectile_C::ReceiveTick(float DeltaSeconds)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GenericKineticWeaponProjectile_C", "ReceiveTick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveTick", FnName));
 
 	Params::BP_GenericKineticWeaponProjectile_C_ReceiveTick Parms{};
 

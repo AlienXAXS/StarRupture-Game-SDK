@@ -14,6 +14,7 @@
 #include "AIModule_structs.hpp"
 #include "AIModule_classes.hpp"
 #include "Chimera_structs.hpp"
+#include "MassAIPrototypeEnemyRuntime_classes.hpp"
 #include "Engine_classes.hpp"
 
 
@@ -45,9 +46,12 @@ public:
 DUMPER7_ASSERTS_UBTService_CrAiAnimalPanzerHundUpdateState;
 
 // Class CrAiAnimalPanzerHundRuntime.CrAiAnimalPanzerHundInterface
-// 0x0000 (0x0000 - 0x0000)
-class ICrAiAnimalPanzerHundInterface final
+// 0x0008 (0x0008 - 0x0000)
+class ICrAiAnimalPanzerHundInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	class UCrAiAnimalPanzerHundUpdateStateComponent* GetPanzerHundUpdateStateComponent();
 
@@ -78,10 +82,9 @@ DUMPER7_ASSERTS_ICrAiAnimalPanzerHundInterface;
 
 // Class CrAiAnimalPanzerHundRuntime.CrAiAnimalPanzerHundUpdateStateComponent
 // 0x0128 (0x01E0 - 0x00B8)
-class UCrAiAnimalPanzerHundUpdateStateComponent final : public UActorComponent
+class UCrAiAnimalPanzerHundUpdateStateComponent final : public UActorComponent, public IMassEnemyPooledActorComponentInterface
 {
 public:
-	uint8                                         Pad_B8[0x8];                                       // 0x00B8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         ConsiderableRadius;                                // 0x00C0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	float                                         NoticeRadius;                                      // 0x00C4(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	float                                         AwarenessRadius;                                   // 0x00C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -130,6 +133,9 @@ public:
 	{
 		return GetDefaultObjImpl<UCrAiAnimalPanzerHundUpdateStateComponent>();
 	}
+
+public:
+	void OnPooledOwnerActivityChanged(bool bNewEnabled);
 };
 DUMPER7_ASSERTS_UCrAiAnimalPanzerHundUpdateStateComponent;
 

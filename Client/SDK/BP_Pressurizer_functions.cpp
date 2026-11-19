@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_Pressurizer_C::ExecuteUbergraph_BP_Pressurizer(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Pressurizer_C", "ExecuteUbergraph_BP_Pressurizer");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Pressurizer_C", "ExecuteUbergraph_BP_Pressurizer", FuncInfo);
 
 	Params::BP_Pressurizer_C_ExecuteUbergraph_BP_Pressurizer Parms{};
 
@@ -43,10 +41,8 @@ void ABP_Pressurizer_C::ExecuteUbergraph_BP_Pressurizer(int32 EntryPoint)
 
 void ABP_Pressurizer_C::OnBuildingStateChanged(ECrBuildingState InState)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Pressurizer_C", "OnBuildingStateChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBuildingStateChanged", FnName));
 
 	Params::BP_Pressurizer_C_OnBuildingStateChanged Parms{};
 
@@ -61,10 +57,8 @@ void ABP_Pressurizer_C::OnBuildingStateChanged(ECrBuildingState InState)
 
 void ABP_Pressurizer_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Pressurizer_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -79,10 +73,8 @@ void ABP_Pressurizer_C::ReceiveBeginPlay()
 
 void ABP_Pressurizer_C::Get_Meshes(class USceneComponent* Static_0, class USceneComponent* Animated, TArray<class UMeshComponent*>* NewParam) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Pressurizer_C", "Get Meshes");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Get Meshes", FnName));
 
 	Params::BP_Pressurizer_C_Get_Meshes Parms{};
 

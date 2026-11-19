@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_Ranged_Tier1_PooledProjectile_C::ExecuteUbergraph_BP_Ranged_Tier1_PooledProjectile(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier1_PooledProjectile_C", "ExecuteUbergraph_BP_Ranged_Tier1_PooledProjectile");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Ranged_Tier1_PooledProjectile_C", "ExecuteUbergraph_BP_Ranged_Tier1_PooledProjectile", FuncInfo);
 
 	Params::BP_Ranged_Tier1_PooledProjectile_C_ExecuteUbergraph_BP_Ranged_Tier1_PooledProjectile Parms{};
 
@@ -43,10 +41,8 @@ void ABP_Ranged_Tier1_PooledProjectile_C::ExecuteUbergraph_BP_Ranged_Tier1_Poole
 
 void ABP_Ranged_Tier1_PooledProjectile_C::OnHit(const struct FHitResult& HitResult)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier1_PooledProjectile_C", "OnHit");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnHit", FnName));
 
 	Params::BP_Ranged_Tier1_PooledProjectile_C_OnHit Parms{};
 
@@ -63,10 +59,8 @@ void ABP_Ranged_Tier1_PooledProjectile_C::OnHit(const struct FHitResult& HitResu
 
 void ABP_Ranged_Tier1_PooledProjectile_C::OnProjectileShot(const struct FCrAiProjectileParameters& InProjectileParameters)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier1_PooledProjectile_C", "OnProjectileShot");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnProjectileShot", FnName));
 
 	Params::BP_Ranged_Tier1_PooledProjectile_C_OnProjectileShot Parms{};
 
@@ -83,10 +77,8 @@ void ABP_Ranged_Tier1_PooledProjectile_C::OnProjectileShot(const struct FCrAiPro
 
 bool ABP_Ranged_Tier1_PooledProjectile_C::CanReturnToPoolAfterHit() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier1_PooledProjectile_C", "CanReturnToPoolAfterHit");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"CanReturnToPoolAfterHit", FnName));
 
 	Params::BP_Ranged_Tier1_PooledProjectile_C_CanReturnToPoolAfterHit Parms{};
 

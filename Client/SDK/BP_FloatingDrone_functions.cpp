@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_FloatingDrone_C::ExecuteUbergraph_BP_FloatingDrone(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FloatingDrone_C", "ExecuteUbergraph_BP_FloatingDrone");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_FloatingDrone_C", "ExecuteUbergraph_BP_FloatingDrone", FuncInfo);
 
 	Params::BP_FloatingDrone_C_ExecuteUbergraph_BP_FloatingDrone Parms{};
 
@@ -41,10 +39,8 @@ void ABP_FloatingDrone_C::ExecuteUbergraph_BP_FloatingDrone(int32 EntryPoint)
 
 void ABP_FloatingDrone_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FloatingDrone_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -57,10 +53,8 @@ void ABP_FloatingDrone_C::ReceiveBeginPlay()
 
 void ABP_FloatingDrone_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FloatingDrone_C", "ReceiveEndPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveEndPlay", FnName));
 
 	Params::BP_FloatingDrone_C_ReceiveEndPlay Parms{};
 

@@ -10,24 +10,30 @@
 
 #include "Basic.hpp"
 
+#include "Engine_structs.hpp"
 #include "Chimera_classes.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_HorizontalBridge.BP_HorizontalBridge_C
-// 0x0030 (0x08A8 - 0x0878)
+// 0x0040 (0x08C8 - 0x0888)
 class ABP_HorizontalBridge_C final : public ACrCustomBuilding
 {
 public:
-	class UChildActorComponent*                   BP_HabitatPostProcess_Quality;                     // 0x0878(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UInteriorOverlapComponent*              InteriorOverlap;                                   // 0x0880(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   Plane;                                             // 0x0888(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UBoxComponent*                          InteriorMapperOverlapBox;                          // 0x0890(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UPostProcessComponent*                  InteriorHotAirDisable;                             // 0x0898(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	double                                        DoorAlignment;                                     // 0x08A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0888(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UCrInteriorsMapperBoxComponent*         CrInteriorsMapperBox;                              // 0x0890(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UChildActorComponent*                   BP_HabitatPostProcess_Quality;                     // 0x0898(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UInteriorOverlapComponent*              InteriorOverlap;                                   // 0x08A0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   Plane;                                             // 0x08A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UBoxComponent*                          InteriorMapperOverlapBox;                          // 0x08B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UPostProcessComponent*                  InteriorHotAirDisable;                             // 0x08B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	double                                        DoorAlignment;                                     // 0x08C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
+	void ExecuteUbergraph_BP_HorizontalBridge(int32 EntryPoint);
+	void ReceiveBeginPlay();
+
 	void GetBuildingMeshes(class UMeshComponent** MainBody, TArray<class UMeshComponent*>* AdditionalMeshes) const;
 
 public:

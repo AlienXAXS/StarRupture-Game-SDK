@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_FactoryTier2_C::ExecuteUbergraph_BP_FactoryTier2(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FactoryTier2_C", "ExecuteUbergraph_BP_FactoryTier2");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_FactoryTier2_C", "ExecuteUbergraph_BP_FactoryTier2", FuncInfo);
 
 	Params::BP_FactoryTier2_C_ExecuteUbergraph_BP_FactoryTier2 Parms{};
 
@@ -43,10 +41,8 @@ void ABP_FactoryTier2_C::ExecuteUbergraph_BP_FactoryTier2(int32 EntryPoint)
 
 void ABP_FactoryTier2_C::OnBuildingStateChanged(ECrBuildingState InState)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FactoryTier2_C", "OnBuildingStateChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBuildingStateChanged", FnName));
 
 	Params::BP_FactoryTier2_C_OnBuildingStateChanged Parms{};
 
@@ -61,10 +57,8 @@ void ABP_FactoryTier2_C::OnBuildingStateChanged(ECrBuildingState InState)
 
 void ABP_FactoryTier2_C::OnItemCraftingComplete()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FactoryTier2_C", "OnItemCraftingComplete");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnItemCraftingComplete", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -75,10 +69,8 @@ void ABP_FactoryTier2_C::OnItemCraftingComplete()
 
 void ABP_FactoryTier2_C::SetupSkeletalMesh()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FactoryTier2_C", "SetupSkeletalMesh");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetupSkeletalMesh", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -93,10 +85,8 @@ void ABP_FactoryTier2_C::SetupSkeletalMesh()
 
 void ABP_FactoryTier2_C::Get_Meshes(class USceneComponent* Static, class USceneComponent* Animated_0, TArray<class UMeshComponent*>* NewParam) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FactoryTier2_C", "Get Meshes");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Get Meshes", FnName));
 
 	Params::BP_FactoryTier2_C_Get_Meshes Parms{};
 

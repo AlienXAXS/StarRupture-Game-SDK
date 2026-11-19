@@ -49,9 +49,12 @@ public:
 DUMPER7_ASSERTS_UAsyncAction_ListenForAsyncMessage;
 
 // Class AsyncMessageSystem.AsyncMessageBindingEndpointInterface
-// 0x0000 (0x0000 - 0x0000)
-class IAsyncMessageBindingEndpointInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IAsyncMessageBindingEndpointInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -79,10 +82,10 @@ DUMPER7_ASSERTS_IAsyncMessageBindingEndpointInterface;
 
 // Class AsyncMessageSystem.AsyncMessageBindingComponent
 // 0x0018 (0x00D0 - 0x00B8)
-class UAsyncMessageBindingComponent final : public UActorComponent
+class UAsyncMessageBindingComponent final : public UActorComponent, public IAsyncMessageBindingEndpointInterface
 {
 public:
-	uint8                                         Pad_B8[0x18];                                      // 0x00B8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C0[0x10];                                      // 0x00C0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void ABP_Animal_PanzerHund_Character_C::ActivateDust()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_PanzerHund_Character_C", "ActivateDust");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ActivateDust", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -42,10 +40,8 @@ void ABP_Animal_PanzerHund_Character_C::ActivateDust()
 
 void ABP_Animal_PanzerHund_Character_C::BndEvt__BP_Animal_PanzerHund_Character_Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_PanzerHund_Character_C", "BndEvt__BP_Animal_PanzerHund_Character_Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__BP_Animal_PanzerHund_Character_Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature", FnName));
 
 	Params::BP_Animal_PanzerHund_Character_C_BndEvt__BP_Animal_PanzerHund_Character_Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature Parms{};
 
@@ -70,10 +66,8 @@ void ABP_Animal_PanzerHund_Character_C::BndEvt__BP_Animal_PanzerHund_Character_S
 
 void ABP_Animal_PanzerHund_Character_C::BndEvt__BP_Animal_PanzerHund_Character_Sphere_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_PanzerHund_Character_C", "BndEvt__BP_Animal_PanzerHund_Character_Sphere_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__BP_Animal_PanzerHund_Character_Sphere_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature", FnName));
 
 	Params::BP_Animal_PanzerHund_Character_C_BndEvt__BP_Animal_PanzerHund_Character_Sphere_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature Parms{};
 
@@ -91,10 +85,8 @@ void ABP_Animal_PanzerHund_Character_C::BndEvt__BP_Animal_PanzerHund_Character_S
 
 void ABP_Animal_PanzerHund_Character_C::DeactivateDust()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_PanzerHund_Character_C", "DeactivateDust");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"DeactivateDust", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -107,10 +99,8 @@ void ABP_Animal_PanzerHund_Character_C::DeactivateDust()
 
 void ABP_Animal_PanzerHund_Character_C::ExecuteUbergraph_BP_Animal_PanzerHund_Character(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_PanzerHund_Character_C", "ExecuteUbergraph_BP_Animal_PanzerHund_Character");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Animal_PanzerHund_Character_C", "ExecuteUbergraph_BP_Animal_PanzerHund_Character", FuncInfo);
 
 	Params::BP_Animal_PanzerHund_Character_C_ExecuteUbergraph_BP_Animal_PanzerHund_Character Parms{};
 
@@ -127,10 +117,8 @@ void ABP_Animal_PanzerHund_Character_C::ExecuteUbergraph_BP_Animal_PanzerHund_Ch
 
 class UCrAiAnimalPanzerHundUpdateStateComponent* ABP_Animal_PanzerHund_Character_C::GetPanzerHundUpdateStateComponent()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_PanzerHund_Character_C", "GetPanzerHundUpdateStateComponent");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetPanzerHundUpdateStateComponent", FnName));
 
 	Params::BP_Animal_PanzerHund_Character_C_GetPanzerHundUpdateStateComponent Parms{};
 
@@ -145,10 +133,8 @@ class UCrAiAnimalPanzerHundUpdateStateComponent* ABP_Animal_PanzerHund_Character
 
 void ABP_Animal_PanzerHund_Character_C::OnPrepareForGame()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_PanzerHund_Character_C", "OnPrepareForGame");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPrepareForGame", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -159,10 +145,8 @@ void ABP_Animal_PanzerHund_Character_C::OnPrepareForGame()
 
 void ABP_Animal_PanzerHund_Character_C::OnPrepareForPooling()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_PanzerHund_Character_C", "OnPrepareForPooling");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPrepareForPooling", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -173,10 +157,8 @@ void ABP_Animal_PanzerHund_Character_C::OnPrepareForPooling()
 
 void ABP_Animal_PanzerHund_Character_C::OnRep_IsMossVisible()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_PanzerHund_Character_C", "OnRep_IsMossVisible");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnRep_IsMossVisible", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -187,10 +169,8 @@ void ABP_Animal_PanzerHund_Character_C::OnRep_IsMossVisible()
 
 void ABP_Animal_PanzerHund_Character_C::OnRep_IsRolledCollision()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_PanzerHund_Character_C", "OnRep_IsRolledCollision");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnRep_IsRolledCollision", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -205,10 +185,8 @@ void ABP_Animal_PanzerHund_Character_C::OnRep_IsRolledCollision()
 
 void ABP_Animal_PanzerHund_Character_C::OnWaveFadeoutSubstageChanged_Event(const struct FCrEnviroWaveSettings& Settings, EEnviroWaveFadeoutSubstage Substage, float Progress)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_PanzerHund_Character_C", "OnWaveFadeoutSubstageChanged_Event");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnWaveFadeoutSubstageChanged_Event", FnName));
 
 	Params::BP_Animal_PanzerHund_Character_C_OnWaveFadeoutSubstageChanged_Event Parms{};
 
@@ -225,10 +203,8 @@ void ABP_Animal_PanzerHund_Character_C::OnWaveFadeoutSubstageChanged_Event(const
 
 void ABP_Animal_PanzerHund_Character_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_PanzerHund_Character_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -241,10 +217,8 @@ void ABP_Animal_PanzerHund_Character_C::ReceiveBeginPlay()
 
 void ABP_Animal_PanzerHund_Character_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_PanzerHund_Character_C", "ReceiveEndPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveEndPlay", FnName));
 
 	Params::BP_Animal_PanzerHund_Character_C_ReceiveEndPlay Parms{};
 
@@ -261,10 +235,8 @@ void ABP_Animal_PanzerHund_Character_C::ReceiveEndPlay(EEndPlayReason EndPlayRea
 
 void ABP_Animal_PanzerHund_Character_C::SetAudioState(const struct FGameplayTag& EventTag)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_PanzerHund_Character_C", "SetAudioState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetAudioState", FnName));
 
 	Params::BP_Animal_PanzerHund_Character_C_SetAudioState Parms{};
 
@@ -281,10 +253,8 @@ void ABP_Animal_PanzerHund_Character_C::SetAudioState(const struct FGameplayTag&
 
 void ABP_Animal_PanzerHund_Character_C::SetDustDamageActivity(bool Active)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_PanzerHund_Character_C", "SetDustDamageActivity");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetDustDamageActivity", FnName));
 
 	Params::BP_Animal_PanzerHund_Character_C_SetDustDamageActivity Parms{};
 
@@ -301,10 +271,8 @@ void ABP_Animal_PanzerHund_Character_C::SetDustDamageActivity(bool Active)
 
 void ABP_Animal_PanzerHund_Character_C::SetMossVisibility(bool Visible)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_PanzerHund_Character_C", "SetMossVisibility");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetMossVisibility", FnName));
 
 	Params::BP_Animal_PanzerHund_Character_C_SetMossVisibility Parms{};
 
@@ -321,10 +289,8 @@ void ABP_Animal_PanzerHund_Character_C::SetMossVisibility(bool Visible)
 
 void ABP_Animal_PanzerHund_Character_C::SetRolledCollision(bool NewIsRolledCollision)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_PanzerHund_Character_C", "SetRolledCollision");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetRolledCollision", FnName));
 
 	Params::BP_Animal_PanzerHund_Character_C_SetRolledCollision Parms{};
 
@@ -341,10 +307,8 @@ void ABP_Animal_PanzerHund_Character_C::SetRolledCollision(bool NewIsRolledColli
 
 bool ABP_Animal_PanzerHund_Character_C::ShouldMossBeActive()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_PanzerHund_Character_C", "ShouldMossBeActive");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ShouldMossBeActive", FnName));
 
 	Params::BP_Animal_PanzerHund_Character_C_ShouldMossBeActive Parms{};
 
@@ -361,10 +325,8 @@ bool ABP_Animal_PanzerHund_Character_C::ShouldMossBeActive()
 
 void ABP_Animal_PanzerHund_Character_C::OnMeshVisibilityUpdated(bool bIsMeshHidden) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_PanzerHund_Character_C", "OnMeshVisibilityUpdated");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnMeshVisibilityUpdated", FnName));
 
 	Params::BP_Animal_PanzerHund_Character_C_OnMeshVisibilityUpdated Parms{};
 

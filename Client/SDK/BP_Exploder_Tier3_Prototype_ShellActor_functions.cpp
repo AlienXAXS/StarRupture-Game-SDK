@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_Exploder_Tier3_Prototype_ShellActor_C::DestroyShellPartClosestToPoint(const struct FVector& Point)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_ShellActor_C", "DestroyShellPartClosestToPoint");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"DestroyShellPartClosestToPoint", FnName));
 
 	Params::BP_Exploder_Tier3_Prototype_ShellActor_C_DestroyShellPartClosestToPoint Parms{};
 

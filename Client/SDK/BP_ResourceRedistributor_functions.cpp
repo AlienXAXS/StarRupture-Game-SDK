@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_ResourceRedistributor_C::ExecuteUbergraph_BP_ResourceRedistributor(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ResourceRedistributor_C", "ExecuteUbergraph_BP_ResourceRedistributor");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_ResourceRedistributor_C", "ExecuteUbergraph_BP_ResourceRedistributor", FuncInfo);
 
 	Params::BP_ResourceRedistributor_C_ExecuteUbergraph_BP_ResourceRedistributor Parms{};
 
@@ -43,10 +41,8 @@ void ABP_ResourceRedistributor_C::ExecuteUbergraph_BP_ResourceRedistributor(int3
 
 void ABP_ResourceRedistributor_C::GetMaterialInstance(class UMaterialInstanceDynamic** MaterialInstance)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ResourceRedistributor_C", "GetMaterialInstance");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetMaterialInstance", FnName));
 
 	Params::BP_ResourceRedistributor_C_GetMaterialInstance Parms{};
 
@@ -64,10 +60,8 @@ void ABP_ResourceRedistributor_C::GetMaterialInstance(class UMaterialInstanceDyn
 
 void ABP_ResourceRedistributor_C::GetMaterialInstanceIcon(class UMaterialInstanceDynamic** MaterialInstance)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ResourceRedistributor_C", "GetMaterialInstanceIcon");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetMaterialInstanceIcon", FnName));
 
 	Params::BP_ResourceRedistributor_C_GetMaterialInstanceIcon Parms{};
 
@@ -85,10 +79,8 @@ void ABP_ResourceRedistributor_C::GetMaterialInstanceIcon(class UMaterialInstanc
 
 void ABP_ResourceRedistributor_C::UpdateFilter(const class UAuItemDataBase* ItemFilter)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ResourceRedistributor_C", "UpdateFilter");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateFilter", FnName));
 
 	Params::BP_ResourceRedistributor_C_UpdateFilter Parms{};
 
@@ -106,10 +98,8 @@ void ABP_ResourceRedistributor_C::UpdateFilter(const class UAuItemDataBase* Item
 
 void ABP_ResourceRedistributor_C::UpdateItemCount(int32 Count, int32 MaxCount)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ResourceRedistributor_C", "UpdateItemCount");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateItemCount", FnName));
 
 	Params::BP_ResourceRedistributor_C_UpdateItemCount Parms{};
 

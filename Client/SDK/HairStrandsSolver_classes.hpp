@@ -12,6 +12,7 @@
 
 #include "HairStrandsSolver_structs.hpp"
 #include "DataflowSimulation_structs.hpp"
+#include "DataflowSimulation_classes.hpp"
 #include "Engine_classes.hpp"
 
 
@@ -19,10 +20,9 @@ SDK_NAMESPACE_START
 
 // Class HairStrandsSolver.GroomSolverComponent
 // 0x0280 (0x0800 - 0x0580)
-class UGroomSolverComponent final : public UMeshComponent
+class UGroomSolverComponent final : public UMeshComponent, public IDataflowPhysicsSolverInterface
 {
 public:
-	uint8                                         Pad_578[0x8];                                      // 0x0578(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGroomSolverSettings                   SolverSettings;                                    // 0x0580(0x0068)(Edit, NativeAccessSpecifierPrivate)
 	struct FDataflowSimulationAsset               SimulationAsset;                                   // 0x05E8(0x0058)(Edit, AdvancedDisplay, NativeAccessSpecifierPrivate)
 	TSet<class UGroomComponent*>                  GroomComponents;                                   // 0x0640(0x0050)(Edit, ExportObject, EditConst, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)

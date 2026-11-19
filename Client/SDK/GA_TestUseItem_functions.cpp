@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UGA_TestUseItem_C::ExecuteUbergraph_GA_TestUseItem(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_TestUseItem_C", "ExecuteUbergraph_GA_TestUseItem");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "GA_TestUseItem_C", "ExecuteUbergraph_GA_TestUseItem", FuncInfo);
 
 	Params::GA_TestUseItem_C_ExecuteUbergraph_GA_TestUseItem Parms{};
 
@@ -43,10 +41,8 @@ void UGA_TestUseItem_C::ExecuteUbergraph_GA_TestUseItem(int32 EntryPoint)
 
 void UGA_TestUseItem_C::K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_TestUseItem_C", "K2_ActivateAbilityFromEvent");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_ActivateAbilityFromEvent", FnName));
 
 	Params::GA_TestUseItem_C_K2_ActivateAbilityFromEvent Parms{};
 

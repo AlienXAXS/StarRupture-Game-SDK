@@ -18,6 +18,20 @@
 
 SDK_NAMESPACE_START
 
+// ScriptStruct AuUI.AuNotificationManager
+// 0x0038 (0x0038 - 0x0000)
+struct FAuNotificationManager final
+{
+public:
+	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Duration;                                          // 0x0018(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PreRemoveTime;                                     // 0x001C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UAuWidget_Notification>     NotificationClass;                                 // 0x0020(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UAuWidget_NotificationContainer> NotificationContainerClass;                   // 0x0028(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UAuWidget_NotificationContainer*        NotificationContainer;                             // 0x0030(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+};
+DUMPER7_ASSERTS_FAuNotificationManager;
+
 // ScriptStruct AuUI.AuUIFloatingTextSettings
 // 0x00B8 (0x00B8 - 0x0000)
 struct FAuUIFloatingTextSettings final
@@ -64,6 +78,15 @@ public:
 };
 DUMPER7_ASSERTS_FAuSlotWidgetParams;
 
+// ScriptStruct AuUI.AuFTData
+// 0x0060 (0x0060 - 0x0000)
+struct alignas(0x08) FAuFTData final
+{
+public:
+	uint8                                         Pad_0[0x60];                                       // 0x0000(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FAuFTData;
+
 // ScriptStruct AuUI.AuListItemViewModel
 // 0x0150 (0x0150 - 0x0000)
 struct FAuListItemViewModel final
@@ -79,15 +102,6 @@ public:
 	TWeakObjectPtr<class UAuItemsComponent>       DestinationComponent;                              // 0x0148(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FAuListItemViewModel;
-
-// ScriptStruct AuUI.AuFTData
-// 0x0060 (0x0060 - 0x0000)
-struct alignas(0x08) FAuFTData final
-{
-public:
-	uint8                                         Pad_0[0x60];                                       // 0x0000(0x0060)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FAuFTData;
 
 // ScriptStruct AuUI.AuOverheadInfoTickFunction
 // 0x0008 (0x0030 - 0x0028)
@@ -108,19 +122,5 @@ public:
 	class UAuWidget_Notification*                 Widget;                                            // 0x0008(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 };
 DUMPER7_ASSERTS_FAuNotificationItem;
-
-// ScriptStruct AuUI.AuNotificationManager
-// 0x0038 (0x0038 - 0x0000)
-struct FAuNotificationManager final
-{
-public:
-	uint8                                         Pad_0[0x18];                                       // 0x0000(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Duration;                                          // 0x0018(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         PreRemoveTime;                                     // 0x001C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class UAuWidget_Notification>     NotificationClass;                                 // 0x0020(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class UAuWidget_NotificationContainer> NotificationContainerClass;                   // 0x0028(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UAuWidget_NotificationContainer*        NotificationContainer;                             // 0x0030(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FAuNotificationManager;
 
 SDK_NAMESPACE_END

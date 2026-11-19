@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_TooltipPrompt_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_TooltipPrompt_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -37,10 +35,8 @@ void UWBP_TooltipPrompt_C::Construct()
 
 void UWBP_TooltipPrompt_C::ExecuteUbergraph_WBP_TooltipPrompt(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_TooltipPrompt_C", "ExecuteUbergraph_WBP_TooltipPrompt");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_TooltipPrompt_C", "ExecuteUbergraph_WBP_TooltipPrompt", FuncInfo);
 
 	Params::WBP_TooltipPrompt_C_ExecuteUbergraph_WBP_TooltipPrompt Parms{};
 
@@ -57,10 +53,8 @@ void UWBP_TooltipPrompt_C::ExecuteUbergraph_WBP_TooltipPrompt(int32 EntryPoint)
 
 void UWBP_TooltipPrompt_C::GetVisibleActionsCount(int32* Count)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_TooltipPrompt_C", "GetVisibleActionsCount");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetVisibleActionsCount", FnName));
 
 	Params::WBP_TooltipPrompt_C_GetVisibleActionsCount Parms{};
 
@@ -78,10 +72,8 @@ void UWBP_TooltipPrompt_C::GetVisibleActionsCount(int32* Count)
 
 void UWBP_TooltipPrompt_C::SetShowTooltip(bool bShow)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_TooltipPrompt_C", "SetShowTooltip");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetShowTooltip", FnName));
 
 	Params::WBP_TooltipPrompt_C_SetShowTooltip Parms{};
 
@@ -98,10 +90,8 @@ void UWBP_TooltipPrompt_C::SetShowTooltip(bool bShow)
 
 void UWBP_TooltipPrompt_C::SetSupportTransfer(bool bSupport)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_TooltipPrompt_C", "SetSupportTransfer");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetSupportTransfer", FnName));
 
 	Params::WBP_TooltipPrompt_C_SetSupportTransfer Parms{};
 
@@ -118,10 +108,8 @@ void UWBP_TooltipPrompt_C::SetSupportTransfer(bool bSupport)
 
 void UWBP_TooltipPrompt_C::SetupExpand(bool bSupport)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_TooltipPrompt_C", "SetupExpand");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetupExpand", FnName));
 
 	Params::WBP_TooltipPrompt_C_SetupExpand Parms{};
 
@@ -138,10 +126,8 @@ void UWBP_TooltipPrompt_C::SetupExpand(bool bSupport)
 
 void UWBP_TooltipPrompt_C::ShowExpand(bool Show)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_TooltipPrompt_C", "ShowExpand");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ShowExpand", FnName));
 
 	Params::WBP_TooltipPrompt_C_ShowExpand Parms{};
 
@@ -158,10 +144,8 @@ void UWBP_TooltipPrompt_C::ShowExpand(bool Show)
 
 void UWBP_TooltipPrompt_C::ShowTooltip(bool Show)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_TooltipPrompt_C", "ShowTooltip");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ShowTooltip", FnName));
 
 	Params::WBP_TooltipPrompt_C_ShowTooltip Parms{};
 
@@ -178,10 +162,8 @@ void UWBP_TooltipPrompt_C::ShowTooltip(bool Show)
 
 void UWBP_TooltipPrompt_C::ShowTransfer(bool Show)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_TooltipPrompt_C", "ShowTransfer");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ShowTransfer", FnName));
 
 	Params::WBP_TooltipPrompt_C_ShowTransfer Parms{};
 

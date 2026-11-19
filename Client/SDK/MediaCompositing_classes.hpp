@@ -44,29 +44,6 @@ public:
 };
 DUMPER7_ASSERTS_UMovieSceneMediaPlayerPropertySection;
 
-// Class MediaCompositing.MovieSceneMediaPlayerPropertyTrack
-// 0x0008 (0x0150 - 0x0148)
-class UMovieSceneMediaPlayerPropertyTrack final : public UMovieScenePropertyTrack
-{
-public:
-	uint8                                         Pad_148[0x8];                                      // 0x0148(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MovieSceneMediaPlayerPropertyTrack")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MovieSceneMediaPlayerPropertyTrack")
-	}
-	static class UMovieSceneMediaPlayerPropertyTrack* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMovieSceneMediaPlayerPropertyTrack>();
-	}
-};
-DUMPER7_ASSERTS_UMovieSceneMediaPlayerPropertyTrack;
-
 // Class MediaCompositing.MovieSceneMediaSection
 // 0x0180 (0x0290 - 0x0110)
 class UMovieSceneMediaSection final : public UMovieSceneSection
@@ -106,12 +83,33 @@ public:
 };
 DUMPER7_ASSERTS_UMovieSceneMediaSection;
 
-// Class MediaCompositing.MovieSceneMediaTrack
-// 0x0020 (0x0138 - 0x0118)
-class UMovieSceneMediaTrack final : public UMovieSceneNameableTrack
+// Class MediaCompositing.MovieSceneMediaPlayerPropertyTrack
+// 0x0008 (0x0150 - 0x0148)
+class UMovieSceneMediaPlayerPropertyTrack final : public UMovieScenePropertyTrack, public IMovieSceneTrackTemplateProducer
 {
 public:
-	uint8                                         Pad_118[0x8];                                      // 0x0118(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MovieSceneMediaPlayerPropertyTrack")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MovieSceneMediaPlayerPropertyTrack")
+	}
+	static class UMovieSceneMediaPlayerPropertyTrack* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMovieSceneMediaPlayerPropertyTrack>();
+	}
+};
+DUMPER7_ASSERTS_UMovieSceneMediaPlayerPropertyTrack;
+
+// Class MediaCompositing.MovieSceneMediaTrack
+// 0x0020 (0x0138 - 0x0118)
+class UMovieSceneMediaTrack final : public UMovieSceneNameableTrack, public IMovieSceneTrackTemplateProducer
+{
+public:
 	bool                                          bSynchronousScrubbing;                             // 0x0120(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_121[0x7];                                      // 0x0121(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UMovieSceneSection*>             MediaSections;                                     // 0x0128(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)

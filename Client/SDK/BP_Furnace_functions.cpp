@@ -24,10 +24,8 @@ SDK_NAMESPACE_START
 
 void ABP_Furnace_C::Get_Meshes(class USceneComponent* Static, class USceneComponent* Animated)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Furnace_C", "Get Meshes");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Get Meshes", FnName));
 
 	Params::BP_Furnace_C_Get_Meshes Parms{};
 

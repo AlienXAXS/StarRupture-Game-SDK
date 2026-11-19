@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_ZipLine_OLD_C::BlockAllBeams(class UNiagaraComponent* NiagaraSystem)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "BlockAllBeams");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BlockAllBeams", FnName));
 
 	Params::BP_ZipLine_OLD_C_BlockAllBeams Parms{};
 
@@ -43,10 +41,8 @@ void ABP_ZipLine_OLD_C::BlockAllBeams(class UNiagaraComponent* NiagaraSystem)
 
 void ABP_ZipLine_OLD_C::ExecuteUbergraph_BP_ZipLine_OLD(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "ExecuteUbergraph_BP_ZipLine_OLD");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_ZipLine_OLD_C", "ExecuteUbergraph_BP_ZipLine_OLD", FuncInfo);
 
 	Params::BP_ZipLine_OLD_C_ExecuteUbergraph_BP_ZipLine_OLD Parms{};
 
@@ -63,10 +59,8 @@ void ABP_ZipLine_OLD_C::ExecuteUbergraph_BP_ZipLine_OLD(int32 EntryPoint)
 
 void ABP_ZipLine_OLD_C::OnActivityModified(bool bActive)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnActivityModified");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnActivityModified", FnName));
 
 	Params::BP_ZipLine_OLD_C_OnActivityModified Parms{};
 
@@ -83,10 +77,8 @@ void ABP_ZipLine_OLD_C::OnActivityModified(bool bActive)
 
 void ABP_ZipLine_OLD_C::OnBuildingStateChanged(ECrBuildingState InState)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnBuildingStateChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBuildingStateChanged", FnName));
 
 	Params::BP_ZipLine_OLD_C_OnBuildingStateChanged Parms{};
 
@@ -104,10 +96,8 @@ void ABP_ZipLine_OLD_C::OnBuildingStateChanged(ECrBuildingState InState)
 
 void ABP_ZipLine_OLD_C::OnConnectionsModified(const TArray<struct FVector_NetQuantize>& ActiveLocations, const TArray<struct FVector_NetQuantize>& InactiveLocations)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnConnectionsModified");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnConnectionsModified", FnName));
 
 	Params::BP_ZipLine_OLD_C_OnConnectionsModified Parms{};
 
@@ -123,10 +113,8 @@ void ABP_ZipLine_OLD_C::OnConnectionsModified(const TArray<struct FVector_NetQua
 
 void ABP_ZipLine_OLD_C::OnHideBlockingSphere()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnHideBlockingSphere");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnHideBlockingSphere", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -140,10 +128,8 @@ void ABP_ZipLine_OLD_C::OnHideBlockingSphere()
 
 void ABP_ZipLine_OLD_C::OnPlayerRotationFinished(const struct FVector_NetQuantize& NewTargetLocation, const struct FRotator& NewRotation)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnPlayerRotationFinished");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPlayerRotationFinished", FnName));
 
 	Params::BP_ZipLine_OLD_C_OnPlayerRotationFinished Parms{};
 
@@ -159,10 +145,8 @@ void ABP_ZipLine_OLD_C::OnPlayerRotationFinished(const struct FVector_NetQuantiz
 
 void ABP_ZipLine_OLD_C::OnPlayerRotationStarted()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnPlayerRotationStarted");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPlayerRotationStarted", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -173,10 +157,8 @@ void ABP_ZipLine_OLD_C::OnPlayerRotationStarted()
 
 void ABP_ZipLine_OLD_C::OnShowBlockingSphere()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnShowBlockingSphere");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnShowBlockingSphere", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -190,10 +172,8 @@ void ABP_ZipLine_OLD_C::OnShowBlockingSphere()
 
 void ABP_ZipLine_OLD_C::OnStopTravellingTo(class ACrCharacterPlayerBase* InPlayer, bool bCancelled)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnStopTravellingTo");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnStopTravellingTo", FnName));
 
 	Params::BP_ZipLine_OLD_C_OnStopTravellingTo Parms{};
 
@@ -211,10 +191,8 @@ void ABP_ZipLine_OLD_C::OnStopTravellingTo(class ACrCharacterPlayerBase* InPlaye
 
 void ABP_ZipLine_OLD_C::OnTargeted(class ACrCharacterPlayerBase* InPlayer)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnTargeted");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnTargeted", FnName));
 
 	Params::BP_ZipLine_OLD_C_OnTargeted Parms{};
 
@@ -231,10 +209,8 @@ void ABP_ZipLine_OLD_C::OnTargeted(class ACrCharacterPlayerBase* InPlayer)
 
 void ABP_ZipLine_OLD_C::OnTravellingTo(class ACrCharacterPlayerBase* InPlayer)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnTravellingTo");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnTravellingTo", FnName));
 
 	Params::BP_ZipLine_OLD_C_OnTravellingTo Parms{};
 
@@ -251,10 +227,8 @@ void ABP_ZipLine_OLD_C::OnTravellingTo(class ACrCharacterPlayerBase* InPlayer)
 
 void ABP_ZipLine_OLD_C::OnUnoccupied(class ACrCharacterPlayerBase* InPlayer)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnUnoccupied");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnUnoccupied", FnName));
 
 	Params::BP_ZipLine_OLD_C_OnUnoccupied Parms{};
 
@@ -271,10 +245,8 @@ void ABP_ZipLine_OLD_C::OnUnoccupied(class ACrCharacterPlayerBase* InPlayer)
 
 void ABP_ZipLine_OLD_C::OnUntargeted(class ACrCharacterPlayerBase* InPlayer)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnUntargeted");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnUntargeted", FnName));
 
 	Params::BP_ZipLine_OLD_C_OnUntargeted Parms{};
 
@@ -289,10 +261,8 @@ void ABP_ZipLine_OLD_C::OnUntargeted(class ACrCharacterPlayerBase* InPlayer)
 
 void ABP_ZipLine_OLD_C::OnZiplineLocallyCancelled()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnZiplineLocallyCancelled");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnZiplineLocallyCancelled", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -303,10 +273,8 @@ void ABP_ZipLine_OLD_C::OnZiplineLocallyCancelled()
 
 void ABP_ZipLine_OLD_C::OnZiplineModeLocallyStarted()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnZiplineModeLocallyStarted");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnZiplineModeLocallyStarted", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -317,10 +285,8 @@ void ABP_ZipLine_OLD_C::OnZiplineModeLocallyStarted()
 
 void ABP_ZipLine_OLD_C::OnZiplineTravelLocallyStarted()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "OnZiplineTravelLocallyStarted");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnZiplineTravelLocallyStarted", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -331,10 +297,8 @@ void ABP_ZipLine_OLD_C::OnZiplineTravelLocallyStarted()
 
 void ABP_ZipLine_OLD_C::Open__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "Open__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Open__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -345,10 +309,8 @@ void ABP_ZipLine_OLD_C::Open__FinishedFunc()
 
 void ABP_ZipLine_OLD_C::Open__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "Open__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Open__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -361,10 +323,8 @@ void ABP_ZipLine_OLD_C::Open__UpdateFunc()
 
 void ABP_ZipLine_OLD_C::SetDetailedBeamLocation(const struct FVector& Target_Location)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "SetDetailedBeamLocation");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetDetailedBeamLocation", FnName));
 
 	Params::BP_ZipLine_OLD_C_SetDetailedBeamLocation Parms{};
 
@@ -381,10 +341,8 @@ void ABP_ZipLine_OLD_C::SetDetailedBeamLocation(const struct FVector& Target_Loc
 
 void ABP_ZipLine_OLD_C::TurnOffBeams(class UNiagaraComponent* Niagara_System)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "TurnOffBeams");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"TurnOffBeams", FnName));
 
 	Params::BP_ZipLine_OLD_C_TurnOffBeams Parms{};
 
@@ -401,10 +359,8 @@ void ABP_ZipLine_OLD_C::TurnOffBeams(class UNiagaraComponent* Niagara_System)
 
 void ABP_ZipLine_OLD_C::TurnOnBeams(class UNiagaraComponent* NiagaraSystem)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "TurnOnBeams");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"TurnOnBeams", FnName));
 
 	Params::BP_ZipLine_OLD_C_TurnOnBeams Parms{};
 
@@ -419,10 +375,8 @@ void ABP_ZipLine_OLD_C::TurnOnBeams(class UNiagaraComponent* NiagaraSystem)
 
 void ABP_ZipLine_OLD_C::UpdateAllBeamLocations()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "UpdateAllBeamLocations");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateAllBeamLocations", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -435,10 +389,8 @@ void ABP_ZipLine_OLD_C::UpdateAllBeamLocations()
 
 void ABP_ZipLine_OLD_C::UpdateAllBeamLocationsByActivity(bool bActiveConnections)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "UpdateAllBeamLocationsByActivity");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateAllBeamLocationsByActivity", FnName));
 
 	Params::BP_ZipLine_OLD_C_UpdateAllBeamLocationsByActivity Parms{};
 
@@ -453,10 +405,8 @@ void ABP_ZipLine_OLD_C::UpdateAllBeamLocationsByActivity(bool bActiveConnections
 
 void ABP_ZipLine_OLD_C::UpdateDetailedBeamActivity()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipLine_OLD_C", "UpdateDetailedBeamActivity");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateDetailedBeamActivity", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

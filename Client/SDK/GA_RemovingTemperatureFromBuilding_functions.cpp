@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UGA_RemovingTemperatureFromBuilding_C::ExecuteUbergraph_GA_RemovingTemperatureFromBuilding(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_RemovingTemperatureFromBuilding_C", "ExecuteUbergraph_GA_RemovingTemperatureFromBuilding");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "GA_RemovingTemperatureFromBuilding_C", "ExecuteUbergraph_GA_RemovingTemperatureFromBuilding", FuncInfo);
 
 	Params::GA_RemovingTemperatureFromBuilding_C_ExecuteUbergraph_GA_RemovingTemperatureFromBuilding Parms{};
 
@@ -41,10 +39,8 @@ void UGA_RemovingTemperatureFromBuilding_C::ExecuteUbergraph_GA_RemovingTemperat
 
 void UGA_RemovingTemperatureFromBuilding_C::K2_ActivateAbility()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_RemovingTemperatureFromBuilding_C", "K2_ActivateAbility");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_ActivateAbility", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -57,10 +53,8 @@ void UGA_RemovingTemperatureFromBuilding_C::K2_ActivateAbility()
 
 void UGA_RemovingTemperatureFromBuilding_C::OnCancelled_DE1FC1395847D031455AF3B86AE5B04D(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_RemovingTemperatureFromBuilding_C", "OnCancelled_DE1FC1395847D031455AF3B86AE5B04D");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnCancelled_DE1FC1395847D031455AF3B86AE5B04D", FnName));
 
 	Params::GA_RemovingTemperatureFromBuilding_C_OnCancelled_DE1FC1395847D031455AF3B86AE5B04D Parms{};
 
@@ -77,10 +71,8 @@ void UGA_RemovingTemperatureFromBuilding_C::OnCancelled_DE1FC1395847D031455AF3B8
 
 void UGA_RemovingTemperatureFromBuilding_C::OnFppMontageBlendOut_DE1FC1395847D031455AF3B86AE5B04D(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_RemovingTemperatureFromBuilding_C", "OnFppMontageBlendOut_DE1FC1395847D031455AF3B86AE5B04D");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageBlendOut_DE1FC1395847D031455AF3B86AE5B04D", FnName));
 
 	Params::GA_RemovingTemperatureFromBuilding_C_OnFppMontageBlendOut_DE1FC1395847D031455AF3B86AE5B04D Parms{};
 
@@ -97,10 +89,8 @@ void UGA_RemovingTemperatureFromBuilding_C::OnFppMontageBlendOut_DE1FC1395847D03
 
 void UGA_RemovingTemperatureFromBuilding_C::OnFppMontageEnded_DE1FC1395847D031455AF3B86AE5B04D(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_RemovingTemperatureFromBuilding_C", "OnFppMontageEnded_DE1FC1395847D031455AF3B86AE5B04D");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageEnded_DE1FC1395847D031455AF3B86AE5B04D", FnName));
 
 	Params::GA_RemovingTemperatureFromBuilding_C_OnFppMontageEnded_DE1FC1395847D031455AF3B86AE5B04D Parms{};
 
@@ -117,10 +107,8 @@ void UGA_RemovingTemperatureFromBuilding_C::OnFppMontageEnded_DE1FC1395847D03145
 
 void UGA_RemovingTemperatureFromBuilding_C::OnFppMontageNotifyBegin_DE1FC1395847D031455AF3B86AE5B04D(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_RemovingTemperatureFromBuilding_C", "OnFppMontageNotifyBegin_DE1FC1395847D031455AF3B86AE5B04D");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageNotifyBegin_DE1FC1395847D031455AF3B86AE5B04D", FnName));
 
 	Params::GA_RemovingTemperatureFromBuilding_C_OnFppMontageNotifyBegin_DE1FC1395847D031455AF3B86AE5B04D Parms{};
 
@@ -137,10 +125,8 @@ void UGA_RemovingTemperatureFromBuilding_C::OnFppMontageNotifyBegin_DE1FC1395847
 
 void UGA_RemovingTemperatureFromBuilding_C::OnFppMontageNotifyEnd_DE1FC1395847D031455AF3B86AE5B04D(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_RemovingTemperatureFromBuilding_C", "OnFppMontageNotifyEnd_DE1FC1395847D031455AF3B86AE5B04D");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageNotifyEnd_DE1FC1395847D031455AF3B86AE5B04D", FnName));
 
 	Params::GA_RemovingTemperatureFromBuilding_C_OnFppMontageNotifyEnd_DE1FC1395847D031455AF3B86AE5B04D Parms{};
 
@@ -157,10 +143,8 @@ void UGA_RemovingTemperatureFromBuilding_C::OnFppMontageNotifyEnd_DE1FC1395847D0
 
 void UGA_RemovingTemperatureFromBuilding_C::OnInterrupted_DE1FC1395847D031455AF3B86AE5B04D(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_RemovingTemperatureFromBuilding_C", "OnInterrupted_DE1FC1395847D031455AF3B86AE5B04D");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnInterrupted_DE1FC1395847D031455AF3B86AE5B04D", FnName));
 
 	Params::GA_RemovingTemperatureFromBuilding_C_OnInterrupted_DE1FC1395847D031455AF3B86AE5B04D Parms{};
 
@@ -177,10 +161,8 @@ void UGA_RemovingTemperatureFromBuilding_C::OnInterrupted_DE1FC1395847D031455AF3
 
 void UGA_RemovingTemperatureFromBuilding_C::OnNotLocallyControlledTppMontageBlendOut_DE1FC1395847D031455AF3B86AE5B04D(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_RemovingTemperatureFromBuilding_C", "OnNotLocallyControlledTppMontageBlendOut_DE1FC1395847D031455AF3B86AE5B04D");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnNotLocallyControlledTppMontageBlendOut_DE1FC1395847D031455AF3B86AE5B04D", FnName));
 
 	Params::GA_RemovingTemperatureFromBuilding_C_OnNotLocallyControlledTppMontageBlendOut_DE1FC1395847D031455AF3B86AE5B04D Parms{};
 

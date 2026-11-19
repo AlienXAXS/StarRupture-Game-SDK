@@ -10,19 +10,23 @@
 
 #include "Basic.hpp"
 
+#include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "Engine_structs.hpp"
+#include "AuActorPlacement_structs.hpp"
 #include "Chimera_classes.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Exploder_Tier2_PooledProjectile.BP_Exploder_Tier2_PooledProjectile_C
-// 0x0010 (0x0360 - 0x0350)
+// 0x0050 (0x03A0 - 0x0350)
 class ABP_Exploder_Tier2_PooledProjectile_C final : public ACrAiDestructibleProjectileActor
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0350(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	class UStaticMeshComponent*                   Sphere;                                            // 0x0358(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FAuAPMassSpawnedEntityType             Entity_Type;                                       // 0x0360(0x0038)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FCrMassEnemyBPEntityHandle             InfectionEntityHandle;                             // 0x0398(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor)
 
 public:
 	void ExecuteUbergraph_BP_Exploder_Tier2_PooledProjectile(int32 EntryPoint);

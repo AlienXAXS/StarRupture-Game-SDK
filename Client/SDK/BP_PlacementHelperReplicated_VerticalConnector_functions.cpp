@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_PlacementHelperReplicated_VerticalConnector_C::ExecuteUbergraph_BP_PlacementHelperReplicated_VerticalConnector(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperReplicated_VerticalConnector_C", "ExecuteUbergraph_BP_PlacementHelperReplicated_VerticalConnector");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_PlacementHelperReplicated_VerticalConnector_C", "ExecuteUbergraph_BP_PlacementHelperReplicated_VerticalConnector", FuncInfo);
 
 	Params::BP_PlacementHelperReplicated_VerticalConnector_C_ExecuteUbergraph_BP_PlacementHelperReplicated_VerticalConnector Parms{};
 
@@ -43,10 +41,8 @@ void ABP_PlacementHelperReplicated_VerticalConnector_C::ExecuteUbergraph_BP_Plac
 
 void ABP_PlacementHelperReplicated_VerticalConnector_C::SetMeshColor(const struct FLinearColor& Color)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperReplicated_VerticalConnector_C", "SetMeshColor");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetMeshColor", FnName));
 
 	Params::BP_PlacementHelperReplicated_VerticalConnector_C_SetMeshColor Parms{};
 
@@ -61,10 +57,8 @@ void ABP_PlacementHelperReplicated_VerticalConnector_C::SetMeshColor(const struc
 
 void ABP_PlacementHelperReplicated_VerticalConnector_C::UserConstructionScript()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperReplicated_VerticalConnector_C", "UserConstructionScript");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UserConstructionScript", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

@@ -23,14 +23,30 @@ SDK_NAMESPACE_START
 
 void ABP_ResearchTerminal_C::ExecuteUbergraph_BP_ResearchTerminal(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ResearchTerminal_C", "ExecuteUbergraph_BP_ResearchTerminal");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_ResearchTerminal_C", "ExecuteUbergraph_BP_ResearchTerminal", FuncInfo);
 
 	Params::BP_ResearchTerminal_C_ExecuteUbergraph_BP_ResearchTerminal Parms{};
 
 	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_ResearchTerminal.BP_ResearchTerminal_C.OnBuildWithInsideWallCheck
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bIsInsideWall                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_ResearchTerminal_C::OnBuildWithInsideWallCheck(bool bIsInsideWall)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBuildWithInsideWallCheck", FnName));
+
+	Params::BP_ResearchTerminal_C_OnBuildWithInsideWallCheck Parms{};
+
+	Parms.bIsInsideWall = bIsInsideWall;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -43,10 +59,8 @@ void ABP_ResearchTerminal_C::ExecuteUbergraph_BP_ResearchTerminal(int32 EntryPoi
 
 void ABP_ResearchTerminal_C::OnUIOpened(bool bOpened)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ResearchTerminal_C", "OnUIOpened");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnUIOpened", FnName));
 
 	Params::BP_ResearchTerminal_C_OnUIOpened Parms{};
 
@@ -61,10 +75,8 @@ void ABP_ResearchTerminal_C::OnUIOpened(bool bOpened)
 
 void ABP_ResearchTerminal_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ResearchTerminal_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

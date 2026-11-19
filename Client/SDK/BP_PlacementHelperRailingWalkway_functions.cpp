@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_PlacementHelperRailingWalkway_C::ExecuteUbergraph_BP_PlacementHelperRailingWalkway(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperRailingWalkway_C", "ExecuteUbergraph_BP_PlacementHelperRailingWalkway");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_PlacementHelperRailingWalkway_C", "ExecuteUbergraph_BP_PlacementHelperRailingWalkway", FuncInfo);
 
 	Params::BP_PlacementHelperRailingWalkway_C_ExecuteUbergraph_BP_PlacementHelperRailingWalkway Parms{};
 
@@ -43,10 +41,8 @@ void ABP_PlacementHelperRailingWalkway_C::ExecuteUbergraph_BP_PlacementHelperRai
 
 double ABP_PlacementHelperRailingWalkway_C::GetRampAngle()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperRailingWalkway_C", "GetRampAngle");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetRampAngle", FnName));
 
 	Params::BP_PlacementHelperRailingWalkway_C_GetRampAngle Parms{};
 
@@ -63,10 +59,8 @@ double ABP_PlacementHelperRailingWalkway_C::GetRampAngle()
 
 bool ABP_PlacementHelperRailingWalkway_C::IsLadder()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperRailingWalkway_C", "IsLadder");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IsLadder", FnName));
 
 	Params::BP_PlacementHelperRailingWalkway_C_IsLadder Parms{};
 
@@ -83,10 +77,8 @@ bool ABP_PlacementHelperRailingWalkway_C::IsLadder()
 
 bool ABP_PlacementHelperRailingWalkway_C::IsRamp()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperRailingWalkway_C", "IsRamp");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IsRamp", FnName));
 
 	Params::BP_PlacementHelperRailingWalkway_C_IsRamp Parms{};
 
@@ -103,10 +95,8 @@ bool ABP_PlacementHelperRailingWalkway_C::IsRamp()
 
 void ABP_PlacementHelperRailingWalkway_C::OnSplinePointAdded(int32 PointIndex)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperRailingWalkway_C", "OnSplinePointAdded");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSplinePointAdded", FnName));
 
 	Params::BP_PlacementHelperRailingWalkway_C_OnSplinePointAdded Parms{};
 
@@ -123,10 +113,8 @@ void ABP_PlacementHelperRailingWalkway_C::OnSplinePointAdded(int32 PointIndex)
 
 void ABP_PlacementHelperRailingWalkway_C::OnSplinePointRemoved(int32 PointIndex)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperRailingWalkway_C", "OnSplinePointRemoved");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSplinePointRemoved", FnName));
 
 	Params::BP_PlacementHelperRailingWalkway_C_OnSplinePointRemoved Parms{};
 
@@ -143,10 +131,8 @@ void ABP_PlacementHelperRailingWalkway_C::OnSplinePointRemoved(int32 PointIndex)
 
 void ABP_PlacementHelperRailingWalkway_C::ReceiveTick(float DeltaSeconds)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperRailingWalkway_C", "ReceiveTick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveTick", FnName));
 
 	Params::BP_PlacementHelperRailingWalkway_C_ReceiveTick Parms{};
 
@@ -163,10 +149,8 @@ void ABP_PlacementHelperRailingWalkway_C::ReceiveTick(float DeltaSeconds)
 
 void ABP_PlacementHelperRailingWalkway_C::RemoveSteps(int32 Amount)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperRailingWalkway_C", "RemoveSteps");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"RemoveSteps", FnName));
 
 	Params::BP_PlacementHelperRailingWalkway_C_RemoveSteps Parms{};
 
@@ -183,10 +167,8 @@ void ABP_PlacementHelperRailingWalkway_C::RemoveSteps(int32 Amount)
 
 void ABP_PlacementHelperRailingWalkway_C::SetMeshColor(const struct FLinearColor& Color)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperRailingWalkway_C", "SetMeshColor");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetMeshColor", FnName));
 
 	Params::BP_PlacementHelperRailingWalkway_C_SetMeshColor Parms{};
 
@@ -205,10 +187,8 @@ void ABP_PlacementHelperRailingWalkway_C::SetMeshColor(const struct FLinearColor
 
 void ABP_PlacementHelperRailingWalkway_C::SetSplineSegment(class USplineMeshComponent* SplineMeshComponent, int32 FirstPointIndex, int32 SecondPointIndex)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperRailingWalkway_C", "SetSplineSegment");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetSplineSegment", FnName));
 
 	Params::BP_PlacementHelperRailingWalkway_C_SetSplineSegment Parms{};
 

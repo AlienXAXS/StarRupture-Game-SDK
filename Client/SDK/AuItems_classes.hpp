@@ -389,9 +389,12 @@ public:
 DUMPER7_ASSERTS_UAuItemData;
 
 // Class AuItems.AuItemOwnerInterface
-// 0x0000 (0x0000 - 0x0000)
-class IAuItemOwnerInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IAuItemOwnerInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -647,7 +650,7 @@ public:
 DUMPER7_ASSERTS_UAuItemsBPF;
 
 // Class AuItems.AuItemsComponent
-// 0x0910 (0x09C8 - 0x00B8)
+// 0x0928 (0x09E0 - 0x00B8)
 class UAuItemsComponent : public UActorComponent
 {
 public:
@@ -662,6 +665,7 @@ public:
 	TSoftObjectPtr<class UAuSlotDefaultItemsData> CheatSlotItems;                                    // 0x0768(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_790[0x230];                                    // 0x0790(0x0230)(Fixing Size After Last Property [ Dumper-7 ])
 	class UAbilitySystemComponent*                ASC;                                               // 0x09C0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	TMulticastInlineDelegate<void(const class UAuItemData* NewItem, const struct FAuItemSlot& WeaponSlot)> OnWeaponItemAssignedToSlot; // 0x09C8(0x0018)(Edit, ZeroConstructor, EditConst, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 
 public:
 	static struct FAuItemId GetItemId(const struct FGameplayEventData& EventData);
@@ -678,6 +682,8 @@ public:
 	void BP_MoveItemToSlot(const struct FAuItemSlot& Slot, const struct FAuItemId& Item, class UAuItemsComponent* From, bool bRemoveFrom);
 	void BP_RemoveComponentFromItemHandle(const struct FAuItemId& InItem, const struct FAuItemSlot& InComponentSlot);
 	void BP_SetItemOnSlot(const struct FAuItemId& Handle, const struct FAuItemSlot& TargetSlot);
+	void ClientOnNewItemAddedToSlot(const class UAuItemData* NewItem, const struct FAuItemSlot& Slot);
+	TMulticastInlineDelegate<void(const class UAuItemData* NewItem, const struct FAuItemSlot& WeaponSlot)> GetOnWeaponItemAssignedToSlot();
 	void K2_ServerAddNewItemToSlot(const class UAuItemData* NewItem, const struct FAuItemSlot& Slot, bool bRemoveIfExists);
 	void MulticastResetSlot(const struct FAuItemSlot& SlotToReset);
 	void OnRep_ItemsComponentId();
@@ -801,9 +807,12 @@ public:
 DUMPER7_ASSERTS_UAuSlotDefaultItemsData;
 
 // Class AuItems.AuUseableItemOwnerInterface
-// 0x0000 (0x0000 - 0x0000)
-class IAuUseableItemOwnerInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IAuUseableItemOwnerInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	void AddItem(const class UAuItemDataBase* InItem, int32 Count);
 	void RemoveItem(const struct FAuItemId& InItemId, int32 Count);

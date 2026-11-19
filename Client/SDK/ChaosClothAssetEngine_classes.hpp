@@ -11,22 +11,23 @@
 #include "Basic.hpp"
 
 #include "DataflowSimulation_structs.hpp"
+#include "DataflowSimulation_classes.hpp"
+#include "DataflowEngine_structs.hpp"
+#include "DataflowEngine_classes.hpp"
 #include "ChaosClothAssetEngine_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "DataflowEngine_structs.hpp"
 
 
 SDK_NAMESPACE_START
 
 // Class ChaosClothAssetEngine.ChaosClothComponent
 // 0x0150 (0x0A60 - 0x0910)
-class UChaosClothComponent final : public USkinnedMeshComponent
+class UChaosClothComponent final : public USkinnedMeshComponent, public IDataflowPhysicsSolverInterface
 {
 public:
-	uint8                                         Pad_910[0x8];                                      // 0x0910(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FDataflowSimulationAsset               SimulationAsset;                                   // 0x0918(0x0058)(Edit, AdvancedDisplay, NativeAccessSpecifierPrivate)
 	float                                         BlendWeight;                                       // 0x0970(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	float                                         ClothGeometryScale;                                // 0x0974(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
@@ -112,10 +113,9 @@ DUMPER7_ASSERTS_UClothAssetSkeletalMeshConverter;
 
 // Class ChaosClothAssetEngine.ChaosClothAssetBase
 // 0x02A0 (0x0378 - 0x00D8)
-class UChaosClothAssetBase : public USkinnedAsset
+class UChaosClothAssetBase : public USkinnedAsset, public IDataflowContentOwner, public MIPad::Pad<0x20, 0x100>, public IDataflowInstanceInterface
 {
 public:
-	uint8                                         Pad_D8[0x30];                                      // 0x00D8(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FDataflowInstance                      DataflowInstance;                                  // 0x0108(0x0040)(Edit, Protected, NativeAccessSpecifierProtected)
 	TArray<struct FSkeletalMaterial>              Materials;                                         // 0x0148(0x0010)(Edit, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
 	TArray<struct FSkeletalMeshLODInfo>           LODInfo;                                           // 0x0158(0x0010)(Edit, EditFixedSize, ZeroConstructor, EditConst, Protected, NativeAccessSpecifierProtected)

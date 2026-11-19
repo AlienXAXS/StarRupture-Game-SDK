@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void ABP_QuartzOre_C::BP_OnSpawnedWithResourceDepleted()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_QuartzOre_C", "BP_OnSpawnedWithResourceDepleted");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnSpawnedWithResourceDepleted", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -37,10 +35,8 @@ void ABP_QuartzOre_C::BP_OnSpawnedWithResourceDepleted()
 
 void ABP_QuartzOre_C::ExecuteUbergraph_BP_QuartzOre(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_QuartzOre_C", "ExecuteUbergraph_BP_QuartzOre");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_QuartzOre_C", "ExecuteUbergraph_BP_QuartzOre", FuncInfo);
 
 	Params::BP_QuartzOre_C_ExecuteUbergraph_BP_QuartzOre Parms{};
 
@@ -55,10 +51,8 @@ void ABP_QuartzOre_C::ExecuteUbergraph_BP_QuartzOre(int32 EntryPoint)
 
 void ABP_QuartzOre_C::OnResourceDepletedCosmeticsStart()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_QuartzOre_C", "OnResourceDepletedCosmeticsStart");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnResourceDepletedCosmeticsStart", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -69,10 +63,8 @@ void ABP_QuartzOre_C::OnResourceDepletedCosmeticsStart()
 
 void ABP_QuartzOre_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_QuartzOre_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -83,10 +75,8 @@ void ABP_QuartzOre_C::ReceiveBeginPlay()
 
 void ABP_QuartzOre_C::SetAllStaticMeshesToHidden()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_QuartzOre_C", "SetAllStaticMeshesToHidden");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetAllStaticMeshesToHidden", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -97,10 +87,8 @@ void ABP_QuartzOre_C::SetAllStaticMeshesToHidden()
 
 void ABP_QuartzOre_C::SetAllStaticMeshesToVisible()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_QuartzOre_C", "SetAllStaticMeshesToVisible");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetAllStaticMeshesToVisible", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -111,10 +99,8 @@ void ABP_QuartzOre_C::SetAllStaticMeshesToVisible()
 
 void ABP_QuartzOre_C::SetupAndProcessDissolveForAllStaticMeshes()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_QuartzOre_C", "SetupAndProcessDissolveForAllStaticMeshes");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetupAndProcessDissolveForAllStaticMeshes", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -125,10 +111,8 @@ void ABP_QuartzOre_C::SetupAndProcessDissolveForAllStaticMeshes()
 
 void ABP_QuartzOre_C::Timeline__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_QuartzOre_C", "Timeline__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -139,10 +123,8 @@ void ABP_QuartzOre_C::Timeline__FinishedFunc()
 
 void ABP_QuartzOre_C::Timeline__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_QuartzOre_C", "Timeline__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

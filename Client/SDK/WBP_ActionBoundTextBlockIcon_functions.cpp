@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_ActionBoundTextBlockIcon_C::ExecuteUbergraph_WBP_ActionBoundTextBlockIcon(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ActionBoundTextBlockIcon_C", "ExecuteUbergraph_WBP_ActionBoundTextBlockIcon");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_ActionBoundTextBlockIcon_C", "ExecuteUbergraph_WBP_ActionBoundTextBlockIcon", FuncInfo);
 
 	Params::WBP_ActionBoundTextBlockIcon_C_ExecuteUbergraph_WBP_ActionBoundTextBlockIcon Parms{};
 
@@ -43,10 +41,8 @@ void UWBP_ActionBoundTextBlockIcon_C::ExecuteUbergraph_WBP_ActionBoundTextBlockI
 
 void UWBP_ActionBoundTextBlockIcon_C::GetHeightSize(double* Height)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ActionBoundTextBlockIcon_C", "GetHeightSize");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetHeightSize", FnName));
 
 	Params::WBP_ActionBoundTextBlockIcon_C_GetHeightSize Parms{};
 
@@ -64,10 +60,8 @@ void UWBP_ActionBoundTextBlockIcon_C::GetHeightSize(double* Height)
 
 void UWBP_ActionBoundTextBlockIcon_C::SetButtonImageVisibility(ESlateVisibility InVisibility)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ActionBoundTextBlockIcon_C", "SetButtonImageVisibility");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetButtonImageVisibility", FnName));
 
 	Params::WBP_ActionBoundTextBlockIcon_C_SetButtonImageVisibility Parms{};
 
@@ -84,10 +78,8 @@ void UWBP_ActionBoundTextBlockIcon_C::SetButtonImageVisibility(ESlateVisibility 
 
 void UWBP_ActionBoundTextBlockIcon_C::SetLongIconText(bool bLong)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ActionBoundTextBlockIcon_C", "SetLongIconText");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetLongIconText", FnName));
 
 	Params::WBP_ActionBoundTextBlockIcon_C_SetLongIconText Parms{};
 
@@ -104,10 +96,8 @@ void UWBP_ActionBoundTextBlockIcon_C::SetLongIconText(bool bLong)
 
 void UWBP_ActionBoundTextBlockIcon_C::SetTemporaryIconKey(const class FText& InText)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ActionBoundTextBlockIcon_C", "SetTemporaryIconKey");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetTemporaryIconKey", FnName));
 
 	Params::WBP_ActionBoundTextBlockIcon_C_SetTemporaryIconKey Parms{};
 
@@ -124,10 +114,8 @@ void UWBP_ActionBoundTextBlockIcon_C::SetTemporaryIconKey(const class FText& InT
 
 void UWBP_ActionBoundTextBlockIcon_C::SetTemporaryIconVisibility(bool bVisible)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ActionBoundTextBlockIcon_C", "SetTemporaryIconVisibility");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetTemporaryIconVisibility", FnName));
 
 	Params::WBP_ActionBoundTextBlockIcon_C_SetTemporaryIconVisibility Parms{};
 

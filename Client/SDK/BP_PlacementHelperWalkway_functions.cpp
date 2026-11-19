@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_PlacementHelperWalkway_C::ExecuteUbergraph_BP_PlacementHelperWalkway(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperWalkway_C", "ExecuteUbergraph_BP_PlacementHelperWalkway");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_PlacementHelperWalkway_C", "ExecuteUbergraph_BP_PlacementHelperWalkway", FuncInfo);
 
 	Params::BP_PlacementHelperWalkway_C_ExecuteUbergraph_BP_PlacementHelperWalkway Parms{};
 
@@ -43,10 +41,8 @@ void ABP_PlacementHelperWalkway_C::ExecuteUbergraph_BP_PlacementHelperWalkway(in
 
 double ABP_PlacementHelperWalkway_C::GetRampAngle()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperWalkway_C", "GetRampAngle");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetRampAngle", FnName));
 
 	Params::BP_PlacementHelperWalkway_C_GetRampAngle Parms{};
 
@@ -63,10 +59,8 @@ double ABP_PlacementHelperWalkway_C::GetRampAngle()
 
 bool ABP_PlacementHelperWalkway_C::IsLadder()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperWalkway_C", "IsLadder");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IsLadder", FnName));
 
 	Params::BP_PlacementHelperWalkway_C_IsLadder Parms{};
 
@@ -83,10 +77,8 @@ bool ABP_PlacementHelperWalkway_C::IsLadder()
 
 bool ABP_PlacementHelperWalkway_C::IsRamp()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperWalkway_C", "IsRamp");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IsRamp", FnName));
 
 	Params::BP_PlacementHelperWalkway_C_IsRamp Parms{};
 
@@ -103,10 +95,8 @@ bool ABP_PlacementHelperWalkway_C::IsRamp()
 
 void ABP_PlacementHelperWalkway_C::OnConfirmedPoint(const struct FAuAPConfirmPointData& NewPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperWalkway_C", "OnConfirmedPoint");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnConfirmedPoint", FnName));
 
 	Params::BP_PlacementHelperWalkway_C_OnConfirmedPoint Parms{};
 
@@ -123,10 +113,8 @@ void ABP_PlacementHelperWalkway_C::OnConfirmedPoint(const struct FAuAPConfirmPoi
 
 void ABP_PlacementHelperWalkway_C::OnSplinePointAdded(int32 PointIndex)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperWalkway_C", "OnSplinePointAdded");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSplinePointAdded", FnName));
 
 	Params::BP_PlacementHelperWalkway_C_OnSplinePointAdded Parms{};
 
@@ -143,10 +131,8 @@ void ABP_PlacementHelperWalkway_C::OnSplinePointAdded(int32 PointIndex)
 
 void ABP_PlacementHelperWalkway_C::OnSplinePointRemoved(int32 PointIndex)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperWalkway_C", "OnSplinePointRemoved");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSplinePointRemoved", FnName));
 
 	Params::BP_PlacementHelperWalkway_C_OnSplinePointRemoved Parms{};
 
@@ -163,10 +149,8 @@ void ABP_PlacementHelperWalkway_C::OnSplinePointRemoved(int32 PointIndex)
 
 void ABP_PlacementHelperWalkway_C::ReceiveTick(float DeltaSeconds)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperWalkway_C", "ReceiveTick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveTick", FnName));
 
 	Params::BP_PlacementHelperWalkway_C_ReceiveTick Parms{};
 
@@ -183,10 +167,8 @@ void ABP_PlacementHelperWalkway_C::ReceiveTick(float DeltaSeconds)
 
 void ABP_PlacementHelperWalkway_C::RemoveSteps(int32 Amount)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperWalkway_C", "RemoveSteps");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"RemoveSteps", FnName));
 
 	Params::BP_PlacementHelperWalkway_C_RemoveSteps Parms{};
 
@@ -203,10 +185,8 @@ void ABP_PlacementHelperWalkway_C::RemoveSteps(int32 Amount)
 
 void ABP_PlacementHelperWalkway_C::SetMeshColor(const struct FLinearColor& Color)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperWalkway_C", "SetMeshColor");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetMeshColor", FnName));
 
 	Params::BP_PlacementHelperWalkway_C_SetMeshColor Parms{};
 
@@ -225,10 +205,8 @@ void ABP_PlacementHelperWalkway_C::SetMeshColor(const struct FLinearColor& Color
 
 void ABP_PlacementHelperWalkway_C::SetSplineSegment(class USplineMeshComponent* SplineMeshComponent, int32 FirstPointIndex, int32 SecondPointIndex)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperWalkway_C", "SetSplineSegment");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetSplineSegment", FnName));
 
 	Params::BP_PlacementHelperWalkway_C_SetSplineSegment Parms{};
 
@@ -245,10 +223,8 @@ void ABP_PlacementHelperWalkway_C::SetSplineSegment(class USplineMeshComponent* 
 
 void ABP_PlacementHelperWalkway_C::UserConstructionScript()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperWalkway_C", "UserConstructionScript");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UserConstructionScript", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

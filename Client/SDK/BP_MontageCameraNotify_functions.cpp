@@ -27,10 +27,8 @@ SDK_NAMESPACE_START
 
 bool UBP_MontageCameraNotify_C::Received_NotifyBegin(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float TotalDuration, const struct FAnimNotifyEventReference& EventReference) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MontageCameraNotify_C", "Received_NotifyBegin");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Received_NotifyBegin", FnName));
 
 	Params::BP_MontageCameraNotify_C_Received_NotifyBegin Parms{};
 
@@ -55,10 +53,8 @@ bool UBP_MontageCameraNotify_C::Received_NotifyBegin(class USkeletalMeshComponen
 
 bool UBP_MontageCameraNotify_C::Received_NotifyEnd(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, const struct FAnimNotifyEventReference& EventReference) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MontageCameraNotify_C", "Received_NotifyEnd");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Received_NotifyEnd", FnName));
 
 	Params::BP_MontageCameraNotify_C_Received_NotifyEnd Parms{};
 
@@ -83,10 +79,8 @@ bool UBP_MontageCameraNotify_C::Received_NotifyEnd(class USkeletalMeshComponent*
 
 bool UBP_MontageCameraNotify_C::Received_NotifyTick(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float FrameDeltaTime, const struct FAnimNotifyEventReference& EventReference) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MontageCameraNotify_C", "Received_NotifyTick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Received_NotifyTick", FnName));
 
 	Params::BP_MontageCameraNotify_C_Received_NotifyTick Parms{};
 

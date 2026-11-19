@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_CraftingSlot_C::ExecuteUbergraph_WBP_CraftingSlot(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CraftingSlot_C", "ExecuteUbergraph_WBP_CraftingSlot");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_CraftingSlot_C", "ExecuteUbergraph_WBP_CraftingSlot", FuncInfo);
 
 	Params::WBP_CraftingSlot_C_ExecuteUbergraph_WBP_CraftingSlot Parms{};
 
@@ -43,10 +41,8 @@ void UWBP_CraftingSlot_C::ExecuteUbergraph_WBP_CraftingSlot(int32 EntryPoint)
 
 void UWBP_CraftingSlot_C::SetBackgroundColor(const struct FColor& InColor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CraftingSlot_C", "SetBackgroundColor");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetBackgroundColor", FnName));
 
 	Params::WBP_CraftingSlot_C_SetBackgroundColor Parms{};
 
@@ -61,10 +57,8 @@ void UWBP_CraftingSlot_C::SetBackgroundColor(const struct FColor& InColor)
 
 void UWBP_CraftingSlot_C::SetDefaultBrush()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CraftingSlot_C", "SetDefaultBrush");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetDefaultBrush", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -75,10 +69,8 @@ void UWBP_CraftingSlot_C::SetDefaultBrush()
 
 void UWBP_CraftingSlot_C::SetEmptyIconBackground()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CraftingSlot_C", "SetEmptyIconBackground");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetEmptyIconBackground", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -89,10 +81,8 @@ void UWBP_CraftingSlot_C::SetEmptyIconBackground()
 
 void UWBP_CraftingSlot_C::SetFullStackHighlight()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CraftingSlot_C", "SetFullStackHighlight");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetFullStackHighlight", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -105,10 +95,8 @@ void UWBP_CraftingSlot_C::SetFullStackHighlight()
 
 void UWBP_CraftingSlot_C::SetHighlightColor(const struct FLinearColor& InColor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CraftingSlot_C", "SetHighlightColor");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetHighlightColor", FnName));
 
 	Params::WBP_CraftingSlot_C_SetHighlightColor Parms{};
 
@@ -126,10 +114,8 @@ void UWBP_CraftingSlot_C::SetHighlightColor(const struct FLinearColor& InColor)
 
 void UWBP_CraftingSlot_C::ShowItemNameInIcon(const class FText& InText, bool Show)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CraftingSlot_C", "ShowItemNameInIcon");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ShowItemNameInIcon", FnName));
 
 	Params::WBP_CraftingSlot_C_ShowItemNameInIcon Parms{};
 

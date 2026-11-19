@@ -17,14 +17,14 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_PlacementHelperReplicated_VerticalConnector.BP_PlacementHelperReplicated_VerticalConnector_C
-// 0x0020 (0x0AA0 - 0x0A80)
+// 0x0020 (0x0C00 - 0x0BE0)
 class ABP_PlacementHelperReplicated_VerticalConnector_C : public ACrAPVerticalConnectorHelper
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0A80(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UStaticMeshComponent*                   SM_DronePole_Base;                                 // 0x0A88(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UInstancedStaticMeshComponent*          TileIndicatorsISM;                                 // 0x0A90(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               TileIndicatorISMDynamicMaterial;                   // 0x0A98(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0BE0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UStaticMeshComponent*                   SM_DronePole_Base;                                 // 0x0BE8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UInstancedStaticMeshComponent*          TileIndicatorsISM;                                 // 0x0BF0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               TileIndicatorISMDynamicMaterial;                   // 0x0BF8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_PlacementHelperReplicated_VerticalConnector(int32 EntryPoint);

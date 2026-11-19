@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_CraftingWidget_C::BndEvt__WBP_CrafterInterior_TransferRequiredItems_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CraftingWidget_C", "BndEvt__WBP_CrafterInterior_TransferRequiredItems_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__WBP_CrafterInterior_TransferRequiredItems_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -35,10 +33,8 @@ void UWBP_CraftingWidget_C::BndEvt__WBP_CrafterInterior_TransferRequiredItems_K2
 
 void UWBP_CraftingWidget_C::BndEvt__WBP_CrafterInterior_TransferRequiredItems_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CraftingWidget_C", "BndEvt__WBP_CrafterInterior_TransferRequiredItems_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__WBP_CrafterInterior_TransferRequiredItems_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -49,10 +45,8 @@ void UWBP_CraftingWidget_C::BndEvt__WBP_CrafterInterior_TransferRequiredItems_K2
 
 void UWBP_CraftingWidget_C::BndEvt__WBP_CrafterInterior_TransferRequiredItemsx100_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CraftingWidget_C", "BndEvt__WBP_CrafterInterior_TransferRequiredItemsx100_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__WBP_CrafterInterior_TransferRequiredItemsx100_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -63,10 +57,8 @@ void UWBP_CraftingWidget_C::BndEvt__WBP_CrafterInterior_TransferRequiredItemsx10
 
 void UWBP_CraftingWidget_C::BndEvt__WBP_CrafterInterior_TransferRequiredItemsx100_K2Node_ComponentBoundEvent_3_OnButtonHoverEvent__DelegateSignature()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CraftingWidget_C", "BndEvt__WBP_CrafterInterior_TransferRequiredItemsx100_K2Node_ComponentBoundEvent_3_OnButtonHoverEvent__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__WBP_CrafterInterior_TransferRequiredItemsx100_K2Node_ComponentBoundEvent_3_OnButtonHoverEvent__DelegateSignature", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -77,10 +69,8 @@ void UWBP_CraftingWidget_C::BndEvt__WBP_CrafterInterior_TransferRequiredItemsx10
 
 void UWBP_CraftingWidget_C::BndEvt__WBP_CraftingWidget_InfiniteCrafting_K2Node_ComponentBoundEvent_4_OnButtonHoverEvent__DelegateSignature()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CraftingWidget_C", "BndEvt__WBP_CraftingWidget_InfiniteCrafting_K2Node_ComponentBoundEvent_4_OnButtonHoverEvent__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__WBP_CraftingWidget_InfiniteCrafting_K2Node_ComponentBoundEvent_4_OnButtonHoverEvent__DelegateSignature", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -91,10 +81,8 @@ void UWBP_CraftingWidget_C::BndEvt__WBP_CraftingWidget_InfiniteCrafting_K2Node_C
 
 void UWBP_CraftingWidget_C::BndEvt__WBP_CraftingWidget_InfiniteCrafting_K2Node_ComponentBoundEvent_5_OnButtonHoverEvent__DelegateSignature()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CraftingWidget_C", "BndEvt__WBP_CraftingWidget_InfiniteCrafting_K2Node_ComponentBoundEvent_5_OnButtonHoverEvent__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__WBP_CraftingWidget_InfiniteCrafting_K2Node_ComponentBoundEvent_5_OnButtonHoverEvent__DelegateSignature", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -105,10 +93,8 @@ void UWBP_CraftingWidget_C::BndEvt__WBP_CraftingWidget_InfiniteCrafting_K2Node_C
 
 void UWBP_CraftingWidget_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CraftingWidget_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -121,10 +107,8 @@ void UWBP_CraftingWidget_C::Construct()
 
 void UWBP_CraftingWidget_C::ExecuteUbergraph_WBP_CraftingWidget(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CraftingWidget_C", "ExecuteUbergraph_WBP_CraftingWidget");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_CraftingWidget_C", "ExecuteUbergraph_WBP_CraftingWidget", FuncInfo);
 
 	Params::WBP_CraftingWidget_C_ExecuteUbergraph_WBP_CraftingWidget Parms{};
 

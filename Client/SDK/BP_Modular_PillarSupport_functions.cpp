@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_Modular_PillarSupport_C::ExecuteUbergraph_BP_Modular_PillarSupport(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Modular_PillarSupport_C", "ExecuteUbergraph_BP_Modular_PillarSupport");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Modular_PillarSupport_C", "ExecuteUbergraph_BP_Modular_PillarSupport", FuncInfo);
 
 	Params::BP_Modular_PillarSupport_C_ExecuteUbergraph_BP_Modular_PillarSupport Parms{};
 
@@ -41,10 +39,8 @@ void ABP_Modular_PillarSupport_C::ExecuteUbergraph_BP_Modular_PillarSupport(int3
 
 void ABP_Modular_PillarSupport_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Modular_PillarSupport_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

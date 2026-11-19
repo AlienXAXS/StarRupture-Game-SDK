@@ -24,10 +24,8 @@ SDK_NAMESPACE_START
 
 bool URCBehaviourBindNode::Execute(class URCBehaviour* InBehaviour) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("RCBehaviourBindNode", "Execute");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Execute", FnName));
 
 	Params::RCBehaviourBindNode_Execute Parms{};
 
@@ -52,10 +50,8 @@ bool URCBehaviourBindNode::Execute(class URCBehaviour* InBehaviour) const
 
 bool URCBehaviourBindNode::IsSupported(class URCBehaviour* InBehaviour) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("RCBehaviourBindNode", "IsSupported");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IsSupported", FnName));
 
 	Params::RCBehaviourBindNode_IsSupported Parms{};
 
@@ -79,10 +75,8 @@ bool URCBehaviourBindNode::IsSupported(class URCBehaviour* InBehaviour) const
 
 void URCBehaviourBindNode::OnPassed(class URCBehaviour* InBehaviour) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("RCBehaviourBindNode", "OnPassed");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPassed", FnName));
 
 	Params::RCBehaviourBindNode_OnPassed Parms{};
 
@@ -105,10 +99,8 @@ void URCBehaviourBindNode::OnPassed(class URCBehaviour* InBehaviour) const
 
 bool URCBehaviourBlueprintNode::Execute(class URCBehaviour* InBehaviour) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("RCBehaviourBlueprintNode", "Execute");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Execute", FnName));
 
 	Params::RCBehaviourBlueprintNode_Execute Parms{};
 
@@ -133,10 +125,8 @@ bool URCBehaviourBlueprintNode::Execute(class URCBehaviour* InBehaviour) const
 
 bool URCBehaviourBlueprintNode::IsSupported(class URCBehaviour* InBehaviour) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("RCBehaviourBlueprintNode", "IsSupported");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IsSupported", FnName));
 
 	Params::RCBehaviourBlueprintNode_IsSupported Parms{};
 
@@ -160,10 +150,8 @@ bool URCBehaviourBlueprintNode::IsSupported(class URCBehaviour* InBehaviour) con
 
 void URCBehaviourBlueprintNode::OnPassed(class URCBehaviour* InBehaviour) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("RCBehaviourBlueprintNode", "OnPassed");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPassed", FnName));
 
 	Params::RCBehaviourBlueprintNode_OnPassed Parms{};
 
@@ -185,10 +173,8 @@ void URCBehaviourBlueprintNode::OnPassed(class URCBehaviour* InBehaviour) const
 
 void URCBehaviourBlueprintNode::PreExecute(class URCBehaviour* InBehaviour) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("RCBehaviourBlueprintNode", "PreExecute");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PreExecute", FnName));
 
 	Params::RCBehaviourBlueprintNode_PreExecute Parms{};
 
@@ -211,10 +197,8 @@ void URCBehaviourBlueprintNode::PreExecute(class URCBehaviour* InBehaviour) cons
 
 bool URCBehaviourConditionalNode::Execute(class URCBehaviour* InBehaviour) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("RCBehaviourConditionalNode", "Execute");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Execute", FnName));
 
 	Params::RCBehaviourConditionalNode_Execute Parms{};
 
@@ -239,10 +223,8 @@ bool URCBehaviourConditionalNode::Execute(class URCBehaviour* InBehaviour) const
 
 bool URCBehaviourConditionalNode::IsSupported(class URCBehaviour* InBehaviour) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("RCBehaviourConditionalNode", "IsSupported");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IsSupported", FnName));
 
 	Params::RCBehaviourConditionalNode_IsSupported Parms{};
 
@@ -266,10 +248,8 @@ bool URCBehaviourConditionalNode::IsSupported(class URCBehaviour* InBehaviour) c
 
 void URCBehaviourConditionalNode::OnPassed(class URCBehaviour* InBehaviour) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("RCBehaviourConditionalNode", "OnPassed");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPassed", FnName));
 
 	Params::RCBehaviourConditionalNode_OnPassed Parms{};
 
@@ -292,10 +272,8 @@ void URCBehaviourConditionalNode::OnPassed(class URCBehaviour* InBehaviour) cons
 
 bool URCBehaviourOnValueChangedNode::Execute(class URCBehaviour* InBehaviour) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("RCBehaviourOnValueChangedNode", "Execute");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Execute", FnName));
 
 	Params::RCBehaviourOnValueChangedNode_Execute Parms{};
 
@@ -320,10 +298,8 @@ bool URCBehaviourOnValueChangedNode::Execute(class URCBehaviour* InBehaviour) co
 
 bool URCBehaviourOnValueChangedNode::IsSupported(class URCBehaviour* InBehaviour) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("RCBehaviourOnValueChangedNode", "IsSupported");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IsSupported", FnName));
 
 	Params::RCBehaviourOnValueChangedNode_IsSupported Parms{};
 
@@ -348,10 +324,8 @@ bool URCBehaviourOnValueChangedNode::IsSupported(class URCBehaviour* InBehaviour
 
 bool URCBehaviourRangeMapNode::Execute(class URCBehaviour* InBehaviour) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("RCBehaviourRangeMapNode", "Execute");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Execute", FnName));
 
 	Params::RCBehaviourRangeMapNode_Execute Parms{};
 
@@ -376,10 +350,8 @@ bool URCBehaviourRangeMapNode::Execute(class URCBehaviour* InBehaviour) const
 
 bool URCBehaviourRangeMapNode::IsSupported(class URCBehaviour* InBehaviour) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("RCBehaviourRangeMapNode", "IsSupported");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IsSupported", FnName));
 
 	Params::RCBehaviourRangeMapNode_IsSupported Parms{};
 
@@ -403,10 +375,8 @@ bool URCBehaviourRangeMapNode::IsSupported(class URCBehaviour* InBehaviour) cons
 
 void URCBehaviourRangeMapNode::OnPassed(class URCBehaviour* InBehaviour) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("RCBehaviourRangeMapNode", "OnPassed");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPassed", FnName));
 
 	Params::RCBehaviourRangeMapNode_OnPassed Parms{};
 
@@ -429,10 +399,8 @@ void URCBehaviourRangeMapNode::OnPassed(class URCBehaviour* InBehaviour) const
 
 bool URCBehaviourSetAssetByPathNode::Execute(class URCBehaviour* InBehaviour) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("RCBehaviourSetAssetByPathNode", "Execute");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Execute", FnName));
 
 	Params::RCBehaviourSetAssetByPathNode_Execute Parms{};
 
@@ -457,10 +425,8 @@ bool URCBehaviourSetAssetByPathNode::Execute(class URCBehaviour* InBehaviour) co
 
 bool URCBehaviourSetAssetByPathNode::IsSupported(class URCBehaviour* InBehaviour) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("RCBehaviourSetAssetByPathNode", "IsSupported");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IsSupported", FnName));
 
 	Params::RCBehaviourSetAssetByPathNode_IsSupported Parms{};
 

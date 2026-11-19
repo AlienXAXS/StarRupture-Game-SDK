@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_AcidExtractor_C::ExecuteUbergraph_BP_AcidExtractor(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_AcidExtractor_C", "ExecuteUbergraph_BP_AcidExtractor");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_AcidExtractor_C", "ExecuteUbergraph_BP_AcidExtractor", FuncInfo);
 
 	Params::BP_AcidExtractor_C_ExecuteUbergraph_BP_AcidExtractor Parms{};
 
@@ -43,10 +41,8 @@ void ABP_AcidExtractor_C::ExecuteUbergraph_BP_AcidExtractor(int32 EntryPoint)
 
 void ABP_AcidExtractor_C::OnBuildingStateChanged(ECrBuildingState InState)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_AcidExtractor_C", "OnBuildingStateChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBuildingStateChanged", FnName));
 
 	Params::BP_AcidExtractor_C_OnBuildingStateChanged Parms{};
 
@@ -61,10 +57,8 @@ void ABP_AcidExtractor_C::OnBuildingStateChanged(ECrBuildingState InState)
 
 void ABP_AcidExtractor_C::SetupSkeletalMesh()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_AcidExtractor_C", "SetupSkeletalMesh");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetupSkeletalMesh", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

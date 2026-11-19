@@ -39,14 +39,14 @@ public:
 DUMPER7_ASSERTS_UAuEquipmentBPF;
 
 // Class AuEquipment.AuEquipmentComponent
-// 0x0088 (0x0A50 - 0x09C8)
+// 0x0088 (0x0A68 - 0x09E0)
 class UAuEquipmentComponent : public UAuItemsComponent
 {
 public:
-	class UAuAbilitySystemComponent*              NxASC;                                             // 0x09C8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_9D0[0x50];                                     // 0x09D0(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(class UGameplayAbility* Ability, const struct FAuItemSlot& Slot, bool bActivated)> OnInputPressed; // 0x0A20(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(class UGameplayAbility* Ability, const struct FAuItemSlot& Slot, bool bActivated)> OnInputReleased; // 0x0A38(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	class UAuAbilitySystemComponent*              NxASC;                                             // 0x09E0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_9E8[0x50];                                     // 0x09E8(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(class UGameplayAbility* Ability, const struct FAuItemSlot& Slot, bool bActivated)> OnInputPressed; // 0x0A38(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(class UGameplayAbility* Ability, const struct FAuItemSlot& Slot, bool bActivated)> OnInputReleased; // 0x0A50(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()

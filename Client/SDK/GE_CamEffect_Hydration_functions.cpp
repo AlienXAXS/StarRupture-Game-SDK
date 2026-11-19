@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UGE_CamEffect_Hydration_C::ExecuteUbergraph_GE_CamEffect_Hydration(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GE_CamEffect_Hydration_C", "ExecuteUbergraph_GE_CamEffect_Hydration");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "GE_CamEffect_Hydration_C", "ExecuteUbergraph_GE_CamEffect_Hydration", FuncInfo);
 
 	Params::GE_CamEffect_Hydration_C_ExecuteUbergraph_GE_CamEffect_Hydration Parms{};
 
@@ -45,10 +43,8 @@ void UGE_CamEffect_Hydration_C::ExecuteUbergraph_GE_CamEffect_Hydration(int32 En
 
 void UGE_CamEffect_Hydration_C::OnAttributeChanged_568A4A4E4958CE7805D8C7A847202D3C(const struct FGameplayAttribute& Attribute, float NewValue, float OldValue)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GE_CamEffect_Hydration_C", "OnAttributeChanged_568A4A4E4958CE7805D8C7A847202D3C");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnAttributeChanged_568A4A4E4958CE7805D8C7A847202D3C", FnName));
 
 	Params::GE_CamEffect_Hydration_C_OnAttributeChanged_568A4A4E4958CE7805D8C7A847202D3C Parms{};
 
@@ -69,10 +65,8 @@ void UGE_CamEffect_Hydration_C::OnAttributeChanged_568A4A4E4958CE7805D8C7A847202
 
 void UGE_CamEffect_Hydration_C::OnInitialized(class UAbilitySystemComponent* AbilitySystemComponent, TSubclassOf<class UGameplayEffect> GameplayEffect, class USceneComponent* OwnerRootComponent)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GE_CamEffect_Hydration_C", "OnInitialized");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnInitialized", FnName));
 
 	Params::GE_CamEffect_Hydration_C_OnInitialized Parms{};
 

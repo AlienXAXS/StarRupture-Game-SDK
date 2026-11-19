@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "MassEntity_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "MassReplication_structs.hpp"
-#include "MassEntity_structs.hpp"
 #include "MassAIBehavior_structs.hpp"
 
 
@@ -31,23 +31,23 @@ public:
 DUMPER7_ASSERTS_FReplicatedMeleeVertexAnimationData;
 
 // ScriptStruct CrAiMeleeRuntime.ReplicatedMeleeAgent
-// 0x00E8 (0x0110 - 0x0028)
+// 0x00F0 (0x0118 - 0x0028)
 struct FReplicatedMeleeAgent final : public FReplicatedAgentBase
 {
 public:
 	struct FCrMassEnemyReplicatedAgentPositionYawData PositionYaw;                                   // 0x0028(0x0020)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
 	struct FReplicatedMeleeVertexAnimationData    VertexAnimationData;                               // 0x0048(0x0008)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FMassEnemyCommonReplicationData        CommonReplicationData;                             // 0x0050(0x00A8)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FMassEnemyFrequentlyReplicatedData     FrequentlyReplicatedData;                          // 0x00F8(0x0018)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FMassEnemyCommonReplicationData        CommonReplicationData;                             // 0x0050(0x00B0)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FMassEnemyFrequentlyReplicatedData     FrequentlyReplicatedData;                          // 0x0100(0x0018)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
 };
 DUMPER7_ASSERTS_FReplicatedMeleeAgent;
 
 // ScriptStruct CrAiMeleeRuntime.MeleeFastArrayItem
-// 0x0110 (0x0120 - 0x0010)
+// 0x0118 (0x0128 - 0x0010)
 struct FMeleeFastArrayItem final : public FMassFastArrayItemBase
 {
 public:
-	struct FReplicatedMeleeAgent                  Agent;                                             // 0x0010(0x0110)(NoDestructor, NativeAccessSpecifierPublic)
+	struct FReplicatedMeleeAgent                  Agent;                                             // 0x0010(0x0118)(NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FMeleeFastArrayItem;
 

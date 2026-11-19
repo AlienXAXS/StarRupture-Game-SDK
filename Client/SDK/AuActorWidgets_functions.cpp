@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UAuActorWidgetBase::BP_OnHideWidget()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuActorWidgetBase", "BP_OnHideWidget");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnHideWidget", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -38,10 +36,8 @@ void UAuActorWidgetBase::BP_OnHideWidget()
 
 void UAuActorWidgetBase::BP_OnShowForActor(class AActor* InActor, class APlayerController* InPc)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuActorWidgetBase", "BP_OnShowForActor");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnShowForActor", FnName));
 
 	Params::AuActorWidgetBase_BP_OnShowForActor Parms{};
 

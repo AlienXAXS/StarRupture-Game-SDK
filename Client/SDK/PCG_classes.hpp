@@ -22,9 +22,12 @@
 SDK_NAMESPACE_START
 
 // Class PCG.PCGNodeSourceTextProvider
-// 0x0000 (0x0000 - 0x0000)
-class IPCGNodeSourceTextProvider final
+// 0x0008 (0x0008 - 0x0000)
+class IPCGNodeSourceTextProvider
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -719,12 +722,43 @@ public:
 };
 DUMPER7_ASSERTS_UPCGSelectGrammarSettings;
 
-// Class PCG.PCGMetadataSettingsBase
-// 0x00B0 (0x0170 - 0x00C0)
-class UPCGMetadataSettingsBase : public UPCGSettings
+// Class PCG.PCGSettingsDefaultValueProvider
+// 0x0008 (0x0008 - 0x0000)
+class IPCGSettingsDefaultValueProvider
 {
 public:
-	uint8                                         Pad_C0[0x8];                                       // 0x00C0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("PCGSettingsDefaultValueProvider")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"PCGSettingsDefaultValueProvider")
+	}
+	static class IPCGSettingsDefaultValueProvider* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<IPCGSettingsDefaultValueProvider>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_IPCGSettingsDefaultValueProvider;
+
+// Class PCG.PCGMetadataSettingsBase
+// 0x00B0 (0x0170 - 0x00C0)
+class UPCGMetadataSettingsBase : public UPCGSettings, public IPCGSettingsDefaultValueProvider
+{
+public:
 	struct FPCGAttributePropertyOutputSelector    OutputTarget;                                      // 0x00C8(0x0040)(Edit, BlueprintVisible, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   OutputDataFromPin;                                 // 0x0108(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	struct FPCGDefaultValueContainer              DefaultValues;                                     // 0x0110(0x0060)(NativeAccessSpecifierPrivate)
@@ -2547,35 +2581,6 @@ public:
 };
 DUMPER7_ASSERTS_UPCGDebugDrawComponent;
 
-// Class PCG.PCGSettingsDefaultValueProvider
-// 0x0000 (0x0000 - 0x0000)
-class IPCGSettingsDefaultValueProvider final
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("PCGSettingsDefaultValueProvider")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"PCGSettingsDefaultValueProvider")
-	}
-	static class IPCGSettingsDefaultValueProvider* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<IPCGSettingsDefaultValueProvider>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_IPCGSettingsDefaultValueProvider;
-
 // Class PCG.PCGLandscapeDataProvider
 // 0x0048 (0x00D8 - 0x0090)
 class UPCGLandscapeDataProvider final : public UPCGComputeDataProvider
@@ -3283,9 +3288,12 @@ public:
 DUMPER7_ASSERTS_UPCGGatherSettings;
 
 // Class PCG.PCGGenSourceBase
-// 0x0000 (0x0000 - 0x0000)
-class IPCGGenSourceBase final
+// 0x0008 (0x0008 - 0x0000)
+class IPCGGenSourceBase
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -3765,9 +3773,12 @@ public:
 DUMPER7_ASSERTS_UPCGWorldRayHitData;
 
 // Class PCG.PCGGraphExecutionSource
-// 0x0000 (0x0000 - 0x0000)
-class IPCGGraphExecutionSource final
+// 0x0008 (0x0008 - 0x0000)
+class IPCGGraphExecutionSource
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -5509,10 +5520,9 @@ DUMPER7_ASSERTS_UPCGComputeGraphSettings;
 
 // Class PCG.PCGCustomHLSLSettings
 // 0x0060 (0x0120 - 0x00C0)
-class UPCGCustomHLSLSettings final : public UPCGSettings
+class UPCGCustomHLSLSettings final : public UPCGSettings, public IPCGNodeSourceTextProvider
 {
 public:
-	uint8                                         Pad_C0[0x8];                                       // 0x00C0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	EPCGKernelType                                KernelType;                                        // 0x00C8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_C9[0x3];                                       // 0x00C9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         PointCount;                                        // 0x00CC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -5605,10 +5615,9 @@ DUMPER7_ASSERTS_UPCGComputeGraph;
 
 // Class PCG.PCGComputeSource
 // 0x0008 (0x0040 - 0x0038)
-class UPCGComputeSource final : public UComputeSource
+class UPCGComputeSource final : public UComputeSource, public IPCGNodeSourceTextProvider
 {
 public:
-	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -5726,10 +5735,9 @@ DUMPER7_ASSERTS_UPCGPointData;
 
 // Class PCG.PCGGenSourceComponent
 // 0x0008 (0x00C0 - 0x00B8)
-class UPCGGenSourceComponent final : public UActorComponent
+class UPCGGenSourceComponent final : public UActorComponent, public IPCGGenSourceBase
 {
 public:
-	uint8                                         Pad_B8[0x8];                                       // 0x00B8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -6819,10 +6827,10 @@ DUMPER7_ASSERTS_UPCGDataTableRowToParamDataSettings;
 
 // Class PCG.PCGGenSourceWPStreamingSource
 // 0x0010 (0x0038 - 0x0028)
-class UPCGGenSourceWPStreamingSource final : public UObject
+class UPCGGenSourceWPStreamingSource final : public UObject, public IPCGGenSourceBase
 {
 public:
-	uint8                                         Pad_28[0x10];                                      // 0x0028(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -7142,10 +7150,9 @@ DUMPER7_ASSERTS_UPCGGenerateGrassMapsSettings;
 
 // Class PCG.PCGGenSourceEditorCamera
 // 0x0008 (0x0030 - 0x0028)
-class UPCGGenSourceEditorCamera final : public UObject
+class UPCGGenSourceEditorCamera final : public UObject, public IPCGGenSourceBase
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -9141,10 +9148,9 @@ DUMPER7_ASSERTS_UPCGMetadataAccessorHelpers;
 
 // Class PCG.PCGComponent
 // 0x02E8 (0x03A0 - 0x00B8)
-class UPCGComponent final : public UActorComponent
+class UPCGComponent final : public UActorComponent, public IPCGGraphExecutionSource
 {
 public:
-	uint8                                         Pad_B8[0x8];                                       // 0x00B8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         Seed;                                              // 0x00C0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bActivated;                                        // 0x00C4(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bIsComponentPartitioned;                           // 0x00C5(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -9836,10 +9842,10 @@ DUMPER7_ASSERTS_APCGWorldActor;
 
 // Class PCG.PCGGenSourcePlayer
 // 0x0228 (0x0250 - 0x0028)
-class UPCGGenSourcePlayer final : public UObject
+class UPCGGenSourcePlayer final : public UObject, public IPCGGenSourceBase
 {
 public:
-	uint8                                         Pad_28[0x228];                                     // 0x0028(0x0228)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x220];                                     // 0x0030(0x0220)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

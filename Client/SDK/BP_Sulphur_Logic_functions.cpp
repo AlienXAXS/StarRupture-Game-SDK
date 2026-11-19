@@ -28,10 +28,8 @@ SDK_NAMESPACE_START
 
 void ABP_Sulphur_Logic_C::BndEvt__BP_Ore_Sulphur_A_SulphurGasCollision_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Sulphur_Logic_C", "BndEvt__BP_Ore_Sulphur_A_SulphurGasCollision_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__BP_Ore_Sulphur_A_SulphurGasCollision_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature", FnName));
 
 	Params::BP_Sulphur_Logic_C_BndEvt__BP_Ore_Sulphur_A_SulphurGasCollision_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature Parms{};
 
@@ -56,10 +54,8 @@ void ABP_Sulphur_Logic_C::BndEvt__BP_Ore_Sulphur_A_SulphurGasCollision_K2Node_Co
 
 void ABP_Sulphur_Logic_C::BndEvt__BP_Ore_Sulphur_A_SulphurGasCollision_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Sulphur_Logic_C", "BndEvt__BP_Ore_Sulphur_A_SulphurGasCollision_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__BP_Ore_Sulphur_A_SulphurGasCollision_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature", FnName));
 
 	Params::BP_Sulphur_Logic_C_BndEvt__BP_Ore_Sulphur_A_SulphurGasCollision_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature Parms{};
 
@@ -79,10 +75,8 @@ void ABP_Sulphur_Logic_C::BndEvt__BP_Ore_Sulphur_A_SulphurGasCollision_K2Node_Co
 
 void ABP_Sulphur_Logic_C::ExecuteUbergraph_BP_Sulphur_Logic(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Sulphur_Logic_C", "ExecuteUbergraph_BP_Sulphur_Logic");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Sulphur_Logic_C", "ExecuteUbergraph_BP_Sulphur_Logic", FuncInfo);
 
 	Params::BP_Sulphur_Logic_C_ExecuteUbergraph_BP_Sulphur_Logic Parms{};
 
@@ -99,10 +93,8 @@ void ABP_Sulphur_Logic_C::ExecuteUbergraph_BP_Sulphur_Logic(int32 EntryPoint)
 
 void ABP_Sulphur_Logic_C::OnSulphurActivityChanged(bool bActive)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Sulphur_Logic_C", "OnSulphurActivityChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSulphurActivityChanged", FnName));
 
 	Params::BP_Sulphur_Logic_C_OnSulphurActivityChanged Parms{};
 
@@ -117,10 +109,8 @@ void ABP_Sulphur_Logic_C::OnSulphurActivityChanged(bool bActive)
 
 void ABP_Sulphur_Logic_C::UserConstructionScript()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Sulphur_Logic_C", "UserConstructionScript");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UserConstructionScript", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

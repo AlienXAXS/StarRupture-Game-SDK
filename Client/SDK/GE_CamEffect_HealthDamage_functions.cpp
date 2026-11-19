@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UGE_CamEffect_HealthDamage_C::ExecuteUbergraph_GE_CamEffect_HealthDamage(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GE_CamEffect_HealthDamage_C", "ExecuteUbergraph_GE_CamEffect_HealthDamage");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "GE_CamEffect_HealthDamage_C", "ExecuteUbergraph_GE_CamEffect_HealthDamage", FuncInfo);
 
 	Params::GE_CamEffect_HealthDamage_C_ExecuteUbergraph_GE_CamEffect_HealthDamage Parms{};
 
@@ -45,10 +43,8 @@ void UGE_CamEffect_HealthDamage_C::ExecuteUbergraph_GE_CamEffect_HealthDamage(in
 
 void UGE_CamEffect_HealthDamage_C::OnAttributeChanged_C1A9F7644C6A3F3B8C8DB396CB1712A2(const struct FGameplayAttribute& Attribute, float NewValue, float OldValue)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GE_CamEffect_HealthDamage_C", "OnAttributeChanged_C1A9F7644C6A3F3B8C8DB396CB1712A2");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnAttributeChanged_C1A9F7644C6A3F3B8C8DB396CB1712A2", FnName));
 
 	Params::GE_CamEffect_HealthDamage_C_OnAttributeChanged_C1A9F7644C6A3F3B8C8DB396CB1712A2 Parms{};
 
@@ -69,10 +65,8 @@ void UGE_CamEffect_HealthDamage_C::OnAttributeChanged_C1A9F7644C6A3F3B8C8DB396CB
 
 void UGE_CamEffect_HealthDamage_C::OnInitialized(class UAbilitySystemComponent* AbilitySystemComponent, TSubclassOf<class UGameplayEffect> GameplayEffect, class USceneComponent* OwnerRootComponent)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GE_CamEffect_HealthDamage_C", "OnInitialized");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnInitialized", FnName));
 
 	Params::GE_CamEffect_HealthDamage_C_OnInitialized Parms{};
 

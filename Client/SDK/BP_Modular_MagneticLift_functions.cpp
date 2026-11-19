@@ -28,10 +28,8 @@ SDK_NAMESPACE_START
 
 void ABP_Modular_MagneticLift_C::BndEvt__BP_Ladder_LadderTrigger_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Modular_MagneticLift_C", "BndEvt__BP_Ladder_LadderTrigger_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__BP_Ladder_LadderTrigger_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature", FnName));
 
 	Params::BP_Modular_MagneticLift_C_BndEvt__BP_Ladder_LadderTrigger_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature Parms{};
 
@@ -56,10 +54,8 @@ void ABP_Modular_MagneticLift_C::BndEvt__BP_Ladder_LadderTrigger_K2Node_Componen
 
 void ABP_Modular_MagneticLift_C::BndEvt__BP_Ladder_LadderTrigger_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Modular_MagneticLift_C", "BndEvt__BP_Ladder_LadderTrigger_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__BP_Ladder_LadderTrigger_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature", FnName));
 
 	Params::BP_Modular_MagneticLift_C_BndEvt__BP_Ladder_LadderTrigger_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature Parms{};
 
@@ -79,10 +75,8 @@ void ABP_Modular_MagneticLift_C::BndEvt__BP_Ladder_LadderTrigger_K2Node_Componen
 
 void ABP_Modular_MagneticLift_C::ExecuteUbergraph_BP_Modular_MagneticLift(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Modular_MagneticLift_C", "ExecuteUbergraph_BP_Modular_MagneticLift");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Modular_MagneticLift_C", "ExecuteUbergraph_BP_Modular_MagneticLift", FuncInfo);
 
 	Params::BP_Modular_MagneticLift_C_ExecuteUbergraph_BP_Modular_MagneticLift Parms{};
 

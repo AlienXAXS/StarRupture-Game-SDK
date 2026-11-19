@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_GeyserOreMassHighResActorBase_C::BndEvt__BP_OreMassHighResActorBase_DepletedNiagaraSystem_K2Node_ComponentBoundEvent_1_OnNiagaraSystemFinished__DelegateSignature(class UNiagaraComponent* PSystem)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GeyserOreMassHighResActorBase_C", "BndEvt__BP_OreMassHighResActorBase_DepletedNiagaraSystem_K2Node_ComponentBoundEvent_1_OnNiagaraSystemFinished__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__BP_OreMassHighResActorBase_DepletedNiagaraSystem_K2Node_ComponentBoundEvent_1_OnNiagaraSystemFinished__DelegateSignature", FnName));
 
 	Params::BP_GeyserOreMassHighResActorBase_C_BndEvt__BP_OreMassHighResActorBase_DepletedNiagaraSystem_K2Node_ComponentBoundEvent_1_OnNiagaraSystemFinished__DelegateSignature Parms{};
 
@@ -43,10 +41,8 @@ void ABP_GeyserOreMassHighResActorBase_C::BndEvt__BP_OreMassHighResActorBase_Dep
 
 void ABP_GeyserOreMassHighResActorBase_C::BndEvt__BP_OreMassHighResActorBase_DepletedWeakSpotSystem_K2Node_ComponentBoundEvent_0_OnNiagaraSystemFinished__DelegateSignature(class UNiagaraComponent* PSystem)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GeyserOreMassHighResActorBase_C", "BndEvt__BP_OreMassHighResActorBase_DepletedWeakSpotSystem_K2Node_ComponentBoundEvent_0_OnNiagaraSystemFinished__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__BP_OreMassHighResActorBase_DepletedWeakSpotSystem_K2Node_ComponentBoundEvent_0_OnNiagaraSystemFinished__DelegateSignature", FnName));
 
 	Params::BP_GeyserOreMassHighResActorBase_C_BndEvt__BP_OreMassHighResActorBase_DepletedWeakSpotSystem_K2Node_ComponentBoundEvent_0_OnNiagaraSystemFinished__DelegateSignature Parms{};
 
@@ -63,10 +59,8 @@ void ABP_GeyserOreMassHighResActorBase_C::BndEvt__BP_OreMassHighResActorBase_Dep
 
 void ABP_GeyserOreMassHighResActorBase_C::ExecuteUbergraph_BP_GeyserOreMassHighResActorBase(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GeyserOreMassHighResActorBase_C", "ExecuteUbergraph_BP_GeyserOreMassHighResActorBase");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_GeyserOreMassHighResActorBase_C", "ExecuteUbergraph_BP_GeyserOreMassHighResActorBase", FuncInfo);
 
 	Params::BP_GeyserOreMassHighResActorBase_C_ExecuteUbergraph_BP_GeyserOreMassHighResActorBase Parms{};
 
@@ -83,10 +77,8 @@ void ABP_GeyserOreMassHighResActorBase_C::ExecuteUbergraph_BP_GeyserOreMassHighR
 
 void ABP_GeyserOreMassHighResActorBase_C::OnLoaded_289CDE4840164C5933F5318A1A408B42(class UObject* Loaded)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GeyserOreMassHighResActorBase_C", "OnLoaded_289CDE4840164C5933F5318A1A408B42");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnLoaded_289CDE4840164C5933F5318A1A408B42", FnName));
 
 	Params::BP_GeyserOreMassHighResActorBase_C_OnLoaded_289CDE4840164C5933F5318A1A408B42 Parms{};
 
@@ -103,10 +95,8 @@ void ABP_GeyserOreMassHighResActorBase_C::OnLoaded_289CDE4840164C5933F5318A1A408
 
 void ABP_GeyserOreMassHighResActorBase_C::OnLoaded_800BCDF1400ED570091EE3B4035FA14A(class UObject* Loaded)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GeyserOreMassHighResActorBase_C", "OnLoaded_800BCDF1400ED570091EE3B4035FA14A");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnLoaded_800BCDF1400ED570091EE3B4035FA14A", FnName));
 
 	Params::BP_GeyserOreMassHighResActorBase_C_OnLoaded_800BCDF1400ED570091EE3B4035FA14A Parms{};
 
@@ -123,10 +113,8 @@ void ABP_GeyserOreMassHighResActorBase_C::OnLoaded_800BCDF1400ED570091EE3B4035FA
 
 void ABP_GeyserOreMassHighResActorBase_C::OnMiningWeakSpotDepletedCosmeticsStart(const struct FTransform& CosmeticTransform)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GeyserOreMassHighResActorBase_C", "OnMiningWeakSpotDepletedCosmeticsStart");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnMiningWeakSpotDepletedCosmeticsStart", FnName));
 
 	Params::BP_GeyserOreMassHighResActorBase_C_OnMiningWeakSpotDepletedCosmeticsStart Parms{};
 
@@ -141,10 +129,8 @@ void ABP_GeyserOreMassHighResActorBase_C::OnMiningWeakSpotDepletedCosmeticsStart
 
 void ABP_GeyserOreMassHighResActorBase_C::OnResourceDepletedCosmeticsStart()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GeyserOreMassHighResActorBase_C", "OnResourceDepletedCosmeticsStart");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnResourceDepletedCosmeticsStart", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

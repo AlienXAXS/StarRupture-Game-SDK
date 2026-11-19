@@ -44,10 +44,9 @@ DUMPER7_ASSERTS_UMovieSceneNiagaraCacheSection;
 
 // Class NiagaraSimCaching.MovieSceneNiagaraCacheTrack
 // 0x0030 (0x0148 - 0x0118)
-class UMovieSceneNiagaraCacheTrack final : public UMovieSceneNameableTrack
+class UMovieSceneNiagaraCacheTrack final : public UMovieSceneNameableTrack, public IMovieSceneTrackTemplateProducer, public IMovieSceneCachedTrack
 {
 public:
-	uint8                                         Pad_118[0x10];                                     // 0x0118(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          bIsRecording;                                      // 0x0128(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_129[0x7];                                      // 0x0129(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UMovieSceneSection*>             AnimationSections;                                 // 0x0130(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)

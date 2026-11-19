@@ -24,10 +24,8 @@ SDK_NAMESPACE_START
 
 void UWBP_HeaderLineBuildingInfo_C::SetColors(const struct FLinearColor& Highlight, const struct FLinearColor& Default)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeaderLineBuildingInfo_C", "SetColors");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetColors", FnName));
 
 	Params::WBP_HeaderLineBuildingInfo_C_SetColors Parms{};
 
@@ -45,16 +43,26 @@ void UWBP_HeaderLineBuildingInfo_C::SetColors(const struct FLinearColor& Highlig
 
 void UWBP_HeaderLineBuildingInfo_C::SetLinesEnabled(bool Enabled)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeaderLineBuildingInfo_C", "SetLinesEnabled");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetLinesEnabled", FnName));
 
 	Params::WBP_HeaderLineBuildingInfo_C_SetLinesEnabled Parms{};
 
 	Parms.Enabled = Enabled;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_HeaderLineBuildingInfo.WBP_HeaderLineBuildingInfo_C.SetNoTransformPolicy
+// (Public, BlueprintCallable, BlueprintEvent)
+
+void UWBP_HeaderLineBuildingInfo_C::SetNoTransformPolicy()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetNoTransformPolicy", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -65,10 +73,8 @@ void UWBP_HeaderLineBuildingInfo_C::SetLinesEnabled(bool Enabled)
 
 void UWBP_HeaderLineBuildingInfo_C::SetTextStyle(bool isHighlight)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeaderLineBuildingInfo_C", "SetTextStyle");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetTextStyle", FnName));
 
 	Params::WBP_HeaderLineBuildingInfo_C_SetTextStyle Parms{};
 
@@ -85,10 +91,8 @@ void UWBP_HeaderLineBuildingInfo_C::SetTextStyle(bool isHighlight)
 
 void UWBP_HeaderLineBuildingInfo_C::SetTitle(const class FText& InTitle)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeaderLineBuildingInfo_C", "SetTitle");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetTitle", FnName));
 
 	Params::WBP_HeaderLineBuildingInfo_C_SetTitle Parms{};
 
@@ -105,10 +109,8 @@ void UWBP_HeaderLineBuildingInfo_C::SetTitle(const class FText& InTitle)
 
 void UWBP_HeaderLineBuildingInfo_C::SetTitleFieldSize(int32 Size)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeaderLineBuildingInfo_C", "SetTitleFieldSize");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetTitleFieldSize", FnName));
 
 	Params::WBP_HeaderLineBuildingInfo_C_SetTitleFieldSize Parms{};
 

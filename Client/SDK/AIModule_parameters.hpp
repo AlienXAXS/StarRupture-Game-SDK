@@ -373,6 +373,15 @@ public:
 };
 DUMPER7_ASSERTS_AIController_HasPartialPath;
 
+// Function AIModule.BlackboardAssetProvider.GetBlackboardAsset
+// 0x0008 (0x0008 - 0x0000)
+struct BlackboardAssetProvider_GetBlackboardAsset final
+{
+public:
+	class UBlackboardData*                        ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_BlackboardAssetProvider_GetBlackboardAsset;
+
 // Function AIModule.BrainComponent.StopLogic
 // 0x0010 (0x0010 - 0x0000)
 struct BrainComponent_StopLogic final
@@ -477,15 +486,6 @@ public:
 	double                                        ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_BehaviorTreeComponent_GetTagCooldownEndTime;
-
-// Function AIModule.BlackboardAssetProvider.GetBlackboardAsset
-// 0x0008 (0x0008 - 0x0000)
-struct BlackboardAssetProvider_GetBlackboardAsset final
-{
-public:
-	class UBlackboardData*                        ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_BlackboardAssetProvider_GetBlackboardAsset;
 
 // Function AIModule.PathFollowingComponent.OnActorBump
 // 0x0128 (0x0128 - 0x0000)

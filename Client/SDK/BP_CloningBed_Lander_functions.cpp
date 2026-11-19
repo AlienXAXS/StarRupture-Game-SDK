@@ -16,6 +16,24 @@
 
 SDK_NAMESPACE_START
 
+// Function BP_CloningBed_Lander.BP_CloningBed_Lander_C.ExecuteUbergraph_BP_CloningBed_Lander
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_CloningBed_Lander_C::ExecuteUbergraph_BP_CloningBed_Lander(int32 EntryPoint)
+{
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_CloningBed_Lander_C", "ExecuteUbergraph_BP_CloningBed_Lander", FuncInfo);
+
+	Params::BP_CloningBed_Lander_C_ExecuteUbergraph_BP_CloningBed_Lander Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_CloningBed_Lander.BP_CloningBed_Lander_C.K2_GetInteractionActionText
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -23,16 +41,26 @@ SDK_NAMESPACE_START
 
 class FText ABP_CloningBed_Lander_C::K2_GetInteractionActionText()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloningBed_Lander_C", "K2_GetInteractionActionText");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_GetInteractionActionText", FnName));
 
 	Params::BP_CloningBed_Lander_C_K2_GetInteractionActionText Parms{};
 
 	UObject::ProcessEvent(Func, &Parms);
 
 	return Parms.ReturnValue;
+}
+
+
+// Function BP_CloningBed_Lander.BP_CloningBed_Lander_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_CloningBed_Lander_C::ReceiveBeginPlay()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 

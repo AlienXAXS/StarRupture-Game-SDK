@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UBTService_GapAttackUpdate_C::CanPerformGapAttack(bool* Result)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTService_GapAttackUpdate_C", "CanPerformGapAttack");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"CanPerformGapAttack", FnName));
 
 	Params::BTService_GapAttackUpdate_C_CanPerformGapAttack Parms{};
 
@@ -44,10 +42,8 @@ void UBTService_GapAttackUpdate_C::CanPerformGapAttack(bool* Result)
 
 void UBTService_GapAttackUpdate_C::ExecuteUbergraph_BTService_GapAttackUpdate(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTService_GapAttackUpdate_C", "ExecuteUbergraph_BTService_GapAttackUpdate");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BTService_GapAttackUpdate_C", "ExecuteUbergraph_BTService_GapAttackUpdate", FuncInfo);
 
 	Params::BTService_GapAttackUpdate_C_ExecuteUbergraph_BTService_GapAttackUpdate Parms{};
 
@@ -62,10 +58,8 @@ void UBTService_GapAttackUpdate_C::ExecuteUbergraph_BTService_GapAttackUpdate(in
 
 void UBTService_GapAttackUpdate_C::OnActivateGapAttack()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTService_GapAttackUpdate_C", "OnActivateGapAttack");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnActivateGapAttack", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -76,10 +70,8 @@ void UBTService_GapAttackUpdate_C::OnActivateGapAttack()
 
 void UBTService_GapAttackUpdate_C::OnDeactivateGapAttack()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTService_GapAttackUpdate_C", "OnDeactivateGapAttack");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnDeactivateGapAttack", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -94,10 +86,8 @@ void UBTService_GapAttackUpdate_C::OnDeactivateGapAttack()
 
 void UBTService_GapAttackUpdate_C::ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTService_GapAttackUpdate_C", "ReceiveTickAI");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveTickAI", FnName));
 
 	Params::BTService_GapAttackUpdate_C_ReceiveTickAI Parms{};
 

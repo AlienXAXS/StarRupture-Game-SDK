@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void ABP_Recycler_C::Arms_timeline__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Recycler_C", "Arms_timeline__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Arms_timeline__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -35,10 +33,8 @@ void ABP_Recycler_C::Arms_timeline__FinishedFunc()
 
 void ABP_Recycler_C::Arms_timeline__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Recycler_C", "Arms_timeline__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Arms_timeline__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -51,10 +47,8 @@ void ABP_Recycler_C::Arms_timeline__UpdateFunc()
 
 void ABP_Recycler_C::ExecuteUbergraph_BP_Recycler(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Recycler_C", "ExecuteUbergraph_BP_Recycler");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Recycler_C", "ExecuteUbergraph_BP_Recycler", FuncInfo);
 
 	Params::BP_Recycler_C_ExecuteUbergraph_BP_Recycler Parms{};
 
@@ -71,10 +65,8 @@ void ABP_Recycler_C::ExecuteUbergraph_BP_Recycler(int32 EntryPoint)
 
 void ABP_Recycler_C::OnBuildingStateChanged(ECrBuildingState InState)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Recycler_C", "OnBuildingStateChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBuildingStateChanged", FnName));
 
 	Params::BP_Recycler_C_OnBuildingStateChanged Parms{};
 
@@ -91,10 +83,8 @@ void ABP_Recycler_C::OnBuildingStateChanged(ECrBuildingState InState)
 
 void ABP_Recycler_C::OnUIOpened(bool bOpened)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Recycler_C", "OnUIOpened");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnUIOpened", FnName));
 
 	Params::BP_Recycler_C_OnUIOpened Parms{};
 
@@ -109,10 +99,8 @@ void ABP_Recycler_C::OnUIOpened(bool bOpened)
 
 void ABP_Recycler_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Recycler_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -123,10 +111,8 @@ void ABP_Recycler_C::ReceiveBeginPlay()
 
 void ABP_Recycler_C::UserConstructionScript()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Recycler_C", "UserConstructionScript");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UserConstructionScript", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

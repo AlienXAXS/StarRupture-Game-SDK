@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_Hammer_C::ExecuteUbergraph_BP_Hammer(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Hammer_C", "ExecuteUbergraph_BP_Hammer");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Hammer_C", "ExecuteUbergraph_BP_Hammer", FuncInfo);
 
 	Params::BP_Hammer_C_ExecuteUbergraph_BP_Hammer Parms{};
 
@@ -43,10 +41,8 @@ void ABP_Hammer_C::ExecuteUbergraph_BP_Hammer(int32 EntryPoint)
 
 void ABP_Hammer_C::OnBuildingStateChanged(ECrBuildingState InState)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Hammer_C", "OnBuildingStateChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBuildingStateChanged", FnName));
 
 	Params::BP_Hammer_C_OnBuildingStateChanged Parms{};
 
@@ -61,10 +57,8 @@ void ABP_Hammer_C::OnBuildingStateChanged(ECrBuildingState InState)
 
 void ABP_Hammer_C::PlayFX()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Hammer_C", "PlayFX");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PlayFX", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -75,10 +69,8 @@ void ABP_Hammer_C::PlayFX()
 
 void ABP_Hammer_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Hammer_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

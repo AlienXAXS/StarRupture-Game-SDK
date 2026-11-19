@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UGE_CamEffect_Calories_C::ExecuteUbergraph_GE_CamEffect_Calories(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GE_CamEffect_Calories_C", "ExecuteUbergraph_GE_CamEffect_Calories");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "GE_CamEffect_Calories_C", "ExecuteUbergraph_GE_CamEffect_Calories", FuncInfo);
 
 	Params::GE_CamEffect_Calories_C_ExecuteUbergraph_GE_CamEffect_Calories Parms{};
 
@@ -45,10 +43,8 @@ void UGE_CamEffect_Calories_C::ExecuteUbergraph_GE_CamEffect_Calories(int32 Entr
 
 void UGE_CamEffect_Calories_C::OnAttributeChanged_63C6FFE94F8A07AD63EE01A1F8E105E7(const struct FGameplayAttribute& Attribute, float NewValue, float OldValue)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GE_CamEffect_Calories_C", "OnAttributeChanged_63C6FFE94F8A07AD63EE01A1F8E105E7");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnAttributeChanged_63C6FFE94F8A07AD63EE01A1F8E105E7", FnName));
 
 	Params::GE_CamEffect_Calories_C_OnAttributeChanged_63C6FFE94F8A07AD63EE01A1F8E105E7 Parms{};
 
@@ -69,10 +65,8 @@ void UGE_CamEffect_Calories_C::OnAttributeChanged_63C6FFE94F8A07AD63EE01A1F8E105
 
 void UGE_CamEffect_Calories_C::OnInitialized(class UAbilitySystemComponent* AbilitySystemComponent, TSubclassOf<class UGameplayEffect> GameplayEffect, class USceneComponent* OwnerRootComponent)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GE_CamEffect_Calories_C", "OnInitialized");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnInitialized", FnName));
 
 	Params::GE_CamEffect_Calories_C_OnInitialized Parms{};
 

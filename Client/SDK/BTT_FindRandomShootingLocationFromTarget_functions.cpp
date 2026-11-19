@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UBTT_FindRandomShootingLocationFromTarget_C::ExecuteUbergraph_BTT_FindRandomShootingLocationFromTarget(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTT_FindRandomShootingLocationFromTarget_C", "ExecuteUbergraph_BTT_FindRandomShootingLocationFromTarget");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BTT_FindRandomShootingLocationFromTarget_C", "ExecuteUbergraph_BTT_FindRandomShootingLocationFromTarget", FuncInfo);
 
 	Params::BTT_FindRandomShootingLocationFromTarget_C_ExecuteUbergraph_BTT_FindRandomShootingLocationFromTarget Parms{};
 
@@ -44,10 +42,8 @@ void UBTT_FindRandomShootingLocationFromTarget_C::ExecuteUbergraph_BTT_FindRando
 
 void UBTT_FindRandomShootingLocationFromTarget_C::ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTT_FindRandomShootingLocationFromTarget_C", "ReceiveExecuteAI");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveExecuteAI", FnName));
 
 	Params::BTT_FindRandomShootingLocationFromTarget_C_ReceiveExecuteAI Parms{};
 

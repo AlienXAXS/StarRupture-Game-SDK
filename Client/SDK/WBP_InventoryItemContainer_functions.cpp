@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_InventoryItemContainer_C::ExecuteUbergraph_WBP_InventoryItemContainer(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryItemContainer_C", "ExecuteUbergraph_WBP_InventoryItemContainer");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_InventoryItemContainer_C", "ExecuteUbergraph_WBP_InventoryItemContainer", FuncInfo);
 
 	Params::WBP_InventoryItemContainer_C_ExecuteUbergraph_WBP_InventoryItemContainer Parms{};
 
@@ -41,10 +39,8 @@ void UWBP_InventoryItemContainer_C::ExecuteUbergraph_WBP_InventoryItemContainer(
 
 void UWBP_InventoryItemContainer_C::SetNoBackground()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryItemContainer_C", "SetNoBackground");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetNoBackground", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -57,10 +53,8 @@ void UWBP_InventoryItemContainer_C::SetNoBackground()
 
 void UWBP_InventoryItemContainer_C::SetSlotOffset(class UGridSlot* InSlot)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryItemContainer_C", "SetSlotOffset");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetSlotOffset", FnName));
 
 	Params::WBP_InventoryItemContainer_C_SetSlotOffset Parms{};
 

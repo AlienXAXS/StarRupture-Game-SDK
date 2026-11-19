@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_DroneRailSupportHelper2x2_C::ExecuteUbergraph_BP_DroneRailSupportHelper2x2(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneRailSupportHelper2x2_C", "ExecuteUbergraph_BP_DroneRailSupportHelper2x2");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_DroneRailSupportHelper2x2_C", "ExecuteUbergraph_BP_DroneRailSupportHelper2x2", FuncInfo);
 
 	Params::BP_DroneRailSupportHelper2x2_C_ExecuteUbergraph_BP_DroneRailSupportHelper2x2 Parms{};
 
@@ -43,10 +41,8 @@ void ABP_DroneRailSupportHelper2x2_C::ExecuteUbergraph_BP_DroneRailSupportHelper
 
 void ABP_DroneRailSupportHelper2x2_C::OnFoundationSetUp(const TArray<struct FTransform>& FoundationTransforms)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneRailSupportHelper2x2_C", "OnFoundationSetUp");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFoundationSetUp", FnName));
 
 	Params::BP_DroneRailSupportHelper2x2_C_OnFoundationSetUp Parms{};
 
@@ -63,10 +59,8 @@ void ABP_DroneRailSupportHelper2x2_C::OnFoundationSetUp(const TArray<struct FTra
 
 void ABP_DroneRailSupportHelper2x2_C::SetMeshColor(const struct FLinearColor& Color)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneRailSupportHelper2x2_C", "SetMeshColor");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetMeshColor", FnName));
 
 	Params::BP_DroneRailSupportHelper2x2_C_SetMeshColor Parms{};
 
@@ -81,10 +75,8 @@ void ABP_DroneRailSupportHelper2x2_C::SetMeshColor(const struct FLinearColor& Co
 
 void ABP_DroneRailSupportHelper2x2_C::UserConstructionScript()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneRailSupportHelper2x2_C", "UserConstructionScript");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UserConstructionScript", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

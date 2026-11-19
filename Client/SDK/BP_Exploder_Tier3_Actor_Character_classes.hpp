@@ -10,15 +10,15 @@
 
 #include "Basic.hpp"
 
+#include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "BP_BaseAI_classes.hpp"
-#include "Engine_structs.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Exploder_Tier3_Actor_Character.BP_Exploder_Tier3_Actor_Character_C
-// 0x0080 (0x0DA0 - 0x0D20)
+// 0x0090 (0x0DB0 - 0x0D20)
 class ABP_Exploder_Tier3_Actor_Character_C final : public ABP_BaseAI_C
 {
 public:
@@ -35,19 +35,24 @@ public:
 	TArray<class AExploderT3CystActor*>           Cysts;                                             // 0x0D70(0x0010)(Edit, BlueprintVisible, DisableEditOnTemplate, DisableEditOnInstance)
 	TArray<struct FVector>                        ExcludedLocations;                                 // 0x0D80(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 	int32                                         MaxCystsNum;                                       // 0x0D90(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_D94[0x4];                                      // 0x0D94(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UMaterialInstanceDynamic*>       Materials;                                         // 0x0D98(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	void AddExcludedLocation(const struct FVector& NewItem);
 	void ExecuteUbergraph_BP_Exploder_Tier3_Actor_Character(int32 EntryPoint);
 	void GetCystsLocations(TArray<struct FVector>* Result);
 	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam);
-	void OnCystDestroyed(class AExploderT3CystActor* Cyst);
+	void OnCystDestroyed(class AExploderT3CystActor* Cyst, bool KilledManually);
 	void OnEnterActorPool();
 	void OnExitActorPool();
+	void OnPrepareForGame();
+	void OnPrepareForPooling();
 	void ReceiveBeginPlay();
 	void ReceiveTick(float DeltaSeconds);
 	void RegisterCyst(class AExploderT3CystActor* Cyst);
 	void ResetExcludedLocations();
+	void UserConstructionScript();
 
 	void OnMeshVisibilityUpdated(bool bIsMeshHidden) const;
 

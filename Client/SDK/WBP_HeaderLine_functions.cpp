@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_HeaderLine_C::HideItemType()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeaderLine_C", "HideItemType");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"HideItemType", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -41,10 +39,8 @@ void UWBP_HeaderLine_C::HideItemType()
 
 void UWBP_HeaderLine_C::Set_Item_Data(const class FText& InName, int32 InNumber, int32 InMax, const class FText& UIType, const struct FLinearColor& Color)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeaderLine_C", "Set Item Data");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Set Item Data", FnName));
 
 	Params::WBP_HeaderLine_C_Set_Item_Data Parms{};
 
@@ -53,46 +49,6 @@ void UWBP_HeaderLine_C::Set_Item_Data(const class FText& InName, int32 InNumber,
 	Parms.InMax = InMax;
 	Parms.UIType = std::move(UIType);
 	Parms.Color = std::move(Color);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function WBP_HeaderLine.WBP_HeaderLine_C.Setup Split Window Version
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const class FText&                      ItemName_0                                             (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void UWBP_HeaderLine_C::Setup_Split_Window_Version(const class FText& ItemName_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeaderLine_C", "Setup Split Window Version");
-
-	Params::WBP_HeaderLine_C_Setup_Split_Window_Version Parms{};
-
-	Parms.ItemName_0 = std::move(ItemName_0);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function WBP_HeaderLine.WBP_HeaderLine_C.SetupResizeStackVersion
-// (Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const class FText&                      Title                                                  (BlueprintVisible, BlueprintReadOnly, Parm)
-
-void UWBP_HeaderLine_C::SetupResizeStackVersion(const class FText& Title)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeaderLine_C", "SetupResizeStackVersion");
-
-	Params::WBP_HeaderLine_C_SetupResizeStackVersion Parms{};
-
-	Parms.Title = std::move(Title);
 
 	UObject::ProcessEvent(Func, &Parms);
 }

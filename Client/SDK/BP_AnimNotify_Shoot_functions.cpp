@@ -24,10 +24,8 @@ SDK_NAMESPACE_START
 
 class UCrAiAction* UBP_AnimNotify_Shoot_C::CreateAiAction(class AActor* Actor) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_AnimNotify_Shoot_C", "CreateAiAction");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"CreateAiAction", FnName));
 
 	Params::BP_AnimNotify_Shoot_C_CreateAiAction Parms{};
 
@@ -49,10 +47,8 @@ class UCrAiAction* UBP_AnimNotify_Shoot_C::CreateAiAction(class AActor* Actor) c
 
 bool UBP_AnimNotify_Shoot_C::Received_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, const struct FAnimNotifyEventReference& EventReference) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_AnimNotify_Shoot_C", "Received_Notify");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Received_Notify", FnName));
 
 	Params::BP_AnimNotify_Shoot_C_Received_Notify Parms{};
 

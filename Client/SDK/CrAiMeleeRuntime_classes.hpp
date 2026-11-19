@@ -11,13 +11,13 @@
 #include "Basic.hpp"
 
 #include "Chimera_classes.hpp"
-#include "Engine_structs.hpp"
-#include "Engine_classes.hpp"
-#include "CoreUObject_classes.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_classes.hpp"
-#include "CrAiMeleeRuntime_structs.hpp"
+#include "Engine_structs.hpp"
+#include "Engine_classes.hpp"
 #include "MassSpawner_classes.hpp"
+#include "CrAiMeleeRuntime_structs.hpp"
+#include "CoreUObject_classes.hpp"
 
 
 SDK_NAMESPACE_START
@@ -140,18 +140,18 @@ public:
 DUMPER7_ASSERTS_AMeleeClientBubbleInfo;
 
 // Class CrAiMeleeRuntime.CrAiMeleeDataAsset
-// 0x0060 (0x07C0 - 0x0760)
+// 0x0060 (0x07E0 - 0x0780)
 class UCrAiMeleeDataAsset final : public UMassEnemyDataAsset
 {
 public:
-	struct FAiFloatConfigurationValue             AoeAttackRange;                                    // 0x0760(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FAiFloatConfigurationValue             TimeToRangedAttackS;                               // 0x076C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FAiFloatConfigurationValue             MatchTargetSpeedRangeAttack;                       // 0x0778(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FAiFloatConfigurationValue             MatchTargetSpeedRange;                             // 0x0784(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FAiFloatConfigurationValue             MatchTargetSpeedModifier;                          // 0x0790(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FAiFloatConfigurationValue             MatchTargetSpeedModifierAttack;                    // 0x079C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FAiFloatConfigurationValue             WalkBackRange;                                     // 0x07A8(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FAiFloatConfigurationValue             JumpAttackRange;                                   // 0x07B4(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FAiFloatConfigurationValue             AoeAttackRange;                                    // 0x0780(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FAiFloatConfigurationValue             TimeToRangedAttackS;                               // 0x078C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FAiFloatConfigurationValue             MatchTargetSpeedRangeAttack;                       // 0x0798(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FAiFloatConfigurationValue             MatchTargetSpeedRange;                             // 0x07A4(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FAiFloatConfigurationValue             MatchTargetSpeedModifier;                          // 0x07B0(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FAiFloatConfigurationValue             MatchTargetSpeedModifierAttack;                    // 0x07BC(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FAiFloatConfigurationValue             WalkBackRange;                                     // 0x07C8(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FAiFloatConfigurationValue             JumpAttackRange;                                   // 0x07D4(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()
@@ -233,9 +233,12 @@ public:
 DUMPER7_ASSERTS_UCrAiMeleeRepresentationActorManagement;
 
 // Class CrAiMeleeRuntime.CrAiMeleeT3
-// 0x0000 (0x0000 - 0x0000)
-class ICrAiMeleeT3 final
+// 0x0008 (0x0008 - 0x0000)
+class ICrAiMeleeT3
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	void CacheLongAoePoints(const TArray<struct FVector>& Points);
 	TArray<struct FVector> GetCachedLongAoePoints();

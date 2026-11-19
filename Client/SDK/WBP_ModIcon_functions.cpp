@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_ModIcon_C::ExecuteUbergraph_WBP_ModIcon(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ModIcon_C", "ExecuteUbergraph_WBP_ModIcon");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_ModIcon_C", "ExecuteUbergraph_WBP_ModIcon", FuncInfo);
 
 	Params::WBP_ModIcon_C_ExecuteUbergraph_WBP_ModIcon Parms{};
 
@@ -43,10 +41,8 @@ void UWBP_ModIcon_C::ExecuteUbergraph_WBP_ModIcon(int32 EntryPoint)
 
 class UUserWidget* UWBP_ModIcon_C::On_ModAnchor_GetUserMenuContent()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ModIcon_C", "On_ModAnchor_GetUserMenuContent");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"On_ModAnchor_GetUserMenuContent", FnName));
 
 	Params::WBP_ModIcon_C_On_ModAnchor_GetUserMenuContent Parms{};
 
@@ -64,10 +60,8 @@ class UUserWidget* UWBP_ModIcon_C::On_ModAnchor_GetUserMenuContent()
 
 void UWBP_ModIcon_C::OnMouseEnter(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ModIcon_C", "OnMouseEnter");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnMouseEnter", FnName));
 
 	Params::WBP_ModIcon_C_OnMouseEnter Parms{};
 
@@ -85,10 +79,8 @@ void UWBP_ModIcon_C::OnMouseEnter(const struct FGeometry& MyGeometry, const stru
 
 void UWBP_ModIcon_C::OnMouseLeave(const struct FPointerEvent& MouseEvent)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ModIcon_C", "OnMouseLeave");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnMouseLeave", FnName));
 
 	Params::WBP_ModIcon_C_OnMouseLeave Parms{};
 
@@ -105,10 +97,8 @@ void UWBP_ModIcon_C::OnMouseLeave(const struct FPointerEvent& MouseEvent)
 
 void UWBP_ModIcon_C::SetData(class UCrWeaponModDataAsset* Data)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ModIcon_C", "SetData");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetData", FnName));
 
 	Params::WBP_ModIcon_C_SetData Parms{};
 
@@ -125,10 +115,8 @@ void UWBP_ModIcon_C::SetData(class UCrWeaponModDataAsset* Data)
 
 void UWBP_ModIcon_C::SetIcon(TSoftObjectPtr<class UTexture2D> Brush)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ModIcon_C", "SetIcon");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetIcon", FnName));
 
 	Params::WBP_ModIcon_C_SetIcon Parms{};
 
@@ -143,10 +131,8 @@ void UWBP_ModIcon_C::SetIcon(TSoftObjectPtr<class UTexture2D> Brush)
 
 void UWBP_ModIcon_C::ShowTooltip()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ModIcon_C", "ShowTooltip");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ShowTooltip", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

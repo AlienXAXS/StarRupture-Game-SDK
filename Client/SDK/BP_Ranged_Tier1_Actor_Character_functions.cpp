@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_Ranged_Tier1_Actor_Character_C::ExecuteUbergraph_BP_Ranged_Tier1_Actor_Character(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier1_Actor_Character_C", "ExecuteUbergraph_BP_Ranged_Tier1_Actor_Character");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Ranged_Tier1_Actor_Character_C", "ExecuteUbergraph_BP_Ranged_Tier1_Actor_Character", FuncInfo);
 
 	Params::BP_Ranged_Tier1_Actor_Character_C_ExecuteUbergraph_BP_Ranged_Tier1_Actor_Character Parms{};
 
@@ -43,10 +41,8 @@ void ABP_Ranged_Tier1_Actor_Character_C::ExecuteUbergraph_BP_Ranged_Tier1_Actor_
 
 void ABP_Ranged_Tier1_Actor_Character_C::GetNiagaraEyeSystem(class UNiagaraComponent** NewParam)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier1_Actor_Character_C", "GetNiagaraEyeSystem");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetNiagaraEyeSystem", FnName));
 
 	Params::BP_Ranged_Tier1_Actor_Character_C_GetNiagaraEyeSystem Parms{};
 
@@ -65,10 +61,8 @@ void ABP_Ranged_Tier1_Actor_Character_C::GetNiagaraEyeSystem(class UNiagaraCompo
 
 void ABP_Ranged_Tier1_Actor_Character_C::OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier1_Actor_Character_C", "OnAiDied");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnAiDied", FnName));
 
 	Params::BP_Ranged_Tier1_Actor_Character_C_OnAiDied Parms{};
 
@@ -84,10 +78,8 @@ void ABP_Ranged_Tier1_Actor_Character_C::OnAiDied(const struct FHitResult& HitRe
 
 void ABP_Ranged_Tier1_Actor_Character_C::OnEnterActorPool()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier1_Actor_Character_C", "OnEnterActorPool");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnEnterActorPool", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -98,10 +90,8 @@ void ABP_Ranged_Tier1_Actor_Character_C::OnEnterActorPool()
 
 void ABP_Ranged_Tier1_Actor_Character_C::OnExitActorPool()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier1_Actor_Character_C", "OnExitActorPool");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnExitActorPool", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -112,10 +102,8 @@ void ABP_Ranged_Tier1_Actor_Character_C::OnExitActorPool()
 
 void ABP_Ranged_Tier1_Actor_Character_C::UserConstructionScript()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier1_Actor_Character_C", "UserConstructionScript");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UserConstructionScript", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -128,10 +116,8 @@ void ABP_Ranged_Tier1_Actor_Character_C::UserConstructionScript()
 
 void ABP_Ranged_Tier1_Actor_Character_C::OnMeshVisibilityUpdated(bool bIsMeshHidden) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier1_Actor_Character_C", "OnMeshVisibilityUpdated");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnMeshVisibilityUpdated", FnName));
 
 	Params::BP_Ranged_Tier1_Actor_Character_C_OnMeshVisibilityUpdated Parms{};
 

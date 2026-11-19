@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_Refinery_C::ExecuteUbergraph_BP_Refinery(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Refinery_C", "ExecuteUbergraph_BP_Refinery");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Refinery_C", "ExecuteUbergraph_BP_Refinery", FuncInfo);
 
 	Params::BP_Refinery_C_ExecuteUbergraph_BP_Refinery Parms{};
 
@@ -43,10 +41,8 @@ void ABP_Refinery_C::ExecuteUbergraph_BP_Refinery(int32 EntryPoint)
 
 void ABP_Refinery_C::OnBuildingStateChanged(ECrBuildingState InState)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Refinery_C", "OnBuildingStateChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBuildingStateChanged", FnName));
 
 	Params::BP_Refinery_C_OnBuildingStateChanged Parms{};
 
@@ -61,10 +57,8 @@ void ABP_Refinery_C::OnBuildingStateChanged(ECrBuildingState InState)
 
 void ABP_Refinery_C::OnItemCraftingComplete()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Refinery_C", "OnItemCraftingComplete");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnItemCraftingComplete", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -75,10 +69,8 @@ void ABP_Refinery_C::OnItemCraftingComplete()
 
 void ABP_Refinery_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Refinery_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -89,10 +81,8 @@ void ABP_Refinery_C::ReceiveBeginPlay()
 
 void ABP_Refinery_C::SetupSkeletalMesh()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Refinery_C", "SetupSkeletalMesh");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetupSkeletalMesh", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -107,10 +97,8 @@ void ABP_Refinery_C::SetupSkeletalMesh()
 
 void ABP_Refinery_C::Get_Meshes(class USceneComponent* Static_0, class USceneComponent* Animated_0, TArray<class UMeshComponent*>* NewParam) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Refinery_C", "Get Meshes");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Get Meshes", FnName));
 
 	Params::BP_Refinery_C_Get_Meshes Parms{};
 

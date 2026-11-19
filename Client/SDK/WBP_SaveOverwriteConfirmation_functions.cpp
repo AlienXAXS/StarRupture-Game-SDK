@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void WBP_SaveOverwriteConfirmation::UWBP_SaveOverwriteConfirmation_C::BndEvt__WBP_SaveOverwriteConfirmation_NO_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_SaveOverwriteConfirmation_C", "BndEvt__WBP_SaveOverwriteConfirmation_NO_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__WBP_SaveOverwriteConfirmation_NO_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -35,10 +33,8 @@ void WBP_SaveOverwriteConfirmation::UWBP_SaveOverwriteConfirmation_C::BndEvt__WB
 
 void WBP_SaveOverwriteConfirmation::UWBP_SaveOverwriteConfirmation_C::BndEvt__WBP_SaveOverwriteConfirmation_NO_K2Node_ComponentBoundEvent_3_OnButtonPressedEvent__DelegateSignature()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_SaveOverwriteConfirmation_C", "BndEvt__WBP_SaveOverwriteConfirmation_NO_K2Node_ComponentBoundEvent_3_OnButtonPressedEvent__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__WBP_SaveOverwriteConfirmation_NO_K2Node_ComponentBoundEvent_3_OnButtonPressedEvent__DelegateSignature", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -49,10 +45,8 @@ void WBP_SaveOverwriteConfirmation::UWBP_SaveOverwriteConfirmation_C::BndEvt__WB
 
 void WBP_SaveOverwriteConfirmation::UWBP_SaveOverwriteConfirmation_C::BndEvt__WBP_SaveOverwriteConfirmation_Yes_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_SaveOverwriteConfirmation_C", "BndEvt__WBP_SaveOverwriteConfirmation_Yes_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__WBP_SaveOverwriteConfirmation_Yes_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -63,10 +57,8 @@ void WBP_SaveOverwriteConfirmation::UWBP_SaveOverwriteConfirmation_C::BndEvt__WB
 
 void WBP_SaveOverwriteConfirmation::UWBP_SaveOverwriteConfirmation_C::BndEvt__WBP_SaveOverwriteConfirmation_Yes_K2Node_ComponentBoundEvent_2_OnButtonPressedEvent__DelegateSignature()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_SaveOverwriteConfirmation_C", "BndEvt__WBP_SaveOverwriteConfirmation_Yes_K2Node_ComponentBoundEvent_2_OnButtonPressedEvent__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__WBP_SaveOverwriteConfirmation_Yes_K2Node_ComponentBoundEvent_2_OnButtonPressedEvent__DelegateSignature", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -77,10 +69,8 @@ void WBP_SaveOverwriteConfirmation::UWBP_SaveOverwriteConfirmation_C::BndEvt__WB
 
 void WBP_SaveOverwriteConfirmation::UWBP_SaveOverwriteConfirmation_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_SaveOverwriteConfirmation_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -94,10 +84,8 @@ void WBP_SaveOverwriteConfirmation::UWBP_SaveOverwriteConfirmation_C::Construct(
 
 class UWidget* WBP_SaveOverwriteConfirmation::UWBP_SaveOverwriteConfirmation_C::Down(EUINavigation Navigation_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_SaveOverwriteConfirmation_C", "Down");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Down", FnName));
 
 	Params::WBP_SaveOverwriteConfirmation_C_Down Parms{};
 
@@ -116,10 +104,8 @@ class UWidget* WBP_SaveOverwriteConfirmation::UWBP_SaveOverwriteConfirmation_C::
 
 void WBP_SaveOverwriteConfirmation::UWBP_SaveOverwriteConfirmation_C::ExecuteUbergraph_WBP_SaveOverwriteConfirmation(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_SaveOverwriteConfirmation_C", "ExecuteUbergraph_WBP_SaveOverwriteConfirmation");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_SaveOverwriteConfirmation_C", "ExecuteUbergraph_WBP_SaveOverwriteConfirmation", FuncInfo);
 
 	Params::WBP_SaveOverwriteConfirmation_C_ExecuteUbergraph_WBP_SaveOverwriteConfirmation Parms{};
 
@@ -137,10 +123,8 @@ void WBP_SaveOverwriteConfirmation::UWBP_SaveOverwriteConfirmation_C::ExecuteUbe
 
 class UWidget* WBP_SaveOverwriteConfirmation::UWBP_SaveOverwriteConfirmation_C::Left(EUINavigation Navigation_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_SaveOverwriteConfirmation_C", "Left");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Left", FnName));
 
 	Params::WBP_SaveOverwriteConfirmation_C_Left Parms{};
 
@@ -161,10 +145,8 @@ class UWidget* WBP_SaveOverwriteConfirmation::UWBP_SaveOverwriteConfirmation_C::
 
 struct FEventReply WBP_SaveOverwriteConfirmation::UWBP_SaveOverwriteConfirmation_C::OnFocusReceived(const struct FGeometry& MyGeometry, const struct FFocusEvent& InFocusEvent)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_SaveOverwriteConfirmation_C", "OnFocusReceived");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFocusReceived", FnName));
 
 	Params::WBP_SaveOverwriteConfirmation_C_OnFocusReceived Parms{};
 
@@ -185,10 +167,8 @@ struct FEventReply WBP_SaveOverwriteConfirmation::UWBP_SaveOverwriteConfirmation
 
 class UWidget* WBP_SaveOverwriteConfirmation::UWBP_SaveOverwriteConfirmation_C::Right(EUINavigation Navigation_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_SaveOverwriteConfirmation_C", "Right");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Right", FnName));
 
 	Params::WBP_SaveOverwriteConfirmation_C_Right Parms{};
 
@@ -208,10 +188,8 @@ class UWidget* WBP_SaveOverwriteConfirmation::UWBP_SaveOverwriteConfirmation_C::
 
 void WBP_SaveOverwriteConfirmation::UWBP_SaveOverwriteConfirmation_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_SaveOverwriteConfirmation_C", "Tick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Tick", FnName));
 
 	Params::WBP_SaveOverwriteConfirmation_C_Tick Parms{};
 
@@ -230,10 +208,8 @@ void WBP_SaveOverwriteConfirmation::UWBP_SaveOverwriteConfirmation_C::Tick(const
 
 class UWidget* WBP_SaveOverwriteConfirmation::UWBP_SaveOverwriteConfirmation_C::Up(EUINavigation Navigation_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_SaveOverwriteConfirmation_C", "Up");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Up", FnName));
 
 	Params::WBP_SaveOverwriteConfirmation_C_Up Parms{};
 

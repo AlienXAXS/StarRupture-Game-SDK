@@ -25,10 +25,8 @@ SDK_NAMESPACE_START
 
 void UEQS_Exploder_Tier3_Context_ExcludedAndCystsLocations_C::ProvideLocationsSet(class UObject* QuerierObject, class AActor* QuerierActor, TArray<struct FVector>* ResultingLocationSet) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("EQS_Exploder_Tier3_Context_ExcludedAndCystsLocations_C", "ProvideLocationsSet");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ProvideLocationsSet", FnName));
 
 	Params::EQS_Exploder_Tier3_Context_ExcludedAndCystsLocations_C_ProvideLocationsSet Parms{};
 

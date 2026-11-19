@@ -123,9 +123,12 @@ public:
 DUMPER7_ASSERTS_UMaterialExpressionLandscapeLayerWeight;
 
 // Class Landscape.LandscapeBrushRenderCallAdapter_GlobalMergeLegacySupport
-// 0x0000 (0x0000 - 0x0000)
-class ILandscapeBrushRenderCallAdapter_GlobalMergeLegacySupport final
+// 0x0008 (0x0008 - 0x0000)
+class ILandscapeBrushRenderCallAdapter_GlobalMergeLegacySupport
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -175,9 +178,12 @@ public:
 DUMPER7_ASSERTS_UMaterialExpressionLandscapePhysicalMaterialOutput;
 
 // Class Landscape.LandscapeSplineInterface
-// 0x0000 (0x0000 - 0x0000)
-class ILandscapeSplineInterface final
+// 0x0008 (0x0008 - 0x0000)
+class ILandscapeSplineInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -225,10 +231,9 @@ DUMPER7_ASSERTS_UMaterialExpressionLandscapeVisibilityMask;
 
 // Class Landscape.LandscapeProxy
 // 0x0518 (0x07C0 - 0x02A8)
-class ALandscapeProxy : public APartitionActor
+class ALandscapeProxy : public APartitionActor, public ILandscapeSplineInterface
 {
 public:
-	uint8                                         Pad_2A8[0x8];                                      // 0x02A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class ULandscapeSplinesComponent*             SplineComponent;                                   // 0x02B0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
 	struct FGuid                                  LandscapeGuid;                                     // 0x02B8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	struct FGuid                                  OriginalLandscapeGuid;                             // 0x02C8(0x0010)(ZeroConstructor, Transient, DuplicateTransient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -509,12 +514,43 @@ public:
 };
 DUMPER7_ASSERTS_ULandscapeEditLayerBase;
 
-// Class Landscape.LandscapeEditLayerPersistent
-// 0x0008 (0x0030 - 0x0028)
-class ULandscapeEditLayerPersistent : public ULandscapeEditLayerBase
+// Class Landscape.LandscapeEditLayerRenderer
+// 0x0008 (0x0008 - 0x0000)
+class ILandscapeEditLayerRenderer
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LandscapeEditLayerRenderer")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LandscapeEditLayerRenderer")
+	}
+	static class ILandscapeEditLayerRenderer* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ILandscapeEditLayerRenderer>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_ILandscapeEditLayerRenderer;
+
+// Class Landscape.LandscapeEditLayerPersistent
+// 0x0008 (0x0030 - 0x0028)
+class ULandscapeEditLayerPersistent : public ULandscapeEditLayerBase, public ILandscapeEditLayerRenderer
+{
+public:
 
 public:
 	static class UClass* StaticClass()
@@ -591,35 +627,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_ULandscapeEditLayerSplines;
-
-// Class Landscape.LandscapeEditLayerRenderer
-// 0x0000 (0x0000 - 0x0000)
-class ILandscapeEditLayerRenderer final
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("LandscapeEditLayerRenderer")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"LandscapeEditLayerRenderer")
-	}
-	static class ILandscapeEditLayerRenderer* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ILandscapeEditLayerRenderer>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_ILandscapeEditLayerRenderer;
 
 // Class Landscape.LandscapeDefaultEditLayerRenderer
 // 0x0000 (0x0028 - 0x0028)
@@ -1422,10 +1429,9 @@ DUMPER7_ASSERTS_ULandscapeNaniteComponent;
 
 // Class Landscape.LandscapeSplineActor
 // 0x0018 (0x02C0 - 0x02A8)
-class ALandscapeSplineActor final : public AActor
+class ALandscapeSplineActor final : public AActor, public ILandscapeSplineInterface
 {
 public:
-	uint8                                         Pad_2A8[0x8];                                      // 0x02A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGuid                                  LandscapeGuid;                                     // 0x02B0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:

@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_ForgottenEngine_EntryTerminal_C::ExecuteUbergraph_BP_ForgottenEngine_EntryTerminal(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ForgottenEngine_EntryTerminal_C", "ExecuteUbergraph_BP_ForgottenEngine_EntryTerminal");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_ForgottenEngine_EntryTerminal_C", "ExecuteUbergraph_BP_ForgottenEngine_EntryTerminal", FuncInfo);
 
 	Params::BP_ForgottenEngine_EntryTerminal_C_ExecuteUbergraph_BP_ForgottenEngine_EntryTerminal Parms{};
 
@@ -41,10 +39,8 @@ void ABP_ForgottenEngine_EntryTerminal_C::ExecuteUbergraph_BP_ForgottenEngine_En
 
 void ABP_ForgottenEngine_EntryTerminal_C::OnMachineActivated()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ForgottenEngine_EntryTerminal_C", "OnMachineActivated");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnMachineActivated", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -55,10 +51,8 @@ void ABP_ForgottenEngine_EntryTerminal_C::OnMachineActivated()
 
 void ABP_ForgottenEngine_EntryTerminal_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ForgottenEngine_EntryTerminal_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

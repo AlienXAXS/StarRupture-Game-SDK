@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UGE_CamEffect_ShieldRegeneration_C::ExecuteUbergraph_GE_CamEffect_ShieldRegeneration(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GE_CamEffect_ShieldRegeneration_C", "ExecuteUbergraph_GE_CamEffect_ShieldRegeneration");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "GE_CamEffect_ShieldRegeneration_C", "ExecuteUbergraph_GE_CamEffect_ShieldRegeneration", FuncInfo);
 
 	Params::GE_CamEffect_ShieldRegeneration_C_ExecuteUbergraph_GE_CamEffect_ShieldRegeneration Parms{};
 
@@ -45,10 +43,8 @@ void UGE_CamEffect_ShieldRegeneration_C::ExecuteUbergraph_GE_CamEffect_ShieldReg
 
 void UGE_CamEffect_ShieldRegeneration_C::OnAttributeChanged_F433B1354457CB414D118FA27A98B923(const struct FGameplayAttribute& Attribute, float NewValue, float OldValue)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GE_CamEffect_ShieldRegeneration_C", "OnAttributeChanged_F433B1354457CB414D118FA27A98B923");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnAttributeChanged_F433B1354457CB414D118FA27A98B923", FnName));
 
 	Params::GE_CamEffect_ShieldRegeneration_C_OnAttributeChanged_F433B1354457CB414D118FA27A98B923 Parms{};
 
@@ -69,10 +65,8 @@ void UGE_CamEffect_ShieldRegeneration_C::OnAttributeChanged_F433B1354457CB414D11
 
 void UGE_CamEffect_ShieldRegeneration_C::OnInitialized(class UAbilitySystemComponent* AbilitySystemComponent, TSubclassOf<class UGameplayEffect> GameplayEffect, class USceneComponent* OwnerRootComponent)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GE_CamEffect_ShieldRegeneration_C", "OnInitialized");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnInitialized", FnName));
 
 	Params::GE_CamEffect_ShieldRegeneration_C_OnInitialized Parms{};
 

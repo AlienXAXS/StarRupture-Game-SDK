@@ -24,10 +24,8 @@ SDK_NAMESPACE_START
 
 void ABP_ChemicalProcessor_C::Get_Meshes(class USceneComponent* Static, class USceneComponent* Animated)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ChemicalProcessor_C", "Get Meshes");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Get Meshes", FnName));
 
 	Params::BP_ChemicalProcessor_C_Get_Meshes Parms{};
 
@@ -46,10 +44,8 @@ void ABP_ChemicalProcessor_C::Get_Meshes(class USceneComponent* Static, class US
 
 void ABP_ChemicalProcessor_C::GetBuildingMeshes(class UMeshComponent** MainBody, TArray<class UMeshComponent*>* AdditionalMeshes) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ChemicalProcessor_C", "GetBuildingMeshes");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetBuildingMeshes", FnName));
 
 	Params::BP_ChemicalProcessor_C_GetBuildingMeshes Parms{};
 

@@ -27,10 +27,8 @@ SDK_NAMESPACE_START
 
 void UBPFL_GenericWeaponAbilitiesHelpers_C::CreateTraceDataBasedOnConfig(const struct FAuCustomTargetHandle& InCustomTargetHandle, class UCrWeaponItemDataBase* InEquippedWeapon, class UAbilitySystemComponent* InAbilitySystemComponent, class UObject* __WorldContext, struct FAuCustomTraceDataHandle* OutTraceData)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("BPFL_GenericWeaponAbilitiesHelpers_C", "CreateTraceDataBasedOnConfig");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(StaticClass(), "BPFL_GenericWeaponAbilitiesHelpers_C", "CreateTraceDataBasedOnConfig", FuncInfo);
 
 	Params::BPFL_GenericWeaponAbilitiesHelpers_C_CreateTraceDataBasedOnConfig Parms{};
 
@@ -58,10 +56,8 @@ void UBPFL_GenericWeaponAbilitiesHelpers_C::CreateTraceDataBasedOnConfig(const s
 
 void UBPFL_GenericWeaponAbilitiesHelpers_C::CreateTraceDataBasedOnConfigForPiercing(const struct FAuCustomTargetHandle& InCustomTargetHandle, class UCrWeaponItemDataBase* InEquippedWeapon, class UAbilitySystemComponent* InAbilitySystemComponent, TArray<struct FHitResult>& OriginalHitResults, class UObject* __WorldContext, struct FAuCustomTraceDataHandle* OutTraceData)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("BPFL_GenericWeaponAbilitiesHelpers_C", "CreateTraceDataBasedOnConfigForPiercing");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(StaticClass(), "BPFL_GenericWeaponAbilitiesHelpers_C", "CreateTraceDataBasedOnConfigForPiercing", FuncInfo);
 
 	Params::BPFL_GenericWeaponAbilitiesHelpers_C_CreateTraceDataBasedOnConfigForPiercing Parms{};
 

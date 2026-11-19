@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ChimeraPlacementHelperReplicatedExtractor.BP_ChimeraPlacementHelperReplicatedExtractor_C
-// 0x0000 (0x0A10 - 0x0A10)
+// 0x0000 (0x0B70 - 0x0B70)
 class ABP_ChimeraPlacementHelperReplicatedExtractor_C : public ACrAPHelperActorExtractor
 {
 public:

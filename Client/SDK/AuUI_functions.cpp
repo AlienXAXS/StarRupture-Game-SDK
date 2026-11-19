@@ -77,10 +77,8 @@ void UAuWidget_Attribute::BindWidget(const struct FAuGameplayAttribute& Attribut
 
 void UAuWidget_Attribute::OnAttributeChanged(float AttributeValue)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuWidget_Attribute", "OnAttributeChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnAttributeChanged", FnName));
 
 	Params::AuWidget_Attribute_OnAttributeChanged Parms{};
 
@@ -149,10 +147,8 @@ void UAuWidget_AttributeItem::BindWidget(const struct FAuItemSlot& ItemSlot, con
 
 void UAuWidget_AttributeItem::OnAttributeChanged(float AttributeValue)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuWidget_AttributeItem", "OnAttributeChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnAttributeChanged", FnName));
 
 	Params::AuWidget_AttributeItem_OnAttributeChanged Parms{};
 
@@ -221,10 +217,8 @@ void UAuWidget_AttributeText::BindAttribute(const struct FAuGameplayAttribute& A
 
 void UAuWidget_AttributeText::OnAttributeChanged(float AttributeValue)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuWidget_AttributeText", "OnAttributeChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnAttributeChanged", FnName));
 
 	Params::AuWidget_AttributeText_OnAttributeChanged Parms{};
 
@@ -293,10 +287,8 @@ void UAuWidget_ItemAttributeText::BindAttribute(const struct FAuItemSlot& ItemSl
 
 void UAuWidget_ItemAttributeText::OnAttributeChanged(float AttributeValue)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuWidget_ItemAttributeText", "OnAttributeChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnAttributeChanged", FnName));
 
 	Params::AuWidget_ItemAttributeText_OnAttributeChanged Parms{};
 
@@ -340,10 +332,8 @@ void UAuWidget_ItemAttributeText::UnbindAttribute(const struct FAuItemSlot& Item
 
 void UAuWidget_ItemContainerView::OnItemsChanged(const TArray<class UUserWidget*>& OutWidgets)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuWidget_ItemContainerView", "OnItemsChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnItemsChanged", FnName));
 
 	Params::AuWidget_ItemContainerView_OnItemsChanged Parms{};
 
@@ -383,10 +373,8 @@ TArray<class UUserWidget*> UAuWidget_ItemContainerView::GetItemWidgets() const
 
 void UAuWidget_ItemSlotView::OnItemAdded()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuWidget_ItemSlotView", "OnItemAdded");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnItemAdded", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -400,10 +388,8 @@ void UAuWidget_ItemSlotView::OnItemAdded()
 
 void UAuWidget_ItemSlotView::OnItemAddedToSlot(const class FText& ItemName, const struct FSlateBrush& ItemIcon)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuWidget_ItemSlotView", "OnItemAddedToSlot");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnItemAddedToSlot", FnName));
 
 	Params::AuWidget_ItemSlotView_OnItemAddedToSlot Parms{};
 
@@ -419,10 +405,8 @@ void UAuWidget_ItemSlotView::OnItemAddedToSlot(const class FText& ItemName, cons
 
 void UAuWidget_ItemSlotView::OnItemRemoved()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuWidget_ItemSlotView", "OnItemRemoved");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnItemRemoved", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -433,10 +417,8 @@ void UAuWidget_ItemSlotView::OnItemRemoved()
 
 void UAuWidget_ItemSlotView::OnItemRemovedFromSlot()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuWidget_ItemSlotView", "OnItemRemovedFromSlot");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnItemRemovedFromSlot", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -447,10 +429,8 @@ void UAuWidget_ItemSlotView::OnItemRemovedFromSlot()
 
 void UAuWidget_ItemSlotView::OnSlotMouseEnter()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuWidget_ItemSlotView", "OnSlotMouseEnter");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSlotMouseEnter", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -461,10 +441,8 @@ void UAuWidget_ItemSlotView::OnSlotMouseEnter()
 
 void UAuWidget_ItemSlotView::OnSlotMouseLeave()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuWidget_ItemSlotView", "OnSlotMouseLeave");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSlotMouseLeave", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -475,10 +453,8 @@ void UAuWidget_ItemSlotView::OnSlotMouseLeave()
 
 void UAuWidget_ItemSlotView::OnSlotSelected()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuWidget_ItemSlotView", "OnSlotSelected");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSlotSelected", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -489,10 +465,8 @@ void UAuWidget_ItemSlotView::OnSlotSelected()
 
 void UAuWidget_ItemSlotView::OnSlotUnselected()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuWidget_ItemSlotView", "OnSlotUnselected");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSlotUnselected", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -507,10 +481,8 @@ void UAuWidget_ItemSlotView::OnSlotUnselected()
 
 void UAuWidget_ItemView::OnItemAdded(const struct FSlateBrush& Icon, const class FText& Name_0, const int32& Count)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuWidget_ItemView", "OnItemAdded");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnItemAdded", FnName));
 
 	Params::AuWidget_ItemView_OnItemAdded Parms{};
 
@@ -530,10 +502,8 @@ void UAuWidget_ItemView::OnItemAdded(const struct FSlateBrush& Icon, const class
 
 void UAuWidget_ItemView::OnViewMouseEnter(const struct FSlateBrush& Icon, const class FText& Name_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuWidget_ItemView", "OnViewMouseEnter");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnViewMouseEnter", FnName));
 
 	Params::AuWidget_ItemView_OnViewMouseEnter Parms{};
 
@@ -552,10 +522,8 @@ void UAuWidget_ItemView::OnViewMouseEnter(const struct FSlateBrush& Icon, const 
 
 void UAuWidget_ItemView::OnViewMouseLeave(const struct FSlateBrush& Icon, const class FText& Name_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuWidget_ItemView", "OnViewMouseLeave");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnViewMouseLeave", FnName));
 
 	Params::AuWidget_ItemView_OnViewMouseLeave Parms{};
 
@@ -571,10 +539,8 @@ void UAuWidget_ItemView::OnViewMouseLeave(const struct FSlateBrush& Icon, const 
 
 void UAuWidget_Notification::OnNotificationAdded()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuWidget_Notification", "OnNotificationAdded");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnNotificationAdded", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -585,10 +551,8 @@ void UAuWidget_Notification::OnNotificationAdded()
 
 void UAuWidget_Notification::OnNotificationPreRemove()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuWidget_Notification", "OnNotificationPreRemove");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnNotificationPreRemove", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

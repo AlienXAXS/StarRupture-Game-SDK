@@ -17,21 +17,21 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Zipline_SplineUniqueHelper.BP_Zipline_SplineUniqueHelper_C
-// 0x0060 (0x0B60 - 0x0B00)
+// 0x0060 (0x0CD0 - 0x0C70)
 class ABP_Zipline_SplineUniqueHelper_C final : public ACrHelperDroneRailSpline
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0B00(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UStaticMeshComponent*                   ZiprailConnector;                                  // 0x0B08(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	TArray<class USplineMeshComponent*>           SplineMeshes;                                      // 0x0B10(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
-	TArray<class UStaticMeshComponent*>           Steps;                                             // 0x0B20(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
-	bool                                          IsNarrow;                                          // 0x0B30(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_B31[0x7];                                      // 0x0B31(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        Stairs_Angle;                                      // 0x0B38(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        Ladder_Angle;                                      // 0x0B40(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        SectionLength;                                     // 0x0B48(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UStaticMesh*                            SplineMeshAsset;                                   // 0x0B50(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	double                                        DesiredSectionLength;                              // 0x0B58(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0C70(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UStaticMeshComponent*                   ZiprailConnector;                                  // 0x0C78(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	TArray<class USplineMeshComponent*>           SplineMeshes;                                      // 0x0C80(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
+	TArray<class UStaticMeshComponent*>           Steps;                                             // 0x0C90(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
+	bool                                          IsNarrow;                                          // 0x0CA0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_CA1[0x7];                                      // 0x0CA1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        Stairs_Angle;                                      // 0x0CA8(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        Ladder_Angle;                                      // 0x0CB0(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        SectionLength;                                     // 0x0CB8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UStaticMesh*                            SplineMeshAsset;                                   // 0x0CC0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	double                                        DesiredSectionLength;                              // 0x0CC8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_Zipline_SplineUniqueHelper(int32 EntryPoint);

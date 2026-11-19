@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_Melee_Tier2_Actor_Character_C::ExecuteUbergraph_BP_Melee_Tier2_Actor_Character(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier2_Actor_Character_C", "ExecuteUbergraph_BP_Melee_Tier2_Actor_Character");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Melee_Tier2_Actor_Character_C", "ExecuteUbergraph_BP_Melee_Tier2_Actor_Character", FuncInfo);
 
 	Params::BP_Melee_Tier2_Actor_Character_C_ExecuteUbergraph_BP_Melee_Tier2_Actor_Character Parms{};
 
@@ -43,10 +41,8 @@ void ABP_Melee_Tier2_Actor_Character_C::ExecuteUbergraph_BP_Melee_Tier2_Actor_Ch
 
 void ABP_Melee_Tier2_Actor_Character_C::SetWeakpointState(bool InIsActive)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier2_Actor_Character_C", "SetWeakpointState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetWeakpointState", FnName));
 
 	Params::BP_Melee_Tier2_Actor_Character_C_SetWeakpointState Parms{};
 
@@ -63,10 +59,8 @@ void ABP_Melee_Tier2_Actor_Character_C::SetWeakpointState(bool InIsActive)
 
 void ABP_Melee_Tier2_Actor_Character_C::SetWeakpointStateImpl(bool IsActive)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier2_Actor_Character_C", "SetWeakpointStateImpl");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetWeakpointStateImpl", FnName));
 
 	Params::BP_Melee_Tier2_Actor_Character_C_SetWeakpointStateImpl Parms{};
 
@@ -81,10 +75,8 @@ void ABP_Melee_Tier2_Actor_Character_C::SetWeakpointStateImpl(bool IsActive)
 
 void ABP_Melee_Tier2_Actor_Character_C::UserConstructionScript()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier2_Actor_Character_C", "UserConstructionScript");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UserConstructionScript", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

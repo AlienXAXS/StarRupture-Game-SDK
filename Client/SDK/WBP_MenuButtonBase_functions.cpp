@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_MenuButtonBase_C::BP_OnClicked()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MenuButtonBase_C", "BP_OnClicked");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnClicked", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -35,10 +33,8 @@ void UWBP_MenuButtonBase_C::BP_OnClicked()
 
 void UWBP_MenuButtonBase_C::BP_OnDeselected()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MenuButtonBase_C", "BP_OnDeselected");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnDeselected", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -49,10 +45,8 @@ void UWBP_MenuButtonBase_C::BP_OnDeselected()
 
 void UWBP_MenuButtonBase_C::BP_OnDisabled()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MenuButtonBase_C", "BP_OnDisabled");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnDisabled", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -63,10 +57,8 @@ void UWBP_MenuButtonBase_C::BP_OnDisabled()
 
 void UWBP_MenuButtonBase_C::BP_OnEnabled()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MenuButtonBase_C", "BP_OnEnabled");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnEnabled", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -77,10 +69,8 @@ void UWBP_MenuButtonBase_C::BP_OnEnabled()
 
 void UWBP_MenuButtonBase_C::BP_OnHovered()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MenuButtonBase_C", "BP_OnHovered");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnHovered", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -91,10 +81,8 @@ void UWBP_MenuButtonBase_C::BP_OnHovered()
 
 void UWBP_MenuButtonBase_C::BP_OnSelected()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MenuButtonBase_C", "BP_OnSelected");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnSelected", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -105,10 +93,8 @@ void UWBP_MenuButtonBase_C::BP_OnSelected()
 
 void UWBP_MenuButtonBase_C::BP_OnUnhovered()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MenuButtonBase_C", "BP_OnUnhovered");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnUnhovered", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -121,10 +107,8 @@ void UWBP_MenuButtonBase_C::BP_OnUnhovered()
 
 void UWBP_MenuButtonBase_C::ExecuteUbergraph_WBP_MenuButtonBase(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MenuButtonBase_C", "ExecuteUbergraph_WBP_MenuButtonBase");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_MenuButtonBase_C", "ExecuteUbergraph_WBP_MenuButtonBase", FuncInfo);
 
 	Params::WBP_MenuButtonBase_C_ExecuteUbergraph_WBP_MenuButtonBase Parms{};
 
@@ -141,10 +125,8 @@ void UWBP_MenuButtonBase_C::ExecuteUbergraph_WBP_MenuButtonBase(int32 EntryPoint
 
 void UWBP_MenuButtonBase_C::GetPressProgress(double* Progress)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MenuButtonBase_C", "GetPressProgress");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetPressProgress", FnName));
 
 	Params::WBP_MenuButtonBase_C_GetPressProgress Parms{};
 
@@ -160,10 +142,8 @@ void UWBP_MenuButtonBase_C::GetPressProgress(double* Progress)
 
 void UWBP_MenuButtonBase_C::OnInitialized()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MenuButtonBase_C", "OnInitialized");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnInitialized", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -176,10 +156,8 @@ void UWBP_MenuButtonBase_C::OnInitialized()
 
 void UWBP_MenuButtonBase_C::PreConstruct(bool IsDesignTime)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MenuButtonBase_C", "PreConstruct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PreConstruct", FnName));
 
 	Params::WBP_MenuButtonBase_C_PreConstruct Parms{};
 
@@ -194,10 +172,8 @@ void UWBP_MenuButtonBase_C::PreConstruct(bool IsDesignTime)
 
 void UWBP_MenuButtonBase_C::RotateTextures()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MenuButtonBase_C", "RotateTextures");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"RotateTextures", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -208,10 +184,8 @@ void UWBP_MenuButtonBase_C::RotateTextures()
 
 void UWBP_MenuButtonBase_C::UpdateButtonStyles()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MenuButtonBase_C", "UpdateButtonStyles");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateButtonStyles", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -222,10 +196,8 @@ void UWBP_MenuButtonBase_C::UpdateButtonStyles()
 
 void UWBP_MenuButtonBase_C::UpdateStyle()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MenuButtonBase_C", "UpdateStyle");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateStyle", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

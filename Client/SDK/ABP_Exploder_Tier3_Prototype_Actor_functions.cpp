@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UABP_Exploder_Tier3_Prototype_Actor_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier3_Prototype_Actor_C", "AnimGraph");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimGraph", FnName));
 
 	Params::ABP_Exploder_Tier3_Prototype_Actor_C_AnimGraph Parms{};
 
@@ -42,10 +40,8 @@ void UABP_Exploder_Tier3_Prototype_Actor_C::AnimGraph(struct FPoseLink* AnimGrap
 
 void UABP_Exploder_Tier3_Prototype_Actor_C::BlueprintInitializeAnimation()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier3_Prototype_Actor_C", "BlueprintInitializeAnimation");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BlueprintInitializeAnimation", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -56,10 +52,8 @@ void UABP_Exploder_Tier3_Prototype_Actor_C::BlueprintInitializeAnimation()
 
 void UABP_Exploder_Tier3_Prototype_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor_AnimGraphNode_BlendListByBool_3DA41B154F0CEEF45F1690911F953BF7()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier3_Prototype_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor_AnimGraphNode_BlendListByBool_3DA41B154F0CEEF45F1690911F953BF7");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor_AnimGraphNode_BlendListByBool_3DA41B154F0CEEF45F1690911F953BF7", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -70,10 +64,8 @@ void UABP_Exploder_Tier3_Prototype_Actor_C::EvaluateGraphExposedInputs_ExecuteUb
 
 void UABP_Exploder_Tier3_Prototype_Actor_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor_AnimGraphNode_BlendListByBool_A5846897452E5C73BAFFEF871CC1DD2A()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier3_Prototype_Actor_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor_AnimGraphNode_BlendListByBool_A5846897452E5C73BAFFEF871CC1DD2A");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor_AnimGraphNode_BlendListByBool_A5846897452E5C73BAFFEF871CC1DD2A", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -86,10 +78,8 @@ void UABP_Exploder_Tier3_Prototype_Actor_C::EvaluateGraphExposedInputs_ExecuteUb
 
 void UABP_Exploder_Tier3_Prototype_Actor_C::ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier3_Prototype_Actor_C", "ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "ABP_Exploder_Tier3_Prototype_Actor_C", "ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor", FuncInfo);
 
 	Params::ABP_Exploder_Tier3_Prototype_Actor_C_ExecuteUbergraph_ABP_Exploder_Tier3_Prototype_Actor Parms{};
 

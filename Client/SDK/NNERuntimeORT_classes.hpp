@@ -11,6 +11,7 @@
 #include "Basic.hpp"
 
 #include "NNERuntimeORT_structs.hpp"
+#include "NNE_classes.hpp"
 #include "DeveloperSettings_classes.hpp"
 #include "CoreUObject_classes.hpp"
 
@@ -43,10 +44,10 @@ DUMPER7_ASSERTS_UNNERuntimeORTSettings;
 
 // Class NNERuntimeORT.NNERuntimeORTCpu
 // 0x0020 (0x0048 - 0x0028)
-class UNNERuntimeORTCpu final : public UObject
+class UNNERuntimeORTCpu final : public UObject, public INNERuntime, public INNERuntimeCPU
 {
 public:
-	uint8                                         Pad_28[0x20];                                      // 0x0028(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0x10];                                      // 0x0038(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -66,10 +67,10 @@ DUMPER7_ASSERTS_UNNERuntimeORTCpu;
 
 // Class NNERuntimeORT.NNERuntimeORTDmlProxy
 // 0x0010 (0x0038 - 0x0028)
-class UNNERuntimeORTDmlProxy : public UObject
+class UNNERuntimeORTDmlProxy : public UObject, public INNERuntime
 {
 public:
-	uint8                                         Pad_28[0x10];                                      // 0x0028(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -89,10 +90,9 @@ DUMPER7_ASSERTS_UNNERuntimeORTDmlProxy;
 
 // Class NNERuntimeORT.NNERuntimeORTDml_GPU_RDG_NPU
 // 0x0018 (0x0050 - 0x0038)
-class UNNERuntimeORTDml_GPU_RDG_NPU final : public UNNERuntimeORTDmlProxy
+class UNNERuntimeORTDml_GPU_RDG_NPU final : public UNNERuntimeORTDmlProxy, public INNERuntimeGPU, public INNERuntimeRDG, public INNERuntimeNPU
 {
 public:
-	uint8                                         Pad_38[0x18];                                      // 0x0038(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -112,10 +112,9 @@ DUMPER7_ASSERTS_UNNERuntimeORTDml_GPU_RDG_NPU;
 
 // Class NNERuntimeORT.NNERuntimeORTDml_GPU_RDG
 // 0x0010 (0x0048 - 0x0038)
-class UNNERuntimeORTDml_GPU_RDG final : public UNNERuntimeORTDmlProxy
+class UNNERuntimeORTDml_GPU_RDG final : public UNNERuntimeORTDmlProxy, public INNERuntimeGPU, public INNERuntimeRDG
 {
 public:
-	uint8                                         Pad_38[0x10];                                      // 0x0038(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -135,10 +134,9 @@ DUMPER7_ASSERTS_UNNERuntimeORTDml_GPU_RDG;
 
 // Class NNERuntimeORT.NNERuntimeORTDml_GPU_NPU
 // 0x0010 (0x0048 - 0x0038)
-class UNNERuntimeORTDml_GPU_NPU final : public UNNERuntimeORTDmlProxy
+class UNNERuntimeORTDml_GPU_NPU final : public UNNERuntimeORTDmlProxy, public INNERuntimeGPU, public INNERuntimeNPU
 {
 public:
-	uint8                                         Pad_38[0x10];                                      // 0x0038(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -158,10 +156,9 @@ DUMPER7_ASSERTS_UNNERuntimeORTDml_GPU_NPU;
 
 // Class NNERuntimeORT.NNERuntimeORTDml_RDG_NPU
 // 0x0010 (0x0048 - 0x0038)
-class UNNERuntimeORTDml_RDG_NPU final : public UNNERuntimeORTDmlProxy
+class UNNERuntimeORTDml_RDG_NPU final : public UNNERuntimeORTDmlProxy, public INNERuntimeRDG, public INNERuntimeNPU
 {
 public:
-	uint8                                         Pad_38[0x10];                                      // 0x0038(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -181,10 +178,9 @@ DUMPER7_ASSERTS_UNNERuntimeORTDml_RDG_NPU;
 
 // Class NNERuntimeORT.NNERuntimeORTDml_GPU
 // 0x0008 (0x0040 - 0x0038)
-class UNNERuntimeORTDml_GPU final : public UNNERuntimeORTDmlProxy
+class UNNERuntimeORTDml_GPU final : public UNNERuntimeORTDmlProxy, public INNERuntimeGPU
 {
 public:
-	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -204,10 +200,9 @@ DUMPER7_ASSERTS_UNNERuntimeORTDml_GPU;
 
 // Class NNERuntimeORT.NNERuntimeORTDml_RDG
 // 0x0008 (0x0040 - 0x0038)
-class UNNERuntimeORTDml_RDG final : public UNNERuntimeORTDmlProxy
+class UNNERuntimeORTDml_RDG final : public UNNERuntimeORTDmlProxy, public INNERuntimeRDG
 {
 public:
-	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -227,10 +222,9 @@ DUMPER7_ASSERTS_UNNERuntimeORTDml_RDG;
 
 // Class NNERuntimeORT.NNERuntimeORTDml_NPU
 // 0x0008 (0x0040 - 0x0038)
-class UNNERuntimeORTDml_NPU final : public UNNERuntimeORTDmlProxy
+class UNNERuntimeORTDml_NPU final : public UNNERuntimeORTDmlProxy, public INNERuntimeNPU
 {
 public:
-	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

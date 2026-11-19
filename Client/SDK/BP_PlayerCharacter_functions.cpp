@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_PlayerCharacter_C::AnyPlayerChangedDeconstructionModeChanged(bool IsAnyPlayerDeconstructing)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "AnyPlayerChangedDeconstructionModeChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnyPlayerChangedDeconstructionModeChanged", FnName));
 
 	Params::BP_PlayerCharacter_C_AnyPlayerChangedDeconstructionModeChanged Parms{};
 
@@ -43,10 +41,8 @@ void ABP_PlayerCharacter_C::AnyPlayerChangedDeconstructionModeChanged(bool IsAny
 
 bool ABP_PlayerCharacter_C::BlockEnergyLoweringDuringSprint()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "BlockEnergyLoweringDuringSprint");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BlockEnergyLoweringDuringSprint", FnName));
 
 	Params::BP_PlayerCharacter_C_BlockEnergyLoweringDuringSprint Parms{};
 
@@ -67,10 +63,8 @@ bool ABP_PlayerCharacter_C::BlockEnergyLoweringDuringSprint()
 
 void ABP_PlayerCharacter_C::BndEvt__BP_PlayerCharacter_CapsuleComponent_K2Node_ComponentBoundEvent_3_ComponentHitSignature__DelegateSignature(class UPrimitiveComponent* HitComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, const struct FVector& NormalImpulse, const struct FHitResult& Hit)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "BndEvt__BP_PlayerCharacter_CapsuleComponent_K2Node_ComponentBoundEvent_3_ComponentHitSignature__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__BP_PlayerCharacter_CapsuleComponent_K2Node_ComponentBoundEvent_3_ComponentHitSignature__DelegateSignature", FnName));
 
 	Params::BP_PlayerCharacter_C_BndEvt__BP_PlayerCharacter_CapsuleComponent_K2Node_ComponentBoundEvent_3_ComponentHitSignature__DelegateSignature Parms{};
 
@@ -89,10 +83,8 @@ void ABP_PlayerCharacter_C::BndEvt__BP_PlayerCharacter_CapsuleComponent_K2Node_C
 
 void ABP_PlayerCharacter_C::BndEvt__BP_PlayerCharacter_FlashlightComponent_K2Node_ComponentBoundEvent_0_OnFlashlightActivated__DelegateSignature()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "BndEvt__BP_PlayerCharacter_FlashlightComponent_K2Node_ComponentBoundEvent_0_OnFlashlightActivated__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__BP_PlayerCharacter_FlashlightComponent_K2Node_ComponentBoundEvent_0_OnFlashlightActivated__DelegateSignature", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -103,10 +95,8 @@ void ABP_PlayerCharacter_C::BndEvt__BP_PlayerCharacter_FlashlightComponent_K2Nod
 
 void ABP_PlayerCharacter_C::BndEvt__BP_PlayerCharacter_FlashlightComponent_K2Node_ComponentBoundEvent_1_OnFlashlightDeactivated__DelegateSignature()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "BndEvt__BP_PlayerCharacter_FlashlightComponent_K2Node_ComponentBoundEvent_1_OnFlashlightDeactivated__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__BP_PlayerCharacter_FlashlightComponent_K2Node_ComponentBoundEvent_1_OnFlashlightDeactivated__DelegateSignature", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -117,10 +107,8 @@ void ABP_PlayerCharacter_C::BndEvt__BP_PlayerCharacter_FlashlightComponent_K2Nod
 
 void ABP_PlayerCharacter_C::BndEvt__BP_PlayerCharacter_FlashlightComponent_K2Node_ComponentBoundEvent_2_OnFlashlightModeChanged__DelegateSignature()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "BndEvt__BP_PlayerCharacter_FlashlightComponent_K2Node_ComponentBoundEvent_2_OnFlashlightModeChanged__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__BP_PlayerCharacter_FlashlightComponent_K2Node_ComponentBoundEvent_2_OnFlashlightModeChanged__DelegateSignature", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -131,10 +119,8 @@ void ABP_PlayerCharacter_C::BndEvt__BP_PlayerCharacter_FlashlightComponent_K2Nod
 
 void ABP_PlayerCharacter_C::BP_OnPlayerEnteredMovingWave()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "BP_OnPlayerEnteredMovingWave");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnPlayerEnteredMovingWave", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -145,10 +131,8 @@ void ABP_PlayerCharacter_C::BP_OnPlayerEnteredMovingWave()
 
 void ABP_PlayerCharacter_C::BP_OnPossess()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "BP_OnPossess");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnPossess", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -162,10 +146,8 @@ void ABP_PlayerCharacter_C::BP_OnPossess()
 
 void ABP_PlayerCharacter_C::CanPlaceChestOnChest(const struct FHitResult& Hit_Result, bool* Return)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "CanPlaceChestOnChest");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"CanPlaceChestOnChest", FnName));
 
 	Params::BP_PlayerCharacter_C_CanPlaceChestOnChest Parms{};
 
@@ -183,10 +165,8 @@ void ABP_PlayerCharacter_C::CanPlaceChestOnChest(const struct FHitResult& Hit_Re
 
 void ABP_PlayerCharacter_C::DestroyEquippedWeaponActor()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "DestroyEquippedWeaponActor");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"DestroyEquippedWeaponActor", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -200,10 +180,8 @@ void ABP_PlayerCharacter_C::DestroyEquippedWeaponActor()
 
 void ABP_PlayerCharacter_C::EquipWeaponWithDelay(const struct FAuItemSlot& Slot, float Delay)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "EquipWeaponWithDelay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EquipWeaponWithDelay", FnName));
 
 	Params::BP_PlayerCharacter_C_EquipWeaponWithDelay Parms{};
 
@@ -223,10 +201,8 @@ void ABP_PlayerCharacter_C::EquipWeaponWithDelay(const struct FAuItemSlot& Slot,
 
 bool ABP_PlayerCharacter_C::ExecuteContextualResponse(const struct FContextualResponsePayload& ResponseData, class FName RuleNameContainingResponseData)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "ExecuteContextualResponse");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ExecuteContextualResponse", FnName));
 
 	Params::BP_PlayerCharacter_C_ExecuteContextualResponse Parms{};
 
@@ -249,10 +225,8 @@ bool ABP_PlayerCharacter_C::ExecuteContextualResponse(const struct FContextualRe
 
 void ABP_PlayerCharacter_C::ExecuteContextualResponseMulticast(TSoftObjectPtr<class UDialogueWave> Dialogue_Wave, bool is_Important, class FName Response_Name, bool Is_Local)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "ExecuteContextualResponseMulticast");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ExecuteContextualResponseMulticast", FnName));
 
 	Params::BP_PlayerCharacter_C_ExecuteContextualResponseMulticast Parms{};
 
@@ -272,10 +246,8 @@ void ABP_PlayerCharacter_C::ExecuteContextualResponseMulticast(TSoftObjectPtr<cl
 
 void ABP_PlayerCharacter_C::ExecuteUbergraph_BP_PlayerCharacter(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "ExecuteUbergraph_BP_PlayerCharacter");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_PlayerCharacter_C", "ExecuteUbergraph_BP_PlayerCharacter", FuncInfo);
 
 	Params::BP_PlayerCharacter_C_ExecuteUbergraph_BP_PlayerCharacter Parms{};
 
@@ -290,10 +262,8 @@ void ABP_PlayerCharacter_C::ExecuteUbergraph_BP_PlayerCharacter(int32 EntryPoint
 
 void ABP_PlayerCharacter_C::FixRoll()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "FixRoll");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"FixRoll", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -304,10 +274,8 @@ void ABP_PlayerCharacter_C::FixRoll()
 
 void ABP_PlayerCharacter_C::FocusInteractionDirection__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "FocusInteractionDirection__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"FocusInteractionDirection__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -318,10 +286,8 @@ void ABP_PlayerCharacter_C::FocusInteractionDirection__FinishedFunc()
 
 void ABP_PlayerCharacter_C::FocusInteractionDirection__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "FocusInteractionDirection__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"FocusInteractionDirection__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -332,10 +298,8 @@ void ABP_PlayerCharacter_C::FocusInteractionDirection__UpdateFunc()
 
 void ABP_PlayerCharacter_C::ForceRemoveAllHitmarks()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "ForceRemoveAllHitmarks");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ForceRemoveAllHitmarks", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -348,10 +312,8 @@ void ABP_PlayerCharacter_C::ForceRemoveAllHitmarks()
 
 TArray<class AActor*> ABP_PlayerCharacter_C::GetAllIgnoreActorForLocalInteractionTraces()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "GetAllIgnoreActorForLocalInteractionTraces");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetAllIgnoreActorForLocalInteractionTraces", FnName));
 
 	Params::BP_PlayerCharacter_C_GetAllIgnoreActorForLocalInteractionTraces Parms{};
 
@@ -370,10 +332,8 @@ TArray<class AActor*> ABP_PlayerCharacter_C::GetAllIgnoreActorForLocalInteractio
 
 bool ABP_PlayerCharacter_C::GetCurrentWeaponCustomActionPayload(const struct FGameplayTag& Tag, struct FInstancedStruct* OutPayload)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "GetCurrentWeaponCustomActionPayload");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetCurrentWeaponCustomActionPayload", FnName));
 
 	Params::BP_PlayerCharacter_C_GetCurrentWeaponCustomActionPayload Parms{};
 
@@ -395,10 +355,8 @@ bool ABP_PlayerCharacter_C::GetCurrentWeaponCustomActionPayload(const struct FGa
 
 struct FVector ABP_PlayerCharacter_C::GetDropItemsLocation()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "GetDropItemsLocation");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetDropItemsLocation", FnName));
 
 	Params::BP_PlayerCharacter_C_GetDropItemsLocation Parms{};
 
@@ -416,10 +374,8 @@ struct FVector ABP_PlayerCharacter_C::GetDropItemsLocation()
 
 TArray<struct FVector> ABP_PlayerCharacter_C::GetDropItemsLocations(int32 LocationsAmount)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "GetDropItemsLocations");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetDropItemsLocations", FnName));
 
 	Params::BP_PlayerCharacter_C_GetDropItemsLocations Parms{};
 
@@ -438,10 +394,8 @@ TArray<struct FVector> ABP_PlayerCharacter_C::GetDropItemsLocations(int32 Locati
 
 void ABP_PlayerCharacter_C::GetFppCameraHeight(double* Height)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "GetFppCameraHeight");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetFppCameraHeight", FnName));
 
 	Params::BP_PlayerCharacter_C_GetFppCameraHeight Parms{};
 
@@ -460,10 +414,8 @@ void ABP_PlayerCharacter_C::GetFppCameraHeight(double* Height)
 
 void ABP_PlayerCharacter_C::GetProfessionBasedCharacterData(class UCrPlayerCharacterSpecificPossessionSettings** Profession_Data, bool* Return)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "GetProfessionBasedCharacterData");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetProfessionBasedCharacterData", FnName));
 
 	Params::BP_PlayerCharacter_C_GetProfessionBasedCharacterData Parms{};
 
@@ -484,10 +436,8 @@ void ABP_PlayerCharacter_C::GetProfessionBasedCharacterData(class UCrPlayerChara
 
 void ABP_PlayerCharacter_C::Getting_Current_State(EPlayerState* PlayerState_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "Getting Current State");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Getting Current State", FnName));
 
 	Params::BP_PlayerCharacter_C_Getting_Current_State Parms{};
 
@@ -505,10 +455,8 @@ void ABP_PlayerCharacter_C::Getting_Current_State(EPlayerState* PlayerState_0)
 
 void ABP_PlayerCharacter_C::GetUnarmedAnimInstanceTPPForCurrentProfession(class UClass** Anim_Instance)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "GetUnarmedAnimInstanceTPPForCurrentProfession");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetUnarmedAnimInstanceTPPForCurrentProfession", FnName));
 
 	Params::BP_PlayerCharacter_C_GetUnarmedAnimInstanceTPPForCurrentProfession Parms{};
 
@@ -526,10 +474,8 @@ void ABP_PlayerCharacter_C::GetUnarmedAnimInstanceTPPForCurrentProfession(class 
 
 void ABP_PlayerCharacter_C::HasValidWeaponEquipped(bool* Return_Value)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "HasValidWeaponEquipped");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"HasValidWeaponEquipped", FnName));
 
 	Params::BP_PlayerCharacter_C_HasValidWeaponEquipped Parms{};
 
@@ -547,10 +493,8 @@ void ABP_PlayerCharacter_C::HasValidWeaponEquipped(bool* Return_Value)
 
 void ABP_PlayerCharacter_C::HeroComponentReady(const struct FActorInitStateChangedParams& Params_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "HeroComponentReady");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"HeroComponentReady", FnName));
 
 	Params::BP_PlayerCharacter_C_HeroComponentReady Parms{};
 
@@ -570,10 +514,8 @@ void ABP_PlayerCharacter_C::HeroComponentReady(const struct FActorInitStateChang
 
 void ABP_PlayerCharacter_C::InpActEvt_CloseInGameMenu_K2Node_EnhancedInputActionEvent_9(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_CloseInGameMenu_K2Node_EnhancedInputActionEvent_9");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"InpActEvt_CloseInGameMenu_K2Node_EnhancedInputActionEvent_9", FnName));
 
 	Params::BP_PlayerCharacter_C_InpActEvt_CloseInGameMenu_K2Node_EnhancedInputActionEvent_9 Parms{};
 
@@ -596,10 +538,8 @@ void ABP_PlayerCharacter_C::InpActEvt_CloseInGameMenu_K2Node_EnhancedInputAction
 
 void ABP_PlayerCharacter_C::InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_0(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_0");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_0", FnName));
 
 	Params::BP_PlayerCharacter_C_InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_0 Parms{};
 
@@ -622,10 +562,8 @@ void ABP_PlayerCharacter_C::InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_0(c
 
 void ABP_PlayerCharacter_C::InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_14(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_14");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_14", FnName));
 
 	Params::BP_PlayerCharacter_C_InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_14 Parms{};
 
@@ -648,10 +586,8 @@ void ABP_PlayerCharacter_C::InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_14(
 
 void ABP_PlayerCharacter_C::InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_15(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_15");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_15", FnName));
 
 	Params::BP_PlayerCharacter_C_InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_15 Parms{};
 
@@ -674,10 +610,8 @@ void ABP_PlayerCharacter_C::InpActEvt_Crouch_K2Node_EnhancedInputActionEvent_15(
 
 void ABP_PlayerCharacter_C::InpActEvt_Dash_K2Node_EnhancedInputActionEvent_8(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_Dash_K2Node_EnhancedInputActionEvent_8");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"InpActEvt_Dash_K2Node_EnhancedInputActionEvent_8", FnName));
 
 	Params::BP_PlayerCharacter_C_InpActEvt_Dash_K2Node_EnhancedInputActionEvent_8 Parms{};
 
@@ -700,10 +634,8 @@ void ABP_PlayerCharacter_C::InpActEvt_Dash_K2Node_EnhancedInputActionEvent_8(con
 
 void ABP_PlayerCharacter_C::InpActEvt_GiveUp_K2Node_EnhancedInputActionEvent_10(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_GiveUp_K2Node_EnhancedInputActionEvent_10");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"InpActEvt_GiveUp_K2Node_EnhancedInputActionEvent_10", FnName));
 
 	Params::BP_PlayerCharacter_C_InpActEvt_GiveUp_K2Node_EnhancedInputActionEvent_10 Parms{};
 
@@ -726,10 +658,8 @@ void ABP_PlayerCharacter_C::InpActEvt_GiveUp_K2Node_EnhancedInputActionEvent_10(
 
 void ABP_PlayerCharacter_C::InpActEvt_GiveUp_K2Node_EnhancedInputActionEvent_11(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_GiveUp_K2Node_EnhancedInputActionEvent_11");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"InpActEvt_GiveUp_K2Node_EnhancedInputActionEvent_11", FnName));
 
 	Params::BP_PlayerCharacter_C_InpActEvt_GiveUp_K2Node_EnhancedInputActionEvent_11 Parms{};
 
@@ -752,10 +682,8 @@ void ABP_PlayerCharacter_C::InpActEvt_GiveUp_K2Node_EnhancedInputActionEvent_11(
 
 void ABP_PlayerCharacter_C::InpActEvt_HolsterWeapon_K2Node_EnhancedInputActionEvent_5(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_HolsterWeapon_K2Node_EnhancedInputActionEvent_5");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"InpActEvt_HolsterWeapon_K2Node_EnhancedInputActionEvent_5", FnName));
 
 	Params::BP_PlayerCharacter_C_InpActEvt_HolsterWeapon_K2Node_EnhancedInputActionEvent_5 Parms{};
 
@@ -778,10 +706,8 @@ void ABP_PlayerCharacter_C::InpActEvt_HolsterWeapon_K2Node_EnhancedInputActionEv
 
 void ABP_PlayerCharacter_C::InpActEvt_HolsterWeapon_K2Node_EnhancedInputActionEvent_6(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_HolsterWeapon_K2Node_EnhancedInputActionEvent_6");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"InpActEvt_HolsterWeapon_K2Node_EnhancedInputActionEvent_6", FnName));
 
 	Params::BP_PlayerCharacter_C_InpActEvt_HolsterWeapon_K2Node_EnhancedInputActionEvent_6 Parms{};
 
@@ -804,10 +730,8 @@ void ABP_PlayerCharacter_C::InpActEvt_HolsterWeapon_K2Node_EnhancedInputActionEv
 
 void ABP_PlayerCharacter_C::InpActEvt_Interact_K2Node_EnhancedInputActionEvent_13(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_Interact_K2Node_EnhancedInputActionEvent_13");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"InpActEvt_Interact_K2Node_EnhancedInputActionEvent_13", FnName));
 
 	Params::BP_PlayerCharacter_C_InpActEvt_Interact_K2Node_EnhancedInputActionEvent_13 Parms{};
 
@@ -830,10 +754,8 @@ void ABP_PlayerCharacter_C::InpActEvt_Interact_K2Node_EnhancedInputActionEvent_1
 
 void ABP_PlayerCharacter_C::InpActEvt_Jump_K2Node_EnhancedInputActionEvent_12(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_Jump_K2Node_EnhancedInputActionEvent_12");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"InpActEvt_Jump_K2Node_EnhancedInputActionEvent_12", FnName));
 
 	Params::BP_PlayerCharacter_C_InpActEvt_Jump_K2Node_EnhancedInputActionEvent_12 Parms{};
 
@@ -854,10 +776,8 @@ void ABP_PlayerCharacter_C::InpActEvt_Jump_K2Node_EnhancedInputActionEvent_12(co
 
 void ABP_PlayerCharacter_C::InpActEvt_L_K2Node_InputDebugKeyEvent_1(const struct FKey& Key, const struct FInputActionValue& ActionValue)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_L_K2Node_InputDebugKeyEvent_1");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"InpActEvt_L_K2Node_InputDebugKeyEvent_1", FnName));
 
 	Params::BP_PlayerCharacter_C_InpActEvt_L_K2Node_InputDebugKeyEvent_1 Parms{};
 
@@ -878,10 +798,8 @@ void ABP_PlayerCharacter_C::InpActEvt_L_K2Node_InputDebugKeyEvent_1(const struct
 
 void ABP_PlayerCharacter_C::InpActEvt_OpenEOSOverlay_K2Node_EnhancedInputActionEvent_7(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_OpenEOSOverlay_K2Node_EnhancedInputActionEvent_7");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"InpActEvt_OpenEOSOverlay_K2Node_EnhancedInputActionEvent_7", FnName));
 
 	Params::BP_PlayerCharacter_C_InpActEvt_OpenEOSOverlay_K2Node_EnhancedInputActionEvent_7 Parms{};
 
@@ -904,10 +822,8 @@ void ABP_PlayerCharacter_C::InpActEvt_OpenEOSOverlay_K2Node_EnhancedInputActionE
 
 void ABP_PlayerCharacter_C::InpActEvt_Reload_K2Node_EnhancedInputActionEvent_2(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_Reload_K2Node_EnhancedInputActionEvent_2");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"InpActEvt_Reload_K2Node_EnhancedInputActionEvent_2", FnName));
 
 	Params::BP_PlayerCharacter_C_InpActEvt_Reload_K2Node_EnhancedInputActionEvent_2 Parms{};
 
@@ -930,10 +846,8 @@ void ABP_PlayerCharacter_C::InpActEvt_Reload_K2Node_EnhancedInputActionEvent_2(c
 
 void ABP_PlayerCharacter_C::InpActEvt_Reload_K2Node_EnhancedInputActionEvent_3(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_Reload_K2Node_EnhancedInputActionEvent_3");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"InpActEvt_Reload_K2Node_EnhancedInputActionEvent_3", FnName));
 
 	Params::BP_PlayerCharacter_C_InpActEvt_Reload_K2Node_EnhancedInputActionEvent_3 Parms{};
 
@@ -956,10 +870,8 @@ void ABP_PlayerCharacter_C::InpActEvt_Reload_K2Node_EnhancedInputActionEvent_3(c
 
 void ABP_PlayerCharacter_C::InpActEvt_Reload_K2Node_EnhancedInputActionEvent_4(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_Reload_K2Node_EnhancedInputActionEvent_4");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"InpActEvt_Reload_K2Node_EnhancedInputActionEvent_4", FnName));
 
 	Params::BP_PlayerCharacter_C_InpActEvt_Reload_K2Node_EnhancedInputActionEvent_4 Parms{};
 
@@ -980,10 +892,8 @@ void ABP_PlayerCharacter_C::InpActEvt_Reload_K2Node_EnhancedInputActionEvent_4(c
 
 void ABP_PlayerCharacter_C::InpActEvt_X_K2Node_InputDebugKeyEvent_0(const struct FKey& Key, const struct FInputActionValue& ActionValue)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_X_K2Node_InputDebugKeyEvent_0");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"InpActEvt_X_K2Node_InputDebugKeyEvent_0", FnName));
 
 	Params::BP_PlayerCharacter_C_InpActEvt_X_K2Node_InputDebugKeyEvent_0 Parms{};
 
@@ -1002,10 +912,8 @@ void ABP_PlayerCharacter_C::InpActEvt_X_K2Node_InputDebugKeyEvent_0(const struct
 
 void ABP_PlayerCharacter_C::InpActEvt_X_K2Node_InputDebugKeyEvent_3(const struct FKey& Key, const struct FInputActionValue& ActionValue)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_X_K2Node_InputDebugKeyEvent_3");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"InpActEvt_X_K2Node_InputDebugKeyEvent_3", FnName));
 
 	Params::BP_PlayerCharacter_C_InpActEvt_X_K2Node_InputDebugKeyEvent_3 Parms{};
 
@@ -1024,10 +932,8 @@ void ABP_PlayerCharacter_C::InpActEvt_X_K2Node_InputDebugKeyEvent_3(const struct
 
 void ABP_PlayerCharacter_C::InpActEvt_Z_K2Node_InputDebugKeyEvent_2(const struct FKey& Key, const struct FInputActionValue& ActionValue)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_Z_K2Node_InputDebugKeyEvent_2");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"InpActEvt_Z_K2Node_InputDebugKeyEvent_2", FnName));
 
 	Params::BP_PlayerCharacter_C_InpActEvt_Z_K2Node_InputDebugKeyEvent_2 Parms{};
 
@@ -1048,10 +954,8 @@ void ABP_PlayerCharacter_C::InpActEvt_Z_K2Node_InputDebugKeyEvent_2(const struct
 
 void ABP_PlayerCharacter_C::InpActEvt_ZiplineCancel_K2Node_EnhancedInputActionEvent_1(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "InpActEvt_ZiplineCancel_K2Node_EnhancedInputActionEvent_1");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"InpActEvt_ZiplineCancel_K2Node_EnhancedInputActionEvent_1", FnName));
 
 	Params::BP_PlayerCharacter_C_InpActEvt_ZiplineCancel_K2Node_EnhancedInputActionEvent_1 Parms{};
 
@@ -1071,10 +975,8 @@ void ABP_PlayerCharacter_C::InpActEvt_ZiplineCancel_K2Node_EnhancedInputActionEv
 
 void ABP_PlayerCharacter_C::IsAnyKillTypeHitmarkDisplayed(bool* Return)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "IsAnyKillTypeHitmarkDisplayed");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IsAnyKillTypeHitmarkDisplayed", FnName));
 
 	Params::BP_PlayerCharacter_C_IsAnyKillTypeHitmarkDisplayed Parms{};
 
@@ -1092,10 +994,8 @@ void ABP_PlayerCharacter_C::IsAnyKillTypeHitmarkDisplayed(bool* Return)
 
 void ABP_PlayerCharacter_C::K2_ClientOnInteractionEnded(class AActor* TargetActor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "K2_ClientOnInteractionEnded");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_ClientOnInteractionEnded", FnName));
 
 	Params::BP_PlayerCharacter_C_K2_ClientOnInteractionEnded Parms{};
 
@@ -1112,10 +1012,8 @@ void ABP_PlayerCharacter_C::K2_ClientOnInteractionEnded(class AActor* TargetActo
 
 void ABP_PlayerCharacter_C::K2_ClientOnInteractionStarted(class AActor* TargetActor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "K2_ClientOnInteractionStarted");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_ClientOnInteractionStarted", FnName));
 
 	Params::BP_PlayerCharacter_C_K2_ClientOnInteractionStarted Parms{};
 
@@ -1132,10 +1030,8 @@ void ABP_PlayerCharacter_C::K2_ClientOnInteractionStarted(class AActor* TargetAc
 
 void ABP_PlayerCharacter_C::K2_OnBecomeViewTarget(class APlayerController* PC)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "K2_OnBecomeViewTarget");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_OnBecomeViewTarget", FnName));
 
 	Params::BP_PlayerCharacter_C_K2_OnBecomeViewTarget Parms{};
 
@@ -1153,10 +1049,8 @@ void ABP_PlayerCharacter_C::K2_OnBecomeViewTarget(class APlayerController* PC)
 
 void ABP_PlayerCharacter_C::K2_OnEndCrouch(float HalfHeightAdjust, float ScaledHalfHeightAdjust)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "K2_OnEndCrouch");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_OnEndCrouch", FnName));
 
 	Params::BP_PlayerCharacter_C_K2_OnEndCrouch Parms{};
 
@@ -1174,10 +1068,8 @@ void ABP_PlayerCharacter_C::K2_OnEndCrouch(float HalfHeightAdjust, float ScaledH
 
 void ABP_PlayerCharacter_C::K2_OnEndViewTarget(class APlayerController* PC)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "K2_OnEndViewTarget");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_OnEndViewTarget", FnName));
 
 	Params::BP_PlayerCharacter_C_K2_OnEndViewTarget Parms{};
 
@@ -1195,10 +1087,8 @@ void ABP_PlayerCharacter_C::K2_OnEndViewTarget(class APlayerController* PC)
 
 void ABP_PlayerCharacter_C::K2_OnStartCrouch(float HalfHeightAdjust, float ScaledHalfHeightAdjust)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "K2_OnStartCrouch");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_OnStartCrouch", FnName));
 
 	Params::BP_PlayerCharacter_C_K2_OnStartCrouch Parms{};
 
@@ -1214,10 +1104,8 @@ void ABP_PlayerCharacter_C::K2_OnStartCrouch(float HalfHeightAdjust, float Scale
 
 void ABP_PlayerCharacter_C::LocalEquipFirstSlotWeapon()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "LocalEquipFirstSlotWeapon");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"LocalEquipFirstSlotWeapon", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1230,10 +1118,8 @@ void ABP_PlayerCharacter_C::LocalEquipFirstSlotWeapon()
 
 void ABP_PlayerCharacter_C::LowerEnergyForSecondJump(bool* Return_Value)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "LowerEnergyForSecondJump");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"LowerEnergyForSecondJump", FnName));
 
 	Params::BP_PlayerCharacter_C_LowerEnergyForSecondJump Parms{};
 
@@ -1252,10 +1138,8 @@ void ABP_PlayerCharacter_C::LowerEnergyForSecondJump(bool* Return_Value)
 
 void ABP_PlayerCharacter_C::On_Sprinting_Changed(class ACharacter* Character, bool bIsNowSprinting)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "On Sprinting Changed");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"On Sprinting Changed", FnName));
 
 	Params::BP_PlayerCharacter_C_On_Sprinting_Changed Parms{};
 
@@ -1273,10 +1157,8 @@ void ABP_PlayerCharacter_C::On_Sprinting_Changed(class ACharacter* Character, bo
 
 void ABP_PlayerCharacter_C::OnBlendOut_3C917D864D3A56CADF569987ABEAC42F(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "OnBlendOut_3C917D864D3A56CADF569987ABEAC42F");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBlendOut_3C917D864D3A56CADF569987ABEAC42F", FnName));
 
 	Params::BP_PlayerCharacter_C_OnBlendOut_3C917D864D3A56CADF569987ABEAC42F Parms{};
 
@@ -1291,10 +1173,8 @@ void ABP_PlayerCharacter_C::OnBlendOut_3C917D864D3A56CADF569987ABEAC42F(class FN
 
 void ABP_PlayerCharacter_C::OnBPStartOccupyingSpawnPoint()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "OnBPStartOccupyingSpawnPoint");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBPStartOccupyingSpawnPoint", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1307,10 +1187,8 @@ void ABP_PlayerCharacter_C::OnBPStartOccupyingSpawnPoint()
 
 void ABP_PlayerCharacter_C::OnCameraSwitched(bool bNewInFPP)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "OnCameraSwitched");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnCameraSwitched", FnName));
 
 	Params::BP_PlayerCharacter_C_OnCameraSwitched Parms{};
 
@@ -1327,10 +1205,8 @@ void ABP_PlayerCharacter_C::OnCameraSwitched(bool bNewInFPP)
 
 void ABP_PlayerCharacter_C::OnCompleted_3C917D864D3A56CADF569987ABEAC42F(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "OnCompleted_3C917D864D3A56CADF569987ABEAC42F");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnCompleted_3C917D864D3A56CADF569987ABEAC42F", FnName));
 
 	Params::BP_PlayerCharacter_C_OnCompleted_3C917D864D3A56CADF569987ABEAC42F Parms{};
 
@@ -1347,10 +1223,8 @@ void ABP_PlayerCharacter_C::OnCompleted_3C917D864D3A56CADF569987ABEAC42F(class F
 
 void ABP_PlayerCharacter_C::OnDashMovementModeChanged(bool bIsDoingDash)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "OnDashMovementModeChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnDashMovementModeChanged", FnName));
 
 	Params::BP_PlayerCharacter_C_OnDashMovementModeChanged Parms{};
 
@@ -1367,10 +1241,8 @@ void ABP_PlayerCharacter_C::OnDashMovementModeChanged(bool bIsDoingDash)
 
 void ABP_PlayerCharacter_C::OnDialogueWaveLoaded(class UDialogueWave* DialogueWaveLoaded)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "OnDialogueWaveLoaded");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnDialogueWaveLoaded", FnName));
 
 	Params::BP_PlayerCharacter_C_OnDialogueWaveLoaded Parms{};
 
@@ -1385,10 +1257,8 @@ void ABP_PlayerCharacter_C::OnDialogueWaveLoaded(class UDialogueWave* DialogueWa
 
 void ABP_PlayerCharacter_C::OnDied()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "OnDied");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnDied", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1399,10 +1269,8 @@ void ABP_PlayerCharacter_C::OnDied()
 
 void ABP_PlayerCharacter_C::OnDoubleJumpFailedOfEnergyCost()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "OnDoubleJumpFailedOfEnergyCost");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnDoubleJumpFailedOfEnergyCost", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1413,10 +1281,8 @@ void ABP_PlayerCharacter_C::OnDoubleJumpFailedOfEnergyCost()
 
 void ABP_PlayerCharacter_C::OnEnterIncapacitatedState()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "OnEnterIncapacitatedState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnEnterIncapacitatedState", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1427,10 +1293,8 @@ void ABP_PlayerCharacter_C::OnEnterIncapacitatedState()
 
 void ABP_PlayerCharacter_C::OnExitSpawnPointBP()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "OnExitSpawnPointBP");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnExitSpawnPointBP", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1446,10 +1310,8 @@ void ABP_PlayerCharacter_C::OnExitSpawnPointBP()
 
 void ABP_PlayerCharacter_C::OnGameplayEffectStackChange_12F7879349C7C8D4A64C77947458706C(const struct FGameplayTag& EffectGameplayTag, const struct FActiveGameplayEffectHandle& Handle, int32 NewStackCount, int32 OldStackCount)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "OnGameplayEffectStackChange_12F7879349C7C8D4A64C77947458706C");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnGameplayEffectStackChange_12F7879349C7C8D4A64C77947458706C", FnName));
 
 	Params::BP_PlayerCharacter_C_OnGameplayEffectStackChange_12F7879349C7C8D4A64C77947458706C Parms{};
 
@@ -1470,10 +1332,8 @@ void ABP_PlayerCharacter_C::OnGameplayEffectStackChange_12F7879349C7C8D4A64C7794
 
 void ABP_PlayerCharacter_C::OnHealingTargetsComfirmed(const struct FGameplayTag& TraceTag, const struct FHitResult& HitResult)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "OnHealingTargetsComfirmed");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnHealingTargetsComfirmed", FnName));
 
 	Params::BP_PlayerCharacter_C_OnHealingTargetsComfirmed Parms{};
 
@@ -1492,10 +1352,8 @@ void ABP_PlayerCharacter_C::OnHealingTargetsComfirmed(const struct FGameplayTag&
 
 void ABP_PlayerCharacter_C::OnHealingTargetsUnconfirmed(const struct FGameplayTag& TraceTag, class AActor* Actor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "OnHealingTargetsUnconfirmed");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnHealingTargetsUnconfirmed", FnName));
 
 	Params::BP_PlayerCharacter_C_OnHealingTargetsUnconfirmed Parms{};
 
@@ -1514,10 +1372,8 @@ void ABP_PlayerCharacter_C::OnHealingTargetsUnconfirmed(const struct FGameplayTa
 
 void ABP_PlayerCharacter_C::OnIncapacitadedStateChanged(bool bNowIncapacitated, bool Revived)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "OnIncapacitadedStateChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnIncapacitadedStateChanged", FnName));
 
 	Params::BP_PlayerCharacter_C_OnIncapacitadedStateChanged Parms{};
 
@@ -1535,10 +1391,8 @@ void ABP_PlayerCharacter_C::OnIncapacitadedStateChanged(bool bNowIncapacitated, 
 
 void ABP_PlayerCharacter_C::OnInterrupted_3C917D864D3A56CADF569987ABEAC42F(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "OnInterrupted_3C917D864D3A56CADF569987ABEAC42F");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnInterrupted_3C917D864D3A56CADF569987ABEAC42F", FnName));
 
 	Params::BP_PlayerCharacter_C_OnInterrupted_3C917D864D3A56CADF569987ABEAC42F Parms{};
 
@@ -1553,10 +1407,8 @@ void ABP_PlayerCharacter_C::OnInterrupted_3C917D864D3A56CADF569987ABEAC42F(class
 
 void ABP_PlayerCharacter_C::OnJumped()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "OnJumped");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnJumped", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1569,10 +1421,8 @@ void ABP_PlayerCharacter_C::OnJumped()
 
 void ABP_PlayerCharacter_C::OnJumpedMulticast(bool DoubleJump)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "OnJumpedMulticast");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnJumpedMulticast", FnName));
 
 	Params::BP_PlayerCharacter_C_OnJumpedMulticast Parms{};
 
@@ -1589,10 +1439,8 @@ void ABP_PlayerCharacter_C::OnJumpedMulticast(bool DoubleJump)
 
 void ABP_PlayerCharacter_C::OnLanded(const struct FHitResult& Hit)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "OnLanded");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnLanded", FnName));
 
 	Params::BP_PlayerCharacter_C_OnLanded Parms{};
 
@@ -1609,10 +1457,8 @@ void ABP_PlayerCharacter_C::OnLanded(const struct FHitResult& Hit)
 
 void ABP_PlayerCharacter_C::OnNotifyBegin_3C917D864D3A56CADF569987ABEAC42F(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "OnNotifyBegin_3C917D864D3A56CADF569987ABEAC42F");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnNotifyBegin_3C917D864D3A56CADF569987ABEAC42F", FnName));
 
 	Params::BP_PlayerCharacter_C_OnNotifyBegin_3C917D864D3A56CADF569987ABEAC42F Parms{};
 
@@ -1629,10 +1475,8 @@ void ABP_PlayerCharacter_C::OnNotifyBegin_3C917D864D3A56CADF569987ABEAC42F(class
 
 void ABP_PlayerCharacter_C::OnNotifyEnd_3C917D864D3A56CADF569987ABEAC42F(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "OnNotifyEnd_3C917D864D3A56CADF569987ABEAC42F");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnNotifyEnd_3C917D864D3A56CADF569987ABEAC42F", FnName));
 
 	Params::BP_PlayerCharacter_C_OnNotifyEnd_3C917D864D3A56CADF569987ABEAC42F Parms{};
 
@@ -1645,14 +1489,12 @@ void ABP_PlayerCharacter_C::OnNotifyEnd_3C917D864D3A56CADF569987ABEAC42F(class F
 // Function BP_PlayerCharacter.BP_PlayerCharacter_C.OnReplicatedHeatStackCount
 // (Event, Public, HasOutParams, BlueprintEvent)
 // Parameters:
-// const struct FHarvesterRepHeatStackInfo&OutCurrentHarvesterHeatStack                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor)
+// const struct FHarvesterRepHeatStackInfo&OutCurrentHarvesterHeatStack                           (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
 
 void ABP_PlayerCharacter_C::OnReplicatedHeatStackCount(const struct FHarvesterRepHeatStackInfo& OutCurrentHarvesterHeatStack)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "OnReplicatedHeatStackCount");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnReplicatedHeatStackCount", FnName));
 
 	Params::BP_PlayerCharacter_C_OnReplicatedHeatStackCount Parms{};
 
@@ -1667,10 +1509,8 @@ void ABP_PlayerCharacter_C::OnReplicatedHeatStackCount(const struct FHarvesterRe
 
 void ABP_PlayerCharacter_C::OnRespawn()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "OnRespawn");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnRespawn", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1685,10 +1525,8 @@ void ABP_PlayerCharacter_C::OnRespawn()
 
 bool ABP_PlayerCharacter_C::OnResponseFinished(const struct FContextualResponsePayload& ResponseData, class FName RuleNameContainingResponseData)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "OnResponseFinished");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnResponseFinished", FnName));
 
 	Params::BP_PlayerCharacter_C_OnResponseFinished Parms{};
 
@@ -1708,10 +1546,8 @@ bool ABP_PlayerCharacter_C::OnResponseFinished(const struct FContextualResponseP
 
 void ABP_PlayerCharacter_C::OnSlideMovementModeChanged(bool IsSliding)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "OnSlideMovementModeChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSlideMovementModeChanged", FnName));
 
 	Params::BP_PlayerCharacter_C_OnSlideMovementModeChanged Parms{};
 
@@ -1728,10 +1564,8 @@ void ABP_PlayerCharacter_C::OnSlideMovementModeChanged(bool IsSliding)
 
 void ABP_PlayerCharacter_C::OnTagAdded_1109671788423649D6346B9CDC564413(const struct FGameplayTag& Tag)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "OnTagAdded_1109671788423649D6346B9CDC564413");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnTagAdded_1109671788423649D6346B9CDC564413", FnName));
 
 	Params::BP_PlayerCharacter_C_OnTagAdded_1109671788423649D6346B9CDC564413 Parms{};
 
@@ -1748,10 +1582,8 @@ void ABP_PlayerCharacter_C::OnTagAdded_1109671788423649D6346B9CDC564413(const st
 
 void ABP_PlayerCharacter_C::OnTagAdded_A6EB94DC44B2FF09F8430B98BC792FA8(const struct FGameplayTag& Tag)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "OnTagAdded_A6EB94DC44B2FF09F8430B98BC792FA8");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnTagAdded_A6EB94DC44B2FF09F8430B98BC792FA8", FnName));
 
 	Params::BP_PlayerCharacter_C_OnTagAdded_A6EB94DC44B2FF09F8430B98BC792FA8 Parms{};
 
@@ -1768,10 +1600,8 @@ void ABP_PlayerCharacter_C::OnTagAdded_A6EB94DC44B2FF09F8430B98BC792FA8(const st
 
 void ABP_PlayerCharacter_C::OnTagRemoved_1109671788423649D6346B9CDC564413(const struct FGameplayTag& Tag)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "OnTagRemoved_1109671788423649D6346B9CDC564413");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnTagRemoved_1109671788423649D6346B9CDC564413", FnName));
 
 	Params::BP_PlayerCharacter_C_OnTagRemoved_1109671788423649D6346B9CDC564413 Parms{};
 
@@ -1788,10 +1618,8 @@ void ABP_PlayerCharacter_C::OnTagRemoved_1109671788423649D6346B9CDC564413(const 
 
 void ABP_PlayerCharacter_C::OnTagRemoved_A6EB94DC44B2FF09F8430B98BC792FA8(const struct FGameplayTag& Tag)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "OnTagRemoved_A6EB94DC44B2FF09F8430B98BC792FA8");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnTagRemoved_A6EB94DC44B2FF09F8430B98BC792FA8", FnName));
 
 	Params::BP_PlayerCharacter_C_OnTagRemoved_A6EB94DC44B2FF09F8430B98BC792FA8 Parms{};
 
@@ -1806,10 +1634,8 @@ void ABP_PlayerCharacter_C::OnTagRemoved_A6EB94DC44B2FF09F8430B98BC792FA8(const 
 
 void ABP_PlayerCharacter_C::OnZiplineModeEnded()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "OnZiplineModeEnded");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnZiplineModeEnded", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1820,10 +1646,8 @@ void ABP_PlayerCharacter_C::OnZiplineModeEnded()
 
 void ABP_PlayerCharacter_C::OnZiplineModeStarted()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "OnZiplineModeStarted");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnZiplineModeStarted", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1836,10 +1660,8 @@ void ABP_PlayerCharacter_C::OnZiplineModeStarted()
 
 void ABP_PlayerCharacter_C::OnZipLineMovementModeChanged(bool OnZipline)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "OnZipLineMovementModeChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnZipLineMovementModeChanged", FnName));
 
 	Params::BP_PlayerCharacter_C_OnZipLineMovementModeChanged Parms{};
 
@@ -1854,10 +1676,8 @@ void ABP_PlayerCharacter_C::OnZipLineMovementModeChanged(bool OnZipline)
 
 void ABP_PlayerCharacter_C::OnZiplineTravelCancelled()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "OnZiplineTravelCancelled");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnZiplineTravelCancelled", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1868,10 +1688,8 @@ void ABP_PlayerCharacter_C::OnZiplineTravelCancelled()
 
 void ABP_PlayerCharacter_C::OnZiplineTravelEnded()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "OnZiplineTravelEnded");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnZiplineTravelEnded", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1882,10 +1700,8 @@ void ABP_PlayerCharacter_C::OnZiplineTravelEnded()
 
 void ABP_PlayerCharacter_C::OnZiplineTravelStarted()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "OnZiplineTravelStarted");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnZiplineTravelStarted", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1898,10 +1714,8 @@ void ABP_PlayerCharacter_C::OnZiplineTravelStarted()
 
 void ABP_PlayerCharacter_C::PlayDropItemsSoundAtLocation(const struct FVector& Location)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "PlayDropItemsSoundAtLocation");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PlayDropItemsSoundAtLocation", FnName));
 
 	Params::BP_PlayerCharacter_C_PlayDropItemsSoundAtLocation Parms{};
 
@@ -1916,10 +1730,8 @@ void ABP_PlayerCharacter_C::PlayDropItemsSoundAtLocation(const struct FVector& L
 
 void ABP_PlayerCharacter_C::PostRespawn()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "PostRespawn");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PostRespawn", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1930,10 +1742,8 @@ void ABP_PlayerCharacter_C::PostRespawn()
 
 void ABP_PlayerCharacter_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1946,10 +1756,8 @@ void ABP_PlayerCharacter_C::ReceiveBeginPlay()
 
 void ABP_PlayerCharacter_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "ReceiveEndPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveEndPlay", FnName));
 
 	Params::BP_PlayerCharacter_C_ReceiveEndPlay Parms{};
 
@@ -1966,10 +1774,8 @@ void ABP_PlayerCharacter_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 
 void ABP_PlayerCharacter_C::ReceivePossessed(class AController* NewController)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "ReceivePossessed");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceivePossessed", FnName));
 
 	Params::BP_PlayerCharacter_C_ReceivePossessed Parms{};
 
@@ -1986,10 +1792,8 @@ void ABP_PlayerCharacter_C::ReceivePossessed(class AController* NewController)
 
 void ABP_PlayerCharacter_C::ReceiveTick(float DeltaSeconds)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "ReceiveTick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveTick", FnName));
 
 	Params::BP_PlayerCharacter_C_ReceiveTick Parms{};
 
@@ -2006,10 +1810,8 @@ void ABP_PlayerCharacter_C::ReceiveTick(float DeltaSeconds)
 
 void ABP_PlayerCharacter_C::ResetFPPCameraTransform(bool Delay)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "ResetFPPCameraTransform");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ResetFPPCameraTransform", FnName));
 
 	Params::BP_PlayerCharacter_C_ResetFPPCameraTransform Parms{};
 
@@ -2026,10 +1828,8 @@ void ABP_PlayerCharacter_C::ResetFPPCameraTransform(bool Delay)
 
 void ABP_PlayerCharacter_C::ResolveLandingOnAi(const struct FHitResult& Hit)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "ResolveLandingOnAi");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ResolveLandingOnAi", FnName));
 
 	Params::BP_PlayerCharacter_C_ResolveLandingOnAi Parms{};
 
@@ -2046,10 +1846,8 @@ void ABP_PlayerCharacter_C::ResolveLandingOnAi(const struct FHitResult& Hit)
 
 void ABP_PlayerCharacter_C::ServerSetCrouching(bool bIsCrouching)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "ServerSetCrouching");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ServerSetCrouching", FnName));
 
 	Params::BP_PlayerCharacter_C_ServerSetCrouching Parms{};
 
@@ -2068,10 +1866,8 @@ void ABP_PlayerCharacter_C::ServerSetCrouching(bool bIsCrouching)
 
 void ABP_PlayerCharacter_C::Set_Zipline(bool Enable, const struct FVector& Pos1, const struct FVector& Pos2)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "Set Zipline");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Set Zipline", FnName));
 
 	Params::BP_PlayerCharacter_C_Set_Zipline Parms{};
 
@@ -2090,10 +1886,8 @@ void ABP_PlayerCharacter_C::Set_Zipline(bool Enable, const struct FVector& Pos1,
 
 void ABP_PlayerCharacter_C::SetDeconstruct(bool bInDeconstruct)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "SetDeconstruct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetDeconstruct", FnName));
 
 	Params::BP_PlayerCharacter_C_SetDeconstruct Parms{};
 
@@ -2110,10 +1904,8 @@ void ABP_PlayerCharacter_C::SetDeconstruct(bool bInDeconstruct)
 
 void ABP_PlayerCharacter_C::SetFppLegsVisibility(bool NewVisible)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "SetFppLegsVisibility");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetFppLegsVisibility", FnName));
 
 	Params::BP_PlayerCharacter_C_SetFppLegsVisibility Parms{};
 
@@ -2131,10 +1923,8 @@ void ABP_PlayerCharacter_C::SetFppLegsVisibility(bool NewVisible)
 
 void ABP_PlayerCharacter_C::ShowHitmark(class AActor* TargetActor, ECrHitmarkType HitmarkToShow)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "ShowHitmark");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ShowHitmark", FnName));
 
 	Params::BP_PlayerCharacter_C_ShowHitmark Parms{};
 
@@ -2150,10 +1940,8 @@ void ABP_PlayerCharacter_C::ShowHitmark(class AActor* TargetActor, ECrHitmarkTyp
 
 void ABP_PlayerCharacter_C::SkipCurrentDialogueInternal()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "SkipCurrentDialogueInternal");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SkipCurrentDialogueInternal", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -2166,10 +1954,8 @@ void ABP_PlayerCharacter_C::SkipCurrentDialogueInternal()
 
 void ABP_PlayerCharacter_C::SpawnHitmarkWidget(ECrHitmarkType Hitmark)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "SpawnHitmarkWidget");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SpawnHitmarkWidget", FnName));
 
 	Params::BP_PlayerCharacter_C_SpawnHitmarkWidget Parms{};
 
@@ -2184,10 +1970,8 @@ void ABP_PlayerCharacter_C::SpawnHitmarkWidget(ECrHitmarkType Hitmark)
 
 void ABP_PlayerCharacter_C::SpawnZiplineArmHandle()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "SpawnZiplineArmHandle");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SpawnZiplineArmHandle", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -2198,10 +1982,8 @@ void ABP_PlayerCharacter_C::SpawnZiplineArmHandle()
 
 void ABP_PlayerCharacter_C::SwitchToAnimatedFppCamera()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "SwitchToAnimatedFppCamera");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SwitchToAnimatedFppCamera", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -2212,10 +1994,8 @@ void ABP_PlayerCharacter_C::SwitchToAnimatedFppCamera()
 
 void ABP_PlayerCharacter_C::SwitchToNormalFppCamera()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "SwitchToNormalFppCamera");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SwitchToNormalFppCamera", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -2226,10 +2006,8 @@ void ABP_PlayerCharacter_C::SwitchToNormalFppCamera()
 
 void ABP_PlayerCharacter_C::Timeline__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "Timeline__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -2240,10 +2018,8 @@ void ABP_PlayerCharacter_C::Timeline__FinishedFunc()
 
 void ABP_PlayerCharacter_C::Timeline__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "Timeline__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -2254,10 +2030,8 @@ void ABP_PlayerCharacter_C::Timeline__UpdateFunc()
 
 void ABP_PlayerCharacter_C::UpdateCharacterCollisionBasedOnDeadStatus()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "UpdateCharacterCollisionBasedOnDeadStatus");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateCharacterCollisionBasedOnDeadStatus", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -2270,10 +2044,8 @@ void ABP_PlayerCharacter_C::UpdateCharacterCollisionBasedOnDeadStatus()
 
 bool ABP_PlayerCharacter_C::UpdateCharacterCosmeticsForCurrentProfession()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "UpdateCharacterCosmeticsForCurrentProfession");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateCharacterCosmeticsForCurrentProfession", FnName));
 
 	Params::BP_PlayerCharacter_C_UpdateCharacterCosmeticsForCurrentProfession Parms{};
 
@@ -2288,10 +2060,8 @@ bool ABP_PlayerCharacter_C::UpdateCharacterCosmeticsForCurrentProfession()
 
 void ABP_PlayerCharacter_C::UpdateCurrentSlope()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "UpdateCurrentSlope");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateCurrentSlope", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -2306,10 +2076,8 @@ void ABP_PlayerCharacter_C::UpdateCurrentSlope()
 
 void ABP_PlayerCharacter_C::UpdateHitmarksSounds(ECrHitmarkType New_Hitmark_Type, bool* Fade_Out_Previous_, bool* Play_New_Hitmark_Sound)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "UpdateHitmarksSounds");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateHitmarksSounds", FnName));
 
 	Params::BP_PlayerCharacter_C_UpdateHitmarksSounds Parms{};
 
@@ -2330,10 +2098,8 @@ void ABP_PlayerCharacter_C::UpdateHitmarksSounds(ECrHitmarkType New_Hitmark_Type
 
 void ABP_PlayerCharacter_C::UserConstructionScript()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "UserConstructionScript");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UserConstructionScript", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -2346,10 +2112,8 @@ void ABP_PlayerCharacter_C::UserConstructionScript()
 
 bool ABP_PlayerCharacter_C::CanJumpInternal() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "CanJumpInternal");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"CanJumpInternal", FnName));
 
 	Params::BP_PlayerCharacter_C_CanJumpInternal Parms{};
 
@@ -2366,10 +2130,8 @@ bool ABP_PlayerCharacter_C::CanJumpInternal() const
 
 void ABP_PlayerCharacter_C::GatherAllIgnoredActors(TArray<class AActor*>* OutIgnoredActors) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "GatherAllIgnoredActors");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GatherAllIgnoredActors", FnName));
 
 	Params::BP_PlayerCharacter_C_GatherAllIgnoredActors Parms{};
 
@@ -2387,10 +2149,8 @@ void ABP_PlayerCharacter_C::GatherAllIgnoredActors(TArray<class AActor*>* OutIgn
 
 bool ABP_PlayerCharacter_C::IsCharacterGameplayReady() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "IsCharacterGameplayReady");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IsCharacterGameplayReady", FnName));
 
 	Params::BP_PlayerCharacter_C_IsCharacterGameplayReady Parms{};
 
@@ -2407,10 +2167,8 @@ bool ABP_PlayerCharacter_C::IsCharacterGameplayReady() const
 
 bool ABP_PlayerCharacter_C::IsPlayingDialogue() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlayerCharacter_C", "IsPlayingDialogue");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IsPlayingDialogue", FnName));
 
 	Params::BP_PlayerCharacter_C_IsPlayingDialogue Parms{};
 

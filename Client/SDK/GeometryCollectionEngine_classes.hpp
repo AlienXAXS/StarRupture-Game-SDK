@@ -14,10 +14,12 @@
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "ChaosSolverEngine_structs.hpp"
+#include "ChaosSolverEngine_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "GeometryCollectionEngine_structs.hpp"
 #include "DataflowEngine_structs.hpp"
+#include "DataflowEngine_classes.hpp"
 
 
 SDK_NAMESPACE_START
@@ -48,9 +50,12 @@ public:
 DUMPER7_ASSERTS_UGeometryCollectionBlueprintLibrary;
 
 // Class GeometryCollectionEngine.GeometryCollectionExternalRenderInterface
-// 0x0000 (0x0000 - 0x0000)
-class IGeometryCollectionExternalRenderInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IGeometryCollectionExternalRenderInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -77,9 +82,12 @@ public:
 DUMPER7_ASSERTS_IGeometryCollectionExternalRenderInterface;
 
 // Class GeometryCollectionEngine.GeometryCollectionCustomDataInterface
-// 0x0000 (0x0000 - 0x0000)
-class IGeometryCollectionCustomDataInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IGeometryCollectionCustomDataInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -244,10 +252,9 @@ DUMPER7_ASSERTS_UGeometryCollectionCache;
 
 // Class GeometryCollectionEngine.GeometryCollectionComponent
 // 0x04F0 (0x0A70 - 0x0580)
-class UGeometryCollectionComponent final : public UMeshComponent
+class UGeometryCollectionComponent final : public UMeshComponent, public IChaosNotifyHandlerInterface
 {
 public:
-	uint8                                         Pad_578[0x8];                                      // 0x0578(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class AChaosSolverActor*                      ChaosSolverActor;                                  // 0x0580(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	class UGeometryCollection*                    RestCollection;                                    // 0x0588(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoClear, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	TArray<class AFieldSystemActor*>              InitializationFields;                              // 0x0590(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoClear, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
@@ -581,10 +588,9 @@ DUMPER7_ASSERTS_UGeometryCollectionISMPoolComponent;
 
 // Class GeometryCollectionEngine.GeometryCollectionISMPoolRenderer
 // 0x00B8 (0x00E0 - 0x0028)
-class alignas(0x10) UGeometryCollectionISMPoolRenderer final : public UObject
+class alignas(0x10) UGeometryCollectionISMPoolRenderer final : public UObject, public IGeometryCollectionExternalRenderInterface
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class UISMPoolComponent*                      CachedISMPoolComponent;                            // 0x0030(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
 	class UISMPoolComponent*                      LocalISMPoolComponent;                             // 0x0038(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
 	uint8                                         Pad_40[0xA0];                                      // 0x0040(0x00A0)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -607,10 +613,10 @@ DUMPER7_ASSERTS_UGeometryCollectionISMPoolRenderer;
 
 // Class GeometryCollectionEngine.GeometryCollection
 // 0x0260 (0x0288 - 0x0028)
-class UGeometryCollection final : public UObject
+class UGeometryCollection final : public UObject, public IInterface_AssetUserData, public IDataflowContentOwner, public MIPad::Pad<0x20, 0x58>, public IDataflowInstanceInterface
 {
 public:
-	uint8                                         Pad_28[0x40];                                      // 0x0028(0x0040)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_60[0x8];                                       // 0x0060(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          EnableClustering;                                  // 0x0068(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_69[0x3];                                       // 0x0069(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         ClusterGroupIndex;                                 // 0x006C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -695,6 +701,11 @@ public:
 	{
 		return GetDefaultObjImpl<UGeometryCollection>();
 	}
+
+public:
+	bool AddAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	class UAssetUserData* GetAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	bool HasAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
 };
 DUMPER7_ASSERTS_UGeometryCollection;
 
@@ -729,10 +740,9 @@ DUMPER7_ASSERTS_AGeometryCollectionRenderLevelSetActor;
 
 // Class GeometryCollectionEngine.GeometryCollectionRootProxyRenderer
 // 0x0020 (0x0048 - 0x0028)
-class UGeometryCollectionRootProxyRenderer final : public UObject
+class UGeometryCollectionRootProxyRenderer final : public UObject, public IGeometryCollectionExternalRenderInterface
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UStaticMeshComponent*>           StaticMeshComponents;                              // 0x0030(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
 	uint8                                         Pad_40[0x8];                                       // 0x0040(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 

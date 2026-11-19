@@ -24,10 +24,8 @@ SDK_NAMESPACE_START
 
 void UBP_CustomToolActorsManager_C::AddActor(const struct FGameplayTag& Tag, class AActor* Actor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CustomToolActorsManager_C", "AddActor");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AddActor", FnName));
 
 	Params::BP_CustomToolActorsManager_C_AddActor Parms{};
 
@@ -46,10 +44,8 @@ void UBP_CustomToolActorsManager_C::AddActor(const struct FGameplayTag& Tag, cla
 
 void UBP_CustomToolActorsManager_C::SetActorVisibility(const struct FGameplayTag& Tag, bool New_Visible)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CustomToolActorsManager_C", "SetActorVisibility");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetActorVisibility", FnName));
 
 	Params::BP_CustomToolActorsManager_C_SetActorVisibility Parms{};
 

@@ -24,10 +24,8 @@ SDK_NAMESPACE_START
 
 void UWBP_WeaponsToolsTab_C::AddModIcon(class UCrWeaponModDataAsset* ModDA, int32 WeaponIndex)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_WeaponsToolsTab_C", "AddModIcon");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AddModIcon", FnName));
 
 	Params::WBP_WeaponsToolsTab_C_AddModIcon Parms{};
 
@@ -43,10 +41,8 @@ void UWBP_WeaponsToolsTab_C::AddModIcon(class UCrWeaponModDataAsset* ModDA, int3
 
 void UWBP_WeaponsToolsTab_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_WeaponsToolsTab_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -59,10 +55,8 @@ void UWBP_WeaponsToolsTab_C::Construct()
 
 void UWBP_WeaponsToolsTab_C::ExecuteUbergraph_WBP_WeaponsToolsTab(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_WeaponsToolsTab_C", "ExecuteUbergraph_WBP_WeaponsToolsTab");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_WeaponsToolsTab_C", "ExecuteUbergraph_WBP_WeaponsToolsTab", FuncInfo);
 
 	Params::WBP_WeaponsToolsTab_C_ExecuteUbergraph_WBP_WeaponsToolsTab Parms{};
 

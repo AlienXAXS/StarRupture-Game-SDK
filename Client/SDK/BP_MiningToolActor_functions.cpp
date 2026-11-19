@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void ABP_MiningToolActor_C::Activate_NS_Harvester()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "Activate_NS_Harvester");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Activate_NS_Harvester", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -35,10 +33,8 @@ void ABP_MiningToolActor_C::Activate_NS_Harvester()
 
 void ABP_MiningToolActor_C::EmptyHit()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "EmptyHit");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EmptyHit", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -51,10 +47,8 @@ void ABP_MiningToolActor_C::EmptyHit()
 
 void ABP_MiningToolActor_C::ExecuteUbergraph_BP_MiningToolActor(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "ExecuteUbergraph_BP_MiningToolActor");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_MiningToolActor_C", "ExecuteUbergraph_BP_MiningToolActor", FuncInfo);
 
 	Params::BP_MiningToolActor_C_ExecuteUbergraph_BP_MiningToolActor Parms{};
 
@@ -69,10 +63,8 @@ void ABP_MiningToolActor_C::ExecuteUbergraph_BP_MiningToolActor(int32 EntryPoint
 
 void ABP_MiningToolActor_C::HittingEnemy()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "HittingEnemy");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"HittingEnemy", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -83,10 +75,8 @@ void ABP_MiningToolActor_C::HittingEnemy()
 
 void ABP_MiningToolActor_C::HittingLandscape()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "HittingLandscape");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"HittingLandscape", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -97,10 +87,8 @@ void ABP_MiningToolActor_C::HittingLandscape()
 
 void ABP_MiningToolActor_C::HittingNonMineableObject()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "HittingNonMineableObject");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"HittingNonMineableObject", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -111,10 +99,8 @@ void ABP_MiningToolActor_C::HittingNonMineableObject()
 
 void ABP_MiningToolActor_C::HittingOre()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "HittingOre");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"HittingOre", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -127,10 +113,8 @@ void ABP_MiningToolActor_C::HittingOre()
 
 void ABP_MiningToolActor_C::IsLocallyFPPControlled(bool* bIsLocallyFPPControlled)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "IsLocallyFPPControlled");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IsLocallyFPPControlled", FnName));
 
 	Params::BP_MiningToolActor_C_IsLocallyFPPControlled Parms{};
 
@@ -148,10 +132,8 @@ void ABP_MiningToolActor_C::IsLocallyFPPControlled(bool* bIsLocallyFPPControlled
 
 void ABP_MiningToolActor_C::IsOverheatStackLimitReached(bool* bLimitReached)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "IsOverheatStackLimitReached");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IsOverheatStackLimitReached", FnName));
 
 	Params::BP_MiningToolActor_C_IsOverheatStackLimitReached Parms{};
 
@@ -167,10 +149,8 @@ void ABP_MiningToolActor_C::IsOverheatStackLimitReached(bool* bLimitReached)
 
 void ABP_MiningToolActor_C::OnAimingAtHarvestable()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "OnAimingAtHarvestable");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnAimingAtHarvestable", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -181,10 +161,8 @@ void ABP_MiningToolActor_C::OnAimingAtHarvestable()
 
 void ABP_MiningToolActor_C::OnBarrelRotatingCosmeticTagAdded()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "OnBarrelRotatingCosmeticTagAdded");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBarrelRotatingCosmeticTagAdded", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -195,10 +173,8 @@ void ABP_MiningToolActor_C::OnBarrelRotatingCosmeticTagAdded()
 
 void ABP_MiningToolActor_C::OnBarrelRotatingCosmeticTagRemoved()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "OnBarrelRotatingCosmeticTagRemoved");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBarrelRotatingCosmeticTagRemoved", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -211,10 +187,8 @@ void ABP_MiningToolActor_C::OnBarrelRotatingCosmeticTagRemoved()
 
 void ABP_MiningToolActor_C::OnBPCameraChanged(bool bIsFirstPersonView)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "OnBPCameraChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBPCameraChanged", FnName));
 
 	Params::BP_MiningToolActor_C_OnBPCameraChanged Parms{};
 
@@ -229,10 +203,8 @@ void ABP_MiningToolActor_C::OnBPCameraChanged(bool bIsFirstPersonView)
 
 void ABP_MiningToolActor_C::OnBPWeaponPostEquip()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "OnBPWeaponPostEquip");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBPWeaponPostEquip", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -243,10 +215,8 @@ void ABP_MiningToolActor_C::OnBPWeaponPostEquip()
 
 void ABP_MiningToolActor_C::OnBPWeaponPreUnequip()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "OnBPWeaponPreUnequip");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBPWeaponPreUnequip", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -257,10 +227,8 @@ void ABP_MiningToolActor_C::OnBPWeaponPreUnequip()
 
 void ABP_MiningToolActor_C::OnForcedCooldownEnded()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "OnForcedCooldownEnded");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnForcedCooldownEnded", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -271,10 +239,8 @@ void ABP_MiningToolActor_C::OnForcedCooldownEnded()
 
 void ABP_MiningToolActor_C::OnForcedCooldownStarted()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "OnForcedCooldownStarted");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnForcedCooldownStarted", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -290,10 +256,8 @@ void ABP_MiningToolActor_C::OnForcedCooldownStarted()
 
 void ABP_MiningToolActor_C::OnGameplayEffectStackChange_789621C0434093352B54EEB33F956A65(const struct FGameplayTag& EffectGameplayTag, const struct FActiveGameplayEffectHandle& Handle, int32 NewStackCount, int32 OldStackCount_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "OnGameplayEffectStackChange_789621C0434093352B54EEB33F956A65");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnGameplayEffectStackChange_789621C0434093352B54EEB33F956A65", FnName));
 
 	Params::BP_MiningToolActor_C_OnGameplayEffectStackChange_789621C0434093352B54EEB33F956A65 Parms{};
 
@@ -316,10 +280,8 @@ void ABP_MiningToolActor_C::OnGameplayEffectStackChange_789621C0434093352B54EEB3
 
 void ABP_MiningToolActor_C::OnGameplayEffectStackChange_EAF05B83CE4C1F8287808ABFA3578A9F(const struct FGameplayTag& EffectGameplayTag, const struct FActiveGameplayEffectHandle& Handle, int32 NewStackCount, int32 OldStackCount_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "OnGameplayEffectStackChange_EAF05B83CE4C1F8287808ABFA3578A9F");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnGameplayEffectStackChange_EAF05B83CE4C1F8287808ABFA3578A9F", FnName));
 
 	Params::BP_MiningToolActor_C_OnGameplayEffectStackChange_EAF05B83CE4C1F8287808ABFA3578A9F Parms{};
 
@@ -341,10 +303,8 @@ void ABP_MiningToolActor_C::OnGameplayEffectStackChange_EAF05B83CE4C1F8287808ABF
 
 void ABP_MiningToolActor_C::OnHeatStackChanged(int32 NewStackCount, int32 OldStackCount_0, int32 StackLimit)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "OnHeatStackChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnHeatStackChanged", FnName));
 
 	Params::BP_MiningToolActor_C_OnHeatStackChanged Parms{};
 
@@ -361,10 +321,8 @@ void ABP_MiningToolActor_C::OnHeatStackChanged(int32 NewStackCount, int32 OldSta
 
 void ABP_MiningToolActor_C::OnMiningAbilityEnded()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "OnMiningAbilityEnded");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnMiningAbilityEnded", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -375,10 +333,8 @@ void ABP_MiningToolActor_C::OnMiningAbilityEnded()
 
 void ABP_MiningToolActor_C::OnOwningWeaponItemLoadData()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "OnOwningWeaponItemLoadData");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnOwningWeaponItemLoadData", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -389,10 +345,8 @@ void ABP_MiningToolActor_C::OnOwningWeaponItemLoadData()
 
 void ABP_MiningToolActor_C::OnSpawnCosmeticEffectsOnFireEnd()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "OnSpawnCosmeticEffectsOnFireEnd");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSpawnCosmeticEffectsOnFireEnd", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -403,10 +357,8 @@ void ABP_MiningToolActor_C::OnSpawnCosmeticEffectsOnFireEnd()
 
 void ABP_MiningToolActor_C::OnSpawnCosmeticEffectsOnFireStart()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "OnSpawnCosmeticEffectsOnFireStart");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSpawnCosmeticEffectsOnFireStart", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -419,10 +371,8 @@ void ABP_MiningToolActor_C::OnSpawnCosmeticEffectsOnFireStart()
 
 void ABP_MiningToolActor_C::OnSpawnCosmeticEffectsWhileFire(const TArray<struct FHitResult>& Hits)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "OnSpawnCosmeticEffectsWhileFire");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSpawnCosmeticEffectsWhileFire", FnName));
 
 	Params::BP_MiningToolActor_C_OnSpawnCosmeticEffectsWhileFire Parms{};
 
@@ -439,10 +389,8 @@ void ABP_MiningToolActor_C::OnSpawnCosmeticEffectsWhileFire(const TArray<struct 
 
 void ABP_MiningToolActor_C::OnTagAdded_31F7E6BC46AB7D9405D41AACAC4260EB(const struct FGameplayTag& Tag)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "OnTagAdded_31F7E6BC46AB7D9405D41AACAC4260EB");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnTagAdded_31F7E6BC46AB7D9405D41AACAC4260EB", FnName));
 
 	Params::BP_MiningToolActor_C_OnTagAdded_31F7E6BC46AB7D9405D41AACAC4260EB Parms{};
 
@@ -459,10 +407,8 @@ void ABP_MiningToolActor_C::OnTagAdded_31F7E6BC46AB7D9405D41AACAC4260EB(const st
 
 void ABP_MiningToolActor_C::OnTagAdded_5737D9664C9A21CE923F009D2D34FCD7(const struct FGameplayTag& Tag)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "OnTagAdded_5737D9664C9A21CE923F009D2D34FCD7");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnTagAdded_5737D9664C9A21CE923F009D2D34FCD7", FnName));
 
 	Params::BP_MiningToolActor_C_OnTagAdded_5737D9664C9A21CE923F009D2D34FCD7 Parms{};
 
@@ -479,10 +425,8 @@ void ABP_MiningToolActor_C::OnTagAdded_5737D9664C9A21CE923F009D2D34FCD7(const st
 
 void ABP_MiningToolActor_C::OnTagAdded_BA0E5E614824F3B67C200C919A766682(const struct FGameplayTag& Tag)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "OnTagAdded_BA0E5E614824F3B67C200C919A766682");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnTagAdded_BA0E5E614824F3B67C200C919A766682", FnName));
 
 	Params::BP_MiningToolActor_C_OnTagAdded_BA0E5E614824F3B67C200C919A766682 Parms{};
 
@@ -499,10 +443,8 @@ void ABP_MiningToolActor_C::OnTagAdded_BA0E5E614824F3B67C200C919A766682(const st
 
 void ABP_MiningToolActor_C::OnTagAdded_BA8FAB2B40E07AE362B789A1FB8C5A93(const struct FGameplayTag& Tag)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "OnTagAdded_BA8FAB2B40E07AE362B789A1FB8C5A93");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnTagAdded_BA8FAB2B40E07AE362B789A1FB8C5A93", FnName));
 
 	Params::BP_MiningToolActor_C_OnTagAdded_BA8FAB2B40E07AE362B789A1FB8C5A93 Parms{};
 
@@ -519,10 +461,8 @@ void ABP_MiningToolActor_C::OnTagAdded_BA8FAB2B40E07AE362B789A1FB8C5A93(const st
 
 void ABP_MiningToolActor_C::OnTagAdded_CA1E3B4E40A739C944885BB2257B37FF(const struct FGameplayTag& Tag)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "OnTagAdded_CA1E3B4E40A739C944885BB2257B37FF");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnTagAdded_CA1E3B4E40A739C944885BB2257B37FF", FnName));
 
 	Params::BP_MiningToolActor_C_OnTagAdded_CA1E3B4E40A739C944885BB2257B37FF Parms{};
 
@@ -539,10 +479,8 @@ void ABP_MiningToolActor_C::OnTagAdded_CA1E3B4E40A739C944885BB2257B37FF(const st
 
 void ABP_MiningToolActor_C::OnTagAdded_CF8C75C94946EC1AB86D13B6AA01098A(const struct FGameplayTag& Tag)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "OnTagAdded_CF8C75C94946EC1AB86D13B6AA01098A");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnTagAdded_CF8C75C94946EC1AB86D13B6AA01098A", FnName));
 
 	Params::BP_MiningToolActor_C_OnTagAdded_CF8C75C94946EC1AB86D13B6AA01098A Parms{};
 
@@ -559,10 +497,8 @@ void ABP_MiningToolActor_C::OnTagAdded_CF8C75C94946EC1AB86D13B6AA01098A(const st
 
 void ABP_MiningToolActor_C::OnTagRemoved_31F7E6BC46AB7D9405D41AACAC4260EB(const struct FGameplayTag& Tag)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "OnTagRemoved_31F7E6BC46AB7D9405D41AACAC4260EB");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnTagRemoved_31F7E6BC46AB7D9405D41AACAC4260EB", FnName));
 
 	Params::BP_MiningToolActor_C_OnTagRemoved_31F7E6BC46AB7D9405D41AACAC4260EB Parms{};
 
@@ -579,10 +515,8 @@ void ABP_MiningToolActor_C::OnTagRemoved_31F7E6BC46AB7D9405D41AACAC4260EB(const 
 
 void ABP_MiningToolActor_C::OnTagRemoved_5737D9664C9A21CE923F009D2D34FCD7(const struct FGameplayTag& Tag)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "OnTagRemoved_5737D9664C9A21CE923F009D2D34FCD7");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnTagRemoved_5737D9664C9A21CE923F009D2D34FCD7", FnName));
 
 	Params::BP_MiningToolActor_C_OnTagRemoved_5737D9664C9A21CE923F009D2D34FCD7 Parms{};
 
@@ -599,10 +533,8 @@ void ABP_MiningToolActor_C::OnTagRemoved_5737D9664C9A21CE923F009D2D34FCD7(const 
 
 void ABP_MiningToolActor_C::OnTagRemoved_BA0E5E614824F3B67C200C919A766682(const struct FGameplayTag& Tag)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "OnTagRemoved_BA0E5E614824F3B67C200C919A766682");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnTagRemoved_BA0E5E614824F3B67C200C919A766682", FnName));
 
 	Params::BP_MiningToolActor_C_OnTagRemoved_BA0E5E614824F3B67C200C919A766682 Parms{};
 
@@ -619,10 +551,8 @@ void ABP_MiningToolActor_C::OnTagRemoved_BA0E5E614824F3B67C200C919A766682(const 
 
 void ABP_MiningToolActor_C::OnTagRemoved_BA8FAB2B40E07AE362B789A1FB8C5A93(const struct FGameplayTag& Tag)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "OnTagRemoved_BA8FAB2B40E07AE362B789A1FB8C5A93");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnTagRemoved_BA8FAB2B40E07AE362B789A1FB8C5A93", FnName));
 
 	Params::BP_MiningToolActor_C_OnTagRemoved_BA8FAB2B40E07AE362B789A1FB8C5A93 Parms{};
 
@@ -639,10 +569,8 @@ void ABP_MiningToolActor_C::OnTagRemoved_BA8FAB2B40E07AE362B789A1FB8C5A93(const 
 
 void ABP_MiningToolActor_C::OnTagRemoved_CA1E3B4E40A739C944885BB2257B37FF(const struct FGameplayTag& Tag)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "OnTagRemoved_CA1E3B4E40A739C944885BB2257B37FF");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnTagRemoved_CA1E3B4E40A739C944885BB2257B37FF", FnName));
 
 	Params::BP_MiningToolActor_C_OnTagRemoved_CA1E3B4E40A739C944885BB2257B37FF Parms{};
 
@@ -659,10 +587,8 @@ void ABP_MiningToolActor_C::OnTagRemoved_CA1E3B4E40A739C944885BB2257B37FF(const 
 
 void ABP_MiningToolActor_C::OnTagRemoved_CF8C75C94946EC1AB86D13B6AA01098A(const struct FGameplayTag& Tag)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "OnTagRemoved_CF8C75C94946EC1AB86D13B6AA01098A");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnTagRemoved_CF8C75C94946EC1AB86D13B6AA01098A", FnName));
 
 	Params::BP_MiningToolActor_C_OnTagRemoved_CF8C75C94946EC1AB86D13B6AA01098A Parms{};
 
@@ -677,10 +603,8 @@ void ABP_MiningToolActor_C::OnTagRemoved_CF8C75C94946EC1AB86D13B6AA01098A(const 
 
 void ABP_MiningToolActor_C::OnWeakSpotDepletedMiningBoostGranted()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "OnWeakSpotDepletedMiningBoostGranted");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnWeakSpotDepletedMiningBoostGranted", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -691,10 +615,8 @@ void ABP_MiningToolActor_C::OnWeakSpotDepletedMiningBoostGranted()
 
 void ABP_MiningToolActor_C::OnWeaponInstanceDataReplicated()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "OnWeaponInstanceDataReplicated");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnWeaponInstanceDataReplicated", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -709,10 +631,8 @@ void ABP_MiningToolActor_C::OnWeaponInstanceDataReplicated()
 
 void ABP_MiningToolActor_C::PlayAudioComponentSound(class UAudioComponent*& InAudioComponent, class USoundBase*& InFPPSample, class USoundBase*& InTPPSample)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "PlayAudioComponentSound");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PlayAudioComponentSound", FnName));
 
 	Params::BP_MiningToolActor_C_PlayAudioComponentSound Parms{};
 
@@ -735,10 +655,8 @@ void ABP_MiningToolActor_C::PlayAudioComponentSound(class UAudioComponent*& InAu
 
 void ABP_MiningToolActor_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "ReceiveEndPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveEndPlay", FnName));
 
 	Params::BP_MiningToolActor_C_ReceiveEndPlay Parms{};
 
@@ -753,10 +671,8 @@ void ABP_MiningToolActor_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 
 void ABP_MiningToolActor_C::UserConstructionScript()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiningToolActor_C", "UserConstructionScript");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UserConstructionScript", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

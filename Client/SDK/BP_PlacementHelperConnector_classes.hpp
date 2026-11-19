@@ -17,19 +17,19 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_PlacementHelperConnector.BP_PlacementHelperConnector_C
-// 0x0050 (0x0B30 - 0x0AE0)
+// 0x0050 (0x0C90 - 0x0C40)
 class ABP_PlacementHelperConnector_C final : public ACrAPHelperActorCustomSpline
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0AE0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UStaticMeshComponent*                   Sphere;                                            // 0x0AE8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UArrowComponent*                        Arrow;                                             // 0x0AF0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	TArray<class USplineMeshComponent*>           SplineMeshes;                                      // 0x0AF8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
-	TArray<class UStaticMeshComponent*>           Steps;                                             // 0x0B08(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
-	bool                                          IsNarrow;                                          // 0x0B18(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_B19[0x7];                                      // 0x0B19(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	double                                        Stairs_Angle;                                      // 0x0B20(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        Ladder_Angle;                                      // 0x0B28(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0C40(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UStaticMeshComponent*                   Sphere;                                            // 0x0C48(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UArrowComponent*                        Arrow;                                             // 0x0C50(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	TArray<class USplineMeshComponent*>           SplineMeshes;                                      // 0x0C58(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
+	TArray<class UStaticMeshComponent*>           Steps;                                             // 0x0C68(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
+	bool                                          IsNarrow;                                          // 0x0C78(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_C79[0x7];                                      // 0x0C79(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	double                                        Stairs_Angle;                                      // 0x0C80(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        Ladder_Angle;                                      // 0x0C88(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_PlacementHelperConnector(int32 EntryPoint);

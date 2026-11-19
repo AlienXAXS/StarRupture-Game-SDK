@@ -16,6 +16,36 @@
 
 SDK_NAMESPACE_START
 
+// Function BP_ViewportRight.BP_ViewportRight_C.ExecuteUbergraph_BP_ViewportRight
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_ViewportRight_C::ExecuteUbergraph_BP_ViewportRight(int32 EntryPoint)
+{
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_ViewportRight_C", "ExecuteUbergraph_BP_ViewportRight", FuncInfo);
+
+	Params::BP_ViewportRight_C_ExecuteUbergraph_BP_ViewportRight Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_ViewportRight.BP_ViewportRight_C.ReceiveBeginPlay
+// (Event, Protected, BlueprintEvent)
+
+void ABP_ViewportRight_C::ReceiveBeginPlay()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_ViewportRight.BP_ViewportRight_C.GetBuildingMeshes
 // (Public, HasOutParams, BlueprintCallable, BlueprintEvent, Const)
 // Parameters:
@@ -24,10 +54,8 @@ SDK_NAMESPACE_START
 
 void ABP_ViewportRight_C::GetBuildingMeshes(class UMeshComponent** MainBody, TArray<class UMeshComponent*>* AdditionalMeshes) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ViewportRight_C", "GetBuildingMeshes");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetBuildingMeshes", FnName));
 
 	Params::BP_ViewportRight_C_GetBuildingMeshes Parms{};
 

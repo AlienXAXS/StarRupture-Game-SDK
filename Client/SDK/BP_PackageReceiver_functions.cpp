@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void ABP_PackageReceiver_C::DoorsClose()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PackageReceiver_C", "DoorsClose");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"DoorsClose", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -35,10 +33,8 @@ void ABP_PackageReceiver_C::DoorsClose()
 
 void ABP_PackageReceiver_C::DoorsOpen()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PackageReceiver_C", "DoorsOpen");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"DoorsOpen", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -49,10 +45,8 @@ void ABP_PackageReceiver_C::DoorsOpen()
 
 void ABP_PackageReceiver_C::Drone_land()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PackageReceiver_C", "Drone_land");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Drone_land", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -65,10 +59,8 @@ void ABP_PackageReceiver_C::Drone_land()
 
 void ABP_PackageReceiver_C::ExecuteUbergraph_BP_PackageReceiver(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PackageReceiver_C", "ExecuteUbergraph_BP_PackageReceiver");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_PackageReceiver_C", "ExecuteUbergraph_BP_PackageReceiver", FuncInfo);
 
 	Params::BP_PackageReceiver_C_ExecuteUbergraph_BP_PackageReceiver Parms{};
 
@@ -85,10 +77,8 @@ void ABP_PackageReceiver_C::ExecuteUbergraph_BP_PackageReceiver(int32 EntryPoint
 
 void ABP_PackageReceiver_C::OnBuildingStateChanged(ECrBuildingState InState)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PackageReceiver_C", "OnBuildingStateChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBuildingStateChanged", FnName));
 
 	Params::BP_PackageReceiver_C_OnBuildingStateChanged Parms{};
 
@@ -103,10 +93,8 @@ void ABP_PackageReceiver_C::OnBuildingStateChanged(ECrBuildingState InState)
 
 void ABP_PackageReceiver_C::OnItemsReceived()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PackageReceiver_C", "OnItemsReceived");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnItemsReceived", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -119,10 +107,8 @@ void ABP_PackageReceiver_C::OnItemsReceived()
 
 void ABP_PackageReceiver_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PackageReceiver_C", "PostPlayBuildingEffect");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PostPlayBuildingEffect", FnName));
 
 	Params::BP_PackageReceiver_C_PostPlayBuildingEffect Parms{};
 
@@ -137,10 +123,8 @@ void ABP_PackageReceiver_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed
 
 void ABP_PackageReceiver_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PackageReceiver_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -151,10 +135,8 @@ void ABP_PackageReceiver_C::ReceiveBeginPlay()
 
 void ABP_PackageReceiver_C::Timeline_0__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PackageReceiver_C", "Timeline_0__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline_0__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -165,10 +147,8 @@ void ABP_PackageReceiver_C::Timeline_0__FinishedFunc()
 
 void ABP_PackageReceiver_C::Timeline_0__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PackageReceiver_C", "Timeline_0__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline_0__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -179,10 +159,8 @@ void ABP_PackageReceiver_C::Timeline_0__UpdateFunc()
 
 void ABP_PackageReceiver_C::Timeline__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PackageReceiver_C", "Timeline__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -193,10 +171,8 @@ void ABP_PackageReceiver_C::Timeline__FinishedFunc()
 
 void ABP_PackageReceiver_C::Timeline__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PackageReceiver_C", "Timeline__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

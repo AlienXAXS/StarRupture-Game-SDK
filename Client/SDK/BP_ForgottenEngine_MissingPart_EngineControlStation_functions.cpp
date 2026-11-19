@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_ForgottenEngine_MissingPart_EngineControlStation_C::ExecuteUbergraph_BP_ForgottenEngine_MissingPart_EngineControlStation(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ForgottenEngine_MissingPart_EngineControlStation_C", "ExecuteUbergraph_BP_ForgottenEngine_MissingPart_EngineControlStation");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_ForgottenEngine_MissingPart_EngineControlStation_C", "ExecuteUbergraph_BP_ForgottenEngine_MissingPart_EngineControlStation", FuncInfo);
 
 	Params::BP_ForgottenEngine_MissingPart_EngineControlStation_C_ExecuteUbergraph_BP_ForgottenEngine_MissingPart_EngineControlStation Parms{};
 
@@ -41,10 +39,8 @@ void ABP_ForgottenEngine_MissingPart_EngineControlStation_C::ExecuteUbergraph_BP
 
 void ABP_ForgottenEngine_MissingPart_EngineControlStation_C::OnMachineActivated()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ForgottenEngine_MissingPart_EngineControlStation_C", "OnMachineActivated");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnMachineActivated", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

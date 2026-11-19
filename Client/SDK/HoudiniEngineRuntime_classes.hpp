@@ -12,10 +12,10 @@
 
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "HoudiniEngineRuntime_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "DeveloperSettings_classes.hpp"
+#include "HoudiniEngineRuntime_structs.hpp"
 #include "PhysicsCore_structs.hpp"
 
 
@@ -73,12 +73,43 @@ public:
 };
 DUMPER7_ASSERTS_AHoudiniAssetActor;
 
-// Class HoudiniEngineRuntime.HoudiniAssetComponent
-// 0x05B0 (0x0AE0 - 0x0530)
-class UHoudiniAssetComponent : public UPrimitiveComponent
+// Class HoudiniEngineRuntime.HoudiniAssetStateEvents
+// 0x0008 (0x0008 - 0x0000)
+class IHoudiniAssetStateEvents
 {
 public:
-	uint8                                         Pad_530[0x8];                                      // 0x0530(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("HoudiniAssetStateEvents")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"HoudiniAssetStateEvents")
+	}
+	static class IHoudiniAssetStateEvents* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<IHoudiniAssetStateEvents>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_IHoudiniAssetStateEvents;
+
+// Class HoudiniEngineRuntime.HoudiniAssetComponent
+// 0x05B0 (0x0AE0 - 0x0530)
+class UHoudiniAssetComponent : public UPrimitiveComponent, public IHoudiniAssetStateEvents
+{
+public:
 	class UHoudiniAsset*                          HoudiniAsset;                                      // 0x0538(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	bool                                          bCookOnParameterChange;                            // 0x0540(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bUploadTransformsToHoudiniEngine;                  // 0x0541(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -206,9 +237,12 @@ public:
 DUMPER7_ASSERTS_UHoudiniAssetBlueprintComponent;
 
 // Class HoudiniEngineRuntime.HoudiniEngineCopyPropertiesInterface
-// 0x0000 (0x0000 - 0x0000)
-class IHoudiniEngineCopyPropertiesInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IHoudiniEngineCopyPropertiesInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -2134,10 +2168,9 @@ DUMPER7_ASSERTS_UHoudiniRuntimeSettings;
 
 // Class HoudiniEngineRuntime.HoudiniSplineComponent
 // 0x0350 (0x05A0 - 0x0250)
-class UHoudiniSplineComponent final : public USceneComponent
+class UHoudiniSplineComponent final : public USceneComponent, public IHoudiniEngineCopyPropertiesInterface
 {
 public:
-	uint8                                         Pad_250[0x8];                                      // 0x0250(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FTransform>                     CurvePoints;                                       // 0x0258(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<struct FVector3d>                      DisplayPoints;                                     // 0x0268(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<int32>                                 DisplayPointIndexDivider;                          // 0x0278(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
@@ -2362,34 +2395,5 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UHoudiniToolsPackageAsset;
-
-// Class HoudiniEngineRuntime.HoudiniAssetStateEvents
-// 0x0000 (0x0000 - 0x0000)
-class IHoudiniAssetStateEvents final
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("HoudiniAssetStateEvents")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"HoudiniAssetStateEvents")
-	}
-	static class IHoudiniAssetStateEvents* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<IHoudiniAssetStateEvents>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_IHoudiniAssetStateEvents;
 
 SDK_NAMESPACE_END

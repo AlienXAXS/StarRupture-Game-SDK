@@ -39,9 +39,12 @@ public:
 DUMPER7_ASSERTS_UNNEModelData;
 
 // Class NNE.NNERuntime
-// 0x0000 (0x0000 - 0x0000)
-class INNERuntime final
+// 0x0008 (0x0008 - 0x0000)
+class INNERuntime
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -68,9 +71,12 @@ public:
 DUMPER7_ASSERTS_INNERuntime;
 
 // Class NNE.NNERuntimeCPU
-// 0x0000 (0x0000 - 0x0000)
-class INNERuntimeCPU final
+// 0x0008 (0x0008 - 0x0000)
+class INNERuntimeCPU
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -97,9 +103,12 @@ public:
 DUMPER7_ASSERTS_INNERuntimeCPU;
 
 // Class NNE.NNERuntimeGPU
-// 0x0000 (0x0000 - 0x0000)
-class INNERuntimeGPU final
+// 0x0008 (0x0008 - 0x0000)
+class INNERuntimeGPU
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -126,9 +135,12 @@ public:
 DUMPER7_ASSERTS_INNERuntimeGPU;
 
 // Class NNE.NNERuntimeNPU
-// 0x0000 (0x0000 - 0x0000)
-class INNERuntimeNPU final
+// 0x0008 (0x0008 - 0x0000)
+class INNERuntimeNPU
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -155,9 +167,12 @@ public:
 DUMPER7_ASSERTS_INNERuntimeNPU;
 
 // Class NNE.NNERuntimeRDG
-// 0x0000 (0x0000 - 0x0000)
-class INNERuntimeRDG final
+// 0x0008 (0x0008 - 0x0000)
+class INNERuntimeRDG
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{

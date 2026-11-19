@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_AnimNotify_RunCrAiAction_DealDamage.BP_AnimNotify_RunCrAiAction_DealDamage_C
-// 0x0018 (0x0050 - 0x0038)
+// 0x0020 (0x0058 - 0x0038)
 class UBP_AnimNotify_RunCrAiAction_DealDamage_C final : public UCrAnimNotify_RunAiAction
 {
 public:
@@ -25,6 +25,7 @@ public:
 	float                                         AttackDistance;                                    // 0x0044(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         AttackConeHalf_Angle;                              // 0x0048(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	float                                         BuildingAttackDistance;                            // 0x004C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          UseDamageEffectFromConfig;                         // 0x0050(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	class UCrAiAction* CreateAiAction(class AActor* Actor) const;

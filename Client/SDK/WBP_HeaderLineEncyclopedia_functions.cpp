@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_HeaderLineEncyclopedia_C::ExecuteUbergraph_WBP_HeaderLineEncyclopedia(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeaderLineEncyclopedia_C", "ExecuteUbergraph_WBP_HeaderLineEncyclopedia");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_HeaderLineEncyclopedia_C", "ExecuteUbergraph_WBP_HeaderLineEncyclopedia", FuncInfo);
 
 	Params::WBP_HeaderLineEncyclopedia_C_ExecuteUbergraph_WBP_HeaderLineEncyclopedia Parms{};
 
@@ -43,10 +41,8 @@ void UWBP_HeaderLineEncyclopedia_C::ExecuteUbergraph_WBP_HeaderLineEncyclopedia(
 
 void UWBP_HeaderLineEncyclopedia_C::Set_Text_Size(class UClass* InStyle)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeaderLineEncyclopedia_C", "Set Text Size");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Set Text Size", FnName));
 
 	Params::WBP_HeaderLineEncyclopedia_C_Set_Text_Size Parms{};
 
@@ -63,10 +59,8 @@ void UWBP_HeaderLineEncyclopedia_C::Set_Text_Size(class UClass* InStyle)
 
 void UWBP_HeaderLineEncyclopedia_C::SetShowUnreadIconBP(bool Visible)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeaderLineEncyclopedia_C", "SetShowUnreadIconBP");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetShowUnreadIconBP", FnName));
 
 	Params::WBP_HeaderLineEncyclopedia_C_SetShowUnreadIconBP Parms{};
 
@@ -83,10 +77,8 @@ void UWBP_HeaderLineEncyclopedia_C::SetShowUnreadIconBP(bool Visible)
 
 void UWBP_HeaderLineEncyclopedia_C::SetTextStyle(bool isHighlight)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeaderLineEncyclopedia_C", "SetTextStyle");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetTextStyle", FnName));
 
 	Params::WBP_HeaderLineEncyclopedia_C_SetTextStyle Parms{};
 
@@ -103,10 +95,8 @@ void UWBP_HeaderLineEncyclopedia_C::SetTextStyle(bool isHighlight)
 
 void UWBP_HeaderLineEncyclopedia_C::SetTitle(const class FText& InTitle)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeaderLineEncyclopedia_C", "SetTitle");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetTitle", FnName));
 
 	Params::WBP_HeaderLineEncyclopedia_C_SetTitle Parms{};
 

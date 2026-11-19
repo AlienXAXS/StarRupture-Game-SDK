@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UABP_Mannequin_Base_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "AnimGraph");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimGraph", FnName));
 
 	Params::ABP_Mannequin_Base_C_AnimGraph Parms{};
 
@@ -42,10 +40,8 @@ void UABP_Mannequin_Base_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 
 void UABP_Mannequin_Base_C::AnimNotify_SpawnEnd()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "AnimNotify_SpawnEnd");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_SpawnEnd", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -58,10 +54,8 @@ void UABP_Mannequin_Base_C::AnimNotify_SpawnEnd()
 
 void UABP_Mannequin_Base_C::BlueprintThreadSafeUpdateAnimation(float DeltaTime)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "BlueprintThreadSafeUpdateAnimation");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BlueprintThreadSafeUpdateAnimation", FnName));
 
 	Params::ABP_Mannequin_Base_C_BlueprintThreadSafeUpdateAnimation Parms{};
 
@@ -78,10 +72,8 @@ void UABP_Mannequin_Base_C::BlueprintThreadSafeUpdateAnimation(float DeltaTime)
 
 void UABP_Mannequin_Base_C::BlueprintUpdateAnimation(float DeltaTimeX)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "BlueprintUpdateAnimation");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BlueprintUpdateAnimation", FnName));
 
 	Params::ABP_Mannequin_Base_C_BlueprintUpdateAnimation Parms{};
 
@@ -96,10 +88,8 @@ void UABP_Mannequin_Base_C::BlueprintUpdateAnimation(float DeltaTimeX)
 
 void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_ControlRig_AB731E804A01389549EA908026FF2C3B()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_ControlRig_AB731E804A01389549EA908026FF2C3B");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_ControlRig_AB731E804A01389549EA908026FF2C3B", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -110,10 +100,8 @@ void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mann
 
 void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_LayeredBoneBlend_BC2852EE4CC50D15AAA736BAAA5D3EF5()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_LayeredBoneBlend_BC2852EE4CC50D15AAA736BAAA5D3EF5");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_LayeredBoneBlend_BC2852EE4CC50D15AAA736BAAA5D3EF5", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -124,10 +112,8 @@ void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mann
 
 void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_0604D8CD436720C96DE4F4A314EDE9BA()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_0604D8CD436720C96DE4F4A314EDE9BA");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_0604D8CD436720C96DE4F4A314EDE9BA", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -138,10 +124,8 @@ void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mann
 
 void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_121211F94BF63FE59E0FAC9A13B99055()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_121211F94BF63FE59E0FAC9A13B99055");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_121211F94BF63FE59E0FAC9A13B99055", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -152,10 +136,8 @@ void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mann
 
 void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_1BD28CC74109EB0BC9F5A2BC5D877513()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_1BD28CC74109EB0BC9F5A2BC5D877513");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_1BD28CC74109EB0BC9F5A2BC5D877513", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -166,10 +148,8 @@ void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mann
 
 void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_1ECFE0104CCDB321D2B45EBCF8711E43()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_1ECFE0104CCDB321D2B45EBCF8711E43");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_1ECFE0104CCDB321D2B45EBCF8711E43", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -180,10 +160,8 @@ void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mann
 
 void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_2024F06141629ACFFDAEB592021A704C()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_2024F06141629ACFFDAEB592021A704C");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_2024F06141629ACFFDAEB592021A704C", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -194,10 +172,8 @@ void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mann
 
 void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_22CC2D8E425AC3929BA3B49EC4B3A449()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_22CC2D8E425AC3929BA3B49EC4B3A449");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_22CC2D8E425AC3929BA3B49EC4B3A449", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -208,10 +184,8 @@ void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mann
 
 void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_315BF5D8419BF656B5A91F8DF3A3A47F()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_315BF5D8419BF656B5A91F8DF3A3A47F");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_315BF5D8419BF656B5A91F8DF3A3A47F", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -222,10 +196,8 @@ void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mann
 
 void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_339C03EA436B0E9C636E4EBBDFEFB48B()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_339C03EA436B0E9C636E4EBBDFEFB48B");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_339C03EA436B0E9C636E4EBBDFEFB48B", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -236,10 +208,8 @@ void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mann
 
 void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_339F7A3742028D5892AD67A16463FA1B()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_339F7A3742028D5892AD67A16463FA1B");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_339F7A3742028D5892AD67A16463FA1B", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -250,10 +220,8 @@ void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mann
 
 void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_53E8225E4CCAD20359C735B1704DD721()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_53E8225E4CCAD20359C735B1704DD721");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_53E8225E4CCAD20359C735B1704DD721", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -264,10 +232,8 @@ void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mann
 
 void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_58BA0E1246F174E14BEB83A72F4B14A0()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_58BA0E1246F174E14BEB83A72F4B14A0");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_58BA0E1246F174E14BEB83A72F4B14A0", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -278,10 +244,8 @@ void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mann
 
 void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_6E07F7B34DE20BD5AA8E33BCC953F206()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_6E07F7B34DE20BD5AA8E33BCC953F206");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_6E07F7B34DE20BD5AA8E33BCC953F206", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -292,10 +256,8 @@ void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mann
 
 void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_727985CC469470662A9373B766CE058E()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_727985CC469470662A9373B766CE058E");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_727985CC469470662A9373B766CE058E", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -306,10 +268,8 @@ void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mann
 
 void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_73C4553A40117BD6701AA7A18DB112D5()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_73C4553A40117BD6701AA7A18DB112D5");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_73C4553A40117BD6701AA7A18DB112D5", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -320,10 +280,8 @@ void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mann
 
 void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_7B6E9BCA4603A89CDBA9F7BE5CC1359B()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_7B6E9BCA4603A89CDBA9F7BE5CC1359B");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_7B6E9BCA4603A89CDBA9F7BE5CC1359B", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -334,10 +292,8 @@ void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mann
 
 void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_7E5A20BA460ADEDF2910CD9DAD63B234()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_7E5A20BA460ADEDF2910CD9DAD63B234");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_7E5A20BA460ADEDF2910CD9DAD63B234", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -348,10 +304,8 @@ void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mann
 
 void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_920189304034CB2849224CB657C0A436()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_920189304034CB2849224CB657C0A436");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_920189304034CB2849224CB657C0A436", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -362,10 +316,8 @@ void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mann
 
 void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_9DB7139342756B290BC3DFA1F561D694()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_9DB7139342756B290BC3DFA1F561D694");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_9DB7139342756B290BC3DFA1F561D694", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -376,10 +328,8 @@ void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mann
 
 void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_A7D529C24C320425651CB59B2D09E6E3()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_A7D529C24C320425651CB59B2D09E6E3");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_A7D529C24C320425651CB59B2D09E6E3", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -390,10 +340,8 @@ void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mann
 
 void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_AA7A2ED84DD0988C59296A979D2EE163()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_AA7A2ED84DD0988C59296A979D2EE163");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_AA7A2ED84DD0988C59296A979D2EE163", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -404,10 +352,8 @@ void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mann
 
 void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_ABD6C5F347773154F07BB08EEA009AFC()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_ABD6C5F347773154F07BB08EEA009AFC");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_ABD6C5F347773154F07BB08EEA009AFC", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -418,10 +364,8 @@ void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mann
 
 void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_B9B0171F4FE74550048C718443E6CFA0()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_B9B0171F4FE74550048C718443E6CFA0");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_B9B0171F4FE74550048C718443E6CFA0", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -432,10 +376,8 @@ void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mann
 
 void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_C1E500D546EC44FBE439CA9306934F50()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_C1E500D546EC44FBE439CA9306934F50");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_C1E500D546EC44FBE439CA9306934F50", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -446,10 +388,8 @@ void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mann
 
 void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_CCA1BEAA4A46DB59313981A1FD4598A0()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_CCA1BEAA4A46DB59313981A1FD4598A0");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mannequin_Base_AnimGraphNode_TransitionResult_CCA1BEAA4A46DB59313981A1FD4598A0", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -462,10 +402,8 @@ void UABP_Mannequin_Base_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Mann
 
 void UABP_Mannequin_Base_C::ExecuteUbergraph_ABP_Mannequin_Base(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "ExecuteUbergraph_ABP_Mannequin_Base");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "ABP_Mannequin_Base_C", "ExecuteUbergraph_ABP_Mannequin_Base", FuncInfo);
 
 	Params::ABP_Mannequin_Base_C_ExecuteUbergraph_ABP_Mannequin_Base Parms{};
 
@@ -485,10 +423,8 @@ void UABP_Mannequin_Base_C::ExecuteUbergraph_ABP_Mannequin_Base(int32 EntryPoint
 
 void UABP_Mannequin_Base_C::FullBody_Aiming(const struct FPoseLink& PreAimPose, double AimYaw_0, double AimPitch_0, struct FPoseLink* FullBody_Aiming_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "FullBody_Aiming");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "ABP_Mannequin_Base_C", "FullBody_Aiming", FuncInfo);
 
 	Params::ABP_Mannequin_Base_C_FullBody_Aiming Parms{};
 
@@ -510,10 +446,8 @@ void UABP_Mannequin_Base_C::FullBody_Aiming(const struct FPoseLink& PreAimPose, 
 
 void UABP_Mannequin_Base_C::FullBody_CycleState(struct FPoseLink* FullBody_CycleState_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "FullBody_CycleState");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "ABP_Mannequin_Base_C", "FullBody_CycleState", FuncInfo);
 
 	Params::ABP_Mannequin_Base_C_FullBody_CycleState Parms{};
 
@@ -531,10 +465,8 @@ void UABP_Mannequin_Base_C::FullBody_CycleState(struct FPoseLink* FullBody_Cycle
 
 void UABP_Mannequin_Base_C::FullBody_Dash(struct FPoseLink* FullBody_Dash_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "FullBody_Dash");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "ABP_Mannequin_Base_C", "FullBody_Dash", FuncInfo);
 
 	Params::ABP_Mannequin_Base_C_FullBody_Dash Parms{};
 
@@ -552,10 +484,8 @@ void UABP_Mannequin_Base_C::FullBody_Dash(struct FPoseLink* FullBody_Dash_0)
 
 void UABP_Mannequin_Base_C::FullBody_DoubleJump(struct FPoseLink* FullBody_DoubleJump_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "FullBody_DoubleJump");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "ABP_Mannequin_Base_C", "FullBody_DoubleJump", FuncInfo);
 
 	Params::ABP_Mannequin_Base_C_FullBody_DoubleJump Parms{};
 
@@ -573,10 +503,8 @@ void UABP_Mannequin_Base_C::FullBody_DoubleJump(struct FPoseLink* FullBody_Doubl
 
 void UABP_Mannequin_Base_C::FullBody_EntryState(struct FPoseLink* FullBody_EntryState_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "FullBody_EntryState");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "ABP_Mannequin_Base_C", "FullBody_EntryState", FuncInfo);
 
 	Params::ABP_Mannequin_Base_C_FullBody_EntryState Parms{};
 
@@ -594,10 +522,8 @@ void UABP_Mannequin_Base_C::FullBody_EntryState(struct FPoseLink* FullBody_Entry
 
 void UABP_Mannequin_Base_C::FullBody_FallLandState(struct FPoseLink* FullBody_FallLandState_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "FullBody_FallLandState");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "ABP_Mannequin_Base_C", "FullBody_FallLandState", FuncInfo);
 
 	Params::ABP_Mannequin_Base_C_FullBody_FallLandState Parms{};
 
@@ -615,10 +541,8 @@ void UABP_Mannequin_Base_C::FullBody_FallLandState(struct FPoseLink* FullBody_Fa
 
 void UABP_Mannequin_Base_C::FullBody_FallLoopState(struct FPoseLink* FullBody_FallLoopState_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "FullBody_FallLoopState");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "ABP_Mannequin_Base_C", "FullBody_FallLoopState", FuncInfo);
 
 	Params::ABP_Mannequin_Base_C_FullBody_FallLoopState Parms{};
 
@@ -636,10 +560,8 @@ void UABP_Mannequin_Base_C::FullBody_FallLoopState(struct FPoseLink* FullBody_Fa
 
 void UABP_Mannequin_Base_C::FullBody_IdleState(struct FPoseLink* FullBody_IdleState_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "FullBody_IdleState");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "ABP_Mannequin_Base_C", "FullBody_IdleState", FuncInfo);
 
 	Params::ABP_Mannequin_Base_C_FullBody_IdleState Parms{};
 
@@ -657,10 +579,8 @@ void UABP_Mannequin_Base_C::FullBody_IdleState(struct FPoseLink* FullBody_IdleSt
 
 void UABP_Mannequin_Base_C::FullBody_JumpApexState(struct FPoseLink* FullBody_JumpApexState_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "FullBody_JumpApexState");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "ABP_Mannequin_Base_C", "FullBody_JumpApexState", FuncInfo);
 
 	Params::ABP_Mannequin_Base_C_FullBody_JumpApexState Parms{};
 
@@ -678,10 +598,8 @@ void UABP_Mannequin_Base_C::FullBody_JumpApexState(struct FPoseLink* FullBody_Ju
 
 void UABP_Mannequin_Base_C::FullBody_JumpStartLoopState(struct FPoseLink* FullBody_JumpStartLoopState_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "FullBody_JumpStartLoopState");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "ABP_Mannequin_Base_C", "FullBody_JumpStartLoopState", FuncInfo);
 
 	Params::ABP_Mannequin_Base_C_FullBody_JumpStartLoopState Parms{};
 
@@ -699,10 +617,8 @@ void UABP_Mannequin_Base_C::FullBody_JumpStartLoopState(struct FPoseLink* FullBo
 
 void UABP_Mannequin_Base_C::FullBody_JumpStartState(struct FPoseLink* FullBody_JumpStartState_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "FullBody_JumpStartState");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "ABP_Mannequin_Base_C", "FullBody_JumpStartState", FuncInfo);
 
 	Params::ABP_Mannequin_Base_C_FullBody_JumpStartState Parms{};
 
@@ -720,10 +636,8 @@ void UABP_Mannequin_Base_C::FullBody_JumpStartState(struct FPoseLink* FullBody_J
 
 void UABP_Mannequin_Base_C::FullBody_PivotState(struct FPoseLink* FullBody_PivotState_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "FullBody_PivotState");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "ABP_Mannequin_Base_C", "FullBody_PivotState", FuncInfo);
 
 	Params::ABP_Mannequin_Base_C_FullBody_PivotState Parms{};
 
@@ -742,10 +656,8 @@ void UABP_Mannequin_Base_C::FullBody_PivotState(struct FPoseLink* FullBody_Pivot
 
 void UABP_Mannequin_Base_C::FullBody_SkeletalControls(const struct FPoseLink& InPose, struct FPoseLink* FullBody_SkeletalControls_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "FullBody_SkeletalControls");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "ABP_Mannequin_Base_C", "FullBody_SkeletalControls", FuncInfo);
 
 	Params::ABP_Mannequin_Base_C_FullBody_SkeletalControls Parms{};
 
@@ -765,10 +677,8 @@ void UABP_Mannequin_Base_C::FullBody_SkeletalControls(const struct FPoseLink& In
 
 void UABP_Mannequin_Base_C::FullBody_SlideInState(struct FPoseLink* FullBody_SlideInState_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "FullBody_SlideInState");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "ABP_Mannequin_Base_C", "FullBody_SlideInState", FuncInfo);
 
 	Params::ABP_Mannequin_Base_C_FullBody_SlideInState Parms{};
 
@@ -786,10 +696,8 @@ void UABP_Mannequin_Base_C::FullBody_SlideInState(struct FPoseLink* FullBody_Sli
 
 void UABP_Mannequin_Base_C::FullBody_SlideLoopState(struct FPoseLink* FullBody_SlideLoopState_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "FullBody_SlideLoopState");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "ABP_Mannequin_Base_C", "FullBody_SlideLoopState", FuncInfo);
 
 	Params::ABP_Mannequin_Base_C_FullBody_SlideLoopState Parms{};
 
@@ -807,10 +715,8 @@ void UABP_Mannequin_Base_C::FullBody_SlideLoopState(struct FPoseLink* FullBody_S
 
 void UABP_Mannequin_Base_C::FullBody_SlideOutState(struct FPoseLink* FullBody_SlideOutState_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "FullBody_SlideOutState");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "ABP_Mannequin_Base_C", "FullBody_SlideOutState", FuncInfo);
 
 	Params::ABP_Mannequin_Base_C_FullBody_SlideOutState Parms{};
 
@@ -828,10 +734,8 @@ void UABP_Mannequin_Base_C::FullBody_SlideOutState(struct FPoseLink* FullBody_Sl
 
 void UABP_Mannequin_Base_C::FullBody_StartState(struct FPoseLink* FullBody_StartState_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "FullBody_StartState");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "ABP_Mannequin_Base_C", "FullBody_StartState", FuncInfo);
 
 	Params::ABP_Mannequin_Base_C_FullBody_StartState Parms{};
 
@@ -849,10 +753,8 @@ void UABP_Mannequin_Base_C::FullBody_StartState(struct FPoseLink* FullBody_Start
 
 void UABP_Mannequin_Base_C::FullBody_StopState(struct FPoseLink* FullBody_StopState_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "FullBody_StopState");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "ABP_Mannequin_Base_C", "FullBody_StopState", FuncInfo);
 
 	Params::ABP_Mannequin_Base_C_FullBody_StopState Parms{};
 
@@ -870,10 +772,8 @@ void UABP_Mannequin_Base_C::FullBody_StopState(struct FPoseLink* FullBody_StopSt
 
 void UABP_Mannequin_Base_C::FullBody_ZiplineLoop(struct FPoseLink* FullBody_ZiplineLoop_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "FullBody_ZiplineLoop");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "ABP_Mannequin_Base_C", "FullBody_ZiplineLoop", FuncInfo);
 
 	Params::ABP_Mannequin_Base_C_FullBody_ZiplineLoop Parms{};
 
@@ -891,10 +791,8 @@ void UABP_Mannequin_Base_C::FullBody_ZiplineLoop(struct FPoseLink* FullBody_Zipl
 
 void UABP_Mannequin_Base_C::FullBodyAdditives(struct FPoseLink* FullBodyAdditives_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "FullBodyAdditives");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "ABP_Mannequin_Base_C", "FullBodyAdditives", FuncInfo);
 
 	Params::ABP_Mannequin_Base_C_FullBodyAdditives Parms{};
 
@@ -912,10 +810,8 @@ void UABP_Mannequin_Base_C::FullBodyAdditives(struct FPoseLink* FullBodyAdditive
 
 class ACrCharacterPlayerBase* UABP_Mannequin_Base_C::GetCrCharacterThreadSafe()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "GetCrCharacterThreadSafe");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetCrCharacterThreadSafe", FnName));
 
 	Params::ABP_Mannequin_Base_C_GetCrCharacterThreadSafe Parms{};
 
@@ -932,10 +828,8 @@ class ACrCharacterPlayerBase* UABP_Mannequin_Base_C::GetCrCharacterThreadSafe()
 
 class UCharacterMovementComponent* UABP_Mannequin_Base_C::GetMovementComponent()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "GetMovementComponent");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetMovementComponent", FnName));
 
 	Params::ABP_Mannequin_Base_C_GetMovementComponent Parms{};
 
@@ -952,10 +846,8 @@ class UCharacterMovementComponent* UABP_Mannequin_Base_C::GetMovementComponent()
 
 void UABP_Mannequin_Base_C::Head_FaceLayer(struct FPoseLink* Head_FaceLayer_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "Head_FaceLayer");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "ABP_Mannequin_Base_C", "Head_FaceLayer", FuncInfo);
 
 	Params::ABP_Mannequin_Base_C_Head_FaceLayer Parms{};
 
@@ -973,10 +865,8 @@ void UABP_Mannequin_Base_C::Head_FaceLayer(struct FPoseLink* Head_FaceLayer_0)
 
 bool UABP_Mannequin_Base_C::IsMovingPerpendicularToInitialPivot()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "IsMovingPerpendicularToInitialPivot");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IsMovingPerpendicularToInitialPivot", FnName));
 
 	Params::ABP_Mannequin_Base_C_IsMovingPerpendicularToInitialPivot Parms{};
 
@@ -994,10 +884,8 @@ bool UABP_Mannequin_Base_C::IsMovingPerpendicularToInitialPivot()
 
 void UABP_Mannequin_Base_C::LeftHandPose_OverrideState(const struct FPoseLink& InputPose, struct FPoseLink* LeftHandPose_OverrideState_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "LeftHandPose_OverrideState");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "ABP_Mannequin_Base_C", "LeftHandPose_OverrideState", FuncInfo);
 
 	Params::ABP_Mannequin_Base_C_LeftHandPose_OverrideState Parms{};
 
@@ -1015,10 +903,8 @@ void UABP_Mannequin_Base_C::LeftHandPose_OverrideState(const struct FPoseLink& I
 
 void UABP_Mannequin_Base_C::ProcessTurnYawCurve()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "ProcessTurnYawCurve");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ProcessTurnYawCurve", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1035,10 +921,8 @@ void UABP_Mannequin_Base_C::ProcessTurnYawCurve()
 
 void UABP_Mannequin_Base_C::SelectCardinalDirectionFromAngle(double Angle, double DeadZone, EAnimEnum_CardinalDirection CurrentDirection, bool UseCurrentDirection, EAnimEnum_CardinalDirection* Direction)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "SelectCardinalDirectionFromAngle");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SelectCardinalDirectionFromAngle", FnName));
 
 	Params::ABP_Mannequin_Base_C_SelectCardinalDirectionFromAngle Parms{};
 
@@ -1059,10 +943,8 @@ void UABP_Mannequin_Base_C::SelectCardinalDirectionFromAngle(double Angle, doubl
 
 void UABP_Mannequin_Base_C::SetPlayrateToAnimSpeed()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "SetPlayrateToAnimSpeed");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetPlayrateToAnimSpeed", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1075,10 +957,8 @@ void UABP_Mannequin_Base_C::SetPlayrateToAnimSpeed()
 
 void UABP_Mannequin_Base_C::SetRootYawOffset(double InRootYawOffset)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "SetRootYawOffset");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetRootYawOffset", FnName));
 
 	Params::ABP_Mannequin_Base_C_SetRootYawOffset Parms{};
 
@@ -1096,10 +976,8 @@ void UABP_Mannequin_Base_C::SetRootYawOffset(double InRootYawOffset)
 
 void UABP_Mannequin_Base_C::SetUpPivotState(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "SetUpPivotState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetUpPivotState", FnName));
 
 	Params::ABP_Mannequin_Base_C_SetUpPivotState Parms{};
 
@@ -1118,10 +996,8 @@ void UABP_Mannequin_Base_C::SetUpPivotState(const struct FAnimUpdateContext& Con
 
 void UABP_Mannequin_Base_C::SetUpStartState(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "SetUpStartState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetUpStartState", FnName));
 
 	Params::ABP_Mannequin_Base_C_SetUpStartState Parms{};
 
@@ -1139,10 +1015,8 @@ void UABP_Mannequin_Base_C::SetUpStartState(const struct FAnimUpdateContext& Con
 
 void UABP_Mannequin_Base_C::Should_do_Legs_IK(bool* DisableCtrlRig_)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "Should do Legs IK");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Should do Legs IK", FnName));
 
 	Params::ABP_Mannequin_Base_C_Should_do_Legs_IK Parms{};
 
@@ -1160,10 +1034,8 @@ void UABP_Mannequin_Base_C::Should_do_Legs_IK(bool* DisableCtrlRig_)
 
 bool UABP_Mannequin_Base_C::ShouldEnableControlRig()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "ShouldEnableControlRig");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ShouldEnableControlRig", FnName));
 
 	Params::ABP_Mannequin_Base_C_ShouldEnableControlRig Parms{};
 
@@ -1180,10 +1052,8 @@ bool UABP_Mannequin_Base_C::ShouldEnableControlRig()
 
 void UABP_Mannequin_Base_C::Update_Aim_Yaw_and_Pitch(double Delta_Seconds)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "Update Aim Yaw and Pitch");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Update Aim Yaw and Pitch", FnName));
 
 	Params::ABP_Mannequin_Base_C_Update_Aim_Yaw_and_Pitch Parms{};
 
@@ -1198,10 +1068,8 @@ void UABP_Mannequin_Base_C::Update_Aim_Yaw_and_Pitch(double Delta_Seconds)
 
 void UABP_Mannequin_Base_C::UpdateAccelerationData()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "UpdateAccelerationData");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateAccelerationData", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1214,10 +1082,8 @@ void UABP_Mannequin_Base_C::UpdateAccelerationData()
 
 void UABP_Mannequin_Base_C::UpdateBlendWeightData(double DeltaTime)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "UpdateBlendWeightData");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateBlendWeightData", FnName));
 
 	Params::ABP_Mannequin_Base_C_UpdateBlendWeightData Parms{};
 
@@ -1234,10 +1100,8 @@ void UABP_Mannequin_Base_C::UpdateBlendWeightData(double DeltaTime)
 
 void UABP_Mannequin_Base_C::UpdateCharacterStateData(double DeltaTime)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "UpdateCharacterStateData");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateCharacterStateData", FnName));
 
 	Params::ABP_Mannequin_Base_C_UpdateCharacterStateData Parms{};
 
@@ -1255,10 +1119,8 @@ void UABP_Mannequin_Base_C::UpdateCharacterStateData(double DeltaTime)
 
 void UABP_Mannequin_Base_C::UpdateIdleState(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "UpdateIdleState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateIdleState", FnName));
 
 	Params::ABP_Mannequin_Base_C_UpdateIdleState Parms{};
 
@@ -1274,10 +1136,8 @@ void UABP_Mannequin_Base_C::UpdateIdleState(const struct FAnimUpdateContext& Con
 
 void UABP_Mannequin_Base_C::UpdateJumpFallData()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "UpdateJumpFallData");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateJumpFallData", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1290,10 +1150,8 @@ void UABP_Mannequin_Base_C::UpdateJumpFallData()
 
 void UABP_Mannequin_Base_C::UpdateLocationData(double DeltaTime)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "UpdateLocationData");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateLocationData", FnName));
 
 	Params::ABP_Mannequin_Base_C_UpdateLocationData Parms{};
 
@@ -1311,10 +1169,8 @@ void UABP_Mannequin_Base_C::UpdateLocationData(double DeltaTime)
 
 void UABP_Mannequin_Base_C::UpdateLocomotionStateMachine(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "UpdateLocomotionStateMachine");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateLocomotionStateMachine", FnName));
 
 	Params::ABP_Mannequin_Base_C_UpdateLocomotionStateMachine Parms{};
 
@@ -1333,10 +1189,8 @@ void UABP_Mannequin_Base_C::UpdateLocomotionStateMachine(const struct FAnimUpdat
 
 void UABP_Mannequin_Base_C::UpdatePivotState(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "UpdatePivotState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdatePivotState", FnName));
 
 	Params::ABP_Mannequin_Base_C_UpdatePivotState Parms{};
 
@@ -1354,10 +1208,8 @@ void UABP_Mannequin_Base_C::UpdatePivotState(const struct FAnimUpdateContext& Co
 
 void UABP_Mannequin_Base_C::UpdateRootYawOffset(double InDeltaTime)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "UpdateRootYawOffset");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateRootYawOffset", FnName));
 
 	Params::ABP_Mannequin_Base_C_UpdateRootYawOffset Parms{};
 
@@ -1374,10 +1226,8 @@ void UABP_Mannequin_Base_C::UpdateRootYawOffset(double InDeltaTime)
 
 void UABP_Mannequin_Base_C::UpdateRotationData(double Delta_Time)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "UpdateRotationData");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateRotationData", FnName));
 
 	Params::ABP_Mannequin_Base_C_UpdateRotationData Parms{};
 
@@ -1395,10 +1245,8 @@ void UABP_Mannequin_Base_C::UpdateRotationData(double Delta_Time)
 
 void UABP_Mannequin_Base_C::UpdateStartState(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "UpdateStartState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateStartState", FnName));
 
 	Params::ABP_Mannequin_Base_C_UpdateStartState Parms{};
 
@@ -1417,10 +1265,8 @@ void UABP_Mannequin_Base_C::UpdateStartState(const struct FAnimUpdateContext& Co
 
 void UABP_Mannequin_Base_C::UpdateStopState(const struct FAnimUpdateContext& Context, const struct FAnimNodeReference& Node)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "UpdateStopState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateStopState", FnName));
 
 	Params::ABP_Mannequin_Base_C_UpdateStopState Parms{};
 
@@ -1436,10 +1282,8 @@ void UABP_Mannequin_Base_C::UpdateStopState(const struct FAnimUpdateContext& Con
 
 void UABP_Mannequin_Base_C::UpdateVelocityData()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "UpdateVelocityData");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateVelocityData", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1450,10 +1294,8 @@ void UABP_Mannequin_Base_C::UpdateVelocityData()
 
 void UABP_Mannequin_Base_C::UpdateWallDetectionHeuristic()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "UpdateWallDetectionHeuristic");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateWallDetectionHeuristic", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1467,10 +1309,8 @@ void UABP_Mannequin_Base_C::UpdateWallDetectionHeuristic()
 
 EAnimEnum_CardinalDirection UABP_Mannequin_Base_C::GetOppositeCardinalDirection(EAnimEnum_CardinalDirection CurrentDirection) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Mannequin_Base_C", "GetOppositeCardinalDirection");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetOppositeCardinalDirection", FnName));
 
 	Params::ABP_Mannequin_Base_C_GetOppositeCardinalDirection Parms{};
 

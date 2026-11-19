@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 class UCrAiAnimalPanzerHundUpdateStateComponent* ICrAiAnimalPanzerHundInterface::GetPanzerHundUpdateStateComponent()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("CrAiAnimalPanzerHundInterface", "GetPanzerHundUpdateStateComponent");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"GetPanzerHundUpdateStateComponent", FnName));
 
 	Params::CrAiAnimalPanzerHundInterface_GetPanzerHundUpdateStateComponent Parms{};
 
@@ -142,6 +140,29 @@ void UCrAiAnimalPanzerHundUpdateStateComponent::ResetDamageTimestamp()
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyPooledActorComponentInterface.OnPooledOwnerActivityChanged
+// (Native, Public)
+// Parameters:
+// bool                                    bNewEnabled                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrAiAnimalPanzerHundUpdateStateComponent::OnPooledOwnerActivityChanged(bool bNewEnabled)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPooledOwnerActivityChanged", FnName));
+
+	Params::MassEnemyPooledActorComponentInterface_OnPooledOwnerActivityChanged Parms{};
+
+	Parms.bNewEnabled = bNewEnabled;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }

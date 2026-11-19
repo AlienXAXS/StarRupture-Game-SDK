@@ -26,9 +26,9 @@ public:
 	class UCommonTextBlock*                       ItemNumberStateSlash;                              // 0x0470(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UCommonTextBlock*                       ItemNumberState;                                   // 0x0478(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UCommonTextBlock*                       ItemNumberMax;                                     // 0x0480(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UWBP_HeaderLine_C*                      ItemInfoWidget;                                    // 0x0488(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UImage*                                 Image_346;                                         // 0x0490(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UCommonBorder*                          Frame;                                             // 0x0498(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UWBP_HeaderLineBuildingInfo_C*          HeaderLine;                                        // 0x0488(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UCommonBorder*                          Frame;                                             // 0x0490(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	uint8                                         Pad_498[0x8];                                      // 0x0498(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FButtonStyle                           ConfirmButtonStyle;                                // 0x04A0(0x0390)(Edit, BlueprintVisible, DisableEditOnInstance)
 	struct FDataTableRowHandle                    ConfirmRowHandle;                                  // 0x0830(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor)
 
@@ -36,7 +36,6 @@ public:
 	void Construct();
 	class UWidget* DoCustomNavigation(EUINavigation Navigation_0);
 	void ExecuteUbergraph_WBP_InventorySplitWindow(int32 EntryPoint);
-	void SetColors(const struct FLinearColor& NormalOrangeColor, const struct FLinearColor& OrangeHighlightColor, const struct FLinearColor& NormalColor);
 	void SetupWidget(const class FText& ItemName);
 	void UpdateAmountText(int32 Amount);
 

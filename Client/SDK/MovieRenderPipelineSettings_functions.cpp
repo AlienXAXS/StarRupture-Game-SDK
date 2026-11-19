@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UMoviePipelineBurnInWidget::OnOutputFrameStarted(class UMoviePipeline* ForPipeline)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MoviePipelineBurnInWidget", "OnOutputFrameStarted");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnOutputFrameStarted", FnName));
 
 	Params::MoviePipelineBurnInWidget_OnOutputFrameStarted Parms{};
 

@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_CorporationScreenWidget_C::ExecuteUbergraph_WBP_CorporationScreenWidget(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CorporationScreenWidget_C", "ExecuteUbergraph_WBP_CorporationScreenWidget");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_CorporationScreenWidget_C", "ExecuteUbergraph_WBP_CorporationScreenWidget", FuncInfo);
 
 	Params::WBP_CorporationScreenWidget_C_ExecuteUbergraph_WBP_CorporationScreenWidget Parms{};
 
@@ -43,10 +41,8 @@ void UWBP_CorporationScreenWidget_C::ExecuteUbergraph_WBP_CorporationScreenWidge
 
 float UWBP_CorporationScreenWidget_C::Get_CorpoProgress_Percent()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CorporationScreenWidget_C", "Get_CorpoProgress_Percent");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Get_CorpoProgress_Percent", FnName));
 
 	Params::WBP_CorporationScreenWidget_C_Get_CorpoProgress_Percent Parms{};
 
@@ -63,10 +59,8 @@ float UWBP_CorporationScreenWidget_C::Get_CorpoProgress_Percent()
 
 void UWBP_CorporationScreenWidget_C::HasAllRewardsClaimed(bool bClaimed)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CorporationScreenWidget_C", "HasAllRewardsClaimed");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"HasAllRewardsClaimed", FnName));
 
 	Params::WBP_CorporationScreenWidget_C_HasAllRewardsClaimed Parms{};
 
@@ -83,10 +77,8 @@ void UWBP_CorporationScreenWidget_C::HasAllRewardsClaimed(bool bClaimed)
 
 void UWBP_CorporationScreenWidget_C::PreConstruct(bool IsDesignTime)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CorporationScreenWidget_C", "PreConstruct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PreConstruct", FnName));
 
 	Params::WBP_CorporationScreenWidget_C_PreConstruct Parms{};
 
@@ -103,10 +95,8 @@ void UWBP_CorporationScreenWidget_C::PreConstruct(bool IsDesignTime)
 
 void UWBP_CorporationScreenWidget_C::SetMax(bool BMax)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CorporationScreenWidget_C", "SetMax");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetMax", FnName));
 
 	Params::WBP_CorporationScreenWidget_C_SetMax Parms{};
 
@@ -123,10 +113,8 @@ void UWBP_CorporationScreenWidget_C::SetMax(bool BMax)
 
 void UWBP_CorporationScreenWidget_C::SetupData(class UCrCorporationData* Data)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CorporationScreenWidget_C", "SetupData");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetupData", FnName));
 
 	Params::WBP_CorporationScreenWidget_C_SetupData Parms{};
 
@@ -143,10 +131,8 @@ void UWBP_CorporationScreenWidget_C::SetupData(class UCrCorporationData* Data)
 
 void UWBP_CorporationScreenWidget_C::UpdateCorporationLevel(int32 Level)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CorporationScreenWidget_C", "UpdateCorporationLevel");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateCorporationLevel", FnName));
 
 	Params::WBP_CorporationScreenWidget_C_UpdateCorporationLevel Parms{};
 
@@ -163,10 +149,8 @@ void UWBP_CorporationScreenWidget_C::UpdateCorporationLevel(int32 Level)
 
 void UWBP_CorporationScreenWidget_C::UpdateCorporationPercent(float InPercent)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CorporationScreenWidget_C", "UpdateCorporationPercent");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateCorporationPercent", FnName));
 
 	Params::WBP_CorporationScreenWidget_C_UpdateCorporationPercent Parms{};
 

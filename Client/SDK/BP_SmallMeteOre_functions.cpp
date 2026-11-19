@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_SmallMeteOre_C::ExecuteUbergraph_BP_SmallMeteOre(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SmallMeteOre_C", "ExecuteUbergraph_BP_SmallMeteOre");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_SmallMeteOre_C", "ExecuteUbergraph_BP_SmallMeteOre", FuncInfo);
 
 	Params::BP_SmallMeteOre_C_ExecuteUbergraph_BP_SmallMeteOre Parms{};
 
@@ -41,10 +39,8 @@ void ABP_SmallMeteOre_C::ExecuteUbergraph_BP_SmallMeteOre(int32 EntryPoint)
 
 void ABP_SmallMeteOre_C::OnBeginPlayDepletedStateStarted()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SmallMeteOre_C", "OnBeginPlayDepletedStateStarted");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBeginPlayDepletedStateStarted", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -55,10 +51,8 @@ void ABP_SmallMeteOre_C::OnBeginPlayDepletedStateStarted()
 
 void ABP_SmallMeteOre_C::OnResourceDepletedCosmeticsStart()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SmallMeteOre_C", "OnResourceDepletedCosmeticsStart");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnResourceDepletedCosmeticsStart", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -69,10 +63,8 @@ void ABP_SmallMeteOre_C::OnResourceDepletedCosmeticsStart()
 
 void ABP_SmallMeteOre_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SmallMeteOre_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -83,10 +75,8 @@ void ABP_SmallMeteOre_C::ReceiveBeginPlay()
 
 void ABP_SmallMeteOre_C::Timeline__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SmallMeteOre_C", "Timeline__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -97,10 +87,8 @@ void ABP_SmallMeteOre_C::Timeline__FinishedFunc()
 
 void ABP_SmallMeteOre_C::Timeline__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SmallMeteOre_C", "Timeline__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

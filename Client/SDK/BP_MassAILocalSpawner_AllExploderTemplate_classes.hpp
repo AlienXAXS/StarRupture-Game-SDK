@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_MassAILocalSpawner_AllExploderTemplate.BP_MassAILocalSpawner_AllExploderTemplate_C
-// 0x0000 (0x0538 - 0x0538)
+// 0x0000 (0x05A8 - 0x05A8)
 class ABP_MassAILocalSpawner_AllExploderTemplate_C final : public ABP_MassAILocalSpawnerWithPCG_Placeable_C
 {
 public:

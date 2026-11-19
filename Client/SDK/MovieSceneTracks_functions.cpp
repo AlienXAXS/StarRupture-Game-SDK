@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 struct FTransform IMovieSceneTransformOrigin::BP_GetTransformOrigin() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MovieSceneTransformOrigin", "BP_GetTransformOrigin");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"BP_GetTransformOrigin", FnName));
 
 	Params::MovieSceneTransformOrigin_BP_GetTransformOrigin Parms{};
 
@@ -72,10 +70,8 @@ float UMovieSceneFadeTrackTestLibrary::GetManualFadeAmount(class APlayerCameraMa
 
 void UMovieSceneReplaceableActorBinding_BPBase::BP_InitReplaceableBinding(class UObject* SourceObject, class UMovieScene* OwnerMovieScene)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MovieSceneReplaceableActorBinding_BPBase", "BP_InitReplaceableBinding");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_InitReplaceableBinding", FnName));
 
 	Params::MovieSceneReplaceableActorBinding_BPBase_BP_InitReplaceableBinding Parms{};
 
@@ -99,10 +95,8 @@ void UMovieSceneReplaceableActorBinding_BPBase::BP_InitReplaceableBinding(class 
 
 struct FMovieSceneBindingResolveResult UMovieSceneReplaceableActorBinding_BPBase::BP_ResolveRuntimeBinding(const struct FMovieSceneBindingResolveContext& ResolveContext) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MovieSceneReplaceableActorBinding_BPBase", "BP_ResolveRuntimeBinding");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_ResolveRuntimeBinding", FnName));
 
 	Params::MovieSceneReplaceableActorBinding_BPBase_BP_ResolveRuntimeBinding Parms{};
 
@@ -122,10 +116,8 @@ struct FMovieSceneBindingResolveResult UMovieSceneReplaceableActorBinding_BPBase
 
 bool UMovieSceneReplaceableActorBinding_BPBase::BP_SupportsBindingCreationFromObject(const class UObject* SourceObject) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MovieSceneReplaceableActorBinding_BPBase", "BP_SupportsBindingCreationFromObject");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_SupportsBindingCreationFromObject", FnName));
 
 	Params::MovieSceneReplaceableActorBinding_BPBase_BP_SupportsBindingCreationFromObject Parms{};
 

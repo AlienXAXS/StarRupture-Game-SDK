@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UBP_HeadBobbingComp_C::ColdWave()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HeadBobbingComp_C", "ColdWave");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ColdWave", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -35,10 +33,8 @@ void UBP_HeadBobbingComp_C::ColdWave()
 
 void UBP_HeadBobbingComp_C::Crouch_CS()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HeadBobbingComp_C", "Crouch_CS");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Crouch_CS", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -49,10 +45,8 @@ void UBP_HeadBobbingComp_C::Crouch_CS()
 
 void UBP_HeadBobbingComp_C::Dash()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HeadBobbingComp_C", "Dash");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Dash", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -63,10 +57,8 @@ void UBP_HeadBobbingComp_C::Dash()
 
 void UBP_HeadBobbingComp_C::DoubleJump_CS()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HeadBobbingComp_C", "DoubleJump_CS");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"DoubleJump_CS", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -79,10 +71,8 @@ void UBP_HeadBobbingComp_C::DoubleJump_CS()
 
 void UBP_HeadBobbingComp_C::ExecuteUbergraph_BP_HeadBobbingComp(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HeadBobbingComp_C", "ExecuteUbergraph_BP_HeadBobbingComp");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_HeadBobbingComp_C", "ExecuteUbergraph_BP_HeadBobbingComp", FuncInfo);
 
 	Params::BP_HeadBobbingComp_C_ExecuteUbergraph_BP_HeadBobbingComp Parms{};
 
@@ -97,10 +87,8 @@ void UBP_HeadBobbingComp_C::ExecuteUbergraph_BP_HeadBobbingComp(int32 EntryPoint
 
 void UBP_HeadBobbingComp_C::HeatWave()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HeadBobbingComp_C", "HeatWave");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"HeatWave", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -111,10 +99,8 @@ void UBP_HeadBobbingComp_C::HeatWave()
 
 void UBP_HeadBobbingComp_C::HitReaction()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HeadBobbingComp_C", "HitReaction");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"HitReaction", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -125,10 +111,8 @@ void UBP_HeadBobbingComp_C::HitReaction()
 
 void UBP_HeadBobbingComp_C::Idle_CS()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HeadBobbingComp_C", "Idle_CS");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Idle_CS", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -139,10 +123,8 @@ void UBP_HeadBobbingComp_C::Idle_CS()
 
 void UBP_HeadBobbingComp_C::Jump_CS()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HeadBobbingComp_C", "Jump_CS");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Jump_CS", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -153,10 +135,8 @@ void UBP_HeadBobbingComp_C::Jump_CS()
 
 void UBP_HeadBobbingComp_C::Landed()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HeadBobbingComp_C", "Landed");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Landed", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -169,10 +149,8 @@ void UBP_HeadBobbingComp_C::Landed()
 
 void UBP_HeadBobbingComp_C::ManageCameraShake(class UClass* Add_CS)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HeadBobbingComp_C", "ManageCameraShake");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ManageCameraShake", FnName));
 
 	Params::BP_HeadBobbingComp_C_ManageCameraShake Parms{};
 
@@ -187,10 +165,8 @@ void UBP_HeadBobbingComp_C::ManageCameraShake(class UClass* Add_CS)
 
 void UBP_HeadBobbingComp_C::PushBack()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HeadBobbingComp_C", "PushBack");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PushBack", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -201,10 +177,8 @@ void UBP_HeadBobbingComp_C::PushBack()
 
 void UBP_HeadBobbingComp_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HeadBobbingComp_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -215,10 +189,8 @@ void UBP_HeadBobbingComp_C::ReceiveBeginPlay()
 
 void UBP_HeadBobbingComp_C::ResetIdle_CS()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HeadBobbingComp_C", "ResetIdle_CS");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ResetIdle_CS", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -229,10 +201,8 @@ void UBP_HeadBobbingComp_C::ResetIdle_CS()
 
 void UBP_HeadBobbingComp_C::Run_CS()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HeadBobbingComp_C", "Run_CS");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Run_CS", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -243,10 +213,8 @@ void UBP_HeadBobbingComp_C::Run_CS()
 
 void UBP_HeadBobbingComp_C::Shoot()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HeadBobbingComp_C", "Shoot");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Shoot", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -257,10 +225,8 @@ void UBP_HeadBobbingComp_C::Shoot()
 
 void UBP_HeadBobbingComp_C::StartIdle_CS()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HeadBobbingComp_C", "StartIdle_CS");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"StartIdle_CS", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -271,10 +237,8 @@ void UBP_HeadBobbingComp_C::StartIdle_CS()
 
 void UBP_HeadBobbingComp_C::SwitchCameraState()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HeadBobbingComp_C", "SwitchCameraState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SwitchCameraState", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -285,10 +249,8 @@ void UBP_HeadBobbingComp_C::SwitchCameraState()
 
 void UBP_HeadBobbingComp_C::Walk_CS()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HeadBobbingComp_C", "Walk_CS");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Walk_CS", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -299,10 +261,8 @@ void UBP_HeadBobbingComp_C::Walk_CS()
 
 void UBP_HeadBobbingComp_C::Zipline()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HeadBobbingComp_C", "Zipline");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Zipline", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

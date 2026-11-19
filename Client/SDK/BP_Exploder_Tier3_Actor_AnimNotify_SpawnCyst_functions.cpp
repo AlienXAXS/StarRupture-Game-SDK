@@ -26,10 +26,8 @@ SDK_NAMESPACE_START
 
 bool UBP_Exploder_Tier3_Actor_AnimNotify_SpawnCyst_C::Received_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, const struct FAnimNotifyEventReference& EventReference) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Actor_AnimNotify_SpawnCyst_C", "Received_Notify");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Received_Notify", FnName));
 
 	Params::BP_Exploder_Tier3_Actor_AnimNotify_SpawnCyst_C_Received_Notify Parms{};
 

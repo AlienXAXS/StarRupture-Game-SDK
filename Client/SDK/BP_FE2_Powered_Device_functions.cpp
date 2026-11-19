@@ -25,10 +25,8 @@ SDK_NAMESPACE_START
 
 void ABP_FE2_Powered_Device_C::Get_Meshes(class USceneComponent* Static_0, class USceneComponent* Animated, TArray<class UMeshComponent*>* NewParam) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Powered_Device_C", "Get Meshes");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Get Meshes", FnName));
 
 	Params::BP_FE2_Powered_Device_C_Get_Meshes Parms{};
 

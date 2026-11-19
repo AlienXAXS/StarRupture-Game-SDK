@@ -23,9 +23,12 @@
 SDK_NAMESPACE_START
 
 // Class MassActors.MassActorPoolableInterface
-// 0x0000 (0x0000 - 0x0000)
-class IMassActorPoolableInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IMassActorPoolableInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	bool CanBePooled();
 	void PrepareForGame();

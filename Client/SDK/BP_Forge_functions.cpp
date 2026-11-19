@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_Forge_C::ExecuteUbergraph_BP_Forge(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Forge_C", "ExecuteUbergraph_BP_Forge");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Forge_C", "ExecuteUbergraph_BP_Forge", FuncInfo);
 
 	Params::BP_Forge_C_ExecuteUbergraph_BP_Forge Parms{};
 
@@ -43,10 +41,8 @@ void ABP_Forge_C::ExecuteUbergraph_BP_Forge(int32 EntryPoint)
 
 void ABP_Forge_C::OnBuildingStateChanged(ECrBuildingState InState)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Forge_C", "OnBuildingStateChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBuildingStateChanged", FnName));
 
 	Params::BP_Forge_C_OnBuildingStateChanged Parms{};
 
@@ -61,10 +57,8 @@ void ABP_Forge_C::OnBuildingStateChanged(ECrBuildingState InState)
 
 void ABP_Forge_C::OnItemCraftingComplete()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Forge_C", "OnItemCraftingComplete");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnItemCraftingComplete", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -75,10 +69,8 @@ void ABP_Forge_C::OnItemCraftingComplete()
 
 void ABP_Forge_C::SetupSkeletalMesh()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Forge_C", "SetupSkeletalMesh");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetupSkeletalMesh", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

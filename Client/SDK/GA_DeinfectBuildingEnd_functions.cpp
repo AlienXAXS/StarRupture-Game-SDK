@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UGA_DeinfectBuildingEnd_C::ExecuteUbergraph_GA_DeinfectBuildingEnd(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_DeinfectBuildingEnd_C", "ExecuteUbergraph_GA_DeinfectBuildingEnd");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "GA_DeinfectBuildingEnd_C", "ExecuteUbergraph_GA_DeinfectBuildingEnd", FuncInfo);
 
 	Params::GA_DeinfectBuildingEnd_C_ExecuteUbergraph_GA_DeinfectBuildingEnd Parms{};
 
@@ -41,10 +39,8 @@ void UGA_DeinfectBuildingEnd_C::ExecuteUbergraph_GA_DeinfectBuildingEnd(int32 En
 
 void UGA_DeinfectBuildingEnd_C::K2_ActivateAbility()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_DeinfectBuildingEnd_C", "K2_ActivateAbility");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_ActivateAbility", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -57,10 +53,8 @@ void UGA_DeinfectBuildingEnd_C::K2_ActivateAbility()
 
 void UGA_DeinfectBuildingEnd_C::OnCancelled_ACD85B004247D12B651B33992C0271A3(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_DeinfectBuildingEnd_C", "OnCancelled_ACD85B004247D12B651B33992C0271A3");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnCancelled_ACD85B004247D12B651B33992C0271A3", FnName));
 
 	Params::GA_DeinfectBuildingEnd_C_OnCancelled_ACD85B004247D12B651B33992C0271A3 Parms{};
 
@@ -77,10 +71,8 @@ void UGA_DeinfectBuildingEnd_C::OnCancelled_ACD85B004247D12B651B33992C0271A3(cla
 
 void UGA_DeinfectBuildingEnd_C::OnFppMontageBlendOut_ACD85B004247D12B651B33992C0271A3(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_DeinfectBuildingEnd_C", "OnFppMontageBlendOut_ACD85B004247D12B651B33992C0271A3");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageBlendOut_ACD85B004247D12B651B33992C0271A3", FnName));
 
 	Params::GA_DeinfectBuildingEnd_C_OnFppMontageBlendOut_ACD85B004247D12B651B33992C0271A3 Parms{};
 
@@ -97,10 +89,8 @@ void UGA_DeinfectBuildingEnd_C::OnFppMontageBlendOut_ACD85B004247D12B651B33992C0
 
 void UGA_DeinfectBuildingEnd_C::OnFppMontageEnded_ACD85B004247D12B651B33992C0271A3(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_DeinfectBuildingEnd_C", "OnFppMontageEnded_ACD85B004247D12B651B33992C0271A3");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageEnded_ACD85B004247D12B651B33992C0271A3", FnName));
 
 	Params::GA_DeinfectBuildingEnd_C_OnFppMontageEnded_ACD85B004247D12B651B33992C0271A3 Parms{};
 
@@ -117,10 +107,8 @@ void UGA_DeinfectBuildingEnd_C::OnFppMontageEnded_ACD85B004247D12B651B33992C0271
 
 void UGA_DeinfectBuildingEnd_C::OnFppMontageNotifyBegin_ACD85B004247D12B651B33992C0271A3(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_DeinfectBuildingEnd_C", "OnFppMontageNotifyBegin_ACD85B004247D12B651B33992C0271A3");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageNotifyBegin_ACD85B004247D12B651B33992C0271A3", FnName));
 
 	Params::GA_DeinfectBuildingEnd_C_OnFppMontageNotifyBegin_ACD85B004247D12B651B33992C0271A3 Parms{};
 
@@ -137,10 +125,8 @@ void UGA_DeinfectBuildingEnd_C::OnFppMontageNotifyBegin_ACD85B004247D12B651B3399
 
 void UGA_DeinfectBuildingEnd_C::OnFppMontageNotifyEnd_ACD85B004247D12B651B33992C0271A3(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_DeinfectBuildingEnd_C", "OnFppMontageNotifyEnd_ACD85B004247D12B651B33992C0271A3");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageNotifyEnd_ACD85B004247D12B651B33992C0271A3", FnName));
 
 	Params::GA_DeinfectBuildingEnd_C_OnFppMontageNotifyEnd_ACD85B004247D12B651B33992C0271A3 Parms{};
 
@@ -157,10 +143,8 @@ void UGA_DeinfectBuildingEnd_C::OnFppMontageNotifyEnd_ACD85B004247D12B651B33992C
 
 void UGA_DeinfectBuildingEnd_C::OnInterrupted_ACD85B004247D12B651B33992C0271A3(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_DeinfectBuildingEnd_C", "OnInterrupted_ACD85B004247D12B651B33992C0271A3");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnInterrupted_ACD85B004247D12B651B33992C0271A3", FnName));
 
 	Params::GA_DeinfectBuildingEnd_C_OnInterrupted_ACD85B004247D12B651B33992C0271A3 Parms{};
 
@@ -177,10 +161,8 @@ void UGA_DeinfectBuildingEnd_C::OnInterrupted_ACD85B004247D12B651B33992C0271A3(c
 
 void UGA_DeinfectBuildingEnd_C::OnNotLocallyControlledTppMontageBlendOut_ACD85B004247D12B651B33992C0271A3(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_DeinfectBuildingEnd_C", "OnNotLocallyControlledTppMontageBlendOut_ACD85B004247D12B651B33992C0271A3");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnNotLocallyControlledTppMontageBlendOut_ACD85B004247D12B651B33992C0271A3", FnName));
 
 	Params::GA_DeinfectBuildingEnd_C_OnNotLocallyControlledTppMontageBlendOut_ACD85B004247D12B651B33992C0271A3 Parms{};
 

@@ -10,11 +10,11 @@
 
 #include "Basic.hpp"
 
-#include "Chimera_structs.hpp"
 #include "GameplayAbilities_structs.hpp"
 #include "GameplayTags_structs.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "Chimera_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -352,7 +352,7 @@ public:
 	bool                                          Temp_bool_Variable_12;                             // 0x0B6B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_B6C[0x4];                                      // 0x0B6C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UAudioComponent*                        CallFunc_CrPlaySoundForCharacter_ReturnValue_1;    // 0x0B70(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	struct FHarvesterRepHeatStackInfo             CallFunc_GetCurrentReplicatedHarvesterHeatStack_ReturnValue; // 0x0B78(0x000C)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FHarvesterRepHeatStackInfo             CallFunc_GetCurrentReplicatedHarvesterHeatStack_ReturnValue; // 0x0B78(0x000C)(ConstParm, NoDestructor)
 	ENetRole                                      CallFunc_GetLocalRole_ReturnValue;                 // 0x0B84(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x0B85(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          Temp_bool_Variable_13;                             // 0x0B86(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

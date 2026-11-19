@@ -996,60 +996,6 @@ public:
 };
 DUMPER7_ASSERTS_SourceEffectWaveShaperPreset_SetSettings;
 
-// Function Synthesis.Synth2DSlider.SetIndentHandle
-// 0x0001 (0x0001 - 0x0000)
-struct Synth2DSlider_SetIndentHandle final
-{
-public:
-	bool                                          InValue;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Synth2DSlider_SetIndentHandle;
-
-// Function Synthesis.Synth2DSlider.SetLocked
-// 0x0001 (0x0001 - 0x0000)
-struct Synth2DSlider_SetLocked final
-{
-public:
-	bool                                          InValue;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Synth2DSlider_SetLocked;
-
-// Function Synthesis.Synth2DSlider.SetSliderHandleColor
-// 0x0010 (0x0010 - 0x0000)
-struct Synth2DSlider_SetSliderHandleColor final
-{
-public:
-	struct FLinearColor                           InValue;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Synth2DSlider_SetSliderHandleColor;
-
-// Function Synthesis.Synth2DSlider.SetStepSize
-// 0x0004 (0x0004 - 0x0000)
-struct Synth2DSlider_SetStepSize final
-{
-public:
-	float                                         InValue;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Synth2DSlider_SetStepSize;
-
-// Function Synthesis.Synth2DSlider.SetValue
-// 0x0010 (0x0010 - 0x0000)
-struct Synth2DSlider_SetValue final
-{
-public:
-	struct FVector2D                              InValue;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Synth2DSlider_SetValue;
-
-// Function Synthesis.Synth2DSlider.GetValue
-// 0x0010 (0x0010 - 0x0000)
-struct Synth2DSlider_GetValue final
-{
-public:
-	struct FVector2D                              ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_Synth2DSlider_GetValue;
-
 // Function Synthesis.SubmixEffectConvolutionReverbPreset.SetImpulseResponse
 // 0x0008 (0x0008 - 0x0000)
 struct SubmixEffectConvolutionReverbPreset_SetImpulseResponse final
@@ -1100,6 +1046,242 @@ public:
 	struct FSubmixEffectDelaySettings             ReturnValue;                                       // 0x0010(0x000C)(Parm, OutParm, ReturnParm, NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_SubmixEffectDelayStatics_SetMaximumDelayLength;
+
+// Function Synthesis.SubmixEffectDelayPreset.SetDefaultSettings
+// 0x000C (0x000C - 0x0000)
+struct SubmixEffectDelayPreset_SetDefaultSettings final
+{
+public:
+	struct FSubmixEffectDelaySettings             InSettings;                                        // 0x0000(0x000C)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SubmixEffectDelayPreset_SetDefaultSettings;
+
+// Function Synthesis.SubmixEffectDelayPreset.SetDelay
+// 0x0004 (0x0004 - 0x0000)
+struct SubmixEffectDelayPreset_SetDelay final
+{
+public:
+	float                                         Length;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SubmixEffectDelayPreset_SetDelay;
+
+// Function Synthesis.SubmixEffectDelayPreset.SetInterpolationTime
+// 0x0004 (0x0004 - 0x0000)
+struct SubmixEffectDelayPreset_SetInterpolationTime final
+{
+public:
+	float                                         Time;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SubmixEffectDelayPreset_SetInterpolationTime;
+
+// Function Synthesis.SubmixEffectDelayPreset.SetSettings
+// 0x000C (0x000C - 0x0000)
+struct SubmixEffectDelayPreset_SetSettings final
+{
+public:
+	struct FSubmixEffectDelaySettings             InSettings;                                        // 0x0000(0x000C)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SubmixEffectDelayPreset_SetSettings;
+
+// Function Synthesis.SubmixEffectDelayPreset.GetMaxDelayInMilliseconds
+// 0x0004 (0x0004 - 0x0000)
+struct SubmixEffectDelayPreset_GetMaxDelayInMilliseconds final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SubmixEffectDelayPreset_GetMaxDelayInMilliseconds;
+
+// Function Synthesis.SubmixEffectFilterPreset.SetFilterAlgorithm
+// 0x0001 (0x0001 - 0x0000)
+struct SubmixEffectFilterPreset_SetFilterAlgorithm final
+{
+public:
+	ESubmixFilterAlgorithm                        InAlgorithm;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SubmixEffectFilterPreset_SetFilterAlgorithm;
+
+// Function Synthesis.SubmixEffectFilterPreset.SetFilterCutoffFrequency
+// 0x0004 (0x0004 - 0x0000)
+struct SubmixEffectFilterPreset_SetFilterCutoffFrequency final
+{
+public:
+	float                                         InFrequency;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SubmixEffectFilterPreset_SetFilterCutoffFrequency;
+
+// Function Synthesis.SubmixEffectFilterPreset.SetFilterCutoffFrequencyMod
+// 0x0004 (0x0004 - 0x0000)
+struct SubmixEffectFilterPreset_SetFilterCutoffFrequencyMod final
+{
+public:
+	float                                         InFrequency;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SubmixEffectFilterPreset_SetFilterCutoffFrequencyMod;
+
+// Function Synthesis.SubmixEffectFilterPreset.SetFilterQ
+// 0x0004 (0x0004 - 0x0000)
+struct SubmixEffectFilterPreset_SetFilterQ final
+{
+public:
+	float                                         InQ;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SubmixEffectFilterPreset_SetFilterQ;
+
+// Function Synthesis.SubmixEffectFilterPreset.SetFilterQMod
+// 0x0004 (0x0004 - 0x0000)
+struct SubmixEffectFilterPreset_SetFilterQMod final
+{
+public:
+	float                                         InQ;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SubmixEffectFilterPreset_SetFilterQMod;
+
+// Function Synthesis.SubmixEffectFilterPreset.SetFilterType
+// 0x0001 (0x0001 - 0x0000)
+struct SubmixEffectFilterPreset_SetFilterType final
+{
+public:
+	ESubmixFilterType                             InType;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SubmixEffectFilterPreset_SetFilterType;
+
+// Function Synthesis.SubmixEffectFilterPreset.SetSettings
+// 0x000C (0x000C - 0x0000)
+struct SubmixEffectFilterPreset_SetSettings final
+{
+public:
+	struct FSubmixEffectFilterSettings            InSettings;                                        // 0x0000(0x000C)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SubmixEffectFilterPreset_SetSettings;
+
+// Function Synthesis.SubmixEffectFlexiverbPreset.SetSettings
+// 0x0010 (0x0010 - 0x0000)
+struct SubmixEffectFlexiverbPreset_SetSettings final
+{
+public:
+	struct FSubmixEffectFlexiverbSettings         InSettings;                                        // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SubmixEffectFlexiverbPreset_SetSettings;
+
+// Function Synthesis.SubmixEffectMultibandCompressorPreset.SetAudioBus
+// 0x0008 (0x0008 - 0x0000)
+struct SubmixEffectMultibandCompressorPreset_SetAudioBus final
+{
+public:
+	class UAudioBus*                              AudioBus;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SubmixEffectMultibandCompressorPreset_SetAudioBus;
+
+// Function Synthesis.SubmixEffectMultibandCompressorPreset.SetExternalSubmix
+// 0x0008 (0x0008 - 0x0000)
+struct SubmixEffectMultibandCompressorPreset_SetExternalSubmix final
+{
+public:
+	class USoundSubmix*                           Submix;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SubmixEffectMultibandCompressorPreset_SetExternalSubmix;
+
+// Function Synthesis.SubmixEffectMultibandCompressorPreset.SetSettings
+// 0x0038 (0x0038 - 0x0000)
+struct SubmixEffectMultibandCompressorPreset_SetSettings final
+{
+public:
+	struct FSubmixEffectMultibandCompressorSettings InSettings;                                      // 0x0000(0x0038)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SubmixEffectMultibandCompressorPreset_SetSettings;
+
+// Function Synthesis.SubmixEffectStereoDelayPreset.SetSettings
+// 0x0024 (0x0024 - 0x0000)
+struct SubmixEffectStereoDelayPreset_SetSettings final
+{
+public:
+	struct FSubmixEffectStereoDelaySettings       InSettings;                                        // 0x0000(0x0024)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SubmixEffectStereoDelayPreset_SetSettings;
+
+// Function Synthesis.SubmixEffectStereoToQuadPreset.SetSettings
+// 0x0008 (0x0008 - 0x0000)
+struct SubmixEffectStereoToQuadPreset_SetSettings final
+{
+public:
+	struct FSubmixEffectStereoToQuadSettings      InSettings;                                        // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SubmixEffectStereoToQuadPreset_SetSettings;
+
+// Function Synthesis.SubmixEffectTapDelayPreset.AddTap
+// 0x0004 (0x0004 - 0x0000)
+struct SubmixEffectTapDelayPreset_AddTap final
+{
+public:
+	int32                                         TapId;                                             // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SubmixEffectTapDelayPreset_AddTap;
+
+// Function Synthesis.SubmixEffectTapDelayPreset.GetMaxDelayInMilliseconds
+// 0x0004 (0x0004 - 0x0000)
+struct SubmixEffectTapDelayPreset_GetMaxDelayInMilliseconds final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SubmixEffectTapDelayPreset_GetMaxDelayInMilliseconds;
+
+// Function Synthesis.SubmixEffectTapDelayPreset.GetTap
+// 0x001C (0x001C - 0x0000)
+struct SubmixEffectTapDelayPreset_GetTap final
+{
+public:
+	int32                                         TapId;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTapDelayInfo                          TapInfo;                                           // 0x0004(0x0018)(Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SubmixEffectTapDelayPreset_GetTap;
+
+// Function Synthesis.SubmixEffectTapDelayPreset.GetTapIds
+// 0x0010 (0x0010 - 0x0000)
+struct SubmixEffectTapDelayPreset_GetTapIds final
+{
+public:
+	TArray<int32>                                 TapIds;                                            // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SubmixEffectTapDelayPreset_GetTapIds;
+
+// Function Synthesis.SubmixEffectTapDelayPreset.RemoveTap
+// 0x0004 (0x0004 - 0x0000)
+struct SubmixEffectTapDelayPreset_RemoveTap final
+{
+public:
+	int32                                         TapId;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SubmixEffectTapDelayPreset_RemoveTap;
+
+// Function Synthesis.SubmixEffectTapDelayPreset.SetInterpolationTime
+// 0x0004 (0x0004 - 0x0000)
+struct SubmixEffectTapDelayPreset_SetInterpolationTime final
+{
+public:
+	float                                         Time;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SubmixEffectTapDelayPreset_SetInterpolationTime;
+
+// Function Synthesis.SubmixEffectTapDelayPreset.SetSettings
+// 0x0018 (0x0018 - 0x0000)
+struct SubmixEffectTapDelayPreset_SetSettings final
+{
+public:
+	struct FSubmixEffectTapDelaySettings          InSettings;                                        // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SubmixEffectTapDelayPreset_SetSettings;
+
+// Function Synthesis.SubmixEffectTapDelayPreset.SetTap
+// 0x001C (0x001C - 0x0000)
+struct SubmixEffectTapDelayPreset_SetTap final
+{
+public:
+	int32                                         TapId;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTapDelayInfo                          TapInfo;                                           // 0x0004(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SubmixEffectTapDelayPreset_SetTap;
 
 // Function Synthesis.GranularSynth.NoteOff
 // 0x0008 (0x0008 - 0x0000)
@@ -1295,327 +1477,6 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_GranularSynth_IsLoaded;
-
-// Function Synthesis.SubmixEffectDelayPreset.SetDefaultSettings
-// 0x000C (0x000C - 0x0000)
-struct SubmixEffectDelayPreset_SetDefaultSettings final
-{
-public:
-	struct FSubmixEffectDelaySettings             InSettings;                                        // 0x0000(0x000C)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SubmixEffectDelayPreset_SetDefaultSettings;
-
-// Function Synthesis.SubmixEffectDelayPreset.SetDelay
-// 0x0004 (0x0004 - 0x0000)
-struct SubmixEffectDelayPreset_SetDelay final
-{
-public:
-	float                                         Length;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SubmixEffectDelayPreset_SetDelay;
-
-// Function Synthesis.SubmixEffectDelayPreset.SetInterpolationTime
-// 0x0004 (0x0004 - 0x0000)
-struct SubmixEffectDelayPreset_SetInterpolationTime final
-{
-public:
-	float                                         Time;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SubmixEffectDelayPreset_SetInterpolationTime;
-
-// Function Synthesis.SubmixEffectDelayPreset.SetSettings
-// 0x000C (0x000C - 0x0000)
-struct SubmixEffectDelayPreset_SetSettings final
-{
-public:
-	struct FSubmixEffectDelaySettings             InSettings;                                        // 0x0000(0x000C)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SubmixEffectDelayPreset_SetSettings;
-
-// Function Synthesis.SubmixEffectDelayPreset.GetMaxDelayInMilliseconds
-// 0x0004 (0x0004 - 0x0000)
-struct SubmixEffectDelayPreset_GetMaxDelayInMilliseconds final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SubmixEffectDelayPreset_GetMaxDelayInMilliseconds;
-
-// Function Synthesis.SubmixEffectFilterPreset.SetFilterAlgorithm
-// 0x0001 (0x0001 - 0x0000)
-struct SubmixEffectFilterPreset_SetFilterAlgorithm final
-{
-public:
-	ESubmixFilterAlgorithm                        InAlgorithm;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SubmixEffectFilterPreset_SetFilterAlgorithm;
-
-// Function Synthesis.SubmixEffectFilterPreset.SetFilterCutoffFrequency
-// 0x0004 (0x0004 - 0x0000)
-struct SubmixEffectFilterPreset_SetFilterCutoffFrequency final
-{
-public:
-	float                                         InFrequency;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SubmixEffectFilterPreset_SetFilterCutoffFrequency;
-
-// Function Synthesis.SubmixEffectFilterPreset.SetFilterCutoffFrequencyMod
-// 0x0004 (0x0004 - 0x0000)
-struct SubmixEffectFilterPreset_SetFilterCutoffFrequencyMod final
-{
-public:
-	float                                         InFrequency;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SubmixEffectFilterPreset_SetFilterCutoffFrequencyMod;
-
-// Function Synthesis.SubmixEffectFilterPreset.SetFilterQ
-// 0x0004 (0x0004 - 0x0000)
-struct SubmixEffectFilterPreset_SetFilterQ final
-{
-public:
-	float                                         InQ;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SubmixEffectFilterPreset_SetFilterQ;
-
-// Function Synthesis.SubmixEffectFilterPreset.SetFilterQMod
-// 0x0004 (0x0004 - 0x0000)
-struct SubmixEffectFilterPreset_SetFilterQMod final
-{
-public:
-	float                                         InQ;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SubmixEffectFilterPreset_SetFilterQMod;
-
-// Function Synthesis.SubmixEffectFilterPreset.SetFilterType
-// 0x0001 (0x0001 - 0x0000)
-struct SubmixEffectFilterPreset_SetFilterType final
-{
-public:
-	ESubmixFilterType                             InType;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SubmixEffectFilterPreset_SetFilterType;
-
-// Function Synthesis.SubmixEffectFilterPreset.SetSettings
-// 0x000C (0x000C - 0x0000)
-struct SubmixEffectFilterPreset_SetSettings final
-{
-public:
-	struct FSubmixEffectFilterSettings            InSettings;                                        // 0x0000(0x000C)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SubmixEffectFilterPreset_SetSettings;
-
-// Function Synthesis.SubmixEffectFlexiverbPreset.SetSettings
-// 0x0010 (0x0010 - 0x0000)
-struct SubmixEffectFlexiverbPreset_SetSettings final
-{
-public:
-	struct FSubmixEffectFlexiverbSettings         InSettings;                                        // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SubmixEffectFlexiverbPreset_SetSettings;
-
-// Function Synthesis.SubmixEffectMultibandCompressorPreset.SetAudioBus
-// 0x0008 (0x0008 - 0x0000)
-struct SubmixEffectMultibandCompressorPreset_SetAudioBus final
-{
-public:
-	class UAudioBus*                              AudioBus;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SubmixEffectMultibandCompressorPreset_SetAudioBus;
-
-// Function Synthesis.SubmixEffectMultibandCompressorPreset.SetExternalSubmix
-// 0x0008 (0x0008 - 0x0000)
-struct SubmixEffectMultibandCompressorPreset_SetExternalSubmix final
-{
-public:
-	class USoundSubmix*                           Submix;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SubmixEffectMultibandCompressorPreset_SetExternalSubmix;
-
-// Function Synthesis.SubmixEffectMultibandCompressorPreset.SetSettings
-// 0x0038 (0x0038 - 0x0000)
-struct SubmixEffectMultibandCompressorPreset_SetSettings final
-{
-public:
-	struct FSubmixEffectMultibandCompressorSettings InSettings;                                      // 0x0000(0x0038)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SubmixEffectMultibandCompressorPreset_SetSettings;
-
-// Function Synthesis.SynthSamplePlayer.SeekToTime
-// 0x0008 (0x0008 - 0x0000)
-struct SynthSamplePlayer_SeekToTime final
-{
-public:
-	float                                         TimeSec;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ESamplePlayerSeekType                         SeekType;                                          // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bWrap;                                             // 0x0005(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_SynthSamplePlayer_SeekToTime;
-
-// Function Synthesis.SynthSamplePlayer.SetPitch
-// 0x0008 (0x0008 - 0x0000)
-struct SynthSamplePlayer_SetPitch final
-{
-public:
-	float                                         InPitch;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         TimeSec;                                           // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SynthSamplePlayer_SetPitch;
-
-// Function Synthesis.SynthSamplePlayer.SetScrubMode
-// 0x0001 (0x0001 - 0x0000)
-struct SynthSamplePlayer_SetScrubMode final
-{
-public:
-	bool                                          bScrubMode;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SynthSamplePlayer_SetScrubMode;
-
-// Function Synthesis.SynthSamplePlayer.SetScrubTimeWidth
-// 0x0004 (0x0004 - 0x0000)
-struct SynthSamplePlayer_SetScrubTimeWidth final
-{
-public:
-	float                                         InScrubTimeWidthSec;                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SynthSamplePlayer_SetScrubTimeWidth;
-
-// Function Synthesis.SynthSamplePlayer.SetSoundWave
-// 0x0008 (0x0008 - 0x0000)
-struct SynthSamplePlayer_SetSoundWave final
-{
-public:
-	class USoundWave*                             InSoundWave;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SynthSamplePlayer_SetSoundWave;
-
-// Function Synthesis.SynthSamplePlayer.GetCurrentPlaybackProgressPercent
-// 0x0004 (0x0004 - 0x0000)
-struct SynthSamplePlayer_GetCurrentPlaybackProgressPercent final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SynthSamplePlayer_GetCurrentPlaybackProgressPercent;
-
-// Function Synthesis.SynthSamplePlayer.GetCurrentPlaybackProgressTime
-// 0x0004 (0x0004 - 0x0000)
-struct SynthSamplePlayer_GetCurrentPlaybackProgressTime final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SynthSamplePlayer_GetCurrentPlaybackProgressTime;
-
-// Function Synthesis.SynthSamplePlayer.GetSampleDuration
-// 0x0004 (0x0004 - 0x0000)
-struct SynthSamplePlayer_GetSampleDuration final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SynthSamplePlayer_GetSampleDuration;
-
-// Function Synthesis.SynthSamplePlayer.IsLoaded
-// 0x0001 (0x0001 - 0x0000)
-struct SynthSamplePlayer_IsLoaded final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SynthSamplePlayer_IsLoaded;
-
-// Function Synthesis.SubmixEffectStereoDelayPreset.SetSettings
-// 0x0024 (0x0024 - 0x0000)
-struct SubmixEffectStereoDelayPreset_SetSettings final
-{
-public:
-	struct FSubmixEffectStereoDelaySettings       InSettings;                                        // 0x0000(0x0024)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SubmixEffectStereoDelayPreset_SetSettings;
-
-// Function Synthesis.SubmixEffectStereoToQuadPreset.SetSettings
-// 0x0008 (0x0008 - 0x0000)
-struct SubmixEffectStereoToQuadPreset_SetSettings final
-{
-public:
-	struct FSubmixEffectStereoToQuadSettings      InSettings;                                        // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SubmixEffectStereoToQuadPreset_SetSettings;
-
-// Function Synthesis.SubmixEffectTapDelayPreset.AddTap
-// 0x0004 (0x0004 - 0x0000)
-struct SubmixEffectTapDelayPreset_AddTap final
-{
-public:
-	int32                                         TapId;                                             // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SubmixEffectTapDelayPreset_AddTap;
-
-// Function Synthesis.SubmixEffectTapDelayPreset.GetMaxDelayInMilliseconds
-// 0x0004 (0x0004 - 0x0000)
-struct SubmixEffectTapDelayPreset_GetMaxDelayInMilliseconds final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SubmixEffectTapDelayPreset_GetMaxDelayInMilliseconds;
-
-// Function Synthesis.SubmixEffectTapDelayPreset.GetTap
-// 0x001C (0x001C - 0x0000)
-struct SubmixEffectTapDelayPreset_GetTap final
-{
-public:
-	int32                                         TapId;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTapDelayInfo                          TapInfo;                                           // 0x0004(0x0018)(Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SubmixEffectTapDelayPreset_GetTap;
-
-// Function Synthesis.SubmixEffectTapDelayPreset.GetTapIds
-// 0x0010 (0x0010 - 0x0000)
-struct SubmixEffectTapDelayPreset_GetTapIds final
-{
-public:
-	TArray<int32>                                 TapIds;                                            // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SubmixEffectTapDelayPreset_GetTapIds;
-
-// Function Synthesis.SubmixEffectTapDelayPreset.RemoveTap
-// 0x0004 (0x0004 - 0x0000)
-struct SubmixEffectTapDelayPreset_RemoveTap final
-{
-public:
-	int32                                         TapId;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SubmixEffectTapDelayPreset_RemoveTap;
-
-// Function Synthesis.SubmixEffectTapDelayPreset.SetInterpolationTime
-// 0x0004 (0x0004 - 0x0000)
-struct SubmixEffectTapDelayPreset_SetInterpolationTime final
-{
-public:
-	float                                         Time;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SubmixEffectTapDelayPreset_SetInterpolationTime;
-
-// Function Synthesis.SubmixEffectTapDelayPreset.SetSettings
-// 0x0018 (0x0018 - 0x0000)
-struct SubmixEffectTapDelayPreset_SetSettings final
-{
-public:
-	struct FSubmixEffectTapDelaySettings          InSettings;                                        // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SubmixEffectTapDelayPreset_SetSettings;
-
-// Function Synthesis.SubmixEffectTapDelayPreset.SetTap
-// 0x001C (0x001C - 0x0000)
-struct SubmixEffectTapDelayPreset_SetTap final
-{
-public:
-	int32                                         TapId;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FTapDelayInfo                          TapInfo;                                           // 0x0004(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_SubmixEffectTapDelayPreset_SetTap;
 
 // Function Synthesis.SynthComponentMonoWaveTable.GetCurveTangent
 // 0x0008 (0x0008 - 0x0000)
@@ -2037,6 +1898,91 @@ public:
 };
 DUMPER7_ASSERTS_SynthComponentToneGenerator_SetVolume;
 
+// Function Synthesis.SynthSamplePlayer.SeekToTime
+// 0x0008 (0x0008 - 0x0000)
+struct SynthSamplePlayer_SeekToTime final
+{
+public:
+	float                                         TimeSec;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESamplePlayerSeekType                         SeekType;                                          // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bWrap;                                             // 0x0005(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_SynthSamplePlayer_SeekToTime;
+
+// Function Synthesis.SynthSamplePlayer.SetPitch
+// 0x0008 (0x0008 - 0x0000)
+struct SynthSamplePlayer_SetPitch final
+{
+public:
+	float                                         InPitch;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TimeSec;                                           // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SynthSamplePlayer_SetPitch;
+
+// Function Synthesis.SynthSamplePlayer.SetScrubMode
+// 0x0001 (0x0001 - 0x0000)
+struct SynthSamplePlayer_SetScrubMode final
+{
+public:
+	bool                                          bScrubMode;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SynthSamplePlayer_SetScrubMode;
+
+// Function Synthesis.SynthSamplePlayer.SetScrubTimeWidth
+// 0x0004 (0x0004 - 0x0000)
+struct SynthSamplePlayer_SetScrubTimeWidth final
+{
+public:
+	float                                         InScrubTimeWidthSec;                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SynthSamplePlayer_SetScrubTimeWidth;
+
+// Function Synthesis.SynthSamplePlayer.SetSoundWave
+// 0x0008 (0x0008 - 0x0000)
+struct SynthSamplePlayer_SetSoundWave final
+{
+public:
+	class USoundWave*                             InSoundWave;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SynthSamplePlayer_SetSoundWave;
+
+// Function Synthesis.SynthSamplePlayer.GetCurrentPlaybackProgressPercent
+// 0x0004 (0x0004 - 0x0000)
+struct SynthSamplePlayer_GetCurrentPlaybackProgressPercent final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SynthSamplePlayer_GetCurrentPlaybackProgressPercent;
+
+// Function Synthesis.SynthSamplePlayer.GetCurrentPlaybackProgressTime
+// 0x0004 (0x0004 - 0x0000)
+struct SynthSamplePlayer_GetCurrentPlaybackProgressTime final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SynthSamplePlayer_GetCurrentPlaybackProgressTime;
+
+// Function Synthesis.SynthSamplePlayer.GetSampleDuration
+// 0x0004 (0x0004 - 0x0000)
+struct SynthSamplePlayer_GetSampleDuration final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SynthSamplePlayer_GetSampleDuration;
+
+// Function Synthesis.SynthSamplePlayer.IsLoaded
+// 0x0001 (0x0001 - 0x0000)
+struct SynthSamplePlayer_IsLoaded final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_SynthSamplePlayer_IsLoaded;
+
 // Function Synthesis.SynthesisUtilitiesBlueprintFunctionLibrary.GetLinearFrequency
 // 0x0018 (0x0018 - 0x0000)
 struct SynthesisUtilitiesBlueprintFunctionLibrary_GetLinearFrequency final
@@ -2064,6 +2010,60 @@ public:
 	float                                         ReturnValue;                                       // 0x0014(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_SynthesisUtilitiesBlueprintFunctionLibrary_GetLogFrequency;
+
+// Function Synthesis.Synth2DSlider.SetIndentHandle
+// 0x0001 (0x0001 - 0x0000)
+struct Synth2DSlider_SetIndentHandle final
+{
+public:
+	bool                                          InValue;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Synth2DSlider_SetIndentHandle;
+
+// Function Synthesis.Synth2DSlider.SetLocked
+// 0x0001 (0x0001 - 0x0000)
+struct Synth2DSlider_SetLocked final
+{
+public:
+	bool                                          InValue;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Synth2DSlider_SetLocked;
+
+// Function Synthesis.Synth2DSlider.SetSliderHandleColor
+// 0x0010 (0x0010 - 0x0000)
+struct Synth2DSlider_SetSliderHandleColor final
+{
+public:
+	struct FLinearColor                           InValue;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Synth2DSlider_SetSliderHandleColor;
+
+// Function Synthesis.Synth2DSlider.SetStepSize
+// 0x0004 (0x0004 - 0x0000)
+struct Synth2DSlider_SetStepSize final
+{
+public:
+	float                                         InValue;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Synth2DSlider_SetStepSize;
+
+// Function Synthesis.Synth2DSlider.SetValue
+// 0x0010 (0x0010 - 0x0000)
+struct Synth2DSlider_SetValue final
+{
+public:
+	struct FVector2D                              InValue;                                           // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Synth2DSlider_SetValue;
+
+// Function Synthesis.Synth2DSlider.GetValue
+// 0x0010 (0x0010 - 0x0000)
+struct Synth2DSlider_GetValue final
+{
+public:
+	struct FVector2D                              ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_Synth2DSlider_GetValue;
 
 // Function Synthesis.SynthKnob.SetLocked
 // 0x0001 (0x0001 - 0x0000)

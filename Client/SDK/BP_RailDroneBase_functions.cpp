@@ -16,6 +16,24 @@
 
 SDK_NAMESPACE_START
 
+// Function BP_RailDroneBase.BP_RailDroneBase_C.BP_OnStartFalling
+// (Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const struct FVector&                   TargetLocation                                         (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_RailDroneBase_C::BP_OnStartFalling(const struct FVector& TargetLocation)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnStartFalling", FnName));
+
+	Params::BP_RailDroneBase_C_BP_OnStartFalling Parms{};
+
+	Parms.TargetLocation = std::move(TargetLocation);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BP_RailDroneBase.BP_RailDroneBase_C.ExecuteUbergraph_BP_RailDroneBase
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -23,10 +41,8 @@ SDK_NAMESPACE_START
 
 void ABP_RailDroneBase_C::ExecuteUbergraph_BP_RailDroneBase(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_RailDroneBase_C", "ExecuteUbergraph_BP_RailDroneBase");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_RailDroneBase_C", "ExecuteUbergraph_BP_RailDroneBase", FuncInfo);
 
 	Params::BP_RailDroneBase_C_ExecuteUbergraph_BP_RailDroneBase Parms{};
 
@@ -43,14 +59,30 @@ void ABP_RailDroneBase_C::ExecuteUbergraph_BP_RailDroneBase(int32 EntryPoint)
 
 void ABP_RailDroneBase_C::OnCarriedItemChanged(const struct FAuSimpleItem& Item)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_RailDroneBase_C", "OnCarriedItemChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnCarriedItemChanged", FnName));
 
 	Params::BP_RailDroneBase_C_OnCarriedItemChanged Parms{};
 
 	Parms.Item = std::move(Item);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_RailDroneBase.BP_RailDroneBase_C.OnMovementStateChanged
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bMoving                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_RailDroneBase_C::OnMovementStateChanged(bool bMoving)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnMovementStateChanged", FnName));
+
+	Params::BP_RailDroneBase_C_OnMovementStateChanged Parms{};
+
+	Parms.bMoving = bMoving;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -61,24 +93,8 @@ void ABP_RailDroneBase_C::OnCarriedItemChanged(const struct FAuSimpleItem& Item)
 
 void ABP_RailDroneBase_C::OnPickUpRequested()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_RailDroneBase_C", "OnPickUpRequested");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BP_RailDroneBase.BP_RailDroneBase_C.OnPrepareForGame
-// (Event, Public, BlueprintEvent)
-
-void ABP_RailDroneBase_C::OnPrepareForGame()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_RailDroneBase_C", "OnPrepareForGame");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPickUpRequested", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -89,10 +105,8 @@ void ABP_RailDroneBase_C::OnPrepareForGame()
 
 void ABP_RailDroneBase_C::OnPrepareForPooling()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_RailDroneBase_C", "OnPrepareForPooling");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPrepareForPooling", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -105,10 +119,8 @@ void ABP_RailDroneBase_C::OnPrepareForPooling()
 
 void ABP_RailDroneBase_C::OnRequestInvalidStateChanged(bool bAborted)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_RailDroneBase_C", "OnRequestInvalidStateChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnRequestInvalidStateChanged", FnName));
 
 	Params::BP_RailDroneBase_C_OnRequestInvalidStateChanged Parms{};
 
@@ -125,10 +137,8 @@ void ABP_RailDroneBase_C::OnRequestInvalidStateChanged(bool bAborted)
 
 class UStaticMeshComponent* ABP_RailDroneBase_C::GetCargoComponent() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_RailDroneBase_C", "GetCargoComponent");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetCargoComponent", FnName));
 
 	Params::BP_RailDroneBase_C_GetCargoComponent Parms{};
 

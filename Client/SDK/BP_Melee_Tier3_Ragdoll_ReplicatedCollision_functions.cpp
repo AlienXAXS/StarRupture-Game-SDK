@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_Melee_Tier3_Ragdoll_ReplicatedCollision_C::AttachToRagdoll(class ABP_DeathSequenceActor_C* Ragdoll)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Ragdoll_ReplicatedCollision_C", "AttachToRagdoll");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AttachToRagdoll", FnName));
 
 	Params::BP_Melee_Tier3_Ragdoll_ReplicatedCollision_C_AttachToRagdoll Parms{};
 
@@ -43,10 +41,8 @@ void ABP_Melee_Tier3_Ragdoll_ReplicatedCollision_C::AttachToRagdoll(class ABP_De
 
 void ABP_Melee_Tier3_Ragdoll_ReplicatedCollision_C::ExecuteUbergraph_BP_Melee_Tier3_Ragdoll_ReplicatedCollision(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Ragdoll_ReplicatedCollision_C", "ExecuteUbergraph_BP_Melee_Tier3_Ragdoll_ReplicatedCollision");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Melee_Tier3_Ragdoll_ReplicatedCollision_C", "ExecuteUbergraph_BP_Melee_Tier3_Ragdoll_ReplicatedCollision", FuncInfo);
 
 	Params::BP_Melee_Tier3_Ragdoll_ReplicatedCollision_C_ExecuteUbergraph_BP_Melee_Tier3_Ragdoll_ReplicatedCollision Parms{};
 
@@ -63,10 +59,8 @@ void ABP_Melee_Tier3_Ragdoll_ReplicatedCollision_C::ExecuteUbergraph_BP_Melee_Ti
 
 void ABP_Melee_Tier3_Ragdoll_ReplicatedCollision_C::ReceiveTick(float DeltaSeconds)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Ragdoll_ReplicatedCollision_C", "ReceiveTick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveTick", FnName));
 
 	Params::BP_Melee_Tier3_Ragdoll_ReplicatedCollision_C_ReceiveTick Parms{};
 

@@ -10,39 +10,63 @@
 
 #include "Basic.hpp"
 
-#include "BP_BaseAI_classes.hpp"
+#include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "Engine_structs.hpp"
 #include "AuActorPlacement_structs.hpp"
-#include "MassAIPrototypeEnemyRuntime_structs.hpp"
+#include "BP_BaseAI_classes.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C
-// 0x0070 (0x0D90 - 0x0D20)
+// 0x00C0 (0x0DE0 - 0x0D20)
 class ABP_Exploder_Tier2_Actor_Character_C final : public ABP_BaseAI_C
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame_BP_Exploder_Tier2_Actor_Character_C; // 0x0D20(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UNiagaraComponent*                      NiagaraEyes;                                       // 0x0D28(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   SM_Tendrils;                                       // 0x0D30(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	struct FAuAPMassSpawnedEntityType             Entity_Type;                                       // 0x0D38(0x0038)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TArray<double>                                MovementFailedTimestamp;                           // 0x0D70(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	struct FCrMassEnemyBPEntityHandle             InfectionEntityHandle;                             // 0x0D80(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor)
-	struct FCrMassEnemyBPMassNetworkID            InfectionNetworkID;                                // 0x0D88(0x0004)(Edit, BlueprintVisible, Net, DisableEditOnInstance, NoDestructor)
+	class UPostProcessComponent*                  PostProcess;                                       // 0x0D28(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCrInteriorsMapperSphereComponent*      CrInteriorsMapperSphere;                           // 0x0D30(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UBoxComponent*                          Box;                                               // 0x0D38(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraComponent*                      NiagaraEyes;                                       // 0x0D40(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   SM_Tendrils;                                       // 0x0D48(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	float                                         TL_Postprocess_PostprocessCurve_E9BE881E4B9240E0F0807C8152D565EC; // 0x0D50(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ETimelineDirection                            TL_Postprocess__Direction_E9BE881E4B9240E0F0807C8152D565EC; // 0x0D54(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_D55[0x3];                                      // 0x0D55(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTimelineComponent*                     TL_Postprocess;                                    // 0x0D58(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	struct FAuAPMassSpawnedEntityType             Entity_Type;                                       // 0x0D60(0x0038)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TArray<double>                                MovementFailedTimestamp;                           // 0x0D98(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FCrMassEnemyBPEntityHandle             InfectionEntityHandle;                             // 0x0DA8(0x0008)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor)
+	struct FCrMassEnemyBPMassNetworkID            InfectionNetworkID;                                // 0x0DB0(0x0004)(Edit, BlueprintVisible, Net, DisableEditOnInstance, NoDestructor)
+	bool                                          LeftProjectileLoaded;                              // 0x0DB4(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
+	bool                                          RightProjectileLoaded;                             // 0x0DB5(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, RepNotify, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_DB6[0x2];                                      // 0x0DB6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	class FName                                   LeftProjectileSocketName;                          // 0x0DB8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   RightProjectileSocketName;                         // 0x0DC0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class ACrAiProjectileActor*                   RightProjectile;                                   // 0x0DC8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	class ACrAiProjectileActor*                   LeftProjectile;                                    // 0x0DD0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
+	void CancelProjectiles();
 	void DeactivateVFX();
 	void ExecuteUbergraph_BP_Exploder_Tier2_Actor_Character(int32 EntryPoint);
 	int32 GetMovementFailsNum();
 	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam);
 	void OnExitActorPool();
 	void OnPrepareForPooling();
+	void OnProjectileDestroyed(class FName SocketName);
+	void OnProjectileLaunched(class FName SocketName);
+	void OnProjectileLoaded(class FName SocketName, class AActor* Projectile);
+	void OnRep_LeftProjectileLoaded();
+	void OnRep_RightProjectileLoaded();
+	void ProjectileDestroyed(class FName SocketName);
 	void ReceiveBeginPlay();
 	void ReceiveTick(float DeltaSeconds);
 	void RegisterMovementFailed(double MovementFailedExpTime);
 	void StartActivationTimer();
 	void StartExplosionTimer();
+	void StartExplosionWindUp();
+	void TL_Postprocess__FinishedFunc();
+	void TL_Postprocess__UpdateFunc();
 	void TryDestroyInfectionEntity(bool Instant);
 	void TrySpawnInfectionEntity();
 

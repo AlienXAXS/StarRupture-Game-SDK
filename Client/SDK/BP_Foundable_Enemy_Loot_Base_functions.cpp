@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_Foundable_Enemy_Loot_Base_C::CanPlaySound(bool* bRet)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Foundable_Enemy_Loot_Base_C", "CanPlaySound");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"CanPlaySound", FnName));
 
 	Params::BP_Foundable_Enemy_Loot_Base_C_CanPlaySound Parms{};
 
@@ -44,10 +42,8 @@ void ABP_Foundable_Enemy_Loot_Base_C::CanPlaySound(bool* bRet)
 
 void ABP_Foundable_Enemy_Loot_Base_C::ExecuteUbergraph_BP_Foundable_Enemy_Loot_Base(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Foundable_Enemy_Loot_Base_C", "ExecuteUbergraph_BP_Foundable_Enemy_Loot_Base");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Foundable_Enemy_Loot_Base_C", "ExecuteUbergraph_BP_Foundable_Enemy_Loot_Base", FuncInfo);
 
 	Params::BP_Foundable_Enemy_Loot_Base_C_ExecuteUbergraph_BP_Foundable_Enemy_Loot_Base Parms{};
 
@@ -62,10 +58,8 @@ void ABP_Foundable_Enemy_Loot_Base_C::ExecuteUbergraph_BP_Foundable_Enemy_Loot_B
 
 void ABP_Foundable_Enemy_Loot_Base_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Foundable_Enemy_Loot_Base_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -78,10 +72,8 @@ void ABP_Foundable_Enemy_Loot_Base_C::ReceiveBeginPlay()
 
 void ABP_Foundable_Enemy_Loot_Base_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Foundable_Enemy_Loot_Base_C", "ReceiveEndPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveEndPlay", FnName));
 
 	Params::BP_Foundable_Enemy_Loot_Base_C_ReceiveEndPlay Parms{};
 
@@ -98,10 +90,8 @@ void ABP_Foundable_Enemy_Loot_Base_C::ReceiveEndPlay(EEndPlayReason EndPlayReaso
 
 void ABP_Foundable_Enemy_Loot_Base_C::ReceiveTick(float DeltaSeconds)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Foundable_Enemy_Loot_Base_C", "ReceiveTick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveTick", FnName));
 
 	Params::BP_Foundable_Enemy_Loot_Base_C_ReceiveTick Parms{};
 
@@ -118,10 +108,8 @@ void ABP_Foundable_Enemy_Loot_Base_C::ReceiveTick(float DeltaSeconds)
 
 void ABP_Foundable_Enemy_Loot_Base_C::SimulateDrop(const struct FVector& StartLocation)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Foundable_Enemy_Loot_Base_C", "SimulateDrop");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SimulateDrop", FnName));
 
 	Params::BP_Foundable_Enemy_Loot_Base_C_SimulateDrop Parms{};
 

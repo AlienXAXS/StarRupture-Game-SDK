@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_WorldSpawnerRegion_C::ExecuteUbergraph_BP_WorldSpawnerRegion(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WorldSpawnerRegion_C", "ExecuteUbergraph_BP_WorldSpawnerRegion");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_WorldSpawnerRegion_C", "ExecuteUbergraph_BP_WorldSpawnerRegion", FuncInfo);
 
 	Params::BP_WorldSpawnerRegion_C_ExecuteUbergraph_BP_WorldSpawnerRegion Parms{};
 
@@ -43,10 +41,8 @@ void ABP_WorldSpawnerRegion_C::ExecuteUbergraph_BP_WorldSpawnerRegion(int32 Entr
 
 void ABP_WorldSpawnerRegion_C::ReceiveActorBeginOverlap(class AActor* OtherActor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WorldSpawnerRegion_C", "ReceiveActorBeginOverlap");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveActorBeginOverlap", FnName));
 
 	Params::BP_WorldSpawnerRegion_C_ReceiveActorBeginOverlap Parms{};
 
@@ -61,10 +57,8 @@ void ABP_WorldSpawnerRegion_C::ReceiveActorBeginOverlap(class AActor* OtherActor
 
 void ABP_WorldSpawnerRegion_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WorldSpawnerRegion_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

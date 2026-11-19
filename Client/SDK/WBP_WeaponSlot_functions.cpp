@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_WeaponSlot_C::ExecuteUbergraph_WBP_WeaponSlot(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_WeaponSlot_C", "ExecuteUbergraph_WBP_WeaponSlot");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_WeaponSlot_C", "ExecuteUbergraph_WBP_WeaponSlot", FuncInfo);
 
 	Params::WBP_WeaponSlot_C_ExecuteUbergraph_WBP_WeaponSlot Parms{};
 
@@ -43,10 +41,8 @@ void UWBP_WeaponSlot_C::ExecuteUbergraph_WBP_WeaponSlot(int32 EntryPoint)
 
 class UWidget* UWBP_WeaponSlot_C::Get_ModsBox_ToolTipWidget_0()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_WeaponSlot_C", "Get_ModsBox_ToolTipWidget_0");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Get_ModsBox_ToolTipWidget_0", FnName));
 
 	Params::WBP_WeaponSlot_C_Get_ModsBox_ToolTipWidget_0 Parms{};
 
@@ -63,10 +59,8 @@ class UWidget* UWBP_WeaponSlot_C::Get_ModsBox_ToolTipWidget_0()
 
 class UWidget* UWBP_WeaponSlot_C::GetTooltipWidget()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_WeaponSlot_C", "GetTooltipWidget");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetTooltipWidget", FnName));
 
 	Params::WBP_WeaponSlot_C_GetTooltipWidget Parms{};
 
@@ -81,10 +75,8 @@ class UWidget* UWBP_WeaponSlot_C::GetTooltipWidget()
 
 void UWBP_WeaponSlot_C::SetEmptySlot()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_WeaponSlot_C", "SetEmptySlot");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetEmptySlot", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -97,10 +89,8 @@ void UWBP_WeaponSlot_C::SetEmptySlot()
 
 void UWBP_WeaponSlot_C::SetIcon(const struct FSlateBrush& InBrush)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_WeaponSlot_C", "SetIcon");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetIcon", FnName));
 
 	Params::WBP_WeaponSlot_C_SetIcon Parms{};
 
@@ -117,10 +107,8 @@ void UWBP_WeaponSlot_C::SetIcon(const struct FSlateBrush& InBrush)
 
 void UWBP_WeaponSlot_C::SetTitle(const class FText& InText)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_WeaponSlot_C", "SetTitle");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetTitle", FnName));
 
 	Params::WBP_WeaponSlot_C_SetTitle Parms{};
 

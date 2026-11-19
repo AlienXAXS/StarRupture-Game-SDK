@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void ABP_FE_SuitWorkshop_C::Arm_A_VFX()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE_SuitWorkshop_C", "Arm_A_VFX");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Arm_A_VFX", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -35,10 +33,8 @@ void ABP_FE_SuitWorkshop_C::Arm_A_VFX()
 
 void ABP_FE_SuitWorkshop_C::Arm_B_VFX()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE_SuitWorkshop_C", "Arm_B_VFX");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Arm_B_VFX", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -49,10 +45,8 @@ void ABP_FE_SuitWorkshop_C::Arm_B_VFX()
 
 void ABP_FE_SuitWorkshop_C::Arm_C_VFX()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE_SuitWorkshop_C", "Arm_C_VFX");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Arm_C_VFX", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -63,10 +57,8 @@ void ABP_FE_SuitWorkshop_C::Arm_C_VFX()
 
 void ABP_FE_SuitWorkshop_C::Arm_D_VFX()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE_SuitWorkshop_C", "Arm_D_VFX");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Arm_D_VFX", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -77,10 +69,8 @@ void ABP_FE_SuitWorkshop_C::Arm_D_VFX()
 
 void ABP_FE_SuitWorkshop_C::AttachMeshes()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE_SuitWorkshop_C", "AttachMeshes");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AttachMeshes", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -93,10 +83,8 @@ void ABP_FE_SuitWorkshop_C::AttachMeshes()
 
 void ABP_FE_SuitWorkshop_C::ExecuteUbergraph_BP_FE_SuitWorkshop(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE_SuitWorkshop_C", "ExecuteUbergraph_BP_FE_SuitWorkshop");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_FE_SuitWorkshop_C", "ExecuteUbergraph_BP_FE_SuitWorkshop", FuncInfo);
 
 	Params::BP_FE_SuitWorkshop_C_ExecuteUbergraph_BP_FE_SuitWorkshop Parms{};
 
@@ -113,10 +101,8 @@ void ABP_FE_SuitWorkshop_C::ExecuteUbergraph_BP_FE_SuitWorkshop(int32 EntryPoint
 
 void ABP_FE_SuitWorkshop_C::OnBuildingStateChanged(ECrBuildingState InState)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE_SuitWorkshop_C", "OnBuildingStateChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBuildingStateChanged", FnName));
 
 	Params::BP_FE_SuitWorkshop_C_OnBuildingStateChanged Parms{};
 
@@ -133,10 +119,8 @@ void ABP_FE_SuitWorkshop_C::OnBuildingStateChanged(ECrBuildingState InState)
 
 void ABP_FE_SuitWorkshop_C::OnUIOpened(bool bOpened)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE_SuitWorkshop_C", "OnUIOpened");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnUIOpened", FnName));
 
 	Params::BP_FE_SuitWorkshop_C_OnUIOpened Parms{};
 
@@ -151,10 +135,8 @@ void ABP_FE_SuitWorkshop_C::OnUIOpened(bool bOpened)
 
 void ABP_FE_SuitWorkshop_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE_SuitWorkshop_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -165,10 +147,8 @@ void ABP_FE_SuitWorkshop_C::ReceiveBeginPlay()
 
 void ABP_FE_SuitWorkshop_C::Timeline__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE_SuitWorkshop_C", "Timeline__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -179,10 +159,8 @@ void ABP_FE_SuitWorkshop_C::Timeline__FinishedFunc()
 
 void ABP_FE_SuitWorkshop_C::Timeline__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE_SuitWorkshop_C", "Timeline__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

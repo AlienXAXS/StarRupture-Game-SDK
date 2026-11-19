@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_ExporterCorporationLogo_C::ExecuteUbergraph_WBP_ExporterCorporationLogo(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ExporterCorporationLogo_C", "ExecuteUbergraph_WBP_ExporterCorporationLogo");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_ExporterCorporationLogo_C", "ExecuteUbergraph_WBP_ExporterCorporationLogo", FuncInfo);
 
 	Params::WBP_ExporterCorporationLogo_C_ExecuteUbergraph_WBP_ExporterCorporationLogo Parms{};
 
@@ -43,10 +41,8 @@ void UWBP_ExporterCorporationLogo_C::ExecuteUbergraph_WBP_ExporterCorporationLog
 
 class FText UWBP_ExporterCorporationLogo_C::GetText()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ExporterCorporationLogo_C", "GetText");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetText", FnName));
 
 	Params::WBP_ExporterCorporationLogo_C_GetText Parms{};
 
@@ -64,10 +60,8 @@ class FText UWBP_ExporterCorporationLogo_C::GetText()
 
 void UWBP_ExporterCorporationLogo_C::SetCorporationLogo(class UObject* CorporationLogo_0, bool IsDefault)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ExporterCorporationLogo_C", "SetCorporationLogo");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetCorporationLogo", FnName));
 
 	Params::WBP_ExporterCorporationLogo_C_SetCorporationLogo Parms{};
 
@@ -86,10 +80,8 @@ void UWBP_ExporterCorporationLogo_C::SetCorporationLogo(class UObject* Corporati
 
 class FText UWBP_ExporterCorporationLogo_C::UpdateName(class ACrBuildingActorBase* Owning_Building)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ExporterCorporationLogo_C", "UpdateName");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateName", FnName));
 
 	Params::WBP_ExporterCorporationLogo_C_UpdateName Parms{};
 

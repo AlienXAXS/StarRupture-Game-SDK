@@ -24,10 +24,8 @@ SDK_NAMESPACE_START
 
 void UWBP_Inventory_C::MakeButtonBrush(ETabIcon Icon, struct FSlateBrush* Brush)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Inventory_C", "MakeButtonBrush");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"MakeButtonBrush", FnName));
 
 	Params::WBP_Inventory_C_MakeButtonBrush Parms{};
 

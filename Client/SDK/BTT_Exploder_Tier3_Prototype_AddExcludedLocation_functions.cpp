@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UBTT_Exploder_Tier3_Prototype_AddExcludedLocation_C::ExecuteUbergraph_BTT_Exploder_Tier3_Prototype_AddExcludedLocation(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTT_Exploder_Tier3_Prototype_AddExcludedLocation_C", "ExecuteUbergraph_BTT_Exploder_Tier3_Prototype_AddExcludedLocation");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BTT_Exploder_Tier3_Prototype_AddExcludedLocation_C", "ExecuteUbergraph_BTT_Exploder_Tier3_Prototype_AddExcludedLocation", FuncInfo);
 
 	Params::BTT_Exploder_Tier3_Prototype_AddExcludedLocation_C_ExecuteUbergraph_BTT_Exploder_Tier3_Prototype_AddExcludedLocation Parms{};
 
@@ -44,10 +42,8 @@ void UBTT_Exploder_Tier3_Prototype_AddExcludedLocation_C::ExecuteUbergraph_BTT_E
 
 void UBTT_Exploder_Tier3_Prototype_AddExcludedLocation_C::ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTT_Exploder_Tier3_Prototype_AddExcludedLocation_C", "ReceiveExecuteAI");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveExecuteAI", FnName));
 
 	Params::BTT_Exploder_Tier3_Prototype_AddExcludedLocation_C_ReceiveExecuteAI Parms{};
 

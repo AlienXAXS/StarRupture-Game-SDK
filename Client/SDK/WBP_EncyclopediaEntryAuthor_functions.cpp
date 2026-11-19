@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_EncyclopediaEntryAuthor_C::ExecuteUbergraph_WBP_EncyclopediaEntryAuthor(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EncyclopediaEntryAuthor_C", "ExecuteUbergraph_WBP_EncyclopediaEntryAuthor");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_EncyclopediaEntryAuthor_C", "ExecuteUbergraph_WBP_EncyclopediaEntryAuthor", FuncInfo);
 
 	Params::WBP_EncyclopediaEntryAuthor_C_ExecuteUbergraph_WBP_EncyclopediaEntryAuthor Parms{};
 
@@ -43,10 +41,8 @@ void UWBP_EncyclopediaEntryAuthor_C::ExecuteUbergraph_WBP_EncyclopediaEntryAutho
 
 void UWBP_EncyclopediaEntryAuthor_C::SetEntryAuthorBP(const struct FEncyclopediaEntryAuthor& AuthorProfession)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EncyclopediaEntryAuthor_C", "SetEntryAuthorBP");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetEntryAuthorBP", FnName));
 
 	Params::WBP_EncyclopediaEntryAuthor_C_SetEntryAuthorBP Parms{};
 

@@ -39,7 +39,7 @@ public:
 DUMPER7_ASSERTS_BP_WeaponActor_C_ExecuteUbergraph_BP_WeaponActor;
 
 // Function BP_WeaponActor.BP_WeaponActor_C.GetAimSocketTransformForADS
-// 0x01E0 (0x01E0 - 0x0000)
+// 0x0180 (0x0180 - 0x0000)
 struct BP_WeaponActor_C_GetAimSocketTransformForADS final
 {
 public:
@@ -49,7 +49,7 @@ public:
 	int32                                         CallFunc_Add_IntInt_ReturnValue;                   // 0x0068(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_6C[0x4];                                       // 0x006C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class USceneComponent*>                CallFunc_K2_GetComponentsByClass_ReturnValue;      // 0x0070(0x0010)(ReferenceParm, ContainsInstancedReference)
-	struct FTransform                             CallFunc_GetSocketTransform_ReturnValue;           // 0x0080(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FTransform                             CallFunc_GetAimSocketTransformForADS_ReturnValue;  // 0x0080(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class USceneComponent*                        CallFunc_Array_Get_Item;                           // 0x00E0(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	TScriptInterface<class ICrWeaponPrimitiveCompInterface> K2Node_DynamicCast_AsCr_Weapon_Primitive_Comp_Interface; // 0x00E8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x00F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -58,11 +58,9 @@ public:
 	struct FGameplayTag                           CallFunc_GetPartIdentifierTag_ReturnValue;         // 0x00FC(0x0008)(NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_EqualEqual_GameplayTag_ReturnValue;       // 0x0104(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_105[0xB];                                      // 0x0105(0x000B)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             CallFunc_GetSocketTransform_ReturnValue_1;         // 0x0110(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FTransform                             CallFunc_GetSocketTransform_ReturnValue;           // 0x0110(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         CallFunc_Array_Length_ReturnValue;                 // 0x0170(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          CallFunc_Less_IntInt_ReturnValue;                  // 0x0174(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_175[0xB];                                      // 0x0175(0x000B)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTransform                             CallFunc_GetAimSocketTransformForADS_ReturnValue;  // 0x0180(0x0060)(IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_WeaponActor_C_GetAimSocketTransformForADS;
 

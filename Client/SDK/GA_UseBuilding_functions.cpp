@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UGA_UseBuilding_C::ExecuteUbergraph_GA_UseBuilding(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_UseBuilding_C", "ExecuteUbergraph_GA_UseBuilding");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "GA_UseBuilding_C", "ExecuteUbergraph_GA_UseBuilding", FuncInfo);
 
 	Params::GA_UseBuilding_C_ExecuteUbergraph_GA_UseBuilding Parms{};
 
@@ -41,10 +39,8 @@ void UGA_UseBuilding_C::ExecuteUbergraph_GA_UseBuilding(int32 EntryPoint)
 
 void UGA_UseBuilding_C::K2_ActivateAbility()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_UseBuilding_C", "K2_ActivateAbility");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_ActivateAbility", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

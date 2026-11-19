@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_BaseCore_Tiles4x4_C::ExecuteUbergraph_BP_BaseCore_Tiles4x4(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCore_Tiles4x4_C", "ExecuteUbergraph_BP_BaseCore_Tiles4x4");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_BaseCore_Tiles4x4_C", "ExecuteUbergraph_BP_BaseCore_Tiles4x4", FuncInfo);
 
 	Params::BP_BaseCore_Tiles4x4_C_ExecuteUbergraph_BP_BaseCore_Tiles4x4 Parms{};
 
@@ -43,10 +41,8 @@ void ABP_BaseCore_Tiles4x4_C::ExecuteUbergraph_BP_BaseCore_Tiles4x4(int32 EntryP
 
 void ABP_BaseCore_Tiles4x4_C::ReceiveActorBeginOverlap(class AActor* OtherActor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCore_Tiles4x4_C", "ReceiveActorBeginOverlap");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveActorBeginOverlap", FnName));
 
 	Params::BP_BaseCore_Tiles4x4_C_ReceiveActorBeginOverlap Parms{};
 
@@ -61,10 +57,8 @@ void ABP_BaseCore_Tiles4x4_C::ReceiveActorBeginOverlap(class AActor* OtherActor)
 
 void ABP_BaseCore_Tiles4x4_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCore_Tiles4x4_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -77,10 +71,8 @@ void ABP_BaseCore_Tiles4x4_C::ReceiveBeginPlay()
 
 void ABP_BaseCore_Tiles4x4_C::ReceiveTick(float DeltaSeconds)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCore_Tiles4x4_C", "ReceiveTick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveTick", FnName));
 
 	Params::BP_BaseCore_Tiles4x4_C_ReceiveTick Parms{};
 

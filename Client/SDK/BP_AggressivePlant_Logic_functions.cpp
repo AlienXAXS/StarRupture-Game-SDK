@@ -28,10 +28,8 @@ SDK_NAMESPACE_START
 
 void ABP_AggressivePlant_Logic_C::BndEvt__BP_AggressivePlant_CapsuleCollision_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_AggressivePlant_Logic_C", "BndEvt__BP_AggressivePlant_CapsuleCollision_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__BP_AggressivePlant_CapsuleCollision_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature", FnName));
 
 	Params::BP_AggressivePlant_Logic_C_BndEvt__BP_AggressivePlant_CapsuleCollision_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature Parms{};
 
@@ -56,10 +54,8 @@ void ABP_AggressivePlant_Logic_C::BndEvt__BP_AggressivePlant_CapsuleCollision_K2
 
 void ABP_AggressivePlant_Logic_C::BndEvt__BP_AggressivePlant_CapsuleCollision_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_AggressivePlant_Logic_C", "BndEvt__BP_AggressivePlant_CapsuleCollision_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__BP_AggressivePlant_CapsuleCollision_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature", FnName));
 
 	Params::BP_AggressivePlant_Logic_C_BndEvt__BP_AggressivePlant_CapsuleCollision_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature Parms{};
 
@@ -79,10 +75,8 @@ void ABP_AggressivePlant_Logic_C::BndEvt__BP_AggressivePlant_CapsuleCollision_K2
 
 void ABP_AggressivePlant_Logic_C::ChangedDelegate(bool NewValue)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_AggressivePlant_Logic_C", "ChangedDelegate");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ChangedDelegate", FnName));
 
 	Params::BP_AggressivePlant_Logic_C_ChangedDelegate Parms{};
 
@@ -99,10 +93,8 @@ void ABP_AggressivePlant_Logic_C::ChangedDelegate(bool NewValue)
 
 void ABP_AggressivePlant_Logic_C::ExecuteUbergraph_BP_AggressivePlant_Logic(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_AggressivePlant_Logic_C", "ExecuteUbergraph_BP_AggressivePlant_Logic");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_AggressivePlant_Logic_C", "ExecuteUbergraph_BP_AggressivePlant_Logic", FuncInfo);
 
 	Params::BP_AggressivePlant_Logic_C_ExecuteUbergraph_BP_AggressivePlant_Logic Parms{};
 
@@ -119,10 +111,8 @@ void ABP_AggressivePlant_Logic_C::ExecuteUbergraph_BP_AggressivePlant_Logic(int3
 
 void ABP_AggressivePlant_Logic_C::GetCurrentWaveNormalizedProgress(double* NormalizedCurrentStageProgress)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_AggressivePlant_Logic_C", "GetCurrentWaveNormalizedProgress");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetCurrentWaveNormalizedProgress", FnName));
 
 	Params::BP_AggressivePlant_Logic_C_GetCurrentWaveNormalizedProgress Parms{};
 
@@ -140,10 +130,8 @@ void ABP_AggressivePlant_Logic_C::GetCurrentWaveNormalizedProgress(double* Norma
 
 void ABP_AggressivePlant_Logic_C::GetCurrentWaveStage(EEnviroWaveStage* CurrentWaveStage)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_AggressivePlant_Logic_C", "GetCurrentWaveStage");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetCurrentWaveStage", FnName));
 
 	Params::BP_AggressivePlant_Logic_C_GetCurrentWaveStage Parms{};
 
@@ -159,10 +147,8 @@ void ABP_AggressivePlant_Logic_C::GetCurrentWaveStage(EEnviroWaveStage* CurrentW
 
 void ABP_AggressivePlant_Logic_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_AggressivePlant_Logic_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -175,10 +161,8 @@ void ABP_AggressivePlant_Logic_C::ReceiveBeginPlay()
 
 void ABP_AggressivePlant_Logic_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_AggressivePlant_Logic_C", "ReceiveEndPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveEndPlay", FnName));
 
 	Params::BP_AggressivePlant_Logic_C_ReceiveEndPlay Parms{};
 
@@ -195,10 +179,8 @@ void ABP_AggressivePlant_Logic_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 
 void ABP_AggressivePlant_Logic_C::SetHidden(bool IsHidden)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_AggressivePlant_Logic_C", "SetHidden");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetHidden", FnName));
 
 	Params::BP_AggressivePlant_Logic_C_SetHidden Parms{};
 

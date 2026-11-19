@@ -61,10 +61,8 @@ class UCrAiActionModifyMeleeT3AnimData* UCrAiActionModifyMeleeT3AnimData::Create
 
 void ICrAiMeleeT3::CacheLongAoePoints(const TArray<struct FVector>& Points)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("CrAiMeleeT3", "CacheLongAoePoints");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"CacheLongAoePoints", FnName));
 
 	Params::CrAiMeleeT3_CacheLongAoePoints Parms{};
 
@@ -86,10 +84,8 @@ void ICrAiMeleeT3::CacheLongAoePoints(const TArray<struct FVector>& Points)
 
 TArray<struct FVector> ICrAiMeleeT3::GetCachedLongAoePoints()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("CrAiMeleeT3", "GetCachedLongAoePoints");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"GetCachedLongAoePoints", FnName));
 
 	Params::CrAiMeleeT3_GetCachedLongAoePoints Parms{};
 
@@ -111,10 +107,8 @@ TArray<struct FVector> ICrAiMeleeT3::GetCachedLongAoePoints()
 
 void ICrAiMeleeT3::SetHasAggroTarget(bool bNewHasAggroTarget)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("CrAiMeleeT3", "SetHasAggroTarget");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"SetHasAggroTarget", FnName));
 
 	Params::CrAiMeleeT3_SetHasAggroTarget Parms{};
 
@@ -136,10 +130,8 @@ void ICrAiMeleeT3::SetHasAggroTarget(bool bNewHasAggroTarget)
 
 void ICrAiMeleeT3::SetIsCoverActive(bool bNewIsCoverActive)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("CrAiMeleeT3", "SetIsCoverActive");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"SetIsCoverActive", FnName));
 
 	Params::CrAiMeleeT3_SetIsCoverActive Parms{};
 
@@ -161,10 +153,8 @@ void ICrAiMeleeT3::SetIsCoverActive(bool bNewIsCoverActive)
 
 void ICrAiMeleeT3::SetIsInSlowRotationRange(bool bNewIsInSlowRotationRange)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("CrAiMeleeT3", "SetIsInSlowRotationRange");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"SetIsInSlowRotationRange", FnName));
 
 	Params::CrAiMeleeT3_SetIsInSlowRotationRange Parms{};
 
@@ -186,10 +176,8 @@ void ICrAiMeleeT3::SetIsInSlowRotationRange(bool bNewIsInSlowRotationRange)
 
 void ICrAiMeleeT3::SetIsUpCover(bool bNewIsUpCover)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("CrAiMeleeT3", "SetIsUpCover");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"SetIsUpCover", FnName));
 
 	Params::CrAiMeleeT3_SetIsUpCover Parms{};
 
@@ -209,10 +197,8 @@ void ICrAiMeleeT3::SetIsUpCover(bool bNewIsUpCover)
 
 void ICrAiMeleeT3::ShowLongAoeAttackEffect()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("CrAiMeleeT3", "ShowLongAoeAttackEffect");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"ShowLongAoeAttackEffect", FnName));
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -228,10 +214,8 @@ void ICrAiMeleeT3::ShowLongAoeAttackEffect()
 
 void ICrAiMeleeT3::UpdateAnimState()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("CrAiMeleeT3", "UpdateAnimState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"UpdateAnimState", FnName));
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

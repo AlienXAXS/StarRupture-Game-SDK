@@ -10,8 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "UMG_structs.hpp"
 #include "GameplayTags_structs.hpp"
+#include "UMG_structs.hpp"
+#include "UMG_parameters.hpp"
 #include "CoreUObject_structs.hpp"
 
 
@@ -54,6 +55,15 @@ public:
 	bool                                          bIsFocused;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_GameSettingListEntryBase_SetWidgetStyle;
+
+// Function GameSettings.GameSettingListEntry_Setting.ForceSetText
+// 0x0010 (0x0010 - 0x0000)
+struct GameSettingListEntry_Setting_ForceSetText final
+{
+public:
+	class FText                                   Text;                                              // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_GameSettingListEntry_Setting_ForceSetText;
 
 // Function GameSettings.GameSettingListEntrySetting_Action.OnSettingAssigned
 // 0x0010 (0x0010 - 0x0000)

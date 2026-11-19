@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_Animal_PanzerHund_Ragdoll_DeathSequenceActor_C::ExecuteUbergraph_BP_Animal_PanzerHund_Ragdoll_DeathSequenceActor(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_PanzerHund_Ragdoll_DeathSequenceActor_C", "ExecuteUbergraph_BP_Animal_PanzerHund_Ragdoll_DeathSequenceActor");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Animal_PanzerHund_Ragdoll_DeathSequenceActor_C", "ExecuteUbergraph_BP_Animal_PanzerHund_Ragdoll_DeathSequenceActor", FuncInfo);
 
 	Params::BP_Animal_PanzerHund_Ragdoll_DeathSequenceActor_C_ExecuteUbergraph_BP_Animal_PanzerHund_Ragdoll_DeathSequenceActor Parms{};
 
@@ -43,10 +41,8 @@ void ABP_Animal_PanzerHund_Ragdoll_DeathSequenceActor_C::ExecuteUbergraph_BP_Ani
 
 void ABP_Animal_PanzerHund_Ragdoll_DeathSequenceActor_C::OnDissolveProgressChanged(float DissolveProgress)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_PanzerHund_Ragdoll_DeathSequenceActor_C", "OnDissolveProgressChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnDissolveProgressChanged", FnName));
 
 	Params::BP_Animal_PanzerHund_Ragdoll_DeathSequenceActor_C_OnDissolveProgressChanged Parms{};
 
@@ -61,10 +57,8 @@ void ABP_Animal_PanzerHund_Ragdoll_DeathSequenceActor_C::OnDissolveProgressChang
 
 void ABP_Animal_PanzerHund_Ragdoll_DeathSequenceActor_C::OnRagdollStart()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_PanzerHund_Ragdoll_DeathSequenceActor_C", "OnRagdollStart");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnRagdollStart", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -77,10 +71,8 @@ void ABP_Animal_PanzerHund_Ragdoll_DeathSequenceActor_C::OnRagdollStart()
 
 void ABP_Animal_PanzerHund_Ragdoll_DeathSequenceActor_C::OnVisualVariationSeedChanged(const struct FVector& NewSeed)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_PanzerHund_Ragdoll_DeathSequenceActor_C", "OnVisualVariationSeedChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnVisualVariationSeedChanged", FnName));
 
 	Params::BP_Animal_PanzerHund_Ragdoll_DeathSequenceActor_C_OnVisualVariationSeedChanged Parms{};
 
@@ -97,10 +89,8 @@ void ABP_Animal_PanzerHund_Ragdoll_DeathSequenceActor_C::OnVisualVariationSeedCh
 
 void ABP_Animal_PanzerHund_Ragdoll_DeathSequenceActor_C::SetMossVisibility(bool Visible)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Animal_PanzerHund_Ragdoll_DeathSequenceActor_C", "SetMossVisibility");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetMossVisibility", FnName));
 
 	Params::BP_Animal_PanzerHund_Ragdoll_DeathSequenceActor_C_SetMossVisibility Parms{};
 

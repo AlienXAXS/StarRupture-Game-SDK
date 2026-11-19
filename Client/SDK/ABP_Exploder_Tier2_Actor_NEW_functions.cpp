@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UABP_Exploder_Tier2_Actor_NEW_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier2_Actor_NEW_C", "AnimGraph");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimGraph", FnName));
 
 	Params::ABP_Exploder_Tier2_Actor_NEW_C_AnimGraph Parms{};
 
@@ -42,10 +40,8 @@ void UABP_Exploder_Tier2_Actor_NEW_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 
 void UABP_Exploder_Tier2_Actor_NEW_C::AnimNotify_AnimationFinishedEvent()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier2_Actor_NEW_C", "AnimNotify_AnimationFinishedEvent");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_AnimationFinishedEvent", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -56,10 +52,8 @@ void UABP_Exploder_Tier2_Actor_NEW_C::AnimNotify_AnimationFinishedEvent()
 
 void UABP_Exploder_Tier2_Actor_NEW_C::AnimNotify_DealDamage()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier2_Actor_NEW_C", "AnimNotify_DealDamage");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_DealDamage", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -70,10 +64,8 @@ void UABP_Exploder_Tier2_Actor_NEW_C::AnimNotify_DealDamage()
 
 void UABP_Exploder_Tier2_Actor_NEW_C::AnimNotify_EndAnimAction()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier2_Actor_NEW_C", "AnimNotify_EndAnimAction");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_EndAnimAction", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -84,10 +76,8 @@ void UABP_Exploder_Tier2_Actor_NEW_C::AnimNotify_EndAnimAction()
 
 void UABP_Exploder_Tier2_Actor_NEW_C::AnimNotify_Jumped()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier2_Actor_NEW_C", "AnimNotify_Jumped");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_Jumped", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -98,10 +88,8 @@ void UABP_Exploder_Tier2_Actor_NEW_C::AnimNotify_Jumped()
 
 void UABP_Exploder_Tier2_Actor_NEW_C::AnimNotify_Landed()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier2_Actor_NEW_C", "AnimNotify_Landed");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_Landed", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -114,10 +102,8 @@ void UABP_Exploder_Tier2_Actor_NEW_C::AnimNotify_Landed()
 
 void UABP_Exploder_Tier2_Actor_NEW_C::BlueprintUpdateAnimation(float DeltaTimeX)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier2_Actor_NEW_C", "BlueprintUpdateAnimation");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BlueprintUpdateAnimation", FnName));
 
 	Params::ABP_Exploder_Tier2_Actor_NEW_C_BlueprintUpdateAnimation Parms{};
 
@@ -132,10 +118,8 @@ void UABP_Exploder_Tier2_Actor_NEW_C::BlueprintUpdateAnimation(float DeltaTimeX)
 
 void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_21243C314D39EB7557B3AF99074B1767()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier2_Actor_NEW_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_21243C314D39EB7557B3AF99074B1767");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_21243C314D39EB7557B3AF99074B1767", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -146,10 +130,8 @@ void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergrap
 
 void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_34039D744771F07BBA0FF290914DDF7C()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier2_Actor_NEW_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_34039D744771F07BBA0FF290914DDF7C");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_34039D744771F07BBA0FF290914DDF7C", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -160,10 +142,8 @@ void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergrap
 
 void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_3442F5614F911EA48C9F2C8D675D3D69()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier2_Actor_NEW_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_3442F5614F911EA48C9F2C8D675D3D69");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_3442F5614F911EA48C9F2C8D675D3D69", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -174,10 +154,8 @@ void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergrap
 
 void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_39756EC4409C191770E0518EB2EBD8F6()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier2_Actor_NEW_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_39756EC4409C191770E0518EB2EBD8F6");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_39756EC4409C191770E0518EB2EBD8F6", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -188,10 +166,8 @@ void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergrap
 
 void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_3B5A334A41C254502560D8A196A5D971()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier2_Actor_NEW_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_3B5A334A41C254502560D8A196A5D971");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_3B5A334A41C254502560D8A196A5D971", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -202,10 +178,8 @@ void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergrap
 
 void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_3C91842C451CF7F4ABCEA582E7CC7435()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier2_Actor_NEW_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_3C91842C451CF7F4ABCEA582E7CC7435");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_3C91842C451CF7F4ABCEA582E7CC7435", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -216,10 +190,8 @@ void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergrap
 
 void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_3F3AB5D74611BF8A947A929653326AFA()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier2_Actor_NEW_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_3F3AB5D74611BF8A947A929653326AFA");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_3F3AB5D74611BF8A947A929653326AFA", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -230,10 +202,8 @@ void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergrap
 
 void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_48AA0DAE4F69FCF8A5FB9B9DF1852443()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier2_Actor_NEW_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_48AA0DAE4F69FCF8A5FB9B9DF1852443");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_48AA0DAE4F69FCF8A5FB9B9DF1852443", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -244,10 +214,8 @@ void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergrap
 
 void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_56851FEB4DF9A140B62C3DB5AF2C9B43()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier2_Actor_NEW_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_56851FEB4DF9A140B62C3DB5AF2C9B43");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_56851FEB4DF9A140B62C3DB5AF2C9B43", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -258,10 +226,8 @@ void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergrap
 
 void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_5EF5BA00416B89B16A5BE2BBEB2CDE61()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier2_Actor_NEW_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_5EF5BA00416B89B16A5BE2BBEB2CDE61");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_5EF5BA00416B89B16A5BE2BBEB2CDE61", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -272,10 +238,8 @@ void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergrap
 
 void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_65194D09407A05D30E5EB7819B792F21()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier2_Actor_NEW_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_65194D09407A05D30E5EB7819B792F21");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_65194D09407A05D30E5EB7819B792F21", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -286,10 +250,8 @@ void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergrap
 
 void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_8A8742EA421D46FBE150198439016EB2()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier2_Actor_NEW_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_8A8742EA421D46FBE150198439016EB2");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_8A8742EA421D46FBE150198439016EB2", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -300,10 +262,8 @@ void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergrap
 
 void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_8CDCBE2C4C504F108E7DCAA5AE30EA7F()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier2_Actor_NEW_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_8CDCBE2C4C504F108E7DCAA5AE30EA7F");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_8CDCBE2C4C504F108E7DCAA5AE30EA7F", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -314,10 +274,8 @@ void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergrap
 
 void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_955013B44A1703B9A18850A5E134290C()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier2_Actor_NEW_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_955013B44A1703B9A18850A5E134290C");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_955013B44A1703B9A18850A5E134290C", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -328,10 +286,8 @@ void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergrap
 
 void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_B395B5034216281E20E8BF9480B9268A()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier2_Actor_NEW_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_B395B5034216281E20E8BF9480B9268A");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_B395B5034216281E20E8BF9480B9268A", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -342,10 +298,8 @@ void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergrap
 
 void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_B6768EA94C3A6F671DF92B8D7ED37872()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier2_Actor_NEW_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_B6768EA94C3A6F671DF92B8D7ED37872");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_B6768EA94C3A6F671DF92B8D7ED37872", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -356,10 +310,8 @@ void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergrap
 
 void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_B768A7BD478E3867AB96568FE44653CD()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier2_Actor_NEW_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_B768A7BD478E3867AB96568FE44653CD");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_B768A7BD478E3867AB96568FE44653CD", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -370,10 +322,8 @@ void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergrap
 
 void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_CC3AF75B4FFCB80D214E2590AF566DF7()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier2_Actor_NEW_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_CC3AF75B4FFCB80D214E2590AF566DF7");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_CC3AF75B4FFCB80D214E2590AF566DF7", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -384,10 +334,8 @@ void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergrap
 
 void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_CE0F2668447E5DB735E002938C58714A()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier2_Actor_NEW_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_CE0F2668447E5DB735E002938C58714A");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_CE0F2668447E5DB735E002938C58714A", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -398,10 +346,8 @@ void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergrap
 
 void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_D4B2B37341370FE96F578A9CDA5E5F6A()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier2_Actor_NEW_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_D4B2B37341370FE96F578A9CDA5E5F6A");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_D4B2B37341370FE96F578A9CDA5E5F6A", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -412,10 +358,8 @@ void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergrap
 
 void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_E05258B0415B4AB1C29BAFAB9B06E53D()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier2_Actor_NEW_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_E05258B0415B4AB1C29BAFAB9B06E53D");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_E05258B0415B4AB1C29BAFAB9B06E53D", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -426,10 +370,8 @@ void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergrap
 
 void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_E082DD1E4AB160A29FE9A093FA686EDD()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier2_Actor_NEW_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_E082DD1E4AB160A29FE9A093FA686EDD");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_E082DD1E4AB160A29FE9A093FA686EDD", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -440,10 +382,8 @@ void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergrap
 
 void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_E4C6A0AC4571BC6498B90E93243C8F7F()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier2_Actor_NEW_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_E4C6A0AC4571BC6498B90E93243C8F7F");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_E4C6A0AC4571BC6498B90E93243C8F7F", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -454,10 +394,8 @@ void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergrap
 
 void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_EE7AF7494620168244C5AA9439118A66()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier2_Actor_NEW_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_EE7AF7494620168244C5AA9439118A66");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_EE7AF7494620168244C5AA9439118A66", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -468,10 +406,8 @@ void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergrap
 
 void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_F32C2E42416E60116F23D4B4E9BB2AE2()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier2_Actor_NEW_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_F32C2E42416E60116F23D4B4E9BB2AE2");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_F32C2E42416E60116F23D4B4E9BB2AE2", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -482,10 +418,8 @@ void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergrap
 
 void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_F4D4305546A5E9BCA2A2D39264FE3FE4()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier2_Actor_NEW_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_F4D4305546A5E9BCA2A2D39264FE3FE4");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_F4D4305546A5E9BCA2A2D39264FE3FE4", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -496,10 +430,8 @@ void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergrap
 
 void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_F9248100449FB067B3DEA8B9474F0BA5()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier2_Actor_NEW_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_F9248100449FB067B3DEA8B9474F0BA5");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW_AnimGraphNode_TransitionResult_F9248100449FB067B3DEA8B9474F0BA5", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -512,10 +444,8 @@ void UABP_Exploder_Tier2_Actor_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergrap
 
 void UABP_Exploder_Tier2_Actor_NEW_C::ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier2_Actor_NEW_C", "ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "ABP_Exploder_Tier2_Actor_NEW_C", "ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW", FuncInfo);
 
 	Params::ABP_Exploder_Tier2_Actor_NEW_C_ExecuteUbergraph_ABP_Exploder_Tier2_Actor_NEW Parms{};
 

@@ -10,62 +10,62 @@
 
 #include "Basic.hpp"
 
-#include "BP_WeaponActor_classes.hpp"
 #include "Engine_structs.hpp"
 #include "AuAbilities_structs.hpp"
+#include "BP_WeaponActor_classes.hpp"
 #include "EFireType_structs.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_GenericKineticWeaponActor.BP_GenericKineticWeaponActor_C
-// 0x0140 (0x04E0 - 0x03A0)
+// 0x0140 (0x04E8 - 0x03A8)
 class ABP_GenericKineticWeaponActor_C final : public ABP_WeaponActor_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_GenericKineticWeaponActor_C;     // 0x03A0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UNiagaraComponent*                      AutoFireTracerLoopNiagaraSystem;                   // 0x03A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UNiagaraComponent*                      AutoFireBulletShellsNiagaraSystem;                 // 0x03B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UNiagaraComponent*                      AutoFireBurstNiagaraSystem;                        // 0x03B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UAudioComponent*                        AutoFireTailSoundAudioComponent;                   // 0x03C0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UAudioComponent*                        AutoFireLoopAudioComponent;                        // 0x03C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class ABP_PlayerCharacter_C*                  WeaponOwner;                                       // 0x03D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	class USoundBase*                             DryFireFPPSample;                                  // 0x03D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class USoundBase*                             DryFireTPPSample;                                  // 0x03E0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class USoundBase*                             AutoFireLoopFPPSample;                             // 0x03E8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class USoundBase*                             AutoFireLoopTPPSample;                             // 0x03F0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class FName                                   MuzzleSocketName;                                  // 0x03F8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TSubclassOf<class UCameraShakeBase>           ConfirmedHitCameraShake;                           // 0x0400(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
-	class FName                                   AutoFireTracerLoopEndVectorParameterName;          // 0x0408(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UNiagaraSystem*                         AutoFireTracerLoopNiagaraSystemAsset;              // 0x0410(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UNiagaraSystem*                         AutoFireBurstNiagaraSystemAsset;                   // 0x0418(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UNiagaraSystem*                         AutoFireBulletShelsNiagaraSystemAsset;             // 0x0420(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class FName                                   AutoFireBulletShellsSocketAttachmentName;          // 0x0428(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FName                                   AutoFireTracerLoopStartVectorParameterName;        // 0x0430(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	double                                        MuzzleSocketTraceBoxRandomizationExtents;          // 0x0438(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class USoundBase*                             ReloadFailedSample;                                // 0x0440(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class USoundBase*                             SingleFireFPPSample;                               // 0x0448(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class USoundBase*                             SingleFireTPPSample;                               // 0x0450(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UNiagaraSystem*                         SingleFireNiagaraTracer;                           // 0x0458(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UNiagaraSystem*                         SignleFireBurstNiagaraSystemAsset;                 // 0x0460(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class USoundBase*                             ProjectileFireFPPSample;                           // 0x0468(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class USoundBase*                             ProjectileFireTPPSample;                           // 0x0470(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UNiagaraSystem*                         ProjectileFireBurstNiagaraSystemAsset;             // 0x0478(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class USoundBase*                             ADS_StartSound;                                    // 0x0480(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	class USoundBase*                             ADS_EndSound;                                      // 0x0488(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	bool                                          QueuedHitFxWithDelay;                              // 0x0490(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_491[0x7];                                      // 0x0491(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class USoundBase*                             MagazineCountAccentFPPSample;                      // 0x0498(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class USoundBase*                             MagazineCountAccentTPPSample;                      // 0x04A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UCurveFloat*                            MagazineCountAccentCurve;                          // 0x04A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FAuCustomTargetHandle                  PiercingShotTrace;                                 // 0x04B0(0x0001)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4B1[0x7];                                      // 0x04B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UNiagaraSystem*                         Single_Fire_Shell_Ejection_Particles;              // 0x04B8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class USoundBase*                             ShellsHittingGroundSampleFPP;                      // 0x04C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class USoundBase*                             ShellsHittingGroundSampleTPP;                      // 0x04C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	double                                        Fire_Niagara_Tracer_Width;                         // 0x04D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bAutoFireLoopEndDetected;                          // 0x04D8(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          LastShotFiredFromFPP;                              // 0x04D9(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_GenericKineticWeaponActor_C;     // 0x03A8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UNiagaraComponent*                      AutoFireTracerLoopNiagaraSystem;                   // 0x03B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraComponent*                      AutoFireBulletShellsNiagaraSystem;                 // 0x03B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraComponent*                      AutoFireBurstNiagaraSystem;                        // 0x03C0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UAudioComponent*                        AutoFireTailSoundAudioComponent;                   // 0x03C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UAudioComponent*                        AutoFireLoopAudioComponent;                        // 0x03D0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class ABP_PlayerCharacter_C*                  WeaponOwner;                                       // 0x03D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	class USoundBase*                             DryFireFPPSample;                                  // 0x03E0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class USoundBase*                             DryFireTPPSample;                                  // 0x03E8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class USoundBase*                             AutoFireLoopFPPSample;                             // 0x03F0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class USoundBase*                             AutoFireLoopTPPSample;                             // 0x03F8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class FName                                   MuzzleSocketName;                                  // 0x0400(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TSubclassOf<class UCameraShakeBase>           ConfirmedHitCameraShake;                           // 0x0408(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash)
+	class FName                                   AutoFireTracerLoopEndVectorParameterName;          // 0x0410(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraSystem*                         AutoFireTracerLoopNiagaraSystemAsset;              // 0x0418(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraSystem*                         AutoFireBurstNiagaraSystemAsset;                   // 0x0420(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraSystem*                         AutoFireBulletShelsNiagaraSystemAsset;             // 0x0428(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class FName                                   AutoFireBulletShellsSocketAttachmentName;          // 0x0430(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   AutoFireTracerLoopStartVectorParameterName;        // 0x0438(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	double                                        MuzzleSocketTraceBoxRandomizationExtents;          // 0x0440(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class USoundBase*                             ReloadFailedSample;                                // 0x0448(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class USoundBase*                             SingleFireFPPSample;                               // 0x0450(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class USoundBase*                             SingleFireTPPSample;                               // 0x0458(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraSystem*                         SingleFireNiagaraTracer;                           // 0x0460(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraSystem*                         SignleFireBurstNiagaraSystemAsset;                 // 0x0468(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class USoundBase*                             ProjectileFireFPPSample;                           // 0x0470(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class USoundBase*                             ProjectileFireTPPSample;                           // 0x0478(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UNiagaraSystem*                         ProjectileFireBurstNiagaraSystemAsset;             // 0x0480(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class USoundBase*                             ADS_StartSound;                                    // 0x0488(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	class USoundBase*                             ADS_EndSound;                                      // 0x0490(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	bool                                          QueuedHitFxWithDelay;                              // 0x0498(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_499[0x7];                                      // 0x0499(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class USoundBase*                             MagazineCountAccentFPPSample;                      // 0x04A0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class USoundBase*                             MagazineCountAccentTPPSample;                      // 0x04A8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class UCurveFloat*                            MagazineCountAccentCurve;                          // 0x04B0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FAuCustomTargetHandle                  PiercingShotTrace;                                 // 0x04B8(0x0001)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4B9[0x7];                                      // 0x04B9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UNiagaraSystem*                         Single_Fire_Shell_Ejection_Particles;              // 0x04C0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class USoundBase*                             ShellsHittingGroundSampleFPP;                      // 0x04C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	class USoundBase*                             ShellsHittingGroundSampleTPP;                      // 0x04D0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	double                                        Fire_Niagara_Tracer_Width;                         // 0x04D8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bAutoFireLoopEndDetected;                          // 0x04E0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          LastShotFiredFromFPP;                              // 0x04E1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void BP_SpawnFireHitImpactCosmetics(const struct FHitResult& ConfirmedHit);
@@ -76,6 +76,7 @@ public:
 	void OnAutoFireLoopHitsConfirmed(const TArray<struct FHitResult>& Confirmed_Hit_Results);
 	void OnAutoFireLoopStart();
 	void OnAutoFireShotExecuted();
+	void OnBPWeaponPreUnequip();
 	void OnDryFireStart();
 	void OnProjectileFireStarted();
 	void OnReloadFailedCosmeticStart();

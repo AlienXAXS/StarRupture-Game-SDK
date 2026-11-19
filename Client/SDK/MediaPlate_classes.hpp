@@ -11,9 +11,10 @@
 #include "Basic.hpp"
 
 #include "MediaAssets_structs.hpp"
+#include "MediaAssets_classes.hpp"
 #include "Engine_classes.hpp"
-#include "MediaPlate_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "MediaPlate_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -74,10 +75,9 @@ DUMPER7_ASSERTS_UMediaPlateAssetUserData;
 
 // Class MediaPlate.MediaPlateComponent
 // 0x01A8 (0x0260 - 0x00B8)
-class UMediaPlateComponent final : public UActorComponent
+class UMediaPlateComponent final : public UActorComponent, public IMediaPlayerProxyInterface
 {
 public:
-	uint8                                         Pad_B8[0x8];                                       // 0x00B8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          bPlayOnOpen;                                       // 0x00C0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bAutoPlay;                                         // 0x00C1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bEnableAudio;                                      // 0x00C2(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)

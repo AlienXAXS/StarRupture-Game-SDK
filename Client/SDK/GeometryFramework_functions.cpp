@@ -24,10 +24,8 @@ SDK_NAMESPACE_START
 
 void UDynamicMeshProcessorBlueprint::ProcessDynamicMesh(class UDynamicMesh* TargetMesh, bool* bFailed)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("DynamicMeshProcessorBlueprint", "ProcessDynamicMesh");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ProcessDynamicMesh", FnName));
 
 	Params::DynamicMeshProcessorBlueprint_ProcessDynamicMesh Parms{};
 

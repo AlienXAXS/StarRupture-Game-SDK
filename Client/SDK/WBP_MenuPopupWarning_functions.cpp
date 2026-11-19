@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_MenuPopupWarning_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MenuPopupWarning_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -37,10 +35,8 @@ void UWBP_MenuPopupWarning_C::Construct()
 
 void UWBP_MenuPopupWarning_C::ExecuteUbergraph_WBP_MenuPopupWarning(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MenuPopupWarning_C", "ExecuteUbergraph_WBP_MenuPopupWarning");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_MenuPopupWarning_C", "ExecuteUbergraph_WBP_MenuPopupWarning", FuncInfo);
 
 	Params::WBP_MenuPopupWarning_C_ExecuteUbergraph_WBP_MenuPopupWarning Parms{};
 
@@ -59,10 +55,8 @@ void UWBP_MenuPopupWarning_C::ExecuteUbergraph_WBP_MenuPopupWarning(int32 EntryP
 
 struct FEventReply UWBP_MenuPopupWarning_C::OnMouseButtonDown_0(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MenuPopupWarning_C", "OnMouseButtonDown_0");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnMouseButtonDown_0", FnName));
 
 	Params::WBP_MenuPopupWarning_C_OnMouseButtonDown_0 Parms{};
 
@@ -82,10 +76,8 @@ struct FEventReply UWBP_MenuPopupWarning_C::OnMouseButtonDown_0(const struct FGe
 
 void UWBP_MenuPopupWarning_C::SetColors(const struct FLinearColor& Orange)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MenuPopupWarning_C", "SetColors");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetColors", FnName));
 
 	Params::WBP_MenuPopupWarning_C_SetColors Parms{};
 

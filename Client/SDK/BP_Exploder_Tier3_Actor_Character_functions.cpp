@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_Exploder_Tier3_Actor_Character_C::AddExcludedLocation(const struct FVector& NewItem)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Actor_Character_C", "AddExcludedLocation");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AddExcludedLocation", FnName));
 
 	Params::BP_Exploder_Tier3_Actor_Character_C_AddExcludedLocation Parms{};
 
@@ -43,10 +41,8 @@ void ABP_Exploder_Tier3_Actor_Character_C::AddExcludedLocation(const struct FVec
 
 void ABP_Exploder_Tier3_Actor_Character_C::ExecuteUbergraph_BP_Exploder_Tier3_Actor_Character(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Actor_Character_C", "ExecuteUbergraph_BP_Exploder_Tier3_Actor_Character");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Exploder_Tier3_Actor_Character_C", "ExecuteUbergraph_BP_Exploder_Tier3_Actor_Character", FuncInfo);
 
 	Params::BP_Exploder_Tier3_Actor_Character_C_ExecuteUbergraph_BP_Exploder_Tier3_Actor_Character Parms{};
 
@@ -63,10 +59,8 @@ void ABP_Exploder_Tier3_Actor_Character_C::ExecuteUbergraph_BP_Exploder_Tier3_Ac
 
 void ABP_Exploder_Tier3_Actor_Character_C::GetCystsLocations(TArray<struct FVector>* Result)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Actor_Character_C", "GetCystsLocations");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetCystsLocations", FnName));
 
 	Params::BP_Exploder_Tier3_Actor_Character_C_GetCystsLocations Parms{};
 
@@ -84,10 +78,8 @@ void ABP_Exploder_Tier3_Actor_Character_C::GetCystsLocations(TArray<struct FVect
 
 void ABP_Exploder_Tier3_Actor_Character_C::GetNiagaraEyeSystem(class UNiagaraComponent** NewParam)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Actor_Character_C", "GetNiagaraEyeSystem");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetNiagaraEyeSystem", FnName));
 
 	Params::BP_Exploder_Tier3_Actor_Character_C_GetNiagaraEyeSystem Parms{};
 
@@ -102,17 +94,17 @@ void ABP_Exploder_Tier3_Actor_Character_C::GetNiagaraEyeSystem(class UNiagaraCom
 // (Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AExploderT3CystActor*             Cyst                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                                    KilledManually                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Exploder_Tier3_Actor_Character_C::OnCystDestroyed(class AExploderT3CystActor* Cyst)
+void ABP_Exploder_Tier3_Actor_Character_C::OnCystDestroyed(class AExploderT3CystActor* Cyst, bool KilledManually)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Actor_Character_C", "OnCystDestroyed");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnCystDestroyed", FnName));
 
 	Params::BP_Exploder_Tier3_Actor_Character_C_OnCystDestroyed Parms{};
 
 	Parms.Cyst = Cyst;
+	Parms.KilledManually = KilledManually;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -123,10 +115,8 @@ void ABP_Exploder_Tier3_Actor_Character_C::OnCystDestroyed(class AExploderT3Cyst
 
 void ABP_Exploder_Tier3_Actor_Character_C::OnEnterActorPool()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Actor_Character_C", "OnEnterActorPool");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnEnterActorPool", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -137,10 +127,32 @@ void ABP_Exploder_Tier3_Actor_Character_C::OnEnterActorPool()
 
 void ABP_Exploder_Tier3_Actor_Character_C::OnExitActorPool()
 {
-	static class UFunction* Func = nullptr;
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnExitActorPool", FnName));
 
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Actor_Character_C", "OnExitActorPool");
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier3_Actor_Character.BP_Exploder_Tier3_Actor_Character_C.OnPrepareForGame
+// (Event, Public, BlueprintEvent)
+
+void ABP_Exploder_Tier3_Actor_Character_C::OnPrepareForGame()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPrepareForGame", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier3_Actor_Character.BP_Exploder_Tier3_Actor_Character_C.OnPrepareForPooling
+// (Event, Public, BlueprintEvent)
+
+void ABP_Exploder_Tier3_Actor_Character_C::OnPrepareForPooling()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPrepareForPooling", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -151,10 +163,8 @@ void ABP_Exploder_Tier3_Actor_Character_C::OnExitActorPool()
 
 void ABP_Exploder_Tier3_Actor_Character_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Actor_Character_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -167,10 +177,8 @@ void ABP_Exploder_Tier3_Actor_Character_C::ReceiveBeginPlay()
 
 void ABP_Exploder_Tier3_Actor_Character_C::ReceiveTick(float DeltaSeconds)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Actor_Character_C", "ReceiveTick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveTick", FnName));
 
 	Params::BP_Exploder_Tier3_Actor_Character_C_ReceiveTick Parms{};
 
@@ -187,10 +195,8 @@ void ABP_Exploder_Tier3_Actor_Character_C::ReceiveTick(float DeltaSeconds)
 
 void ABP_Exploder_Tier3_Actor_Character_C::RegisterCyst(class AExploderT3CystActor* Cyst)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Actor_Character_C", "RegisterCyst");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"RegisterCyst", FnName));
 
 	Params::BP_Exploder_Tier3_Actor_Character_C_RegisterCyst Parms{};
 
@@ -205,10 +211,20 @@ void ABP_Exploder_Tier3_Actor_Character_C::RegisterCyst(class AExploderT3CystAct
 
 void ABP_Exploder_Tier3_Actor_Character_C::ResetExcludedLocations()
 {
-	static class UFunction* Func = nullptr;
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ResetExcludedLocations", FnName));
 
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Actor_Character_C", "ResetExcludedLocations");
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier3_Actor_Character.BP_Exploder_Tier3_Actor_Character_C.UserConstructionScript
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ABP_Exploder_Tier3_Actor_Character_C::UserConstructionScript()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UserConstructionScript", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -221,10 +237,8 @@ void ABP_Exploder_Tier3_Actor_Character_C::ResetExcludedLocations()
 
 void ABP_Exploder_Tier3_Actor_Character_C::OnMeshVisibilityUpdated(bool bIsMeshHidden) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Actor_Character_C", "OnMeshVisibilityUpdated");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnMeshVisibilityUpdated", FnName));
 
 	Params::BP_Exploder_Tier3_Actor_Character_C_OnMeshVisibilityUpdated Parms{};
 

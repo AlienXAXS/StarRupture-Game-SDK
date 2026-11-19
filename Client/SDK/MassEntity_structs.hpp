@@ -108,6 +108,25 @@ enum class EMassFragmentPresence : uint8
 	MAX                                      = 4,
 };
 
+// ScriptStruct MassEntity.MassRuntimePipeline
+// 0x0018 (0x0018 - 0x0000)
+struct FMassRuntimePipeline final
+{
+public:
+	TArray<class UMassProcessor*>                 Processors;                                        // 0x0000(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
+	uint8                                         Pad_10[0x8];                                       // 0x0010(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMassRuntimePipeline;
+
+// ScriptStruct MassEntity.MassGenericDebugEvent
+// 0x0001 (0x0001 - 0x0000)
+struct FMassGenericDebugEvent final
+{
+public:
+	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FMassGenericDebugEvent;
+
 // ScriptStruct MassEntity.MassEntityHandle
 // 0x0008 (0x0008 - 0x0000)
 struct alignas(0x08) FMassEntityHandle final
@@ -118,23 +137,16 @@ public:
 };
 DUMPER7_ASSERTS_FMassEntityHandle;
 
-// ScriptStruct MassEntity.MassSharedFragment
-// 0x0000 (0x0000 - 0x0000)
-#pragma pack(push, 0x1)
-struct SDK_ALIGN(0x01) FMassSharedFragment
-{
-};
-#pragma pack(pop)
-DUMPER7_ASSERTS_FMassSharedFragment;
-
-// ScriptStruct MassEntity.MassGenericDebugEvent
-// 0x0001 (0x0001 - 0x0000)
-struct FMassGenericDebugEvent final
+// ScriptStruct MassEntity.MassProcessorExecutionOrder
+// 0x0028 (0x0028 - 0x0000)
+struct FMassProcessorExecutionOrder final
 {
 public:
-	uint8                                         Pad_0[0x1];                                        // 0x0000(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FName                                   ExecuteInGroup;                                    // 0x0000(0x0008)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class FName>                           ExecuteBefore;                                     // 0x0008(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
+	TArray<class FName>                           ExecuteAfter;                                      // 0x0018(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FMassGenericDebugEvent;
+DUMPER7_ASSERTS_FMassProcessorExecutionOrder;
 
 // ScriptStruct MassEntity.MassFragment
 // 0x0000 (0x0000 - 0x0000)
@@ -172,6 +184,15 @@ struct SDK_ALIGN(0x01) FMassChunkFragment
 #pragma pack(pop)
 DUMPER7_ASSERTS_FMassChunkFragment;
 
+// ScriptStruct MassEntity.MassSharedFragment
+// 0x0000 (0x0000 - 0x0000)
+#pragma pack(push, 0x1)
+struct SDK_ALIGN(0x01) FMassSharedFragment
+{
+};
+#pragma pack(pop)
+DUMPER7_ASSERTS_FMassSharedFragment;
+
 // ScriptStruct MassEntity.MassConstSharedFragment
 // 0x0000 (0x0000 - 0x0000)
 #pragma pack(push, 0x1)
@@ -207,16 +228,6 @@ public:
 	uint8                                         Pad_0[0x28];                                       // 0x0000(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FMassEntityView;
-
-// ScriptStruct MassEntity.MassRuntimePipeline
-// 0x0018 (0x0018 - 0x0000)
-struct FMassRuntimePipeline final
-{
-public:
-	TArray<class UMassProcessor*>                 Processors;                                        // 0x0000(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
-	uint8                                         Pad_10[0x8];                                       // 0x0010(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FMassRuntimePipeline;
 
 // ScriptStruct MassEntity.MassObserversMap
 // 0x0050 (0x0050 - 0x0000)
@@ -289,17 +300,6 @@ public:
 	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FMassProcessingContext_DEPRECATED;
-
-// ScriptStruct MassEntity.MassProcessorExecutionOrder
-// 0x0028 (0x0028 - 0x0000)
-struct FMassProcessorExecutionOrder final
-{
-public:
-	class FName                                   ExecuteInGroup;                                    // 0x0000(0x0008)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class FName>                           ExecuteBefore;                                     // 0x0008(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
-	TArray<class FName>                           ExecuteAfter;                                      // 0x0018(0x0010)(Edit, ZeroConstructor, Config, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FMassProcessorExecutionOrder;
 
 // ScriptStruct MassEntity.MassSubsystemRequirements
 // 0x0048 (0x0048 - 0x0000)

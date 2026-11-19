@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_MassCropHiResActorBase_C::ExecuteUbergraph_BP_MassCropHiResActorBase(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MassCropHiResActorBase_C", "ExecuteUbergraph_BP_MassCropHiResActorBase");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_MassCropHiResActorBase_C", "ExecuteUbergraph_BP_MassCropHiResActorBase", FuncInfo);
 
 	Params::BP_MassCropHiResActorBase_C_ExecuteUbergraph_BP_MassCropHiResActorBase Parms{};
 
@@ -41,10 +39,8 @@ void ABP_MassCropHiResActorBase_C::ExecuteUbergraph_BP_MassCropHiResActorBase(in
 
 void ABP_MassCropHiResActorBase_C::OnCropDepletedCosmeticsStart()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MassCropHiResActorBase_C", "OnCropDepletedCosmeticsStart");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnCropDepletedCosmeticsStart", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -55,10 +51,8 @@ void ABP_MassCropHiResActorBase_C::OnCropDepletedCosmeticsStart()
 
 void ABP_MassCropHiResActorBase_C::OnResourceReplenishedCosmeticsStart()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MassCropHiResActorBase_C", "OnResourceReplenishedCosmeticsStart");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnResourceReplenishedCosmeticsStart", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

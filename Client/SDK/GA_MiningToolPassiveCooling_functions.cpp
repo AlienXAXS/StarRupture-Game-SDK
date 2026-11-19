@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UGA_MiningToolPassiveCooling_C::ExecuteUbergraph_GA_MiningToolPassiveCooling(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_MiningToolPassiveCooling_C", "ExecuteUbergraph_GA_MiningToolPassiveCooling");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "GA_MiningToolPassiveCooling_C", "ExecuteUbergraph_GA_MiningToolPassiveCooling", FuncInfo);
 
 	Params::GA_MiningToolPassiveCooling_C_ExecuteUbergraph_GA_MiningToolPassiveCooling Parms{};
 
@@ -41,10 +39,8 @@ void UGA_MiningToolPassiveCooling_C::ExecuteUbergraph_GA_MiningToolPassiveCoolin
 
 void UGA_MiningToolPassiveCooling_C::K2_ActivateAbility()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_MiningToolPassiveCooling_C", "K2_ActivateAbility");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_ActivateAbility", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -57,10 +53,8 @@ void UGA_MiningToolPassiveCooling_C::K2_ActivateAbility()
 
 void UGA_MiningToolPassiveCooling_C::K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_MiningToolPassiveCooling_C", "K2_ActivateAbilityFromEvent");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_ActivateAbilityFromEvent", FnName));
 
 	Params::GA_MiningToolPassiveCooling_C_K2_ActivateAbilityFromEvent Parms{};
 
@@ -77,10 +71,8 @@ void UGA_MiningToolPassiveCooling_C::K2_ActivateAbilityFromEvent(const struct FG
 
 void UGA_MiningToolPassiveCooling_C::K2_OnEndAbility(bool bWasCancelled)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_MiningToolPassiveCooling_C", "K2_OnEndAbility");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_OnEndAbility", FnName));
 
 	Params::GA_MiningToolPassiveCooling_C_K2_OnEndAbility Parms{};
 
@@ -95,10 +87,8 @@ void UGA_MiningToolPassiveCooling_C::K2_OnEndAbility(bool bWasCancelled)
 
 void UGA_MiningToolPassiveCooling_C::OnFinish_2FE61E1646A131976853EC9555B454A4()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_MiningToolPassiveCooling_C", "OnFinish_2FE61E1646A131976853EC9555B454A4");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFinish_2FE61E1646A131976853EC9555B454A4", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -111,10 +101,8 @@ void UGA_MiningToolPassiveCooling_C::OnFinish_2FE61E1646A131976853EC9555B454A4()
 
 void UGA_MiningToolPassiveCooling_C::OnFinished_6A05B7EC444B9F45205F41900B8FE392(int32 ActionNumber)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_MiningToolPassiveCooling_C", "OnFinished_6A05B7EC444B9F45205F41900B8FE392");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFinished_6A05B7EC444B9F45205F41900B8FE392", FnName));
 
 	Params::GA_MiningToolPassiveCooling_C_OnFinished_6A05B7EC444B9F45205F41900B8FE392 Parms{};
 
@@ -131,10 +119,8 @@ void UGA_MiningToolPassiveCooling_C::OnFinished_6A05B7EC444B9F45205F41900B8FE392
 
 void UGA_MiningToolPassiveCooling_C::OnPerformAction_6A05B7EC444B9F45205F41900B8FE392(int32 ActionNumber)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_MiningToolPassiveCooling_C", "OnPerformAction_6A05B7EC444B9F45205F41900B8FE392");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPerformAction_6A05B7EC444B9F45205F41900B8FE392", FnName));
 
 	Params::GA_MiningToolPassiveCooling_C_OnPerformAction_6A05B7EC444B9F45205F41900B8FE392 Parms{};
 
@@ -149,10 +135,8 @@ void UGA_MiningToolPassiveCooling_C::OnPerformAction_6A05B7EC444B9F45205F41900B8
 
 void UGA_MiningToolPassiveCooling_C::OnSync_103EAFE346A5B9623DDF109C27FDEB74()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_MiningToolPassiveCooling_C", "OnSync_103EAFE346A5B9623DDF109C27FDEB74");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSync_103EAFE346A5B9623DDF109C27FDEB74", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -163,10 +147,8 @@ void UGA_MiningToolPassiveCooling_C::OnSync_103EAFE346A5B9623DDF109C27FDEB74()
 
 void UGA_MiningToolPassiveCooling_C::OnSync_EE69512141AAD78978DD38B58E109ECC()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_MiningToolPassiveCooling_C", "OnSync_EE69512141AAD78978DD38B58E109ECC");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSync_EE69512141AAD78978DD38B58E109ECC", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

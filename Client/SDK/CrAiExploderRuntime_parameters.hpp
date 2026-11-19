@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "MassAIPrototypeEnemyRuntime_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "AuActorPlacement_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "MassAIPrototypeEnemyRuntime_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -79,6 +79,99 @@ public:
 	class UCrAiActionExploderT3DigIn*             ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_CrAiActionExploderT3DigIn_Create_CrAiActionExploderT3DigIn;
+
+// Function CrAiExploderRuntime.CrAiActionShootPreparedProjectile.Create_CrAiActionShootPreparedProjectile
+// 0x0080 (0x0080 - 0x0000)
+struct CrAiActionShootPreparedProjectile_Create_CrAiActionShootPreparedProjectile final
+{
+public:
+	TSubclassOf<class UCrAiActionShootPreparedProjectile> ActionType;                                // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NewMaxLifetimeS;                                   // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class ACrAiProjectileActor>       NewPooledProjectileType;                           // 0x0010(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                NewStartLocation;                                  // 0x0018(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                NewEndLocation;                                    // 0x0030(0x0018)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NewArcParam;                                       // 0x0048(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NewGravityOverride;                                // 0x004C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NewShootVelocityVariance;                          // 0x0050(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   NewProjectileSpawnMeshSlotName;                    // 0x0054(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrEnemyAttackType                            NewAttackType;                                     // 0x005C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5D[0x3];                                       // 0x005D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UGameplayEffect>            NewDamageGameplayEffect;                           // 0x0060(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NewBuildingInfectionDamage;                        // 0x0068(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NewAllowedAttackDistance;                          // 0x006C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NewAllowedAttackConeHalfAngle;                     // 0x0070(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_74[0x4];                                       // 0x0074(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCrAiActionShootPreparedProjectile*     ReturnValue;                                       // 0x0078(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrAiActionShootPreparedProjectile_Create_CrAiActionShootPreparedProjectile;
+
+// Function CrAiExploderRuntime.CrAiActionShowProjectileAndPrepareForLaunch.Create_CrAiActionShowProjectileAndPrepareForLaunch
+// 0x0030 (0x0030 - 0x0000)
+struct CrAiActionShowProjectileAndPrepareForLaunch_Create_CrAiActionShowProjectileAndPrepareForLaunch final
+{
+public:
+	TSubclassOf<class UCrAiActionShowProjectileAndPrepareForLaunch> ActionType;                      // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NewMaxLifetimeS;                                   // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class ACrAiProjectileActor>       PooledProjectileType_0;                            // 0x0010(0x0008)(Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ProjectileAttachMeshSlotName_0;                    // 0x0018(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrEnemyAttackType                            NewAttackType;                                     // 0x0020(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UCrAiActionShowProjectileAndPrepareForLaunch* ReturnValue;                                 // 0x0028(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrAiActionShowProjectileAndPrepareForLaunch_Create_CrAiActionShowProjectileAndPrepareForLaunch;
+
+// Function CrAiExploderRuntime.CrAiActionShowProjectileAndPrepareForLaunch.OnAnimFinished
+// 0x0010 (0x0010 - 0x0000)
+struct CrAiActionShowProjectileAndPrepareForLaunch_OnAnimFinished final
+{
+public:
+	class AActor*                                 Actor;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrEnemyLocomotionType                        CrEnemyLocomotion;                                 // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrEnemyAttackType                            CrEnemyAttack;                                     // 0x0009(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrEnemyJumpState                             CrEnemyJumpState;                                  // 0x000A(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B[0x5];                                        // 0x000B(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_CrAiActionShowProjectileAndPrepareForLaunch_OnAnimFinished;
+
+// Function CrAiExploderRuntime.CrAiActionShowProjectileAndPrepareForLaunch.OnShootAnimEvent
+// 0x0018 (0x0018 - 0x0000)
+struct CrAiActionShowProjectileAndPrepareForLaunch_OnShootAnimEvent final
+{
+public:
+	class AActor*                                 AiActor;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 OverrideSocketName;                                // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrAiActionShowProjectileAndPrepareForLaunch_OnShootAnimEvent;
+
+// Function CrAiExploderRuntime.CrAiExploder.OnProjectileDestroyed
+// 0x0008 (0x0008 - 0x0000)
+struct CrAiExploder_OnProjectileDestroyed final
+{
+public:
+	class FName                                   SocketName;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrAiExploder_OnProjectileDestroyed;
+
+// Function CrAiExploderRuntime.CrAiExploder.OnProjectileLaunched
+// 0x0008 (0x0008 - 0x0000)
+struct CrAiExploder_OnProjectileLaunched final
+{
+public:
+	class FName                                   SocketName;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrAiExploder_OnProjectileLaunched;
+
+// Function CrAiExploderRuntime.CrAiExploder.OnProjectileLoaded
+// 0x0010 (0x0010 - 0x0000)
+struct CrAiExploder_OnProjectileLoaded final
+{
+public:
+	class FName                                   SocketName;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 Projectile;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_CrAiExploder_OnProjectileLoaded;
 
 // Function CrAiExploderRuntime.CrAiExploder.IsExploderDead
 // 0x0001 (0x0001 - 0x0000)

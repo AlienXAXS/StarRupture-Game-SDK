@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_Decoy_C::ExecuteUbergraph_BP_Decoy(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Decoy_C", "ExecuteUbergraph_BP_Decoy");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Decoy_C", "ExecuteUbergraph_BP_Decoy", FuncInfo);
 
 	Params::BP_Decoy_C_ExecuteUbergraph_BP_Decoy Parms{};
 
@@ -43,10 +41,8 @@ void ABP_Decoy_C::ExecuteUbergraph_BP_Decoy(int32 EntryPoint)
 
 void ABP_Decoy_C::OnBuildingStateChanged(ECrBuildingState InState)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Decoy_C", "OnBuildingStateChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBuildingStateChanged", FnName));
 
 	Params::BP_Decoy_C_OnBuildingStateChanged Parms{};
 

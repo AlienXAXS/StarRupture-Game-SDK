@@ -14,6 +14,7 @@
 #include "AIModule_structs.hpp"
 #include "AIModule_classes.hpp"
 #include "GameplayTags_structs.hpp"
+#include "MassAIPrototypeEnemyRuntime_classes.hpp"
 #include "Engine_classes.hpp"
 #include "Chimera_structs.hpp"
 
@@ -46,9 +47,12 @@ public:
 DUMPER7_ASSERTS_UBTService_CrAiAnimalCrabUpdateState;
 
 // Class CrAiAnimalCrabRuntime.CrAiAnimalCrabInterface
-// 0x0000 (0x0000 - 0x0000)
-class ICrAiAnimalCrabInterface final
+// 0x0008 (0x0008 - 0x0000)
+class ICrAiAnimalCrabInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	bool AreTentaclesHidden();
 	class UCrAiAnimalCrabUpdateStateComponent* GetCrabUpdateStateComponent();
@@ -105,10 +109,9 @@ DUMPER7_ASSERTS_UBTTask_CrabInitializeValueOfWave;
 
 // Class CrAiAnimalCrabRuntime.CrAiAnimalCrabUpdateStateComponent
 // 0x00F8 (0x01B0 - 0x00B8)
-class UCrAiAnimalCrabUpdateStateComponent final : public UActorComponent
+class UCrAiAnimalCrabUpdateStateComponent final : public UActorComponent, public IMassEnemyPooledActorComponentInterface
 {
 public:
-	uint8                                         Pad_B8[0x8];                                       // 0x00B8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGameplayTag                           InWaterTag;                                        // 0x00C0(0x0008)(Edit, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	float                                         ConsiderableRadius;                                // 0x00C8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	float                                         AwarenessRadius;                                   // 0x00CC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -150,6 +153,9 @@ public:
 	{
 		return GetDefaultObjImpl<UCrAiAnimalCrabUpdateStateComponent>();
 	}
+
+public:
+	void OnPooledOwnerActivityChanged(bool bNewEnabled);
 };
 DUMPER7_ASSERTS_UCrAiAnimalCrabUpdateStateComponent;
 

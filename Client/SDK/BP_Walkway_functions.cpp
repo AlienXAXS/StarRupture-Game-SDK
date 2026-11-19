@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 bool ABP_Walkway_C::CanBePooled()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Walkway_C", "CanBePooled");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"CanBePooled", FnName));
 
 	Params::BP_Walkway_C_CanBePooled Parms{};
 
@@ -43,10 +41,8 @@ bool ABP_Walkway_C::CanBePooled()
 
 void ABP_Walkway_C::ExecuteUbergraph_BP_Walkway(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Walkway_C", "ExecuteUbergraph_BP_Walkway");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Walkway_C", "ExecuteUbergraph_BP_Walkway", FuncInfo);
 
 	Params::BP_Walkway_C_ExecuteUbergraph_BP_Walkway Parms{};
 
@@ -63,10 +59,8 @@ void ABP_Walkway_C::ExecuteUbergraph_BP_Walkway(int32 EntryPoint)
 
 double ABP_Walkway_C::GetRampAngle()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Walkway_C", "GetRampAngle");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetRampAngle", FnName));
 
 	Params::BP_Walkway_C_GetRampAngle Parms{};
 
@@ -83,10 +77,8 @@ double ABP_Walkway_C::GetRampAngle()
 
 bool ABP_Walkway_C::IsLadder()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Walkway_C", "IsLadder");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IsLadder", FnName));
 
 	Params::BP_Walkway_C_IsLadder Parms{};
 
@@ -103,10 +95,8 @@ bool ABP_Walkway_C::IsLadder()
 
 bool ABP_Walkway_C::IsRamp()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Walkway_C", "IsRamp");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IsRamp", FnName));
 
 	Params::BP_Walkway_C_IsRamp Parms{};
 
@@ -123,10 +113,8 @@ bool ABP_Walkway_C::IsRamp()
 
 void ABP_Walkway_C::OnSplineReady(class USplineComponent* InSpline)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Walkway_C", "OnSplineReady");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSplineReady", FnName));
 
 	Params::BP_Walkway_C_OnSplineReady Parms{};
 
@@ -141,10 +129,8 @@ void ABP_Walkway_C::OnSplineReady(class USplineComponent* InSpline)
 
 void ABP_Walkway_C::PrepareForGame()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Walkway_C", "PrepareForGame");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PrepareForGame", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

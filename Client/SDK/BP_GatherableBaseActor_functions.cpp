@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void ABP_GatherableBaseActor_C::BP_DebugToggleRegularVisualization()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GatherableBaseActor_C", "BP_DebugToggleRegularVisualization");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_DebugToggleRegularVisualization", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -38,10 +36,8 @@ void ABP_GatherableBaseActor_C::BP_DebugToggleRegularVisualization()
 
 void ABP_GatherableBaseActor_C::BP_OnDepletedCosmetics(const struct FVector& InInteractingActorLocation, const class ACrCharacterPlayerBase* InInteractingPlayer)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GatherableBaseActor_C", "BP_OnDepletedCosmetics");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnDepletedCosmetics", FnName));
 
 	Params::BP_GatherableBaseActor_C_BP_OnDepletedCosmetics Parms{};
 
@@ -57,10 +53,8 @@ void ABP_GatherableBaseActor_C::BP_OnDepletedCosmetics(const struct FVector& InI
 
 void ABP_GatherableBaseActor_C::BP_OnRemoveInstancedVisualsRequested()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GatherableBaseActor_C", "BP_OnRemoveInstancedVisualsRequested");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnRemoveInstancedVisualsRequested", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -73,10 +67,8 @@ void ABP_GatherableBaseActor_C::BP_OnRemoveInstancedVisualsRequested()
 
 void ABP_GatherableBaseActor_C::BP_OnVisualInstanceAdded(const struct FCrGatherableInstancedVisualsData& InVisualData)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GatherableBaseActor_C", "BP_OnVisualInstanceAdded");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnVisualInstanceAdded", FnName));
 
 	Params::BP_GatherableBaseActor_C_BP_OnVisualInstanceAdded Parms{};
 
@@ -93,10 +85,8 @@ void ABP_GatherableBaseActor_C::BP_OnVisualInstanceAdded(const struct FCrGathera
 
 void ABP_GatherableBaseActor_C::BP_ShowDepletedVisuals(const struct FVector& InInteractingActorLocation)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GatherableBaseActor_C", "BP_ShowDepletedVisuals");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_ShowDepletedVisuals", FnName));
 
 	Params::BP_GatherableBaseActor_C_BP_ShowDepletedVisuals Parms{};
 
@@ -111,10 +101,8 @@ void ABP_GatherableBaseActor_C::BP_ShowDepletedVisuals(const struct FVector& InI
 
 void ABP_GatherableBaseActor_C::BP_ShowInitVisuals()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GatherableBaseActor_C", "BP_ShowInitVisuals");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_ShowInitVisuals", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -125,10 +113,8 @@ void ABP_GatherableBaseActor_C::BP_ShowInitVisuals()
 
 void ABP_GatherableBaseActor_C::DebugProcessRegularVisualization()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GatherableBaseActor_C", "DebugProcessRegularVisualization");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"DebugProcessRegularVisualization", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -141,10 +127,8 @@ void ABP_GatherableBaseActor_C::DebugProcessRegularVisualization()
 
 void ABP_GatherableBaseActor_C::ExecuteUbergraph_BP_GatherableBaseActor(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GatherableBaseActor_C", "ExecuteUbergraph_BP_GatherableBaseActor");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_GatherableBaseActor_C", "ExecuteUbergraph_BP_GatherableBaseActor", FuncInfo);
 
 	Params::BP_GatherableBaseActor_C_ExecuteUbergraph_BP_GatherableBaseActor Parms{};
 
@@ -159,10 +143,8 @@ void ABP_GatherableBaseActor_C::ExecuteUbergraph_BP_GatherableBaseActor(int32 En
 
 void ABP_GatherableBaseActor_C::InitializeInstance()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GatherableBaseActor_C", "InitializeInstance");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"InitializeInstance", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -173,10 +155,8 @@ void ABP_GatherableBaseActor_C::InitializeInstance()
 
 void ABP_GatherableBaseActor_C::PostPCGSpawnInstanceInitialize()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GatherableBaseActor_C", "PostPCGSpawnInstanceInitialize");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PostPCGSpawnInstanceInitialize", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -189,10 +169,8 @@ void ABP_GatherableBaseActor_C::PostPCGSpawnInstanceInitialize()
 
 void ABP_GatherableBaseActor_C::ProcessDataFloatsAfterDepletion(const struct FVector& InInteractingActorLocation)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GatherableBaseActor_C", "ProcessDataFloatsAfterDepletion");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ProcessDataFloatsAfterDepletion", FnName));
 
 	Params::BP_GatherableBaseActor_C_ProcessDataFloatsAfterDepletion Parms{};
 
@@ -207,10 +185,8 @@ void ABP_GatherableBaseActor_C::ProcessDataFloatsAfterDepletion(const struct FVe
 
 void ABP_GatherableBaseActor_C::ProcessMeshInstanceRemoval()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GatherableBaseActor_C", "ProcessMeshInstanceRemoval");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ProcessMeshInstanceRemoval", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -221,10 +197,8 @@ void ABP_GatherableBaseActor_C::ProcessMeshInstanceRemoval()
 
 void ABP_GatherableBaseActor_C::ProcessMeshInstancing()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GatherableBaseActor_C", "ProcessMeshInstancing");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ProcessMeshInstancing", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -238,10 +212,8 @@ void ABP_GatherableBaseActor_C::ProcessMeshInstancing()
 
 void ABP_GatherableBaseActor_C::ProcessOnInstaceAdded(class UInstancedStaticMeshComponent* InVisualInstancedVisualsComponent, int32 InVisualDataInstanceIdx)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GatherableBaseActor_C", "ProcessOnInstaceAdded");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ProcessOnInstaceAdded", FnName));
 
 	Params::BP_GatherableBaseActor_C_ProcessOnInstaceAdded Parms{};
 

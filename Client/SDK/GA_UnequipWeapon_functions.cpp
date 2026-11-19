@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UGA_UnequipWeapon_C::ExecuteUbergraph_GA_UnequipWeapon(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_UnequipWeapon_C", "ExecuteUbergraph_GA_UnequipWeapon");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "GA_UnequipWeapon_C", "ExecuteUbergraph_GA_UnequipWeapon", FuncInfo);
 
 	Params::GA_UnequipWeapon_C_ExecuteUbergraph_GA_UnequipWeapon Parms{};
 
@@ -41,10 +39,8 @@ void UGA_UnequipWeapon_C::ExecuteUbergraph_GA_UnequipWeapon(int32 EntryPoint)
 
 void UGA_UnequipWeapon_C::K2_ActivateAbility()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_UnequipWeapon_C", "K2_ActivateAbility");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_ActivateAbility", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -57,10 +53,8 @@ void UGA_UnequipWeapon_C::K2_ActivateAbility()
 
 void UGA_UnequipWeapon_C::OnCancelled_B1E48B95BB4A687A3BDA18AC4CA072FD(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_UnequipWeapon_C", "OnCancelled_B1E48B95BB4A687A3BDA18AC4CA072FD");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnCancelled_B1E48B95BB4A687A3BDA18AC4CA072FD", FnName));
 
 	Params::GA_UnequipWeapon_C_OnCancelled_B1E48B95BB4A687A3BDA18AC4CA072FD Parms{};
 
@@ -75,10 +69,8 @@ void UGA_UnequipWeapon_C::OnCancelled_B1E48B95BB4A687A3BDA18AC4CA072FD(class FNa
 
 void UGA_UnequipWeapon_C::OnFinish_30BD3650DD442CDE7A8E30BA05646606()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_UnequipWeapon_C", "OnFinish_30BD3650DD442CDE7A8E30BA05646606");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFinish_30BD3650DD442CDE7A8E30BA05646606", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -91,10 +83,8 @@ void UGA_UnequipWeapon_C::OnFinish_30BD3650DD442CDE7A8E30BA05646606()
 
 void UGA_UnequipWeapon_C::OnFppMontageBlendOut_B1E48B95BB4A687A3BDA18AC4CA072FD(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_UnequipWeapon_C", "OnFppMontageBlendOut_B1E48B95BB4A687A3BDA18AC4CA072FD");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageBlendOut_B1E48B95BB4A687A3BDA18AC4CA072FD", FnName));
 
 	Params::GA_UnequipWeapon_C_OnFppMontageBlendOut_B1E48B95BB4A687A3BDA18AC4CA072FD Parms{};
 
@@ -111,10 +101,8 @@ void UGA_UnequipWeapon_C::OnFppMontageBlendOut_B1E48B95BB4A687A3BDA18AC4CA072FD(
 
 void UGA_UnequipWeapon_C::OnFppMontageEnded_B1E48B95BB4A687A3BDA18AC4CA072FD(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_UnequipWeapon_C", "OnFppMontageEnded_B1E48B95BB4A687A3BDA18AC4CA072FD");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageEnded_B1E48B95BB4A687A3BDA18AC4CA072FD", FnName));
 
 	Params::GA_UnequipWeapon_C_OnFppMontageEnded_B1E48B95BB4A687A3BDA18AC4CA072FD Parms{};
 
@@ -131,10 +119,8 @@ void UGA_UnequipWeapon_C::OnFppMontageEnded_B1E48B95BB4A687A3BDA18AC4CA072FD(cla
 
 void UGA_UnequipWeapon_C::OnFppMontageNotifyBegin_B1E48B95BB4A687A3BDA18AC4CA072FD(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_UnequipWeapon_C", "OnFppMontageNotifyBegin_B1E48B95BB4A687A3BDA18AC4CA072FD");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageNotifyBegin_B1E48B95BB4A687A3BDA18AC4CA072FD", FnName));
 
 	Params::GA_UnequipWeapon_C_OnFppMontageNotifyBegin_B1E48B95BB4A687A3BDA18AC4CA072FD Parms{};
 
@@ -151,10 +137,8 @@ void UGA_UnequipWeapon_C::OnFppMontageNotifyBegin_B1E48B95BB4A687A3BDA18AC4CA072
 
 void UGA_UnequipWeapon_C::OnFppMontageNotifyEnd_B1E48B95BB4A687A3BDA18AC4CA072FD(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_UnequipWeapon_C", "OnFppMontageNotifyEnd_B1E48B95BB4A687A3BDA18AC4CA072FD");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageNotifyEnd_B1E48B95BB4A687A3BDA18AC4CA072FD", FnName));
 
 	Params::GA_UnequipWeapon_C_OnFppMontageNotifyEnd_B1E48B95BB4A687A3BDA18AC4CA072FD Parms{};
 
@@ -171,10 +155,8 @@ void UGA_UnequipWeapon_C::OnFppMontageNotifyEnd_B1E48B95BB4A687A3BDA18AC4CA072FD
 
 void UGA_UnequipWeapon_C::OnInterrupted_B1E48B95BB4A687A3BDA18AC4CA072FD(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_UnequipWeapon_C", "OnInterrupted_B1E48B95BB4A687A3BDA18AC4CA072FD");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnInterrupted_B1E48B95BB4A687A3BDA18AC4CA072FD", FnName));
 
 	Params::GA_UnequipWeapon_C_OnInterrupted_B1E48B95BB4A687A3BDA18AC4CA072FD Parms{};
 
@@ -191,10 +173,8 @@ void UGA_UnequipWeapon_C::OnInterrupted_B1E48B95BB4A687A3BDA18AC4CA072FD(class F
 
 void UGA_UnequipWeapon_C::OnNotLocallyControlledTppMontageBlendOut_B1E48B95BB4A687A3BDA18AC4CA072FD(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_UnequipWeapon_C", "OnNotLocallyControlledTppMontageBlendOut_B1E48B95BB4A687A3BDA18AC4CA072FD");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnNotLocallyControlledTppMontageBlendOut_B1E48B95BB4A687A3BDA18AC4CA072FD", FnName));
 
 	Params::GA_UnequipWeapon_C_OnNotLocallyControlledTppMontageBlendOut_B1E48B95BB4A687A3BDA18AC4CA072FD Parms{};
 

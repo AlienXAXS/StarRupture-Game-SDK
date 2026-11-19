@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_DynamicPillar_C::ExecuteUbergraph_BP_DynamicPillar(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DynamicPillar_C", "ExecuteUbergraph_BP_DynamicPillar");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_DynamicPillar_C", "ExecuteUbergraph_BP_DynamicPillar", FuncInfo);
 
 	Params::BP_DynamicPillar_C_ExecuteUbergraph_BP_DynamicPillar Parms{};
 
@@ -41,10 +39,8 @@ void ABP_DynamicPillar_C::ExecuteUbergraph_BP_DynamicPillar(int32 EntryPoint)
 
 void ABP_DynamicPillar_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DynamicPillar_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_CoolerPassive_C::ExecuteUbergraph_BP_CoolerPassive(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CoolerPassive_C", "ExecuteUbergraph_BP_CoolerPassive");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_CoolerPassive_C", "ExecuteUbergraph_BP_CoolerPassive", FuncInfo);
 
 	Params::BP_CoolerPassive_C_ExecuteUbergraph_BP_CoolerPassive Parms{};
 
@@ -43,10 +41,8 @@ void ABP_CoolerPassive_C::ExecuteUbergraph_BP_CoolerPassive(int32 EntryPoint)
 
 void ABP_CoolerPassive_C::OnHeaterCoolerConnectionsChanged(const TArray<class FName>& ConnectedSockets)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CoolerPassive_C", "OnHeaterCoolerConnectionsChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnHeaterCoolerConnectionsChanged", FnName));
 
 	Params::BP_CoolerPassive_C_OnHeaterCoolerConnectionsChanged Parms{};
 
@@ -63,10 +59,8 @@ void ABP_CoolerPassive_C::OnHeaterCoolerConnectionsChanged(const TArray<class FN
 
 void ABP_CoolerPassive_C::OnHeaterCoolerStateChanged(ECrMassHeaterCoolerState State)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CoolerPassive_C", "OnHeaterCoolerStateChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnHeaterCoolerStateChanged", FnName));
 
 	Params::BP_CoolerPassive_C_OnHeaterCoolerStateChanged Parms{};
 
@@ -83,10 +77,8 @@ void ABP_CoolerPassive_C::OnHeaterCoolerStateChanged(ECrMassHeaterCoolerState St
 
 void ABP_CoolerPassive_C::OnSocketConnected(class FName SocketName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CoolerPassive_C", "OnSocketConnected");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSocketConnected", FnName));
 
 	Params::BP_CoolerPassive_C_OnSocketConnected Parms{};
 
@@ -103,10 +95,8 @@ void ABP_CoolerPassive_C::OnSocketConnected(class FName SocketName)
 
 void ABP_CoolerPassive_C::OnSocketDisconnected(class FName SocketName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CoolerPassive_C", "OnSocketDisconnected");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSocketDisconnected", FnName));
 
 	Params::BP_CoolerPassive_C_OnSocketDisconnected Parms{};
 

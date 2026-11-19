@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_Smelter_C::ExecuteUbergraph_BP_Smelter(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Smelter_C", "ExecuteUbergraph_BP_Smelter");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Smelter_C", "ExecuteUbergraph_BP_Smelter", FuncInfo);
 
 	Params::BP_Smelter_C_ExecuteUbergraph_BP_Smelter Parms{};
 
@@ -43,10 +41,8 @@ void ABP_Smelter_C::ExecuteUbergraph_BP_Smelter(int32 EntryPoint)
 
 void ABP_Smelter_C::OnBuildingStateChanged(ECrBuildingState InState)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Smelter_C", "OnBuildingStateChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBuildingStateChanged", FnName));
 
 	Params::BP_Smelter_C_OnBuildingStateChanged Parms{};
 
@@ -61,10 +57,8 @@ void ABP_Smelter_C::OnBuildingStateChanged(ECrBuildingState InState)
 
 void ABP_Smelter_C::SetupSkeletalMesh()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Smelter_C", "SetupSkeletalMesh");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetupSkeletalMesh", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -79,10 +73,8 @@ void ABP_Smelter_C::SetupSkeletalMesh()
 
 void ABP_Smelter_C::Get_Meshes(class USceneComponent* Static_0, class USceneComponent* Animated_0, TArray<class UMeshComponent*>* NewParam) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Smelter_C", "Get Meshes");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Get Meshes", FnName));
 
 	Params::BP_Smelter_C_Get_Meshes Parms{};
 

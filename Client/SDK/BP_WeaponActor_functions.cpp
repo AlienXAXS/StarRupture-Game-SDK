@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_WeaponActor_C::ExecuteUbergraph_BP_WeaponActor(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WeaponActor_C", "ExecuteUbergraph_BP_WeaponActor");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_WeaponActor_C", "ExecuteUbergraph_BP_WeaponActor", FuncInfo);
 
 	Params::BP_WeaponActor_C_ExecuteUbergraph_BP_WeaponActor Parms{};
 
@@ -43,10 +41,8 @@ void ABP_WeaponActor_C::ExecuteUbergraph_BP_WeaponActor(int32 EntryPoint)
 
 struct FTransform ABP_WeaponActor_C::GetAimSocketTransformForADS()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WeaponActor_C", "GetAimSocketTransformForADS");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetAimSocketTransformForADS", FnName));
 
 	Params::BP_WeaponActor_C_GetAimSocketTransformForADS Parms{};
 
@@ -63,10 +59,8 @@ struct FTransform ABP_WeaponActor_C::GetAimSocketTransformForADS()
 
 int32 ABP_WeaponActor_C::GetAmmoCount()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WeaponActor_C", "GetAmmoCount");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetAmmoCount", FnName));
 
 	Params::BP_WeaponActor_C_GetAmmoCount Parms{};
 
@@ -85,10 +79,8 @@ int32 ABP_WeaponActor_C::GetAmmoCount()
 
 bool ABP_WeaponActor_C::GetLeftHandIKSocketTransform(class FName SocketName, struct FTransform* OutTransform)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WeaponActor_C", "GetLeftHandIKSocketTransform");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetLeftHandIKSocketTransform", FnName));
 
 	Params::BP_WeaponActor_C_GetLeftHandIKSocketTransform Parms{};
 
@@ -110,10 +102,8 @@ bool ABP_WeaponActor_C::GetLeftHandIKSocketTransform(class FName SocketName, str
 
 int32 ABP_WeaponActor_C::GetMagAmmoCount()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WeaponActor_C", "GetMagAmmoCount");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetMagAmmoCount", FnName));
 
 	Params::BP_WeaponActor_C_GetMagAmmoCount Parms{};
 
@@ -130,10 +120,8 @@ int32 ABP_WeaponActor_C::GetMagAmmoCount()
 
 int32 ABP_WeaponActor_C::GetMagMaxAmmoCount()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WeaponActor_C", "GetMagMaxAmmoCount");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetMagMaxAmmoCount", FnName));
 
 	Params::BP_WeaponActor_C_GetMagMaxAmmoCount Parms{};
 
@@ -150,10 +138,8 @@ int32 ABP_WeaponActor_C::GetMagMaxAmmoCount()
 
 void ABP_WeaponActor_C::HasAmmo(bool* Result)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WeaponActor_C", "HasAmmo");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"HasAmmo", FnName));
 
 	Params::BP_WeaponActor_C_HasAmmo Parms{};
 
@@ -169,10 +155,8 @@ void ABP_WeaponActor_C::HasAmmo(bool* Result)
 
 void ABP_WeaponActor_C::OnBPWeaponPostEquip()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WeaponActor_C", "OnBPWeaponPostEquip");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBPWeaponPostEquip", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -183,10 +167,8 @@ void ABP_WeaponActor_C::OnBPWeaponPostEquip()
 
 void ABP_WeaponActor_C::OnBPWeaponPreUnequip()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WeaponActor_C", "OnBPWeaponPreUnequip");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBPWeaponPreUnequip", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -199,10 +181,8 @@ void ABP_WeaponActor_C::OnBPWeaponPreUnequip()
 
 bool ABP_WeaponActor_C::UpdateWeaponVisualsForMods()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WeaponActor_C", "UpdateWeaponVisualsForMods");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateWeaponVisualsForMods", FnName));
 
 	Params::BP_WeaponActor_C_UpdateWeaponVisualsForMods Parms{};
 
@@ -217,10 +197,8 @@ bool ABP_WeaponActor_C::UpdateWeaponVisualsForMods()
 
 void ABP_WeaponActor_C::UserConstructionScript()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WeaponActor_C", "UserConstructionScript");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UserConstructionScript", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -233,10 +211,8 @@ void ABP_WeaponActor_C::UserConstructionScript()
 
 void ABP_WeaponActor_C::GetRateOfFireInSeconds(double* ROFInSeconds) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WeaponActor_C", "GetRateOfFireInSeconds");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetRateOfFireInSeconds", FnName));
 
 	Params::BP_WeaponActor_C_GetRateOfFireInSeconds Parms{};
 

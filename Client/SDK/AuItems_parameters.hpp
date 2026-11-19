@@ -309,6 +309,25 @@ public:
 };
 DUMPER7_ASSERTS_AuItemsComponent_BP_SetItemOnSlot;
 
+// Function AuItems.AuItemsComponent.ClientOnNewItemAddedToSlot
+// 0x0038 (0x0038 - 0x0000)
+struct AuItemsComponent_ClientOnNewItemAddedToSlot final
+{
+public:
+	const class UAuItemData*                      NewItem;                                           // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FAuItemSlot                            Slot;                                              // 0x0008(0x0030)(ConstParm, Parm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AuItemsComponent_ClientOnNewItemAddedToSlot;
+
+// Function AuItems.AuItemsComponent.GetOnWeaponItemAssignedToSlot
+// 0x0018 (0x0018 - 0x0000)
+struct AuItemsComponent_GetOnWeaponItemAssignedToSlot final
+{
+public:
+	TMulticastInlineDelegate<void(const class UAuItemData* NewItem, const struct FAuItemSlot& WeaponSlot)> ReturnValue; // 0x0000(0x0018)(Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_AuItemsComponent_GetOnWeaponItemAssignedToSlot;
+
 // Function AuItems.AuItemsComponent.K2_ServerAddNewItemToSlot
 // 0x0040 (0x0040 - 0x0000)
 struct AuItemsComponent_K2_ServerAddNewItemToSlot final

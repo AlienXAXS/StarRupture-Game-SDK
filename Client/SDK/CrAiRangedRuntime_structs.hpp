@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
+#include "MassEntity_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "MassReplication_structs.hpp"
 #include "MassAIBehavior_structs.hpp"
-#include "MassEntity_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -31,23 +31,23 @@ public:
 DUMPER7_ASSERTS_FReplicatedRangedVertexAnimationData;
 
 // ScriptStruct CrAiRangedRuntime.ReplicatedRangedAgent
-// 0x00E8 (0x0110 - 0x0028)
+// 0x00F0 (0x0118 - 0x0028)
 struct FReplicatedRangedAgent final : public FReplicatedAgentBase
 {
 public:
 	struct FCrMassEnemyReplicatedAgentPositionYawData PositionYaw;                                   // 0x0028(0x0020)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FMassEnemyCommonReplicationData        CommonReplicationData;                             // 0x0048(0x00A8)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FReplicatedRangedVertexAnimationData   VertexAnimationData;                               // 0x00F0(0x0008)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FMassEnemyFrequentlyReplicatedData     FrequentlyReplicatedData;                          // 0x00F8(0x0018)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FMassEnemyCommonReplicationData        CommonReplicationData;                             // 0x0048(0x00B0)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FReplicatedRangedVertexAnimationData   VertexAnimationData;                               // 0x00F8(0x0008)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FMassEnemyFrequentlyReplicatedData     FrequentlyReplicatedData;                          // 0x0100(0x0018)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
 };
 DUMPER7_ASSERTS_FReplicatedRangedAgent;
 
 // ScriptStruct CrAiRangedRuntime.RangedFastArrayItem
-// 0x0110 (0x0120 - 0x0010)
+// 0x0118 (0x0128 - 0x0010)
 struct FRangedFastArrayItem final : public FMassFastArrayItemBase
 {
 public:
-	struct FReplicatedRangedAgent                 Agent;                                             // 0x0010(0x0110)(NoDestructor, NativeAccessSpecifierPublic)
+	struct FReplicatedRangedAgent                 Agent;                                             // 0x0010(0x0118)(NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FRangedFastArrayItem;
 

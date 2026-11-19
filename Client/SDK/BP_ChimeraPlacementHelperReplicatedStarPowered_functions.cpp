@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_ChimeraPlacementHelperReplicatedStarPowered_C::ExecuteUbergraph_BP_ChimeraPlacementHelperReplicatedStarPowered(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ChimeraPlacementHelperReplicatedStarPowered_C", "ExecuteUbergraph_BP_ChimeraPlacementHelperReplicatedStarPowered");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_ChimeraPlacementHelperReplicatedStarPowered_C", "ExecuteUbergraph_BP_ChimeraPlacementHelperReplicatedStarPowered", FuncInfo);
 
 	Params::BP_ChimeraPlacementHelperReplicatedStarPowered_C_ExecuteUbergraph_BP_ChimeraPlacementHelperReplicatedStarPowered Parms{};
 
@@ -43,10 +41,8 @@ void ABP_ChimeraPlacementHelperReplicatedStarPowered_C::ExecuteUbergraph_BP_Chim
 
 void ABP_ChimeraPlacementHelperReplicatedStarPowered_C::OnFoundationSetUp(const TArray<struct FTransform>& FoundationTransforms)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ChimeraPlacementHelperReplicatedStarPowered_C", "OnFoundationSetUp");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFoundationSetUp", FnName));
 
 	Params::BP_ChimeraPlacementHelperReplicatedStarPowered_C_OnFoundationSetUp Parms{};
 
@@ -63,10 +59,8 @@ void ABP_ChimeraPlacementHelperReplicatedStarPowered_C::OnFoundationSetUp(const 
 
 void ABP_ChimeraPlacementHelperReplicatedStarPowered_C::SetMeshColor(const struct FLinearColor& Color)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ChimeraPlacementHelperReplicatedStarPowered_C", "SetMeshColor");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetMeshColor", FnName));
 
 	Params::BP_ChimeraPlacementHelperReplicatedStarPowered_C_SetMeshColor Parms{};
 
@@ -81,10 +75,8 @@ void ABP_ChimeraPlacementHelperReplicatedStarPowered_C::SetMeshColor(const struc
 
 void ABP_ChimeraPlacementHelperReplicatedStarPowered_C::UserConstructionScript()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ChimeraPlacementHelperReplicatedStarPowered_C", "UserConstructionScript");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UserConstructionScript", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

@@ -273,9 +273,12 @@ public:
 DUMPER7_ASSERTS_UUInt16Property;
 
 // Class CoreUObject.Interface
-// 0x0000 (0x0000 - 0x0000)
-class IInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -509,9 +512,12 @@ public:
 DUMPER7_ASSERTS_UVerseStruct;
 
 // Class CoreUObject.EditorPathObjectInterface
-// 0x0000 (0x0000 - 0x0000)
-class IEditorPathObjectInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IEditorPathObjectInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{

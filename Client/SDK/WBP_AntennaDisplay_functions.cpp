@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_AntennaDisplay_C::Init(double Percent_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_AntennaDisplay_C", "Init");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Init", FnName));
 
 	Params::WBP_AntennaDisplay_C_Init Parms{};
 
@@ -43,10 +41,8 @@ void UWBP_AntennaDisplay_C::Init(double Percent_0)
 
 void UWBP_AntennaDisplay_C::SetBackgroundColor(const struct FLinearColor& Color)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_AntennaDisplay_C", "SetBackgroundColor");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetBackgroundColor", FnName));
 
 	Params::WBP_AntennaDisplay_C_SetBackgroundColor Parms{};
 
@@ -63,10 +59,8 @@ void UWBP_AntennaDisplay_C::SetBackgroundColor(const struct FLinearColor& Color)
 
 void UWBP_AntennaDisplay_C::SetPercent(double Percent_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_AntennaDisplay_C", "SetPercent");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetPercent", FnName));
 
 	Params::WBP_AntennaDisplay_C_SetPercent Parms{};
 
@@ -87,10 +81,8 @@ void UWBP_AntennaDisplay_C::SetPercent(double Percent_0)
 
 void UWBP_AntennaDisplay_C::SetPercentageIcon(const struct FLinearColor& Color, class UTexture2D* IconTexture, bool ShowPercentage, const class FText& InText, class UWidgetAnimation* Animation)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_AntennaDisplay_C", "SetPercentageIcon");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetPercentageIcon", FnName));
 
 	Params::WBP_AntennaDisplay_C_SetPercentageIcon Parms{};
 
@@ -111,10 +103,8 @@ void UWBP_AntennaDisplay_C::SetPercentageIcon(const struct FLinearColor& Color, 
 
 void UWBP_AntennaDisplay_C::SetProgressColor(const struct FLinearColor& Color)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_AntennaDisplay_C", "SetProgressColor");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetProgressColor", FnName));
 
 	Params::WBP_AntennaDisplay_C_SetProgressColor Parms{};
 
@@ -132,10 +122,8 @@ void UWBP_AntennaDisplay_C::SetProgressColor(const struct FLinearColor& Color)
 
 void UWBP_AntennaDisplay_C::SetState(ECrAntennaState State, const struct FLinearColor& StateColor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_AntennaDisplay_C", "SetState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetState", FnName));
 
 	Params::WBP_AntennaDisplay_C_SetState Parms{};
 

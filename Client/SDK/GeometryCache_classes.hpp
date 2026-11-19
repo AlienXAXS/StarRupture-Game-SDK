@@ -13,19 +13,69 @@
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "Engine_classes.hpp"
-#include "GeometryCache_structs.hpp"
 #include "Niagara_structs.hpp"
 #include "Niagara_classes.hpp"
+#include "GeometryCache_structs.hpp"
 
 
 SDK_NAMESPACE_START
 
-// Class GeometryCache.GeometryCache
-// 0x0078 (0x00A0 - 0x0028)
-class UGeometryCache final : public UObject
+// Class GeometryCache.GeometryCacheTrack
+// 0x0030 (0x0058 - 0x0028)
+class UGeometryCacheTrack : public UObject
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Duration;                                          // 0x0028(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_2C[0x2C];                                      // 0x002C(0x002C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("GeometryCacheTrack")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"GeometryCacheTrack")
+	}
+	static class UGeometryCacheTrack* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UGeometryCacheTrack>();
+	}
+};
+DUMPER7_ASSERTS_UGeometryCacheTrack;
+
+// Class GeometryCache.GeometryCacheTrack_FlipbookAnimation
+// 0x0028 (0x0080 - 0x0058)
+class UGeometryCacheTrack_FlipbookAnimation final : public UGeometryCacheTrack
+{
+public:
+	uint32                                        NumMeshSamples;                                    // 0x0058(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_5C[0x24];                                      // 0x005C(0x0024)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void AddMeshSample(const struct FGeometryCacheMeshData& MeshData, const float SampleTime);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("GeometryCacheTrack_FlipbookAnimation")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"GeometryCacheTrack_FlipbookAnimation")
+	}
+	static class UGeometryCacheTrack_FlipbookAnimation* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UGeometryCacheTrack_FlipbookAnimation>();
+	}
+};
+DUMPER7_ASSERTS_UGeometryCacheTrack_FlipbookAnimation;
+
+// Class GeometryCache.GeometryCache
+// 0x0078 (0x00A0 - 0x0028)
+class UGeometryCache final : public UObject, public IInterface_AssetUserData
+{
+public:
 	TArray<class UMaterialInterface*>             Materials;                                         // 0x0030(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
 	TArray<class FName>                           MaterialSlotNames;                                 // 0x0040(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<class UGeometryCacheTrack*>            Tracks;                                            // 0x0050(0x0010)(Edit, ZeroConstructor, EditConst, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
@@ -48,6 +98,11 @@ public:
 	{
 		return GetDefaultObjImpl<UGeometryCache>();
 	}
+
+public:
+	bool AddAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	class UAssetUserData* GetAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	bool HasAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
 };
 DUMPER7_ASSERTS_UGeometryCache;
 
@@ -77,6 +132,32 @@ public:
 };
 DUMPER7_ASSERTS_AGeometryCacheActor;
 
+// Class GeometryCache.GeometryCacheTrack_TransformAnimation
+// 0x00D8 (0x0130 - 0x0058)
+class UGeometryCacheTrack_TransformAnimation final : public UGeometryCacheTrack
+{
+public:
+	uint8                                         Pad_58[0xD8];                                      // 0x0058(0x00D8)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetMesh(const struct FGeometryCacheMeshData& NewMeshData);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("GeometryCacheTrack_TransformAnimation")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"GeometryCacheTrack_TransformAnimation")
+	}
+	static class UGeometryCacheTrack_TransformAnimation* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UGeometryCacheTrack_TransformAnimation>();
+	}
+};
+DUMPER7_ASSERTS_UGeometryCacheTrack_TransformAnimation;
+
 // Class GeometryCache.GeometryCacheCodecBase
 // 0x0010 (0x0038 - 0x0028)
 class UGeometryCacheCodecBase : public UObject
@@ -99,6 +180,29 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UGeometryCacheCodecBase;
+
+// Class GeometryCache.GeometryCacheCodecV1
+// 0x0008 (0x0040 - 0x0038)
+class UGeometryCacheCodecV1 final : public UGeometryCacheCodecBase
+{
+public:
+	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("GeometryCacheCodecV1")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"GeometryCacheCodecV1")
+	}
+	static class UGeometryCacheCodecV1* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UGeometryCacheCodecV1>();
+	}
+};
+DUMPER7_ASSERTS_UGeometryCacheCodecV1;
 
 // Class GeometryCache.GeometryCacheCodecRaw
 // 0x0008 (0x0040 - 0x0038)
@@ -123,29 +227,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UGeometryCacheCodecRaw;
-
-// Class GeometryCache.GeometryCacheCodecV1
-// 0x0008 (0x0040 - 0x0038)
-class UGeometryCacheCodecV1 final : public UGeometryCacheCodecBase
-{
-public:
-	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("GeometryCacheCodecV1")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"GeometryCacheCodecV1")
-	}
-	static class UGeometryCacheCodecV1* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UGeometryCacheCodecV1>();
-	}
-};
-DUMPER7_ASSERTS_UGeometryCacheCodecV1;
 
 // Class GeometryCache.GeometryCacheComponent
 // 0x0080 (0x0600 - 0x0580)
@@ -219,57 +300,6 @@ public:
 };
 DUMPER7_ASSERTS_UGeometryCacheComponent;
 
-// Class GeometryCache.GeometryCacheTrack
-// 0x0030 (0x0058 - 0x0028)
-class UGeometryCacheTrack : public UObject
-{
-public:
-	float                                         Duration;                                          // 0x0028(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_2C[0x2C];                                      // 0x002C(0x002C)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("GeometryCacheTrack")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"GeometryCacheTrack")
-	}
-	static class UGeometryCacheTrack* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UGeometryCacheTrack>();
-	}
-};
-DUMPER7_ASSERTS_UGeometryCacheTrack;
-
-// Class GeometryCache.GeometryCacheTrack_FlipbookAnimation
-// 0x0028 (0x0080 - 0x0058)
-class UGeometryCacheTrack_FlipbookAnimation final : public UGeometryCacheTrack
-{
-public:
-	uint32                                        NumMeshSamples;                                    // 0x0058(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_5C[0x24];                                      // 0x005C(0x0024)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void AddMeshSample(const struct FGeometryCacheMeshData& MeshData, const float SampleTime);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("GeometryCacheTrack_FlipbookAnimation")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"GeometryCacheTrack_FlipbookAnimation")
-	}
-	static class UGeometryCacheTrack_FlipbookAnimation* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UGeometryCacheTrack_FlipbookAnimation>();
-	}
-};
-DUMPER7_ASSERTS_UGeometryCacheTrack_FlipbookAnimation;
-
 // Class GeometryCache.GeometryCacheTrackStreamable
 // 0x0078 (0x00D0 - 0x0058)
 class UGeometryCacheTrackStreamable final : public UGeometryCacheTrack
@@ -295,32 +325,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UGeometryCacheTrackStreamable;
-
-// Class GeometryCache.GeometryCacheTrack_TransformAnimation
-// 0x00D8 (0x0130 - 0x0058)
-class UGeometryCacheTrack_TransformAnimation final : public UGeometryCacheTrack
-{
-public:
-	uint8                                         Pad_58[0xD8];                                      // 0x0058(0x00D8)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void SetMesh(const struct FGeometryCacheMeshData& NewMeshData);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("GeometryCacheTrack_TransformAnimation")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"GeometryCacheTrack_TransformAnimation")
-	}
-	static class UGeometryCacheTrack_TransformAnimation* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UGeometryCacheTrack_TransformAnimation>();
-	}
-};
-DUMPER7_ASSERTS_UGeometryCacheTrack_TransformAnimation;
 
 // Class GeometryCache.GeometryCacheTrack_TransformGroupAnimation
 // 0x00D8 (0x0130 - 0x0058)

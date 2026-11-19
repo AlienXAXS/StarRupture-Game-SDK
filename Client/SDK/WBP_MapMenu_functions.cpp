@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_MapMenu_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MapMenu_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -37,10 +35,8 @@ void UWBP_MapMenu_C::Construct()
 
 void UWBP_MapMenu_C::ExecuteUbergraph_WBP_MapMenu(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MapMenu_C", "ExecuteUbergraph_WBP_MapMenu");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_MapMenu_C", "ExecuteUbergraph_WBP_MapMenu", FuncInfo);
 
 	Params::WBP_MapMenu_C_ExecuteUbergraph_WBP_MapMenu Parms{};
 
@@ -58,10 +54,8 @@ void UWBP_MapMenu_C::ExecuteUbergraph_WBP_MapMenu(int32 EntryPoint)
 
 void UWBP_MapMenu_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MapMenu_C", "Tick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Tick", FnName));
 
 	Params::WBP_MapMenu_C_Tick Parms{};
 

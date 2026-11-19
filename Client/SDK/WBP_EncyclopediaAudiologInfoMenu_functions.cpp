@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_EncyclopediaAudiologInfoMenu_C::ExecuteUbergraph_WBP_EncyclopediaAudiologInfoMenu(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EncyclopediaAudiologInfoMenu_C", "ExecuteUbergraph_WBP_EncyclopediaAudiologInfoMenu");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_EncyclopediaAudiologInfoMenu_C", "ExecuteUbergraph_WBP_EncyclopediaAudiologInfoMenu", FuncInfo);
 
 	Params::WBP_EncyclopediaAudiologInfoMenu_C_ExecuteUbergraph_WBP_EncyclopediaAudiologInfoMenu Parms{};
 
@@ -43,10 +41,8 @@ void UWBP_EncyclopediaAudiologInfoMenu_C::ExecuteUbergraph_WBP_EncyclopediaAudio
 
 void UWBP_EncyclopediaAudiologInfoMenu_C::SetEntryTitleBP(const class FText& Title)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EncyclopediaAudiologInfoMenu_C", "SetEntryTitleBP");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetEntryTitleBP", FnName));
 
 	Params::WBP_EncyclopediaAudiologInfoMenu_C_SetEntryTitleBP Parms{};
 

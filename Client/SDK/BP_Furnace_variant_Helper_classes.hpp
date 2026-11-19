@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Furnace_variant_Helper.BP_Furnace_variant_Helper_C
-// 0x0000 (0x0A30 - 0x0A30)
+// 0x0000 (0x0B90 - 0x0B90)
 class ABP_Furnace_variant_Helper_C final : public ABP_ChimeraPlacementHelperReplicatedBase_C
 {
 public:

@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_PlantGrower_C::ExecuteUbergraph_BP_PlantGrower(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlantGrower_C", "ExecuteUbergraph_BP_PlantGrower");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_PlantGrower_C", "ExecuteUbergraph_BP_PlantGrower", FuncInfo);
 
 	Params::BP_PlantGrower_C_ExecuteUbergraph_BP_PlantGrower Parms{};
 
@@ -41,10 +39,8 @@ void ABP_PlantGrower_C::ExecuteUbergraph_BP_PlantGrower(int32 EntryPoint)
 
 void ABP_PlantGrower_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlantGrower_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -55,10 +51,8 @@ void ABP_PlantGrower_C::ReceiveBeginPlay()
 
 void ABP_PlantGrower_C::Timeline__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlantGrower_C", "Timeline__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -69,10 +63,8 @@ void ABP_PlantGrower_C::Timeline__FinishedFunc()
 
 void ABP_PlantGrower_C::Timeline__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlantGrower_C", "Timeline__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

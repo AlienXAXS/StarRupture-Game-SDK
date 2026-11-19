@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "BP_BaseAI_classes.hpp"
-#include "Engine_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -48,7 +48,7 @@ public:
 	void GetExcludedLocations(bool DigIn, TArray<struct FVector>* Result);
 	void GetNiagaraEyeSystem(class UNiagaraComponent** NewParam);
 	void HideCysts();
-	void OnCystDestroyed(class AExploderT3CystActor* Cyst);
+	void OnCystDestroyed(class AExploderT3CystActor* Cyst, bool KilledManually);
 	void OnEnterActorPool();
 	void OnExitActorPool();
 	void ReceiveBeginPlay();

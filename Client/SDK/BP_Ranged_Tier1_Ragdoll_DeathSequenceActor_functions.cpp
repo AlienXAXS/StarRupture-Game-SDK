@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_Ranged_Tier1_Ragdoll_DeathSequenceActor_C::ExecuteUbergraph_BP_Ranged_Tier1_Ragdoll_DeathSequenceActor(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier1_Ragdoll_DeathSequenceActor_C", "ExecuteUbergraph_BP_Ranged_Tier1_Ragdoll_DeathSequenceActor");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Ranged_Tier1_Ragdoll_DeathSequenceActor_C", "ExecuteUbergraph_BP_Ranged_Tier1_Ragdoll_DeathSequenceActor", FuncInfo);
 
 	Params::BP_Ranged_Tier1_Ragdoll_DeathSequenceActor_C_ExecuteUbergraph_BP_Ranged_Tier1_Ragdoll_DeathSequenceActor Parms{};
 
@@ -43,10 +41,8 @@ void ABP_Ranged_Tier1_Ragdoll_DeathSequenceActor_C::ExecuteUbergraph_BP_Ranged_T
 
 void ABP_Ranged_Tier1_Ragdoll_DeathSequenceActor_C::OnDissolveProgressChanged(float DissolveProgress)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier1_Ragdoll_DeathSequenceActor_C", "OnDissolveProgressChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnDissolveProgressChanged", FnName));
 
 	Params::BP_Ranged_Tier1_Ragdoll_DeathSequenceActor_C_OnDissolveProgressChanged Parms{};
 
@@ -61,10 +57,8 @@ void ABP_Ranged_Tier1_Ragdoll_DeathSequenceActor_C::OnDissolveProgressChanged(fl
 
 void ABP_Ranged_Tier1_Ragdoll_DeathSequenceActor_C::OnRagdollStart()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier1_Ragdoll_DeathSequenceActor_C", "OnRagdollStart");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnRagdollStart", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_BaseCore_C::BP_OnActiveCoolingChanged(bool ActiveCooling)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCore_C", "BP_OnActiveCoolingChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnActiveCoolingChanged", FnName));
 
 	Params::BP_BaseCore_C_BP_OnActiveCoolingChanged Parms{};
 
@@ -44,10 +42,8 @@ void ABP_BaseCore_C::BP_OnActiveCoolingChanged(bool ActiveCooling)
 
 void ABP_BaseCore_C::BP_OnBaseCoreInfectionActorDestroyed(bool LastActor, const struct FVector& ActorLocation)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCore_C", "BP_OnBaseCoreInfectionActorDestroyed");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnBaseCoreInfectionActorDestroyed", FnName));
 
 	Params::BP_BaseCore_C_BP_OnBaseCoreInfectionActorDestroyed Parms{};
 
@@ -65,10 +61,8 @@ void ABP_BaseCore_C::BP_OnBaseCoreInfectionActorDestroyed(bool LastActor, const 
 
 void ABP_BaseCore_C::BP_OnBeingAttackedStateChanged(bool bUnderAttack)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCore_C", "BP_OnBeingAttackedStateChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnBeingAttackedStateChanged", FnName));
 
 	Params::BP_BaseCore_C_BP_OnBeingAttackedStateChanged Parms{};
 
@@ -83,10 +77,8 @@ void ABP_BaseCore_C::BP_OnBeingAttackedStateChanged(bool bUnderAttack)
 
 void ABP_BaseCore_C::BP_OnInfectedChanged()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCore_C", "BP_OnInfectedChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnInfectedChanged", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -100,10 +92,8 @@ void ABP_BaseCore_C::BP_OnInfectedChanged()
 
 void ABP_BaseCore_C::BP_OnInfectionChanged(float Infection, bool InfectionActive)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCore_C", "BP_OnInfectionChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnInfectionChanged", FnName));
 
 	Params::BP_BaseCore_C_BP_OnInfectionChanged Parms{};
 
@@ -122,10 +112,8 @@ void ABP_BaseCore_C::BP_OnInfectionChanged(float Infection, bool InfectionActive
 
 void ABP_BaseCore_C::BP_OnUpgreadLevelChanged(uint8 NewUpgreadLevel, bool Immediately)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCore_C", "BP_OnUpgreadLevelChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnUpgreadLevelChanged", FnName));
 
 	Params::BP_BaseCore_C_BP_OnUpgreadLevelChanged Parms{};
 
@@ -141,10 +129,8 @@ void ABP_BaseCore_C::BP_OnUpgreadLevelChanged(uint8 NewUpgreadLevel, bool Immedi
 
 void ABP_BaseCore_C::BP_UpdateBaseCoreArea()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCore_C", "BP_UpdateBaseCoreArea");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_UpdateBaseCoreArea", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -157,10 +143,8 @@ void ABP_BaseCore_C::BP_UpdateBaseCoreArea()
 
 void ABP_BaseCore_C::ExecuteUbergraph_BP_BaseCore(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCore_C", "ExecuteUbergraph_BP_BaseCore");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_BaseCore_C", "ExecuteUbergraph_BP_BaseCore", FuncInfo);
 
 	Params::BP_BaseCore_C_ExecuteUbergraph_BP_BaseCore Parms{};
 
@@ -177,10 +161,8 @@ void ABP_BaseCore_C::ExecuteUbergraph_BP_BaseCore(int32 EntryPoint)
 
 void ABP_BaseCore_C::IsPlayingAttackSound(bool* Result)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCore_C", "IsPlayingAttackSound");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IsPlayingAttackSound", FnName));
 
 	Params::BP_BaseCore_C_IsPlayingAttackSound Parms{};
 
@@ -199,10 +181,8 @@ void ABP_BaseCore_C::IsPlayingAttackSound(bool* Result)
 
 void ABP_BaseCore_C::PlayAlarm(bool Slow, bool Fast)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCore_C", "PlayAlarm");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PlayAlarm", FnName));
 
 	Params::BP_BaseCore_C_PlayAlarm Parms{};
 
@@ -218,10 +198,8 @@ void ABP_BaseCore_C::PlayAlarm(bool Slow, bool Fast)
 
 void ABP_BaseCore_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCore_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -234,10 +212,8 @@ void ABP_BaseCore_C::ReceiveBeginPlay()
 
 void ABP_BaseCore_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCore_C", "ReceiveEndPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveEndPlay", FnName));
 
 	Params::BP_BaseCore_C_ReceiveEndPlay Parms{};
 
@@ -254,10 +230,8 @@ void ABP_BaseCore_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 
 void ABP_BaseCore_C::SetBaseCoreAreaVisibility(bool Visible)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_BaseCore_C", "SetBaseCoreAreaVisibility");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetBaseCoreAreaVisibility", FnName));
 
 	Params::BP_BaseCore_C_SetBaseCoreAreaVisibility Parms{};
 

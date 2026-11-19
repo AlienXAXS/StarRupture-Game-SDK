@@ -16,12 +16,43 @@
 
 SDK_NAMESPACE_START
 
-// Class ChimeraInteriorsMapper.CrInteriorsMapperBoxComponent
-// 0x0040 (0x05B0 - 0x0570)
-class UCrInteriorsMapperBoxComponent final : public UBoxComponent
+// Class ChimeraInteriorsMapper.CrInteriorsMapperInterface
+// 0x0008 (0x0008 - 0x0000)
+class ICrInteriorsMapperInterface
 {
 public:
-	uint8                                         Pad_568[0x8];                                      // 0x0568(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrInteriorsMapperInterface")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrInteriorsMapperInterface")
+	}
+	static class ICrInteriorsMapperInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ICrInteriorsMapperInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_ICrInteriorsMapperInterface;
+
+// Class ChimeraInteriorsMapper.CrInteriorsMapperBoxComponent
+// 0x0040 (0x05B0 - 0x0570)
+class UCrInteriorsMapperBoxComponent final : public UBoxComponent, public ICrInteriorsMapperInterface
+{
+public:
 	bool                                          UseOnlyWithNiagara;                                // 0x0570(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          Only2D;                                            // 0x0571(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_572[0x6];                                      // 0x0572(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
@@ -73,39 +104,13 @@ public:
 };
 DUMPER7_ASSERTS_ACrInteriorsMapperDebugActor;
 
-// Class ChimeraInteriorsMapper.CrInteriorsMapperInterface
-// 0x0000 (0x0000 - 0x0000)
-class ICrInteriorsMapperInterface final
+// Class ChimeraInteriorsMapper.CrInteriorsMapperQualityInterface
+// 0x0008 (0x0008 - 0x0000)
+class ICrInteriorsMapperQualityInterface
 {
 public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrInteriorsMapperInterface")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrInteriorsMapperInterface")
-	}
-	static class ICrInteriorsMapperInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ICrInteriorsMapperInterface>();
-	}
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
 
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_ICrInteriorsMapperInterface;
-
-// Class ChimeraInteriorsMapper.CrInteriorsMapperQualityInterface
-// 0x0000 (0x0000 - 0x0000)
-class ICrInteriorsMapperQualityInterface final
-{
 public:
 	static class UClass* StaticClass()
 	{
@@ -133,10 +138,9 @@ DUMPER7_ASSERTS_ICrInteriorsMapperQualityInterface;
 
 // Class ChimeraInteriorsMapper.CrInteriorsMapperSphereComponent
 // 0x0020 (0x0580 - 0x0560)
-class UCrInteriorsMapperSphereComponent final : public USphereComponent
+class UCrInteriorsMapperSphereComponent final : public USphereComponent, public ICrInteriorsMapperInterface
 {
 public:
-	uint8                                         Pad_558[0x8];                                      // 0x0558(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          UseOnlyWithNiagara;                                // 0x0560(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_561[0x7];                                      // 0x0561(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UStaticMesh*                            BasicPlane;                                        // 0x0568(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, EditConst, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)

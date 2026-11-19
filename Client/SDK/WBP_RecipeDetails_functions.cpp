@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_RecipeDetails_C::AddOrderName(const class FText& InText)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_RecipeDetails_C", "AddOrderName");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AddOrderName", FnName));
 
 	Params::WBP_RecipeDetails_C_AddOrderName Parms{};
 
@@ -41,10 +39,8 @@ void UWBP_RecipeDetails_C::AddOrderName(const class FText& InText)
 
 void UWBP_RecipeDetails_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_RecipeDetails_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -57,10 +53,8 @@ void UWBP_RecipeDetails_C::Construct()
 
 void UWBP_RecipeDetails_C::ExecuteUbergraph_WBP_RecipeDetails(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_RecipeDetails_C", "ExecuteUbergraph_WBP_RecipeDetails");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_RecipeDetails_C", "ExecuteUbergraph_WBP_RecipeDetails", FuncInfo);
 
 	Params::WBP_RecipeDetails_C_ExecuteUbergraph_WBP_RecipeDetails Parms{};
 
@@ -77,10 +71,8 @@ void UWBP_RecipeDetails_C::ExecuteUbergraph_WBP_RecipeDetails(int32 EntryPoint)
 
 void UWBP_RecipeDetails_C::SetRecipeName(const class FText& InName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_RecipeDetails_C", "SetRecipeName");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetRecipeName", FnName));
 
 	Params::WBP_RecipeDetails_C_SetRecipeName Parms{};
 

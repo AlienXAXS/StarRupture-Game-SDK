@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_RailingWalkway_C::ExecuteUbergraph_BP_RailingWalkway(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_RailingWalkway_C", "ExecuteUbergraph_BP_RailingWalkway");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_RailingWalkway_C", "ExecuteUbergraph_BP_RailingWalkway", FuncInfo);
 
 	Params::BP_RailingWalkway_C_ExecuteUbergraph_BP_RailingWalkway Parms{};
 
@@ -43,10 +41,8 @@ void ABP_RailingWalkway_C::ExecuteUbergraph_BP_RailingWalkway(int32 EntryPoint)
 
 double ABP_RailingWalkway_C::GetRampAngle()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_RailingWalkway_C", "GetRampAngle");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetRampAngle", FnName));
 
 	Params::BP_RailingWalkway_C_GetRampAngle Parms{};
 
@@ -63,10 +59,8 @@ double ABP_RailingWalkway_C::GetRampAngle()
 
 bool ABP_RailingWalkway_C::IsLadder()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_RailingWalkway_C", "IsLadder");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IsLadder", FnName));
 
 	Params::BP_RailingWalkway_C_IsLadder Parms{};
 
@@ -83,10 +77,8 @@ bool ABP_RailingWalkway_C::IsLadder()
 
 bool ABP_RailingWalkway_C::IsRamp()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_RailingWalkway_C", "IsRamp");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IsRamp", FnName));
 
 	Params::BP_RailingWalkway_C_IsRamp Parms{};
 
@@ -103,10 +95,8 @@ bool ABP_RailingWalkway_C::IsRamp()
 
 void ABP_RailingWalkway_C::OnSplineReady(class USplineComponent* InSpline)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_RailingWalkway_C", "OnSplineReady");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSplineReady", FnName));
 
 	Params::BP_RailingWalkway_C_OnSplineReady Parms{};
 

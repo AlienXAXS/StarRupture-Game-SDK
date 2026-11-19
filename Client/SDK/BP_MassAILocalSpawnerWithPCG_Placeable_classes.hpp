@@ -10,23 +10,23 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_MassAILocalSpawnerWithPCG_Placeable.BP_MassAILocalSpawnerWithPCG_Placeable_C
-// 0x0038 (0x0538 - 0x0500)
+// 0x0038 (0x05A8 - 0x0570)
 class ABP_MassAILocalSpawnerWithPCG_Placeable_C : public AMassEnemyAiSpawner
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0500(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UBillboardComponent*                    Billboard;                                         // 0x0508(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UMassEnemySpawnerTriggerSphere*         DisableSphere;                                     // 0x0510(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UMassEnemySpawnerTriggerSphere*         EnableSphere;                                      // 0x0518(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UMassEnemySpawnPositionComponent*       SpawnPosition;                                     // 0x0520(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class FString                                 ConfigurationStatusString;                         // 0x0528(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0570(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UBillboardComponent*                    Billboard;                                         // 0x0578(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UMassEnemySpawnerTriggerSphere*         DisableSphere;                                     // 0x0580(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UMassEnemySpawnerTriggerSphere*         EnableSphere;                                      // 0x0588(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UMassEnemySpawnPositionComponent*       SpawnPosition;                                     // 0x0590(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class FString                                 ConfigurationStatusString;                         // 0x0598(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_MassAILocalSpawnerWithPCG_Placeable(int32 EntryPoint);

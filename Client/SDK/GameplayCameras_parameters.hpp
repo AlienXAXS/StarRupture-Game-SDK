@@ -12,6 +12,8 @@
 
 #include "GameplayCameras_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "GameplayTags_structs.hpp"
+#include "GameplayTags_parameters.hpp"
 
 
 SDK_NAMESPACE_START

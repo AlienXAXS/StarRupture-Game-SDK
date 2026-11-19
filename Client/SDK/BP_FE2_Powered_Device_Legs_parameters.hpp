@@ -10,9 +10,34 @@
 
 #include "Basic.hpp"
 
+#include "Chimera_structs.hpp"
+
 
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
+
+// Function BP_FE2_Powered_Device_Legs.BP_FE2_Powered_Device_Legs_C.ExecuteUbergraph_BP_FE2_Powered_Device_Legs
+// 0x0028 (0x0028 - 0x0000)
+struct BP_FE2_Powered_Device_Legs_C_ExecuteUbergraph_BP_FE2_Powered_Device_Legs final
+{
+public:
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class ABP_FE2_main_C*>                 CallFunc_GetAllActorsOfClass_OutActors;            // 0x0008(0x0010)(ReferenceParm)
+	class ABP_FE2_main_C*                         CallFunc_Array_Get_Item;                           // 0x0018(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	ECrBuildingState                              K2Node_Event_InState;                              // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x0021(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_FE2_Powered_Device_Legs_C_ExecuteUbergraph_BP_FE2_Powered_Device_Legs;
+
+// Function BP_FE2_Powered_Device_Legs.BP_FE2_Powered_Device_Legs_C.OnBuildingStateChanged
+// 0x0001 (0x0001 - 0x0000)
+struct BP_FE2_Powered_Device_Legs_C_OnBuildingStateChanged final
+{
+public:
+	ECrBuildingState                              InState;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_FE2_Powered_Device_Legs_C_OnBuildingStateChanged;
 
 // Function BP_FE2_Powered_Device_Legs.BP_FE2_Powered_Device_Legs_C.Get Meshes
 // 0x00B0 (0x00B0 - 0x0000)

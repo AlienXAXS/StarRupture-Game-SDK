@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_Exploder_Tier2_PooledProjectile_C::ExecuteUbergraph_BP_Exploder_Tier2_PooledProjectile(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_PooledProjectile_C", "ExecuteUbergraph_BP_Exploder_Tier2_PooledProjectile");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Exploder_Tier2_PooledProjectile_C", "ExecuteUbergraph_BP_Exploder_Tier2_PooledProjectile", FuncInfo);
 
 	Params::BP_Exploder_Tier2_PooledProjectile_C_ExecuteUbergraph_BP_Exploder_Tier2_PooledProjectile Parms{};
 
@@ -43,10 +41,8 @@ void ABP_Exploder_Tier2_PooledProjectile_C::ExecuteUbergraph_BP_Exploder_Tier2_P
 
 void ABP_Exploder_Tier2_PooledProjectile_C::OnHit(const struct FHitResult& HitResult)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_PooledProjectile_C", "OnHit");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnHit", FnName));
 
 	Params::BP_Exploder_Tier2_PooledProjectile_C_OnHit Parms{};
 
@@ -61,10 +57,8 @@ void ABP_Exploder_Tier2_PooledProjectile_C::OnHit(const struct FHitResult& HitRe
 
 void ABP_Exploder_Tier2_PooledProjectile_C::OnProjectileDestroyd()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_PooledProjectile_C", "OnProjectileDestroyd");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnProjectileDestroyd", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -77,10 +71,8 @@ void ABP_Exploder_Tier2_PooledProjectile_C::OnProjectileDestroyd()
 
 void ABP_Exploder_Tier2_PooledProjectile_C::OnProjectileShot(const struct FCrAiProjectileParameters& InProjectileParameters)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_PooledProjectile_C", "OnProjectileShot");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnProjectileShot", FnName));
 
 	Params::BP_Exploder_Tier2_PooledProjectile_C_OnProjectileShot Parms{};
 
@@ -97,10 +89,8 @@ void ABP_Exploder_Tier2_PooledProjectile_C::OnProjectileShot(const struct FCrAiP
 
 bool ABP_Exploder_Tier2_PooledProjectile_C::CanReturnToPoolAfterHit() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_PooledProjectile_C", "CanReturnToPoolAfterHit");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"CanReturnToPoolAfterHit", FnName));
 
 	Params::BP_Exploder_Tier2_PooledProjectile_C_CanReturnToPoolAfterHit Parms{};
 

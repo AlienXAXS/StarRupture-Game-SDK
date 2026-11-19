@@ -41,12 +41,44 @@ public:
 };
 DUMPER7_ASSERTS_UEnvQueryItemType_MassEntityHandle;
 
-// Class MassEQS.MassEnvQueryGenerator
-// 0x0028 (0x0078 - 0x0050)
-class UMassEnvQueryGenerator : public UEnvQueryGenerator
+// Class MassEQS.MassEQSRequestInterface
+// 0x0008 (0x0008 - 0x0000)
+class IMassEQSRequestInterface
 {
 public:
-	uint8                                         Pad_50[0x28];                                      // 0x0050(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("MassEQSRequestInterface")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"MassEQSRequestInterface")
+	}
+	static class IMassEQSRequestInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<IMassEQSRequestInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_IMassEQSRequestInterface;
+
+// Class MassEQS.MassEnvQueryGenerator
+// 0x0028 (0x0078 - 0x0050)
+class UMassEnvQueryGenerator : public UEnvQueryGenerator, public IMassEQSRequestInterface
+{
+public:
+	uint8                                         Pad_58[0x20];                                      // 0x0058(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -136,10 +168,10 @@ DUMPER7_ASSERTS_UMassEnvQueryGenerator_MassEntityHandles;
 
 // Class MassEQS.MassEnvQueryTest
 // 0x0028 (0x0220 - 0x01F8)
-class UMassEnvQueryTest : public UEnvQueryTest
+class UMassEnvQueryTest : public UEnvQueryTest, public IMassEQSRequestInterface
 {
 public:
-	uint8                                         Pad_1F8[0x28];                                     // 0x01F8(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_200[0x20];                                     // 0x0200(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -256,34 +288,5 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UMassEQSSubsystem;
-
-// Class MassEQS.MassEQSRequestInterface
-// 0x0000 (0x0000 - 0x0000)
-class IMassEQSRequestInterface final
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("MassEQSRequestInterface")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"MassEQSRequestInterface")
-	}
-	static class IMassEQSRequestInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<IMassEQSRequestInterface>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_IMassEQSRequestInterface;
 
 SDK_NAMESPACE_END

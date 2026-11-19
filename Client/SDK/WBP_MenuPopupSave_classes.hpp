@@ -11,30 +11,36 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
+#include "SlateCore_structs.hpp"
+#include "ChimeraUI_structs.hpp"
 #include "ChimeraUI_classes.hpp"
 
 
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_MenuPopupSave.WBP_MenuPopupSave_C
-// 0x0040 (0x05D8 - 0x0598)
+// 0x01A8 (0x0740 - 0x0598)
 class UWBP_MenuPopupSave_C final : public UCrUW_ConfirmationScreen
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0598(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	class UImage*                                 SlotFrame;                                         // 0x05A0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UImage*                                 Image_264;                                         // 0x05A8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UImage*                                 SaveImage;                                         // 0x05A8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UImage*                                 Image_3;                                           // 0x05B0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UImage*                                 Image;                                             // 0x05B8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UImage*                                 Frame;                                             // 0x05C0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UBorder*                                Border_1;                                          // 0x05C8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UWidgetAnimation*                       FadeIn;                                            // 0x05D0(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, RepSkip, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_5D8[0x8];                                      // 0x05D8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateBrush                            AutosaveFrameBrush;                                // 0x05E0(0x00B0)(Edit, BlueprintVisible, DisableEditOnInstance)
+	struct FSlateBrush                            NormalFrameBrush;                                  // 0x0690(0x00B0)(Edit, BlueprintVisible, DisableEditOnInstance)
 
 public:
 	void Construct();
 	void ExecuteUbergraph_WBP_MenuPopupSave(int32 EntryPoint);
 	struct FEventReply OnMouseButtonDown_0(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent);
 	void SetColors(const struct FLinearColor& Orange);
+	void SetSaveImage(ECrSlotIconType IconType);
 
 public:
 	static class UClass* StaticClass()

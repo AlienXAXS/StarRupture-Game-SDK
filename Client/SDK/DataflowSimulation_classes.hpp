@@ -17,9 +17,12 @@
 SDK_NAMESPACE_START
 
 // Class DataflowSimulation.DataflowSimulationInterface
-// 0x0000 (0x0000 - 0x0000)
-class IDataflowSimulationInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IDataflowSimulationInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -46,8 +49,8 @@ public:
 DUMPER7_ASSERTS_IDataflowSimulationInterface;
 
 // Class DataflowSimulation.DataflowCollisionObjectInterface
-// 0x0000 (0x0000 - 0x0000)
-class IDataflowCollisionObjectInterface final
+// 0x0000 (0x0008 - 0x0008)
+class IDataflowCollisionObjectInterface : public IDataflowSimulationInterface
 {
 public:
 	static class UClass* StaticClass()
@@ -75,8 +78,8 @@ public:
 DUMPER7_ASSERTS_IDataflowCollisionObjectInterface;
 
 // Class DataflowSimulation.DataflowConstraintObjectInterface
-// 0x0000 (0x0000 - 0x0000)
-class IDataflowConstraintObjectInterface final
+// 0x0000 (0x0008 - 0x0008)
+class IDataflowConstraintObjectInterface : public IDataflowSimulationInterface
 {
 public:
 	static class UClass* StaticClass()
@@ -104,9 +107,12 @@ public:
 DUMPER7_ASSERTS_IDataflowConstraintObjectInterface;
 
 // Class DataflowSimulation.DataflowGeometryCachable
-// 0x0000 (0x0000 - 0x0000)
-class IDataflowGeometryCachable final
+// 0x0008 (0x0008 - 0x0000)
+class IDataflowGeometryCachable
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -133,8 +139,8 @@ public:
 DUMPER7_ASSERTS_IDataflowGeometryCachable;
 
 // Class DataflowSimulation.DataflowPhysicsObjectInterface
-// 0x0000 (0x0000 - 0x0000)
-class IDataflowPhysicsObjectInterface final
+// 0x0000 (0x0008 - 0x0008)
+class IDataflowPhysicsObjectInterface : public IDataflowSimulationInterface
 {
 public:
 	static class UClass* StaticClass()
@@ -162,8 +168,8 @@ public:
 DUMPER7_ASSERTS_IDataflowPhysicsObjectInterface;
 
 // Class DataflowSimulation.DataflowPhysicsSolverInterface
-// 0x0000 (0x0000 - 0x0000)
-class IDataflowPhysicsSolverInterface final
+// 0x0000 (0x0008 - 0x0008)
+class IDataflowPhysicsSolverInterface : public IDataflowSimulationInterface
 {
 public:
 	static class UClass* StaticClass()
@@ -214,9 +220,12 @@ public:
 DUMPER7_ASSERTS_UDataflowSimulationManager;
 
 // Class DataflowSimulation.DataflowSimulationActor
-// 0x0000 (0x0000 - 0x0000)
-class IDataflowSimulationActor final
+// 0x0008 (0x0008 - 0x0000)
+class IDataflowSimulationActor
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	void PostDataflowSimulationTick(const float SimulationTime, const float DeltaTime);
 	void PreDataflowSimulationTick(const float SimulationTime, const float DeltaTime);

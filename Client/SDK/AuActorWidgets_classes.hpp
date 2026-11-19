@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "AuActorWidgets_structs.hpp"
 #include "CommonUI_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "AuActorWidgets_structs.hpp"
 #include "Engine_classes.hpp"
 
 
@@ -48,9 +48,12 @@ public:
 DUMPER7_ASSERTS_UAuActorWidgetSetting;
 
 // Class AuActorWidgets.AuWidgetInputsInterface
-// 0x0000 (0x0000 - 0x0000)
-class IAuWidgetInputsInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IAuWidgetInputsInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{

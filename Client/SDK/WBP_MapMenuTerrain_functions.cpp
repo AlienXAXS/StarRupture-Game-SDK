@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_MapMenuTerrain_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MapMenuTerrain_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -37,10 +35,8 @@ void UWBP_MapMenuTerrain_C::Construct()
 
 void UWBP_MapMenuTerrain_C::ExecuteUbergraph_WBP_MapMenuTerrain(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MapMenuTerrain_C", "ExecuteUbergraph_WBP_MapMenuTerrain");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_MapMenuTerrain_C", "ExecuteUbergraph_WBP_MapMenuTerrain", FuncInfo);
 
 	Params::WBP_MapMenuTerrain_C_ExecuteUbergraph_WBP_MapMenuTerrain Parms{};
 

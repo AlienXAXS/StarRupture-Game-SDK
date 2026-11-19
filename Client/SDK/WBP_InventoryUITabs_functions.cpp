@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_InventoryUITabs_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryUITabs_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -35,10 +33,8 @@ void UWBP_InventoryUITabs_C::Construct()
 
 void UWBP_InventoryUITabs_C::Destruct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryUITabs_C", "Destruct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Destruct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -51,10 +47,8 @@ void UWBP_InventoryUITabs_C::Destruct()
 
 void UWBP_InventoryUITabs_C::ExecuteUbergraph_WBP_InventoryUITabs(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryUITabs_C", "ExecuteUbergraph_WBP_InventoryUITabs");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_InventoryUITabs_C", "ExecuteUbergraph_WBP_InventoryUITabs", FuncInfo);
 
 	Params::WBP_InventoryUITabs_C_ExecuteUbergraph_WBP_InventoryUITabs Parms{};
 
@@ -71,10 +65,8 @@ void UWBP_InventoryUITabs_C::ExecuteUbergraph_WBP_InventoryUITabs(int32 EntryPoi
 
 void UWBP_InventoryUITabs_C::PreConstruct(bool IsDesignTime)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryUITabs_C", "PreConstruct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PreConstruct", FnName));
 
 	Params::WBP_InventoryUITabs_C_PreConstruct Parms{};
 
@@ -91,10 +83,8 @@ void UWBP_InventoryUITabs_C::PreConstruct(bool IsDesignTime)
 
 void UWBP_InventoryUITabs_C::SetActiveTab(EUIWidgetType TabType)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryUITabs_C", "SetActiveTab");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetActiveTab", FnName));
 
 	Params::WBP_InventoryUITabs_C_SetActiveTab Parms{};
 
@@ -111,10 +101,8 @@ void UWBP_InventoryUITabs_C::SetActiveTab(EUIWidgetType TabType)
 
 void UWBP_InventoryUITabs_C::SetDataPointValue(int32 InPoints)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryUITabs_C", "SetDataPointValue");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetDataPointValue", FnName));
 
 	Params::WBP_InventoryUITabs_C_SetDataPointValue Parms{};
 

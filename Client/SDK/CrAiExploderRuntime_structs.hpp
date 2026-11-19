@@ -10,12 +10,12 @@
 
 #include "Basic.hpp"
 
+#include "MassEntity_structs.hpp"
 #include "MassAIPrototypeEnemyRuntime_structs.hpp"
 #include "AuActorPlacement_structs.hpp"
 #include "MassReplication_structs.hpp"
 #include "Chimera_structs.hpp"
 #include "MassAIBehavior_structs.hpp"
-#include "MassEntity_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -70,23 +70,23 @@ public:
 DUMPER7_ASSERTS_FReplicatedExploderVertexAnimationData;
 
 // ScriptStruct CrAiExploderRuntime.ReplicatedExploderAgent
-// 0x00E8 (0x0110 - 0x0028)
+// 0x00F0 (0x0118 - 0x0028)
 struct FReplicatedExploderAgent final : public FReplicatedAgentBase
 {
 public:
 	struct FCrMassEnemyReplicatedAgentPositionYawData PositionYaw;                                   // 0x0028(0x0020)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
 	struct FReplicatedExploderVertexAnimationData VertexAnimationData;                               // 0x0048(0x0008)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FMassEnemyCommonReplicationData        CommonReplicationData;                             // 0x0050(0x00A8)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FMassEnemyFrequentlyReplicatedData     FrequentlyReplicatedData;                          // 0x00F8(0x0018)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FMassEnemyCommonReplicationData        CommonReplicationData;                             // 0x0050(0x00B0)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FMassEnemyFrequentlyReplicatedData     FrequentlyReplicatedData;                          // 0x0100(0x0018)(Transient, NoDestructor, NativeAccessSpecifierPrivate)
 };
 DUMPER7_ASSERTS_FReplicatedExploderAgent;
 
 // ScriptStruct CrAiExploderRuntime.ExploderFastArrayItem
-// 0x0110 (0x0120 - 0x0010)
+// 0x0118 (0x0128 - 0x0010)
 struct FExploderFastArrayItem final : public FMassFastArrayItemBase
 {
 public:
-	struct FReplicatedExploderAgent               Agent;                                             // 0x0010(0x0110)(NoDestructor, NativeAccessSpecifierPublic)
+	struct FReplicatedExploderAgent               Agent;                                             // 0x0010(0x0118)(NoDestructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FExploderFastArrayItem;
 

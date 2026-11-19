@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_Ranged_Tier2_PooledProjectilePiece_C::AddInstantHeatToCharacter(class ACharacter* InCharacter)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier2_PooledProjectilePiece_C", "AddInstantHeatToCharacter");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AddInstantHeatToCharacter", FnName));
 
 	Params::BP_Ranged_Tier2_PooledProjectilePiece_C_AddInstantHeatToCharacter Parms{};
 
@@ -43,10 +41,8 @@ void ABP_Ranged_Tier2_PooledProjectilePiece_C::AddInstantHeatToCharacter(class A
 
 void ABP_Ranged_Tier2_PooledProjectilePiece_C::ExecuteUbergraph_BP_Ranged_Tier2_PooledProjectilePiece(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier2_PooledProjectilePiece_C", "ExecuteUbergraph_BP_Ranged_Tier2_PooledProjectilePiece");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Ranged_Tier2_PooledProjectilePiece_C", "ExecuteUbergraph_BP_Ranged_Tier2_PooledProjectilePiece", FuncInfo);
 
 	Params::BP_Ranged_Tier2_PooledProjectilePiece_C_ExecuteUbergraph_BP_Ranged_Tier2_PooledProjectilePiece Parms{};
 
@@ -63,10 +59,8 @@ void ABP_Ranged_Tier2_PooledProjectilePiece_C::ExecuteUbergraph_BP_Ranged_Tier2_
 
 void ABP_Ranged_Tier2_PooledProjectilePiece_C::OnHit(const struct FHitResult& HitResult)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier2_PooledProjectilePiece_C", "OnHit");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnHit", FnName));
 
 	Params::BP_Ranged_Tier2_PooledProjectilePiece_C_OnHit Parms{};
 
@@ -83,10 +77,8 @@ void ABP_Ranged_Tier2_PooledProjectilePiece_C::OnHit(const struct FHitResult& Hi
 
 void ABP_Ranged_Tier2_PooledProjectilePiece_C::OnProjectileShot(const struct FCrAiProjectileParameters& InProjectileParameters)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier2_PooledProjectilePiece_C", "OnProjectileShot");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnProjectileShot", FnName));
 
 	Params::BP_Ranged_Tier2_PooledProjectilePiece_C_OnProjectileShot Parms{};
 

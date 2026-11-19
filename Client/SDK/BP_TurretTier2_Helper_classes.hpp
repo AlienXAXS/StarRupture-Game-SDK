@@ -16,9 +16,12 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_TurretTier2_Helper.BP_TurretTier2_Helper_C
-// 0x0000 (0x0A30 - 0x0A30)
+// 0x0000 (0x0B90 - 0x0B90)
 class ABP_TurretTier2_Helper_C final : public ABP_ChimeraPlacementHelperReplicatedBase_C
 {
+public:
+	class UCrDefenseTurretData*                   TurretData;                                        // 0x0B88(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
 public:
 	static class UClass* StaticClass()
 	{

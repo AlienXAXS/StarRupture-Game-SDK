@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_BuildingLogisticsInfo_C::BndEvt__WBP_BuildingLogisticsInfo_High_K2Node_ComponentBoundEvent_2_CommonButtonBaseClicked__DelegateSignature(class UCommonButtonBase* Button)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_BuildingLogisticsInfo_C", "BndEvt__WBP_BuildingLogisticsInfo_High_K2Node_ComponentBoundEvent_2_CommonButtonBaseClicked__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__WBP_BuildingLogisticsInfo_High_K2Node_ComponentBoundEvent_2_CommonButtonBaseClicked__DelegateSignature", FnName));
 
 	Params::WBP_BuildingLogisticsInfo_C_BndEvt__WBP_BuildingLogisticsInfo_High_K2Node_ComponentBoundEvent_2_CommonButtonBaseClicked__DelegateSignature Parms{};
 
@@ -43,10 +41,8 @@ void UWBP_BuildingLogisticsInfo_C::BndEvt__WBP_BuildingLogisticsInfo_High_K2Node
 
 void UWBP_BuildingLogisticsInfo_C::BndEvt__WBP_BuildingLogisticsInfo_Low_K2Node_ComponentBoundEvent_0_CommonButtonBaseClicked__DelegateSignature(class UCommonButtonBase* Button)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_BuildingLogisticsInfo_C", "BndEvt__WBP_BuildingLogisticsInfo_Low_K2Node_ComponentBoundEvent_0_CommonButtonBaseClicked__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__WBP_BuildingLogisticsInfo_Low_K2Node_ComponentBoundEvent_0_CommonButtonBaseClicked__DelegateSignature", FnName));
 
 	Params::WBP_BuildingLogisticsInfo_C_BndEvt__WBP_BuildingLogisticsInfo_Low_K2Node_ComponentBoundEvent_0_CommonButtonBaseClicked__DelegateSignature Parms{};
 
@@ -63,10 +59,8 @@ void UWBP_BuildingLogisticsInfo_C::BndEvt__WBP_BuildingLogisticsInfo_Low_K2Node_
 
 void UWBP_BuildingLogisticsInfo_C::BndEvt__WBP_BuildingLogisticsInfo_Medium_K2Node_ComponentBoundEvent_1_CommonButtonBaseClicked__DelegateSignature(class UCommonButtonBase* Button)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_BuildingLogisticsInfo_C", "BndEvt__WBP_BuildingLogisticsInfo_Medium_K2Node_ComponentBoundEvent_1_CommonButtonBaseClicked__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__WBP_BuildingLogisticsInfo_Medium_K2Node_ComponentBoundEvent_1_CommonButtonBaseClicked__DelegateSignature", FnName));
 
 	Params::WBP_BuildingLogisticsInfo_C_BndEvt__WBP_BuildingLogisticsInfo_Medium_K2Node_ComponentBoundEvent_1_CommonButtonBaseClicked__DelegateSignature Parms{};
 
@@ -83,10 +77,8 @@ void UWBP_BuildingLogisticsInfo_C::BndEvt__WBP_BuildingLogisticsInfo_Medium_K2No
 
 void UWBP_BuildingLogisticsInfo_C::ExecuteUbergraph_WBP_BuildingLogisticsInfo(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_BuildingLogisticsInfo_C", "ExecuteUbergraph_WBP_BuildingLogisticsInfo");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_BuildingLogisticsInfo_C", "ExecuteUbergraph_WBP_BuildingLogisticsInfo", FuncInfo);
 
 	Params::WBP_BuildingLogisticsInfo_C_ExecuteUbergraph_WBP_BuildingLogisticsInfo Parms{};
 

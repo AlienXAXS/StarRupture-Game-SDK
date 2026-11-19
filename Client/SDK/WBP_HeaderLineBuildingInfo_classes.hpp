@@ -33,6 +33,7 @@ public:
 public:
 	void SetColors(const struct FLinearColor& Highlight, const struct FLinearColor& Default);
 	void SetLinesEnabled(bool Enabled);
+	void SetNoTransformPolicy();
 	void SetTextStyle(bool isHighlight);
 	void SetTitle(const class FText& InTitle);
 	void SetTitleFieldSize(int32 Size);

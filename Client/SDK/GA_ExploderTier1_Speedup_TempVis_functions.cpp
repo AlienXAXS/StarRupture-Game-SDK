@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UGA_ExploderTier1_Speedup_TempVis_C::ExecuteUbergraph_GA_ExploderTier1_Speedup_TempVis(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_ExploderTier1_Speedup_TempVis_C", "ExecuteUbergraph_GA_ExploderTier1_Speedup_TempVis");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "GA_ExploderTier1_Speedup_TempVis_C", "ExecuteUbergraph_GA_ExploderTier1_Speedup_TempVis", FuncInfo);
 
 	Params::GA_ExploderTier1_Speedup_TempVis_C_ExecuteUbergraph_GA_ExploderTier1_Speedup_TempVis Parms{};
 
@@ -44,10 +42,8 @@ void UGA_ExploderTier1_Speedup_TempVis_C::ExecuteUbergraph_GA_ExploderTier1_Spee
 
 void UGA_ExploderTier1_Speedup_TempVis_C::GetSpeedupEyeColorByAiTag(const struct FGameplayTag& AiTag, struct FLinearColor* EyeColor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_ExploderTier1_Speedup_TempVis_C", "GetSpeedupEyeColorByAiTag");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetSpeedupEyeColorByAiTag", FnName));
 
 	Params::GA_ExploderTier1_Speedup_TempVis_C_GetSpeedupEyeColorByAiTag Parms{};
 
@@ -65,10 +61,8 @@ void UGA_ExploderTier1_Speedup_TempVis_C::GetSpeedupEyeColorByAiTag(const struct
 
 void UGA_ExploderTier1_Speedup_TempVis_C::K2_ActivateAbility()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_ExploderTier1_Speedup_TempVis_C", "K2_ActivateAbility");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_ActivateAbility", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -81,10 +75,8 @@ void UGA_ExploderTier1_Speedup_TempVis_C::K2_ActivateAbility()
 
 void UGA_ExploderTier1_Speedup_TempVis_C::K2_OnEndAbility(bool bWasCancelled)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_ExploderTier1_Speedup_TempVis_C", "K2_OnEndAbility");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_OnEndAbility", FnName));
 
 	Params::GA_ExploderTier1_Speedup_TempVis_C_K2_OnEndAbility Parms{};
 

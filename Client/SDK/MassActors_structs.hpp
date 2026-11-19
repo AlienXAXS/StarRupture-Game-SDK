@@ -92,7 +92,7 @@ public:
 	TWeakObjectPtr<class AActor>                  Actor;                                             // 0x0000(0x0008)(Edit, ZeroConstructor, Transient, EditConst, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_8[0x4];                                        // 0x0008(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-//DUMPER7_ASSERTS_FMassActorFragment;
+DUMPER7_ASSERTS_FMassActorFragment;
 
 // ScriptStruct MassActors.MassAgentInitializationQueue
 // 0x0010 (0x0010 - 0x0000)

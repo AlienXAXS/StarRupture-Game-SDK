@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_InventoryScreen_C::AddAdditionalWidget(class UCrUW_ActivatableWidget* Widget)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryScreen_C", "AddAdditionalWidget");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AddAdditionalWidget", FnName));
 
 	Params::WBP_InventoryScreen_C_AddAdditionalWidget Parms{};
 
@@ -43,10 +41,8 @@ void UWBP_InventoryScreen_C::AddAdditionalWidget(class UCrUW_ActivatableWidget* 
 
 void UWBP_InventoryScreen_C::AddWidgetToHBox(class UCrUW_ActivatableWidget* Widget)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryScreen_C", "AddWidgetToHBox");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AddWidgetToHBox", FnName));
 
 	Params::WBP_InventoryScreen_C_AddWidgetToHBox Parms{};
 
@@ -61,10 +57,8 @@ void UWBP_InventoryScreen_C::AddWidgetToHBox(class UCrUW_ActivatableWidget* Widg
 
 void UWBP_InventoryScreen_C::BP_OnDeactivated()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryScreen_C", "BP_OnDeactivated");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnDeactivated", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -75,10 +69,8 @@ void UWBP_InventoryScreen_C::BP_OnDeactivated()
 
 void UWBP_InventoryScreen_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryScreen_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -91,10 +83,8 @@ void UWBP_InventoryScreen_C::Construct()
 
 void UWBP_InventoryScreen_C::ExecuteUbergraph_WBP_InventoryScreen(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryScreen_C", "ExecuteUbergraph_WBP_InventoryScreen");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_InventoryScreen_C", "ExecuteUbergraph_WBP_InventoryScreen", FuncInfo);
 
 	Params::WBP_InventoryScreen_C_ExecuteUbergraph_WBP_InventoryScreen Parms{};
 
@@ -112,10 +102,8 @@ void UWBP_InventoryScreen_C::ExecuteUbergraph_WBP_InventoryScreen(int32 EntryPoi
 
 void UWBP_InventoryScreen_C::HideInventoryAndReplaceRightWidgets(class UCrUW_ActivatableWidget* Widget, EVerticalAlignment Align)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryScreen_C", "HideInventoryAndReplaceRightWidgets");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"HideInventoryAndReplaceRightWidgets", FnName));
 
 	Params::WBP_InventoryScreen_C_HideInventoryAndReplaceRightWidgets Parms{};
 
@@ -131,10 +119,8 @@ void UWBP_InventoryScreen_C::HideInventoryAndReplaceRightWidgets(class UCrUW_Act
 
 void UWBP_InventoryScreen_C::RemoveLastAddedAdditionalWidget()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryScreen_C", "RemoveLastAddedAdditionalWidget");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"RemoveLastAddedAdditionalWidget", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -148,10 +134,8 @@ void UWBP_InventoryScreen_C::RemoveLastAddedAdditionalWidget()
 
 void UWBP_InventoryScreen_C::ReplaceInventory(class UCrUW_ActivatableWidget* Widget, EVerticalAlignment Align)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryScreen_C", "ReplaceInventory");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReplaceInventory", FnName));
 
 	Params::WBP_InventoryScreen_C_ReplaceInventory Parms{};
 
@@ -167,10 +151,8 @@ void UWBP_InventoryScreen_C::ReplaceInventory(class UCrUW_ActivatableWidget* Wid
 
 void UWBP_InventoryScreen_C::ShowInventory()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryScreen_C", "ShowInventory");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ShowInventory", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -181,10 +163,8 @@ void UWBP_InventoryScreen_C::ShowInventory()
 
 void UWBP_InventoryScreen_C::ShowInventoryAndRemoveRightWidgets()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryScreen_C", "ShowInventoryAndRemoveRightWidgets");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ShowInventoryAndRemoveRightWidgets", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

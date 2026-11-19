@@ -13,23 +13,27 @@
 #include "SlateCore_structs.hpp"
 #include "UMG_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "ChimeraUI_structs.hpp"
 
 
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
 // Function WBP_MenuPopupSave.WBP_MenuPopupSave_C.ExecuteUbergraph_WBP_MenuPopupSave
-// 0x0050 (0x0050 - 0x0000)
+// 0x0058 (0x0058 - 0x0000)
 struct WBP_MenuPopupSave_C_ExecuteUbergraph_WBP_MenuPopupSave final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FWidgetAnimationHandle                 CallFunc_PlayAnimation_ReturnValue;                // 0x0004(0x0010)(NoDestructor, ContainsInstancedReference, HasGetValueTypeHash)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue; // 0x0018(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue_1; // 0x0020(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           K2Node_Event_Orange;                               // 0x0028(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSlateColor                            K2Node_MakeStruct_SlateColor;                      // 0x0038(0x0014)()
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue; // 0x0008(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           K2Node_Event_Orange;                               // 0x0010(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSlateColor                            K2Node_MakeStruct_SlateColor;                      // 0x0020(0x0014)()
+	struct FWidgetAnimationHandle                 CallFunc_PlayAnimation_ReturnValue;                // 0x0034(0x0010)(NoDestructor, ContainsInstancedReference, HasGetValueTypeHash)
+	ECrSlotIconType                               K2Node_Event_IconType;                             // 0x0044(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_45[0x3];                                       // 0x0045(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMaterialInstanceDynamic*               CallFunc_CreateDynamicMaterialInstance_ReturnValue_1; // 0x0048(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_MenuPopupSave_C_ExecuteUbergraph_WBP_MenuPopupSave;
 
@@ -53,6 +57,15 @@ public:
 	struct FLinearColor                           Orange;                                            // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_MenuPopupSave_C_SetColors;
+
+// Function WBP_MenuPopupSave.WBP_MenuPopupSave_C.SetSaveImage
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_MenuPopupSave_C_SetSaveImage final
+{
+public:
+	ECrSlotIconType                               IconType;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_MenuPopupSave_C_SetSaveImage;
 
 SDK_PARAM_NAMESPACE_END
 SDK_NAMESPACE_END

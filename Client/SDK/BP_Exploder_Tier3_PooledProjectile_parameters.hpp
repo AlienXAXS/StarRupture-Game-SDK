@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "CoreUObject_structs.hpp"
-#include "GameplayAbilities_structs.hpp"
 #include "Chimera_structs.hpp"
+#include "GameplayAbilities_structs.hpp"
 #include "Engine_structs.hpp"
 
 

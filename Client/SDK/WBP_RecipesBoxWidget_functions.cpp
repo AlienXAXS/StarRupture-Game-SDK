@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_RecipesBoxWidget_C::BndEvt__WBP_CorporationRecipes_DropDownButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_RecipesBoxWidget_C", "BndEvt__WBP_CorporationRecipes_DropDownButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__WBP_CorporationRecipes_DropDownButton_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -35,10 +33,8 @@ void UWBP_RecipesBoxWidget_C::BndEvt__WBP_CorporationRecipes_DropDownButton_K2No
 
 void UWBP_RecipesBoxWidget_C::BndEvt__WBP_CorporationRecipes_LevelButton_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_RecipesBoxWidget_C", "BndEvt__WBP_CorporationRecipes_LevelButton_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__WBP_CorporationRecipes_LevelButton_K2Node_ComponentBoundEvent_1_OnButtonClickedEvent__DelegateSignature", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -49,10 +45,8 @@ void UWBP_RecipesBoxWidget_C::BndEvt__WBP_CorporationRecipes_LevelButton_K2Node_
 
 void UWBP_RecipesBoxWidget_C::BndEvt__WBP_CorporationRecipes_LevelButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_RecipesBoxWidget_C", "BndEvt__WBP_CorporationRecipes_LevelButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__WBP_CorporationRecipes_LevelButton_K2Node_ComponentBoundEvent_2_OnButtonHoverEvent__DelegateSignature", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -63,10 +57,8 @@ void UWBP_RecipesBoxWidget_C::BndEvt__WBP_CorporationRecipes_LevelButton_K2Node_
 
 void UWBP_RecipesBoxWidget_C::BndEvt__WBP_CorporationRecipes_LevelButton_K2Node_ComponentBoundEvent_3_OnButtonHoverEvent__DelegateSignature()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_RecipesBoxWidget_C", "BndEvt__WBP_CorporationRecipes_LevelButton_K2Node_ComponentBoundEvent_3_OnButtonHoverEvent__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__WBP_CorporationRecipes_LevelButton_K2Node_ComponentBoundEvent_3_OnButtonHoverEvent__DelegateSignature", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -79,10 +71,8 @@ void UWBP_RecipesBoxWidget_C::BndEvt__WBP_CorporationRecipes_LevelButton_K2Node_
 
 void UWBP_RecipesBoxWidget_C::EnableLine(bool bEnabled)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_RecipesBoxWidget_C", "EnableLine");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EnableLine", FnName));
 
 	Params::WBP_RecipesBoxWidget_C_EnableLine Parms{};
 
@@ -99,10 +89,8 @@ void UWBP_RecipesBoxWidget_C::EnableLine(bool bEnabled)
 
 void UWBP_RecipesBoxWidget_C::ExecuteUbergraph_WBP_RecipesBoxWidget(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_RecipesBoxWidget_C", "ExecuteUbergraph_WBP_RecipesBoxWidget");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_RecipesBoxWidget_C", "ExecuteUbergraph_WBP_RecipesBoxWidget", FuncInfo);
 
 	Params::WBP_RecipesBoxWidget_C_ExecuteUbergraph_WBP_RecipesBoxWidget Parms{};
 
@@ -119,10 +107,8 @@ void UWBP_RecipesBoxWidget_C::ExecuteUbergraph_WBP_RecipesBoxWidget(int32 EntryP
 
 void UWBP_RecipesBoxWidget_C::ExpandRecipes(bool bExpand)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_RecipesBoxWidget_C", "ExpandRecipes");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ExpandRecipes", FnName));
 
 	Params::WBP_RecipesBoxWidget_C_ExpandRecipes Parms{};
 
@@ -139,10 +125,8 @@ void UWBP_RecipesBoxWidget_C::ExpandRecipes(bool bExpand)
 
 void UWBP_RecipesBoxWidget_C::SetColors(const class UCrCommonUIColorsDevSettings* Settings)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_RecipesBoxWidget_C", "SetColors");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetColors", FnName));
 
 	Params::WBP_RecipesBoxWidget_C_SetColors Parms{};
 
@@ -159,10 +143,8 @@ void UWBP_RecipesBoxWidget_C::SetColors(const class UCrCommonUIColorsDevSettings
 
 void UWBP_RecipesBoxWidget_C::SetExpanded(bool bExpand)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_RecipesBoxWidget_C", "SetExpanded");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetExpanded", FnName));
 
 	Params::WBP_RecipesBoxWidget_C_SetExpanded Parms{};
 
@@ -179,10 +161,8 @@ void UWBP_RecipesBoxWidget_C::SetExpanded(bool bExpand)
 
 void UWBP_RecipesBoxWidget_C::SetIgnoreFocusColor(bool Value)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_RecipesBoxWidget_C", "SetIgnoreFocusColor");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetIgnoreFocusColor", FnName));
 
 	Params::WBP_RecipesBoxWidget_C_SetIgnoreFocusColor Parms{};
 
@@ -199,10 +179,8 @@ void UWBP_RecipesBoxWidget_C::SetIgnoreFocusColor(bool Value)
 
 void UWBP_RecipesBoxWidget_C::SetLevel(int32 Level)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_RecipesBoxWidget_C", "SetLevel");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetLevel", FnName));
 
 	Params::WBP_RecipesBoxWidget_C_SetLevel Parms{};
 
@@ -219,10 +197,8 @@ void UWBP_RecipesBoxWidget_C::SetLevel(int32 Level)
 
 void UWBP_RecipesBoxWidget_C::SetLevelButtonFocus(bool bFocused)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_RecipesBoxWidget_C", "SetLevelButtonFocus");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetLevelButtonFocus", FnName));
 
 	Params::WBP_RecipesBoxWidget_C_SetLevelButtonFocus Parms{};
 
@@ -237,10 +213,8 @@ void UWBP_RecipesBoxWidget_C::SetLevelButtonFocus(bool bFocused)
 
 void UWBP_RecipesBoxWidget_C::SetLineFinished()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_RecipesBoxWidget_C", "SetLineFinished");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetLineFinished", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -251,10 +225,8 @@ void UWBP_RecipesBoxWidget_C::SetLineFinished()
 
 void UWBP_RecipesBoxWidget_C::SetLowerWidth()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_RecipesBoxWidget_C", "SetLowerWidth");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetLowerWidth", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -265,10 +237,8 @@ void UWBP_RecipesBoxWidget_C::SetLowerWidth()
 
 void UWBP_RecipesBoxWidget_C::SetMaxLevel()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_RecipesBoxWidget_C", "SetMaxLevel");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetMaxLevel", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -281,10 +251,8 @@ void UWBP_RecipesBoxWidget_C::SetMaxLevel()
 
 void UWBP_RecipesBoxWidget_C::SetTitle(const class FText& InText)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_RecipesBoxWidget_C", "SetTitle");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetTitle", FnName));
 
 	Params::WBP_RecipesBoxWidget_C_SetTitle Parms{};
 
@@ -301,10 +269,8 @@ void UWBP_RecipesBoxWidget_C::SetTitle(const class FText& InText)
 
 void UWBP_RecipesBoxWidget_C::SetWidgetTitle(const class FText& Text)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_RecipesBoxWidget_C", "SetWidgetTitle");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetWidgetTitle", FnName));
 
 	Params::WBP_RecipesBoxWidget_C_SetWidgetTitle Parms{};
 
@@ -321,10 +287,8 @@ void UWBP_RecipesBoxWidget_C::SetWidgetTitle(const class FText& Text)
 
 void UWBP_RecipesBoxWidget_C::SetWidth(double InSize)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_RecipesBoxWidget_C", "SetWidth");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetWidth", FnName));
 
 	Params::WBP_RecipesBoxWidget_C_SetWidth Parms{};
 

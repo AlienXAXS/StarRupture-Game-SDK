@@ -26,10 +26,8 @@ SDK_NAMESPACE_START
 
 void ABP_Gatherable_Plant_h_C::BP_OnWaveChangedUpdate(EEnviroWave WaveType, EEnviroWaveStage WaveStage, EEnviroWaveFadeoutSubstage FadeoutSubstage, EEnviroWaveGrowbackSubstage GrowbackSubstage)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Gatherable_Plant_h_C", "BP_OnWaveChangedUpdate");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnWaveChangedUpdate", FnName));
 
 	Params::BP_Gatherable_Plant_h_C_BP_OnWaveChangedUpdate Parms{};
 
@@ -49,10 +47,8 @@ void ABP_Gatherable_Plant_h_C::BP_OnWaveChangedUpdate(EEnviroWave WaveType, EEnv
 
 void ABP_Gatherable_Plant_h_C::ExecuteUbergraph_BP_Gatherable_Plant_h(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Gatherable_Plant_h_C", "ExecuteUbergraph_BP_Gatherable_Plant_h");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Gatherable_Plant_h_C", "ExecuteUbergraph_BP_Gatherable_Plant_h", FuncInfo);
 
 	Params::BP_Gatherable_Plant_h_C_ExecuteUbergraph_BP_Gatherable_Plant_h Parms{};
 
@@ -69,10 +65,8 @@ void ABP_Gatherable_Plant_h_C::ExecuteUbergraph_BP_Gatherable_Plant_h(int32 Entr
 
 void ABP_Gatherable_Plant_h_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Gatherable_Plant_h_C", "ReceiveEndPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveEndPlay", FnName));
 
 	Params::BP_Gatherable_Plant_h_C_ReceiveEndPlay Parms{};
 

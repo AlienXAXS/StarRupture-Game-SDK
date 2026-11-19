@@ -19,12 +19,43 @@
 
 SDK_NAMESPACE_START
 
-// Class NavigationSystem.BaseGeneratedNavLinksProxy
-// 0x0018 (0x0040 - 0x0028)
-class UBaseGeneratedNavLinksProxy : public UObject
+// Class NavigationSystem.NavLinkCustomInterface
+// 0x0008 (0x0008 - 0x0000)
+class INavLinkCustomInterface
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("NavLinkCustomInterface")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"NavLinkCustomInterface")
+	}
+	static class INavLinkCustomInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<INavLinkCustomInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_INavLinkCustomInterface;
+
+// Class NavigationSystem.BaseGeneratedNavLinksProxy
+// 0x0018 (0x0040 - 0x0028)
+class UBaseGeneratedNavLinksProxy : public UObject, public INavLinkCustomInterface
+{
+public:
 	struct FNavLinkId                             LinkProxyId;                                       // 0x0030(0x0008)(Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UObject*                                Owner;                                             // 0x0038(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
 
@@ -134,9 +165,12 @@ public:
 DUMPER7_ASSERTS_UNavigationObjectRepository;
 
 // Class NavigationSystem.NavigationPathGenerator
-// 0x0000 (0x0000 - 0x0000)
-class INavigationPathGenerator final
+// 0x0008 (0x0008 - 0x0000)
+class INavigationPathGenerator
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -162,39 +196,13 @@ public:
 };
 DUMPER7_ASSERTS_INavigationPathGenerator;
 
-// Class NavigationSystem.NavLinkCustomInterface
-// 0x0000 (0x0000 - 0x0000)
-class INavLinkCustomInterface final
+// Class NavigationSystem.NavLinkHostInterface
+// 0x0008 (0x0008 - 0x0000)
+class INavLinkHostInterface
 {
 public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("NavLinkCustomInterface")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"NavLinkCustomInterface")
-	}
-	static class INavLinkCustomInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<INavLinkCustomInterface>();
-	}
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
 
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_INavLinkCustomInterface;
-
-// Class NavigationSystem.NavLinkHostInterface
-// 0x0000 (0x0000 - 0x0000)
-class INavLinkHostInterface final
-{
 public:
 	static class UClass* StaticClass()
 	{
@@ -241,9 +249,12 @@ public:
 DUMPER7_ASSERTS_UNavLinkTrivial;
 
 // Class NavigationSystem.NavNodeInterface
-// 0x0000 (0x0000 - 0x0000)
-class INavNodeInterface final
+// 0x0008 (0x0008 - 0x0000)
+class INavNodeInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -271,10 +282,9 @@ DUMPER7_ASSERTS_INavNodeInterface;
 
 // Class NavigationSystem.NavigationData
 // 0x0258 (0x0500 - 0x02A8)
-class ANavigationData : public AActor
+class ANavigationData : public AActor, public INavigationDataInterface
 {
 public:
-	uint8                                         Pad_2A8[0x8];                                      // 0x02A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class UPrimitiveComponent*                    RenderingComp;                                     // 0x02B0(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, DuplicateTransient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	struct FNavDataConfig                         NavDataConfig;                                     // 0x02B8(0x0088)(Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         bEnableDrawing : 1;                                // 0x0340(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, Transient, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
@@ -789,10 +799,9 @@ DUMPER7_ASSERTS_UNavigationSystemModuleConfig;
 
 // Class NavigationSystem.NavigationTestingActor
 // 0x0160 (0x0408 - 0x02A8)
-class ANavigationTestingActor final : public AActor
+class ANavigationTestingActor final : public AActor, public INavAgentInterface, public INavPathObserverInterface
 {
 public:
-	uint8                                         Pad_2A8[0x10];                                     // 0x02A8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	class UCapsuleComponent*                      CapsuleComponent;                                  // 0x02B8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
 	class UNavigationInvokerComponent*            InvokerComponent;                                  // 0x02C0(0x0008)(Edit, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
 	uint8                                         bActAsNavigationInvoker : 1;                       // 0x02C8(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate))
@@ -857,10 +866,9 @@ DUMPER7_ASSERTS_ANavigationTestingActor;
 
 // Class NavigationSystem.NavLinkComponent
 // 0x0020 (0x0550 - 0x0530)
-class UNavLinkComponent final : public UPrimitiveComponent
+class UNavLinkComponent final : public UPrimitiveComponent, public INavLinkHostInterface
 {
 public:
-	uint8                                         Pad_530[0x8];                                      // 0x0530(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FNavigationLink>                Links;                                             // 0x0538(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 	uint8                                         Pad_548[0x8];                                      // 0x0548(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
@@ -882,10 +890,10 @@ DUMPER7_ASSERTS_UNavLinkComponent;
 
 // Class NavigationSystem.NavRelevantComponent
 // 0x0050 (0x0108 - 0x00B8)
-class UNavRelevantComponent : public UActorComponent
+class UNavRelevantComponent : public UActorComponent, public INavRelevantInterface
 {
 public:
-	uint8                                         Pad_B8[0x40];                                      // 0x00B8(0x0040)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C0[0x38];                                      // 0x00C0(0x0038)(Fixing Size After Last Property [ Dumper-7 ])
 	uint8                                         bAttachToOwnersRoot : 1;                           // 0x00F8(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
 	uint8                                         Pad_F9[0x7];                                       // 0x00F9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                CachedNavParent;                                   // 0x0100(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
@@ -911,10 +919,9 @@ DUMPER7_ASSERTS_UNavRelevantComponent;
 
 // Class NavigationSystem.NavLinkCustomComponent
 // 0x0100 (0x0208 - 0x0108)
-class UNavLinkCustomComponent final : public UNavRelevantComponent
+class UNavLinkCustomComponent final : public UNavRelevantComponent, public INavLinkCustomInterface
 {
 public:
-	uint8                                         Pad_108[0x8];                                      // 0x0108(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	uint32                                        NavLinkUserId;                                     // 0x0110(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_114[0x4];                                      // 0x0114(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FNavLinkId                             CustomLinkId;                                      // 0x0118(0x0008)(NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -1215,10 +1222,9 @@ DUMPER7_ASSERTS_UNavModifierComponent;
 
 // Class NavigationSystem.NavModifierVolume
 // 0x0020 (0x0300 - 0x02E0)
-class ANavModifierVolume final : public AVolume
+class ANavModifierVolume final : public AVolume, public INavRelevantInterface
 {
 public:
-	uint8                                         Pad_2E0[0x8];                                      // 0x02E0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TSubclassOf<class UNavArea>                   AreaClass;                                         // 0x02E8(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	TSubclassOf<class UNavArea>                   AreaClassToReplace;                                // 0x02F0(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                          bMaskFillCollisionUnderneathForNavmesh;            // 0x02F8(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)

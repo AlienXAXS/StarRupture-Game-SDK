@@ -25,10 +25,8 @@ SDK_NAMESPACE_START
 
 void UApplyScaleToBounds_C::ExecuteWithContext(struct FPCGContext& InContext, const struct FPCGDataCollection& Input, struct FPCGDataCollection* Output)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ApplyScaleToBounds_C", "ExecuteWithContext");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ExecuteWithContext", FnName));
 
 	Params::ApplyScaleToBounds_C_ExecuteWithContext Parms{};
 
@@ -51,10 +49,8 @@ void UApplyScaleToBounds_C::ExecuteWithContext(struct FPCGContext& InContext, co
 
 struct FLinearColor UApplyScaleToBounds_C::NodeColorOverride() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ApplyScaleToBounds_C", "NodeColorOverride");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"NodeColorOverride", FnName));
 
 	Params::ApplyScaleToBounds_C_NodeColorOverride Parms{};
 
@@ -71,10 +67,8 @@ struct FLinearColor UApplyScaleToBounds_C::NodeColorOverride() const
 
 class FName UApplyScaleToBounds_C::NodeTitleOverride() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ApplyScaleToBounds_C", "NodeTitleOverride");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"NodeTitleOverride", FnName));
 
 	Params::ApplyScaleToBounds_C_NodeTitleOverride Parms{};
 
@@ -97,10 +91,8 @@ class FName UApplyScaleToBounds_C::NodeTitleOverride() const
 
 bool UApplyScaleToBounds_C::PointLoopBody(const struct FPCGContext& InContext, const class UPCGPointData* InData, const struct FPCGPoint& InPoint, struct FPCGPoint* OutPoint, class UPCGMetadata* OutMetadata, int64 Iteration) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ApplyScaleToBounds_C", "PointLoopBody");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PointLoopBody", FnName));
 
 	Params::ApplyScaleToBounds_C_PointLoopBody Parms{};
 

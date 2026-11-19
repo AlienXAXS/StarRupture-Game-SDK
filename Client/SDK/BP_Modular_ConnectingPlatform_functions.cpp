@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_Modular_ConnectingPlatform_C::ExecuteUbergraph_BP_Modular_ConnectingPlatform(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Modular_ConnectingPlatform_C", "ExecuteUbergraph_BP_Modular_ConnectingPlatform");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Modular_ConnectingPlatform_C", "ExecuteUbergraph_BP_Modular_ConnectingPlatform", FuncInfo);
 
 	Params::BP_Modular_ConnectingPlatform_C_ExecuteUbergraph_BP_Modular_ConnectingPlatform Parms{};
 
@@ -41,10 +39,8 @@ void ABP_Modular_ConnectingPlatform_C::ExecuteUbergraph_BP_Modular_ConnectingPla
 
 void ABP_Modular_ConnectingPlatform_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Modular_ConnectingPlatform_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -55,10 +51,8 @@ void ABP_Modular_ConnectingPlatform_C::ReceiveBeginPlay()
 
 void ABP_Modular_ConnectingPlatform_C::UserConstructionScript()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Modular_ConnectingPlatform_C", "UserConstructionScript");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UserConstructionScript", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -72,10 +66,8 @@ void ABP_Modular_ConnectingPlatform_C::UserConstructionScript()
 
 void ABP_Modular_ConnectingPlatform_C::GetBuildingMeshes(class UMeshComponent** MainBody, TArray<class UMeshComponent*>* AdditionalMeshes) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Modular_ConnectingPlatform_C", "GetBuildingMeshes");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetBuildingMeshes", FnName));
 
 	Params::BP_Modular_ConnectingPlatform_C_GetBuildingMeshes Parms{};
 

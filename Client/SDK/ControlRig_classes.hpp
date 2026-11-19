@@ -10,21 +10,22 @@
 
 #include "Basic.hpp"
 
+#include "Constraints_structs.hpp"
+#include "Constraints_classes.hpp"
 #include "RigVM_structs.hpp"
 #include "RigVM_classes.hpp"
-#include "AnimationCore_structs.hpp"
-#include "CoreUObject_structs.hpp"
-#include "CoreUObject_classes.hpp"
+#include "MovieSceneTracks_structs.hpp"
+#include "MovieSceneTracks_classes.hpp"
+#include "DeveloperSettings_classes.hpp"
 #include "ControlRig_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "Constraints_structs.hpp"
-#include "Constraints_classes.hpp"
-#include "MovieSceneTracks_structs.hpp"
-#include "MovieSceneTracks_classes.hpp"
+#include "AnimationCore_structs.hpp"
+#include "CoreUObject_structs.hpp"
+#include "CoreUObject_classes.hpp"
+#include "AnimGraphRuntime_classes.hpp"
 #include "MovieScene_structs.hpp"
 #include "MovieScene_classes.hpp"
-#include "DeveloperSettings_classes.hpp"
 
 
 SDK_NAMESPACE_START
@@ -59,12 +60,44 @@ public:
 };
 DUMPER7_ASSERTS_UControlRigShapeLibraryLink;
 
-// Class ControlRig.ControlRig
-// 0x0978 (0x0C08 - 0x0290)
-class UControlRig : public URigVMHost
+// Class ControlRig.RigHierarchyProvider
+// 0x0008 (0x0008 - 0x0000)
+class IRigHierarchyProvider
 {
 public:
-	uint8                                         Pad_290[0x38];                                     // 0x0290(0x0038)(Fixing Size After Last Property [ Dumper-7 ])
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("RigHierarchyProvider")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"RigHierarchyProvider")
+	}
+	static class IRigHierarchyProvider* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<IRigHierarchyProvider>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_IRigHierarchyProvider;
+
+// Class ControlRig.ControlRig
+// 0x0978 (0x0C08 - 0x0290)
+class UControlRig : public URigVMHost, public INodeMappingProviderInterface, public IRigHierarchyProvider, public IMeshDeformerProducer
+{
+public:
+	uint8                                         Pad_2A8[0x20];                                     // 0x02A8(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UControlRigOverrideAsset*>       OverrideAssets;                                    // 0x02C8(0x0010)(ZeroConstructor, Transient, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
 	uint8                                         Pad_2D8[0x1];                                      // 0x02D8(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
 	ERigExecutionType                             ExecutionType;                                     // 0x02D9(0x0001)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -405,35 +438,6 @@ public:
 };
 DUMPER7_ASSERTS_URigHierarchy;
 
-// Class ControlRig.RigHierarchyProvider
-// 0x0000 (0x0000 - 0x0000)
-class IRigHierarchyProvider final
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("RigHierarchyProvider")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"RigHierarchyProvider")
-	}
-	static class IRigHierarchyProvider* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<IRigHierarchyProvider>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_IRigHierarchyProvider;
-
 // Class ControlRig.AnimNodeControlRigLibrary
 // 0x0000 (0x0028 - 0x0028)
 class UAnimNodeControlRigLibrary final : public UBlueprintFunctionLibrary
@@ -664,10 +668,9 @@ DUMPER7_ASSERTS_AControlRigControlActor;
 
 // Class ControlRig.ControlRigShapeActor
 // 0x00F8 (0x03A0 - 0x02A8)
-class alignas(0x10) AControlRigShapeActor final : public AActor
+class alignas(0x10) AControlRigShapeActor final : public AActor, public IViewportSelectableObject
 {
 public:
-	uint8                                         Pad_2A8[0x8];                                      // 0x02A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class USceneComponent*                        ActorRootComponent;                                // 0x02B0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	class UStaticMeshComponent*                   StaticMeshComponent;                               // 0x02B8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	uint32                                        ControlRigIndex;                                   // 0x02C0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -1100,7 +1103,7 @@ DUMPER7_ASSERTS_URigHierarchyController;
 
 // Class ControlRig.ControlRigLayerInstance
 // 0x0000 (0x0420 - 0x0420)
-class UControlRigLayerInstance final : public UAnimInstance
+class UControlRigLayerInstance final : public UAnimInstance, public ISequencerAnimationSupport
 {
 public:
 	static class UClass* StaticClass()
@@ -1120,10 +1123,10 @@ DUMPER7_ASSERTS_UControlRigLayerInstance;
 
 // Class ControlRig.MovieSceneControlRigParameterSection
 // 0x02F8 (0x0470 - 0x0178)
-class UMovieSceneControlRigParameterSection final : public UMovieSceneParameterSection
+class UMovieSceneControlRigParameterSection final : public UMovieSceneParameterSection, public IMovieSceneConstrainedSection
 {
 public:
-	uint8                                         Pad_178[0x58];                                     // 0x0178(0x0058)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_180[0x50];                                     // 0x0180(0x0050)(Fixing Size After Last Property [ Dumper-7 ])
 	class UControlRig*                            ControlRig;                                        // 0x01D0(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
 	TSubclassOf<class UControlRig>                ControlRigClass;                                   // 0x01D8(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	TArray<bool>                                  ControlsMask;                                      // 0x01E0(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
@@ -1156,10 +1159,9 @@ DUMPER7_ASSERTS_UMovieSceneControlRigParameterSection;
 
 // Class ControlRig.MovieSceneControlRigParameterTrack
 // 0x0190 (0x02A8 - 0x0118)
-class UMovieSceneControlRigParameterTrack final : public UMovieSceneNameableTrack
+class UMovieSceneControlRigParameterTrack final : public UMovieSceneNameableTrack, public IMovieSceneTrackTemplateProducer, public INodeAndChannelMappings, public IMovieSceneSectionsToKey
 {
 public:
-	uint8                                         Pad_118[0x18];                                     // 0x0118(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
 	TMap<class FName, TWeakObjectPtr<class UMovieSceneSection>> SectionToKeyPerControl;              // 0x0130(0x0050)(ExportObject, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_180[0x48];                                     // 0x0180(0x0048)(Fixing Size After Last Property [ Dumper-7 ])
 	class UControlRig*                            ControlRig;                                        // 0x01C8(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)

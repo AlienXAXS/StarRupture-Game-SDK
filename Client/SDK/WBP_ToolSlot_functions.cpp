@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_ToolSlot_C::ExecuteUbergraph_WBP_ToolSlot(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ToolSlot_C", "ExecuteUbergraph_WBP_ToolSlot");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_ToolSlot_C", "ExecuteUbergraph_WBP_ToolSlot", FuncInfo);
 
 	Params::WBP_ToolSlot_C_ExecuteUbergraph_WBP_ToolSlot Parms{};
 
@@ -41,10 +39,8 @@ void UWBP_ToolSlot_C::ExecuteUbergraph_WBP_ToolSlot(int32 EntryPoint)
 
 void UWBP_ToolSlot_C::SetEmptySlot()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ToolSlot_C", "SetEmptySlot");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetEmptySlot", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -57,10 +53,8 @@ void UWBP_ToolSlot_C::SetEmptySlot()
 
 void UWBP_ToolSlot_C::SetIcon(const struct FSlateBrush& InBrush)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ToolSlot_C", "SetIcon");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetIcon", FnName));
 
 	Params::WBP_ToolSlot_C_SetIcon Parms{};
 
@@ -75,10 +69,8 @@ void UWBP_ToolSlot_C::SetIcon(const struct FSlateBrush& InBrush)
 
 void UWBP_ToolSlot_C::SetLockedView()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ToolSlot_C", "SetLockedView");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetLockedView", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -91,10 +83,8 @@ void UWBP_ToolSlot_C::SetLockedView()
 
 void UWBP_ToolSlot_C::SetTitle(const class FText& InText)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ToolSlot_C", "SetTitle");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetTitle", FnName));
 
 	Params::WBP_ToolSlot_C_SetTitle Parms{};
 

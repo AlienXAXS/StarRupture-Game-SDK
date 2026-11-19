@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_Ranged_Tier2_PooledProjectile_C::AddInstantHeatToCharacter(class ACharacter* Chatacter)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier2_PooledProjectile_C", "AddInstantHeatToCharacter");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AddInstantHeatToCharacter", FnName));
 
 	Params::BP_Ranged_Tier2_PooledProjectile_C_AddInstantHeatToCharacter Parms{};
 
@@ -43,10 +41,8 @@ void ABP_Ranged_Tier2_PooledProjectile_C::AddInstantHeatToCharacter(class AChara
 
 void ABP_Ranged_Tier2_PooledProjectile_C::DoShotgunAttack(const struct FCrAiProjectileParameters& ProjectileParameters_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier2_PooledProjectile_C", "DoShotgunAttack");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"DoShotgunAttack", FnName));
 
 	Params::BP_Ranged_Tier2_PooledProjectile_C_DoShotgunAttack Parms{};
 
@@ -63,10 +59,8 @@ void ABP_Ranged_Tier2_PooledProjectile_C::DoShotgunAttack(const struct FCrAiProj
 
 void ABP_Ranged_Tier2_PooledProjectile_C::ExecuteUbergraph_BP_Ranged_Tier2_PooledProjectile(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier2_PooledProjectile_C", "ExecuteUbergraph_BP_Ranged_Tier2_PooledProjectile");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Ranged_Tier2_PooledProjectile_C", "ExecuteUbergraph_BP_Ranged_Tier2_PooledProjectile", FuncInfo);
 
 	Params::BP_Ranged_Tier2_PooledProjectile_C_ExecuteUbergraph_BP_Ranged_Tier2_PooledProjectile Parms{};
 
@@ -83,10 +77,8 @@ void ABP_Ranged_Tier2_PooledProjectile_C::ExecuteUbergraph_BP_Ranged_Tier2_Poole
 
 void ABP_Ranged_Tier2_PooledProjectile_C::OnHit(const struct FHitResult& HitResult)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier2_PooledProjectile_C", "OnHit");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnHit", FnName));
 
 	Params::BP_Ranged_Tier2_PooledProjectile_C_OnHit Parms{};
 
@@ -101,10 +93,8 @@ void ABP_Ranged_Tier2_PooledProjectile_C::OnHit(const struct FHitResult& HitResu
 
 void ABP_Ranged_Tier2_PooledProjectile_C::OnProjectileActivated()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier2_PooledProjectile_C", "OnProjectileActivated");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnProjectileActivated", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -115,10 +105,8 @@ void ABP_Ranged_Tier2_PooledProjectile_C::OnProjectileActivated()
 
 void ABP_Ranged_Tier2_PooledProjectile_C::OnProjectileDeactivated()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier2_PooledProjectile_C", "OnProjectileDeactivated");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnProjectileDeactivated", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -131,10 +119,8 @@ void ABP_Ranged_Tier2_PooledProjectile_C::OnProjectileDeactivated()
 
 void ABP_Ranged_Tier2_PooledProjectile_C::OnProjectileShot(const struct FCrAiProjectileParameters& InProjectileParameters)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier2_PooledProjectile_C", "OnProjectileShot");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnProjectileShot", FnName));
 
 	Params::BP_Ranged_Tier2_PooledProjectile_C_OnProjectileShot Parms{};
 
@@ -149,10 +135,8 @@ void ABP_Ranged_Tier2_PooledProjectile_C::OnProjectileShot(const struct FCrAiPro
 
 void ABP_Ranged_Tier2_PooledProjectile_C::OnReleasedToPool()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier2_PooledProjectile_C", "OnReleasedToPool");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnReleasedToPool", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -167,10 +151,8 @@ void ABP_Ranged_Tier2_PooledProjectile_C::OnReleasedToPool()
 
 void ABP_Ranged_Tier2_PooledProjectile_C::SpawnSnotProjectiles(const struct FVector& BigSnotLocation, const struct FVector& SmallProjectilesLocation, bool SpawnBigSnot)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier2_PooledProjectile_C", "SpawnSnotProjectiles");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SpawnSnotProjectiles", FnName));
 
 	Params::BP_Ranged_Tier2_PooledProjectile_C_SpawnSnotProjectiles Parms{};
 
@@ -189,10 +171,8 @@ void ABP_Ranged_Tier2_PooledProjectile_C::SpawnSnotProjectiles(const struct FVec
 
 void ABP_Ranged_Tier2_PooledProjectile_C::SplashWithSnotProjectiles(const struct FHitResult& HitResult)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier2_PooledProjectile_C", "SplashWithSnotProjectiles");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SplashWithSnotProjectiles", FnName));
 
 	Params::BP_Ranged_Tier2_PooledProjectile_C_SplashWithSnotProjectiles Parms{};
 
@@ -207,10 +187,8 @@ void ABP_Ranged_Tier2_PooledProjectile_C::SplashWithSnotProjectiles(const struct
 
 void ABP_Ranged_Tier2_PooledProjectile_C::UserConstructionScript()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Ranged_Tier2_PooledProjectile_C", "UserConstructionScript");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UserConstructionScript", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

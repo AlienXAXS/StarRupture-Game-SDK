@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_UpgradeStation_C::ExecuteUbergraph_BP_UpgradeStation(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_UpgradeStation_C", "ExecuteUbergraph_BP_UpgradeStation");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_UpgradeStation_C", "ExecuteUbergraph_BP_UpgradeStation", FuncInfo);
 
 	Params::BP_UpgradeStation_C_ExecuteUbergraph_BP_UpgradeStation Parms{};
 
@@ -43,10 +41,8 @@ void ABP_UpgradeStation_C::ExecuteUbergraph_BP_UpgradeStation(int32 EntryPoint)
 
 void ABP_UpgradeStation_C::OnUIOpened(bool bOpened)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_UpgradeStation_C", "OnUIOpened");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnUIOpened", FnName));
 
 	Params::BP_UpgradeStation_C_OnUIOpened Parms{};
 
@@ -61,10 +57,8 @@ void ABP_UpgradeStation_C::OnUIOpened(bool bOpened)
 
 void ABP_UpgradeStation_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_UpgradeStation_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

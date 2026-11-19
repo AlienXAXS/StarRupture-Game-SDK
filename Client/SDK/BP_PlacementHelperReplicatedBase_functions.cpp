@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_PlacementHelperReplicatedBase_C::ExecuteUbergraph_BP_PlacementHelperReplicatedBase(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperReplicatedBase_C", "ExecuteUbergraph_BP_PlacementHelperReplicatedBase");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_PlacementHelperReplicatedBase_C", "ExecuteUbergraph_BP_PlacementHelperReplicatedBase", FuncInfo);
 
 	Params::BP_PlacementHelperReplicatedBase_C_ExecuteUbergraph_BP_PlacementHelperReplicatedBase Parms{};
 
@@ -43,10 +41,8 @@ void ABP_PlacementHelperReplicatedBase_C::ExecuteUbergraph_BP_PlacementHelperRep
 
 void ABP_PlacementHelperReplicatedBase_C::SetMeshColor(const struct FLinearColor& Color)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperReplicatedBase_C", "SetMeshColor");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetMeshColor", FnName));
 
 	Params::BP_PlacementHelperReplicatedBase_C_SetMeshColor Parms{};
 
@@ -61,10 +57,8 @@ void ABP_PlacementHelperReplicatedBase_C::SetMeshColor(const struct FLinearColor
 
 void ABP_PlacementHelperReplicatedBase_C::UserConstructionScript()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PlacementHelperReplicatedBase_C", "UserConstructionScript");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UserConstructionScript", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

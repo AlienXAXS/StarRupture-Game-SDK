@@ -26,10 +26,8 @@ SDK_NAMESPACE_START
 
 void IALI_ItemAnimLayers_C::FullBody_Aiming(const struct FPoseLink& PreAimPose, double AimYaw, double AimPitch, struct FPoseLink* FullBody_Aiming_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ALI_ItemAnimLayers_C", "FullBody_Aiming");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"FullBody_Aiming", FnName));
 
 	Params::ALI_ItemAnimLayers_C_FullBody_Aiming Parms{};
 
@@ -51,10 +49,8 @@ void IALI_ItemAnimLayers_C::FullBody_Aiming(const struct FPoseLink& PreAimPose, 
 
 void IALI_ItemAnimLayers_C::FullBody_CycleState(struct FPoseLink* FullBody_CycleState_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ALI_ItemAnimLayers_C", "FullBody_CycleState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"FullBody_CycleState", FnName));
 
 	Params::ALI_ItemAnimLayers_C_FullBody_CycleState Parms{};
 
@@ -72,10 +68,8 @@ void IALI_ItemAnimLayers_C::FullBody_CycleState(struct FPoseLink* FullBody_Cycle
 
 void IALI_ItemAnimLayers_C::FullBody_Dash(struct FPoseLink* FullBody_Dash_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ALI_ItemAnimLayers_C", "FullBody_Dash");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"FullBody_Dash", FnName));
 
 	Params::ALI_ItemAnimLayers_C_FullBody_Dash Parms{};
 
@@ -93,10 +87,8 @@ void IALI_ItemAnimLayers_C::FullBody_Dash(struct FPoseLink* FullBody_Dash_0)
 
 void IALI_ItemAnimLayers_C::FullBody_DoubleJump(struct FPoseLink* FullBody_DoubleJump_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ALI_ItemAnimLayers_C", "FullBody_DoubleJump");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"FullBody_DoubleJump", FnName));
 
 	Params::ALI_ItemAnimLayers_C_FullBody_DoubleJump Parms{};
 
@@ -114,10 +106,8 @@ void IALI_ItemAnimLayers_C::FullBody_DoubleJump(struct FPoseLink* FullBody_Doubl
 
 void IALI_ItemAnimLayers_C::FullBody_EntryState(struct FPoseLink* FullBody_EntryState_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ALI_ItemAnimLayers_C", "FullBody_EntryState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"FullBody_EntryState", FnName));
 
 	Params::ALI_ItemAnimLayers_C_FullBody_EntryState Parms{};
 
@@ -135,10 +125,8 @@ void IALI_ItemAnimLayers_C::FullBody_EntryState(struct FPoseLink* FullBody_Entry
 
 void IALI_ItemAnimLayers_C::FullBody_FallLandState(struct FPoseLink* FullBody_FallLandState_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ALI_ItemAnimLayers_C", "FullBody_FallLandState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"FullBody_FallLandState", FnName));
 
 	Params::ALI_ItemAnimLayers_C_FullBody_FallLandState Parms{};
 
@@ -156,10 +144,8 @@ void IALI_ItemAnimLayers_C::FullBody_FallLandState(struct FPoseLink* FullBody_Fa
 
 void IALI_ItemAnimLayers_C::FullBody_FallLoopState(struct FPoseLink* FullBody_FallLoopState_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ALI_ItemAnimLayers_C", "FullBody_FallLoopState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"FullBody_FallLoopState", FnName));
 
 	Params::ALI_ItemAnimLayers_C_FullBody_FallLoopState Parms{};
 
@@ -177,10 +163,8 @@ void IALI_ItemAnimLayers_C::FullBody_FallLoopState(struct FPoseLink* FullBody_Fa
 
 void IALI_ItemAnimLayers_C::FullBody_IdleState(struct FPoseLink* FullBody_IdleState_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ALI_ItemAnimLayers_C", "FullBody_IdleState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"FullBody_IdleState", FnName));
 
 	Params::ALI_ItemAnimLayers_C_FullBody_IdleState Parms{};
 
@@ -198,10 +182,8 @@ void IALI_ItemAnimLayers_C::FullBody_IdleState(struct FPoseLink* FullBody_IdleSt
 
 void IALI_ItemAnimLayers_C::FullBody_JumpApexState(struct FPoseLink* FullBody_JumpApexState_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ALI_ItemAnimLayers_C", "FullBody_JumpApexState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"FullBody_JumpApexState", FnName));
 
 	Params::ALI_ItemAnimLayers_C_FullBody_JumpApexState Parms{};
 
@@ -219,10 +201,8 @@ void IALI_ItemAnimLayers_C::FullBody_JumpApexState(struct FPoseLink* FullBody_Ju
 
 void IALI_ItemAnimLayers_C::FullBody_JumpStartLoopState(struct FPoseLink* FullBody_JumpStartLoopState_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ALI_ItemAnimLayers_C", "FullBody_JumpStartLoopState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"FullBody_JumpStartLoopState", FnName));
 
 	Params::ALI_ItemAnimLayers_C_FullBody_JumpStartLoopState Parms{};
 
@@ -240,10 +220,8 @@ void IALI_ItemAnimLayers_C::FullBody_JumpStartLoopState(struct FPoseLink* FullBo
 
 void IALI_ItemAnimLayers_C::FullBody_JumpStartState(struct FPoseLink* FullBody_JumpStartState_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ALI_ItemAnimLayers_C", "FullBody_JumpStartState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"FullBody_JumpStartState", FnName));
 
 	Params::ALI_ItemAnimLayers_C_FullBody_JumpStartState Parms{};
 
@@ -261,10 +239,8 @@ void IALI_ItemAnimLayers_C::FullBody_JumpStartState(struct FPoseLink* FullBody_J
 
 void IALI_ItemAnimLayers_C::FullBody_PivotState(struct FPoseLink* FullBody_PivotState_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ALI_ItemAnimLayers_C", "FullBody_PivotState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"FullBody_PivotState", FnName));
 
 	Params::ALI_ItemAnimLayers_C_FullBody_PivotState Parms{};
 
@@ -283,10 +259,8 @@ void IALI_ItemAnimLayers_C::FullBody_PivotState(struct FPoseLink* FullBody_Pivot
 
 void IALI_ItemAnimLayers_C::FullBody_SkeletalControls(const struct FPoseLink& InPose, struct FPoseLink* FullBody_SkeletalControls_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ALI_ItemAnimLayers_C", "FullBody_SkeletalControls");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"FullBody_SkeletalControls", FnName));
 
 	Params::ALI_ItemAnimLayers_C_FullBody_SkeletalControls Parms{};
 
@@ -306,10 +280,8 @@ void IALI_ItemAnimLayers_C::FullBody_SkeletalControls(const struct FPoseLink& In
 
 void IALI_ItemAnimLayers_C::FullBody_SlideInState(struct FPoseLink* FullBody_SlideInState_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ALI_ItemAnimLayers_C", "FullBody_SlideInState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"FullBody_SlideInState", FnName));
 
 	Params::ALI_ItemAnimLayers_C_FullBody_SlideInState Parms{};
 
@@ -327,10 +299,8 @@ void IALI_ItemAnimLayers_C::FullBody_SlideInState(struct FPoseLink* FullBody_Sli
 
 void IALI_ItemAnimLayers_C::FullBody_SlideLoopState(struct FPoseLink* FullBody_SlideLoopState_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ALI_ItemAnimLayers_C", "FullBody_SlideLoopState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"FullBody_SlideLoopState", FnName));
 
 	Params::ALI_ItemAnimLayers_C_FullBody_SlideLoopState Parms{};
 
@@ -348,10 +318,8 @@ void IALI_ItemAnimLayers_C::FullBody_SlideLoopState(struct FPoseLink* FullBody_S
 
 void IALI_ItemAnimLayers_C::FullBody_SlideOutState(struct FPoseLink* FullBody_SlideOutState_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ALI_ItemAnimLayers_C", "FullBody_SlideOutState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"FullBody_SlideOutState", FnName));
 
 	Params::ALI_ItemAnimLayers_C_FullBody_SlideOutState Parms{};
 
@@ -369,10 +337,8 @@ void IALI_ItemAnimLayers_C::FullBody_SlideOutState(struct FPoseLink* FullBody_Sl
 
 void IALI_ItemAnimLayers_C::FullBody_StartState(struct FPoseLink* FullBody_StartState_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ALI_ItemAnimLayers_C", "FullBody_StartState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"FullBody_StartState", FnName));
 
 	Params::ALI_ItemAnimLayers_C_FullBody_StartState Parms{};
 
@@ -390,10 +356,8 @@ void IALI_ItemAnimLayers_C::FullBody_StartState(struct FPoseLink* FullBody_Start
 
 void IALI_ItemAnimLayers_C::FullBody_StopState(struct FPoseLink* FullBody_StopState_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ALI_ItemAnimLayers_C", "FullBody_StopState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"FullBody_StopState", FnName));
 
 	Params::ALI_ItemAnimLayers_C_FullBody_StopState Parms{};
 
@@ -411,10 +375,8 @@ void IALI_ItemAnimLayers_C::FullBody_StopState(struct FPoseLink* FullBody_StopSt
 
 void IALI_ItemAnimLayers_C::FullBody_ZiplineLoop(struct FPoseLink* FullBody_ZiplineLoop_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ALI_ItemAnimLayers_C", "FullBody_ZiplineLoop");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"FullBody_ZiplineLoop", FnName));
 
 	Params::ALI_ItemAnimLayers_C_FullBody_ZiplineLoop Parms{};
 
@@ -432,10 +394,8 @@ void IALI_ItemAnimLayers_C::FullBody_ZiplineLoop(struct FPoseLink* FullBody_Zipl
 
 void IALI_ItemAnimLayers_C::FullBodyAdditives(struct FPoseLink* FullBodyAdditives_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ALI_ItemAnimLayers_C", "FullBodyAdditives");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"FullBodyAdditives", FnName));
 
 	Params::ALI_ItemAnimLayers_C_FullBodyAdditives Parms{};
 
@@ -453,10 +413,8 @@ void IALI_ItemAnimLayers_C::FullBodyAdditives(struct FPoseLink* FullBodyAdditive
 
 void IALI_ItemAnimLayers_C::Head_FaceLayer(struct FPoseLink* Head_FaceLayer_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ALI_ItemAnimLayers_C", "Head_FaceLayer");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"Head_FaceLayer", FnName));
 
 	Params::ALI_ItemAnimLayers_C_Head_FaceLayer Parms{};
 
@@ -475,10 +433,8 @@ void IALI_ItemAnimLayers_C::Head_FaceLayer(struct FPoseLink* Head_FaceLayer_0)
 
 void IALI_ItemAnimLayers_C::LeftHandPose_OverrideState(const struct FPoseLink& InputPose, struct FPoseLink* LeftHandPose_OverrideState_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ALI_ItemAnimLayers_C", "LeftHandPose_OverrideState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"LeftHandPose_OverrideState", FnName));
 
 	Params::ALI_ItemAnimLayers_C_LeftHandPose_OverrideState Parms{};
 

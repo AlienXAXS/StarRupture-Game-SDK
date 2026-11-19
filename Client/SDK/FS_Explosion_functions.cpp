@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void AFS_Explosion_C::ExecuteUbergraph_FS_Explosion(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("FS_Explosion_C", "ExecuteUbergraph_FS_Explosion");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "FS_Explosion_C", "ExecuteUbergraph_FS_Explosion", FuncInfo);
 
 	Params::FS_Explosion_C_ExecuteUbergraph_FS_Explosion Parms{};
 
@@ -41,10 +39,8 @@ void AFS_Explosion_C::ExecuteUbergraph_FS_Explosion(int32 EntryPoint)
 
 void AFS_Explosion_C::Explode()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("FS_Explosion_C", "Explode");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Explode", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

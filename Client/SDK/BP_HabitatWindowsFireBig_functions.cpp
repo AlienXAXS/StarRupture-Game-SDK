@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_HabitatWindowsFireBig_C::ExecuteUbergraph_BP_HabitatWindowsFireBig(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HabitatWindowsFireBig_C", "ExecuteUbergraph_BP_HabitatWindowsFireBig");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_HabitatWindowsFireBig_C", "ExecuteUbergraph_BP_HabitatWindowsFireBig", FuncInfo);
 
 	Params::BP_HabitatWindowsFireBig_C_ExecuteUbergraph_BP_HabitatWindowsFireBig Parms{};
 
@@ -45,10 +43,8 @@ void ABP_HabitatWindowsFireBig_C::ExecuteUbergraph_BP_HabitatWindowsFireBig(int3
 
 void ABP_HabitatWindowsFireBig_C::OnEnviroWaveCanceled(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HabitatWindowsFireBig_C", "OnEnviroWaveCanceled");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnEnviroWaveCanceled", FnName));
 
 	Params::BP_HabitatWindowsFireBig_C_OnEnviroWaveCanceled Parms{};
 
@@ -68,10 +64,8 @@ void ABP_HabitatWindowsFireBig_C::OnEnviroWaveCanceled(EEnviroWave WaveType, EEn
 
 void ABP_HabitatWindowsFireBig_C::OnEnviroWaveFinished(EEnviroWave WaveType, const struct FCrEnviroWaveSettings& WaveSettings)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HabitatWindowsFireBig_C", "OnEnviroWaveFinished");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnEnviroWaveFinished", FnName));
 
 	Params::BP_HabitatWindowsFireBig_C_OnEnviroWaveFinished Parms{};
 
@@ -92,10 +86,8 @@ void ABP_HabitatWindowsFireBig_C::OnEnviroWaveFinished(EEnviroWave WaveType, con
 
 void ABP_HabitatWindowsFireBig_C::OnEnviroWaveForced(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings, float WaveProgress)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HabitatWindowsFireBig_C", "OnEnviroWaveForced");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnEnviroWaveForced", FnName));
 
 	Params::BP_HabitatWindowsFireBig_C_OnEnviroWaveForced Parms{};
 
@@ -118,10 +110,8 @@ void ABP_HabitatWindowsFireBig_C::OnEnviroWaveForced(EEnviroWave WaveType, EEnvi
 
 void ABP_HabitatWindowsFireBig_C::OnEnviroWaveStarted(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings, float WaveProgress)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HabitatWindowsFireBig_C", "OnEnviroWaveStarted");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnEnviroWaveStarted", FnName));
 
 	Params::BP_HabitatWindowsFireBig_C_OnEnviroWaveStarted Parms{};
 
@@ -144,10 +134,8 @@ void ABP_HabitatWindowsFireBig_C::OnEnviroWaveStarted(EEnviroWave WaveType, EEnv
 
 void ABP_HabitatWindowsFireBig_C::OnEnviroWaveTick(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings, float WaveProgress)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HabitatWindowsFireBig_C", "OnEnviroWaveTick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnEnviroWaveTick", FnName));
 
 	Params::BP_HabitatWindowsFireBig_C_OnEnviroWaveTick Parms{};
 
@@ -165,10 +153,8 @@ void ABP_HabitatWindowsFireBig_C::OnEnviroWaveTick(EEnviroWave WaveType, EEnviro
 
 void ABP_HabitatWindowsFireBig_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HabitatWindowsFireBig_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

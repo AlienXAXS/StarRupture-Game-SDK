@@ -1231,6 +1231,30 @@ public:
 };
 DUMPER7_ASSERTS_UGeometryScriptLibrary_PointSetSamplingFunctions;
 
+// Class GeometryScriptingCore.GeometryScriptLibrary_TextureMapFunctions
+// 0x0000 (0x0028 - 0x0028)
+class UGeometryScriptLibrary_TextureMapFunctions final : public UBlueprintFunctionLibrary
+{
+public:
+	static void SampleTexture2DAtUVPositions(const struct FGeometryScriptUVList& UVList, class UTexture2D* Texture, const struct FGeometryScriptSampleTextureOptions& SampleOptions, struct FGeometryScriptColorList* ColorList, class UGeometryScriptDebug* Debug);
+	static void SampleTextureRenderTarget2DAtUVPositions(const struct FGeometryScriptUVList& UVList, class UTextureRenderTarget2D* Texture, const struct FGeometryScriptSampleTextureOptions& SampleOptions, struct FGeometryScriptColorList* ColorList, class UGeometryScriptDebug* Debug);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("GeometryScriptLibrary_TextureMapFunctions")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"GeometryScriptLibrary_TextureMapFunctions")
+	}
+	static class UGeometryScriptLibrary_TextureMapFunctions* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UGeometryScriptLibrary_TextureMapFunctions>();
+	}
+};
+DUMPER7_ASSERTS_UGeometryScriptLibrary_TextureMapFunctions;
+
 // Class GeometryScriptingCore.GeometryScriptLibrary_SimplePolygonFunctions
 // 0x0000 (0x0028 - 0x0028)
 class UGeometryScriptLibrary_SimplePolygonFunctions final : public UBlueprintFunctionLibrary
@@ -1480,30 +1504,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UGeometryScriptLibrary_BoxFunctions;
-
-// Class GeometryScriptingCore.GeometryScriptLibrary_TextureMapFunctions
-// 0x0000 (0x0028 - 0x0028)
-class UGeometryScriptLibrary_TextureMapFunctions final : public UBlueprintFunctionLibrary
-{
-public:
-	static void SampleTexture2DAtUVPositions(const struct FGeometryScriptUVList& UVList, class UTexture2D* Texture, const struct FGeometryScriptSampleTextureOptions& SampleOptions, struct FGeometryScriptColorList* ColorList, class UGeometryScriptDebug* Debug);
-	static void SampleTextureRenderTarget2DAtUVPositions(const struct FGeometryScriptUVList& UVList, class UTextureRenderTarget2D* Texture, const struct FGeometryScriptSampleTextureOptions& SampleOptions, struct FGeometryScriptColorList* ColorList, class UGeometryScriptDebug* Debug);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("GeometryScriptLibrary_TextureMapFunctions")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"GeometryScriptLibrary_TextureMapFunctions")
-	}
-	static class UGeometryScriptLibrary_TextureMapFunctions* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UGeometryScriptLibrary_TextureMapFunctions>();
-	}
-};
-DUMPER7_ASSERTS_UGeometryScriptLibrary_TextureMapFunctions;
 
 // Class GeometryScriptingCore.GeometryScriptLibrary_VectorMathFunctions
 // 0x0000 (0x0028 - 0x0028)

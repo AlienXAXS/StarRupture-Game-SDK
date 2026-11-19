@@ -12,17 +12,16 @@
 
 #include "Chimera_classes.hpp"
 #include "AuActorPlacement_structs.hpp"
-#include "CrAiExploderRuntime_structs.hpp"
 #include "MassReplication_classes.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "MassAIPrototypeEnemyRuntime_structs.hpp"
-#include "MassAIPrototypeEnemyRuntime_classes.hpp"
 #include "AIModule_structs.hpp"
 #include "AIModule_classes.hpp"
+#include "MassAIPrototypeEnemyRuntime_structs.hpp"
+#include "MassAIPrototypeEnemyRuntime_classes.hpp"
+#include "CrAiExploderRuntime_structs.hpp"
 #include "MassSpawner_classes.hpp"
 #include "Engine_classes.hpp"
-#include "MassEntity_structs.hpp"
 #include "MassEntity_classes.hpp"
 
 
@@ -93,29 +92,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCrAiActionBtTaskExploderExplode;
-
-// Class CrAiExploderRuntime.ExploderFollowActorProcessor
-// 0x0350 (0x0410 - 0x00C0)
-class UExploderFollowActorProcessor final : public UMassProcessor
-{
-public:
-	uint8                                         Pad_C0[0x350];                                     // 0x00C0(0x0350)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("ExploderFollowActorProcessor")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"ExploderFollowActorProcessor")
-	}
-	static class UExploderFollowActorProcessor* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UExploderFollowActorProcessor>();
-	}
-};
-DUMPER7_ASSERTS_UExploderFollowActorProcessor;
 
 // Class CrAiExploderRuntime.BTService_UpdateExploderActivation
 // 0x00A0 (0x0110 - 0x0070)
@@ -191,25 +167,51 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiActionBtTaskExploderT3SpawnCyst;
 
-// Class CrAiExploderRuntime.ExploderClientBubbleInfo
-// 0x0000 (0x0330 - 0x0330)
-class AExploderClientBubbleInfo final : public ACrMassClientBubbleInfo
+// Class CrAiExploderRuntime.CrAiActionBtTaskShowProjectileAndPrepareForLaunch
+// 0x0018 (0x00E8 - 0x00D0)
+class UCrAiActionBtTaskShowProjectileAndPrepareForLaunch final : public UBTTask_RunCrAiAction
+{
+public:
+	ECrEnemyAttackType                            AttackType;                                        // 0x00D0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D1[0x7];                                       // 0x00D1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class ACrAiProjectileActor>       PooledProjectileType;                              // 0x00D8(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ProjectileAttachMeshSlotName;                      // 0x00E0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrAiActionBtTaskShowProjectileAndPrepareForLaunch")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrAiActionBtTaskShowProjectileAndPrepareForLaunch")
+	}
+	static class UCrAiActionBtTaskShowProjectileAndPrepareForLaunch* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrAiActionBtTaskShowProjectileAndPrepareForLaunch>();
+	}
+};
+DUMPER7_ASSERTS_UCrAiActionBtTaskShowProjectileAndPrepareForLaunch;
+
+// Class CrAiExploderRuntime.CrAiActionBtTaskShootPreparedProjectile
+// 0x0000 (0x0268 - 0x0268)
+class UCrAiActionBtTaskShootPreparedProjectile final : public UCrAiActionBtTaskShoot
 {
 public:
 	static class UClass* StaticClass()
 	{
-		STATIC_CLASS_IMPL("ExploderClientBubbleInfo")
+		STATIC_CLASS_IMPL("CrAiActionBtTaskShootPreparedProjectile")
 	}
 	static const class FName& StaticName()
 	{
-		STATIC_NAME_IMPL(L"ExploderClientBubbleInfo")
+		STATIC_NAME_IMPL(L"CrAiActionBtTaskShootPreparedProjectile")
 	}
-	static class AExploderClientBubbleInfo* GetDefaultObj()
+	static class UCrAiActionBtTaskShootPreparedProjectile* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<AExploderClientBubbleInfo>();
+		return GetDefaultObjImpl<UCrAiActionBtTaskShootPreparedProjectile>();
 	}
 };
-DUMPER7_ASSERTS_AExploderClientBubbleInfo;
+DUMPER7_ASSERTS_UCrAiActionBtTaskShootPreparedProjectile;
 
 // Class CrAiExploderRuntime.CrAiActionDealDamageAndSpawnEntity
 // 0x00F8 (0x0180 - 0x0088)
@@ -245,29 +247,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCrAiActionDealDamageAndSpawnEntity;
-
-// Class CrAiExploderRuntime.CrMassEnemyClientExploderFXEventsProcessor
-// 0x0350 (0x0410 - 0x00C0)
-class UCrMassEnemyClientExploderFXEventsProcessor final : public UMassProcessor
-{
-public:
-	uint8                                         Pad_C0[0x350];                                     // 0x00C0(0x0350)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CrMassEnemyClientExploderFXEventsProcessor")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CrMassEnemyClientExploderFXEventsProcessor")
-	}
-	static class UCrMassEnemyClientExploderFXEventsProcessor* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UCrMassEnemyClientExploderFXEventsProcessor>();
-	}
-};
-DUMPER7_ASSERTS_UCrMassEnemyClientExploderFXEventsProcessor;
 
 // Class CrAiExploderRuntime.CrAiActionExploderSpawnCyst
 // 0x0010 (0x0098 - 0x0088)
@@ -351,6 +330,63 @@ public:
 };
 DUMPER7_ASSERTS_UCrAiActionExploderT3DigIn;
 
+// Class CrAiExploderRuntime.CrAiActionShootPreparedProjectile
+// 0x0000 (0x0148 - 0x0148)
+class UCrAiActionShootPreparedProjectile final : public UCrAiActionShoot
+{
+public:
+	static class UCrAiActionShootPreparedProjectile* Create_CrAiActionShootPreparedProjectile(TSubclassOf<class UCrAiActionShootPreparedProjectile> ActionType, float NewMaxLifetimeS, TSubclassOf<class ACrAiProjectileActor> NewPooledProjectileType, const struct FVector& NewStartLocation, const struct FVector& NewEndLocation, float NewArcParam, float NewGravityOverride, float NewShootVelocityVariance, const class FName& NewProjectileSpawnMeshSlotName, ECrEnemyAttackType NewAttackType, TSubclassOf<class UGameplayEffect> NewDamageGameplayEffect, float NewBuildingInfectionDamage, float NewAllowedAttackDistance, float NewAllowedAttackConeHalfAngle);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrAiActionShootPreparedProjectile")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrAiActionShootPreparedProjectile")
+	}
+	static class UCrAiActionShootPreparedProjectile* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrAiActionShootPreparedProjectile>();
+	}
+};
+DUMPER7_ASSERTS_UCrAiActionShootPreparedProjectile;
+
+// Class CrAiExploderRuntime.CrAiActionShowProjectileAndPrepareForLaunch
+// 0x0028 (0x00B0 - 0x0088)
+class UCrAiActionShowProjectileAndPrepareForLaunch final : public UCrAiAction
+{
+public:
+	bool                                          bWaitForAnimFinishEvent;                           // 0x0088(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrEnemyAttackType                            AttackType;                                        // 0x0089(0x0001)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_8A[0x6];                                       // 0x008A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class ACrAiProjectileActor>       PooledProjectileType;                              // 0x0090(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   ProjectileAttachMeshSlotName;                      // 0x0098(0x0008)(Edit, BlueprintVisible, Net, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A0[0x10];                                      // 0x00A0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UCrAiActionShowProjectileAndPrepareForLaunch* Create_CrAiActionShowProjectileAndPrepareForLaunch(TSubclassOf<class UCrAiActionShowProjectileAndPrepareForLaunch> ActionType, float NewMaxLifetimeS, TSubclassOf<class ACrAiProjectileActor> PooledProjectileType_0, const class FName& ProjectileAttachMeshSlotName_0, ECrEnemyAttackType NewAttackType);
+
+	void OnAnimFinished(class AActor* Actor, ECrEnemyLocomotionType CrEnemyLocomotion, ECrEnemyAttackType CrEnemyAttack, ECrEnemyJumpState CrEnemyJumpState);
+	void OnShootAnimEvent(class AActor* AiActor, const class FString& OverrideSocketName);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrAiActionShowProjectileAndPrepareForLaunch")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrAiActionShowProjectileAndPrepareForLaunch")
+	}
+	static class UCrAiActionShowProjectileAndPrepareForLaunch* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrAiActionShowProjectileAndPrepareForLaunch>();
+	}
+};
+DUMPER7_ASSERTS_UCrAiActionShowProjectileAndPrepareForLaunch;
+
 // Class CrAiExploderRuntime.CrAiActionSpawnExplosionEntity
 // 0x0000 (0x0150 - 0x0150)
 class UCrAiActionSpawnExplosionEntity final : public UCrAiActionSpawnEntity
@@ -372,10 +408,16 @@ public:
 DUMPER7_ASSERTS_UCrAiActionSpawnExplosionEntity;
 
 // Class CrAiExploderRuntime.CrAiExploder
-// 0x0000 (0x0000 - 0x0000)
-class ICrAiExploder final
+// 0x0008 (0x0008 - 0x0000)
+class ICrAiExploder
 {
 public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	void OnProjectileDestroyed(class FName SocketName);
+	void OnProjectileLaunched(class FName SocketName);
+	void OnProjectileLoaded(class FName SocketName, class AActor* Projectile);
 	void StartActivationTimer();
 	void StartExplosionTimer();
 
@@ -513,23 +555,43 @@ public:
 };
 DUMPER7_ASSERTS_ACrMassExploderBubbleReplicatedSerializerHolder;
 
+// Class CrAiExploderRuntime.ExploderClientBubbleInfo
+// 0x0000 (0x0330 - 0x0330)
+class AExploderClientBubbleInfo final : public ACrMassClientBubbleInfo
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("ExploderClientBubbleInfo")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"ExploderClientBubbleInfo")
+	}
+	static class AExploderClientBubbleInfo* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<AExploderClientBubbleInfo>();
+	}
+};
+DUMPER7_ASSERTS_AExploderClientBubbleInfo;
+
 // Class CrAiExploderRuntime.ExploderMassEnemyDataAsset
-// 0x00E8 (0x0848 - 0x0760)
+// 0x00E8 (0x0868 - 0x0780)
 class UExploderMassEnemyDataAsset final : public UMassEnemyDataAsset
 {
 public:
-	struct FAiFloatConfigurationValue             TimeToExplodeS;                                    // 0x0760(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             TimeToExplodeInstantS;                             // 0x076C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             InfectionSphereRadiusExploded;                     // 0x0778(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             InfectionSphereRadiusSpecialAttack;                // 0x0784(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             InfectionSphereRadiusDied;                         // 0x0790(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             ExplosionSphereLifetimeS;                          // 0x079C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             DistanceToActivate;                                // 0x07A8(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             DistanceToExplode;                                 // 0x07B4(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             JumpBlendInTimeS;                                  // 0x07C0(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAiFloatConfigurationValue             JumpBlendOutTimeS;                                 // 0x07CC(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
-	struct FAuAPMassSpawnedEntityType             BigExplosionSphereEntity;                          // 0x07D8(0x0038)(Edit, NativeAccessSpecifierPublic)
-	struct FAuAPMassSpawnedEntityType             SmallExplosionSphereEntity;                        // 0x0810(0x0038)(Edit, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             TimeToExplodeS;                                    // 0x0780(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             TimeToExplodeInstantS;                             // 0x078C(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             InfectionSphereRadiusExploded;                     // 0x0798(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             InfectionSphereRadiusSpecialAttack;                // 0x07A4(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             InfectionSphereRadiusDied;                         // 0x07B0(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             ExplosionSphereLifetimeS;                          // 0x07BC(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             DistanceToActivate;                                // 0x07C8(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             DistanceToExplode;                                 // 0x07D4(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             JumpBlendInTimeS;                                  // 0x07E0(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAiFloatConfigurationValue             JumpBlendOutTimeS;                                 // 0x07EC(0x000C)(Edit, NoDestructor, NativeAccessSpecifierPublic)
+	struct FAuAPMassSpawnedEntityType             BigExplosionSphereEntity;                          // 0x07F8(0x0038)(Edit, NativeAccessSpecifierPublic)
+	struct FAuAPMassSpawnedEntityType             SmallExplosionSphereEntity;                        // 0x0830(0x0038)(Edit, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
@@ -569,6 +631,29 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UExploderMassStateTranslator;
+
+// Class CrAiExploderRuntime.ExploderFollowActorProcessor
+// 0x0350 (0x0410 - 0x00C0)
+class UExploderFollowActorProcessor final : public UMassProcessor
+{
+public:
+	uint8                                         Pad_C0[0x350];                                     // 0x00C0(0x0350)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("ExploderFollowActorProcessor")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"ExploderFollowActorProcessor")
+	}
+	static class UExploderFollowActorProcessor* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UExploderFollowActorProcessor>();
+	}
+};
+DUMPER7_ASSERTS_UExploderFollowActorProcessor;
 
 // Class CrAiExploderRuntime.ExploderSpawnExplosionSphereProcessor
 // 0x0358 (0x0430 - 0x00D8)
@@ -638,6 +723,29 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCrMassEnemyClientExplosionSphereSetupObserver;
+
+// Class CrAiExploderRuntime.CrMassEnemyClientExploderFXEventsProcessor
+// 0x0350 (0x0410 - 0x00C0)
+class UCrMassEnemyClientExploderFXEventsProcessor final : public UMassProcessor
+{
+public:
+	uint8                                         Pad_C0[0x350];                                     // 0x00C0(0x0350)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CrMassEnemyClientExploderFXEventsProcessor")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CrMassEnemyClientExploderFXEventsProcessor")
+	}
+	static class UCrMassEnemyClientExploderFXEventsProcessor* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UCrMassEnemyClientExploderFXEventsProcessor>();
+	}
+};
+DUMPER7_ASSERTS_UCrMassEnemyClientExploderFXEventsProcessor;
 
 // Class CrAiExploderRuntime.ExploderReplicator
 // 0x0000 (0x0028 - 0x0028)
@@ -741,16 +849,14 @@ class AExploderT3CystActor : public ACrDestroyableActor
 public:
 	class USphereComponent*                       SphereComponent;                                   // 0x02D8(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
 	class UStaticMeshComponent*                   StaticMeshComponent;                               // 0x02E0(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	TMulticastInlineDelegate<void(class AExploderT3CystActor* Cyst)> OnCystDestroyed;                // 0x02E8(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, Protected, NativeAccessSpecifierProtected)
+	TMulticastInlineDelegate<void(class AExploderT3CystActor* Cyst, bool bKilledManually)> OnCystDestroyed; // 0x02E8(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, Protected, NativeAccessSpecifierProtected)
 	struct FAuAPMassSpawnedEntityType             InfectionEntityType;                               // 0x0300(0x0038)(Edit, BlueprintVisible, Protected, NativeAccessSpecifierProtected)
-	struct FMassEntityHandle                      InfectionEntityHandle;                             // 0x0338(0x0008)(NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TWeakObjectPtr<class AActor>                  DeathInstigator;                                   // 0x0340(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	TWeakObjectPtr<class AActor>                  DeathInstigator;                                   // 0x0338(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_340[0x8];                                      // 0x0340(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void DestroyInfection();
+	void KillCystManually();
 	void SetIsImmortal(bool bIsImmortal);
-	void SpawnInfection();
-	void StartInfectionVisualizationHide();
 
 	float GetHealthValue() const;
 

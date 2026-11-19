@@ -10,10 +10,10 @@
 
 #include "Basic.hpp"
 
-#include "MovieSceneTracks_classes.hpp"
-#include "LiveLinkInterface_structs.hpp"
 #include "MovieScene_structs.hpp"
 #include "MovieScene_classes.hpp"
+#include "LiveLinkInterface_structs.hpp"
+#include "MovieSceneTracks_classes.hpp"
 #include "LiveLinkMovieScene_structs.hpp"
 #include "CoreUObject_classes.hpp"
 
@@ -147,10 +147,9 @@ DUMPER7_ASSERTS_UMovieSceneLiveLinkSubSectionProperties;
 
 // Class LiveLinkMovieScene.MovieSceneLiveLinkTrack
 // 0x0010 (0x0158 - 0x0148)
-class UMovieSceneLiveLinkTrack final : public UMovieScenePropertyTrack
+class UMovieSceneLiveLinkTrack final : public UMovieScenePropertyTrack, public IMovieSceneTrackTemplateProducer
 {
 public:
-	uint8                                         Pad_148[0x8];                                      // 0x0148(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TSubclassOf<class ULiveLinkRole>              TrackRole;                                         // 0x0150(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 
 public:

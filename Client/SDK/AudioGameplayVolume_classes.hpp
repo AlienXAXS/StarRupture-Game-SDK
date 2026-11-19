@@ -135,10 +135,9 @@ DUMPER7_ASSERTS_UAudioGameplayVolumeComponent;
 
 // Class AudioGameplayVolume.AudioGameplayVolumeComponentBase
 // 0x0008 (0x00C8 - 0x00C0)
-class UAudioGameplayVolumeComponentBase final : public UAudioGameplayComponent
+class UAudioGameplayVolumeComponentBase final : public UAudioGameplayComponent, public IAudioGameplayVolumeInteraction
 {
 public:
-	uint8                                         Pad_C0[0x8];                                       // 0x00C0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -153,6 +152,10 @@ public:
 	{
 		return GetDefaultObjImpl<UAudioGameplayVolumeComponentBase>();
 	}
+
+public:
+	void OnListenerEnter();
+	void OnListenerExit();
 };
 DUMPER7_ASSERTS_UAudioGameplayVolumeComponentBase;
 
@@ -227,10 +230,9 @@ DUMPER7_ASSERTS_UAGVConditionProxy;
 
 // Class AudioGameplayVolume.AudioGameplayVolumeSubsystem
 // 0x0138 (0x0168 - 0x0030)
-class UAudioGameplayVolumeSubsystem final : public UAudioEngineSubsystem
+class UAudioGameplayVolumeSubsystem final : public UAudioEngineSubsystem, public IActiveSoundUpdateInterface
 {
 public:
-	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UAudioGameplayVolumeProxy*>      TransientProxyList;                                // 0x0038(0x0010)(ZeroConstructor, Transient, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
 	TMap<uint32, class UAudioGameplayVolumeComponent*> AGVComponents;                                // 0x0048(0x0050)(ExportObject, Transient, ContainsInstancedReference, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
 	uint8                                         Pad_98[0xD0];                                      // 0x0098(0x00D0)(Fixing Struct Size After Last Property [ Dumper-7 ])

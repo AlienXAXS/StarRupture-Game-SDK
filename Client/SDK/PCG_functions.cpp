@@ -127,10 +127,8 @@ bool UPCGSettings::UseSeed() const
 
 bool UPCGAssetExporter::BP_ExportToAsset(class UPCGDataAsset* Asset)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGAssetExporter", "BP_ExportToAsset");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_ExportToAsset", FnName));
 
 	Params::PCGAssetExporter_BP_ExportToAsset Parms{};
 
@@ -154,10 +152,8 @@ bool UPCGAssetExporter::BP_ExportToAsset(class UPCGDataAsset* Asset)
 
 TSubclassOf<class UPCGDataAsset> UPCGAssetExporter::BP_GetAssetType() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGAssetExporter", "BP_GetAssetType");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_GetAssetType", FnName));
 
 	Params::PCGAssetExporter_BP_GetAssetType Parms{};
 
@@ -237,10 +233,8 @@ void UPCGAssetExporterUtils::UpdateAssets(const TArray<struct FAssetData>& PCGAs
 
 void UPCGDeterminismTestBlueprintBase::ExecuteTest(const class UPCGNode* InPCGNode, struct FDeterminismTestResult& InOutTestResult)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGDeterminismTestBlueprintBase", "ExecuteTest");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ExecuteTest", FnName));
 
 	Params::PCGDeterminismTestBlueprintBase_ExecuteTest Parms{};
 
@@ -4004,10 +3998,8 @@ TArray<struct FSplinePoint> UPCGSplineData::GetSplinePoints() const
 
 void UPCGBlueprintElement::ApplyPreconfiguredSettings(const struct FPCGPreConfiguredSettingsInfo& InPreconfigureInfo)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGBlueprintElement", "ApplyPreconfiguredSettings");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ApplyPreconfiguredSettings", FnName));
 
 	Params::PCGBlueprintElement_ApplyPreconfiguredSettings Parms{};
 
@@ -4025,10 +4017,8 @@ void UPCGBlueprintElement::ApplyPreconfiguredSettings(const struct FPCGPreConfig
 
 void UPCGBlueprintElement::Execute(const struct FPCGDataCollection& Input, struct FPCGDataCollection* Output)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGBlueprintElement", "Execute");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Execute", FnName));
 
 	Params::PCGBlueprintElement_Execute Parms{};
 
@@ -4050,10 +4040,8 @@ void UPCGBlueprintElement::Execute(const struct FPCGDataCollection& Input, struc
 
 void UPCGBlueprintElement::ExecuteWithContext(struct FPCGContext& InContext, const struct FPCGDataCollection& Input, struct FPCGDataCollection* Output)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGBlueprintElement", "ExecuteWithContext");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ExecuteWithContext", FnName));
 
 	Params::PCGBlueprintElement_ExecuteWithContext Parms{};
 
@@ -4133,10 +4121,8 @@ TSet<class FName> UPCGBlueprintElement::CustomOutputLabels() const
 
 int32 UPCGBlueprintElement::DynamicPinTypesOverride(const class UPCGSettings* InSettings, const class UPCGPin* InPin) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGBlueprintElement", "DynamicPinTypesOverride");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"DynamicPinTypesOverride", FnName));
 
 	Params::PCGBlueprintElement_DynamicPinTypesOverride Parms{};
 
@@ -4360,10 +4346,8 @@ int32 UPCGBlueprintElement::GetSeed(struct FPCGContext& InContext) const
 
 bool UPCGBlueprintElement::IsCacheableOverride() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGBlueprintElement", "IsCacheableOverride");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IsCacheableOverride", FnName));
 
 	Params::PCGBlueprintElement_IsCacheableOverride Parms{};
 
@@ -4430,10 +4414,8 @@ void UPCGBlueprintElement::IterationLoop(struct FPCGContext& InContext, int64 Nu
 
 bool UPCGBlueprintElement::IterationLoopBody(const struct FPCGContext& InContext, int64 Iteration, const class UPCGSpatialData* InA, const class UPCGSpatialData* InB, struct FPCGPoint* OutPoint, class UPCGMetadata* OutMetadata) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGBlueprintElement", "IterationLoopBody");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IterationLoopBody", FnName));
 
 	Params::PCGBlueprintElement_IterationLoopBody Parms{};
 
@@ -4505,10 +4487,8 @@ void UPCGBlueprintElement::NestedLoop(struct FPCGContext& InContext, const class
 
 bool UPCGBlueprintElement::NestedLoopBody(const struct FPCGContext& InContext, const class UPCGPointData* InOuterData, const class UPCGPointData* InInnerData, const struct FPCGPoint& InOuterPoint, const struct FPCGPoint& InInnerPoint, struct FPCGPoint* OutPoint, class UPCGMetadata* OutMetadata, int64 OuterIteration, int64 InnerIteration) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGBlueprintElement", "NestedLoopBody");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"NestedLoopBody", FnName));
 
 	Params::PCGBlueprintElement_NestedLoopBody Parms{};
 
@@ -4537,10 +4517,8 @@ bool UPCGBlueprintElement::NestedLoopBody(const struct FPCGContext& InContext, c
 
 struct FLinearColor UPCGBlueprintElement::NodeColorOverride() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGBlueprintElement", "NodeColorOverride");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"NodeColorOverride", FnName));
 
 	Params::PCGBlueprintElement_NodeColorOverride Parms{};
 
@@ -4562,10 +4540,8 @@ struct FLinearColor UPCGBlueprintElement::NodeColorOverride() const
 
 class FName UPCGBlueprintElement::NodeTitleOverride() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGBlueprintElement", "NodeTitleOverride");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"NodeTitleOverride", FnName));
 
 	Params::PCGBlueprintElement_NodeTitleOverride Parms{};
 
@@ -4587,10 +4563,8 @@ class FName UPCGBlueprintElement::NodeTitleOverride() const
 
 EPCGSettingsType UPCGBlueprintElement::NodeTypeOverride() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGBlueprintElement", "NodeTypeOverride");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"NodeTypeOverride", FnName));
 
 	Params::PCGBlueprintElement_NodeTypeOverride Parms{};
 
@@ -4653,10 +4627,8 @@ void UPCGBlueprintElement::PointLoop(struct FPCGContext& InContext, const class 
 
 bool UPCGBlueprintElement::PointLoopBody(const struct FPCGContext& InContext, const class UPCGPointData* InData, const struct FPCGPoint& InPoint, struct FPCGPoint* OutPoint, class UPCGMetadata* OutMetadata, int64 Iteration) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGBlueprintElement", "PointLoopBody");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PointLoopBody", FnName));
 
 	Params::PCGBlueprintElement_PointLoopBody Parms{};
 
@@ -4722,10 +4694,8 @@ void UPCGBlueprintElement::VariableLoop(struct FPCGContext& InContext, const cla
 
 TArray<struct FPCGPoint> UPCGBlueprintElement::VariableLoopBody(const struct FPCGContext& InContext, const class UPCGPointData* InData, const struct FPCGPoint& InPoint, class UPCGMetadata* OutMetadata, int64 Iteration) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGBlueprintElement", "VariableLoopBody");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"VariableLoopBody", FnName));
 
 	Params::PCGBlueprintElement_VariableLoopBody Parms{};
 
@@ -5962,10 +5932,8 @@ void UPCGInstanceDataPackerBase::PackCustomDataFromAttributes(const struct FPCGM
 
 void UPCGInstanceDataPackerBase::PackInstances(struct FPCGContext* Context, const class UPCGSpatialData* InSpatialData, const struct FPCGMeshInstanceList& InstanceList, struct FPCGPackedCustomData* OutPackedCustomData) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGInstanceDataPackerBase", "PackInstances");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PackInstances", FnName));
 
 	Params::PCGInstanceDataPackerBase_PackInstances Parms{};
 
@@ -6062,10 +6030,8 @@ void UPCGSkinnedMeshInstanceDataPackerBase::PackCustomDataFromAttributes(const s
 
 void UPCGSkinnedMeshInstanceDataPackerBase::PackInstances(struct FPCGContext* Context, const class UPCGSpatialData* InSpatialData, const struct FPCGSkinnedMeshInstanceList& InstanceList, struct FPCGSkinnedMeshPackedCustomData* OutPackedCustomData) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGSkinnedMeshInstanceDataPackerBase", "PackInstances");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PackInstances", FnName));
 
 	Params::PCGSkinnedMeshInstanceDataPackerBase_PackInstances Parms{};
 
@@ -6097,10 +6063,8 @@ void UPCGSkinnedMeshInstanceDataPackerBase::PackInstances(struct FPCGContext* Co
 
 void UPCGMatchAndSetBase::MatchAndSet(struct FPCGContext& Context, const class UPCGPointMatchAndSetSettings* InSettings, const class UPCGPointData* InPointData, class UPCGPointData* OutPointData) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGMatchAndSetBase", "MatchAndSet");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"MatchAndSet", FnName));
 
 	Params::PCGMatchAndSetBase_MatchAndSet Parms{};
 
@@ -6128,10 +6092,8 @@ void UPCGMatchAndSetBase::MatchAndSet(struct FPCGContext& Context, const class U
 
 bool UPCGMatchAndSetBase::ValidatePreconditions(const class UPCGPointData* InPointData) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PCGMatchAndSetBase", "ValidatePreconditions");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ValidatePreconditions", FnName));
 
 	Params::PCGMatchAndSetBase_ValidatePreconditions Parms{};
 

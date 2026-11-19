@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_Stat_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Stat_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -37,10 +35,8 @@ void UWBP_Stat_C::Construct()
 
 void UWBP_Stat_C::ExecuteUbergraph_WBP_Stat(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Stat_C", "ExecuteUbergraph_WBP_Stat");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_Stat_C", "ExecuteUbergraph_WBP_Stat", FuncInfo);
 
 	Params::WBP_Stat_C_ExecuteUbergraph_WBP_Stat Parms{};
 

@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 bool ABP_Foundable_OutsDeadBody_Oil_C::OnStorageEmptied()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Foundable_OutsDeadBody_Oil_C", "OnStorageEmptied");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnStorageEmptied", FnName));
 
 	Params::BP_Foundable_OutsDeadBody_Oil_C_OnStorageEmptied Parms{};
 
@@ -43,10 +41,8 @@ bool ABP_Foundable_OutsDeadBody_Oil_C::OnStorageEmptied()
 
 void ABP_Foundable_OutsDeadBody_Oil_C::UpdateFoundableVisibilityForStorageState(bool BeginPlay)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Foundable_OutsDeadBody_Oil_C", "UpdateFoundableVisibilityForStorageState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateFoundableVisibilityForStorageState", FnName));
 
 	Params::BP_Foundable_OutsDeadBody_Oil_C_UpdateFoundableVisibilityForStorageState Parms{};
 

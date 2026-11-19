@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_EncyclopediaInfoMenu_C::ClearEntryAuthorBP()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EncyclopediaInfoMenu_C", "ClearEntryAuthorBP");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ClearEntryAuthorBP", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -35,10 +33,8 @@ void UWBP_EncyclopediaInfoMenu_C::ClearEntryAuthorBP()
 
 void UWBP_EncyclopediaInfoMenu_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EncyclopediaInfoMenu_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -51,10 +47,8 @@ void UWBP_EncyclopediaInfoMenu_C::Construct()
 
 void UWBP_EncyclopediaInfoMenu_C::ExecuteUbergraph_WBP_EncyclopediaInfoMenu(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EncyclopediaInfoMenu_C", "ExecuteUbergraph_WBP_EncyclopediaInfoMenu");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_EncyclopediaInfoMenu_C", "ExecuteUbergraph_WBP_EncyclopediaInfoMenu", FuncInfo);
 
 	Params::WBP_EncyclopediaInfoMenu_C_ExecuteUbergraph_WBP_EncyclopediaInfoMenu Parms{};
 
@@ -71,10 +65,8 @@ void UWBP_EncyclopediaInfoMenu_C::ExecuteUbergraph_WBP_EncyclopediaInfoMenu(int3
 
 void UWBP_EncyclopediaInfoMenu_C::SetEntryAuthorBP(const struct FEncyclopediaEntryAuthor& AuthorData)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EncyclopediaInfoMenu_C", "SetEntryAuthorBP");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetEntryAuthorBP", FnName));
 
 	Params::WBP_EncyclopediaInfoMenu_C_SetEntryAuthorBP Parms{};
 
@@ -91,10 +83,8 @@ void UWBP_EncyclopediaInfoMenu_C::SetEntryAuthorBP(const struct FEncyclopediaEnt
 
 void UWBP_EncyclopediaInfoMenu_C::SetEntryTitleBP(const class FText& Title)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EncyclopediaInfoMenu_C", "SetEntryTitleBP");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetEntryTitleBP", FnName));
 
 	Params::WBP_EncyclopediaInfoMenu_C_SetEntryTitleBP Parms{};
 

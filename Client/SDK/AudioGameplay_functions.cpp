@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 bool IAudioGameplayCondition::ConditionMet() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("AudioGameplayCondition", "ConditionMet");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"ConditionMet", FnName));
 
 	Params::AudioGameplayCondition_ConditionMet Parms{};
 
@@ -49,10 +47,8 @@ bool IAudioGameplayCondition::ConditionMet() const
 
 bool IAudioGameplayCondition::ConditionMet_Position(const struct FVector& Position) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("AudioGameplayCondition", "ConditionMet_Position");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"ConditionMet_Position", FnName));
 
 	Params::AudioGameplayCondition_ConditionMet_Position Parms{};
 
@@ -74,10 +70,8 @@ bool IAudioGameplayCondition::ConditionMet_Position(const struct FVector& Positi
 
 void IAudioGameplayVolumeInteraction::OnListenerEnter()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("AudioGameplayVolumeInteraction", "OnListenerEnter");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"OnListenerEnter", FnName));
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -93,10 +87,8 @@ void IAudioGameplayVolumeInteraction::OnListenerEnter()
 
 void IAudioGameplayVolumeInteraction::OnListenerExit()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("AudioGameplayVolumeInteraction", "OnListenerExit");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"OnListenerExit", FnName));
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -678,6 +670,319 @@ bool UAudioComponentGroup::IsVirtualized() const
 }
 
 
+// Function AudioExtensions.AudioParameterControllerInterface.ResetParameters
+// (Native, Public, BlueprintCallable)
+
+void UAudioComponentGroup::ResetParameters()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ResetParameters", FnName));
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AudioExtensions.AudioParameterControllerInterface.SetBoolArrayParameter
+// (Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class FName                             InName                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<bool>&                     InValue                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UAudioComponentGroup::SetBoolArrayParameter(class FName InName, const TArray<bool>& InValue)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetBoolArrayParameter", FnName));
+
+	Params::AudioParameterControllerInterface_SetBoolArrayParameter Parms{};
+
+	Parms.InName = InName;
+	Parms.InValue = std::move(InValue);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AudioExtensions.AudioParameterControllerInterface.SetBoolParameter
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             InName                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    InBool                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAudioComponentGroup::SetBoolParameter(class FName InName, bool InBool)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetBoolParameter", FnName));
+
+	Params::AudioParameterControllerInterface_SetBoolParameter Parms{};
+
+	Parms.InName = InName;
+	Parms.InBool = InBool;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AudioExtensions.AudioParameterControllerInterface.SetFloatArrayParameter
+// (Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class FName                             InName                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<float>&                    InValue                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UAudioComponentGroup::SetFloatArrayParameter(class FName InName, const TArray<float>& InValue)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetFloatArrayParameter", FnName));
+
+	Params::AudioParameterControllerInterface_SetFloatArrayParameter Parms{};
+
+	Parms.InName = InName;
+	Parms.InValue = std::move(InValue);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AudioExtensions.AudioParameterControllerInterface.SetFloatParameter
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             InName                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InFloat                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAudioComponentGroup::SetFloatParameter(class FName InName, float InFloat)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetFloatParameter", FnName));
+
+	Params::AudioParameterControllerInterface_SetFloatParameter Parms{};
+
+	Parms.InName = InName;
+	Parms.InFloat = InFloat;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AudioExtensions.AudioParameterControllerInterface.SetIntArrayParameter
+// (Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class FName                             InName                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<int32>&                    InValue                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UAudioComponentGroup::SetIntArrayParameter(class FName InName, const TArray<int32>& InValue)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetIntArrayParameter", FnName));
+
+	Params::AudioParameterControllerInterface_SetIntArrayParameter Parms{};
+
+	Parms.InName = InName;
+	Parms.InValue = std::move(InValue);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AudioExtensions.AudioParameterControllerInterface.SetIntParameter
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             InName                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   inInt                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAudioComponentGroup::SetIntParameter(class FName InName, int32 inInt)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetIntParameter", FnName));
+
+	Params::AudioParameterControllerInterface_SetIntParameter Parms{};
+
+	Parms.InName = InName;
+	Parms.inInt = inInt;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AudioExtensions.AudioParameterControllerInterface.SetObjectArrayParameter
+// (Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class FName                             InName                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class UObject*>&           InValue                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UAudioComponentGroup::SetObjectArrayParameter(class FName InName, const TArray<class UObject*>& InValue)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetObjectArrayParameter", FnName));
+
+	Params::AudioParameterControllerInterface_SetObjectArrayParameter Parms{};
+
+	Parms.InName = InName;
+	Parms.InValue = std::move(InValue);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AudioExtensions.AudioParameterControllerInterface.SetObjectParameter
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             InName                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UObject*                          InValue                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAudioComponentGroup::SetObjectParameter(class FName InName, class UObject* InValue)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetObjectParameter", FnName));
+
+	Params::AudioParameterControllerInterface_SetObjectParameter Parms{};
+
+	Parms.InName = InName;
+	Parms.InValue = InValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AudioExtensions.AudioParameterControllerInterface.SetParameters_Blueprint
+// (Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const TArray<struct FAudioParameter>&   InParameters                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UAudioComponentGroup::SetParameters_Blueprint(const TArray<struct FAudioParameter>& InParameters)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetParameters_Blueprint", FnName));
+
+	Params::AudioParameterControllerInterface_SetParameters_Blueprint Parms{};
+
+	Parms.InParameters = std::move(InParameters);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AudioExtensions.AudioParameterControllerInterface.SetStringArrayParameter
+// (Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class FName                             InName                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FString>&            InValue                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UAudioComponentGroup::SetStringArrayParameter(class FName InName, const TArray<class FString>& InValue)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetStringArrayParameter", FnName));
+
+	Params::AudioParameterControllerInterface_SetStringArrayParameter Parms{};
+
+	Parms.InName = InName;
+	Parms.InValue = std::move(InValue);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AudioExtensions.AudioParameterControllerInterface.SetStringParameter
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             InName                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InValue                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAudioComponentGroup::SetStringParameter(class FName InName, const class FString& InValue)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetStringParameter", FnName));
+
+	Params::AudioParameterControllerInterface_SetStringParameter Parms{};
+
+	Parms.InName = InName;
+	Parms.InValue = std::move(InValue);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AudioExtensions.AudioParameterControllerInterface.SetTriggerParameter
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             InName                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAudioComponentGroup::SetTriggerParameter(class FName InName)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetTriggerParameter", FnName));
+
+	Params::AudioParameterControllerInterface_SetTriggerParameter Parms{};
+
+	Parms.InName = InName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function AudioGameplay.AudioParameterComponent.GetParameters
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
@@ -700,6 +1005,343 @@ const TArray<struct FAudioParameter> UAudioParameterComponent::GetParameters() c
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function AudioExtensions.AudioParameterControllerInterface.ResetParameters
+// (Native, Public, BlueprintCallable)
+
+void UAudioParameterComponent::ResetParameters()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ResetParameters", FnName));
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AudioExtensions.AudioParameterControllerInterface.SetBoolArrayParameter
+// (Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class FName                             InName                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<bool>&                     InValue                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UAudioParameterComponent::SetBoolArrayParameter(class FName InName, const TArray<bool>& InValue)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetBoolArrayParameter", FnName));
+
+	Params::AudioParameterControllerInterface_SetBoolArrayParameter Parms{};
+
+	Parms.InName = InName;
+	Parms.InValue = std::move(InValue);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AudioExtensions.AudioParameterControllerInterface.SetBoolParameter
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             InName                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    InBool                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAudioParameterComponent::SetBoolParameter(class FName InName, bool InBool)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetBoolParameter", FnName));
+
+	Params::AudioParameterControllerInterface_SetBoolParameter Parms{};
+
+	Parms.InName = InName;
+	Parms.InBool = InBool;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AudioExtensions.AudioParameterControllerInterface.SetFloatArrayParameter
+// (Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class FName                             InName                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<float>&                    InValue                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UAudioParameterComponent::SetFloatArrayParameter(class FName InName, const TArray<float>& InValue)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetFloatArrayParameter", FnName));
+
+	Params::AudioParameterControllerInterface_SetFloatArrayParameter Parms{};
+
+	Parms.InName = InName;
+	Parms.InValue = std::move(InValue);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AudioExtensions.AudioParameterControllerInterface.SetFloatParameter
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             InName                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InFloat                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAudioParameterComponent::SetFloatParameter(class FName InName, float InFloat)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetFloatParameter", FnName));
+
+	Params::AudioParameterControllerInterface_SetFloatParameter Parms{};
+
+	Parms.InName = InName;
+	Parms.InFloat = InFloat;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AudioExtensions.AudioParameterControllerInterface.SetIntArrayParameter
+// (Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class FName                             InName                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<int32>&                    InValue                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UAudioParameterComponent::SetIntArrayParameter(class FName InName, const TArray<int32>& InValue)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetIntArrayParameter", FnName));
+
+	Params::AudioParameterControllerInterface_SetIntArrayParameter Parms{};
+
+	Parms.InName = InName;
+	Parms.InValue = std::move(InValue);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AudioExtensions.AudioParameterControllerInterface.SetIntParameter
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             InName                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   inInt                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAudioParameterComponent::SetIntParameter(class FName InName, int32 inInt)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetIntParameter", FnName));
+
+	Params::AudioParameterControllerInterface_SetIntParameter Parms{};
+
+	Parms.InName = InName;
+	Parms.inInt = inInt;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AudioExtensions.AudioParameterControllerInterface.SetObjectArrayParameter
+// (Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class FName                             InName                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class UObject*>&           InValue                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UAudioParameterComponent::SetObjectArrayParameter(class FName InName, const TArray<class UObject*>& InValue)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetObjectArrayParameter", FnName));
+
+	Params::AudioParameterControllerInterface_SetObjectArrayParameter Parms{};
+
+	Parms.InName = InName;
+	Parms.InValue = std::move(InValue);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AudioExtensions.AudioParameterControllerInterface.SetObjectParameter
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             InName                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UObject*                          InValue                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAudioParameterComponent::SetObjectParameter(class FName InName, class UObject* InValue)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetObjectParameter", FnName));
+
+	Params::AudioParameterControllerInterface_SetObjectParameter Parms{};
+
+	Parms.InName = InName;
+	Parms.InValue = InValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AudioExtensions.AudioParameterControllerInterface.SetParameters_Blueprint
+// (Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const TArray<struct FAudioParameter>&   InParameters                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UAudioParameterComponent::SetParameters_Blueprint(const TArray<struct FAudioParameter>& InParameters)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetParameters_Blueprint", FnName));
+
+	Params::AudioParameterControllerInterface_SetParameters_Blueprint Parms{};
+
+	Parms.InParameters = std::move(InParameters);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AudioExtensions.AudioParameterControllerInterface.SetStringArrayParameter
+// (Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// class FName                             InName                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<class FString>&            InValue                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UAudioParameterComponent::SetStringArrayParameter(class FName InName, const TArray<class FString>& InValue)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetStringArrayParameter", FnName));
+
+	Params::AudioParameterControllerInterface_SetStringArrayParameter Parms{};
+
+	Parms.InName = InName;
+	Parms.InValue = std::move(InValue);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AudioExtensions.AudioParameterControllerInterface.SetStringParameter
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             InName                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    InValue                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAudioParameterComponent::SetStringParameter(class FName InName, const class FString& InValue)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetStringParameter", FnName));
+
+	Params::AudioParameterControllerInterface_SetStringParameter Parms{};
+
+	Parms.InName = InName;
+	Parms.InValue = std::move(InValue);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AudioExtensions.AudioParameterControllerInterface.SetTriggerParameter
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// class FName                             InName                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAudioParameterComponent::SetTriggerParameter(class FName InName)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetTriggerParameter", FnName));
+
+	Params::AudioParameterControllerInterface_SetTriggerParameter Parms{};
+
+	Parms.InName = InName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Engine.ActorSoundParameterInterface.GetActorSoundParams
+// (RequiredAPI, Native, Event, Public, HasOutParams, BlueprintEvent, Const)
+// Parameters:
+// TArray<struct FAudioParameter>*         Params_0                                               (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void UAudioParameterComponent::GetActorSoundParams(TArray<struct FAudioParameter>* Params_0) const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetActorSoundParams", FnName));
+
+	Params::ActorSoundParameterInterface_GetActorSoundParams Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (Params_0 != nullptr)
+		*Params_0 = std::move(Parms.Params_0);
 }
 
 

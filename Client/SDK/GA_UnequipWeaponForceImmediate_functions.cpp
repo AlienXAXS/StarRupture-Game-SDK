@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UGA_UnequipWeaponForceImmediate_C::ExecuteUbergraph_GA_UnequipWeaponForceImmediate(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_UnequipWeaponForceImmediate_C", "ExecuteUbergraph_GA_UnequipWeaponForceImmediate");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "GA_UnequipWeaponForceImmediate_C", "ExecuteUbergraph_GA_UnequipWeaponForceImmediate", FuncInfo);
 
 	Params::GA_UnequipWeaponForceImmediate_C_ExecuteUbergraph_GA_UnequipWeaponForceImmediate Parms{};
 
@@ -41,10 +39,8 @@ void UGA_UnequipWeaponForceImmediate_C::ExecuteUbergraph_GA_UnequipWeaponForceIm
 
 void UGA_UnequipWeaponForceImmediate_C::K2_ActivateAbility()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_UnequipWeaponForceImmediate_C", "K2_ActivateAbility");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_ActivateAbility", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

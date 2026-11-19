@@ -27,10 +27,8 @@ SDK_NAMESPACE_START
 
 bool UBP_AnimNotifyState_AddMovementVectorInput_C::Received_NotifyTick(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, float FrameDeltaTime, const struct FAnimNotifyEventReference& EventReference) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_AnimNotifyState_AddMovementVectorInput_C", "Received_NotifyTick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Received_NotifyTick", FnName));
 
 	Params::BP_AnimNotifyState_AddMovementVectorInput_C_Received_NotifyTick Parms{};
 

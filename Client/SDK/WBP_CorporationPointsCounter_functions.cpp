@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_CorporationPointsCounter_C::ExecuteUbergraph_WBP_CorporationPointsCounter(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CorporationPointsCounter_C", "ExecuteUbergraph_WBP_CorporationPointsCounter");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_CorporationPointsCounter_C", "ExecuteUbergraph_WBP_CorporationPointsCounter", FuncInfo);
 
 	Params::WBP_CorporationPointsCounter_C_ExecuteUbergraph_WBP_CorporationPointsCounter Parms{};
 
@@ -43,10 +41,8 @@ void UWBP_CorporationPointsCounter_C::ExecuteUbergraph_WBP_CorporationPointsCoun
 
 void UWBP_CorporationPointsCounter_C::PreConstruct(bool IsDesignTime)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CorporationPointsCounter_C", "PreConstruct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PreConstruct", FnName));
 
 	Params::WBP_CorporationPointsCounter_C_PreConstruct Parms{};
 

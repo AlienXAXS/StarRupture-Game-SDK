@@ -19,18 +19,18 @@
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_BuildingLogisticsPriorityButton.WBP_BuildingLogisticsPriorityButton_C
-// 0x0040 (0x16F0 - 0x16B0)
+// 0x0040 (0x1710 - 0x16D0)
 class UWBP_BuildingLogisticsPriorityButton_C final : public UCrUW_BuildingPriorityButton
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x16B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UCommonTextBlock*                       Text;                                              // 0x16B8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UImage*                                 ButtonIcon;                                        // 0x16C0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               MaterialInstance;                                  // 0x16C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
-	bool                                          bInitialized;                                      // 0x16D0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bIsSelected;                                       // 0x16D1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_16D2[0x2];                                     // 0x16D2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FLinearColor                           HighlightColor;                                    // 0x16D4(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x16D0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UCommonTextBlock*                       Text;                                              // 0x16D8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UImage*                                 ButtonIcon;                                        // 0x16E0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               MaterialInstance;                                  // 0x16E8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	bool                                          bInitialized;                                      // 0x16F0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bIsSelected;                                       // 0x16F1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_16F2[0x2];                                     // 0x16F2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           HighlightColor;                                    // 0x16F4(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void BP_OnClicked();

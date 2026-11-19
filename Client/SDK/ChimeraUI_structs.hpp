@@ -127,15 +127,16 @@ enum class ECrStorageLevel : uint8
 };
 
 // Enum ChimeraUI.ECrCustomGameCategory
-// NumValues: 0x0006
+// NumValues: 0x0007
 enum class ECrCustomGameCategory : uint8
 {
-	Building                                 = 0,
-	Enemy                                    = 1,
-	Player                                   = 2,
-	Progression                              = 3,
-	World                                    = 4,
-	ECrCustomGameCategory_MAX                = 5,
+	Tutorial                                 = 0,
+	Building                                 = 1,
+	Enemy                                    = 2,
+	Player                                   = 3,
+	Progression                              = 4,
+	World                                    = 5,
+	ECrCustomGameCategory_MAX                = 6,
 };
 
 // Enum ChimeraUI.ECrOptionType
@@ -149,36 +150,37 @@ enum class ECrOptionType : uint8
 };
 
 // Enum ChimeraUI.ECrCustomGameOption
-// NumValues: 0x0017
+// NumValues: 0x0018
 enum class ECrCustomGameOption : uint8
 {
-	DisableBuildingCosts                     = 0,
-	DisableBuildingStability                 = 1,
-	DisablePowerRequirement                  = 2,
-	DisableCraftingAndUnlocksCost            = 3,
-	ChooseCorporationLevel                   = 4,
-	PointsToLevelUpCorporationsMultiplier    = 5,
-	DisableAllEnemies                        = 6,
-	PassiveEnemies                           = 7,
-	DisableBaseAttacks                       = 8,
-	BaseAttackFrequency                      = 9,
-	EnemiesDifficultyHPMultiplier            = 10,
-	EnemiesDifficultyDamageDoneMultiplier    = 11,
-	EnemiesAmount                            = 12,
-	GodMode                                  = 13,
-	InfiniteStamina                          = 14,
-	SurvivalStatsDepletionRate               = 15,
-	DeathPenalty                             = 16,
-	ChoosePlayerProgressionLevel             = 17,
-	UnlockAllInventorySlots                  = 18,
-	FireWaveFrequency                        = 19,
-	RandomizeEnemiesSpawnDifficulty          = 20,
-	None                                     = 21,
-	ECrCustomGameOption_MAX                  = 22,
+	SkipTutorial                             = 0,
+	DisableBuildingCosts                     = 1,
+	DisableBuildingStability                 = 2,
+	DisablePowerRequirement                  = 3,
+	DisableCraftingAndUnlocksCost            = 4,
+	ChooseCorporationLevel                   = 5,
+	PointsToLevelUpCorporationsMultiplier    = 6,
+	DisableAllEnemies                        = 7,
+	PassiveEnemies                           = 8,
+	DisableBaseAttacks                       = 9,
+	BaseAttackFrequency                      = 10,
+	EnemiesDifficultyHPMultiplier            = 11,
+	EnemiesDifficultyDamageDoneMultiplier    = 12,
+	EnemiesAmount                            = 13,
+	GodMode                                  = 14,
+	InfiniteStamina                          = 15,
+	SurvivalStatsDepletionRate               = 16,
+	DeathPenalty                             = 17,
+	ChoosePlayerProgressionLevel             = 18,
+	UnlockAllInventorySlots                  = 19,
+	FireWaveFrequency                        = 20,
+	RandomizeEnemiesSpawnDifficulty          = 21,
+	None                                     = 22,
+	ECrCustomGameOption_MAX                  = 23,
 };
 
 // Enum ChimeraUI.EUIAudioSoundType
-// NumValues: 0x002F
+// NumValues: 0x0032
 enum class EUIAudioSoundType : uint8
 {
 	CommonAccept                             = 0,
@@ -188,46 +190,49 @@ enum class EUIAudioSoundType : uint8
 	CommonOpen                               = 4,
 	CommonClose                              = 5,
 	CommonAcceptHardCue                      = 6,
-	AnalyzerClaim                            = 7,
-	AnalyzerInsert                           = 8,
-	RecyclerClaim                            = 9,
-	RecyclerInsert                           = 10,
-	RTAddPointsLvlUp                         = 11,
-	RTAddPoints                              = 12,
-	RTClaimReward                            = 13,
-	SuitWorkshopChangeLEM                    = 14,
-	RecipeTableUnlock                        = 15,
-	ExporterRecipeChosen                     = 16,
-	ExporterSendItem                         = 17,
-	ExporterExpAdded                         = 18,
-	ExporterInsertItem                       = 19,
-	AntennaActivate                          = 20,
-	ArmoryUnlockingLoop                      = 21,
-	ArmoryUnlock                             = 22,
-	ArmoryChoose                             = 23,
-	ArmoryConfirm                            = 24,
-	ArmoryClicked                            = 25,
-	ArmoryHovered                            = 26,
-	CorpLevelUp                              = 27,
-	AbandonBaseEnter                         = 28,
-	AbandonBaseCompleted                     = 29,
-	AbandonBaseObjective                     = 30,
-	SliderValueChanged                       = 31,
-	BaseCoreDeconstructionProgress           = 32,
-	DatapadEnter                             = 33,
-	DatapadQuit                              = 34,
-	DatapadComputerEnter                     = 35,
-	DatapadComputerQuit                      = 36,
-	CrafterInteriorCreatedItem               = 37,
-	InventoryDropIeam                        = 38,
-	InventoryDestroyItem                     = 39,
-	MainMenuHover                            = 40,
-	MainMenuAccept                           = 41,
-	MainMenuCancel                           = 42,
-	SessionBoxExpand                         = 43,
-	FoodProcessorRecipeCrafted               = 44,
-	None                                     = 45,
-	EUIAudioSoundType_MAX                    = 46,
+	CommonSort                               = 7,
+	AnalyzerClaim                            = 8,
+	AnalyzerInsert                           = 9,
+	RecyclerClaim                            = 10,
+	RecyclerInsert                           = 11,
+	RTAddPointsLvlUp                         = 12,
+	RTAddPoints                              = 13,
+	RTClaimReward                            = 14,
+	SuitWorkshopChangeLEM                    = 15,
+	RecipeTableUnlock                        = 16,
+	ExporterRecipeChosen                     = 17,
+	ExporterSendItem                         = 18,
+	ExporterExpAdded                         = 19,
+	ExporterInsertItem                       = 20,
+	AntennaActivate                          = 21,
+	ArmoryUnlockingLoop                      = 22,
+	ArmoryUnlock                             = 23,
+	ArmoryChoose                             = 24,
+	ArmoryConfirm                            = 25,
+	ArmoryClicked                            = 26,
+	ArmoryHovered                            = 27,
+	CorpLevelUp                              = 28,
+	AbandonBaseEnter                         = 29,
+	AbandonBaseCompleted                     = 30,
+	AbandonBaseObjective                     = 31,
+	SliderValueChanged                       = 32,
+	BaseCoreDeconstructionProgress           = 33,
+	DatapadEnter                             = 34,
+	DatapadQuit                              = 35,
+	DatapadComputerEnter                     = 36,
+	DatapadComputerQuit                      = 37,
+	CrafterInteriorCreatedItem               = 38,
+	InventoryDropIeam                        = 39,
+	InventoryDestroyItem                     = 40,
+	MainMenuHover                            = 41,
+	MainMenuAccept                           = 42,
+	MainMenuCancel                           = 43,
+	SessionBoxExpand                         = 44,
+	FoodProcessorRecipeCrafted               = 45,
+	EncounterSuccess                         = 46,
+	EncounterFailure                         = 47,
+	None                                     = 48,
+	EUIAudioSoundType_MAX                    = 49,
 };
 
 // Enum ChimeraUI.ECrABCounterType
@@ -242,7 +247,7 @@ enum class ECrABCounterType : uint8
 };
 
 // Enum ChimeraUI.ECrUIInputActionType
-// NumValues: 0x001D
+// NumValues: 0x001F
 enum class ECrUIInputActionType : uint8
 {
 	Sorting                                  = 0,
@@ -272,8 +277,10 @@ enum class ECrUIInputActionType : uint8
 	Destroy                                  = 24,
 	Drop                                     = 25,
 	DropStacks                               = 26,
-	Count                                    = 27,
-	ECrUIInputActionType_MAX                 = 28,
+	StartGame                                = 27,
+	LoadGame                                 = 28,
+	Count                                    = 29,
+	ECrUIInputActionType_MAX                 = 30,
 };
 
 // Enum ChimeraUI.ECrMenuType
@@ -430,6 +437,21 @@ enum class EArmorySlotState : uint8
 	EArmorySlotState_MAX                     = 8,
 };
 
+// Enum ChimeraUI.ECrHotbarSlotType
+// NumValues: 0x0009
+enum class ECrHotbarSlotType : uint8
+{
+	Empty                                    = 0,
+	ConsumableItem                           = 1,
+	WeaponSlot1                              = 2,
+	WeaponSlot2                              = 3,
+	MedTool                                  = 4,
+	Grenade                                  = 5,
+	Harvester                                = 6,
+	Building                                 = 7,
+	ECrHotbarSlotType_MAX                    = 8,
+};
+
 // Enum ChimeraUI.ETabIcon
 // NumValues: 0x0004
 enum class ETabIcon : uint8
@@ -563,6 +585,22 @@ enum class ECrSlotType : uint8
 	ECrSlotType_MAX                          = 5,
 };
 
+// Enum ChimeraUI.ECrSlotIconType
+// NumValues: 0x000A
+enum class ECrSlotIconType : uint8
+{
+	Normal                                   = 0,
+	NormalCustomGame                         = 1,
+	NormalBroken                             = 2,
+	Autosave                                 = 3,
+	AutosaveCustomGame                       = 4,
+	AutosaveBroken                           = 5,
+	CustomGameBroken                         = 6,
+	CustomGameAutosaveBroken                 = 7,
+	None                                     = 8,
+	ECrSlotIconType_MAX                      = 9,
+};
+
 // Enum ChimeraUI.ECrToolPanelState
 // NumValues: 0x0005
 enum class ECrToolPanelState : uint8
@@ -612,18 +650,16 @@ enum class ESoundToPlay : uint8
 	SoundToPlay_MAX                          = 5,
 };
 
-// ScriptStruct ChimeraUI.CrCorporationContentForUI
-// 0x00D0 (0x00D0 - 0x0000)
-struct FCrCorporationContentForUI final
+// ScriptStruct ChimeraUI.CrWidgetData
+// 0x0058 (0x0058 - 0x0000)
+struct FCrWidgetData final
 {
 public:
-	struct FSlateBrush                            CorporationIcon;                                   // 0x0000(0x00B0)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	class FText                                   CorporationName;                                   // 0x00B0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	int32                                         NextLevel;                                         // 0x00C0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         LevelProgress;                                     // 0x00C4(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C8[0x8];                                       // 0x00C8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	EUIWidgetType                                 WidgetType;                                        // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TMap<ECrBuildingState, class FText>           BuildingStatus;                                    // 0x0008(0x0050)(Edit, NativeAccessSpecifierPublic)
 };
-DUMPER7_ASSERTS_FCrCorporationContentForUI;
+DUMPER7_ASSERTS_FCrWidgetData;
 
 // ScriptStruct ChimeraUI.CrTabDescriptor
 // 0x00F0 (0x00F0 - 0x0000)
@@ -642,17 +678,6 @@ public:
 };
 DUMPER7_ASSERTS_FCrTabDescriptor;
 
-// ScriptStruct ChimeraUI.CrWidgetData
-// 0x0058 (0x0058 - 0x0000)
-struct FCrWidgetData final
-{
-public:
-	EUIWidgetType                                 WidgetType;                                        // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TMap<ECrBuildingState, class FText>           BuildingStatus;                                    // 0x0008(0x0050)(Edit, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrWidgetData;
-
 // ScriptStruct ChimeraUI.CrCraftingRecipeContentForUI
 // 0x00D0 (0x00D0 - 0x0000)
 struct FCrCraftingRecipeContentForUI final
@@ -665,14 +690,39 @@ public:
 };
 DUMPER7_ASSERTS_FCrCraftingRecipeContentForUI;
 
+// ScriptStruct ChimeraUI.CrCustomGameEnabledRelativeOptionResult
+// 0x0008 (0x0008 - 0x0000)
+struct FCrCustomGameEnabledRelativeOptionResult final
+{
+public:
+	ECrCustomGameOption                           RelativeOption;                                    // 0x0000(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ForceUnavailable;                                  // 0x0001(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ForceValue;                                        // 0x0002(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Value;                                             // 0x0004(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrCustomGameEnabledRelativeOptionResult;
+
+// ScriptStruct ChimeraUI.CrCustomGameEnabledRelativeOption
+// 0x0018 (0x0018 - 0x0000)
+struct FCrCustomGameEnabledRelativeOption final
+{
+public:
+	ECrCustomGameOption                           MainOption;                                        // 0x0000(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FCrCustomGameEnabledRelativeOptionResult> EnabledRelativeOptions;                  // 0x0008(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrCustomGameEnabledRelativeOption;
+
 // ScriptStruct ChimeraUI.CrCustomGameOptionData
 // 0x0060 (0x0060 - 0x0000)
 struct FCrCustomGameOptionData final
 {
 public:
 	ECrOptionType                                 Type;                                              // 0x0000(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECrCustomGameOption                           Option;                                            // 0x0001(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          ReverseOnOffButtons;                               // 0x0001(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECrCustomGameOption                           Option;                                            // 0x0002(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3[0x5];                                        // 0x0003(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	class FText                                   OptionName;                                        // 0x0008(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	class FText                                   OptionDescription;                                 // 0x0018(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	class FText                                   OptionDescription_Warning;                         // 0x0028(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
@@ -681,7 +731,9 @@ public:
 	float                                         StepSize;                                          // 0x0040(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         DefaultValue;                                      // 0x0044(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bPercent;                                          // 0x0048(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	bool                                          bAdjustingSliderValueToWholeStepsNumber;           // 0x0049(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bNewGameOnlyAvailable;                             // 0x004A(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4B[0x5];                                       // 0x004B(0x0005)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class FText>                           RotatorTextOptions;                                // 0x0050(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCrCustomGameOptionData;
@@ -696,6 +748,19 @@ public:
 	TArray<struct FCrCustomGameOptionData>        OPTIONS;                                           // 0x0008(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FCrCustomGameCategory;
+
+// ScriptStruct ChimeraUI.CrCorporationContentForUI
+// 0x00D0 (0x00D0 - 0x0000)
+struct FCrCorporationContentForUI final
+{
+public:
+	struct FSlateBrush                            CorporationIcon;                                   // 0x0000(0x00B0)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	class FText                                   CorporationName;                                   // 0x00B0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	int32                                         NextLevel;                                         // 0x00C0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         LevelProgress;                                     // 0x00C4(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C8[0x8];                                       // 0x00C8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrCorporationContentForUI;
 
 // ScriptStruct ChimeraUI.CrMarkerFilterApperance
 // 0x0120 (0x0120 - 0x0000)
@@ -831,6 +896,15 @@ public:
 };
 DUMPER7_ASSERTS_FEffectHudData;
 
+// ScriptStruct ChimeraUI.CrExtractionEncounterInfoTickFunction
+// 0x0008 (0x0030 - 0x0028)
+struct FCrExtractionEncounterInfoTickFunction final : public FTickFunction
+{
+public:
+	class UCrUW_ExtractionEncounterInfo*          ExtractionEncounterInfo;                           // 0x0028(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+};
+DUMPER7_ASSERTS_FCrExtractionEncounterInfoTickFunction;
+
 // ScriptStruct ChimeraUI.FoodEffectData
 // 0x00E0 (0x00E0 - 0x0000)
 struct FFoodEffectData final
@@ -964,26 +1038,6 @@ public:
 };
 DUMPER7_ASSERTS_FCrMessageHUDImportance;
 
-// ScriptStruct ChimeraUI.CrItemDataForUI
-// 0x0008 (0x0008 - 0x0000)
-struct FCrItemDataForUI final
-{
-public:
-	class UAuItemDataBase*                        Data;                                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-};
-DUMPER7_ASSERTS_FCrItemDataForUI;
-
-// ScriptStruct ChimeraUI.CrItemGroupForUI
-// 0x0028 (0x0028 - 0x0000)
-struct FCrItemGroupForUI final
-{
-public:
-	class FText                                   Name;                                              // 0x0000(0x0010)(NativeAccessSpecifierPublic)
-	TArray<struct FCrItemDataForUI>               Items;                                             // 0x0010(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_20[0x8];                                       // 0x0020(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FCrItemGroupForUI;
-
 // ScriptStruct ChimeraUI.MessageData
 // 0x0038 (0x0038 - 0x0000)
 struct FMessageData final
@@ -1039,16 +1093,6 @@ public:
 };
 DUMPER7_ASSERTS_FCrObjectiveUIData;
 
-// ScriptStruct ChimeraUI.CrHUDLayoutRequest
-// 0x0030 (0x0030 - 0x0000)
-struct FCrHUDLayoutRequest final
-{
-public:
-	TSoftClassPtr<class UClass>                   LayoutClass;                                       // 0x0000(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FGameplayTag                           LayerID;                                           // 0x0028(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FCrHUDLayoutRequest;
-
 // ScriptStruct ChimeraUI.PlayerParamHudData
 // 0x0038 (0x0038 - 0x0000)
 struct FPlayerParamHudData final
@@ -1060,14 +1104,25 @@ public:
 };
 DUMPER7_ASSERTS_FPlayerParamHudData;
 
-// ScriptStruct ChimeraUI.CrMinimalSaveData
-// 0x0028 (0x0028 - 0x0000)
-struct alignas(0x08) FCrMinimalSaveData final
+// ScriptStruct ChimeraUI.CrItemDataForUI
+// 0x0008 (0x0008 - 0x0000)
+struct FCrItemDataForUI final
 {
 public:
-	uint8                                         Pad_0[0x28];                                       // 0x0000(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class UAuItemDataBase*                        Data;                                              // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 };
-DUMPER7_ASSERTS_FCrMinimalSaveData;
+DUMPER7_ASSERTS_FCrItemDataForUI;
+
+// ScriptStruct ChimeraUI.CrItemGroupForUI
+// 0x0028 (0x0028 - 0x0000)
+struct FCrItemGroupForUI final
+{
+public:
+	class FText                                   Name;                                              // 0x0000(0x0010)(NativeAccessSpecifierPublic)
+	TArray<struct FCrItemDataForUI>               Items;                                             // 0x0010(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_20[0x8];                                       // 0x0020(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FCrItemGroupForUI;
 
 // ScriptStruct ChimeraUI.CrAllItemsForUI
 // 0x0010 (0x0010 - 0x0000)
@@ -1103,6 +1158,16 @@ public:
 	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_FCrMenuConfig;
+
+// ScriptStruct ChimeraUI.CrHUDLayoutRequest
+// 0x0030 (0x0030 - 0x0000)
+struct FCrHUDLayoutRequest final
+{
+public:
+	TSoftClassPtr<class UClass>                   LayoutClass;                                       // 0x0000(0x0028)(Edit, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGameplayTag                           LayerID;                                           // 0x0028(0x0008)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FCrHUDLayoutRequest;
 
 // ScriptStruct ChimeraUI.CrHUDElementEntry
 // 0x0030 (0x0030 - 0x0000)

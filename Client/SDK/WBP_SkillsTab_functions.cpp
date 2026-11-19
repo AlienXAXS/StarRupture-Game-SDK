@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_SkillsTab_C::ExecuteUbergraph_WBP_SkillsTab(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_SkillsTab_C", "ExecuteUbergraph_WBP_SkillsTab");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_SkillsTab_C", "ExecuteUbergraph_WBP_SkillsTab", FuncInfo);
 
 	Params::WBP_SkillsTab_C_ExecuteUbergraph_WBP_SkillsTab Parms{};
 
@@ -43,10 +41,8 @@ void UWBP_SkillsTab_C::ExecuteUbergraph_WBP_SkillsTab(int32 EntryPoint)
 
 void UWBP_SkillsTab_C::SetWarningIconColor(const struct FLinearColor& InColor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_SkillsTab_C", "SetWarningIconColor");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetWarningIconColor", FnName));
 
 	Params::WBP_SkillsTab_C_SetWarningIconColor Parms{};
 

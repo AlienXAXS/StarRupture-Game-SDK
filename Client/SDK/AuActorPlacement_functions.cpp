@@ -298,10 +298,8 @@ void AAuAPSimpleMassSpawner::ResetGuid()
 
 void AAuEvaporatingWaterActor::BP_OnPostBecameInsignificant()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuEvaporatingWaterActor", "BP_OnPostBecameInsignificant");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnPostBecameInsignificant", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -312,10 +310,8 @@ void AAuEvaporatingWaterActor::BP_OnPostBecameInsignificant()
 
 void AAuEvaporatingWaterActor::BP_OnPostBecameSignificant()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuEvaporatingWaterActor", "BP_OnPostBecameSignificant");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnPostBecameSignificant", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

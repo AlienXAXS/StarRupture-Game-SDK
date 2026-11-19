@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UABP_Exploder_Tier3_NEW_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier3_NEW_C", "AnimGraph");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimGraph", FnName));
 
 	Params::ABP_Exploder_Tier3_NEW_C_AnimGraph Parms{};
 
@@ -42,10 +40,8 @@ void UABP_Exploder_Tier3_NEW_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 
 void UABP_Exploder_Tier3_NEW_C::AnimNotify_AnimationFinishedEvent()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier3_NEW_C", "AnimNotify_AnimationFinishedEvent");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_AnimationFinishedEvent", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -56,114 +52,468 @@ void UABP_Exploder_Tier3_NEW_C::AnimNotify_AnimationFinishedEvent()
 
 void UABP_Exploder_Tier3_NEW_C::AnimNotify_EndAnimAction()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier3_NEW_C", "AnimNotify_EndAnimAction");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_EndAnimAction", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.BlueprintUpdateAnimation
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.BPOnAttackTypeChanged
 // (Event, Public, BlueprintEvent)
 // Parameters:
-// float                                   DeltaTimeX                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrEnemyAttackType                      OldAttackType                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrEnemyAttackType                      NewAttackType                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UABP_Exploder_Tier3_NEW_C::BlueprintUpdateAnimation(float DeltaTimeX)
+void UABP_Exploder_Tier3_NEW_C::BPOnAttackTypeChanged(ECrEnemyAttackType OldAttackType, ECrEnemyAttackType NewAttackType)
 {
-	static class UFunction* Func = nullptr;
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BPOnAttackTypeChanged", FnName));
 
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier3_NEW_C", "BlueprintUpdateAnimation");
+	Params::ABP_Exploder_Tier3_NEW_C_BPOnAttackTypeChanged Parms{};
 
-	Params::ABP_Exploder_Tier3_NEW_C_BlueprintUpdateAnimation Parms{};
-
-	Parms.DeltaTimeX = DeltaTimeX;
+	Parms.OldAttackType = OldAttackType;
+	Parms.NewAttackType = NewAttackType;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_170F179142B44E5B5B91D1B2861E5462
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.BPOnLocomotionTypeChanged
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// ECrEnemyLocomotionType                  OldLocomotionType                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrEnemyLocomotionType                  NewLocomotionType                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UABP_Exploder_Tier3_NEW_C::BPOnLocomotionTypeChanged(ECrEnemyLocomotionType OldLocomotionType, ECrEnemyLocomotionType NewLocomotionType)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BPOnLocomotionTypeChanged", FnName));
+
+	Params::ABP_Exploder_Tier3_NEW_C_BPOnLocomotionTypeChanged Parms{};
+
+	Parms.OldLocomotionType = OldLocomotionType;
+	Parms.NewLocomotionType = NewLocomotionType;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_01F24AE4475D64E3DF388DA25BCAA4EC
 // (BlueprintEvent)
 
-void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_170F179142B44E5B5B91D1B2861E5462()
+void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_01F24AE4475D64E3DF388DA25BCAA4EC()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier3_NEW_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_170F179142B44E5B5B91D1B2861E5462");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_01F24AE4475D64E3DF388DA25BCAA4EC", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_6BBE2EE64B4E70E4447360BB00F8FEB1
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_3FFE843147B0EAAA168B989D1C5A1A86
 // (BlueprintEvent)
 
-void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_6BBE2EE64B4E70E4447360BB00F8FEB1()
+void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_3FFE843147B0EAAA168B989D1C5A1A86()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier3_NEW_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_6BBE2EE64B4E70E4447360BB00F8FEB1");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_3FFE843147B0EAAA168B989D1C5A1A86", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_8C7F31AF4006081D4F1B1BAEB7798288
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_5E35360041E146E527136C9BBBA06944
 // (BlueprintEvent)
 
-void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_8C7F31AF4006081D4F1B1BAEB7798288()
+void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_5E35360041E146E527136C9BBBA06944()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier3_NEW_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_8C7F31AF4006081D4F1B1BAEB7798288");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_5E35360041E146E527136C9BBBA06944", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_9BB479A741AAC706FF40AB8132B733CE
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendSpacePlayer_4CB4340548DDE19738270998A685C802
 // (BlueprintEvent)
 
-void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_9BB479A741AAC706FF40AB8132B733CE()
+void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendSpacePlayer_4CB4340548DDE19738270998A685C802()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier3_NEW_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_9BB479A741AAC706FF40AB8132B733CE");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendSpacePlayer_4CB4340548DDE19738270998A685C802", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_E7E954D04B751C08E2DBEEB20F40F630
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendSpacePlayer_94DC0BBC4490A400890B4B85A3B4B0DE
 // (BlueprintEvent)
 
-void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_E7E954D04B751C08E2DBEEB20F40F630()
+void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendSpacePlayer_94DC0BBC4490A400890B4B85A3B4B0DE()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier3_NEW_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_E7E954D04B751C08E2DBEEB20F40F630");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendSpacePlayer_94DC0BBC4490A400890B4B85A3B4B0DE", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_E85ADFF54A7408F17FD73FBF2A86427C
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_0C38E94342B8B87E770E48AA3A9E7A98
 // (BlueprintEvent)
 
-void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_E85ADFF54A7408F17FD73FBF2A86427C()
+void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_0C38E94342B8B87E770E48AA3A9E7A98()
 {
-	static class UFunction* Func = nullptr;
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_0C38E94342B8B87E770E48AA3A9E7A98", FnName));
 
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier3_NEW_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_BlendListByBool_E85ADFF54A7408F17FD73FBF2A86427C");
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_2614FFEB48F2A98ED15A6BB3FA7CC107
+// (BlueprintEvent)
+
+void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_2614FFEB48F2A98ED15A6BB3FA7CC107()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_2614FFEB48F2A98ED15A6BB3FA7CC107", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_29783AEC42DE5F708021C7B6B74F83AF
+// (BlueprintEvent)
+
+void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_29783AEC42DE5F708021C7B6B74F83AF()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_29783AEC42DE5F708021C7B6B74F83AF", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_308496BF4747500EBD60BFBB92DDF252
+// (BlueprintEvent)
+
+void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_308496BF4747500EBD60BFBB92DDF252()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_308496BF4747500EBD60BFBB92DDF252", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_3943C0654FDB52F434098BBF52765E58
+// (BlueprintEvent)
+
+void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_3943C0654FDB52F434098BBF52765E58()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_3943C0654FDB52F434098BBF52765E58", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_3DCFC68349F975ACE2B3769E94C42E2B
+// (BlueprintEvent)
+
+void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_3DCFC68349F975ACE2B3769E94C42E2B()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_3DCFC68349F975ACE2B3769E94C42E2B", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_42624F6740B3E0D5CFF21787A0088192
+// (BlueprintEvent)
+
+void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_42624F6740B3E0D5CFF21787A0088192()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_42624F6740B3E0D5CFF21787A0088192", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_450EEFAD4CD07EF9D93DD3BEBF4E8222
+// (BlueprintEvent)
+
+void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_450EEFAD4CD07EF9D93DD3BEBF4E8222()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_450EEFAD4CD07EF9D93DD3BEBF4E8222", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_503564DE4DA73D604E8BD1A25F04CCA1
+// (BlueprintEvent)
+
+void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_503564DE4DA73D604E8BD1A25F04CCA1()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_503564DE4DA73D604E8BD1A25F04CCA1", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_5DCF03BC49594D330240CFAF4681DECA
+// (BlueprintEvent)
+
+void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_5DCF03BC49594D330240CFAF4681DECA()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_5DCF03BC49594D330240CFAF4681DECA", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_5E121259431B7CB909E46B8AC1DDB547
+// (BlueprintEvent)
+
+void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_5E121259431B7CB909E46B8AC1DDB547()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_5E121259431B7CB909E46B8AC1DDB547", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_6A495F5042BA60B0ECFF2BB623AEFF7E
+// (BlueprintEvent)
+
+void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_6A495F5042BA60B0ECFF2BB623AEFF7E()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_6A495F5042BA60B0ECFF2BB623AEFF7E", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_7097FC9F49AA1EFDDC19FAABFCE9BBB4
+// (BlueprintEvent)
+
+void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_7097FC9F49AA1EFDDC19FAABFCE9BBB4()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_7097FC9F49AA1EFDDC19FAABFCE9BBB4", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_77A89A764F2C5AE5056B9D902232CA20
+// (BlueprintEvent)
+
+void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_77A89A764F2C5AE5056B9D902232CA20()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_77A89A764F2C5AE5056B9D902232CA20", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_8336917144A134EB9152A0B41A0869CE
+// (BlueprintEvent)
+
+void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_8336917144A134EB9152A0B41A0869CE()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_8336917144A134EB9152A0B41A0869CE", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_879D642740781749D76E2897083C4A88
+// (BlueprintEvent)
+
+void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_879D642740781749D76E2897083C4A88()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_879D642740781749D76E2897083C4A88", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_919ED53645761B26FD1FF5886EE8A31A
+// (BlueprintEvent)
+
+void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_919ED53645761B26FD1FF5886EE8A31A()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_919ED53645761B26FD1FF5886EE8A31A", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_9ED97B544876A8FA34B560A3DF51CC50
+// (BlueprintEvent)
+
+void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_9ED97B544876A8FA34B560A3DF51CC50()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_9ED97B544876A8FA34B560A3DF51CC50", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_A8D0E30D40836C35A5CFD99A7E03185C
+// (BlueprintEvent)
+
+void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_A8D0E30D40836C35A5CFD99A7E03185C()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_A8D0E30D40836C35A5CFD99A7E03185C", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_A8F326FA4EC30594A491CDB0524659B0
+// (BlueprintEvent)
+
+void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_A8F326FA4EC30594A491CDB0524659B0()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_A8F326FA4EC30594A491CDB0524659B0", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_B04C800D4D157DA4A81B618A1EA6CE4D
+// (BlueprintEvent)
+
+void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_B04C800D4D157DA4A81B618A1EA6CE4D()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_B04C800D4D157DA4A81B618A1EA6CE4D", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_BB4759A640B30B4D0EDC15886DE35D9D
+// (BlueprintEvent)
+
+void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_BB4759A640B30B4D0EDC15886DE35D9D()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_BB4759A640B30B4D0EDC15886DE35D9D", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_BB6331A0416881DF06FA6EA5FF2FF9D2
+// (BlueprintEvent)
+
+void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_BB6331A0416881DF06FA6EA5FF2FF9D2()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_BB6331A0416881DF06FA6EA5FF2FF9D2", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_C1A7AEA14A73F6ACD1FCA48081BD9410
+// (BlueprintEvent)
+
+void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_C1A7AEA14A73F6ACD1FCA48081BD9410()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_C1A7AEA14A73F6ACD1FCA48081BD9410", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_D564BCE74AD2D4444176C0931DF019E2
+// (BlueprintEvent)
+
+void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_D564BCE74AD2D4444176C0931DF019E2()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_D564BCE74AD2D4444176C0931DF019E2", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_EDEE8EAF40ACC3ED6AA40FA687E82C65
+// (BlueprintEvent)
+
+void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_EDEE8EAF40ACC3ED6AA40FA687E82C65()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_EDEE8EAF40ACC3ED6AA40FA687E82C65", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_F5A05C0E481C43E3DD34D8AC02A624E4
+// (BlueprintEvent)
+
+void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_F5A05C0E481C43E3DD34D8AC02A624E4()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_F5A05C0E481C43E3DD34D8AC02A624E4", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_F74EB7774DFFA24FEF84288F57FD42C3
+// (BlueprintEvent)
+
+void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_F74EB7774DFFA24FEF84288F57FD42C3()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_F74EB7774DFFA24FEF84288F57FD42C3", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_FDFA41D94A1FF66718D81E8D924314E4
+// (BlueprintEvent)
+
+void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_FDFA41D94A1FF66718D81E8D924314E4()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TransitionResult_FDFA41D94A1FF66718D81E8D924314E4", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TwoWayBlend_D804ADAA4EBD29F3E136BC80EFE6CD3D
+// (BlueprintEvent)
+
+void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TwoWayBlend_D804ADAA4EBD29F3E136BC80EFE6CD3D()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Exploder_Tier3_NEW_AnimGraphNode_TwoWayBlend_D804ADAA4EBD29F3E136BC80EFE6CD3D", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -176,14 +526,52 @@ void UABP_Exploder_Tier3_NEW_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_
 
 void UABP_Exploder_Tier3_NEW_C::ExecuteUbergraph_ABP_Exploder_Tier3_NEW(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Exploder_Tier3_NEW_C", "ExecuteUbergraph_ABP_Exploder_Tier3_NEW");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "ABP_Exploder_Tier3_NEW_C", "ExecuteUbergraph_ABP_Exploder_Tier3_NEW", FuncInfo);
 
 	Params::ABP_Exploder_Tier3_NEW_C_ExecuteUbergraph_ABP_Exploder_Tier3_NEW Parms{};
 
 	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.UpdateYawRotationRateForAttackType
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ECrEnemyAttackType                      OldAttackType                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrEnemyAttackType                      NewAttackType                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UABP_Exploder_Tier3_NEW_C::UpdateYawRotationRateForAttackType(ECrEnemyAttackType OldAttackType, ECrEnemyAttackType NewAttackType)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateYawRotationRateForAttackType", FnName));
+
+	Params::ABP_Exploder_Tier3_NEW_C_UpdateYawRotationRateForAttackType Parms{};
+
+	Parms.OldAttackType = OldAttackType;
+	Parms.NewAttackType = NewAttackType;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function ABP_Exploder_Tier3_NEW.ABP_Exploder_Tier3_NEW_C.UpdateYawRotationRateForLocomotionState
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ECrEnemyLocomotionType                  OldLocomotionType                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// ECrEnemyLocomotionType                  NewLocomotionType                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UABP_Exploder_Tier3_NEW_C::UpdateYawRotationRateForLocomotionState(ECrEnemyLocomotionType OldLocomotionType, ECrEnemyLocomotionType NewLocomotionType)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateYawRotationRateForLocomotionState", FnName));
+
+	Params::ABP_Exploder_Tier3_NEW_C_UpdateYawRotationRateForLocomotionState Parms{};
+
+	Parms.OldLocomotionType = OldLocomotionType;
+	Parms.NewLocomotionType = NewLocomotionType;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

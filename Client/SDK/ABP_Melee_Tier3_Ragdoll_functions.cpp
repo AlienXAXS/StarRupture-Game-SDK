@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UABP_Melee_Tier3_Ragdoll_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier3_Ragdoll_C", "AnimGraph");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimGraph", FnName));
 
 	Params::ABP_Melee_Tier3_Ragdoll_C_AnimGraph Parms{};
 
@@ -42,10 +40,8 @@ void UABP_Melee_Tier3_Ragdoll_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 
 void UABP_Melee_Tier3_Ragdoll_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier3_Ragdoll_AnimGraphNode_SequencePlayer_845291FA469F9CA0EEEF19B2DBDFE02C()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier3_Ragdoll_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier3_Ragdoll_AnimGraphNode_SequencePlayer_845291FA469F9CA0EEEF19B2DBDFE02C");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Melee_Tier3_Ragdoll_AnimGraphNode_SequencePlayer_845291FA469F9CA0EEEF19B2DBDFE02C", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -58,10 +54,8 @@ void UABP_Melee_Tier3_Ragdoll_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP
 
 void UABP_Melee_Tier3_Ragdoll_C::ExecuteUbergraph_ABP_Melee_Tier3_Ragdoll(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Melee_Tier3_Ragdoll_C", "ExecuteUbergraph_ABP_Melee_Tier3_Ragdoll");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "ABP_Melee_Tier3_Ragdoll_C", "ExecuteUbergraph_ABP_Melee_Tier3_Ragdoll", FuncInfo);
 
 	Params::ABP_Melee_Tier3_Ragdoll_C_ExecuteUbergraph_ABP_Melee_Tier3_Ragdoll Parms{};
 

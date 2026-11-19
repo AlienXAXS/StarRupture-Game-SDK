@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void ABP_DefenseCannon_C::BP_OnInventoryChanged()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DefenseCannon_C", "BP_OnInventoryChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnInventoryChanged", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -37,10 +35,8 @@ void ABP_DefenseCannon_C::BP_OnInventoryChanged()
 
 void ABP_DefenseCannon_C::CosmeticHit(const struct FHitResult& InHit)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DefenseCannon_C", "CosmeticHit");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"CosmeticHit", FnName));
 
 	Params::BP_DefenseCannon_C_CosmeticHit Parms{};
 
@@ -55,10 +51,8 @@ void ABP_DefenseCannon_C::CosmeticHit(const struct FHitResult& InHit)
 
 void ABP_DefenseCannon_C::CosmeticTurretMalfunctionEnded()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DefenseCannon_C", "CosmeticTurretMalfunctionEnded");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"CosmeticTurretMalfunctionEnded", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -69,10 +63,8 @@ void ABP_DefenseCannon_C::CosmeticTurretMalfunctionEnded()
 
 void ABP_DefenseCannon_C::CosmeticTurretMalfunctionStarted()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DefenseCannon_C", "CosmeticTurretMalfunctionStarted");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"CosmeticTurretMalfunctionStarted", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -85,10 +77,8 @@ void ABP_DefenseCannon_C::CosmeticTurretMalfunctionStarted()
 
 void ABP_DefenseCannon_C::ExecuteUbergraph_BP_DefenseCannon(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DefenseCannon_C", "ExecuteUbergraph_BP_DefenseCannon");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_DefenseCannon_C", "ExecuteUbergraph_BP_DefenseCannon", FuncInfo);
 
 	Params::BP_DefenseCannon_C_ExecuteUbergraph_BP_DefenseCannon Parms{};
 
@@ -103,10 +93,8 @@ void ABP_DefenseCannon_C::ExecuteUbergraph_BP_DefenseCannon(int32 EntryPoint)
 
 void ABP_DefenseCannon_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DefenseCannon_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -117,10 +105,8 @@ void ABP_DefenseCannon_C::ReceiveBeginPlay()
 
 void ABP_DefenseCannon_C::Timeline__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DefenseCannon_C", "Timeline__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -131,10 +117,8 @@ void ABP_DefenseCannon_C::Timeline__FinishedFunc()
 
 void ABP_DefenseCannon_C::Timeline__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DefenseCannon_C", "Timeline__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -145,10 +129,8 @@ void ABP_DefenseCannon_C::Timeline__UpdateFunc()
 
 void ABP_DefenseCannon_C::UpdateAmmoCounter()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DefenseCannon_C", "UpdateAmmoCounter");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateAmmoCounter", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -161,10 +143,8 @@ void ABP_DefenseCannon_C::UpdateAmmoCounter()
 
 void ABP_DefenseCannon_C::UpdateCosmeticsBasedOnAttackDirection(const struct FVector& OutCurrentAttackDirection)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DefenseCannon_C", "UpdateCosmeticsBasedOnAttackDirection");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateCosmeticsBasedOnAttackDirection", FnName));
 
 	Params::BP_DefenseCannon_C_UpdateCosmeticsBasedOnAttackDirection Parms{};
 

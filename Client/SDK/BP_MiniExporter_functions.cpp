@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void ABP_MiniExporter_C::Attach_meshes()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiniExporter_C", "Attach_meshes");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Attach_meshes", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -35,10 +33,8 @@ void ABP_MiniExporter_C::Attach_meshes()
 
 void ABP_MiniExporter_C::Close()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiniExporter_C", "Close");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Close", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -51,10 +47,8 @@ void ABP_MiniExporter_C::Close()
 
 void ABP_MiniExporter_C::ExecuteUbergraph_BP_MiniExporter(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiniExporter_C", "ExecuteUbergraph_BP_MiniExporter");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_MiniExporter_C", "ExecuteUbergraph_BP_MiniExporter", FuncInfo);
 
 	Params::BP_MiniExporter_C_ExecuteUbergraph_BP_MiniExporter Parms{};
 
@@ -69,10 +63,8 @@ void ABP_MiniExporter_C::ExecuteUbergraph_BP_MiniExporter(int32 EntryPoint)
 
 void ABP_MiniExporter_C::Fire()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiniExporter_C", "Fire");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Fire", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -83,10 +75,8 @@ void ABP_MiniExporter_C::Fire()
 
 void ABP_MiniExporter_C::Open()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiniExporter_C", "Open");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Open", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -97,10 +87,8 @@ void ABP_MiniExporter_C::Open()
 
 void ABP_MiniExporter_C::Play_whole_sequence()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiniExporter_C", "Play_whole_sequence");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Play_whole_sequence", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -111,10 +99,8 @@ void ABP_MiniExporter_C::Play_whole_sequence()
 
 void ABP_MiniExporter_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiniExporter_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -128,10 +114,8 @@ void ABP_MiniExporter_C::ReceiveBeginPlay()
 
 void ABP_MiniExporter_C::GetBuildingMeshes(class UMeshComponent** MainBody, TArray<class UMeshComponent*>* AdditionalMeshes) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MiniExporter_C", "GetBuildingMeshes");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetBuildingMeshes", FnName));
 
 	Params::BP_MiniExporter_C_GetBuildingMeshes Parms{};
 

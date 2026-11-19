@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UBTTask_MoveAwayFromActor_C::ExecuteUbergraph_BTTask_MoveAwayFromActor(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTTask_MoveAwayFromActor_C", "ExecuteUbergraph_BTTask_MoveAwayFromActor");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BTTask_MoveAwayFromActor_C", "ExecuteUbergraph_BTTask_MoveAwayFromActor", FuncInfo);
 
 	Params::BTTask_MoveAwayFromActor_C_ExecuteUbergraph_BTTask_MoveAwayFromActor Parms{};
 
@@ -44,10 +42,8 @@ void UBTTask_MoveAwayFromActor_C::ExecuteUbergraph_BTTask_MoveAwayFromActor(int3
 
 void UBTTask_MoveAwayFromActor_C::ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTTask_MoveAwayFromActor_C", "ReceiveExecuteAI");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveExecuteAI", FnName));
 
 	Params::BTTask_MoveAwayFromActor_C_ReceiveExecuteAI Parms{};
 

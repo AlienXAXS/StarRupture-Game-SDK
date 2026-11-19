@@ -28,10 +28,8 @@ SDK_NAMESPACE_START
 
 void ABP_Exploder_Tier3_PooledProjectile_Snot_C::BndEvt__BP_RangedTier2_PooledProjectile_Snot_SphereComponent_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_Snot_C", "BndEvt__BP_RangedTier2_PooledProjectile_Snot_SphereComponent_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__BP_RangedTier2_PooledProjectile_Snot_SphereComponent_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature", FnName));
 
 	Params::BP_Exploder_Tier3_PooledProjectile_Snot_C_BndEvt__BP_RangedTier2_PooledProjectile_Snot_SphereComponent_K2Node_ComponentBoundEvent_2_ComponentBeginOverlapSignature__DelegateSignature Parms{};
 
@@ -56,10 +54,8 @@ void ABP_Exploder_Tier3_PooledProjectile_Snot_C::BndEvt__BP_RangedTier2_PooledPr
 
 void ABP_Exploder_Tier3_PooledProjectile_Snot_C::BndEvt__BP_RangedTier2_PooledProjectile_Snot_SphereComponent_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_Snot_C", "BndEvt__BP_RangedTier2_PooledProjectile_Snot_SphereComponent_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__BP_RangedTier2_PooledProjectile_Snot_SphereComponent_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature", FnName));
 
 	Params::BP_Exploder_Tier3_PooledProjectile_Snot_C_BndEvt__BP_RangedTier2_PooledProjectile_Snot_SphereComponent_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature Parms{};
 
@@ -77,10 +73,8 @@ void ABP_Exploder_Tier3_PooledProjectile_Snot_C::BndEvt__BP_RangedTier2_PooledPr
 
 void ABP_Exploder_Tier3_PooledProjectile_Snot_C::DestroyDecal()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_Snot_C", "DestroyDecal");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"DestroyDecal", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -93,10 +87,8 @@ void ABP_Exploder_Tier3_PooledProjectile_Snot_C::DestroyDecal()
 
 void ABP_Exploder_Tier3_PooledProjectile_Snot_C::ExecuteUbergraph_BP_Exploder_Tier3_PooledProjectile_Snot(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_Snot_C", "ExecuteUbergraph_BP_Exploder_Tier3_PooledProjectile_Snot");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Exploder_Tier3_PooledProjectile_Snot_C", "ExecuteUbergraph_BP_Exploder_Tier3_PooledProjectile_Snot", FuncInfo);
 
 	Params::BP_Exploder_Tier3_PooledProjectile_Snot_C_ExecuteUbergraph_BP_Exploder_Tier3_PooledProjectile_Snot Parms{};
 
@@ -111,10 +103,8 @@ void ABP_Exploder_Tier3_PooledProjectile_Snot_C::ExecuteUbergraph_BP_Exploder_Ti
 
 void ABP_Exploder_Tier3_PooledProjectile_Snot_C::OnProjectileActivated()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_Snot_C", "OnProjectileActivated");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnProjectileActivated", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -125,10 +115,8 @@ void ABP_Exploder_Tier3_PooledProjectile_Snot_C::OnProjectileActivated()
 
 void ABP_Exploder_Tier3_PooledProjectile_Snot_C::OnProjectileDeactivated()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_Snot_C", "OnProjectileDeactivated");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnProjectileDeactivated", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -141,10 +129,8 @@ void ABP_Exploder_Tier3_PooledProjectile_Snot_C::OnProjectileDeactivated()
 
 void ABP_Exploder_Tier3_PooledProjectile_Snot_C::OnProjectileShot(const struct FCrAiProjectileParameters& InProjectileParameters)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_Snot_C", "OnProjectileShot");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnProjectileShot", FnName));
 
 	Params::BP_Exploder_Tier3_PooledProjectile_Snot_C_OnProjectileShot Parms{};
 
@@ -159,10 +145,8 @@ void ABP_Exploder_Tier3_PooledProjectile_Snot_C::OnProjectileShot(const struct F
 
 void ABP_Exploder_Tier3_PooledProjectile_Snot_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_Snot_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -173,10 +157,8 @@ void ABP_Exploder_Tier3_PooledProjectile_Snot_C::ReceiveBeginPlay()
 
 void ABP_Exploder_Tier3_PooledProjectile_Snot_C::SpawnDecal()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_Snot_C", "SpawnDecal");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SpawnDecal", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -189,10 +171,8 @@ void ABP_Exploder_Tier3_PooledProjectile_Snot_C::SpawnDecal()
 
 bool ABP_Exploder_Tier3_PooledProjectile_Snot_C::CanReturnToPool() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_Snot_C", "CanReturnToPool");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"CanReturnToPool", FnName));
 
 	Params::BP_Exploder_Tier3_PooledProjectile_Snot_C_CanReturnToPool Parms{};
 
@@ -209,10 +189,8 @@ bool ABP_Exploder_Tier3_PooledProjectile_Snot_C::CanReturnToPool() const
 
 bool ABP_Exploder_Tier3_PooledProjectile_Snot_C::CanReturnToPoolAfterHit() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_Snot_C", "CanReturnToPoolAfterHit");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"CanReturnToPoolAfterHit", FnName));
 
 	Params::BP_Exploder_Tier3_PooledProjectile_Snot_C_CanReturnToPoolAfterHit Parms{};
 
@@ -229,10 +207,8 @@ bool ABP_Exploder_Tier3_PooledProjectile_Snot_C::CanReturnToPoolAfterHit() const
 
 bool ABP_Exploder_Tier3_PooledProjectile_Snot_C::ShouldForceReturnToPool() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_PooledProjectile_Snot_C", "ShouldForceReturnToPool");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ShouldForceReturnToPool", FnName));
 
 	Params::BP_Exploder_Tier3_PooledProjectile_Snot_C_ShouldForceReturnToPool Parms{};
 

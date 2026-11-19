@@ -10,6 +10,7 @@
 
 #include "Basic.hpp"
 
+#include "PropertyBindingUtils_classes.hpp"
 #include "SmartObjectsModule_structs.hpp"
 #include "AIModule_classes.hpp"
 #include "CoreUObject_structs.hpp"
@@ -398,10 +399,10 @@ DUMPER7_ASSERTS_USmartObjectBehaviorDefinition;
 
 // Class SmartObjectsModule.SmartObjectDefinition
 // 0x01F0 (0x0220 - 0x0030)
-class USmartObjectDefinition final : public UDataAsset
+class USmartObjectDefinition final : public UDataAsset, public IPropertyBindingBindingCollectionOwner
 {
 public:
-	uint8                                         Pad_30[0x18];                                      // 0x0030(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0x10];                                      // 0x0038(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FInstancedPropertyBag                  Parameters;                                        // 0x0048(0x0010)(Edit, DisableEditOnInstance, NativeAccessSpecifierPrivate)
 	struct FGuid                                  ParametersID;                                      // 0x0058(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	struct FGuid                                  RootID;                                            // 0x0068(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)

@@ -1318,6 +1318,107 @@ void AGameplayCamerasPlayerCameraManager::StopCameraModifierRig(const struct FCa
 }
 
 
+// Function GameplayTags.GameplayTagAssetInterface.BP_GetOwnedGameplayTags
+// (RequiredAPI, Native, Protected, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FGameplayTagContainer            ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FGameplayTagContainer UCameraRigAsset::BP_GetOwnedGameplayTags() const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_GetOwnedGameplayTags", FnName));
+
+	Params::GameplayTagAssetInterface_BP_GetOwnedGameplayTags Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayTags.GameplayTagAssetInterface.HasAllMatchingGameplayTags
+// (RequiredAPI, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const struct FGameplayTagContainer&     TagContainer                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UCameraRigAsset::HasAllMatchingGameplayTags(const struct FGameplayTagContainer& TagContainer) const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"HasAllMatchingGameplayTags", FnName));
+
+	Params::GameplayTagAssetInterface_HasAllMatchingGameplayTags Parms{};
+
+	Parms.TagContainer = std::move(TagContainer);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayTags.GameplayTagAssetInterface.HasAnyMatchingGameplayTags
+// (RequiredAPI, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const struct FGameplayTagContainer&     TagContainer                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UCameraRigAsset::HasAnyMatchingGameplayTags(const struct FGameplayTagContainer& TagContainer) const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"HasAnyMatchingGameplayTags", FnName));
+
+	Params::GameplayTagAssetInterface_HasAnyMatchingGameplayTags Parms{};
+
+	Parms.TagContainer = std::move(TagContainer);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function GameplayTags.GameplayTagAssetInterface.HasMatchingGameplayTag
+// (RequiredAPI, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const struct FGameplayTag&              TagToCheck                                             (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UCameraRigAsset::HasMatchingGameplayTag(const struct FGameplayTag& TagToCheck) const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"HasMatchingGameplayTag", FnName));
+
+	Params::GameplayTagAssetInterface_HasMatchingGameplayTag Parms{};
+
+	Parms.TagToCheck = std::move(TagToCheck);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function GameplayCameras.BlueprintCameraDirectorEvaluator.ActivateCameraDirector
 // (Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
@@ -1326,10 +1427,8 @@ void AGameplayCamerasPlayerCameraManager::StopCameraModifierRig(const struct FCa
 
 void UBlueprintCameraDirectorEvaluator::ActivateCameraDirector(class UObject* EvaluationContextOwner, const struct FBlueprintCameraDirectorActivateParams& Params_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BlueprintCameraDirectorEvaluator", "ActivateCameraDirector");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ActivateCameraDirector", FnName));
 
 	Params::BlueprintCameraDirectorEvaluator_ActivateCameraDirector Parms{};
 
@@ -1477,10 +1576,8 @@ void UBlueprintCameraDirectorEvaluator::ActivatePersistentVisualCameraRig(class 
 
 class FName UBlueprintCameraDirectorEvaluator::AddChildEvaluationContext(class UObject* ChildEvaluationContextOwner)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BlueprintCameraDirectorEvaluator", "AddChildEvaluationContext");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AddChildEvaluationContext", FnName));
 
 	Params::BlueprintCameraDirectorEvaluator_AddChildEvaluationContext Parms{};
 
@@ -1500,10 +1597,8 @@ class FName UBlueprintCameraDirectorEvaluator::AddChildEvaluationContext(class U
 
 void UBlueprintCameraDirectorEvaluator::DeactivateCameraDirector(class UObject* EvaluationContextOwner, const struct FBlueprintCameraDirectorDeactivateParams& Params_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BlueprintCameraDirectorEvaluator", "DeactivateCameraDirector");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"DeactivateCameraDirector", FnName));
 
 	Params::BlueprintCameraDirectorEvaluator_DeactivateCameraDirector Parms{};
 
@@ -1598,10 +1693,8 @@ void UBlueprintCameraDirectorEvaluator::DeactivatePersistentVisualCameraRig(clas
 
 bool UBlueprintCameraDirectorEvaluator::RemoveChildEvaluationContext(class UObject* ChildEvaluationContextOwner, class FName ChildSlotName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BlueprintCameraDirectorEvaluator", "RemoveChildEvaluationContext");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"RemoveChildEvaluationContext", FnName));
 
 	Params::BlueprintCameraDirectorEvaluator_RemoveChildEvaluationContext Parms{};
 
@@ -1623,10 +1716,8 @@ bool UBlueprintCameraDirectorEvaluator::RemoveChildEvaluationContext(class UObje
 
 void UBlueprintCameraDirectorEvaluator::RunCameraDirector(float DeltaTime, class UObject* EvaluationContextOwner, const struct FBlueprintCameraDirectorEvaluationParams& Params_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BlueprintCameraDirectorEvaluator", "RunCameraDirector");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"RunCameraDirector", FnName));
 
 	Params::BlueprintCameraDirectorEvaluator_RunCameraDirector Parms{};
 
@@ -3114,10 +3205,8 @@ void UGameplayControlRotationComponent::DeactivateControlRotationManagement()
 
 void UBlueprintCameraNodeEvaluator::InitializeCameraNode()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BlueprintCameraNodeEvaluator", "InitializeCameraNode");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"InitializeCameraNode", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -3180,10 +3269,8 @@ void UBlueprintCameraNodeEvaluator::SetCurrentCameraPose(const struct FBlueprint
 
 void UBlueprintCameraNodeEvaluator::TickCameraNode(float DeltaTime)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BlueprintCameraNodeEvaluator", "TickCameraNode");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"TickCameraNode", FnName));
 
 	Params::BlueprintCameraNodeEvaluator_TickCameraNode Parms{};
 

@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_AbandonBaseInfo_C::BP_OnAbandonBaseCompleted(const struct FLinearColor& FinishedColor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_AbandonBaseInfo_C", "BP_OnAbandonBaseCompleted");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnAbandonBaseCompleted", FnName));
 
 	Params::WBP_AbandonBaseInfo_C_BP_OnAbandonBaseCompleted Parms{};
 
@@ -43,10 +41,8 @@ void UWBP_AbandonBaseInfo_C::BP_OnAbandonBaseCompleted(const struct FLinearColor
 
 void UWBP_AbandonBaseInfo_C::BP_OnShowAbandonBaseInfo(bool ShowImmediately)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_AbandonBaseInfo_C", "BP_OnShowAbandonBaseInfo");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnShowAbandonBaseInfo", FnName));
 
 	Params::WBP_AbandonBaseInfo_C_BP_OnShowAbandonBaseInfo Parms{};
 
@@ -61,10 +57,8 @@ void UWBP_AbandonBaseInfo_C::BP_OnShowAbandonBaseInfo(bool ShowImmediately)
 
 void UWBP_AbandonBaseInfo_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_AbandonBaseInfo_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -77,10 +71,8 @@ void UWBP_AbandonBaseInfo_C::Construct()
 
 void UWBP_AbandonBaseInfo_C::ExecuteUbergraph_WBP_AbandonBaseInfo(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_AbandonBaseInfo_C", "ExecuteUbergraph_WBP_AbandonBaseInfo");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_AbandonBaseInfo_C", "ExecuteUbergraph_WBP_AbandonBaseInfo", FuncInfo);
 
 	Params::WBP_AbandonBaseInfo_C_ExecuteUbergraph_WBP_AbandonBaseInfo Parms{};
 
@@ -95,10 +87,8 @@ void UWBP_AbandonBaseInfo_C::ExecuteUbergraph_WBP_AbandonBaseInfo(int32 EntryPoi
 
 void UWBP_AbandonBaseInfo_C::FadeOut()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_AbandonBaseInfo_C", "FadeOut");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"FadeOut", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -109,10 +99,8 @@ void UWBP_AbandonBaseInfo_C::FadeOut()
 
 void UWBP_AbandonBaseInfo_C::Finished_FAC34DCF4C0DA25FCB2CC5947D03B5D1()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_AbandonBaseInfo_C", "Finished_FAC34DCF4C0DA25FCB2CC5947D03B5D1");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Finished_FAC34DCF4C0DA25FCB2CC5947D03B5D1", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -123,10 +111,8 @@ void UWBP_AbandonBaseInfo_C::Finished_FAC34DCF4C0DA25FCB2CC5947D03B5D1()
 
 void UWBP_AbandonBaseInfo_C::InitTexts()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_AbandonBaseInfo_C", "InitTexts");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"InitTexts", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -137,10 +123,8 @@ void UWBP_AbandonBaseInfo_C::InitTexts()
 
 void UWBP_AbandonBaseInfo_C::ResetBaseIcon()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_AbandonBaseInfo_C", "ResetBaseIcon");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ResetBaseIcon", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -154,10 +138,8 @@ void UWBP_AbandonBaseInfo_C::ResetBaseIcon()
 
 void UWBP_AbandonBaseInfo_C::SetInfectionStatus(bool bInInfected, bool bIsInfectionPresent)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_AbandonBaseInfo_C", "SetInfectionStatus");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetInfectionStatus", FnName));
 
 	Params::WBP_AbandonBaseInfo_C_SetInfectionStatus Parms{};
 

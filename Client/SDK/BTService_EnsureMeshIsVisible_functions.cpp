@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UBTService_EnsureMeshIsVisible_C::ExecuteUbergraph_BTService_EnsureMeshIsVisible(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTService_EnsureMeshIsVisible_C", "ExecuteUbergraph_BTService_EnsureMeshIsVisible");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BTService_EnsureMeshIsVisible_C", "ExecuteUbergraph_BTService_EnsureMeshIsVisible", FuncInfo);
 
 	Params::BTService_EnsureMeshIsVisible_C_ExecuteUbergraph_BTService_EnsureMeshIsVisible Parms{};
 
@@ -45,10 +43,8 @@ void UBTService_EnsureMeshIsVisible_C::ExecuteUbergraph_BTService_EnsureMeshIsVi
 
 void UBTService_EnsureMeshIsVisible_C::ReceiveTickAI(class AAIController* OwnerController, class APawn* ControlledPawn, float DeltaSeconds)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTService_EnsureMeshIsVisible_C", "ReceiveTickAI");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveTickAI", FnName));
 
 	Params::BTService_EnsureMeshIsVisible_C_ReceiveTickAI Parms{};
 

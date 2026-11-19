@@ -14,6 +14,7 @@
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "DataflowEngine_structs.hpp"
+#include "DataflowCore_classes.hpp"
 
 
 SDK_NAMESPACE_START
@@ -94,9 +95,12 @@ public:
 DUMPER7_ASSERTS_UDataflowBaseContent;
 
 // Class DataflowEngine.DataflowInstanceInterface
-// 0x0000 (0x0000 - 0x0000)
-class IDataflowInstanceInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IDataflowInstanceInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -204,9 +208,12 @@ public:
 DUMPER7_ASSERTS_UDataflowBlueprintLibrary;
 
 // Class DataflowEngine.DataflowContentOwner
-// 0x0000 (0x0000 - 0x0000)
-class IDataflowContentOwner final
+// 0x0008 (0x0008 - 0x0000)
+class IDataflowContentOwner
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -286,10 +293,10 @@ DUMPER7_ASSERTS_UDataflowEdNode;
 
 // Class DataflowEngine.Dataflow
 // 0x00B0 (0x0118 - 0x0068)
-class UDataflow final : public UEdGraph
+class UDataflow final : public UEdGraph, public IMeshDeformerProducer, public IDataflowGraphInterface
 {
 public:
-	uint8                                         Pad_68[0x48];                                      // 0x0068(0x0048)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_78[0x38];                                      // 0x0078(0x0038)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          bActive;                                           // 0x00B0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_B1[0x7];                                       // 0x00B1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UObject*>                        Targets;                                           // 0x00B8(0x0010)(Edit, ZeroConstructor, AdvancedDisplay, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)

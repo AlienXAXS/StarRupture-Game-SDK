@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_MechanicalDrillFoundation_C::ExecuteUbergraph_BP_MechanicalDrillFoundation(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MechanicalDrillFoundation_C", "ExecuteUbergraph_BP_MechanicalDrillFoundation");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_MechanicalDrillFoundation_C", "ExecuteUbergraph_BP_MechanicalDrillFoundation", FuncInfo);
 
 	Params::BP_MechanicalDrillFoundation_C_ExecuteUbergraph_BP_MechanicalDrillFoundation Parms{};
 
@@ -43,10 +41,8 @@ void ABP_MechanicalDrillFoundation_C::ExecuteUbergraph_BP_MechanicalDrillFoundat
 
 void ABP_MechanicalDrillFoundation_C::ReceiveActorBeginOverlap(class AActor* OtherActor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MechanicalDrillFoundation_C", "ReceiveActorBeginOverlap");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveActorBeginOverlap", FnName));
 
 	Params::BP_MechanicalDrillFoundation_C_ReceiveActorBeginOverlap Parms{};
 
@@ -61,10 +57,8 @@ void ABP_MechanicalDrillFoundation_C::ReceiveActorBeginOverlap(class AActor* Oth
 
 void ABP_MechanicalDrillFoundation_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MechanicalDrillFoundation_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -77,10 +71,8 @@ void ABP_MechanicalDrillFoundation_C::ReceiveBeginPlay()
 
 void ABP_MechanicalDrillFoundation_C::ReceiveTick(float DeltaSeconds)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MechanicalDrillFoundation_C", "ReceiveTick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveTick", FnName));
 
 	Params::BP_MechanicalDrillFoundation_C_ReceiveTick Parms{};
 

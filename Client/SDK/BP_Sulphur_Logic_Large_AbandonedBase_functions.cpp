@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_Sulphur_Logic_Large_AbandonedBase_C::ExecuteUbergraph_BP_Sulphur_Logic_Large_AbandonedBase(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Sulphur_Logic_Large_AbandonedBase_C", "ExecuteUbergraph_BP_Sulphur_Logic_Large_AbandonedBase");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Sulphur_Logic_Large_AbandonedBase_C", "ExecuteUbergraph_BP_Sulphur_Logic_Large_AbandonedBase", FuncInfo);
 
 	Params::BP_Sulphur_Logic_Large_AbandonedBase_C_ExecuteUbergraph_BP_Sulphur_Logic_Large_AbandonedBase Parms{};
 
@@ -43,10 +41,8 @@ void ABP_Sulphur_Logic_Large_AbandonedBase_C::ExecuteUbergraph_BP_Sulphur_Logic_
 
 void ABP_Sulphur_Logic_Large_AbandonedBase_C::OnSulphurActivityChanged(bool bActive)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Sulphur_Logic_Large_AbandonedBase_C", "OnSulphurActivityChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSulphurActivityChanged", FnName));
 
 	Params::BP_Sulphur_Logic_Large_AbandonedBase_C_OnSulphurActivityChanged Parms{};
 
@@ -61,10 +57,8 @@ void ABP_Sulphur_Logic_Large_AbandonedBase_C::OnSulphurActivityChanged(bool bAct
 
 void ABP_Sulphur_Logic_Large_AbandonedBase_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Sulphur_Logic_Large_AbandonedBase_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

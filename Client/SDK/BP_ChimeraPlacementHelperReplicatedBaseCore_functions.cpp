@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_ChimeraPlacementHelperReplicatedBaseCore_C::ExecuteUbergraph_BP_ChimeraPlacementHelperReplicatedBaseCore(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ChimeraPlacementHelperReplicatedBaseCore_C", "ExecuteUbergraph_BP_ChimeraPlacementHelperReplicatedBaseCore");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_ChimeraPlacementHelperReplicatedBaseCore_C", "ExecuteUbergraph_BP_ChimeraPlacementHelperReplicatedBaseCore", FuncInfo);
 
 	Params::BP_ChimeraPlacementHelperReplicatedBaseCore_C_ExecuteUbergraph_BP_ChimeraPlacementHelperReplicatedBaseCore Parms{};
 
@@ -41,10 +39,8 @@ void ABP_ChimeraPlacementHelperReplicatedBaseCore_C::ExecuteUbergraph_BP_Chimera
 
 void ABP_ChimeraPlacementHelperReplicatedBaseCore_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ChimeraPlacementHelperReplicatedBaseCore_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -57,10 +53,8 @@ void ABP_ChimeraPlacementHelperReplicatedBaseCore_C::ReceiveBeginPlay()
 
 void ABP_ChimeraPlacementHelperReplicatedBaseCore_C::SetMeshColor(const struct FLinearColor& Color)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ChimeraPlacementHelperReplicatedBaseCore_C", "SetMeshColor");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetMeshColor", FnName));
 
 	Params::BP_ChimeraPlacementHelperReplicatedBaseCore_C_SetMeshColor Parms{};
 
@@ -75,10 +69,8 @@ void ABP_ChimeraPlacementHelperReplicatedBaseCore_C::SetMeshColor(const struct F
 
 void ABP_ChimeraPlacementHelperReplicatedBaseCore_C::UserConstructionScript()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ChimeraPlacementHelperReplicatedBaseCore_C", "UserConstructionScript");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UserConstructionScript", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

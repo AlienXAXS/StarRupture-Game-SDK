@@ -25,10 +25,8 @@ SDK_NAMESPACE_START
 
 bool UBTDecorator_CooldownFromLastNavlinkJump_C::PerformConditionCheckAI(class AAIController* OwnerController, class APawn* ControlledPawn)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTDecorator_CooldownFromLastNavlinkJump_C", "PerformConditionCheckAI");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PerformConditionCheckAI", FnName));
 
 	Params::BTDecorator_CooldownFromLastNavlinkJump_C_PerformConditionCheckAI Parms{};
 

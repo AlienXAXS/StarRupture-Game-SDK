@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_DroneSupport_UniqueHelper.BP_DroneSupport_UniqueHelper_C
-// 0x0000 (0x0B40 - 0x0B40)
+// 0x0000 (0x0CA0 - 0x0CA0)
 class ABP_DroneSupport_UniqueHelper_C final : public ABP_PlacementHelperReplicatedModule_C
 {
 public:

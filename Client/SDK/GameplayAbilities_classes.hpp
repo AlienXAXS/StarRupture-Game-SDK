@@ -17,6 +17,7 @@
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "GameplayTags_structs.hpp"
+#include "GameplayTags_classes.hpp"
 #include "DeveloperSettings_classes.hpp"
 #include "MovieScene_classes.hpp"
 
@@ -25,10 +26,9 @@ SDK_NAMESPACE_START
 
 // Class GameplayAbilities.GameplayEffect
 // 0x0A68 (0x0A90 - 0x0028)
-class UGameplayEffect : public UObject
+class UGameplayEffect : public UObject, public IGameplayTagAssetInterface
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	EGameplayEffectDurationType                   DurationPolicy;                                    // 0x0030(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGameplayEffectModifierMagnitude       DurationMagnitude;                                 // 0x0038(0x01E0)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
@@ -89,6 +89,12 @@ public:
 	{
 		return GetDefaultObjImpl<UGameplayEffect>();
 	}
+
+public:
+	struct FGameplayTagContainer BP_GetOwnedGameplayTags() const;
+	bool HasAllMatchingGameplayTags(const struct FGameplayTagContainer& TagContainer) const;
+	bool HasAnyMatchingGameplayTags(const struct FGameplayTagContainer& TagContainer) const;
+	bool HasMatchingGameplayTag(const struct FGameplayTag& TagToCheck) const;
 };
 DUMPER7_ASSERTS_UGameplayEffect;
 
@@ -933,10 +939,10 @@ DUMPER7_ASSERTS_UAbilityAsync_WaitGameplayTagQuery;
 
 // Class GameplayAbilities.GameplayAbility
 // 0x03A8 (0x03D0 - 0x0028)
-class UGameplayAbility : public UObject
+class UGameplayAbility : public UObject, public IGameplayTaskOwnerInterface
 {
 public:
-	uint8                                         Pad_28[0xA8];                                      // 0x0028(0x00A8)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0xA0];                                      // 0x0030(0x00A0)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGameplayTagContainer                  AbilityTags;                                       // 0x00D0(0x0020)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
 	bool                                          bReplicateInputDirectly;                           // 0x00F0(0x0001)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          RemoteInstanceEnded;                               // 0x00F1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -2656,12 +2662,43 @@ public:
 };
 DUMPER7_ASSERTS_UAbilitySystemBlueprintLibrary;
 
-// Class GameplayAbilities.AbilitySystemComponent
-// 0x11B8 (0x12F0 - 0x0138)
-class UAbilitySystemComponent : public UGameplayTasksComponent
+// Class GameplayAbilities.AbilitySystemReplicationProxyInterface
+// 0x0008 (0x0008 - 0x0000)
+class IAbilitySystemReplicationProxyInterface
 {
 public:
-	uint8                                         Pad_138[0x10];                                     // 0x0138(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AbilitySystemReplicationProxyInterface")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AbilitySystemReplicationProxyInterface")
+	}
+	static class IAbilitySystemReplicationProxyInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<IAbilitySystemReplicationProxyInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_IAbilitySystemReplicationProxyInterface;
+
+// Class GameplayAbilities.AbilitySystemComponent
+// 0x11B8 (0x12F0 - 0x0138)
+class UAbilitySystemComponent : public UGameplayTasksComponent, public IGameplayTagAssetInterface, public IAbilitySystemReplicationProxyInterface
+{
+public:
 	TArray<struct FAttributeDefaults>             DefaultStartingData;                               // 0x0148(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 	class FName                                   AffectedAnimInstanceTag;                           // 0x0158(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_160[0x208];                                    // 0x0160(0x0208)(Fixing Size After Last Property [ Dumper-7 ])
@@ -2811,6 +2848,12 @@ public:
 	{
 		return GetDefaultObjImpl<UAbilitySystemComponent>();
 	}
+
+public:
+	struct FGameplayTagContainer BP_GetOwnedGameplayTags() const;
+	bool HasAllMatchingGameplayTags(const struct FGameplayTagContainer& TagContainer) const;
+	bool HasAnyMatchingGameplayTags(const struct FGameplayTagContainer& TagContainer) const;
+	bool HasMatchingGameplayTag(const struct FGameplayTag& TagToCheck) const;
 };
 DUMPER7_ASSERTS_UAbilitySystemComponent;
 
@@ -2966,9 +3009,12 @@ public:
 DUMPER7_ASSERTS_UAbilitySystemGlobals;
 
 // Class GameplayAbilities.AbilitySystemInterface
-// 0x0000 (0x0000 - 0x0000)
-class IAbilitySystemInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IAbilitySystemInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -2993,35 +3039,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_IAbilitySystemInterface;
-
-// Class GameplayAbilities.AbilitySystemReplicationProxyInterface
-// 0x0000 (0x0000 - 0x0000)
-class IAbilitySystemReplicationProxyInterface final
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AbilitySystemReplicationProxyInterface")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AbilitySystemReplicationProxyInterface")
-	}
-	static class IAbilitySystemReplicationProxyInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<IAbilitySystemReplicationProxyInterface>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_IAbilitySystemReplicationProxyInterface;
 
 // Class GameplayAbilities.AttributeSet
 // 0x0008 (0x0030 - 0x0028)
@@ -3085,12 +3102,47 @@ public:
 };
 DUMPER7_ASSERTS_UAbilitySystemTestAttributeSet;
 
-// Class GameplayAbilities.AbilitySystemTestPawn
-// 0x0020 (0x0370 - 0x0350)
-class AAbilitySystemTestPawn final : public ADefaultPawn
+// Class GameplayAbilities.GameplayCueInterface
+// 0x0008 (0x0008 - 0x0000)
+class IGameplayCueInterface
 {
 public:
-	uint8                                         Pad_350[0x18];                                     // 0x0350(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	void BlueprintCustomHandler(EGameplayCueEvent EventType, const struct FGameplayCueParameters& Parameters);
+	void ForwardGameplayCueToParent();
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("GameplayCueInterface")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"GameplayCueInterface")
+	}
+	static class IGameplayCueInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<IGameplayCueInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_IGameplayCueInterface;
+
+// Class GameplayAbilities.AbilitySystemTestPawn
+// 0x0020 (0x0370 - 0x0350)
+class AAbilitySystemTestPawn final : public ADefaultPawn, public IGameplayCueInterface, public MIPad::Pad<0x8, 0x360>, public IAbilitySystemInterface
+{
+public:
 	class UAbilitySystemComponent*                AbilitySystemComponent;                            // 0x0368(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, EditConst, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
 
 public:
@@ -3106,6 +3158,10 @@ public:
 	{
 		return GetDefaultObjImpl<AAbilitySystemTestPawn>();
 	}
+
+public:
+	void BlueprintCustomHandler(EGameplayCueEvent EventType, const struct FGameplayCueParameters& Parameters);
+	void ForwardGameplayCueToParent();
 };
 DUMPER7_ASSERTS_AAbilitySystemTestPawn;
 
@@ -3200,39 +3256,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UGameplayCueFunctionLibrary;
-
-// Class GameplayAbilities.GameplayCueInterface
-// 0x0000 (0x0000 - 0x0000)
-class IGameplayCueInterface final
-{
-public:
-	void BlueprintCustomHandler(EGameplayCueEvent EventType, const struct FGameplayCueParameters& Parameters);
-	void ForwardGameplayCueToParent();
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("GameplayCueInterface")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"GameplayCueInterface")
-	}
-	static class IGameplayCueInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<IGameplayCueInterface>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_IGameplayCueInterface;
 
 // Class GameplayAbilities.GameplayCueManager
 // 0x0310 (0x0340 - 0x0030)
@@ -3708,9 +3731,12 @@ public:
 DUMPER7_ASSERTS_UMovieSceneGameplayCueTrack;
 
 // Class GameplayAbilities.TickableAttributeSetInterface
-// 0x0000 (0x0000 - 0x0000)
-class ITickableAttributeSetInterface final
+// 0x0008 (0x0008 - 0x0000)
+class ITickableAttributeSetInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{

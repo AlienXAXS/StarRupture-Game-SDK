@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_StoryItemSlot_C::ExecuteUbergraph_WBP_StoryItemSlot(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_StoryItemSlot_C", "ExecuteUbergraph_WBP_StoryItemSlot");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_StoryItemSlot_C", "ExecuteUbergraph_WBP_StoryItemSlot", FuncInfo);
 
 	Params::WBP_StoryItemSlot_C_ExecuteUbergraph_WBP_StoryItemSlot Parms{};
 
@@ -43,10 +41,8 @@ void UWBP_StoryItemSlot_C::ExecuteUbergraph_WBP_StoryItemSlot(int32 EntryPoint)
 
 void UWBP_StoryItemSlot_C::SetAmount(int32 InAmount)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_StoryItemSlot_C", "SetAmount");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetAmount", FnName));
 
 	Params::WBP_StoryItemSlot_C_SetAmount Parms{};
 

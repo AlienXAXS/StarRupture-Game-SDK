@@ -143,10 +143,8 @@ bool UObject::IsDefaultObject() const
 
 void UObject::ExecuteUbergraph(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Object", "ExecuteUbergraph");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ExecuteUbergraph", FnName));
 
 	Params::Object_ExecuteUbergraph Parms{};
 

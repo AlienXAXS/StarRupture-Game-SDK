@@ -100,10 +100,8 @@ void UAttenuationVolumeComponent::SetInteriorVolume(float Volume, float Interpol
 
 void AAudioGameplayVolume::OnListenerEnter()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AudioGameplayVolume", "OnListenerEnter");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnListenerEnter", FnName));
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -119,10 +117,8 @@ void AAudioGameplayVolume::OnListenerEnter()
 
 void AAudioGameplayVolume::OnListenerExit()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AudioGameplayVolume", "OnListenerExit");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnListenerExit", FnName));
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -172,6 +168,40 @@ void AAudioGameplayVolume::SetEnabled(bool bEnable)
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AudioGameplay.AudioGameplayVolumeInteraction.OnListenerEnter
+// (RequiredAPI, Native, Event, Public, BlueprintCallable, BlueprintEvent)
+
+void UAudioGameplayVolumeComponentBase::OnListenerEnter()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnListenerEnter", FnName));
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function AudioGameplay.AudioGameplayVolumeInteraction.OnListenerExit
+// (RequiredAPI, Native, Event, Public, BlueprintCallable, BlueprintEvent)
+
+void UAudioGameplayVolumeComponentBase::OnListenerExit()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnListenerExit", FnName));
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }

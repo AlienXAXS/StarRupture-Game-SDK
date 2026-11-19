@@ -38,7 +38,8 @@ DUMPER7_ASSERTS_AModularAIController;
 
 // Class ModularGameplayActors.ModularCharacter
 // 0x0000 (0x0670 - 0x0670)
-class AModularCharacter : public ACharacter
+#pragma pack(push, 0x1)
+class SDK_ALIGN(0x10) AModularCharacter : public ACharacter
 {
 public:
 	static class UClass* StaticClass()
@@ -54,6 +55,7 @@ public:
 		return GetDefaultObjImpl<AModularCharacter>();
 	}
 };
+#pragma pack(pop)
 DUMPER7_ASSERTS_AModularCharacter;
 
 // Class ModularGameplayActors.ModularGameModeBase

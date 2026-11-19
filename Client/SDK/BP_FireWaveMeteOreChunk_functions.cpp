@@ -26,10 +26,8 @@ SDK_NAMESPACE_START
 
 void ABP_FireWaveMeteOreChunk_C::BP_OnEnviroWaveStarted(EEnviroWave InWaveType, EEnviroWaveStage InWaveStage, const struct FCrEnviroWaveSettings& InWaveSettings, float InWaveProgress)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FireWaveMeteOreChunk_C", "BP_OnEnviroWaveStarted");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnEnviroWaveStarted", FnName));
 
 	Params::BP_FireWaveMeteOreChunk_C_BP_OnEnviroWaveStarted Parms{};
 
@@ -51,10 +49,8 @@ void ABP_FireWaveMeteOreChunk_C::BP_OnEnviroWaveStarted(EEnviroWave InWaveType, 
 
 void ABP_FireWaveMeteOreChunk_C::BP_OnGrowbackSubstageChanged(const struct FCrEnviroWaveSettings& Settings, EEnviroWaveGrowbackSubstage Substage, float Progress)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FireWaveMeteOreChunk_C", "BP_OnGrowbackSubstageChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnGrowbackSubstageChanged", FnName));
 
 	Params::BP_FireWaveMeteOreChunk_C_BP_OnGrowbackSubstageChanged Parms{};
 
@@ -71,10 +67,8 @@ void ABP_FireWaveMeteOreChunk_C::BP_OnGrowbackSubstageChanged(const struct FCrEn
 
 void ABP_FireWaveMeteOreChunk_C::BP_OnSpawnedWithResourceDepleted()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FireWaveMeteOreChunk_C", "BP_OnSpawnedWithResourceDepleted");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnSpawnedWithResourceDepleted", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -87,10 +81,8 @@ void ABP_FireWaveMeteOreChunk_C::BP_OnSpawnedWithResourceDepleted()
 
 void ABP_FireWaveMeteOreChunk_C::ExecuteUbergraph_BP_FireWaveMeteOreChunk(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FireWaveMeteOreChunk_C", "ExecuteUbergraph_BP_FireWaveMeteOreChunk");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_FireWaveMeteOreChunk_C", "ExecuteUbergraph_BP_FireWaveMeteOreChunk", FuncInfo);
 
 	Params::BP_FireWaveMeteOreChunk_C_ExecuteUbergraph_BP_FireWaveMeteOreChunk Parms{};
 
@@ -107,10 +99,8 @@ void ABP_FireWaveMeteOreChunk_C::ExecuteUbergraph_BP_FireWaveMeteOreChunk(int32 
 
 void ABP_FireWaveMeteOreChunk_C::FireDecalFade(const bool bIsFadeOut)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FireWaveMeteOreChunk_C", "FireDecalFade");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"FireDecalFade", FnName));
 
 	Params::BP_FireWaveMeteOreChunk_C_FireDecalFade Parms{};
 
@@ -125,10 +115,8 @@ void ABP_FireWaveMeteOreChunk_C::FireDecalFade(const bool bIsFadeOut)
 
 void ABP_FireWaveMeteOreChunk_C::FireDecalTimeline__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FireWaveMeteOreChunk_C", "FireDecalTimeline__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"FireDecalTimeline__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -139,10 +127,8 @@ void ABP_FireWaveMeteOreChunk_C::FireDecalTimeline__FinishedFunc()
 
 void ABP_FireWaveMeteOreChunk_C::FireDecalTimeline__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FireWaveMeteOreChunk_C", "FireDecalTimeline__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"FireDecalTimeline__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -153,10 +139,8 @@ void ABP_FireWaveMeteOreChunk_C::FireDecalTimeline__UpdateFunc()
 
 void ABP_FireWaveMeteOreChunk_C::OnResourceDepletedCosmeticsStart()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FireWaveMeteOreChunk_C", "OnResourceDepletedCosmeticsStart");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnResourceDepletedCosmeticsStart", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -167,10 +151,8 @@ void ABP_FireWaveMeteOreChunk_C::OnResourceDepletedCosmeticsStart()
 
 void ABP_FireWaveMeteOreChunk_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FireWaveMeteOreChunk_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

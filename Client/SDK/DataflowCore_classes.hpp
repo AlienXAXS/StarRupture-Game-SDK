@@ -18,9 +18,12 @@
 SDK_NAMESPACE_START
 
 // Class DataflowCore.DataflowGraphInterface
-// 0x0000 (0x0000 - 0x0000)
-class IDataflowGraphInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IDataflowGraphInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{

@@ -24,10 +24,8 @@ SDK_NAMESPACE_START
 
 void IDataflowSimulationActor::PostDataflowSimulationTick(const float SimulationTime, const float DeltaTime)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("DataflowSimulationActor", "PostDataflowSimulationTick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"PostDataflowSimulationTick", FnName));
 
 	Params::DataflowSimulationActor_PostDataflowSimulationTick Parms{};
 
@@ -51,10 +49,8 @@ void IDataflowSimulationActor::PostDataflowSimulationTick(const float Simulation
 
 void IDataflowSimulationActor::PreDataflowSimulationTick(const float SimulationTime, const float DeltaTime)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("DataflowSimulationActor", "PreDataflowSimulationTick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"PreDataflowSimulationTick", FnName));
 
 	Params::DataflowSimulationActor_PreDataflowSimulationTick Parms{};
 

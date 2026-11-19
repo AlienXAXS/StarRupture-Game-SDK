@@ -17,13 +17,14 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_ForgottenEngine_EntryTerminal.BP_ForgottenEngine_EntryTerminal_C
-// 0x0018 (0x0780 - 0x0768)
+// 0x0030 (0x07A0 - 0x0770)
 class ABP_ForgottenEngine_EntryTerminal_C final : public ACrMegamachineMissingPartDevice
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0768(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UStaticMeshComponent*                   Trigger;                                           // 0x0770(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class ABP_FE_entrance_door_C*                 EntranceDoor;                                      // 0x0778(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0770(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UStaticMeshComponent*                   Trigger;                                           // 0x0778(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class ABP_FE_entrance_door_C*                 EntranceDoor;                                      // 0x0780(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	TMulticastInlineDelegate<void()>              OnItemEnteredDelegate;                             // 0x0788(0x0018)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, BlueprintAssignable, BlueprintCallable)
 
 public:
 	void ExecuteUbergraph_BP_ForgottenEngine_EntryTerminal(int32 EntryPoint);

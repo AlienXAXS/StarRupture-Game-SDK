@@ -16,7 +16,7 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_Modular_StairsBarrierR.BP_Modular_StairsBarrierR_C
-// 0x0000 (0x0878 - 0x0878)
+// 0x0000 (0x0888 - 0x0888)
 class ABP_Modular_StairsBarrierR_C final : public ACrCustomBuilding
 {
 public:

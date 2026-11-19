@@ -17,6 +17,7 @@
 #include "MovieScene_classes.hpp"
 #include "DataflowEngine_classes.hpp"
 #include "Niagara_classes.hpp"
+#include "ChaosCaching_classes.hpp"
 
 
 SDK_NAMESPACE_START
@@ -92,10 +93,10 @@ DUMPER7_ASSERTS_AGroomActor;
 
 // Class HairStrandsCore.GroomAsset
 // 0x0170 (0x0198 - 0x0028)
-class UGroomAsset final : public UObject
+class UGroomAsset final : public UObject, public IInterface_AssetUserData, public IDataflowContentOwner
 {
 public:
-	uint8                                         Pad_28[0x30];                                      // 0x0028(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0x20];                                      // 0x0038(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
 	EGroomLODMode                                 LODMode;                                           // 0x0058(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_59[0x3];                                       // 0x0059(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         AutoLODBias;                                       // 0x005C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
@@ -162,6 +163,11 @@ public:
 	{
 		return GetDefaultObjImpl<UGroomAsset>();
 	}
+
+public:
+	bool AddAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	class UAssetUserData* GetAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	bool HasAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
 };
 DUMPER7_ASSERTS_UGroomAsset;
 
@@ -234,10 +240,9 @@ DUMPER7_ASSERTS_UGroomAssetImportData;
 
 // Class HairStrandsCore.GroomBindingAsset
 // 0x00C8 (0x00F0 - 0x0028)
-class alignas(0x10) UGroomBindingAsset final : public UObject
+class alignas(0x10) UGroomBindingAsset final : public UObject, public IInterface_AsyncCompilation
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	EGroomBindingMeshType                         GroomBindingType;                                  // 0x0030(0x0001)(Edit, BlueprintVisible, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	class UGroomAsset*                            Groom;                                             // 0x0038(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, AssetRegistrySearchable, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
@@ -355,10 +360,10 @@ DUMPER7_ASSERTS_UGroomBlueprintLibrary;
 
 // Class HairStrandsCore.GroomCache
 // 0x0068 (0x0090 - 0x0028)
-class UGroomCache final : public UObject
+class UGroomCache final : public UObject, public IInterface_AssetUserData, public IChaosCacheData
 {
 public:
-	uint8                                         Pad_28[0x20];                                      // 0x0028(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0x10];                                      // 0x0038(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UAssetUserData*>                 AssetUserData;                                     // 0x0048(0x0010)(Edit, ExportObject, ZeroConstructor, ContainsInstancedReference, AdvancedDisplay, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
 	struct FGroomCacheInfo                        GroomCacheInfo;                                    // 0x0058(0x0028)(Edit, EditConst, NoDestructor, Protected, NativeAccessSpecifierProtected)
 	uint8                                         Pad_80[0x10];                                      // 0x0080(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -376,15 +381,19 @@ public:
 	{
 		return GetDefaultObjImpl<UGroomCache>();
 	}
+
+public:
+	bool AddAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	class UAssetUserData* GetAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	bool HasAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
 };
 DUMPER7_ASSERTS_UGroomCache;
 
 // Class HairStrandsCore.GroomComponent
 // 0x0250 (0x07D0 - 0x0580)
-class UGroomComponent final : public UMeshComponent
+class UGroomComponent final : public UMeshComponent, public ILODSyncInterface, public INiagaraPhysicsAssetDICollectorInterface
 {
 public:
-	uint8                                         Pad_578[0x10];                                     // 0x0578(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	class UGroomAsset*                            GroomAsset;                                        // 0x0588(0x0008)(Edit, BlueprintVisible, ZeroConstructor, Interp, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	class UGroomCache*                            GroomCache;                                        // 0x0590(0x0008)(Edit, BlueprintVisible, ZeroConstructor, Interp, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	TArray<class UNiagaraComponent*>              NiagaraComponents;                                 // 0x0598(0x0010)(ExportObject, ZeroConstructor, Transient, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
@@ -663,10 +672,9 @@ DUMPER7_ASSERTS_UMovieSceneGroomCacheSection;
 
 // Class HairStrandsCore.MovieSceneGroomCacheTrack
 // 0x0018 (0x0130 - 0x0118)
-class UMovieSceneGroomCacheTrack final : public UMovieSceneNameableTrack
+class UMovieSceneGroomCacheTrack final : public UMovieSceneNameableTrack, public IMovieSceneTrackTemplateProducer
 {
 public:
-	uint8                                         Pad_118[0x8];                                      // 0x0118(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UMovieSceneSection*>             AnimationSections;                                 // 0x0120(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
 
 public:
@@ -687,10 +695,9 @@ DUMPER7_ASSERTS_UMovieSceneGroomCacheTrack;
 
 // Class HairStrandsCore.NiagaraDataInterfaceHairStrands
 // 0x0020 (0x0058 - 0x0038)
-class UNiagaraDataInterfaceHairStrands final : public UNiagaraDataInterface
+class UNiagaraDataInterfaceHairStrands final : public UNiagaraDataInterface, public INiagaraSimCacheCustomStorageInterface
 {
 public:
-	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class UGroomAsset*                            DefaultSource;                                     // 0x0040(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	class AActor*                                 SourceActor;                                       // 0x0048(0x0008)(Edit, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	uint8                                         Pad_50[0x8];                                       // 0x0050(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])

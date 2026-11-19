@@ -16,6 +16,7 @@
 #include "CoreUObject_classes.hpp"
 #include "ChaosSolverEngine_structs.hpp"
 #include "DataflowSimulation_structs.hpp"
+#include "DataflowSimulation_classes.hpp"
 #include "DeveloperSettings_classes.hpp"
 
 
@@ -116,9 +117,12 @@ public:
 DUMPER7_ASSERTS_UChaosGameplayEventDispatcher;
 
 // Class ChaosSolverEngine.ChaosNotifyHandlerInterface
-// 0x0000 (0x0000 - 0x0000)
-class IChaosNotifyHandlerInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IChaosNotifyHandlerInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -189,10 +193,9 @@ DUMPER7_ASSERTS_UChaosSolver;
 
 // Class ChaosSolverEngine.ChaosSolverActor
 // 0x0200 (0x04A8 - 0x02A8)
-class AChaosSolverActor final : public AActor
+class AChaosSolverActor final : public AActor, public IDataflowPhysicsSolverInterface
 {
 public:
-	uint8                                         Pad_2A8[0x8];                                      // 0x02A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FChaosSolverConfiguration              Properties;                                        // 0x02B0(0x0084)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 	float                                         TimeStepMultiplier;                                // 0x0334(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         CollisionIterations;                               // 0x0338(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)

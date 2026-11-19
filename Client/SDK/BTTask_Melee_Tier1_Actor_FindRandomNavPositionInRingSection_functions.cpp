@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UBTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection_C::ExecuteUbergraph_BTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection_C", "ExecuteUbergraph_BTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection_C", "ExecuteUbergraph_BTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection", FuncInfo);
 
 	Params::BTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection_C_ExecuteUbergraph_BTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection Parms{};
 
@@ -44,10 +42,8 @@ void UBTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection_C::ExecuteUber
 
 void UBTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection_C::ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection_C", "ReceiveExecuteAI");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveExecuteAI", FnName));
 
 	Params::BTTask_Melee_Tier1_Actor_FindRandomNavPositionInRingSection_C_ReceiveExecuteAI Parms{};
 

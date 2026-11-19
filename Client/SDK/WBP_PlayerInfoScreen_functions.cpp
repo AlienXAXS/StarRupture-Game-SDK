@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_PlayerInfoScreen_C::ExecuteUbergraph_WBP_PlayerInfoScreen(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_PlayerInfoScreen_C", "ExecuteUbergraph_WBP_PlayerInfoScreen");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_PlayerInfoScreen_C", "ExecuteUbergraph_WBP_PlayerInfoScreen", FuncInfo);
 
 	Params::WBP_PlayerInfoScreen_C_ExecuteUbergraph_WBP_PlayerInfoScreen Parms{};
 
@@ -43,10 +41,8 @@ void UWBP_PlayerInfoScreen_C::ExecuteUbergraph_WBP_PlayerInfoScreen(int32 EntryP
 
 void UWBP_PlayerInfoScreen_C::InitPlayerState(EProfessionType CurrentProfession)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_PlayerInfoScreen_C", "InitPlayerState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"InitPlayerState", FnName));
 
 	Params::WBP_PlayerInfoScreen_C_InitPlayerState Parms{};
 

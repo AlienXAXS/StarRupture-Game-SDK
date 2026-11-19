@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void IBPI_SetWeakpointState_C::SetWeakpointState(bool InIsActive)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("BPI_SetWeakpointState_C", "SetWeakpointState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"SetWeakpointState", FnName));
 
 	Params::BPI_SetWeakpointState_C_SetWeakpointState Parms{};
 

@@ -16,9 +16,12 @@
 SDK_NAMESPACE_START
 
 // Class MassEnemyInterfaces.MassEnemyActorAimAssistInterface
-// 0x0000 (0x0000 - 0x0000)
-class IMassEnemyActorAimAssistInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IMassEnemyActorAimAssistInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{

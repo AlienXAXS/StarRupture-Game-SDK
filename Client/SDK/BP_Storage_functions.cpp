@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_Storage_C::ExecuteUbergraph_BP_Storage(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Storage_C", "ExecuteUbergraph_BP_Storage");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Storage_C", "ExecuteUbergraph_BP_Storage", FuncInfo);
 
 	Params::BP_Storage_C_ExecuteUbergraph_BP_Storage Parms{};
 
@@ -43,10 +41,8 @@ void ABP_Storage_C::ExecuteUbergraph_BP_Storage(int32 EntryPoint)
 
 void ABP_Storage_C::GetMaterialInstance(class UMaterialInstanceDynamic** MaterialInstance)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Storage_C", "GetMaterialInstance");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetMaterialInstance", FnName));
 
 	Params::BP_Storage_C_GetMaterialInstance Parms{};
 
@@ -64,10 +60,8 @@ void ABP_Storage_C::GetMaterialInstance(class UMaterialInstanceDynamic** Materia
 
 void ABP_Storage_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Storage_C", "PostPlayBuildingEffect");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PostPlayBuildingEffect", FnName));
 
 	Params::BP_Storage_C_PostPlayBuildingEffect Parms{};
 
@@ -82,10 +76,8 @@ void ABP_Storage_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed)
 
 void ABP_Storage_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Storage_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -96,10 +88,8 @@ void ABP_Storage_C::ReceiveBeginPlay()
 
 void ABP_Storage_C::Timeline_shelves__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Storage_C", "Timeline_shelves__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline_shelves__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -110,10 +100,8 @@ void ABP_Storage_C::Timeline_shelves__FinishedFunc()
 
 void ABP_Storage_C::Timeline_shelves__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Storage_C", "Timeline_shelves__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline_shelves__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -126,10 +114,8 @@ void ABP_Storage_C::Timeline_shelves__UpdateFunc()
 
 void ABP_Storage_C::UpdateFilter(const class UAuItemDataBase* ItemFilter)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Storage_C", "UpdateFilter");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateFilter", FnName));
 
 	Params::BP_Storage_C_UpdateFilter Parms{};
 
@@ -147,10 +133,8 @@ void ABP_Storage_C::UpdateFilter(const class UAuItemDataBase* ItemFilter)
 
 void ABP_Storage_C::UpdateItemCount(int32 Count, int32 MaxCount)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Storage_C", "UpdateItemCount");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateItemCount", FnName));
 
 	Params::BP_Storage_C_UpdateItemCount Parms{};
 

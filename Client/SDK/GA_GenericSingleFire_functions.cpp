@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UGA_GenericSingleFire_C::ExecuteUbergraph_GA_GenericSingleFire(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericSingleFire_C", "ExecuteUbergraph_GA_GenericSingleFire");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "GA_GenericSingleFire_C", "ExecuteUbergraph_GA_GenericSingleFire", FuncInfo);
 
 	Params::GA_GenericSingleFire_C_ExecuteUbergraph_GA_GenericSingleFire Parms{};
 
@@ -41,10 +39,8 @@ void UGA_GenericSingleFire_C::ExecuteUbergraph_GA_GenericSingleFire(int32 EntryP
 
 void UGA_GenericSingleFire_C::K2_ActivateAbility()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericSingleFire_C", "K2_ActivateAbility");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_ActivateAbility", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -57,10 +53,8 @@ void UGA_GenericSingleFire_C::K2_ActivateAbility()
 
 void UGA_GenericSingleFire_C::K2_OnEndAbility(bool bWasCancelled)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericSingleFire_C", "K2_OnEndAbility");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_OnEndAbility", FnName));
 
 	Params::GA_GenericSingleFire_C_K2_OnEndAbility Parms{};
 
@@ -77,10 +71,8 @@ void UGA_GenericSingleFire_C::K2_OnEndAbility(bool bWasCancelled)
 
 void UGA_GenericSingleFire_C::OnCancelled_B1E1E9F340FBFC71E52E289425F5E751(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericSingleFire_C", "OnCancelled_B1E1E9F340FBFC71E52E289425F5E751");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnCancelled_B1E1E9F340FBFC71E52E289425F5E751", FnName));
 
 	Params::GA_GenericSingleFire_C_OnCancelled_B1E1E9F340FBFC71E52E289425F5E751 Parms{};
 
@@ -97,10 +89,8 @@ void UGA_GenericSingleFire_C::OnCancelled_B1E1E9F340FBFC71E52E289425F5E751(class
 
 void UGA_GenericSingleFire_C::OnCancelled_FDDBB4E34BD7FC4A4E8DF4933B401C9F(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericSingleFire_C", "OnCancelled_FDDBB4E34BD7FC4A4E8DF4933B401C9F");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnCancelled_FDDBB4E34BD7FC4A4E8DF4933B401C9F", FnName));
 
 	Params::GA_GenericSingleFire_C_OnCancelled_FDDBB4E34BD7FC4A4E8DF4933B401C9F Parms{};
 
@@ -119,10 +109,8 @@ void UGA_GenericSingleFire_C::OnCancelled_FDDBB4E34BD7FC4A4E8DF4933B401C9F(class
 
 void UGA_GenericSingleFire_C::OnClientTraceResult(const struct FAuTargetData& OutHits, const TArray<struct FHitResult>& RawHits, bool bServerConfirmed)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericSingleFire_C", "OnClientTraceResult");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnClientTraceResult", FnName));
 
 	Params::GA_GenericSingleFire_C_OnClientTraceResult Parms{};
 
@@ -142,10 +130,8 @@ void UGA_GenericSingleFire_C::OnClientTraceResult(const struct FAuTargetData& Ou
 
 void UGA_GenericSingleFire_C::OnCostCheckFailed_2220CBB047BB92D4524E8D950865484A(float TimeHeld, bool bEnded)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericSingleFire_C", "OnCostCheckFailed_2220CBB047BB92D4524E8D950865484A");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnCostCheckFailed_2220CBB047BB92D4524E8D950865484A", FnName));
 
 	Params::GA_GenericSingleFire_C_OnCostCheckFailed_2220CBB047BB92D4524E8D950865484A Parms{};
 
@@ -161,10 +147,8 @@ void UGA_GenericSingleFire_C::OnCostCheckFailed_2220CBB047BB92D4524E8D950865484A
 
 void UGA_GenericSingleFire_C::OnFinish_034E95FB421434F06CDA9A89213525F9()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericSingleFire_C", "OnFinish_034E95FB421434F06CDA9A89213525F9");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFinish_034E95FB421434F06CDA9A89213525F9", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -175,10 +159,8 @@ void UGA_GenericSingleFire_C::OnFinish_034E95FB421434F06CDA9A89213525F9()
 
 void UGA_GenericSingleFire_C::OnFinish_CBFA205B42B565A5FB1AC9AEC2BFB0A9()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericSingleFire_C", "OnFinish_CBFA205B42B565A5FB1AC9AEC2BFB0A9");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFinish_CBFA205B42B565A5FB1AC9AEC2BFB0A9", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -191,10 +173,8 @@ void UGA_GenericSingleFire_C::OnFinish_CBFA205B42B565A5FB1AC9AEC2BFB0A9()
 
 void UGA_GenericSingleFire_C::OnFppMontageBlendOut_B1E1E9F340FBFC71E52E289425F5E751(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericSingleFire_C", "OnFppMontageBlendOut_B1E1E9F340FBFC71E52E289425F5E751");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageBlendOut_B1E1E9F340FBFC71E52E289425F5E751", FnName));
 
 	Params::GA_GenericSingleFire_C_OnFppMontageBlendOut_B1E1E9F340FBFC71E52E289425F5E751 Parms{};
 
@@ -211,10 +191,8 @@ void UGA_GenericSingleFire_C::OnFppMontageBlendOut_B1E1E9F340FBFC71E52E289425F5E
 
 void UGA_GenericSingleFire_C::OnFppMontageBlendOut_FDDBB4E34BD7FC4A4E8DF4933B401C9F(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericSingleFire_C", "OnFppMontageBlendOut_FDDBB4E34BD7FC4A4E8DF4933B401C9F");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageBlendOut_FDDBB4E34BD7FC4A4E8DF4933B401C9F", FnName));
 
 	Params::GA_GenericSingleFire_C_OnFppMontageBlendOut_FDDBB4E34BD7FC4A4E8DF4933B401C9F Parms{};
 
@@ -231,10 +209,8 @@ void UGA_GenericSingleFire_C::OnFppMontageBlendOut_FDDBB4E34BD7FC4A4E8DF4933B401
 
 void UGA_GenericSingleFire_C::OnFppMontageEnded_B1E1E9F340FBFC71E52E289425F5E751(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericSingleFire_C", "OnFppMontageEnded_B1E1E9F340FBFC71E52E289425F5E751");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageEnded_B1E1E9F340FBFC71E52E289425F5E751", FnName));
 
 	Params::GA_GenericSingleFire_C_OnFppMontageEnded_B1E1E9F340FBFC71E52E289425F5E751 Parms{};
 
@@ -251,10 +227,8 @@ void UGA_GenericSingleFire_C::OnFppMontageEnded_B1E1E9F340FBFC71E52E289425F5E751
 
 void UGA_GenericSingleFire_C::OnFppMontageEnded_FDDBB4E34BD7FC4A4E8DF4933B401C9F(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericSingleFire_C", "OnFppMontageEnded_FDDBB4E34BD7FC4A4E8DF4933B401C9F");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageEnded_FDDBB4E34BD7FC4A4E8DF4933B401C9F", FnName));
 
 	Params::GA_GenericSingleFire_C_OnFppMontageEnded_FDDBB4E34BD7FC4A4E8DF4933B401C9F Parms{};
 
@@ -271,10 +245,8 @@ void UGA_GenericSingleFire_C::OnFppMontageEnded_FDDBB4E34BD7FC4A4E8DF4933B401C9F
 
 void UGA_GenericSingleFire_C::OnFppMontageNotifyBegin_B1E1E9F340FBFC71E52E289425F5E751(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericSingleFire_C", "OnFppMontageNotifyBegin_B1E1E9F340FBFC71E52E289425F5E751");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageNotifyBegin_B1E1E9F340FBFC71E52E289425F5E751", FnName));
 
 	Params::GA_GenericSingleFire_C_OnFppMontageNotifyBegin_B1E1E9F340FBFC71E52E289425F5E751 Parms{};
 
@@ -291,10 +263,8 @@ void UGA_GenericSingleFire_C::OnFppMontageNotifyBegin_B1E1E9F340FBFC71E52E289425
 
 void UGA_GenericSingleFire_C::OnFppMontageNotifyBegin_FDDBB4E34BD7FC4A4E8DF4933B401C9F(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericSingleFire_C", "OnFppMontageNotifyBegin_FDDBB4E34BD7FC4A4E8DF4933B401C9F");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageNotifyBegin_FDDBB4E34BD7FC4A4E8DF4933B401C9F", FnName));
 
 	Params::GA_GenericSingleFire_C_OnFppMontageNotifyBegin_FDDBB4E34BD7FC4A4E8DF4933B401C9F Parms{};
 
@@ -311,10 +281,8 @@ void UGA_GenericSingleFire_C::OnFppMontageNotifyBegin_FDDBB4E34BD7FC4A4E8DF4933B
 
 void UGA_GenericSingleFire_C::OnFppMontageNotifyEnd_B1E1E9F340FBFC71E52E289425F5E751(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericSingleFire_C", "OnFppMontageNotifyEnd_B1E1E9F340FBFC71E52E289425F5E751");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageNotifyEnd_B1E1E9F340FBFC71E52E289425F5E751", FnName));
 
 	Params::GA_GenericSingleFire_C_OnFppMontageNotifyEnd_B1E1E9F340FBFC71E52E289425F5E751 Parms{};
 
@@ -331,10 +299,8 @@ void UGA_GenericSingleFire_C::OnFppMontageNotifyEnd_B1E1E9F340FBFC71E52E289425F5
 
 void UGA_GenericSingleFire_C::OnFppMontageNotifyEnd_FDDBB4E34BD7FC4A4E8DF4933B401C9F(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericSingleFire_C", "OnFppMontageNotifyEnd_FDDBB4E34BD7FC4A4E8DF4933B401C9F");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageNotifyEnd_FDDBB4E34BD7FC4A4E8DF4933B401C9F", FnName));
 
 	Params::GA_GenericSingleFire_C_OnFppMontageNotifyEnd_FDDBB4E34BD7FC4A4E8DF4933B401C9F Parms{};
 
@@ -351,10 +317,8 @@ void UGA_GenericSingleFire_C::OnFppMontageNotifyEnd_FDDBB4E34BD7FC4A4E8DF4933B40
 
 void UGA_GenericSingleFire_C::OnInterrupted_B1E1E9F340FBFC71E52E289425F5E751(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericSingleFire_C", "OnInterrupted_B1E1E9F340FBFC71E52E289425F5E751");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnInterrupted_B1E1E9F340FBFC71E52E289425F5E751", FnName));
 
 	Params::GA_GenericSingleFire_C_OnInterrupted_B1E1E9F340FBFC71E52E289425F5E751 Parms{};
 
@@ -371,10 +335,8 @@ void UGA_GenericSingleFire_C::OnInterrupted_B1E1E9F340FBFC71E52E289425F5E751(cla
 
 void UGA_GenericSingleFire_C::OnInterrupted_FDDBB4E34BD7FC4A4E8DF4933B401C9F(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericSingleFire_C", "OnInterrupted_FDDBB4E34BD7FC4A4E8DF4933B401C9F");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnInterrupted_FDDBB4E34BD7FC4A4E8DF4933B401C9F", FnName));
 
 	Params::GA_GenericSingleFire_C_OnInterrupted_FDDBB4E34BD7FC4A4E8DF4933B401C9F Parms{};
 
@@ -391,10 +353,8 @@ void UGA_GenericSingleFire_C::OnInterrupted_FDDBB4E34BD7FC4A4E8DF4933B401C9F(cla
 
 void UGA_GenericSingleFire_C::OnNotLocallyControlledTppMontageBlendOut_B1E1E9F340FBFC71E52E289425F5E751(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericSingleFire_C", "OnNotLocallyControlledTppMontageBlendOut_B1E1E9F340FBFC71E52E289425F5E751");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnNotLocallyControlledTppMontageBlendOut_B1E1E9F340FBFC71E52E289425F5E751", FnName));
 
 	Params::GA_GenericSingleFire_C_OnNotLocallyControlledTppMontageBlendOut_B1E1E9F340FBFC71E52E289425F5E751 Parms{};
 
@@ -411,10 +371,8 @@ void UGA_GenericSingleFire_C::OnNotLocallyControlledTppMontageBlendOut_B1E1E9F34
 
 void UGA_GenericSingleFire_C::OnNotLocallyControlledTppMontageBlendOut_FDDBB4E34BD7FC4A4E8DF4933B401C9F(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericSingleFire_C", "OnNotLocallyControlledTppMontageBlendOut_FDDBB4E34BD7FC4A4E8DF4933B401C9F");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnNotLocallyControlledTppMontageBlendOut_FDDBB4E34BD7FC4A4E8DF4933B401C9F", FnName));
 
 	Params::GA_GenericSingleFire_C_OnNotLocallyControlledTppMontageBlendOut_FDDBB4E34BD7FC4A4E8DF4933B401C9F Parms{};
 
@@ -432,10 +390,8 @@ void UGA_GenericSingleFire_C::OnNotLocallyControlledTppMontageBlendOut_FDDBB4E34
 
 void UGA_GenericSingleFire_C::OnPressed_2220CBB047BB92D4524E8D950865484A(float TimeHeld, bool bEnded)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericSingleFire_C", "OnPressed_2220CBB047BB92D4524E8D950865484A");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPressed_2220CBB047BB92D4524E8D950865484A", FnName));
 
 	Params::GA_GenericSingleFire_C_OnPressed_2220CBB047BB92D4524E8D950865484A Parms{};
 
@@ -454,10 +410,8 @@ void UGA_GenericSingleFire_C::OnPressed_2220CBB047BB92D4524E8D950865484A(float T
 
 void UGA_GenericSingleFire_C::OnRelease_2220CBB047BB92D4524E8D950865484A(float TimeHeld, bool bEnded)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericSingleFire_C", "OnRelease_2220CBB047BB92D4524E8D950865484A");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnRelease_2220CBB047BB92D4524E8D950865484A", FnName));
 
 	Params::GA_GenericSingleFire_C_OnRelease_2220CBB047BB92D4524E8D950865484A Parms{};
 
@@ -477,10 +431,8 @@ void UGA_GenericSingleFire_C::OnRelease_2220CBB047BB92D4524E8D950865484A(float T
 
 void UGA_GenericSingleFire_C::OnServerTraceResult(const struct FAuTargetData& OutHits, const TArray<struct FHitResult>& RawHits, bool bServerConfirmed)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericSingleFire_C", "OnServerTraceResult");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnServerTraceResult", FnName));
 
 	Params::GA_GenericSingleFire_C_OnServerTraceResult Parms{};
 
@@ -500,10 +452,8 @@ void UGA_GenericSingleFire_C::OnServerTraceResult(const struct FAuTargetData& Ou
 
 void UGA_GenericSingleFire_C::ShootCooldownEnd_2220CBB047BB92D4524E8D950865484A(float TimeHeld, bool bEnded)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericSingleFire_C", "ShootCooldownEnd_2220CBB047BB92D4524E8D950865484A");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ShootCooldownEnd_2220CBB047BB92D4524E8D950865484A", FnName));
 
 	Params::GA_GenericSingleFire_C_ShootCooldownEnd_2220CBB047BB92D4524E8D950865484A Parms{};
 
@@ -522,10 +472,8 @@ void UGA_GenericSingleFire_C::ShootCooldownEnd_2220CBB047BB92D4524E8D950865484A(
 
 void UGA_GenericSingleFire_C::CreateTraceDataBasedOnConfig(const struct FAuCustomTargetHandle& InCustomTargetHandle, struct FAuCustomTraceDataHandle* OutTraceData) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_GenericSingleFire_C", "CreateTraceDataBasedOnConfig");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"CreateTraceDataBasedOnConfig", FnName));
 
 	Params::GA_GenericSingleFire_C_CreateTraceDataBasedOnConfig Parms{};
 

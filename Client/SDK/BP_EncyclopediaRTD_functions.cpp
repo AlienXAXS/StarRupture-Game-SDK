@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UBP_EncyclopediaRTD_C::ExecuteUbergraph_BP_EncyclopediaRTD(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_EncyclopediaRTD_C", "ExecuteUbergraph_BP_EncyclopediaRTD");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_EncyclopediaRTD_C", "ExecuteUbergraph_BP_EncyclopediaRTD", FuncInfo);
 
 	Params::BP_EncyclopediaRTD_C_ExecuteUbergraph_BP_EncyclopediaRTD Parms{};
 
@@ -43,10 +41,8 @@ void UBP_EncyclopediaRTD_C::ExecuteUbergraph_BP_EncyclopediaRTD(int32 EntryPoint
 
 void UBP_EncyclopediaRTD_C::RichTextBlockClickHyperlinkBP(const class FString& ID)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_EncyclopediaRTD_C", "RichTextBlockClickHyperlinkBP");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"RichTextBlockClickHyperlinkBP", FnName));
 
 	Params::BP_EncyclopediaRTD_C_RichTextBlockClickHyperlinkBP Parms{};
 

@@ -53,10 +53,9 @@ DUMPER7_ASSERTS_UKismetProceduralMeshLibrary;
 // Class ProceduralMeshComponent.ProceduralMeshComponent
 // 0x0080 (0x0600 - 0x0580)
 #pragma pack(push, 0x1)
-class SDK_ALIGN(0x10) UProceduralMeshComponent : public UMeshComponent
+class SDK_ALIGN(0x10) UProceduralMeshComponent : public UMeshComponent, public IInterface_CollisionDataProvider
 {
 public:
-	uint8                                         Pad_578[0x8];                                      // 0x0578(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	bool                                          bUseComplexAsSimpleCollision;                      // 0x0580(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bUseAsyncCooking;                                  // 0x0581(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_582[0x6];                                      // 0x0582(0x0006)(Fixing Size After Last Property [ Dumper-7 ])

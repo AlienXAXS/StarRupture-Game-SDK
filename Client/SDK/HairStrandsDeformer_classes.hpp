@@ -17,6 +17,29 @@
 
 SDK_NAMESPACE_START
 
+// Class HairStrandsDeformer.OptimusGroomMeshesReadDataProvider
+// 0x0008 (0x0030 - 0x0028)
+class UOptimusGroomMeshesReadDataProvider final : public UComputeDataProvider
+{
+public:
+	class UMeshComponent*                         MeshComponent;                                     // 0x0028(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("OptimusGroomMeshesReadDataProvider")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"OptimusGroomMeshesReadDataProvider")
+	}
+	static class UOptimusGroomMeshesReadDataProvider* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UOptimusGroomMeshesReadDataProvider>();
+	}
+};
+DUMPER7_ASSERTS_UOptimusGroomMeshesReadDataProvider;
+
 // Class HairStrandsDeformer.OptimusGroomAttributeReadDataInterface
 // 0x0028 (0x0050 - 0x0028)
 class UOptimusGroomAttributeReadDataInterface final : public UOptimusComputeDataInterface
@@ -72,10 +95,9 @@ DUMPER7_ASSERTS_UOptimusGroomAttributeReadDataProvider;
 
 // Class HairStrandsDeformer.OptimusGroomExecDataInterface
 // 0x0010 (0x0038 - 0x0028)
-class UOptimusGroomExecDataInterface final : public UOptimusComputeDataInterface
+class UOptimusGroomExecDataInterface final : public UOptimusComputeDataInterface, public IOptimusDeprecatedExecutionDataInterface
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	EOptimusGroomExecDomain                       Domain;                                            // 0x0030(0x0001)(Edit, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
@@ -119,6 +141,29 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UOptimusGroomExecDataProvider;
+
+// Class HairStrandsDeformer.OptimusGroomGuidesReadDataProvider
+// 0x0008 (0x0030 - 0x0028)
+class UOptimusGroomGuidesReadDataProvider final : public UComputeDataProvider
+{
+public:
+	class UMeshComponent*                         MeshComponent;                                     // 0x0028(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("OptimusGroomGuidesReadDataProvider")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"OptimusGroomGuidesReadDataProvider")
+	}
+	static class UOptimusGroomGuidesReadDataProvider* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UOptimusGroomGuidesReadDataProvider>();
+	}
+};
+DUMPER7_ASSERTS_UOptimusGroomGuidesReadDataProvider;
 
 // Class HairStrandsDeformer.OptimusGroomAssetComponentSource
 // 0x0000 (0x0028 - 0x0028)
@@ -179,29 +224,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UOptimusGroomGuidesReadDataInterface;
-
-// Class HairStrandsDeformer.OptimusGroomGuidesReadDataProvider
-// 0x0008 (0x0030 - 0x0028)
-class UOptimusGroomGuidesReadDataProvider final : public UComputeDataProvider
-{
-public:
-	class UMeshComponent*                         MeshComponent;                                     // 0x0028(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("OptimusGroomGuidesReadDataProvider")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"OptimusGroomGuidesReadDataProvider")
-	}
-	static class UOptimusGroomGuidesReadDataProvider* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UOptimusGroomGuidesReadDataProvider>();
-	}
-};
-DUMPER7_ASSERTS_UOptimusGroomGuidesReadDataProvider;
 
 // Class HairStrandsDeformer.OptimusGroomGuidesWriteDataInterface
 // 0x0000 (0x0028 - 0x0028)
@@ -267,29 +289,6 @@ public:
 };
 DUMPER7_ASSERTS_UOptimusGroomMeshesReadDataInterface;
 
-// Class HairStrandsDeformer.OptimusGroomMeshesReadDataProvider
-// 0x0008 (0x0030 - 0x0028)
-class UOptimusGroomMeshesReadDataProvider final : public UComputeDataProvider
-{
-public:
-	class UMeshComponent*                         MeshComponent;                                     // 0x0028(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("OptimusGroomMeshesReadDataProvider")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"OptimusGroomMeshesReadDataProvider")
-	}
-	static class UOptimusGroomMeshesReadDataProvider* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UOptimusGroomMeshesReadDataProvider>();
-	}
-};
-DUMPER7_ASSERTS_UOptimusGroomMeshesReadDataProvider;
-
 // Class HairStrandsDeformer.OptimusGroomSolverReadDataInterface
 // 0x0008 (0x0030 - 0x0028)
 class UOptimusGroomSolverReadDataInterface final : public UOptimusComputeDataInterface
@@ -315,10 +314,9 @@ DUMPER7_ASSERTS_UOptimusGroomSolverReadDataInterface;
 
 // Class HairStrandsDeformer.OptimusGroomSolverReadDataProvider
 // 0x0028 (0x0050 - 0x0028)
-class UOptimusGroomSolverReadDataProvider final : public UComputeDataProvider
+class UOptimusGroomSolverReadDataProvider final : public UComputeDataProvider, public IOptimusDeformerInstanceAccessor
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class UGroomSolverComponent*                  SolverComponent;                                   // 0x0030(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	class UOptimusDeformerInstance*               DeformerInstance;                                  // 0x0038(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	uint8                                         Pad_40[0x10];                                      // 0x0040(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])

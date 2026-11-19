@@ -27,10 +27,8 @@ SDK_NAMESPACE_START
 
 void UGA_UseEdibleItem_C::clamp(double ValueChange, const struct FGameplayAttribute& AttributeMin, const struct FGameplayAttribute& AttributeMax, const struct FGameplayAttribute& AttibuteCurrent, double* EndValue)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_UseEdibleItem_C", "clamp");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"clamp", FnName));
 
 	Params::GA_UseEdibleItem_C_clamp Parms{};
 
@@ -53,10 +51,8 @@ void UGA_UseEdibleItem_C::clamp(double ValueChange, const struct FGameplayAttrib
 
 void UGA_UseEdibleItem_C::ExecuteUbergraph_GA_UseEdibleItem(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_UseEdibleItem_C", "ExecuteUbergraph_GA_UseEdibleItem");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "GA_UseEdibleItem_C", "ExecuteUbergraph_GA_UseEdibleItem", FuncInfo);
 
 	Params::GA_UseEdibleItem_C_ExecuteUbergraph_GA_UseEdibleItem Parms{};
 
@@ -74,10 +70,8 @@ void UGA_UseEdibleItem_C::ExecuteUbergraph_GA_UseEdibleItem(int32 EntryPoint)
 
 void UGA_UseEdibleItem_C::GetAttributeValues(const struct FGameplayAttribute& AttributeValue, double* CurrentValue)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_UseEdibleItem_C", "GetAttributeValues");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetAttributeValues", FnName));
 
 	Params::GA_UseEdibleItem_C_GetAttributeValues Parms{};
 
@@ -99,10 +93,8 @@ void UGA_UseEdibleItem_C::GetAttributeValues(const struct FGameplayAttribute& At
 
 void UGA_UseEdibleItem_C::IsAttributeFull(const struct FGameplayAttribute& Attribute, double AttributeMaxVal, bool* IsFull)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_UseEdibleItem_C", "IsAttributeFull");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IsAttributeFull", FnName));
 
 	Params::GA_UseEdibleItem_C_IsAttributeFull Parms{};
 
@@ -123,10 +115,8 @@ void UGA_UseEdibleItem_C::IsAttributeFull(const struct FGameplayAttribute& Attri
 
 void UGA_UseEdibleItem_C::K2_ActivateAbilityFromEvent(const struct FGameplayEventData& EventData)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_UseEdibleItem_C", "K2_ActivateAbilityFromEvent");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_ActivateAbilityFromEvent", FnName));
 
 	Params::GA_UseEdibleItem_C_K2_ActivateAbilityFromEvent Parms{};
 
@@ -143,10 +133,8 @@ void UGA_UseEdibleItem_C::K2_ActivateAbilityFromEvent(const struct FGameplayEven
 
 void UGA_UseEdibleItem_C::K2_OnEndAbility(bool bWasCancelled)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_UseEdibleItem_C", "K2_OnEndAbility");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_OnEndAbility", FnName));
 
 	Params::GA_UseEdibleItem_C_K2_OnEndAbility Parms{};
 

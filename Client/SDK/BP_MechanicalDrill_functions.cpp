@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_MechanicalDrill_C::ExecuteUbergraph_BP_MechanicalDrill(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MechanicalDrill_C", "ExecuteUbergraph_BP_MechanicalDrill");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_MechanicalDrill_C", "ExecuteUbergraph_BP_MechanicalDrill", FuncInfo);
 
 	Params::BP_MechanicalDrill_C_ExecuteUbergraph_BP_MechanicalDrill Parms{};
 
@@ -43,10 +41,8 @@ void ABP_MechanicalDrill_C::ExecuteUbergraph_BP_MechanicalDrill(int32 EntryPoint
 
 void ABP_MechanicalDrill_C::OnBuildingStateChanged(ECrBuildingState InState)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MechanicalDrill_C", "OnBuildingStateChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBuildingStateChanged", FnName));
 
 	Params::BP_MechanicalDrill_C_OnBuildingStateChanged Parms{};
 
@@ -61,10 +57,8 @@ void ABP_MechanicalDrill_C::OnBuildingStateChanged(ECrBuildingState InState)
 
 void ABP_MechanicalDrill_C::OnConstructionFinished()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MechanicalDrill_C", "OnConstructionFinished");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnConstructionFinished", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -77,10 +71,8 @@ void ABP_MechanicalDrill_C::OnConstructionFinished()
 
 void ABP_MechanicalDrill_C::OnResourceDetected(TSubclassOf<class UCrItemDataBase> OreItemClass)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MechanicalDrill_C", "OnResourceDetected");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnResourceDetected", FnName));
 
 	Params::BP_MechanicalDrill_C_OnResourceDetected Parms{};
 
@@ -95,10 +87,8 @@ void ABP_MechanicalDrill_C::OnResourceDetected(TSubclassOf<class UCrItemDataBase
 
 void ABP_MechanicalDrill_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MechanicalDrill_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

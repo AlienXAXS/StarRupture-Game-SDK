@@ -21,9 +21,12 @@
 SDK_NAMESPACE_START
 
 // Class GameFeatures.GameFeatureStateChangeObserver
-// 0x0000 (0x0000 - 0x0000)
-class IGameFeatureStateChangeObserver final
+// 0x0008 (0x0008 - 0x0000)
+class IGameFeatureStateChangeObserver
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -331,10 +334,10 @@ DUMPER7_ASSERTS_UGameFeatureData;
 
 // Class GameFeatures.GameFeatureOptionalContentInstaller
 // 0x0248 (0x0270 - 0x0028)
-class UGameFeatureOptionalContentInstaller final : public UObject
+class UGameFeatureOptionalContentInstaller final : public UObject, public IGameFeatureStateChangeObserver
 {
 public:
-	uint8                                         Pad_28[0x248];                                     // 0x0028(0x0248)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x240];                                     // 0x0030(0x0240)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

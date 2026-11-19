@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UGE_CamEffect_Oil_Heat_C::ExecuteUbergraph_GE_CamEffect_Oil_Heat(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GE_CamEffect_Oil_Heat_C", "ExecuteUbergraph_GE_CamEffect_Oil_Heat");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "GE_CamEffect_Oil_Heat_C", "ExecuteUbergraph_GE_CamEffect_Oil_Heat", FuncInfo);
 
 	Params::GE_CamEffect_Oil_Heat_C_ExecuteUbergraph_GE_CamEffect_Oil_Heat Parms{};
 
@@ -45,10 +43,8 @@ void UGE_CamEffect_Oil_Heat_C::ExecuteUbergraph_GE_CamEffect_Oil_Heat(int32 Entr
 
 void UGE_CamEffect_Oil_Heat_C::OnAttributeChanged_6285D4F0460E0CE66EC59FBF0D9F2E01(const struct FGameplayAttribute& Attribute, float NewValue, float OldValue)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GE_CamEffect_Oil_Heat_C", "OnAttributeChanged_6285D4F0460E0CE66EC59FBF0D9F2E01");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnAttributeChanged_6285D4F0460E0CE66EC59FBF0D9F2E01", FnName));
 
 	Params::GE_CamEffect_Oil_Heat_C_OnAttributeChanged_6285D4F0460E0CE66EC59FBF0D9F2E01 Parms{};
 
@@ -69,10 +65,8 @@ void UGE_CamEffect_Oil_Heat_C::OnAttributeChanged_6285D4F0460E0CE66EC59FBF0D9F2E
 
 void UGE_CamEffect_Oil_Heat_C::OnInitialized(class UAbilitySystemComponent* AbilitySystemComponent, TSubclassOf<class UGameplayEffect> GameplayEffect, class USceneComponent* OwnerRootComponent)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GE_CamEffect_Oil_Heat_C", "OnInitialized");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnInitialized", FnName));
 
 	Params::GE_CamEffect_Oil_Heat_C_OnInitialized Parms{};
 

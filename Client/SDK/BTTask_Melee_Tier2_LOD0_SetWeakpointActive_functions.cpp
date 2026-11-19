@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UBTTask_Melee_Tier2_LOD0_SetWeakpointActive_C::ExecuteUbergraph_BTTask_Melee_Tier2_LOD0_SetWeakpointActive(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTTask_Melee_Tier2_LOD0_SetWeakpointActive_C", "ExecuteUbergraph_BTTask_Melee_Tier2_LOD0_SetWeakpointActive");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BTTask_Melee_Tier2_LOD0_SetWeakpointActive_C", "ExecuteUbergraph_BTTask_Melee_Tier2_LOD0_SetWeakpointActive", FuncInfo);
 
 	Params::BTTask_Melee_Tier2_LOD0_SetWeakpointActive_C_ExecuteUbergraph_BTTask_Melee_Tier2_LOD0_SetWeakpointActive Parms{};
 
@@ -44,10 +42,8 @@ void UBTTask_Melee_Tier2_LOD0_SetWeakpointActive_C::ExecuteUbergraph_BTTask_Mele
 
 void UBTTask_Melee_Tier2_LOD0_SetWeakpointActive_C::ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTTask_Melee_Tier2_LOD0_SetWeakpointActive_C", "ReceiveExecuteAI");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveExecuteAI", FnName));
 
 	Params::BTTask_Melee_Tier2_LOD0_SetWeakpointActive_C_ReceiveExecuteAI Parms{};
 

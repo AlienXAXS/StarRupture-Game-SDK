@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UGA_RemovingTemperatureFromBuildingEnd_C::ExecuteUbergraph_GA_RemovingTemperatureFromBuildingEnd(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_RemovingTemperatureFromBuildingEnd_C", "ExecuteUbergraph_GA_RemovingTemperatureFromBuildingEnd");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "GA_RemovingTemperatureFromBuildingEnd_C", "ExecuteUbergraph_GA_RemovingTemperatureFromBuildingEnd", FuncInfo);
 
 	Params::GA_RemovingTemperatureFromBuildingEnd_C_ExecuteUbergraph_GA_RemovingTemperatureFromBuildingEnd Parms{};
 
@@ -41,10 +39,8 @@ void UGA_RemovingTemperatureFromBuildingEnd_C::ExecuteUbergraph_GA_RemovingTempe
 
 void UGA_RemovingTemperatureFromBuildingEnd_C::K2_ActivateAbility()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_RemovingTemperatureFromBuildingEnd_C", "K2_ActivateAbility");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_ActivateAbility", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -57,10 +53,8 @@ void UGA_RemovingTemperatureFromBuildingEnd_C::K2_ActivateAbility()
 
 void UGA_RemovingTemperatureFromBuildingEnd_C::OnCancelled_C22D93BE9F4555EB078547BCF0D735B9(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_RemovingTemperatureFromBuildingEnd_C", "OnCancelled_C22D93BE9F4555EB078547BCF0D735B9");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnCancelled_C22D93BE9F4555EB078547BCF0D735B9", FnName));
 
 	Params::GA_RemovingTemperatureFromBuildingEnd_C_OnCancelled_C22D93BE9F4555EB078547BCF0D735B9 Parms{};
 
@@ -77,10 +71,8 @@ void UGA_RemovingTemperatureFromBuildingEnd_C::OnCancelled_C22D93BE9F4555EB07854
 
 void UGA_RemovingTemperatureFromBuildingEnd_C::OnFppMontageBlendOut_C22D93BE9F4555EB078547BCF0D735B9(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_RemovingTemperatureFromBuildingEnd_C", "OnFppMontageBlendOut_C22D93BE9F4555EB078547BCF0D735B9");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageBlendOut_C22D93BE9F4555EB078547BCF0D735B9", FnName));
 
 	Params::GA_RemovingTemperatureFromBuildingEnd_C_OnFppMontageBlendOut_C22D93BE9F4555EB078547BCF0D735B9 Parms{};
 
@@ -97,10 +89,8 @@ void UGA_RemovingTemperatureFromBuildingEnd_C::OnFppMontageBlendOut_C22D93BE9F45
 
 void UGA_RemovingTemperatureFromBuildingEnd_C::OnFppMontageEnded_C22D93BE9F4555EB078547BCF0D735B9(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_RemovingTemperatureFromBuildingEnd_C", "OnFppMontageEnded_C22D93BE9F4555EB078547BCF0D735B9");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageEnded_C22D93BE9F4555EB078547BCF0D735B9", FnName));
 
 	Params::GA_RemovingTemperatureFromBuildingEnd_C_OnFppMontageEnded_C22D93BE9F4555EB078547BCF0D735B9 Parms{};
 
@@ -117,10 +107,8 @@ void UGA_RemovingTemperatureFromBuildingEnd_C::OnFppMontageEnded_C22D93BE9F4555E
 
 void UGA_RemovingTemperatureFromBuildingEnd_C::OnFppMontageNotifyBegin_C22D93BE9F4555EB078547BCF0D735B9(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_RemovingTemperatureFromBuildingEnd_C", "OnFppMontageNotifyBegin_C22D93BE9F4555EB078547BCF0D735B9");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageNotifyBegin_C22D93BE9F4555EB078547BCF0D735B9", FnName));
 
 	Params::GA_RemovingTemperatureFromBuildingEnd_C_OnFppMontageNotifyBegin_C22D93BE9F4555EB078547BCF0D735B9 Parms{};
 
@@ -137,10 +125,8 @@ void UGA_RemovingTemperatureFromBuildingEnd_C::OnFppMontageNotifyBegin_C22D93BE9
 
 void UGA_RemovingTemperatureFromBuildingEnd_C::OnFppMontageNotifyEnd_C22D93BE9F4555EB078547BCF0D735B9(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_RemovingTemperatureFromBuildingEnd_C", "OnFppMontageNotifyEnd_C22D93BE9F4555EB078547BCF0D735B9");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnFppMontageNotifyEnd_C22D93BE9F4555EB078547BCF0D735B9", FnName));
 
 	Params::GA_RemovingTemperatureFromBuildingEnd_C_OnFppMontageNotifyEnd_C22D93BE9F4555EB078547BCF0D735B9 Parms{};
 
@@ -157,10 +143,8 @@ void UGA_RemovingTemperatureFromBuildingEnd_C::OnFppMontageNotifyEnd_C22D93BE9F4
 
 void UGA_RemovingTemperatureFromBuildingEnd_C::OnInterrupted_C22D93BE9F4555EB078547BCF0D735B9(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_RemovingTemperatureFromBuildingEnd_C", "OnInterrupted_C22D93BE9F4555EB078547BCF0D735B9");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnInterrupted_C22D93BE9F4555EB078547BCF0D735B9", FnName));
 
 	Params::GA_RemovingTemperatureFromBuildingEnd_C_OnInterrupted_C22D93BE9F4555EB078547BCF0D735B9 Parms{};
 
@@ -177,10 +161,8 @@ void UGA_RemovingTemperatureFromBuildingEnd_C::OnInterrupted_C22D93BE9F4555EB078
 
 void UGA_RemovingTemperatureFromBuildingEnd_C::OnNotLocallyControlledTppMontageBlendOut_C22D93BE9F4555EB078547BCF0D735B9(class FName NotifyName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GA_RemovingTemperatureFromBuildingEnd_C", "OnNotLocallyControlledTppMontageBlendOut_C22D93BE9F4555EB078547BCF0D735B9");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnNotLocallyControlledTppMontageBlendOut_C22D93BE9F4555EB078547BCF0D735B9", FnName));
 
 	Params::GA_RemovingTemperatureFromBuildingEnd_C_OnNotLocallyControlledTppMontageBlendOut_C22D93BE9F4555EB078547BCF0D735B9 Parms{};
 

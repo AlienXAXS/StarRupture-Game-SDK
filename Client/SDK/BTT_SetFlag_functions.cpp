@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UBTT_SetFlag_C::ExecuteUbergraph_BTT_SetFlag(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTT_SetFlag_C", "ExecuteUbergraph_BTT_SetFlag");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BTT_SetFlag_C", "ExecuteUbergraph_BTT_SetFlag", FuncInfo);
 
 	Params::BTT_SetFlag_C_ExecuteUbergraph_BTT_SetFlag Parms{};
 
@@ -44,10 +42,8 @@ void UBTT_SetFlag_C::ExecuteUbergraph_BTT_SetFlag(int32 EntryPoint)
 
 void UBTT_SetFlag_C::ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTT_SetFlag_C", "ReceiveExecuteAI");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveExecuteAI", FnName));
 
 	Params::BTT_SetFlag_C_ReceiveExecuteAI Parms{};
 

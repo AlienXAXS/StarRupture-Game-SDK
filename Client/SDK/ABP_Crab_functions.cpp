@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UABP_Crab_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Crab_C", "AnimGraph");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimGraph", FnName));
 
 	Params::ABP_Crab_C_AnimGraph Parms{};
 
@@ -42,10 +40,8 @@ void UABP_Crab_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 
 void UABP_Crab_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraphNode_TransitionResult_2495E587484B66035345C7AC5EAA4F74()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Crab_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraphNode_TransitionResult_2495E587484B66035345C7AC5EAA4F74");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraphNode_TransitionResult_2495E587484B66035345C7AC5EAA4F74", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -56,10 +52,8 @@ void UABP_Crab_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraph
 
 void UABP_Crab_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraphNode_TransitionResult_2698D1E144DB7D6840F34883A3156DEC()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Crab_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraphNode_TransitionResult_2698D1E144DB7D6840F34883A3156DEC");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraphNode_TransitionResult_2698D1E144DB7D6840F34883A3156DEC", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -70,10 +64,8 @@ void UABP_Crab_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraph
 
 void UABP_Crab_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraphNode_TransitionResult_4A5AC1544A98FB586DBB42A51278C2C7()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Crab_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraphNode_TransitionResult_4A5AC1544A98FB586DBB42A51278C2C7");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraphNode_TransitionResult_4A5AC1544A98FB586DBB42A51278C2C7", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -84,10 +76,8 @@ void UABP_Crab_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraph
 
 void UABP_Crab_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraphNode_TransitionResult_72B162C84ECE46E70D9FE588B6A895FC()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Crab_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraphNode_TransitionResult_72B162C84ECE46E70D9FE588B6A895FC");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraphNode_TransitionResult_72B162C84ECE46E70D9FE588B6A895FC", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -98,10 +88,8 @@ void UABP_Crab_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraph
 
 void UABP_Crab_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraphNode_TransitionResult_7E2D042C4E7C7DB1048695B879644912()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Crab_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraphNode_TransitionResult_7E2D042C4E7C7DB1048695B879644912");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraphNode_TransitionResult_7E2D042C4E7C7DB1048695B879644912", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -112,10 +100,8 @@ void UABP_Crab_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraph
 
 void UABP_Crab_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraphNode_TransitionResult_8458F6C544DBBA59ED07DA9D15FB85AC()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Crab_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraphNode_TransitionResult_8458F6C544DBBA59ED07DA9D15FB85AC");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraphNode_TransitionResult_8458F6C544DBBA59ED07DA9D15FB85AC", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -126,10 +112,8 @@ void UABP_Crab_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraph
 
 void UABP_Crab_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraphNode_TransitionResult_B2351E1A43B9D50EFC128D913BB8394F()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Crab_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraphNode_TransitionResult_B2351E1A43B9D50EFC128D913BB8394F");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraphNode_TransitionResult_B2351E1A43B9D50EFC128D913BB8394F", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -140,10 +124,8 @@ void UABP_Crab_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraph
 
 void UABP_Crab_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraphNode_TransitionResult_D67F807E4D33B7DFAE83C6A19BB2CED7()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Crab_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraphNode_TransitionResult_D67F807E4D33B7DFAE83C6A19BB2CED7");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraphNode_TransitionResult_D67F807E4D33B7DFAE83C6A19BB2CED7", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -154,10 +136,8 @@ void UABP_Crab_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraph
 
 void UABP_Crab_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraphNode_TransitionResult_D6FE547C421C0BA5A4047297F8FFBFBB()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Crab_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraphNode_TransitionResult_D6FE547C421C0BA5A4047297F8FFBFBB");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraphNode_TransitionResult_D6FE547C421C0BA5A4047297F8FFBFBB", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -168,10 +148,8 @@ void UABP_Crab_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraph
 
 void UABP_Crab_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraphNode_TransitionResult_F0852B29432567011AA1F48ECBC2C008()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Crab_C", "EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraphNode_TransitionResult_F0852B29432567011AA1F48ECBC2C008");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraphNode_TransitionResult_F0852B29432567011AA1F48ECBC2C008", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -184,10 +162,8 @@ void UABP_Crab_C::EvaluateGraphExposedInputs_ExecuteUbergraph_ABP_Crab_AnimGraph
 
 void UABP_Crab_C::ExecuteUbergraph_ABP_Crab(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Crab_C", "ExecuteUbergraph_ABP_Crab");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "ABP_Crab_C", "ExecuteUbergraph_ABP_Crab", FuncInfo);
 
 	Params::ABP_Crab_C_ExecuteUbergraph_ABP_Crab Parms{};
 

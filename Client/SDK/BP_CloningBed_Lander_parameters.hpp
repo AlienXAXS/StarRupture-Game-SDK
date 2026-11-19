@@ -14,6 +14,15 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
+// Function BP_CloningBed_Lander.BP_CloningBed_Lander_C.ExecuteUbergraph_BP_CloningBed_Lander
+// 0x0004 (0x0004 - 0x0000)
+struct BP_CloningBed_Lander_C_ExecuteUbergraph_BP_CloningBed_Lander final
+{
+public:
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_CloningBed_Lander_C_ExecuteUbergraph_BP_CloningBed_Lander;
+
 // Function BP_CloningBed_Lander.BP_CloningBed_Lander_C.K2_GetInteractionActionText
 // 0x0010 (0x0010 - 0x0000)
 struct BP_CloningBed_Lander_C_K2_GetInteractionActionText final

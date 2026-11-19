@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UABP_Armory_hier_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Armory_hier_C", "AnimGraph");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimGraph", FnName));
 
 	Params::ABP_Armory_hier_C_AnimGraph Parms{};
 
@@ -42,10 +40,8 @@ void UABP_Armory_hier_C::AnimGraph(struct FPoseLink* AnimGraph_0)
 
 void UABP_Armory_hier_C::AnimNotify_Left_arm_laser_1()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Armory_hier_C", "AnimNotify_Left_arm_laser_1");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_Left_arm_laser_1", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -56,10 +52,8 @@ void UABP_Armory_hier_C::AnimNotify_Left_arm_laser_1()
 
 void UABP_Armory_hier_C::AnimNotify_Left_arm_laser_2()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Armory_hier_C", "AnimNotify_Left_arm_laser_2");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_Left_arm_laser_2", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -70,10 +64,8 @@ void UABP_Armory_hier_C::AnimNotify_Left_arm_laser_2()
 
 void UABP_Armory_hier_C::AnimNotify_Left_arm_laser_3()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Armory_hier_C", "AnimNotify_Left_arm_laser_3");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_Left_arm_laser_3", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -84,10 +76,8 @@ void UABP_Armory_hier_C::AnimNotify_Left_arm_laser_3()
 
 void UABP_Armory_hier_C::AnimNotify_Left_arm_laser_4()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Armory_hier_C", "AnimNotify_Left_arm_laser_4");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_Left_arm_laser_4", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -98,10 +88,8 @@ void UABP_Armory_hier_C::AnimNotify_Left_arm_laser_4()
 
 void UABP_Armory_hier_C::AnimNotify_Right_arm_laser_1()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Armory_hier_C", "AnimNotify_Right_arm_laser_1");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_Right_arm_laser_1", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -112,10 +100,8 @@ void UABP_Armory_hier_C::AnimNotify_Right_arm_laser_1()
 
 void UABP_Armory_hier_C::AnimNotify_Right_arm_laser_2()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Armory_hier_C", "AnimNotify_Right_arm_laser_2");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_Right_arm_laser_2", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -126,10 +112,8 @@ void UABP_Armory_hier_C::AnimNotify_Right_arm_laser_2()
 
 void UABP_Armory_hier_C::AnimNotify_Right_arm_laser_3()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Armory_hier_C", "AnimNotify_Right_arm_laser_3");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_Right_arm_laser_3", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -140,10 +124,8 @@ void UABP_Armory_hier_C::AnimNotify_Right_arm_laser_3()
 
 void UABP_Armory_hier_C::AnimNotify_Right_arm_laser_4()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Armory_hier_C", "AnimNotify_Right_arm_laser_4");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AnimNotify_Right_arm_laser_4", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -154,10 +136,8 @@ void UABP_Armory_hier_C::AnimNotify_Right_arm_laser_4()
 
 void UABP_Armory_hier_C::BlueprintBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Armory_hier_C", "BlueprintBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BlueprintBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -170,10 +150,8 @@ void UABP_Armory_hier_C::BlueprintBeginPlay()
 
 void UABP_Armory_hier_C::ExecuteUbergraph_ABP_Armory_hier(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ABP_Armory_hier_C", "ExecuteUbergraph_ABP_Armory_hier");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "ABP_Armory_hier_C", "ExecuteUbergraph_ABP_Armory_hier", FuncInfo);
 
 	Params::ABP_Armory_hier_C_ExecuteUbergraph_ABP_Armory_hier Parms{};
 

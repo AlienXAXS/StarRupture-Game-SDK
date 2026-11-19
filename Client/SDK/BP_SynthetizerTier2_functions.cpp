@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_SynthetizerTier2_C::ExecuteUbergraph_BP_SynthetizerTier2(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SynthetizerTier2_C", "ExecuteUbergraph_BP_SynthetizerTier2");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_SynthetizerTier2_C", "ExecuteUbergraph_BP_SynthetizerTier2", FuncInfo);
 
 	Params::BP_SynthetizerTier2_C_ExecuteUbergraph_BP_SynthetizerTier2 Parms{};
 
@@ -43,10 +41,8 @@ void ABP_SynthetizerTier2_C::ExecuteUbergraph_BP_SynthetizerTier2(int32 EntryPoi
 
 void ABP_SynthetizerTier2_C::OnBuildingStateChanged(ECrBuildingState InState)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SynthetizerTier2_C", "OnBuildingStateChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBuildingStateChanged", FnName));
 
 	Params::BP_SynthetizerTier2_C_OnBuildingStateChanged Parms{};
 

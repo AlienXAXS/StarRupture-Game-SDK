@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void ABP_Melee_Tier3_LongAoE_SlamAttack_C::DecalDarkTimeline__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_LongAoE_SlamAttack_C", "DecalDarkTimeline__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"DecalDarkTimeline__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -35,10 +33,8 @@ void ABP_Melee_Tier3_LongAoE_SlamAttack_C::DecalDarkTimeline__FinishedFunc()
 
 void ABP_Melee_Tier3_LongAoE_SlamAttack_C::DecalDarkTimeline__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_LongAoE_SlamAttack_C", "DecalDarkTimeline__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"DecalDarkTimeline__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -49,10 +45,8 @@ void ABP_Melee_Tier3_LongAoE_SlamAttack_C::DecalDarkTimeline__UpdateFunc()
 
 void ABP_Melee_Tier3_LongAoE_SlamAttack_C::DecalLightTimeline__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_LongAoE_SlamAttack_C", "DecalLightTimeline__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"DecalLightTimeline__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -63,10 +57,8 @@ void ABP_Melee_Tier3_LongAoE_SlamAttack_C::DecalLightTimeline__FinishedFunc()
 
 void ABP_Melee_Tier3_LongAoE_SlamAttack_C::DecalLightTimeline__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_LongAoE_SlamAttack_C", "DecalLightTimeline__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"DecalLightTimeline__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -79,10 +71,8 @@ void ABP_Melee_Tier3_LongAoE_SlamAttack_C::DecalLightTimeline__UpdateFunc()
 
 void ABP_Melee_Tier3_LongAoE_SlamAttack_C::ExecuteUbergraph_BP_Melee_Tier3_LongAoE_SlamAttack(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_LongAoE_SlamAttack_C", "ExecuteUbergraph_BP_Melee_Tier3_LongAoE_SlamAttack");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Melee_Tier3_LongAoE_SlamAttack_C", "ExecuteUbergraph_BP_Melee_Tier3_LongAoE_SlamAttack", FuncInfo);
 
 	Params::BP_Melee_Tier3_LongAoE_SlamAttack_C_ExecuteUbergraph_BP_Melee_Tier3_LongAoE_SlamAttack Parms{};
 
@@ -97,10 +87,8 @@ void ABP_Melee_Tier3_LongAoE_SlamAttack_C::ExecuteUbergraph_BP_Melee_Tier3_LongA
 
 void ABP_Melee_Tier3_LongAoE_SlamAttack_C::FadeTimeline__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_LongAoE_SlamAttack_C", "FadeTimeline__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"FadeTimeline__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -111,10 +99,8 @@ void ABP_Melee_Tier3_LongAoE_SlamAttack_C::FadeTimeline__FinishedFunc()
 
 void ABP_Melee_Tier3_LongAoE_SlamAttack_C::FadeTimeline__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_LongAoE_SlamAttack_C", "FadeTimeline__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"FadeTimeline__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -125,10 +111,8 @@ void ABP_Melee_Tier3_LongAoE_SlamAttack_C::FadeTimeline__UpdateFunc()
 
 void ABP_Melee_Tier3_LongAoE_SlamAttack_C::LightFadeTimeline__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_LongAoE_SlamAttack_C", "LightFadeTimeline__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"LightFadeTimeline__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -139,10 +123,8 @@ void ABP_Melee_Tier3_LongAoE_SlamAttack_C::LightFadeTimeline__FinishedFunc()
 
 void ABP_Melee_Tier3_LongAoE_SlamAttack_C::LightFadeTimeline__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_LongAoE_SlamAttack_C", "LightFadeTimeline__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"LightFadeTimeline__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -153,10 +135,8 @@ void ABP_Melee_Tier3_LongAoE_SlamAttack_C::LightFadeTimeline__UpdateFunc()
 
 void ABP_Melee_Tier3_LongAoE_SlamAttack_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_LongAoE_SlamAttack_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

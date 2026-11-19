@@ -987,10 +987,8 @@ struct FSmartObjectClaimHandle USmartObjectBlueprintFunctionLibrary::SmartObject
 
 void USmartObjectComponent::ReceiveOnEvent(const struct FSmartObjectEventData& EventData, const class AActor* Interactor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("SmartObjectComponent", "ReceiveOnEvent");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveOnEvent", FnName));
 
 	Params::SmartObjectComponent_ReceiveOnEvent Parms{};
 

@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_CraftingRoundProgressBar_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CraftingRoundProgressBar_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -37,10 +35,8 @@ void UWBP_CraftingRoundProgressBar_C::Construct()
 
 void UWBP_CraftingRoundProgressBar_C::ExecuteUbergraph_WBP_CraftingRoundProgressBar(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CraftingRoundProgressBar_C", "ExecuteUbergraph_WBP_CraftingRoundProgressBar");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_CraftingRoundProgressBar_C", "ExecuteUbergraph_WBP_CraftingRoundProgressBar", FuncInfo);
 
 	Params::WBP_CraftingRoundProgressBar_C_ExecuteUbergraph_WBP_CraftingRoundProgressBar Parms{};
 
@@ -57,10 +53,8 @@ void UWBP_CraftingRoundProgressBar_C::ExecuteUbergraph_WBP_CraftingRoundProgress
 
 void UWBP_CraftingRoundProgressBar_C::PreConstruct(bool IsDesignTime)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CraftingRoundProgressBar_C", "PreConstruct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PreConstruct", FnName));
 
 	Params::WBP_CraftingRoundProgressBar_C_PreConstruct Parms{};
 
@@ -75,10 +69,8 @@ void UWBP_CraftingRoundProgressBar_C::PreConstruct(bool IsDesignTime)
 
 void UWBP_CraftingRoundProgressBar_C::SetBlackTint()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CraftingRoundProgressBar_C", "SetBlackTint");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetBlackTint", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -89,10 +81,8 @@ void UWBP_CraftingRoundProgressBar_C::SetBlackTint()
 
 void UWBP_CraftingRoundProgressBar_C::SetGreyTint()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CraftingRoundProgressBar_C", "SetGreyTint");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetGreyTint", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -105,10 +95,8 @@ void UWBP_CraftingRoundProgressBar_C::SetGreyTint()
 
 void UWBP_CraftingRoundProgressBar_C::SetProgressBrush(const struct FLinearColor& InColor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CraftingRoundProgressBar_C", "SetProgressBrush");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetProgressBrush", FnName));
 
 	Params::WBP_CraftingRoundProgressBar_C_SetProgressBrush Parms{};
 
@@ -125,10 +113,8 @@ void UWBP_CraftingRoundProgressBar_C::SetProgressBrush(const struct FLinearColor
 
 void UWBP_CraftingRoundProgressBar_C::SetProgressPercent(double ProgressPercentage)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CraftingRoundProgressBar_C", "SetProgressPercent");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetProgressPercent", FnName));
 
 	Params::WBP_CraftingRoundProgressBar_C_SetProgressPercent Parms{};
 
@@ -143,10 +129,8 @@ void UWBP_CraftingRoundProgressBar_C::SetProgressPercent(double ProgressPercenta
 
 void UWBP_CraftingRoundProgressBar_C::SetWhiteTint()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CraftingRoundProgressBar_C", "SetWhiteTint");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetWhiteTint", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -160,10 +144,8 @@ void UWBP_CraftingRoundProgressBar_C::SetWhiteTint()
 
 void UWBP_CraftingRoundProgressBar_C::Tick(const struct FGeometry& MyGeometry, float InDeltaTime)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CraftingRoundProgressBar_C", "Tick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Tick", FnName));
 
 	Params::WBP_CraftingRoundProgressBar_C_Tick Parms{};
 
@@ -179,10 +161,8 @@ void UWBP_CraftingRoundProgressBar_C::Tick(const struct FGeometry& MyGeometry, f
 
 void UWBP_CraftingRoundProgressBar_C::UpdateProgress()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CraftingRoundProgressBar_C", "UpdateProgress");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateProgress", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

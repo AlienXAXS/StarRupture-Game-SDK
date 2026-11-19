@@ -60,10 +60,9 @@ DUMPER7_ASSERTS_UMockDataMeshTrackerComponent;
 
 // Class MRMesh.MRMeshBodyHolder
 // 0x01F8 (0x0220 - 0x0028)
-class UMRMeshBodyHolder final : public UObject
+class UMRMeshBodyHolder final : public UObject, public IInterface_CollisionDataProvider
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class UBodySetup*                             BodySetup;                                         // 0x0030(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	struct FBodyInstance                          BodyInstance;                                      // 0x0038(0x0180)(Transient, NativeAccessSpecifierPublic)
 	uint8                                         Pad_1B8[0x68];                                     // 0x01B8(0x0068)(Fixing Struct Size After Last Property [ Dumper-7 ])

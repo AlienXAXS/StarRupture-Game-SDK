@@ -25,10 +25,8 @@ SDK_NAMESPACE_START
 
 bool UGC_Damage_Player_Acid_C::OnExecute(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GC_Damage_Player_Acid_C", "OnExecute");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnExecute", FnName));
 
 	Params::GC_Damage_Player_Acid_C_OnExecute Parms{};
 

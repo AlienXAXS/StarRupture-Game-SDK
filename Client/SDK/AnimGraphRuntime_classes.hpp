@@ -94,9 +94,12 @@ public:
 DUMPER7_ASSERTS_UBlendSpaceLibrary;
 
 // Class AnimGraphRuntime.SequencerAnimationOverride
-// 0x0000 (0x0000 - 0x0000)
-class ISequencerAnimationOverride final
+// 0x0008 (0x0008 - 0x0000)
+class ISequencerAnimationOverride
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	bool AllowsCinematicOverride() const;
 	TArray<class FName> GetSequencerAnimSlotNames() const;
@@ -158,9 +161,41 @@ public:
 };
 DUMPER7_ASSERTS_UAnimationStateMachineLibrary;
 
+// Class AnimGraphRuntime.SequencerAnimationSupport
+// 0x0008 (0x0008 - 0x0000)
+class ISequencerAnimationSupport
+{
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("SequencerAnimationSupport")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SequencerAnimationSupport")
+	}
+	static class ISequencerAnimationSupport* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ISequencerAnimationSupport>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_ISequencerAnimationSupport;
+
 // Class AnimGraphRuntime.AnimSequencerInstance
 // 0x0000 (0x0420 - 0x0420)
-class UAnimSequencerInstance final : public UAnimInstance
+class UAnimSequencerInstance final : public UAnimInstance, public ISequencerAnimationSupport
 {
 public:
 	static class UClass* StaticClass()
@@ -537,35 +572,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_USequencePlayerLibrary;
-
-// Class AnimGraphRuntime.SequencerAnimationSupport
-// 0x0000 (0x0000 - 0x0000)
-class ISequencerAnimationSupport final
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("SequencerAnimationSupport")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"SequencerAnimationSupport")
-	}
-	static class ISequencerAnimationSupport* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ISequencerAnimationSupport>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_ISequencerAnimationSupport;
 
 // Class AnimGraphRuntime.SkeletalControlLibrary
 // 0x0000 (0x0028 - 0x0028)

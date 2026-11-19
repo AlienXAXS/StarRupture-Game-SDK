@@ -162,15 +162,217 @@ class UCrAiActionExploderT3DigIn* UCrAiActionExploderT3DigIn::Create_CrAiActionE
 }
 
 
+// Function CrAiExploderRuntime.CrAiActionShootPreparedProjectile.Create_CrAiActionShootPreparedProjectile
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UCrAiActionShootPreparedProjectile>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class ACrAiProjectileActor> NewPooledProjectileType                                (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   NewStartLocation                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   NewEndLocation                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewArcParam                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewGravityOverride                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewShootVelocityVariance                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      NewProjectileSpawnMeshSlotName                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrEnemyAttackType                      NewAttackType                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UGameplayEffect>      NewDamageGameplayEffect                                (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewBuildingInfectionDamage                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewAllowedAttackDistance                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewAllowedAttackConeHalfAngle                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrAiActionShootPreparedProjectile*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrAiActionShootPreparedProjectile* UCrAiActionShootPreparedProjectile::Create_CrAiActionShootPreparedProjectile(TSubclassOf<class UCrAiActionShootPreparedProjectile> ActionType, float NewMaxLifetimeS, TSubclassOf<class ACrAiProjectileActor> NewPooledProjectileType, const struct FVector& NewStartLocation, const struct FVector& NewEndLocation, float NewArcParam, float NewGravityOverride, float NewShootVelocityVariance, const class FName& NewProjectileSpawnMeshSlotName, ECrEnemyAttackType NewAttackType, TSubclassOf<class UGameplayEffect> NewDamageGameplayEffect, float NewBuildingInfectionDamage, float NewAllowedAttackDistance, float NewAllowedAttackConeHalfAngle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrAiActionShootPreparedProjectile", "Create_CrAiActionShootPreparedProjectile");
+
+	Params::CrAiActionShootPreparedProjectile_Create_CrAiActionShootPreparedProjectile Parms{};
+
+	Parms.ActionType = ActionType;
+	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
+	Parms.NewPooledProjectileType = NewPooledProjectileType;
+	Parms.NewStartLocation = std::move(NewStartLocation);
+	Parms.NewEndLocation = std::move(NewEndLocation);
+	Parms.NewArcParam = NewArcParam;
+	Parms.NewGravityOverride = NewGravityOverride;
+	Parms.NewShootVelocityVariance = NewShootVelocityVariance;
+	Parms.NewProjectileSpawnMeshSlotName = NewProjectileSpawnMeshSlotName;
+	Parms.NewAttackType = NewAttackType;
+	Parms.NewDamageGameplayEffect = NewDamageGameplayEffect;
+	Parms.NewBuildingInfectionDamage = NewBuildingInfectionDamage;
+	Parms.NewAllowedAttackDistance = NewAllowedAttackDistance;
+	Parms.NewAllowedAttackConeHalfAngle = NewAllowedAttackConeHalfAngle;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CrAiExploderRuntime.CrAiActionShowProjectileAndPrepareForLaunch.Create_CrAiActionShowProjectileAndPrepareForLaunch
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UCrAiActionShowProjectileAndPrepareForLaunch>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class ACrAiProjectileActor> PooledProjectileType_0                                 (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      ProjectileAttachMeshSlotName_0                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrEnemyAttackType                      NewAttackType                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrAiActionShowProjectileAndPrepareForLaunch*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrAiActionShowProjectileAndPrepareForLaunch* UCrAiActionShowProjectileAndPrepareForLaunch::Create_CrAiActionShowProjectileAndPrepareForLaunch(TSubclassOf<class UCrAiActionShowProjectileAndPrepareForLaunch> ActionType, float NewMaxLifetimeS, TSubclassOf<class ACrAiProjectileActor> PooledProjectileType_0, const class FName& ProjectileAttachMeshSlotName_0, ECrEnemyAttackType NewAttackType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrAiActionShowProjectileAndPrepareForLaunch", "Create_CrAiActionShowProjectileAndPrepareForLaunch");
+
+	Params::CrAiActionShowProjectileAndPrepareForLaunch_Create_CrAiActionShowProjectileAndPrepareForLaunch Parms{};
+
+	Parms.ActionType = ActionType;
+	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
+	Parms.PooledProjectileType_0 = PooledProjectileType_0;
+	Parms.ProjectileAttachMeshSlotName_0 = ProjectileAttachMeshSlotName_0;
+	Parms.NewAttackType = NewAttackType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function CrAiExploderRuntime.CrAiActionShowProjectileAndPrepareForLaunch.OnAnimFinished
+// (Final, Native, Public)
+// Parameters:
+// class AActor*                           Actor                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrEnemyLocomotionType                  CrEnemyLocomotion                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrEnemyAttackType                      CrEnemyAttack                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrEnemyJumpState                       CrEnemyJumpState                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrAiActionShowProjectileAndPrepareForLaunch::OnAnimFinished(class AActor* Actor, ECrEnemyLocomotionType CrEnemyLocomotion, ECrEnemyAttackType CrEnemyAttack, ECrEnemyJumpState CrEnemyJumpState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrAiActionShowProjectileAndPrepareForLaunch", "OnAnimFinished");
+
+	Params::CrAiActionShowProjectileAndPrepareForLaunch_OnAnimFinished Parms{};
+
+	Parms.Actor = Actor;
+	Parms.CrEnemyLocomotion = CrEnemyLocomotion;
+	Parms.CrEnemyAttack = CrEnemyAttack;
+	Parms.CrEnemyJumpState = CrEnemyJumpState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CrAiExploderRuntime.CrAiActionShowProjectileAndPrepareForLaunch.OnShootAnimEvent
+// (Final, Native, Public)
+// Parameters:
+// class AActor*                           AiActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    OverrideSocketName                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrAiActionShowProjectileAndPrepareForLaunch::OnShootAnimEvent(class AActor* AiActor, const class FString& OverrideSocketName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrAiActionShowProjectileAndPrepareForLaunch", "OnShootAnimEvent");
+
+	Params::CrAiActionShowProjectileAndPrepareForLaunch_OnShootAnimEvent Parms{};
+
+	Parms.AiActor = AiActor;
+	Parms.OverrideSocketName = std::move(OverrideSocketName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function CrAiExploderRuntime.CrAiExploder.OnProjectileDestroyed
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FName                             SocketName                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ICrAiExploder::OnProjectileDestroyed(class FName SocketName)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"OnProjectileDestroyed", FnName));
+
+	Params::CrAiExploder_OnProjectileDestroyed Parms{};
+
+	Parms.SocketName = SocketName;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+}
+
+
+// Function CrAiExploderRuntime.CrAiExploder.OnProjectileLaunched
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FName                             SocketName                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ICrAiExploder::OnProjectileLaunched(class FName SocketName)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"OnProjectileLaunched", FnName));
+
+	Params::CrAiExploder_OnProjectileLaunched Parms{};
+
+	Parms.SocketName = SocketName;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+}
+
+
+// Function CrAiExploderRuntime.CrAiExploder.OnProjectileLoaded
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FName                             SocketName                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           Projectile                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ICrAiExploder::OnProjectileLoaded(class FName SocketName, class AActor* Projectile)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"OnProjectileLoaded", FnName));
+
+	Params::CrAiExploder_OnProjectileLoaded Parms{};
+
+	Parms.SocketName = SocketName;
+	Parms.Projectile = Projectile;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+}
+
+
 // Function CrAiExploderRuntime.CrAiExploder.StartActivationTimer
 // (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 
 void ICrAiExploder::StartActivationTimer()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("CrAiExploder", "StartActivationTimer");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"StartActivationTimer", FnName));
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -186,10 +388,8 @@ void ICrAiExploder::StartActivationTimer()
 
 void ICrAiExploder::StartExplosionTimer()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("CrAiExploder", "StartExplosionTimer");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"StartExplosionTimer", FnName));
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -207,10 +407,8 @@ void ICrAiExploder::StartExplosionTimer()
 
 bool ICrAiExploder::IsExploderDead() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("CrAiExploder", "IsExploderDead");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"IsExploderDead", FnName));
 
 	Params::CrAiExploder_IsExploderDead Parms{};
 
@@ -232,10 +430,8 @@ bool ICrAiExploder::IsExploderDead() const
 
 bool ICrAiExploder::ShouldSpawnHugeCollision() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("CrAiExploder", "ShouldSpawnHugeCollision");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"ShouldSpawnHugeCollision", FnName));
 
 	Params::CrAiExploder_ShouldSpawnHugeCollision Parms{};
 
@@ -269,15 +465,15 @@ void UExploderStateSyncComponent::Reset()
 }
 
 
-// Function CrAiExploderRuntime.ExploderT3CystActor.DestroyInfection
+// Function CrAiExploderRuntime.ExploderT3CystActor.KillCystManually
 // (Final, Native, Public, BlueprintCallable)
 
-void AExploderT3CystActor::DestroyInfection()
+void AExploderT3CystActor::KillCystManually()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ExploderT3CystActor", "DestroyInfection");
+		Func = Class->GetFunction("ExploderT3CystActor", "KillCystManually");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -308,44 +504,6 @@ void AExploderT3CystActor::SetIsImmortal(bool bIsImmortal)
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function CrAiExploderRuntime.ExploderT3CystActor.SpawnInfection
-// (Final, Native, Public, BlueprintCallable)
-
-void AExploderT3CystActor::SpawnInfection()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ExploderT3CystActor", "SpawnInfection");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function CrAiExploderRuntime.ExploderT3CystActor.StartInfectionVisualizationHide
-// (Final, Native, Public, BlueprintCallable)
-
-void AExploderT3CystActor::StartInfectionVisualizationHide()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ExploderT3CystActor", "StartInfectionVisualizationHide");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }

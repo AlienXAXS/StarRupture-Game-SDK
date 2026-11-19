@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_DentLine_C::SetCurrentColor(const struct FLinearColor& InColor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_DentLine_C", "SetCurrentColor");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetCurrentColor", FnName));
 
 	Params::WBP_DentLine_C_SetCurrentColor Parms{};
 
@@ -43,10 +41,8 @@ void UWBP_DentLine_C::SetCurrentColor(const struct FLinearColor& InColor)
 
 void UWBP_DentLine_C::SetSize(double InSize)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_DentLine_C", "SetSize");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetSize", FnName));
 
 	Params::WBP_DentLine_C_SetSize Parms{};
 
@@ -63,10 +59,8 @@ void UWBP_DentLine_C::SetSize(double InSize)
 
 void UWBP_DentLine_C::OnPaint(struct FPaintContext& Context) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_DentLine_C", "OnPaint");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPaint", FnName));
 
 	Params::WBP_DentLine_C_OnPaint Parms{};
 

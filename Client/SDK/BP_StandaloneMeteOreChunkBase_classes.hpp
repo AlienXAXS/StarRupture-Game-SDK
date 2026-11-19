@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "Chimera_structs.hpp"
 #include "Chimera_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -39,9 +39,11 @@ public:
 	class USoundBase*                             ResourceDepletedSound;                             // 0x0530(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
+	void BP_OnEnviroWaveStarted(EEnviroWave InWaveType, EEnviroWaveStage InWaveStage, const struct FCrEnviroWaveSettings& InWaveSettings, float InWaveProgress);
 	void BP_OnSpawnedWithResourceDepleted();
 	void ExecuteUbergraph_BP_StandaloneMeteOreChunkBase(int32 EntryPoint);
 	void GetCurrentEnvironmentalWaveStage(EEnviroWaveStage* CurrentEnviroWaveStage);
+	void GetCurrentEnvironmentalWaveType(EEnviroWave* CurrentEnviroWaveType);
 	void GetCurrentFadeoutSubstage(EEnviroWaveFadeoutSubstage* GrowbackSubstage);
 	void GetCurrentGrowbackSubstage(EEnviroWaveGrowbackSubstage* GrowbackSubstage);
 	void OnResourceDepletedCosmeticsStart();

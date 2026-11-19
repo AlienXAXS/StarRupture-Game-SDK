@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "GeometryCacheTracks_structs.hpp"
 #include "MovieScene_classes.hpp"
+#include "GeometryCacheTracks_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -41,10 +41,9 @@ DUMPER7_ASSERTS_UMovieSceneGeometryCacheSection;
 
 // Class GeometryCacheTracks.MovieSceneGeometryCacheTrack
 // 0x0018 (0x0130 - 0x0118)
-class UMovieSceneGeometryCacheTrack final : public UMovieSceneNameableTrack
+class UMovieSceneGeometryCacheTrack final : public UMovieSceneNameableTrack, public IMovieSceneTrackTemplateProducer
 {
 public:
-	uint8                                         Pad_118[0x8];                                      // 0x0118(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UMovieSceneSection*>             AnimationSections;                                 // 0x0120(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
 
 public:

@@ -22,12 +22,14 @@
 SDK_NAMESPACE_START
 
 // Class GameSettings.GameSettingHeader
-// 0x0020 (0x03E8 - 0x03C8)
+// 0x0030 (0x03F8 - 0x03C8)
 class UGameSettingHeader final : public UCommonUserWidget
 {
 public:
 	TMulticastInlineDelegate<void(class FName TabId)> OnSelectTabEvent;                              // 0x03C8(0x0018)(ZeroConstructor, InstancedReference, BlueprintCallable, NativeAccessSpecifierPublic)
-	class UGameSettingRegistry*                   Registry;                                          // 0x03E0(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
+	class UWidgetSwitcher*                        TabSwitcher;                                       // 0x03E0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCommonTextBlock*                       SingleTabTitle;                                    // 0x03E8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UGameSettingRegistry*                   Registry;                                          // 0x03F0(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
 
 public:
 	void RegisterTab(class FName TabCollection, const class FText& TabName);
@@ -51,10 +53,10 @@ DUMPER7_ASSERTS_UGameSettingHeader;
 
 // Class GameSettings.GameSettingListEntryBase
 // 0x0028 (0x03F0 - 0x03C8)
-class UGameSettingListEntryBase : public UCommonUserWidget
+class UGameSettingListEntryBase : public UCommonUserWidget, public IUserObjectListEntry
 {
 public:
-	uint8                                         Pad_3C8[0x10];                                     // 0x03C8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3D0[0x8];                                      // 0x03D0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class UGameSetting*                           Setting;                                           // 0x03D8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
 	uint8                                         Pad_3E0[0x10];                                     // 0x03E0(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
@@ -75,6 +77,12 @@ public:
 	{
 		return GetDefaultObjImpl<UGameSettingListEntryBase>();
 	}
+
+public:
+	void OnListItemObjectSet(class UObject* ListItemObject);
+	void BP_OnEntryReleased();
+	void BP_OnItemExpansionChanged(bool bIsExpanded);
+	void BP_OnItemSelectionChanged(bool bIsSelected);
 };
 DUMPER7_ASSERTS_UGameSettingListEntryBase;
 
@@ -91,6 +99,7 @@ public:
 public:
 	void AddSlashToHeader();
 	void EventPlaySound();
+	void ForceSetText(const class FText& Text);
 	void PlayHoverSound();
 
 public:
@@ -234,20 +243,24 @@ public:
 DUMPER7_ASSERTS_UGameSettingListEntrySetting_Scalar;
 
 // Class GameSettings.GameSettingPressAnyKey
-// 0x00C8 (0x0600 - 0x0538)
+// 0x0140 (0x0678 - 0x0538)
 class UGameSettingPressAnyKey : public UCommonActivatableWidget
 {
 public:
-	uint8                                         Pad_538[0x60];                                     // 0x0538(0x0060)(Fixing Size After Last Property [ Dumper-7 ])
-	class UButton*                                ConfirmButton;                                     // 0x0598(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UButton*                                CancelButton;                                      // 0x05A0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCommonTextBlock*                       KeyText;                                           // 0x05A8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UCommonTextBlock*                       ActionName;                                        // 0x05B0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	uint8                                         Pad_5B8[0x48];                                     // 0x05B8(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_538[0x80];                                     // 0x0538(0x0080)(Fixing Size After Last Property [ Dumper-7 ])
+	class UButton*                                ConfirmButton;                                     // 0x05B8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UButton*                                CancelButton;                                      // 0x05C0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UButton*                                DefaultButton;                                     // 0x05C8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCommonTextBlock*                       KeyText;                                           // 0x05D0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UCommonTextBlock*                       ActionName;                                        // 0x05D8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UImage*                                 ButtonImage;                                       // 0x05E0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class USoundBase*                             ClickSound;                                        // 0x05E8(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_5F0[0x88];                                     // 0x05F0(0x0088)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void InputCanceled();
 	void InputConfirm();
+	void InputDefault();
 	void SetNormalText();
 	void SetWarningText(const class FText& InWarning);
 
@@ -268,12 +281,12 @@ public:
 DUMPER7_ASSERTS_UGameSettingPressAnyKey;
 
 // Class GameSettings.KeyAlreadyBoundWarning
-// 0x0010 (0x0610 - 0x0600)
+// 0x0010 (0x0688 - 0x0678)
 class UKeyAlreadyBoundWarning final : public UGameSettingPressAnyKey
 {
 public:
-	class UTextBlock*                             WarningText;                                       // 0x0600(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
-	class UTextBlock*                             CancelText;                                        // 0x0608(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UTextBlock*                             WarningText;                                       // 0x0678(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	class UTextBlock*                             CancelText;                                        // 0x0680(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
 
 public:
 	static class UClass* StaticClass()
@@ -375,11 +388,11 @@ public:
 DUMPER7_ASSERTS_UGameSettingCollection;
 
 // Class GameSettings.GameSettingCollectionPage
-// 0x0030 (0x01D8 - 0x01A8)
+// 0x0050 (0x01F8 - 0x01A8)
 class UGameSettingCollectionPage final : public UGameSettingCollection
 {
 public:
-	uint8                                         Pad_1A8[0x30];                                     // 0x01A8(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_1A8[0x50];                                     // 0x01A8(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -612,14 +625,14 @@ public:
 DUMPER7_ASSERTS_UGameSettingValueScalarDynamic;
 
 // Class GameSettings.GameSettingRegistry
-// 0x00A8 (0x00D0 - 0x0028)
+// 0x00E8 (0x0110 - 0x0028)
 class UGameSettingRegistry : public UObject
 {
 public:
-	uint8                                         Pad_28[0x80];                                      // 0x0028(0x0080)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UGameSetting*>                   TopLevelSettings;                                  // 0x00A8(0x0010)(ZeroConstructor, Transient, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
-	TArray<class UGameSetting*>                   RegisteredSettings;                                // 0x00B8(0x0010)(ZeroConstructor, Transient, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
-	class ULocalPlayer*                           OwningLocalPlayer;                                 // 0x00C8(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
+	uint8                                         Pad_28[0xC0];                                      // 0x0028(0x00C0)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class UGameSetting*>                   TopLevelSettings;                                  // 0x00E8(0x0010)(ZeroConstructor, Transient, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
+	TArray<class UGameSetting*>                   RegisteredSettings;                                // 0x00F8(0x0010)(ZeroConstructor, Transient, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
+	class ULocalPlayer*                           OwningLocalPlayer;                                 // 0x0108(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
 
 public:
 	static class UClass* StaticClass()
@@ -818,9 +831,12 @@ public:
 DUMPER7_ASSERTS_UGameSettingVisualData;
 
 // Class GameSettings.GameSettingActionInterface
-// 0x0000 (0x0000 - 0x0000)
-class IGameSettingActionInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IGameSettingActionInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	bool ExecuteActionForSetting(const struct FGameplayTag& ActionTag, class UGameSetting* InSetting);
 

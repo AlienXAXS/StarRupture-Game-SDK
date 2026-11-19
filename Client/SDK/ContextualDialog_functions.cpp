@@ -24,10 +24,8 @@ SDK_NAMESPACE_START
 
 bool IContextualDialogInterface::CanExecuteAnyContextualResponse(bool bIsImportant)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ContextualDialogInterface", "CanExecuteAnyContextualResponse");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"CanExecuteAnyContextualResponse", FnName));
 
 	Params::ContextualDialogInterface_CanExecuteAnyContextualResponse Parms{};
 
@@ -53,10 +51,8 @@ bool IContextualDialogInterface::CanExecuteAnyContextualResponse(bool bIsImporta
 
 bool IContextualDialogInterface::ExecuteContextualResponse(const struct FContextualResponsePayload& ResponseData, class FName RuleNameContainingResponseData)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ContextualDialogInterface", "ExecuteContextualResponse");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"ExecuteContextualResponse", FnName));
 
 	Params::ContextualDialogInterface_ExecuteContextualResponse Parms{};
 
@@ -81,10 +77,8 @@ bool IContextualDialogInterface::ExecuteContextualResponse(const struct FContext
 
 bool IContextualDialogInterface::IsCharacterTalking()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ContextualDialogInterface", "IsCharacterTalking");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"IsCharacterTalking", FnName));
 
 	Params::ContextualDialogInterface_IsCharacterTalking Parms{};
 
@@ -104,10 +98,8 @@ bool IContextualDialogInterface::IsCharacterTalking()
 
 void IContextualDialogInterface::OnNoReplyDialogueRuleFound()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ContextualDialogInterface", "OnNoReplyDialogueRuleFound");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"OnNoReplyDialogueRuleFound", FnName));
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -127,10 +119,8 @@ void IContextualDialogInterface::OnNoReplyDialogueRuleFound()
 
 bool IContextualDialogInterface::OnResponseFinished(const struct FContextualResponsePayload& ResponseData, class FName RuleNameContainingResponseData)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("ContextualDialogInterface", "OnResponseFinished");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"OnResponseFinished", FnName));
 
 	Params::ContextualDialogInterface_OnResponseFinished Parms{};
 
@@ -973,9 +963,10 @@ void UContextualDialogSubsystem::DebugLogAllRulesCountForEachContextType()
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bIgnoreActorAndAcceptFirst                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UContextualDialogSubsystem::ExecuteQueuedResponse(class AActor* TargetActor)
+bool UContextualDialogSubsystem::ExecuteQueuedResponse(class AActor* TargetActor, bool bIgnoreActorAndAcceptFirst)
 {
 	static class UFunction* Func = nullptr;
 
@@ -985,6 +976,7 @@ bool UContextualDialogSubsystem::ExecuteQueuedResponse(class AActor* TargetActor
 	Params::ContextualDialogSubsystem_ExecuteQueuedResponse Parms{};
 
 	Parms.TargetActor = TargetActor;
+	Parms.bIgnoreActorAndAcceptFirst = bIgnoreActorAndAcceptFirst;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -1456,10 +1448,8 @@ bool UContextualQueryObject::ContainsProperty(class FName PropertyName) const
 
 bool UContextualResponse::ExecuteResponse()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ContextualResponse", "ExecuteResponse");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ExecuteResponse", FnName));
 
 	Params::ContextualResponse_ExecuteResponse Parms{};
 
@@ -1481,10 +1471,8 @@ bool UContextualResponse::ExecuteResponse()
 
 bool UContextualResponse::OnResponseFinished()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ContextualResponse", "OnResponseFinished");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnResponseFinished", FnName));
 
 	Params::ContextualResponse_OnResponseFinished Parms{};
 
@@ -1506,10 +1494,8 @@ bool UContextualResponse::OnResponseFinished()
 
 bool UContextualResponse::OnResponseStarted()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ContextualResponse", "OnResponseStarted");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnResponseStarted", FnName));
 
 	Params::ContextualResponse_OnResponseStarted Parms{};
 

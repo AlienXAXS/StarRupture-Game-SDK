@@ -28,10 +28,8 @@ SDK_NAMESPACE_START
 
 void ABP_Teleporter_C::BndEvt__BP_Teleporter_OpenBoxCollision_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Teleporter_C", "BndEvt__BP_Teleporter_OpenBoxCollision_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__BP_Teleporter_OpenBoxCollision_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature", FnName));
 
 	Params::BP_Teleporter_C_BndEvt__BP_Teleporter_OpenBoxCollision_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature Parms{};
 
@@ -56,10 +54,8 @@ void ABP_Teleporter_C::BndEvt__BP_Teleporter_OpenBoxCollision_K2Node_ComponentBo
 
 void ABP_Teleporter_C::BndEvt__BP_Teleporter_OpenBoxCollision_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Teleporter_C", "BndEvt__BP_Teleporter_OpenBoxCollision_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__BP_Teleporter_OpenBoxCollision_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature", FnName));
 
 	Params::BP_Teleporter_C_BndEvt__BP_Teleporter_OpenBoxCollision_K2Node_ComponentBoundEvent_1_ComponentEndOverlapSignature__DelegateSignature Parms{};
 
@@ -77,10 +73,8 @@ void ABP_Teleporter_C::BndEvt__BP_Teleporter_OpenBoxCollision_K2Node_ComponentBo
 
 void ABP_Teleporter_C::CylindersUpdate()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Teleporter_C", "CylindersUpdate");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"CylindersUpdate", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -93,10 +87,8 @@ void ABP_Teleporter_C::CylindersUpdate()
 
 void ABP_Teleporter_C::ExecuteUbergraph_BP_Teleporter(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Teleporter_C", "ExecuteUbergraph_BP_Teleporter");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Teleporter_C", "ExecuteUbergraph_BP_Teleporter", FuncInfo);
 
 	Params::BP_Teleporter_C_ExecuteUbergraph_BP_Teleporter Parms{};
 
@@ -115,10 +107,8 @@ void ABP_Teleporter_C::ExecuteUbergraph_BP_Teleporter(int32 EntryPoint)
 
 void ABP_Teleporter_C::Get_Meshes(class USceneComponent* Static_0, class USceneComponent* Dynamic, TArray<class USceneComponent*>* NewParam)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Teleporter_C", "Get Meshes");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Get Meshes", FnName));
 
 	Params::BP_Teleporter_C_Get_Meshes Parms{};
 
@@ -139,10 +129,8 @@ void ABP_Teleporter_C::Get_Meshes(class USceneComponent* Static_0, class USceneC
 
 void ABP_Teleporter_C::OnBuildingStateChanged(ECrBuildingState InState)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Teleporter_C", "OnBuildingStateChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBuildingStateChanged", FnName));
 
 	Params::BP_Teleporter_C_OnBuildingStateChanged Parms{};
 
@@ -159,10 +147,8 @@ void ABP_Teleporter_C::OnBuildingStateChanged(ECrBuildingState InState)
 
 void ABP_Teleporter_C::OnPlayerArrived(bool bLocalPlayer)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Teleporter_C", "OnPlayerArrived");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPlayerArrived", FnName));
 
 	Params::BP_Teleporter_C_OnPlayerArrived Parms{};
 
@@ -179,10 +165,8 @@ void ABP_Teleporter_C::OnPlayerArrived(bool bLocalPlayer)
 
 void ABP_Teleporter_C::OnTeleporterUsed(bool bLocalPlayer)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Teleporter_C", "OnTeleporterUsed");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnTeleporterUsed", FnName));
 
 	Params::BP_Teleporter_C_OnTeleporterUsed Parms{};
 
@@ -197,10 +181,8 @@ void ABP_Teleporter_C::OnTeleporterUsed(bool bLocalPlayer)
 
 void ABP_Teleporter_C::UserConstructionScript()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Teleporter_C", "UserConstructionScript");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UserConstructionScript", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

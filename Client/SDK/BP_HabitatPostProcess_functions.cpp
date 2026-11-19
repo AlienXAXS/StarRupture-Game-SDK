@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_HabitatPostProcess_C::ExecuteUbergraph_BP_HabitatPostProcess(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HabitatPostProcess_C", "ExecuteUbergraph_BP_HabitatPostProcess");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_HabitatPostProcess_C", "ExecuteUbergraph_BP_HabitatPostProcess", FuncInfo);
 
 	Params::BP_HabitatPostProcess_C_ExecuteUbergraph_BP_HabitatPostProcess Parms{};
 
@@ -46,10 +44,8 @@ void ABP_HabitatPostProcess_C::ExecuteUbergraph_BP_HabitatPostProcess(int32 Entr
 
 void ABP_HabitatPostProcess_C::OnEnviroWaveTick(EEnviroWave WaveType, EEnviroWaveStage WaveStage, const struct FCrEnviroWaveSettings& WaveSettings, float WaveProgress)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HabitatPostProcess_C", "OnEnviroWaveTick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnEnviroWaveTick", FnName));
 
 	Params::BP_HabitatPostProcess_C_OnEnviroWaveTick Parms{};
 
@@ -67,10 +63,8 @@ void ABP_HabitatPostProcess_C::OnEnviroWaveTick(EEnviroWave WaveType, EEnviroWav
 
 void ABP_HabitatPostProcess_C::UserConstructionScript()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_HabitatPostProcess_C", "UserConstructionScript");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UserConstructionScript", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

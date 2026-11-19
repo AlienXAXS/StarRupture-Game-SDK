@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_SonicDrill_C::ExecuteUbergraph_BP_SonicDrill(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SonicDrill_C", "ExecuteUbergraph_BP_SonicDrill");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_SonicDrill_C", "ExecuteUbergraph_BP_SonicDrill", FuncInfo);
 
 	Params::BP_SonicDrill_C_ExecuteUbergraph_BP_SonicDrill Parms{};
 
@@ -43,10 +41,8 @@ void ABP_SonicDrill_C::ExecuteUbergraph_BP_SonicDrill(int32 EntryPoint)
 
 void ABP_SonicDrill_C::OnBuildingStateChanged(ECrBuildingState InState)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SonicDrill_C", "OnBuildingStateChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBuildingStateChanged", FnName));
 
 	Params::BP_SonicDrill_C_OnBuildingStateChanged Parms{};
 
@@ -61,10 +57,8 @@ void ABP_SonicDrill_C::OnBuildingStateChanged(ECrBuildingState InState)
 
 void ABP_SonicDrill_C::OnConstructionFinished()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SonicDrill_C", "OnConstructionFinished");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnConstructionFinished", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -77,10 +71,8 @@ void ABP_SonicDrill_C::OnConstructionFinished()
 
 void ABP_SonicDrill_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SonicDrill_C", "ReceiveEndPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveEndPlay", FnName));
 
 	Params::BP_SonicDrill_C_ReceiveEndPlay Parms{};
 
@@ -98,10 +90,8 @@ void ABP_SonicDrill_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 
 void ABP_SonicDrill_C::GetBuildingMeshes(class UMeshComponent** MainBody, TArray<class UMeshComponent*>* AdditionalMeshes) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SonicDrill_C", "GetBuildingMeshes");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetBuildingMeshes", FnName));
 
 	Params::BP_SonicDrill_C_GetBuildingMeshes Parms{};
 

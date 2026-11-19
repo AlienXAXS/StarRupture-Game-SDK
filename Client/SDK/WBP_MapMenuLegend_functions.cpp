@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_MapMenuLegend_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MapMenuLegend_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -37,10 +35,8 @@ void UWBP_MapMenuLegend_C::Construct()
 
 void UWBP_MapMenuLegend_C::ExecuteUbergraph_WBP_MapMenuLegend(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MapMenuLegend_C", "ExecuteUbergraph_WBP_MapMenuLegend");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_MapMenuLegend_C", "ExecuteUbergraph_WBP_MapMenuLegend", FuncInfo);
 
 	Params::WBP_MapMenuLegend_C_ExecuteUbergraph_WBP_MapMenuLegend Parms{};
 

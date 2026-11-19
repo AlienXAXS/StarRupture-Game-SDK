@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_SolarPowerGeneratorTier2_C::ExecuteUbergraph_BP_SolarPowerGeneratorTier2(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SolarPowerGeneratorTier2_C", "ExecuteUbergraph_BP_SolarPowerGeneratorTier2");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_SolarPowerGeneratorTier2_C", "ExecuteUbergraph_BP_SolarPowerGeneratorTier2", FuncInfo);
 
 	Params::BP_SolarPowerGeneratorTier2_C_ExecuteUbergraph_BP_SolarPowerGeneratorTier2 Parms{};
 
@@ -43,10 +41,8 @@ void ABP_SolarPowerGeneratorTier2_C::ExecuteUbergraph_BP_SolarPowerGeneratorTier
 
 void ABP_SolarPowerGeneratorTier2_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SolarPowerGeneratorTier2_C", "PostPlayBuildingEffect");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PostPlayBuildingEffect", FnName));
 
 	Params::BP_SolarPowerGeneratorTier2_C_PostPlayBuildingEffect Parms{};
 
@@ -61,10 +57,8 @@ void ABP_SolarPowerGeneratorTier2_C::PostPlayBuildingEffect(bool bWasBuildingEff
 
 void ABP_SolarPowerGeneratorTier2_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SolarPowerGeneratorTier2_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -75,10 +69,8 @@ void ABP_SolarPowerGeneratorTier2_C::ReceiveBeginPlay()
 
 void ABP_SolarPowerGeneratorTier2_C::SetupSkeletalMesh()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SolarPowerGeneratorTier2_C", "SetupSkeletalMesh");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetupSkeletalMesh", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -93,10 +85,8 @@ void ABP_SolarPowerGeneratorTier2_C::SetupSkeletalMesh()
 
 void ABP_SolarPowerGeneratorTier2_C::Get_Meshes(class USceneComponent* Static_0, class USceneComponent* Animated_0, TArray<class UMeshComponent*>* NewParam) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SolarPowerGeneratorTier2_C", "Get Meshes");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Get Meshes", FnName));
 
 	Params::BP_SolarPowerGeneratorTier2_C_Get_Meshes Parms{};
 

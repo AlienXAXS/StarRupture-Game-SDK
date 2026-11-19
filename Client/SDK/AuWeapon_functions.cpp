@@ -513,10 +513,8 @@ float UAuWA_NextWeapon::GetUnholsterTime() const
 
 void AAuWeaponActor::OnOwningWeaponItemLoadData()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuWeaponActor", "OnOwningWeaponItemLoadData");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnOwningWeaponItemLoadData", FnName));
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -532,10 +530,8 @@ void AAuWeaponActor::OnOwningWeaponItemLoadData()
 
 void AAuWeaponActor::OnSpawnCosmeticEffectsOnFireEnd()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuWeaponActor", "OnSpawnCosmeticEffectsOnFireEnd");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSpawnCosmeticEffectsOnFireEnd", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -546,10 +542,8 @@ void AAuWeaponActor::OnSpawnCosmeticEffectsOnFireEnd()
 
 void AAuWeaponActor::OnSpawnCosmeticEffectsOnFireStart()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuWeaponActor", "OnSpawnCosmeticEffectsOnFireStart");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSpawnCosmeticEffectsOnFireStart", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -562,10 +556,8 @@ void AAuWeaponActor::OnSpawnCosmeticEffectsOnFireStart()
 
 void AAuWeaponActor::OnSpawnCosmeticEffectsWhileFire(const TArray<struct FHitResult>& Hits)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AuWeaponActor", "OnSpawnCosmeticEffectsWhileFire");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSpawnCosmeticEffectsWhileFire", FnName));
 
 	Params::AuWeaponActor_OnSpawnCosmeticEffectsWhileFire Parms{};
 

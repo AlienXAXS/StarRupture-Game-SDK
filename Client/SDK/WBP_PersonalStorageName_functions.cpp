@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 class FText UWBP_PersonalStorageName_C::GetText()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_PersonalStorageName_C", "GetText");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetText", FnName));
 
 	Params::WBP_PersonalStorageName_C_GetText Parms{};
 
@@ -43,10 +41,8 @@ class FText UWBP_PersonalStorageName_C::GetText()
 
 void UWBP_PersonalStorageName_C::SetHeight(int32 InHeight)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_PersonalStorageName_C", "SetHeight");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetHeight", FnName));
 
 	Params::WBP_PersonalStorageName_C_SetHeight Parms{};
 
@@ -64,10 +60,8 @@ void UWBP_PersonalStorageName_C::SetHeight(int32 InHeight)
 
 class FText UWBP_PersonalStorageName_C::UpdateName(class ACrBuildingActorBase* Owning_Building)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_PersonalStorageName_C", "UpdateName");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateName", FnName));
 
 	Params::WBP_PersonalStorageName_C_UpdateName Parms{};
 

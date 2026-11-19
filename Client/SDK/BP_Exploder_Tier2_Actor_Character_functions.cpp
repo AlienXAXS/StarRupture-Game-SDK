@@ -16,15 +16,25 @@
 
 SDK_NAMESPACE_START
 
+// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.CancelProjectiles
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_Exploder_Tier2_Actor_Character_C::CancelProjectiles()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"CancelProjectiles", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.DeactivateVFX
 // (Net, NetMulticast, BlueprintCallable, BlueprintEvent)
 
 void ABP_Exploder_Tier2_Actor_Character_C::DeactivateVFX()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "DeactivateVFX");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"DeactivateVFX", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -37,10 +47,8 @@ void ABP_Exploder_Tier2_Actor_Character_C::DeactivateVFX()
 
 void ABP_Exploder_Tier2_Actor_Character_C::ExecuteUbergraph_BP_Exploder_Tier2_Actor_Character(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "ExecuteUbergraph_BP_Exploder_Tier2_Actor_Character");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Exploder_Tier2_Actor_Character_C", "ExecuteUbergraph_BP_Exploder_Tier2_Actor_Character", FuncInfo);
 
 	Params::BP_Exploder_Tier2_Actor_Character_C_ExecuteUbergraph_BP_Exploder_Tier2_Actor_Character Parms{};
 
@@ -57,10 +65,8 @@ void ABP_Exploder_Tier2_Actor_Character_C::ExecuteUbergraph_BP_Exploder_Tier2_Ac
 
 int32 ABP_Exploder_Tier2_Actor_Character_C::GetMovementFailsNum()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "GetMovementFailsNum");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetMovementFailsNum", FnName));
 
 	Params::BP_Exploder_Tier2_Actor_Character_C_GetMovementFailsNum Parms{};
 
@@ -77,10 +83,8 @@ int32 ABP_Exploder_Tier2_Actor_Character_C::GetMovementFailsNum()
 
 void ABP_Exploder_Tier2_Actor_Character_C::GetNiagaraEyeSystem(class UNiagaraComponent** NewParam)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "GetNiagaraEyeSystem");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetNiagaraEyeSystem", FnName));
 
 	Params::BP_Exploder_Tier2_Actor_Character_C_GetNiagaraEyeSystem Parms{};
 
@@ -96,10 +100,8 @@ void ABP_Exploder_Tier2_Actor_Character_C::GetNiagaraEyeSystem(class UNiagaraCom
 
 void ABP_Exploder_Tier2_Actor_Character_C::OnExitActorPool()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "OnExitActorPool");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnExitActorPool", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -110,12 +112,108 @@ void ABP_Exploder_Tier2_Actor_Character_C::OnExitActorPool()
 
 void ABP_Exploder_Tier2_Actor_Character_C::OnPrepareForPooling()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "OnPrepareForPooling");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPrepareForPooling", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.OnProjectileDestroyed
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FName                             SocketName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Exploder_Tier2_Actor_Character_C::OnProjectileDestroyed(class FName SocketName)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnProjectileDestroyed", FnName));
+
+	Params::BP_Exploder_Tier2_Actor_Character_C_OnProjectileDestroyed Parms{};
+
+	Parms.SocketName = SocketName;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.OnProjectileLaunched
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FName                             SocketName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Exploder_Tier2_Actor_Character_C::OnProjectileLaunched(class FName SocketName)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnProjectileLaunched", FnName));
+
+	Params::BP_Exploder_Tier2_Actor_Character_C_OnProjectileLaunched Parms{};
+
+	Parms.SocketName = SocketName;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.OnProjectileLoaded
+// (Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FName                             SocketName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class AActor*                           Projectile                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Exploder_Tier2_Actor_Character_C::OnProjectileLoaded(class FName SocketName, class AActor* Projectile)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnProjectileLoaded", FnName));
+
+	Params::BP_Exploder_Tier2_Actor_Character_C_OnProjectileLoaded Parms{};
+
+	Parms.SocketName = SocketName;
+	Parms.Projectile = Projectile;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.OnRep_LeftProjectileLoaded
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_Exploder_Tier2_Actor_Character_C::OnRep_LeftProjectileLoaded()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnRep_LeftProjectileLoaded", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.OnRep_RightProjectileLoaded
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_Exploder_Tier2_Actor_Character_C::OnRep_RightProjectileLoaded()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnRep_RightProjectileLoaded", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.ProjectileDestroyed
+// (Net, NetMulticast, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class FName                             SocketName                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_Exploder_Tier2_Actor_Character_C::ProjectileDestroyed(class FName SocketName)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ProjectileDestroyed", FnName));
+
+	Params::BP_Exploder_Tier2_Actor_Character_C_ProjectileDestroyed Parms{};
+
+	Parms.SocketName = SocketName;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -124,10 +222,8 @@ void ABP_Exploder_Tier2_Actor_Character_C::OnPrepareForPooling()
 
 void ABP_Exploder_Tier2_Actor_Character_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -140,10 +236,8 @@ void ABP_Exploder_Tier2_Actor_Character_C::ReceiveBeginPlay()
 
 void ABP_Exploder_Tier2_Actor_Character_C::ReceiveTick(float DeltaSeconds)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "ReceiveTick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveTick", FnName));
 
 	Params::BP_Exploder_Tier2_Actor_Character_C_ReceiveTick Parms{};
 
@@ -160,10 +254,8 @@ void ABP_Exploder_Tier2_Actor_Character_C::ReceiveTick(float DeltaSeconds)
 
 void ABP_Exploder_Tier2_Actor_Character_C::RegisterMovementFailed(double MovementFailedExpTime)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "RegisterMovementFailed");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"RegisterMovementFailed", FnName));
 
 	Params::BP_Exploder_Tier2_Actor_Character_C_RegisterMovementFailed Parms{};
 
@@ -178,10 +270,8 @@ void ABP_Exploder_Tier2_Actor_Character_C::RegisterMovementFailed(double Movemen
 
 void ABP_Exploder_Tier2_Actor_Character_C::StartActivationTimer()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "StartActivationTimer");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"StartActivationTimer", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -192,10 +282,44 @@ void ABP_Exploder_Tier2_Actor_Character_C::StartActivationTimer()
 
 void ABP_Exploder_Tier2_Actor_Character_C::StartExplosionTimer()
 {
-	static class UFunction* Func = nullptr;
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"StartExplosionTimer", FnName));
 
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "StartExplosionTimer");
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.StartExplosionWindUp
+// (BlueprintCallable, BlueprintEvent)
+
+void ABP_Exploder_Tier2_Actor_Character_C::StartExplosionWindUp()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"StartExplosionWindUp", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.TL_Postprocess__FinishedFunc
+// (BlueprintEvent)
+
+void ABP_Exploder_Tier2_Actor_Character_C::TL_Postprocess__FinishedFunc()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"TL_Postprocess__FinishedFunc", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier2_Actor_Character.BP_Exploder_Tier2_Actor_Character_C.TL_Postprocess__UpdateFunc
+// (BlueprintEvent)
+
+void ABP_Exploder_Tier2_Actor_Character_C::TL_Postprocess__UpdateFunc()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"TL_Postprocess__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -208,10 +332,8 @@ void ABP_Exploder_Tier2_Actor_Character_C::StartExplosionTimer()
 
 void ABP_Exploder_Tier2_Actor_Character_C::TryDestroyInfectionEntity(bool Instant)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "TryDestroyInfectionEntity");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"TryDestroyInfectionEntity", FnName));
 
 	Params::BP_Exploder_Tier2_Actor_Character_C_TryDestroyInfectionEntity Parms{};
 
@@ -226,10 +348,8 @@ void ABP_Exploder_Tier2_Actor_Character_C::TryDestroyInfectionEntity(bool Instan
 
 void ABP_Exploder_Tier2_Actor_Character_C::TrySpawnInfectionEntity()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "TrySpawnInfectionEntity");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"TrySpawnInfectionEntity", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -242,10 +362,8 @@ void ABP_Exploder_Tier2_Actor_Character_C::TrySpawnInfectionEntity()
 
 bool ABP_Exploder_Tier2_Actor_Character_C::IsExploderDead() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "IsExploderDead");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IsExploderDead", FnName));
 
 	Params::BP_Exploder_Tier2_Actor_Character_C_IsExploderDead Parms{};
 
@@ -262,10 +380,8 @@ bool ABP_Exploder_Tier2_Actor_Character_C::IsExploderDead() const
 
 bool ABP_Exploder_Tier2_Actor_Character_C::ShouldSpawnHugeCollision() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier2_Actor_Character_C", "ShouldSpawnHugeCollision");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ShouldSpawnHugeCollision", FnName));
 
 	Params::BP_Exploder_Tier2_Actor_Character_C_ShouldSpawnHugeCollision Parms{};
 

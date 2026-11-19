@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void ABP_Exploder_Tier3_Prototype_CystActor_C::DisableImmortal()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_CystActor_C", "DisableImmortal");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"DisableImmortal", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -37,10 +35,8 @@ void ABP_Exploder_Tier3_Prototype_CystActor_C::DisableImmortal()
 
 void ABP_Exploder_Tier3_Prototype_CystActor_C::ExecuteUbergraph_BP_Exploder_Tier3_Prototype_CystActor(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_CystActor_C", "ExecuteUbergraph_BP_Exploder_Tier3_Prototype_CystActor");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Exploder_Tier3_Prototype_CystActor_C", "ExecuteUbergraph_BP_Exploder_Tier3_Prototype_CystActor", FuncInfo);
 
 	Params::BP_Exploder_Tier3_Prototype_CystActor_C_ExecuteUbergraph_BP_Exploder_Tier3_Prototype_CystActor Parms{};
 
@@ -55,10 +51,8 @@ void ABP_Exploder_Tier3_Prototype_CystActor_C::ExecuteUbergraph_BP_Exploder_Tier
 
 void ABP_Exploder_Tier3_Prototype_CystActor_C::OnRep_IsImmortal()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_CystActor_C", "OnRep_IsImmortal");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnRep_IsImmortal", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -69,10 +63,8 @@ void ABP_Exploder_Tier3_Prototype_CystActor_C::OnRep_IsImmortal()
 
 void ABP_Exploder_Tier3_Prototype_CystActor_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_CystActor_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -85,10 +77,8 @@ void ABP_Exploder_Tier3_Prototype_CystActor_C::ReceiveBeginPlay()
 
 void ABP_Exploder_Tier3_Prototype_CystActor_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_CystActor_C", "ReceiveEndPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveEndPlay", FnName));
 
 	Params::BP_Exploder_Tier3_Prototype_CystActor_C_ReceiveEndPlay Parms{};
 
@@ -105,10 +95,8 @@ void ABP_Exploder_Tier3_Prototype_CystActor_C::ReceiveEndPlay(EEndPlayReason End
 
 void ABP_Exploder_Tier3_Prototype_CystActor_C::ReceiveTick(float DeltaSeconds)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_CystActor_C", "ReceiveTick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveTick", FnName));
 
 	Params::BP_Exploder_Tier3_Prototype_CystActor_C_ReceiveTick Parms{};
 
@@ -125,10 +113,8 @@ void ABP_Exploder_Tier3_Prototype_CystActor_C::ReceiveTick(float DeltaSeconds)
 
 void ABP_Exploder_Tier3_Prototype_CystActor_C::SetImmortalForDuration(double Duration)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_CystActor_C", "SetImmortalForDuration");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetImmortalForDuration", FnName));
 
 	Params::BP_Exploder_Tier3_Prototype_CystActor_C_SetImmortalForDuration Parms{};
 
@@ -143,10 +129,8 @@ void ABP_Exploder_Tier3_Prototype_CystActor_C::SetImmortalForDuration(double Dur
 
 void ABP_Exploder_Tier3_Prototype_CystActor_C::SpawnSpline()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_Prototype_CystActor_C", "SpawnSpline");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SpawnSpline", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

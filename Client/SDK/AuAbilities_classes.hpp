@@ -20,6 +20,7 @@
 #include "CoreUObject_classes.hpp"
 #include "GameplayTags_structs.hpp"
 #include "AuItems_structs.hpp"
+#include "AuItems_classes.hpp"
 
 
 SDK_NAMESPACE_START
@@ -127,10 +128,9 @@ DUMPER7_ASSERTS_AAuAbilityActor;
 
 // Class AuAbilities.AuAbilityPersistentActor
 // 0x0028 (0x02D0 - 0x02A8)
-class AAuAbilityPersistentActor final : public AActor
+class AAuAbilityPersistentActor final : public AActor, public IAbilitySystemInterface
 {
 public:
-	uint8                                         Pad_2A8[0x8];                                      // 0x02A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class UAbilitySystemComponent*                AbilitySystem;                                     // 0x02B0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
 	uint8                                         Pad_2B8[0x18];                                     // 0x02B8(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
@@ -233,9 +233,12 @@ public:
 DUMPER7_ASSERTS_AAuAbilityProjectile;
 
 // Class AuAbilities.AuAbilityProjectileInterface
-// 0x0000 (0x0000 - 0x0000)
-class IAuAbilityProjectileInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IAuAbilityProjectileInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -396,10 +399,9 @@ DUMPER7_ASSERTS_UAuAbilityTask;
 
 // Class AuAbilities.AuGameplayAbility
 // 0x0088 (0x0458 - 0x03D0)
-class UAuGameplayAbility : public UGameplayAbility
+class UAuGameplayAbility : public UGameplayAbility, public IAuItemOwnerInterface
 {
 public:
-	uint8                                         Pad_3D0[0x8];                                      // 0x03D0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGameplayTagContainer                  CustomCooldownTags;                                // 0x03D8(0x0020)(Edit, Protected, NativeAccessSpecifierProtected)
 	class UAuItemsStoreComponent*                 SourceItem;                                        // 0x03F8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
 	class UAuItemsComponent*                      ItemsComponent;                                    // 0x0400(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
@@ -1153,9 +1155,12 @@ public:
 DUMPER7_ASSERTS_UAuCharacterMovementProvider;
 
 // Class AuAbilities.AuDamageInterface
-// 0x0000 (0x0000 - 0x0000)
-class IAuDamageInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IAuDamageInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -1291,9 +1296,12 @@ public:
 DUMPER7_ASSERTS_UAuGE_InfiniteMultiplyModifier;
 
 // Class AuAbilities.AuISMEntityWrapperInterface
-// 0x0000 (0x0000 - 0x0000)
-class IAuISMEntityWrapperInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IAuISMEntityWrapperInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -1353,9 +1361,12 @@ public:
 DUMPER7_ASSERTS_UAuTargetingBPF;
 
 // Class AuAbilities.AuTargetingInterface
-// 0x0000 (0x0000 - 0x0000)
-class IAuTargetingInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IAuTargetingInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	void RequestActivateTrace(const struct FAuTickTargetingHandle& TargetingType);
 	void RequestDeactivateTrace(const struct FAuTickTargetingHandle& TargetingType);

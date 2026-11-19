@@ -14,6 +14,15 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
+// Function BP_ViewportLeft.BP_ViewportLeft_C.ExecuteUbergraph_BP_ViewportLeft
+// 0x0004 (0x0004 - 0x0000)
+struct BP_ViewportLeft_C_ExecuteUbergraph_BP_ViewportLeft final
+{
+public:
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_ViewportLeft_C_ExecuteUbergraph_BP_ViewportLeft;
+
 // Function BP_ViewportLeft.BP_ViewportLeft_C.GetBuildingMeshes
 // 0x0018 (0x0018 - 0x0000)
 struct BP_ViewportLeft_C_GetBuildingMeshes final

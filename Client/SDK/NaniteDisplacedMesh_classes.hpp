@@ -18,10 +18,10 @@ SDK_NAMESPACE_START
 
 // Class NaniteDisplacedMesh.NaniteDisplacedMesh
 // 0x0048 (0x0070 - 0x0028)
-class UNaniteDisplacedMesh final : public UObject
+class UNaniteDisplacedMesh final : public UObject, public IInterface_AsyncCompilation
 {
 public:
-	uint8                                         Pad_28[0x48];                                      // 0x0028(0x0048)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_30[0x40];                                      // 0x0030(0x0040)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()

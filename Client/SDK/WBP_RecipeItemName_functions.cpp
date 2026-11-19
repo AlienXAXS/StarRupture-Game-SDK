@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_RecipeItemName_C::SetName(const class FText& Text)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_RecipeItemName_C", "SetName");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetName", FnName));
 
 	Params::WBP_RecipeItemName_C_SetName Parms{};
 

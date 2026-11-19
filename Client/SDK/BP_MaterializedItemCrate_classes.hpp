@@ -18,7 +18,7 @@ SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_MaterializedItemCrate.BP_MaterializedItemCrate_C
 // 0x0050 (0x02F8 - 0x02A8)
-class ABP_MaterializedItemCrate_C final : public AActor
+class ABP_MaterializedItemCrate_C : public AActor
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02A8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
@@ -38,10 +38,12 @@ public:
 public:
 	void ExecuteUbergraph_BP_MaterializedItemCrate(int32 EntryPoint);
 	void Interrupt(bool Visibility);
-	void Materialize_Package_In_Loop(double Duration_0);
-	void MaterializePackageOnce(double Duration_0);
+	void Materialize_Package_In_Loop(double Duration_0, bool Ignore_Visility);
+	void MaterializePackageOnce(double Duration_0, bool Ignore_Visility);
 	void PlaySound();
 	void ReceiveBeginPlay();
+	void Set_Elements_Visibility(bool bNewVisibility);
+	void SetPackageVisibility(bool New_Visibility);
 	void UserConstructionScript();
 
 public:

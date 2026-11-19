@@ -24,10 +24,8 @@ SDK_NAMESPACE_START
 
 struct FLinearColor UWBP_InventoryGemSlot_C::ConvertToGrayScale(const struct FColor& InColor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryGemSlot_C", "ConvertToGrayScale");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ConvertToGrayScale", FnName));
 
 	Params::WBP_InventoryGemSlot_C_ConvertToGrayScale Parms{};
 
@@ -46,10 +44,8 @@ struct FLinearColor UWBP_InventoryGemSlot_C::ConvertToGrayScale(const struct FCo
 
 void UWBP_InventoryGemSlot_C::ExecuteUbergraph_WBP_InventoryGemSlot(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryGemSlot_C", "ExecuteUbergraph_WBP_InventoryGemSlot");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_InventoryGemSlot_C", "ExecuteUbergraph_WBP_InventoryGemSlot", FuncInfo);
 
 	Params::WBP_InventoryGemSlot_C_ExecuteUbergraph_WBP_InventoryGemSlot Parms{};
 
@@ -64,10 +60,8 @@ void UWBP_InventoryGemSlot_C::ExecuteUbergraph_WBP_InventoryGemSlot(int32 EntryP
 
 void UWBP_InventoryGemSlot_C::HideFullStackIcon()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryGemSlot_C", "HideFullStackIcon");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"HideFullStackIcon", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -80,10 +74,8 @@ void UWBP_InventoryGemSlot_C::HideFullStackIcon()
 
 void UWBP_InventoryGemSlot_C::SetBackgroundColor(const struct FColor& InColor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryGemSlot_C", "SetBackgroundColor");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetBackgroundColor", FnName));
 
 	Params::WBP_InventoryGemSlot_C_SetBackgroundColor Parms{};
 
@@ -98,10 +90,8 @@ void UWBP_InventoryGemSlot_C::SetBackgroundColor(const struct FColor& InColor)
 
 void UWBP_InventoryGemSlot_C::SetDefaultBrush()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryGemSlot_C", "SetDefaultBrush");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetDefaultBrush", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -114,10 +104,8 @@ void UWBP_InventoryGemSlot_C::SetDefaultBrush()
 
 void UWBP_InventoryGemSlot_C::SetFullStackColor(const struct FColor& InColor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryGemSlot_C", "SetFullStackColor");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetFullStackColor", FnName));
 
 	Params::WBP_InventoryGemSlot_C_SetFullStackColor Parms{};
 
@@ -132,10 +120,8 @@ void UWBP_InventoryGemSlot_C::SetFullStackColor(const struct FColor& InColor)
 
 void UWBP_InventoryGemSlot_C::SetFullStackHighlight()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryGemSlot_C", "SetFullStackHighlight");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetFullStackHighlight", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -148,10 +134,8 @@ void UWBP_InventoryGemSlot_C::SetFullStackHighlight()
 
 void UWBP_InventoryGemSlot_C::SetGrayedNames(bool bGray)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryGemSlot_C", "SetGrayedNames");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetGrayedNames", FnName));
 
 	Params::WBP_InventoryGemSlot_C_SetGrayedNames Parms{};
 
@@ -168,10 +152,8 @@ void UWBP_InventoryGemSlot_C::SetGrayedNames(bool bGray)
 
 void UWBP_InventoryGemSlot_C::SetGrayScaleTex(const struct FSlateBrush& InBrush)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryGemSlot_C", "SetGrayScaleTex");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetGrayScaleTex", FnName));
 
 	Params::WBP_InventoryGemSlot_C_SetGrayScaleTex Parms{};
 
@@ -188,10 +170,8 @@ void UWBP_InventoryGemSlot_C::SetGrayScaleTex(const struct FSlateBrush& InBrush)
 
 void UWBP_InventoryGemSlot_C::SetHighlightColor(const struct FLinearColor& InColor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryGemSlot_C", "SetHighlightColor");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetHighlightColor", FnName));
 
 	Params::WBP_InventoryGemSlot_C_SetHighlightColor Parms{};
 
@@ -208,10 +188,8 @@ void UWBP_InventoryGemSlot_C::SetHighlightColor(const struct FLinearColor& InCol
 
 void UWBP_InventoryGemSlot_C::SetSlotSize(const struct FVector2D& InSize)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryGemSlot_C", "SetSlotSize");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetSlotSize", FnName));
 
 	Params::WBP_InventoryGemSlot_C_SetSlotSize Parms{};
 
@@ -229,10 +207,8 @@ void UWBP_InventoryGemSlot_C::SetSlotSize(const struct FVector2D& InSize)
 
 void UWBP_InventoryGemSlot_C::ShowItemNameInIcon(const class FText& InText, bool Show)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryGemSlot_C", "ShowItemNameInIcon");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ShowItemNameInIcon", FnName));
 
 	Params::WBP_InventoryGemSlot_C_ShowItemNameInIcon Parms{};
 
@@ -251,10 +227,8 @@ void UWBP_InventoryGemSlot_C::ShowItemNameInIcon(const class FText& InText, bool
 
 void UWBP_InventoryGemSlot_C::UpdateVisuals(bool bInLocked, int32 Level_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventoryGemSlot_C", "UpdateVisuals");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateVisuals", FnName));
 
 	Params::WBP_InventoryGemSlot_C_UpdateVisuals Parms{};
 

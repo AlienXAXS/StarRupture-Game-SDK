@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_PlayerProgressionSkill_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_PlayerProgressionSkill_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -37,10 +35,8 @@ void UWBP_PlayerProgressionSkill_C::Construct()
 
 void UWBP_PlayerProgressionSkill_C::ExecuteUbergraph_WBP_PlayerProgressionSkill(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_PlayerProgressionSkill_C", "ExecuteUbergraph_WBP_PlayerProgressionSkill");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_PlayerProgressionSkill_C", "ExecuteUbergraph_WBP_PlayerProgressionSkill", FuncInfo);
 
 	Params::WBP_PlayerProgressionSkill_C_ExecuteUbergraph_WBP_PlayerProgressionSkill Parms{};
 
@@ -55,10 +51,8 @@ void UWBP_PlayerProgressionSkill_C::ExecuteUbergraph_WBP_PlayerProgressionSkill(
 
 void UWBP_PlayerProgressionSkill_C::SetMaxLevel()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_PlayerProgressionSkill_C", "SetMaxLevel");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetMaxLevel", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -71,10 +65,8 @@ void UWBP_PlayerProgressionSkill_C::SetMaxLevel()
 
 void UWBP_PlayerProgressionSkill_C::SetSkillIcon(ECrPlayerProgressionSkill InSkill)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_PlayerProgressionSkill_C", "SetSkillIcon");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetSkillIcon", FnName));
 
 	Params::WBP_PlayerProgressionSkill_C_SetSkillIcon Parms{};
 

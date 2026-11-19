@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UBTTask_Exploder_Tier2_Actor_RegisterMovementFailed_C::ExecuteUbergraph_BTTask_Exploder_Tier2_Actor_RegisterMovementFailed(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTTask_Exploder_Tier2_Actor_RegisterMovementFailed_C", "ExecuteUbergraph_BTTask_Exploder_Tier2_Actor_RegisterMovementFailed");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BTTask_Exploder_Tier2_Actor_RegisterMovementFailed_C", "ExecuteUbergraph_BTTask_Exploder_Tier2_Actor_RegisterMovementFailed", FuncInfo);
 
 	Params::BTTask_Exploder_Tier2_Actor_RegisterMovementFailed_C_ExecuteUbergraph_BTTask_Exploder_Tier2_Actor_RegisterMovementFailed Parms{};
 
@@ -44,10 +42,8 @@ void UBTTask_Exploder_Tier2_Actor_RegisterMovementFailed_C::ExecuteUbergraph_BTT
 
 void UBTTask_Exploder_Tier2_Actor_RegisterMovementFailed_C::ReceiveExecuteAI(class AAIController* OwnerController, class APawn* ControlledPawn)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BTTask_Exploder_Tier2_Actor_RegisterMovementFailed_C", "ReceiveExecuteAI");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveExecuteAI", FnName));
 
 	Params::BTTask_Exploder_Tier2_Actor_RegisterMovementFailed_C_ReceiveExecuteAI Parms{};
 

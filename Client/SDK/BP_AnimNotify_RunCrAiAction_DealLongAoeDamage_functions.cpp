@@ -24,10 +24,8 @@ SDK_NAMESPACE_START
 
 class UCrAiAction* UBP_AnimNotify_RunCrAiAction_DealLongAoeDamage_C::CreateAiAction(class AActor* Actor) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_AnimNotify_RunCrAiAction_DealLongAoeDamage_C", "CreateAiAction");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"CreateAiAction", FnName));
 
 	Params::BP_AnimNotify_RunCrAiAction_DealLongAoeDamage_C_CreateAiAction Parms{};
 

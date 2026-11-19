@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void ABP_ExporterTier2_C::Attach_meshes()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ExporterTier2_C", "Attach_meshes");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Attach_meshes", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -37,10 +35,8 @@ void ABP_ExporterTier2_C::Attach_meshes()
 
 void ABP_ExporterTier2_C::ExecuteUbergraph_BP_ExporterTier2(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ExporterTier2_C", "ExecuteUbergraph_BP_ExporterTier2");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_ExporterTier2_C", "ExecuteUbergraph_BP_ExporterTier2", FuncInfo);
 
 	Params::BP_ExporterTier2_C_ExecuteUbergraph_BP_ExporterTier2 Parms{};
 
@@ -57,10 +53,8 @@ void ABP_ExporterTier2_C::ExecuteUbergraph_BP_ExporterTier2(int32 EntryPoint)
 
 void ABP_ExporterTier2_C::OnBuildingStateChanged(ECrBuildingState InState)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ExporterTier2_C", "OnBuildingStateChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBuildingStateChanged", FnName));
 
 	Params::BP_ExporterTier2_C_OnBuildingStateChanged Parms{};
 
@@ -77,10 +71,8 @@ void ABP_ExporterTier2_C::OnBuildingStateChanged(ECrBuildingState InState)
 
 void ABP_ExporterTier2_C::OnCorporationChanged(class FName NewCorporation)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ExporterTier2_C", "OnCorporationChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnCorporationChanged", FnName));
 
 	Params::BP_ExporterTier2_C_OnCorporationChanged Parms{};
 
@@ -95,10 +87,8 @@ void ABP_ExporterTier2_C::OnCorporationChanged(class FName NewCorporation)
 
 void ABP_ExporterTier2_C::OnItemCraftingComplete()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ExporterTier2_C", "OnItemCraftingComplete");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnItemCraftingComplete", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -109,10 +99,8 @@ void ABP_ExporterTier2_C::OnItemCraftingComplete()
 
 void ABP_ExporterTier2_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ExporterTier2_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -123,10 +111,8 @@ void ABP_ExporterTier2_C::ReceiveBeginPlay()
 
 void ABP_ExporterTier2_C::UserConstructionScript()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ExporterTier2_C", "UserConstructionScript");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UserConstructionScript", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

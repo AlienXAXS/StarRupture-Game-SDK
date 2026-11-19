@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UGE_CamEffect_ShieldInfectionDamage_C::ExecuteUbergraph_GE_CamEffect_ShieldInfectionDamage(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GE_CamEffect_ShieldInfectionDamage_C", "ExecuteUbergraph_GE_CamEffect_ShieldInfectionDamage");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "GE_CamEffect_ShieldInfectionDamage_C", "ExecuteUbergraph_GE_CamEffect_ShieldInfectionDamage", FuncInfo);
 
 	Params::GE_CamEffect_ShieldInfectionDamage_C_ExecuteUbergraph_GE_CamEffect_ShieldInfectionDamage Parms{};
 
@@ -45,10 +43,8 @@ void UGE_CamEffect_ShieldInfectionDamage_C::ExecuteUbergraph_GE_CamEffect_Shield
 
 void UGE_CamEffect_ShieldInfectionDamage_C::OnAttributeChanged_2CEB6F144A668C2237F5569FF3F48525(const struct FGameplayAttribute& Attribute, float NewValue, float OldValue)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GE_CamEffect_ShieldInfectionDamage_C", "OnAttributeChanged_2CEB6F144A668C2237F5569FF3F48525");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnAttributeChanged_2CEB6F144A668C2237F5569FF3F48525", FnName));
 
 	Params::GE_CamEffect_ShieldInfectionDamage_C_OnAttributeChanged_2CEB6F144A668C2237F5569FF3F48525 Parms{};
 
@@ -69,10 +65,8 @@ void UGE_CamEffect_ShieldInfectionDamage_C::OnAttributeChanged_2CEB6F144A668C223
 
 void UGE_CamEffect_ShieldInfectionDamage_C::OnInitialized(class UAbilitySystemComponent* AbilitySystemComponent, TSubclassOf<class UGameplayEffect> GameplayEffect, class USceneComponent* OwnerRootComponent)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GE_CamEffect_ShieldInfectionDamage_C", "OnInitialized");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnInitialized", FnName));
 
 	Params::GE_CamEffect_ShieldInfectionDamage_C_OnInitialized Parms{};
 

@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void ABP_Armory_C::Attach_meshes()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Armory_C", "Attach_meshes");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Attach_meshes", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -37,10 +35,8 @@ void ABP_Armory_C::Attach_meshes()
 
 void ABP_Armory_C::ExecuteUbergraph_BP_Armory(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Armory_C", "ExecuteUbergraph_BP_Armory");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Armory_C", "ExecuteUbergraph_BP_Armory", FuncInfo);
 
 	Params::BP_Armory_C_ExecuteUbergraph_BP_Armory Parms{};
 
@@ -55,10 +51,8 @@ void ABP_Armory_C::ExecuteUbergraph_BP_Armory(int32 EntryPoint)
 
 void ABP_Armory_C::Idle_timeline__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Armory_C", "Idle_timeline__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Idle_timeline__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -69,10 +63,8 @@ void ABP_Armory_C::Idle_timeline__FinishedFunc()
 
 void ABP_Armory_C::Idle_timeline__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Armory_C", "Idle_timeline__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Idle_timeline__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -85,10 +77,8 @@ void ABP_Armory_C::Idle_timeline__UpdateFunc()
 
 void ABP_Armory_C::LeftArmVFX(double LaserLength)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Armory_C", "LeftArmVFX");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"LeftArmVFX", FnName));
 
 	Params::BP_Armory_C_LeftArmVFX Parms{};
 
@@ -105,10 +95,8 @@ void ABP_Armory_C::LeftArmVFX(double LaserLength)
 
 void ABP_Armory_C::OnBuildingStateChanged(ECrBuildingState InState)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Armory_C", "OnBuildingStateChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBuildingStateChanged", FnName));
 
 	Params::BP_Armory_C_OnBuildingStateChanged Parms{};
 
@@ -125,10 +113,8 @@ void ABP_Armory_C::OnBuildingStateChanged(ECrBuildingState InState)
 
 void ABP_Armory_C::OnUIOpened(bool bOpened)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Armory_C", "OnUIOpened");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnUIOpened", FnName));
 
 	Params::BP_Armory_C_OnUIOpened Parms{};
 
@@ -143,10 +129,8 @@ void ABP_Armory_C::OnUIOpened(bool bOpened)
 
 void ABP_Armory_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Armory_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -159,10 +143,8 @@ void ABP_Armory_C::ReceiveBeginPlay()
 
 void ABP_Armory_C::RightArmVFX(double LaserLength)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Armory_C", "RightArmVFX");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"RightArmVFX", FnName));
 
 	Params::BP_Armory_C_RightArmVFX Parms{};
 

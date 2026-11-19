@@ -24,10 +24,8 @@ SDK_NAMESPACE_START
 
 void UWBP_ContinueButton_C::SetTimestamp(const class FText& InText, const class FText& SessionName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ContinueButton_C", "SetTimestamp");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetTimestamp", FnName));
 
 	Params::WBP_ContinueButton_C_SetTimestamp Parms{};
 
@@ -45,10 +43,8 @@ void UWBP_ContinueButton_C::SetTimestamp(const class FText& InText, const class 
 
 void UWBP_ContinueButton_C::SetSelected(bool Selected_SetSelected)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ContinueButton_C", "SetSelected");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetSelected", FnName));
 
 	Params::WBP_ContinueButton_C_SetSelected Parms{};
 
@@ -65,10 +61,8 @@ void UWBP_ContinueButton_C::SetSelected(bool Selected_SetSelected)
 
 void UWBP_ContinueButton_C::SetHighlight(bool Highlight_SetHighlight)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ContinueButton_C", "SetHighlight");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetHighlight", FnName));
 
 	Params::WBP_ContinueButton_C_SetHighlight Parms{};
 
@@ -85,10 +79,8 @@ void UWBP_ContinueButton_C::SetHighlight(bool Highlight_SetHighlight)
 
 void UWBP_ContinueButton_C::ExecuteUbergraph_WBP_ContinueButton(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ContinueButton_C", "ExecuteUbergraph_WBP_ContinueButton");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_ContinueButton_C", "ExecuteUbergraph_WBP_ContinueButton", FuncInfo);
 
 	Params::WBP_ContinueButton_C_ExecuteUbergraph_WBP_ContinueButton Parms{};
 
@@ -103,10 +95,8 @@ void UWBP_ContinueButton_C::ExecuteUbergraph_WBP_ContinueButton(int32 EntryPoint
 
 void UWBP_ContinueButton_C::BndEvt__WBP_MenuTabButton_TabButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ContinueButton_C", "BndEvt__WBP_MenuTabButton_TabButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__WBP_MenuTabButton_TabButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -117,10 +107,8 @@ void UWBP_ContinueButton_C::BndEvt__WBP_MenuTabButton_TabButton_K2Node_Component
 
 void UWBP_ContinueButton_C::BndEvt__WBP_MenuTabButton_TabButton_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ContinueButton_C", "BndEvt__WBP_MenuTabButton_TabButton_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__WBP_MenuTabButton_TabButton_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

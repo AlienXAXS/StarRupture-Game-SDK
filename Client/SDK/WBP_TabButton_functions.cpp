@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_TabButton_C::BndEvt__WBP_TabButton_TabButton_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_TabButton_C", "BndEvt__WBP_TabButton_TabButton_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__WBP_TabButton_TabButton_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -35,10 +33,8 @@ void UWBP_TabButton_C::BndEvt__WBP_TabButton_TabButton_K2Node_ComponentBoundEven
 
 void UWBP_TabButton_C::BndEvt__WBP_TabButton_TabButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_TabButton_C", "BndEvt__WBP_TabButton_TabButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__WBP_TabButton_TabButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -51,10 +47,8 @@ void UWBP_TabButton_C::BndEvt__WBP_TabButton_TabButton_K2Node_ComponentBoundEven
 
 void UWBP_TabButton_C::ExecuteUbergraph_WBP_TabButton(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_TabButton_C", "ExecuteUbergraph_WBP_TabButton");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_TabButton_C", "ExecuteUbergraph_WBP_TabButton", FuncInfo);
 
 	Params::WBP_TabButton_C_ExecuteUbergraph_WBP_TabButton Parms{};
 
@@ -71,10 +65,8 @@ void UWBP_TabButton_C::ExecuteUbergraph_WBP_TabButton(int32 EntryPoint)
 
 void UWBP_TabButton_C::SetSelected(bool Selected)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_TabButton_C", "SetSelected");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetSelected", FnName));
 
 	Params::WBP_TabButton_C_SetSelected Parms{};
 
@@ -91,10 +83,8 @@ void UWBP_TabButton_C::SetSelected(bool Selected)
 
 void UWBP_TabButton_C::ShowWarningIcon(bool Show)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_TabButton_C", "ShowWarningIcon");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ShowWarningIcon", FnName));
 
 	Params::WBP_TabButton_C_ShowWarningIcon Parms{};
 

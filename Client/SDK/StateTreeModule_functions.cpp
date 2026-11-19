@@ -276,10 +276,8 @@ bool UStateTreeNodeBlueprintBase::IsPropertyRefValid(const struct FStateTreeBlue
 
 class FText UStateTreeNodeBlueprintBase::ReceiveGetDescription(EStateTreeNodeFormatting Formatting) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StateTreeNodeBlueprintBase", "ReceiveGetDescription");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveGetDescription", FnName));
 
 	Params::StateTreeNodeBlueprintBase_ReceiveGetDescription Parms{};
 
@@ -298,10 +296,8 @@ class FText UStateTreeNodeBlueprintBase::ReceiveGetDescription(EStateTreeNodeFor
 
 bool UStateTreeConditionBlueprintBase::ReceiveTestCondition() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StateTreeConditionBlueprintBase", "ReceiveTestCondition");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveTestCondition", FnName));
 
 	Params::StateTreeConditionBlueprintBase_ReceiveTestCondition Parms{};
 
@@ -318,10 +314,8 @@ bool UStateTreeConditionBlueprintBase::ReceiveTestCondition() const
 
 float UStateTreeConsiderationBlueprintBase::ReceiveGetScore() const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StateTreeConsiderationBlueprintBase", "ReceiveGetScore");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveGetScore", FnName));
 
 	Params::StateTreeConsiderationBlueprintBase_ReceiveGetScore Parms{};
 
@@ -338,10 +332,8 @@ float UStateTreeConsiderationBlueprintBase::ReceiveGetScore() const
 
 void UStateTreeEvaluatorBlueprintBase::ReceiveTick(const float DeltaTime)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StateTreeEvaluatorBlueprintBase", "ReceiveTick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveTick", FnName));
 
 	Params::StateTreeEvaluatorBlueprintBase_ReceiveTick Parms{};
 
@@ -356,10 +348,8 @@ void UStateTreeEvaluatorBlueprintBase::ReceiveTick(const float DeltaTime)
 
 void UStateTreeEvaluatorBlueprintBase::ReceiveTreeStart()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StateTreeEvaluatorBlueprintBase", "ReceiveTreeStart");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveTreeStart", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -370,10 +360,8 @@ void UStateTreeEvaluatorBlueprintBase::ReceiveTreeStart()
 
 void UStateTreeEvaluatorBlueprintBase::ReceiveTreeStop()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StateTreeEvaluatorBlueprintBase", "ReceiveTreeStop");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveTreeStop", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -464,10 +452,8 @@ void UStateTreeTaskBlueprintBase::FinishTask(const bool bSucceeded)
 
 EStateTreeRunStatus UStateTreeTaskBlueprintBase::ReceiveEnterState(const struct FStateTreeTransitionResult& Transition)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StateTreeTaskBlueprintBase", "ReceiveEnterState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveEnterState", FnName));
 
 	Params::StateTreeTaskBlueprintBase_ReceiveEnterState Parms{};
 
@@ -486,10 +472,8 @@ EStateTreeRunStatus UStateTreeTaskBlueprintBase::ReceiveEnterState(const struct 
 
 void UStateTreeTaskBlueprintBase::ReceiveExitState(const struct FStateTreeTransitionResult& Transition)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StateTreeTaskBlueprintBase", "ReceiveExitState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveExitState", FnName));
 
 	Params::StateTreeTaskBlueprintBase_ReceiveExitState Parms{};
 
@@ -506,10 +490,8 @@ void UStateTreeTaskBlueprintBase::ReceiveExitState(const struct FStateTreeTransi
 
 void UStateTreeTaskBlueprintBase::ReceiveLatentEnterState(const struct FStateTreeTransitionResult& Transition)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StateTreeTaskBlueprintBase", "ReceiveLatentEnterState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveLatentEnterState", FnName));
 
 	Params::StateTreeTaskBlueprintBase_ReceiveLatentEnterState Parms{};
 
@@ -526,10 +508,8 @@ void UStateTreeTaskBlueprintBase::ReceiveLatentEnterState(const struct FStateTre
 
 void UStateTreeTaskBlueprintBase::ReceiveLatentTick(const float DeltaTime)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StateTreeTaskBlueprintBase", "ReceiveLatentTick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveLatentTick", FnName));
 
 	Params::StateTreeTaskBlueprintBase_ReceiveLatentTick Parms{};
 
@@ -547,10 +527,8 @@ void UStateTreeTaskBlueprintBase::ReceiveLatentTick(const float DeltaTime)
 
 void UStateTreeTaskBlueprintBase::ReceiveStateCompleted(const EStateTreeRunStatus CompletionStatus, const struct FStateTreeActiveStates& CompletedActiveStates)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StateTreeTaskBlueprintBase", "ReceiveStateCompleted");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveStateCompleted", FnName));
 
 	Params::StateTreeTaskBlueprintBase_ReceiveStateCompleted Parms{};
 
@@ -569,10 +547,8 @@ void UStateTreeTaskBlueprintBase::ReceiveStateCompleted(const EStateTreeRunStatu
 
 EStateTreeRunStatus UStateTreeTaskBlueprintBase::ReceiveTick(const float DeltaTime)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("StateTreeTaskBlueprintBase", "ReceiveTick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveTick", FnName));
 
 	Params::StateTreeTaskBlueprintBase_ReceiveTick Parms{};
 

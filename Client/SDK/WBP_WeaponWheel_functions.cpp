@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_WeaponWheel_C::ExecuteUbergraph_WBP_WeaponWheel(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_WeaponWheel_C", "ExecuteUbergraph_WBP_WeaponWheel");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_WeaponWheel_C", "ExecuteUbergraph_WBP_WeaponWheel", FuncInfo);
 
 	Params::WBP_WeaponWheel_C_ExecuteUbergraph_WBP_WeaponWheel Parms{};
 
@@ -43,10 +41,8 @@ void UWBP_WeaponWheel_C::ExecuteUbergraph_WBP_WeaponWheel(int32 EntryPoint)
 
 void UWBP_WeaponWheel_C::PreConstruct(bool IsDesignTime)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_WeaponWheel_C", "PreConstruct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PreConstruct", FnName));
 
 	Params::WBP_WeaponWheel_C_PreConstruct Parms{};
 

@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UGE_CamEffect_Radiation_C::ExecuteUbergraph_GE_CamEffect_Radiation(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GE_CamEffect_Radiation_C", "ExecuteUbergraph_GE_CamEffect_Radiation");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "GE_CamEffect_Radiation_C", "ExecuteUbergraph_GE_CamEffect_Radiation", FuncInfo);
 
 	Params::GE_CamEffect_Radiation_C_ExecuteUbergraph_GE_CamEffect_Radiation Parms{};
 
@@ -45,10 +43,8 @@ void UGE_CamEffect_Radiation_C::ExecuteUbergraph_GE_CamEffect_Radiation(int32 En
 
 void UGE_CamEffect_Radiation_C::OnAttributeChanged_087843074A5B417AA3B4509CB221853D(const struct FGameplayAttribute& Attribute, float NewValue, float OldValue)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GE_CamEffect_Radiation_C", "OnAttributeChanged_087843074A5B417AA3B4509CB221853D");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnAttributeChanged_087843074A5B417AA3B4509CB221853D", FnName));
 
 	Params::GE_CamEffect_Radiation_C_OnAttributeChanged_087843074A5B417AA3B4509CB221853D Parms{};
 
@@ -69,10 +65,8 @@ void UGE_CamEffect_Radiation_C::OnAttributeChanged_087843074A5B417AA3B4509CB2218
 
 void UGE_CamEffect_Radiation_C::OnInitialized(class UAbilitySystemComponent* AbilitySystemComponent, TSubclassOf<class UGameplayEffect> GameplayEffect, class USceneComponent* OwnerRootComponent)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GE_CamEffect_Radiation_C", "OnInitialized");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnInitialized", FnName));
 
 	Params::GE_CamEffect_Radiation_C_OnInitialized Parms{};
 

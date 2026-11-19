@@ -25,10 +25,8 @@ SDK_NAMESPACE_START
 
 bool UGC_Medtool3FovChange_C::OnActive(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GC_Medtool3FovChange_C", "OnActive");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnActive", FnName));
 
 	Params::GC_Medtool3FovChange_C_OnActive Parms{};
 
@@ -50,10 +48,8 @@ bool UGC_Medtool3FovChange_C::OnActive(class AActor* MyTarget, const struct FGam
 
 bool UGC_Medtool3FovChange_C::OnRemove(class AActor* MyTarget, const struct FGameplayCueParameters& Parameters) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GC_Medtool3FovChange_C", "OnRemove");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnRemove", FnName));
 
 	Params::GC_Medtool3FovChange_C_OnRemove Parms{};
 

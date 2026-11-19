@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_MapMenuLegendButton_C::ExecuteUbergraph_WBP_MapMenuLegendButton(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MapMenuLegendButton_C", "ExecuteUbergraph_WBP_MapMenuLegendButton");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_MapMenuLegendButton_C", "ExecuteUbergraph_WBP_MapMenuLegendButton", FuncInfo);
 
 	Params::WBP_MapMenuLegendButton_C_ExecuteUbergraph_WBP_MapMenuLegendButton Parms{};
 
@@ -44,10 +42,8 @@ void UWBP_MapMenuLegendButton_C::ExecuteUbergraph_WBP_MapMenuLegendButton(int32 
 
 void UWBP_MapMenuLegendButton_C::OnHoverChangedEvent(class UObject* Item, bool bIsHovered)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MapMenuLegendButton_C", "OnHoverChangedEvent");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnHoverChangedEvent", FnName));
 
 	Params::WBP_MapMenuLegendButton_C_OnHoverChangedEvent Parms{};
 
@@ -65,10 +61,8 @@ void UWBP_MapMenuLegendButton_C::OnHoverChangedEvent(class UObject* Item, bool b
 
 void UWBP_MapMenuLegendButton_C::SetRightShift(bool RightShift)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MapMenuLegendButton_C", "SetRightShift");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetRightShift", FnName));
 
 	Params::WBP_MapMenuLegendButton_C_SetRightShift Parms{};
 
@@ -85,10 +79,8 @@ void UWBP_MapMenuLegendButton_C::SetRightShift(bool RightShift)
 
 void UWBP_MapMenuLegendButton_C::SetTopSpace(bool TopSpace)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MapMenuLegendButton_C", "SetTopSpace");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetTopSpace", FnName));
 
 	Params::WBP_MapMenuLegendButton_C_SetTopSpace Parms{};
 

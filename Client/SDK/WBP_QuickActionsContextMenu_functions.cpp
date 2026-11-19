@@ -24,10 +24,8 @@ SDK_NAMESPACE_START
 
 class UCrUW_ActionButton* UWBP_QuickActionsContextMenu_C::AddAction(ECrUIInputActionType InAction)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_QuickActionsContextMenu_C", "AddAction");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AddAction", FnName));
 
 	Params::WBP_QuickActionsContextMenu_C_AddAction Parms{};
 
@@ -44,10 +42,8 @@ class UCrUW_ActionButton* UWBP_QuickActionsContextMenu_C::AddAction(ECrUIInputAc
 
 void UWBP_QuickActionsContextMenu_C::ClearMenu()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_QuickActionsContextMenu_C", "ClearMenu");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ClearMenu", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -58,10 +54,8 @@ void UWBP_QuickActionsContextMenu_C::ClearMenu()
 
 void UWBP_QuickActionsContextMenu_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_QuickActionsContextMenu_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -74,10 +68,8 @@ void UWBP_QuickActionsContextMenu_C::Construct()
 
 void UWBP_QuickActionsContextMenu_C::ExecuteUbergraph_WBP_QuickActionsContextMenu(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_QuickActionsContextMenu_C", "ExecuteUbergraph_WBP_QuickActionsContextMenu");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_QuickActionsContextMenu_C", "ExecuteUbergraph_WBP_QuickActionsContextMenu", FuncInfo);
 
 	Params::WBP_QuickActionsContextMenu_C_ExecuteUbergraph_WBP_QuickActionsContextMenu Parms{};
 
@@ -94,10 +86,8 @@ void UWBP_QuickActionsContextMenu_C::ExecuteUbergraph_WBP_QuickActionsContextMen
 
 void UWBP_QuickActionsContextMenu_C::SetUsableWidget(bool InUsable)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_QuickActionsContextMenu_C", "SetUsableWidget");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetUsableWidget", FnName));
 
 	Params::WBP_QuickActionsContextMenu_C_SetUsableWidget Parms{};
 

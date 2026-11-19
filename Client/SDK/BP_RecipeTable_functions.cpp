@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_RecipeTable_C::ExecuteUbergraph_BP_RecipeTable(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_RecipeTable_C", "ExecuteUbergraph_BP_RecipeTable");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_RecipeTable_C", "ExecuteUbergraph_BP_RecipeTable", FuncInfo);
 
 	Params::BP_RecipeTable_C_ExecuteUbergraph_BP_RecipeTable Parms{};
 
@@ -43,10 +41,8 @@ void ABP_RecipeTable_C::ExecuteUbergraph_BP_RecipeTable(int32 EntryPoint)
 
 void ABP_RecipeTable_C::OnUIOpened(bool bOpened)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_RecipeTable_C", "OnUIOpened");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnUIOpened", FnName));
 
 	Params::BP_RecipeTable_C_OnUIOpened Parms{};
 
@@ -61,10 +57,8 @@ void ABP_RecipeTable_C::OnUIOpened(bool bOpened)
 
 void ABP_RecipeTable_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_RecipeTable_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

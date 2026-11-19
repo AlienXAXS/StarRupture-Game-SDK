@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_ActionButtonWithMod_C::ExecuteUbergraph_WBP_ActionButtonWithMod(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ActionButtonWithMod_C", "ExecuteUbergraph_WBP_ActionButtonWithMod");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_ActionButtonWithMod_C", "ExecuteUbergraph_WBP_ActionButtonWithMod", FuncInfo);
 
 	Params::WBP_ActionButtonWithMod_C_ExecuteUbergraph_WBP_ActionButtonWithMod Parms{};
 
@@ -43,10 +41,8 @@ void UWBP_ActionButtonWithMod_C::ExecuteUbergraph_WBP_ActionButtonWithMod(int32 
 
 void UWBP_ActionButtonWithMod_C::GetHeightSize(double* Height)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ActionButtonWithMod_C", "GetHeightSize");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetHeightSize", FnName));
 
 	Params::WBP_ActionButtonWithMod_C_GetHeightSize Parms{};
 
@@ -64,10 +60,8 @@ void UWBP_ActionButtonWithMod_C::GetHeightSize(double* Height)
 
 void UWBP_ActionButtonWithMod_C::SetActionImageVisibility(ESlateVisibility InVisibility)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ActionButtonWithMod_C", "SetActionImageVisibility");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetActionImageVisibility", FnName));
 
 	Params::WBP_ActionButtonWithMod_C_SetActionImageVisibility Parms{};
 
@@ -84,10 +78,8 @@ void UWBP_ActionButtonWithMod_C::SetActionImageVisibility(ESlateVisibility InVis
 
 void UWBP_ActionButtonWithMod_C::SetButtonImageVisibility(ESlateVisibility InVisibility)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ActionButtonWithMod_C", "SetButtonImageVisibility");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetButtonImageVisibility", FnName));
 
 	Params::WBP_ActionButtonWithMod_C_SetButtonImageVisibility Parms{};
 
@@ -104,10 +96,8 @@ void UWBP_ActionButtonWithMod_C::SetButtonImageVisibility(ESlateVisibility InVis
 
 void UWBP_ActionButtonWithMod_C::SetLongIconText(bool bLong)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ActionButtonWithMod_C", "SetLongIconText");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetLongIconText", FnName));
 
 	Params::WBP_ActionButtonWithMod_C_SetLongIconText Parms{};
 
@@ -125,10 +115,8 @@ void UWBP_ActionButtonWithMod_C::SetLongIconText(bool bLong)
 
 void UWBP_ActionButtonWithMod_C::SetModIconData(bool bLong, const class FText& InName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ActionButtonWithMod_C", "SetModIconData");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetModIconData", FnName));
 
 	Params::WBP_ActionButtonWithMod_C_SetModIconData Parms{};
 
@@ -146,10 +134,8 @@ void UWBP_ActionButtonWithMod_C::SetModIconData(bool bLong, const class FText& I
 
 void UWBP_ActionButtonWithMod_C::SetTemporaryIconKey(const class FText& InText)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ActionButtonWithMod_C", "SetTemporaryIconKey");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetTemporaryIconKey", FnName));
 
 	Params::WBP_ActionButtonWithMod_C_SetTemporaryIconKey Parms{};
 
@@ -166,10 +152,8 @@ void UWBP_ActionButtonWithMod_C::SetTemporaryIconKey(const class FText& InText)
 
 void UWBP_ActionButtonWithMod_C::SetTemporaryIconVisibility(bool bVisible)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ActionButtonWithMod_C", "SetTemporaryIconVisibility");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetTemporaryIconVisibility", FnName));
 
 	Params::WBP_ActionButtonWithMod_C_SetTemporaryIconVisibility Parms{};
 

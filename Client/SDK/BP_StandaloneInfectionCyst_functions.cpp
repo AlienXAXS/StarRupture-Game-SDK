@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_StandaloneInfectionCyst_C::BP_OnDamageProtectionChanged(bool IsActive)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "BP_OnDamageProtectionChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnDamageProtectionChanged", FnName));
 
 	Params::BP_StandaloneInfectionCyst_C_BP_OnDamageProtectionChanged Parms{};
 
@@ -41,10 +39,8 @@ void ABP_StandaloneInfectionCyst_C::BP_OnDamageProtectionChanged(bool IsActive)
 
 void ABP_StandaloneInfectionCyst_C::BP_OnDestroyed()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "BP_OnDestroyed");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnDestroyed", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -55,10 +51,8 @@ void ABP_StandaloneInfectionCyst_C::BP_OnDestroyed()
 
 void ABP_StandaloneInfectionCyst_C::BP_OnInfectionJustSpawned()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "BP_OnInfectionJustSpawned");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnInfectionJustSpawned", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -71,10 +65,8 @@ void ABP_StandaloneInfectionCyst_C::BP_OnInfectionJustSpawned()
 
 void ABP_StandaloneInfectionCyst_C::CalculateImmunityProgressFromTimers(double* Progress)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "CalculateImmunityProgressFromTimers");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"CalculateImmunityProgressFromTimers", FnName));
 
 	Params::BP_StandaloneInfectionCyst_C_CalculateImmunityProgressFromTimers Parms{};
 
@@ -90,10 +82,8 @@ void ABP_StandaloneInfectionCyst_C::CalculateImmunityProgressFromTimers(double* 
 
 void ABP_StandaloneInfectionCyst_C::Dissolve__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "Dissolve__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Dissolve__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -104,10 +94,8 @@ void ABP_StandaloneInfectionCyst_C::Dissolve__FinishedFunc()
 
 void ABP_StandaloneInfectionCyst_C::Dissolve__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "Dissolve__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Dissolve__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -120,10 +108,8 @@ void ABP_StandaloneInfectionCyst_C::Dissolve__UpdateFunc()
 
 void ABP_StandaloneInfectionCyst_C::ExecuteUbergraph_BP_StandaloneInfectionCyst(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "ExecuteUbergraph_BP_StandaloneInfectionCyst");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_StandaloneInfectionCyst_C", "ExecuteUbergraph_BP_StandaloneInfectionCyst", FuncInfo);
 
 	Params::BP_StandaloneInfectionCyst_C_ExecuteUbergraph_BP_StandaloneInfectionCyst Parms{};
 
@@ -138,10 +124,8 @@ void ABP_StandaloneInfectionCyst_C::ExecuteUbergraph_BP_StandaloneInfectionCyst(
 
 void ABP_StandaloneInfectionCyst_C::ImmunityActivated()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "ImmunityActivated");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ImmunityActivated", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -152,10 +136,8 @@ void ABP_StandaloneInfectionCyst_C::ImmunityActivated()
 
 void ABP_StandaloneInfectionCyst_C::ImmunityDeactivated()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "ImmunityDeactivated");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ImmunityDeactivated", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -166,10 +148,8 @@ void ABP_StandaloneInfectionCyst_C::ImmunityDeactivated()
 
 void ABP_StandaloneInfectionCyst_C::ImmunityTransition__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "ImmunityTransition__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ImmunityTransition__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -180,10 +160,8 @@ void ABP_StandaloneInfectionCyst_C::ImmunityTransition__FinishedFunc()
 
 void ABP_StandaloneInfectionCyst_C::ImmunityTransition__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "ImmunityTransition__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ImmunityTransition__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -194,10 +172,8 @@ void ABP_StandaloneInfectionCyst_C::ImmunityTransition__UpdateFunc()
 
 void ABP_StandaloneInfectionCyst_C::Infection_grow()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "Infection_grow");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Infection_grow", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -212,10 +188,8 @@ void ABP_StandaloneInfectionCyst_C::Infection_grow()
 
 void ABP_StandaloneInfectionCyst_C::K2_OnDamageTaken_1(class AActor* InInstigator, const struct FHitResult& HitResult, float InDamage)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "K2_OnDamageTaken_1");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"K2_OnDamageTaken_1", FnName));
 
 	Params::BP_StandaloneInfectionCyst_C_K2_OnDamageTaken_1 Parms{};
 
@@ -232,10 +206,8 @@ void ABP_StandaloneInfectionCyst_C::K2_OnDamageTaken_1(class AActor* InInstigato
 
 void ABP_StandaloneInfectionCyst_C::OnDamageTaken_Multicast()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "OnDamageTaken_Multicast");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnDamageTaken_Multicast", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -248,10 +220,8 @@ void ABP_StandaloneInfectionCyst_C::OnDamageTaken_Multicast()
 
 void ABP_StandaloneInfectionCyst_C::OnGrowthChanged(double Progress)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "OnGrowthChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnGrowthChanged", FnName));
 
 	Params::BP_StandaloneInfectionCyst_C_OnGrowthChanged Parms{};
 
@@ -268,10 +238,8 @@ void ABP_StandaloneInfectionCyst_C::OnGrowthChanged(double Progress)
 
 void ABP_StandaloneInfectionCyst_C::OnGrowthProgress(float Progress)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "OnGrowthProgress");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnGrowthProgress", FnName));
 
 	Params::BP_StandaloneInfectionCyst_C_OnGrowthProgress Parms{};
 
@@ -286,10 +254,8 @@ void ABP_StandaloneInfectionCyst_C::OnGrowthProgress(float Progress)
 
 void ABP_StandaloneInfectionCyst_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -302,10 +268,8 @@ void ABP_StandaloneInfectionCyst_C::ReceiveBeginPlay()
 
 void ABP_StandaloneInfectionCyst_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "ReceiveEndPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveEndPlay", FnName));
 
 	Params::BP_StandaloneInfectionCyst_C_ReceiveEndPlay Parms{};
 
@@ -320,10 +284,8 @@ void ABP_StandaloneInfectionCyst_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 
 void ABP_StandaloneInfectionCyst_C::Scale_cyst__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "Scale_cyst__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Scale_cyst__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -334,10 +296,8 @@ void ABP_StandaloneInfectionCyst_C::Scale_cyst__FinishedFunc()
 
 void ABP_StandaloneInfectionCyst_C::Scale_cyst__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "Scale_cyst__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Scale_cyst__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -348,10 +308,8 @@ void ABP_StandaloneInfectionCyst_C::Scale_cyst__UpdateFunc()
 
 void ABP_StandaloneInfectionCyst_C::Set_half_time()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "Set_half_time");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Set_half_time", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -362,10 +320,8 @@ void ABP_StandaloneInfectionCyst_C::Set_half_time()
 
 void ABP_StandaloneInfectionCyst_C::UpdateInfectionEffect()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_StandaloneInfectionCyst_C", "UpdateInfectionEffect");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateInfectionEffect", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

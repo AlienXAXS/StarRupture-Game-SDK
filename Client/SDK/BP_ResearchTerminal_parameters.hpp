@@ -25,8 +25,19 @@ public:
 	class UUserWidget*                            CallFunc_GetWidget_ReturnValue;                    // 0x0008(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	class UWBP_ResearchTerminalWidget_C*          K2Node_DynamicCast_AsWBP_Research_Terminal_Widget; // 0x0010(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_Event_bIsInsideWall;                        // 0x0019(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_Not_PreBool_ReturnValue;                  // 0x001A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_BP_ResearchTerminal_C_ExecuteUbergraph_BP_ResearchTerminal;
+
+// Function BP_ResearchTerminal.BP_ResearchTerminal_C.OnBuildWithInsideWallCheck
+// 0x0001 (0x0001 - 0x0000)
+struct BP_ResearchTerminal_C_OnBuildWithInsideWallCheck final
+{
+public:
+	bool                                          bIsInsideWall;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_ResearchTerminal_C_OnBuildWithInsideWallCheck;
 
 // Function BP_ResearchTerminal.BP_ResearchTerminal_C.OnUIOpened
 // 0x0001 (0x0001 - 0x0000)

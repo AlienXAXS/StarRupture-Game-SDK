@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_CoolerPassive_Foundation_C::ExecuteUbergraph_BP_CoolerPassive_Foundation(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CoolerPassive_Foundation_C", "ExecuteUbergraph_BP_CoolerPassive_Foundation");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_CoolerPassive_Foundation_C", "ExecuteUbergraph_BP_CoolerPassive_Foundation", FuncInfo);
 
 	Params::BP_CoolerPassive_Foundation_C_ExecuteUbergraph_BP_CoolerPassive_Foundation Parms{};
 
@@ -43,10 +41,8 @@ void ABP_CoolerPassive_Foundation_C::ExecuteUbergraph_BP_CoolerPassive_Foundatio
 
 void ABP_CoolerPassive_Foundation_C::ReceiveActorBeginOverlap(class AActor* OtherActor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CoolerPassive_Foundation_C", "ReceiveActorBeginOverlap");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveActorBeginOverlap", FnName));
 
 	Params::BP_CoolerPassive_Foundation_C_ReceiveActorBeginOverlap Parms{};
 
@@ -61,10 +57,8 @@ void ABP_CoolerPassive_Foundation_C::ReceiveActorBeginOverlap(class AActor* Othe
 
 void ABP_CoolerPassive_Foundation_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CoolerPassive_Foundation_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -77,10 +71,8 @@ void ABP_CoolerPassive_Foundation_C::ReceiveBeginPlay()
 
 void ABP_CoolerPassive_Foundation_C::ReceiveTick(float DeltaSeconds)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CoolerPassive_Foundation_C", "ReceiveTick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveTick", FnName));
 
 	Params::BP_CoolerPassive_Foundation_C_ReceiveTick Parms{};
 

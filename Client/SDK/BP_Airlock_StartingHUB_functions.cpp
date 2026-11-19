@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_Airlock_StartingHUB_C::ExecuteUbergraph_BP_Airlock_StartingHUB(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Airlock_StartingHUB_C", "ExecuteUbergraph_BP_Airlock_StartingHUB");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Airlock_StartingHUB_C", "ExecuteUbergraph_BP_Airlock_StartingHUB", FuncInfo);
 
 	Params::BP_Airlock_StartingHUB_C_ExecuteUbergraph_BP_Airlock_StartingHUB Parms{};
 
@@ -43,10 +41,8 @@ void ABP_Airlock_StartingHUB_C::ExecuteUbergraph_BP_Airlock_StartingHUB(int32 En
 
 void ABP_Airlock_StartingHUB_C::OnOpenStateChanged(bool bInOpen)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Airlock_StartingHUB_C", "OnOpenStateChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnOpenStateChanged", FnName));
 
 	Params::BP_Airlock_StartingHUB_C_OnOpenStateChanged Parms{};
 
@@ -63,10 +59,8 @@ void ABP_Airlock_StartingHUB_C::OnOpenStateChanged(bool bInOpen)
 
 void ABP_Airlock_StartingHUB_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Airlock_StartingHUB_C", "PostPlayBuildingEffect");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PostPlayBuildingEffect", FnName));
 
 	Params::BP_Airlock_StartingHUB_C_PostPlayBuildingEffect Parms{};
 
@@ -81,10 +75,8 @@ void ABP_Airlock_StartingHUB_C::PostPlayBuildingEffect(bool bWasBuildingEffectPl
 
 void ABP_Airlock_StartingHUB_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Airlock_StartingHUB_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

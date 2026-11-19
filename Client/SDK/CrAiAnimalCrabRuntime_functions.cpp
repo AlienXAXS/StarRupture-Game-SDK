@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 bool ICrAiAnimalCrabInterface::AreTentaclesHidden()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("CrAiAnimalCrabInterface", "AreTentaclesHidden");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"AreTentaclesHidden", FnName));
 
 	Params::CrAiAnimalCrabInterface_AreTentaclesHidden Parms{};
 
@@ -48,10 +46,8 @@ bool ICrAiAnimalCrabInterface::AreTentaclesHidden()
 
 class UCrAiAnimalCrabUpdateStateComponent* ICrAiAnimalCrabInterface::GetCrabUpdateStateComponent()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("CrAiAnimalCrabInterface", "GetCrabUpdateStateComponent");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"GetCrabUpdateStateComponent", FnName));
 
 	Params::CrAiAnimalCrabInterface_GetCrabUpdateStateComponent Parms{};
 
@@ -73,10 +69,8 @@ class UCrAiAnimalCrabUpdateStateComponent* ICrAiAnimalCrabInterface::GetCrabUpda
 
 void ICrAiAnimalCrabInterface::SetTentaclesHidden(bool bHidden)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("CrAiAnimalCrabInterface", "SetTentaclesHidden");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"SetTentaclesHidden", FnName));
 
 	Params::CrAiAnimalCrabInterface_SetTentaclesHidden Parms{};
 
@@ -221,6 +215,29 @@ void UCrAiAnimalCrabUpdateStateComponent::ResetDamageTimestamp()
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyPooledActorComponentInterface.OnPooledOwnerActivityChanged
+// (Native, Public)
+// Parameters:
+// bool                                    bNewEnabled                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrAiAnimalCrabUpdateStateComponent::OnPooledOwnerActivityChanged(bool bNewEnabled)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPooledOwnerActivityChanged", FnName));
+
+	Params::MassEnemyPooledActorComponentInterface_OnPooledOwnerActivityChanged Parms{};
+
+	Parms.bNewEnabled = bNewEnabled;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }

@@ -23,17 +23,16 @@ struct WBP_BuildingCopyMessagePopup_C_ExecuteUbergraph_WBP_BuildingCopyMessagePo
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ECrCopyBuildingSettingsMessage                K2Node_Event_MessageType;                          // 0x0004(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FWidgetAnimationHandle                 CallFunc_PlayAnimation_ReturnValue;                // 0x0008(0x0010)(NoDestructor, ContainsInstancedReference, HasGetValueTypeHash)
-	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0018(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_19[0x3];                                       // 0x0019(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FWidgetAnimationHandle                 CallFunc_NewPlayAnimationProxyObject_Result;       // 0x001C(0x0010)(NoDestructor, ContainsInstancedReference, HasGetValueTypeHash)
-	uint8                                         Pad_2C[0x4];                                       // 0x002C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UWidgetAnimationPlayCallbackProxy*      CallFunc_NewPlayAnimationProxyObject_ReturnValue;  // 0x0030(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_39[0x7];                                       // 0x0039(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate;              // 0x0040(0x0018)(ZeroConstructor, HasGetValueTypeHash)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate;              // 0x0008(0x0018)(ZeroConstructor, HasGetValueTypeHash)
+	ECrHUDMessage                                 K2Node_Event_MessageType;                          // 0x0020(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FWidgetAnimationHandle                 CallFunc_PlayAnimation_ReturnValue;                // 0x0024(0x0010)(NoDestructor, ContainsInstancedReference, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0034(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_35[0x3];                                       // 0x0035(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FWidgetAnimationHandle                 CallFunc_NewPlayAnimationProxyObject_Result;       // 0x0038(0x0010)(NoDestructor, ContainsInstancedReference, HasGetValueTypeHash)
+	class UWidgetAnimationPlayCallbackProxy*      CallFunc_NewPlayAnimationProxyObject_ReturnValue;  // 0x0048(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsValid_ReturnValue;                      // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_BuildingCopyMessagePopup_C_ExecuteUbergraph_WBP_BuildingCopyMessagePopup;
 
@@ -42,7 +41,7 @@ DUMPER7_ASSERTS_WBP_BuildingCopyMessagePopup_C_ExecuteUbergraph_WBP_BuildingCopy
 struct WBP_BuildingCopyMessagePopup_C_SetupMessage final
 {
 public:
-	ECrCopyBuildingSettingsMessage                MessageType;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECrHUDMessage                                 MessageType;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_BuildingCopyMessagePopup_C_SetupMessage;
 

@@ -14,6 +14,15 @@
 SDK_NAMESPACE_START
 SDK_PARAM_NAMESPACE_START
 
+// Function BP_HabitatBig.BP_HabitatBig_C.ExecuteUbergraph_BP_HabitatBig
+// 0x0004 (0x0004 - 0x0000)
+struct BP_HabitatBig_C_ExecuteUbergraph_BP_HabitatBig final
+{
+public:
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_BP_HabitatBig_C_ExecuteUbergraph_BP_HabitatBig;
+
 // Function BP_HabitatBig.BP_HabitatBig_C.GetBuildingMeshes
 // 0x0008 (0x0008 - 0x0000)
 struct BP_HabitatBig_C_GetBuildingMeshes final

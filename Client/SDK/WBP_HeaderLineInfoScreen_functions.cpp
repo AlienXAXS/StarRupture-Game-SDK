@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_HeaderLineInfoScreen_C::BndEvt__WBP_HeaderLineInfoScreen_Button_277_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeaderLineInfoScreen_C", "BndEvt__WBP_HeaderLineInfoScreen_Button_277_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__WBP_HeaderLineInfoScreen_Button_277_K2Node_ComponentBoundEvent_0_OnButtonClickedEvent__DelegateSignature", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -37,10 +35,8 @@ void UWBP_HeaderLineInfoScreen_C::BndEvt__WBP_HeaderLineInfoScreen_Button_277_K2
 
 void UWBP_HeaderLineInfoScreen_C::ExecuteUbergraph_WBP_HeaderLineInfoScreen(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeaderLineInfoScreen_C", "ExecuteUbergraph_WBP_HeaderLineInfoScreen");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_HeaderLineInfoScreen_C", "ExecuteUbergraph_WBP_HeaderLineInfoScreen", FuncInfo);
 
 	Params::WBP_HeaderLineInfoScreen_C_ExecuteUbergraph_WBP_HeaderLineInfoScreen Parms{};
 
@@ -57,10 +53,8 @@ void UWBP_HeaderLineInfoScreen_C::ExecuteUbergraph_WBP_HeaderLineInfoScreen(int3
 
 void UWBP_HeaderLineInfoScreen_C::Set_Text_Size(class UClass* InStyle)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeaderLineInfoScreen_C", "Set Text Size");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Set Text Size", FnName));
 
 	Params::WBP_HeaderLineInfoScreen_C_Set_Text_Size Parms{};
 
@@ -79,10 +73,8 @@ void UWBP_HeaderLineInfoScreen_C::Set_Text_Size(class UClass* InStyle)
 
 void UWBP_HeaderLineInfoScreen_C::SetRenameButtonStyle(const struct FLinearColor& Normal, const struct FLinearColor& Hovered, const struct FLinearColor& Pressed)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeaderLineInfoScreen_C", "SetRenameButtonStyle");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetRenameButtonStyle", FnName));
 
 	Params::WBP_HeaderLineInfoScreen_C_SetRenameButtonStyle Parms{};
 
@@ -101,10 +93,8 @@ void UWBP_HeaderLineInfoScreen_C::SetRenameButtonStyle(const struct FLinearColor
 
 void UWBP_HeaderLineInfoScreen_C::SetTextStyle(bool isHighlight)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeaderLineInfoScreen_C", "SetTextStyle");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetTextStyle", FnName));
 
 	Params::WBP_HeaderLineInfoScreen_C_SetTextStyle Parms{};
 
@@ -121,10 +111,8 @@ void UWBP_HeaderLineInfoScreen_C::SetTextStyle(bool isHighlight)
 
 void UWBP_HeaderLineInfoScreen_C::SetTitle(const class FText& InTitle)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeaderLineInfoScreen_C", "SetTitle");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetTitle", FnName));
 
 	Params::WBP_HeaderLineInfoScreen_C_SetTitle Parms{};
 
@@ -141,10 +129,8 @@ void UWBP_HeaderLineInfoScreen_C::SetTitle(const class FText& InTitle)
 
 void UWBP_HeaderLineInfoScreen_C::SetTitleMaxWidth(int32 Size)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeaderLineInfoScreen_C", "SetTitleMaxWidth");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetTitleMaxWidth", FnName));
 
 	Params::WBP_HeaderLineInfoScreen_C_SetTitleMaxWidth Parms{};
 
@@ -161,10 +147,8 @@ void UWBP_HeaderLineInfoScreen_C::SetTitleMaxWidth(int32 Size)
 
 void UWBP_HeaderLineInfoScreen_C::SetTransformPolicy(bool ToUpper)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeaderLineInfoScreen_C", "SetTransformPolicy");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetTransformPolicy", FnName));
 
 	Params::WBP_HeaderLineInfoScreen_C_SetTransformPolicy Parms{};
 
@@ -181,10 +165,8 @@ void UWBP_HeaderLineInfoScreen_C::SetTransformPolicy(bool ToUpper)
 
 void UWBP_HeaderLineInfoScreen_C::ShowRenameButton(bool ShowButton)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HeaderLineInfoScreen_C", "ShowRenameButton");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ShowRenameButton", FnName));
 
 	Params::WBP_HeaderLineInfoScreen_C_ShowRenameButton Parms{};
 

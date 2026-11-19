@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_CraftingBottomPanel_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CraftingBottomPanel_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -37,10 +35,8 @@ void UWBP_CraftingBottomPanel_C::Construct()
 
 void UWBP_CraftingBottomPanel_C::ExecuteUbergraph_WBP_CraftingBottomPanel(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CraftingBottomPanel_C", "ExecuteUbergraph_WBP_CraftingBottomPanel");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_CraftingBottomPanel_C", "ExecuteUbergraph_WBP_CraftingBottomPanel", FuncInfo);
 
 	Params::WBP_CraftingBottomPanel_C_ExecuteUbergraph_WBP_CraftingBottomPanel Parms{};
 
@@ -55,10 +51,8 @@ void UWBP_CraftingBottomPanel_C::ExecuteUbergraph_WBP_CraftingBottomPanel(int32 
 
 void UWBP_CraftingBottomPanel_C::SetEmptyOutItem()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CraftingBottomPanel_C", "SetEmptyOutItem");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetEmptyOutItem", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

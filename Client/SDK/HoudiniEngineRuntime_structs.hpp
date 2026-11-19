@@ -863,6 +863,31 @@ public:
 };
 DUMPER7_ASSERTS_FHoudiniLandscapeSplineSegmentData;
 
+// ScriptStruct HoudiniEngineRuntime.WorkItemTallyBase
+// 0x0008 (0x0008 - 0x0000)
+struct alignas(0x08) FWorkItemTallyBase
+{
+public:
+	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FWorkItemTallyBase;
+
+// ScriptStruct HoudiniEngineRuntime.AggregatedWorkItemTally
+// 0x0020 (0x0028 - 0x0008)
+struct FAggregatedWorkItemTally final : public FWorkItemTallyBase
+{
+public:
+	int32                                         TotalWorkItems;                                    // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         WaitingWorkItems;                                  // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         ScheduledWorkItems;                                // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         CookingWorkItems;                                  // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         CookedWorkItems;                                   // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         ErroredWorkItems;                                  // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	int32                                         CookCancelledWorkItems;                            // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_FAggregatedWorkItemTally;
+
 // ScriptStruct HoudiniEngineRuntime.HoudiniInputObjectSettings
 // 0x0024 (0x0024 - 0x0000)
 struct FHoudiniInputObjectSettings final
@@ -911,6 +936,15 @@ public:
 	struct FIntPoint                              Max;                                               // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_FHoudiniExtents;
+
+// ScriptStruct HoudiniEngineRuntime.HoudiniAttributeDataLayer
+// 0x0010 (0x0010 - 0x0000)
+struct FHoudiniAttributeDataLayer final
+{
+public:
+	TArray<struct FHoudiniDataLayer>              DataLayers;                                        // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
+};
+DUMPER7_ASSERTS_FHoudiniAttributeDataLayer;
 
 // ScriptStruct HoudiniEngineRuntime.HoudiniClearedTargetLayer
 // 0x0050 (0x0050 - 0x0000)
@@ -1006,15 +1040,6 @@ public:
 };
 DUMPER7_ASSERTS_FHoudiniBakedOutput;
 
-// ScriptStruct HoudiniEngineRuntime.HoudiniAttributeDataLayer
-// 0x0010 (0x0010 - 0x0000)
-struct FHoudiniAttributeDataLayer final
-{
-public:
-	TArray<struct FHoudiniDataLayer>              DataLayers;                                        // 0x0000(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
-};
-DUMPER7_ASSERTS_FHoudiniAttributeDataLayer;
-
 // ScriptStruct HoudiniEngineRuntime.OutputActorOwner
 // 0x0010 (0x0010 - 0x0000)
 struct FOutputActorOwner final
@@ -1054,15 +1079,6 @@ public:
 };
 DUMPER7_ASSERTS_FTOPWorkResult;
 
-// ScriptStruct HoudiniEngineRuntime.WorkItemTallyBase
-// 0x0008 (0x0008 - 0x0000)
-struct alignas(0x08) FWorkItemTallyBase
-{
-public:
-	uint8                                         Pad_0[0x8];                                        // 0x0000(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FWorkItemTallyBase;
-
 // ScriptStruct HoudiniEngineRuntime.WorkItemTally
 // 0x0230 (0x0238 - 0x0008)
 struct FWorkItemTally final : public FWorkItemTallyBase
@@ -1077,22 +1093,6 @@ public:
 	TSet<int32>                                   CookCancelledWorkItems;                            // 0x01E8(0x0050)(Protected, NativeAccessSpecifierProtected)
 };
 DUMPER7_ASSERTS_FWorkItemTally;
-
-// ScriptStruct HoudiniEngineRuntime.AggregatedWorkItemTally
-// 0x0020 (0x0028 - 0x0008)
-struct FAggregatedWorkItemTally final : public FWorkItemTallyBase
-{
-public:
-	int32                                         TotalWorkItems;                                    // 0x0008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         WaitingWorkItems;                                  // 0x000C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         ScheduledWorkItems;                                // 0x0010(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         CookingWorkItems;                                  // 0x0014(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         CookedWorkItems;                                   // 0x0018(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         ErroredWorkItems;                                  // 0x001C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         CookCancelledWorkItems;                            // 0x0020(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_FAggregatedWorkItemTally;
 
 // ScriptStruct HoudiniEngineRuntime.HoudiniPDGWorkResultObjectBakedOutput
 // 0x0010 (0x0010 - 0x0000)

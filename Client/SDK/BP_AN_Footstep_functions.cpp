@@ -24,10 +24,8 @@ SDK_NAMESPACE_START
 
 void UBP_AN_Footstep_C::GetWaterType(const struct FGameplayTagContainer& Tags, class FName* WaterSurfaceType) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_AN_Footstep_C", "GetWaterType");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetWaterType", FnName));
 
 	Params::BP_AN_Footstep_C_GetWaterType Parms{};
 
@@ -48,10 +46,8 @@ void UBP_AN_Footstep_C::GetWaterType(const struct FGameplayTagContainer& Tags, c
 
 void UBP_AN_Footstep_C::ShouldWaveChangeFootsteps(class ABP_PlayerCharacter_C* Character, bool* Result) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_AN_Footstep_C", "ShouldWaveChangeFootsteps");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ShouldWaveChangeFootsteps", FnName));
 
 	Params::BP_AN_Footstep_C_ShouldWaveChangeFootsteps Parms{};
 
@@ -73,10 +69,8 @@ void UBP_AN_Footstep_C::ShouldWaveChangeFootsteps(class ABP_PlayerCharacter_C* C
 
 void UBP_AN_Footstep_C::ShouldProcessAnimNotify(class ABP_PlayerCharacter_C* InPlayerChar, class UAnimSequenceBase* InAnimation, bool* bShouldProcess) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_AN_Footstep_C", "ShouldProcessAnimNotify");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ShouldProcessAnimNotify", FnName));
 
 	Params::BP_AN_Footstep_C_ShouldProcessAnimNotify Parms{};
 
@@ -98,10 +92,8 @@ void UBP_AN_Footstep_C::ShouldProcessAnimNotify(class ABP_PlayerCharacter_C* InP
 
 void UBP_AN_Footstep_C::IsLocallyFPPControlled(class ABP_PlayerCharacter_C* InPlayerCharacter, bool* bIsLocallyFPPControlled) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_AN_Footstep_C", "IsLocallyFPPControlled");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IsLocallyFPPControlled", FnName));
 
 	Params::BP_AN_Footstep_C_IsLocallyFPPControlled Parms{};
 
@@ -124,10 +116,8 @@ void UBP_AN_Footstep_C::IsLocallyFPPControlled(class ABP_PlayerCharacter_C* InPl
 
 bool UBP_AN_Footstep_C::Received_Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation, const struct FAnimNotifyEventReference& EventReference) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_AN_Footstep_C", "Received_Notify");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Received_Notify", FnName));
 
 	Params::BP_AN_Footstep_C_Received_Notify Parms{};
 

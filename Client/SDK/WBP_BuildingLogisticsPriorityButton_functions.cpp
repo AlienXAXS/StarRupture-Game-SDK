@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_BuildingLogisticsPriorityButton_C::BP_OnClicked()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_BuildingLogisticsPriorityButton_C", "BP_OnClicked");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnClicked", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -35,10 +33,8 @@ void UWBP_BuildingLogisticsPriorityButton_C::BP_OnClicked()
 
 void UWBP_BuildingLogisticsPriorityButton_C::BP_OnHovered()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_BuildingLogisticsPriorityButton_C", "BP_OnHovered");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnHovered", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -49,10 +45,8 @@ void UWBP_BuildingLogisticsPriorityButton_C::BP_OnHovered()
 
 void UWBP_BuildingLogisticsPriorityButton_C::BP_OnUnhovered()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_BuildingLogisticsPriorityButton_C", "BP_OnUnhovered");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnUnhovered", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -63,10 +57,8 @@ void UWBP_BuildingLogisticsPriorityButton_C::BP_OnUnhovered()
 
 void UWBP_BuildingLogisticsPriorityButton_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_BuildingLogisticsPriorityButton_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -79,10 +71,8 @@ void UWBP_BuildingLogisticsPriorityButton_C::Construct()
 
 void UWBP_BuildingLogisticsPriorityButton_C::ExecuteUbergraph_WBP_BuildingLogisticsPriorityButton(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_BuildingLogisticsPriorityButton_C", "ExecuteUbergraph_WBP_BuildingLogisticsPriorityButton");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_BuildingLogisticsPriorityButton_C", "ExecuteUbergraph_WBP_BuildingLogisticsPriorityButton", FuncInfo);
 
 	Params::WBP_BuildingLogisticsPriorityButton_C_ExecuteUbergraph_WBP_BuildingLogisticsPriorityButton Parms{};
 
@@ -97,10 +87,8 @@ void UWBP_BuildingLogisticsPriorityButton_C::ExecuteUbergraph_WBP_BuildingLogist
 
 void UWBP_BuildingLogisticsPriorityButton_C::InitializeMaterial()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_BuildingLogisticsPriorityButton_C", "InitializeMaterial");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"InitializeMaterial", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -111,10 +99,8 @@ void UWBP_BuildingLogisticsPriorityButton_C::InitializeMaterial()
 
 void UWBP_BuildingLogisticsPriorityButton_C::SetColors()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_BuildingLogisticsPriorityButton_C", "SetColors");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetColors", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -127,10 +113,8 @@ void UWBP_BuildingLogisticsPriorityButton_C::SetColors()
 
 void UWBP_BuildingLogisticsPriorityButton_C::UpdateVisuals(ECrLogisticsRequestPriority InPriority)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_BuildingLogisticsPriorityButton_C", "UpdateVisuals");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateVisuals", FnName));
 
 	Params::WBP_BuildingLogisticsPriorityButton_C_UpdateVisuals Parms{};
 

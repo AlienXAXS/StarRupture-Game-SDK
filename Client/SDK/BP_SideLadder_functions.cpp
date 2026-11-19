@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_SideLadder_C::AddCharacterToLadder(const class ACrCharacterPlayerBase*& NewCharacter)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SideLadder_C", "AddCharacterToLadder");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AddCharacterToLadder", FnName));
 
 	Params::BP_SideLadder_C_AddCharacterToLadder Parms{};
 
@@ -48,10 +46,8 @@ void ABP_SideLadder_C::AddCharacterToLadder(const class ACrCharacterPlayerBase*&
 
 void ABP_SideLadder_C::BndEvt__BP_Ladder_LadderTrigger_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SideLadder_C", "BndEvt__BP_Ladder_LadderTrigger_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__BP_Ladder_LadderTrigger_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature", FnName));
 
 	Params::BP_SideLadder_C_BndEvt__BP_Ladder_LadderTrigger_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature Parms{};
 
@@ -76,10 +72,8 @@ void ABP_SideLadder_C::BndEvt__BP_Ladder_LadderTrigger_K2Node_ComponentBoundEven
 
 void ABP_SideLadder_C::BndEvt__BP_Ladder_LadderTrigger_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SideLadder_C", "BndEvt__BP_Ladder_LadderTrigger_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__BP_Ladder_LadderTrigger_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature", FnName));
 
 	Params::BP_SideLadder_C_BndEvt__BP_Ladder_LadderTrigger_K2Node_ComponentBoundEvent_3_ComponentEndOverlapSignature__DelegateSignature Parms{};
 
@@ -99,10 +93,8 @@ void ABP_SideLadder_C::BndEvt__BP_Ladder_LadderTrigger_K2Node_ComponentBoundEven
 
 void ABP_SideLadder_C::ExecuteUbergraph_BP_SideLadder(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SideLadder_C", "ExecuteUbergraph_BP_SideLadder");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_SideLadder_C", "ExecuteUbergraph_BP_SideLadder", FuncInfo);
 
 	Params::BP_SideLadder_C_ExecuteUbergraph_BP_SideLadder Parms{};
 
@@ -117,10 +109,8 @@ void ABP_SideLadder_C::ExecuteUbergraph_BP_SideLadder(int32 EntryPoint)
 
 void ABP_SideLadder_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SideLadder_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -133,10 +123,8 @@ void ABP_SideLadder_C::ReceiveBeginPlay()
 
 void ABP_SideLadder_C::ReceiveTick(float DeltaSeconds)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SideLadder_C", "ReceiveTick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveTick", FnName));
 
 	Params::BP_SideLadder_C_ReceiveTick Parms{};
 
@@ -153,10 +141,8 @@ void ABP_SideLadder_C::ReceiveTick(float DeltaSeconds)
 
 void ABP_SideLadder_C::RemoveCharacterFromLadder(const class ACrCharacterPlayerBase*& Character)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SideLadder_C", "RemoveCharacterFromLadder");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"RemoveCharacterFromLadder", FnName));
 
 	Params::BP_SideLadder_C_RemoveCharacterFromLadder Parms{};
 
@@ -173,10 +159,8 @@ void ABP_SideLadder_C::RemoveCharacterFromLadder(const class ACrCharacterPlayerB
 
 void ABP_SideLadder_C::TryTriggerFootstep(class ACrCharacterPlayerBase* Character)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SideLadder_C", "TryTriggerFootstep");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"TryTriggerFootstep", FnName));
 
 	Params::BP_SideLadder_C_TryTriggerFootstep Parms{};
 
@@ -191,10 +175,8 @@ void ABP_SideLadder_C::TryTriggerFootstep(class ACrCharacterPlayerBase* Characte
 
 void ABP_SideLadder_C::UpdateCharactersHights()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SideLadder_C", "UpdateCharactersHights");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateCharactersHights", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -208,10 +190,8 @@ void ABP_SideLadder_C::UpdateCharactersHights()
 
 void ABP_SideLadder_C::GetBuildingMeshes(class UMeshComponent** MainBody, TArray<class UMeshComponent*>* AdditionalMeshes) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SideLadder_C", "GetBuildingMeshes");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetBuildingMeshes", FnName));
 
 	Params::BP_SideLadder_C_GetBuildingMeshes Parms{};
 

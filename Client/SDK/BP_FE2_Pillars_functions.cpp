@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void ABP_FE2_Pillars_C::Activation_progress__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Pillars_C", "Activation_progress__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Activation_progress__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -35,10 +33,8 @@ void ABP_FE2_Pillars_C::Activation_progress__FinishedFunc()
 
 void ABP_FE2_Pillars_C::Activation_progress__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Pillars_C", "Activation_progress__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Activation_progress__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -49,10 +45,8 @@ void ABP_FE2_Pillars_C::Activation_progress__UpdateFunc()
 
 void ABP_FE2_Pillars_C::Attach_objects()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Pillars_C", "Attach objects");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Attach objects", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -65,10 +59,8 @@ void ABP_FE2_Pillars_C::Attach_objects()
 
 void ABP_FE2_Pillars_C::ExecuteUbergraph_BP_FE2_Pillars(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Pillars_C", "ExecuteUbergraph_BP_FE2_Pillars");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_FE2_Pillars_C", "ExecuteUbergraph_BP_FE2_Pillars", FuncInfo);
 
 	Params::BP_FE2_Pillars_C_ExecuteUbergraph_BP_FE2_Pillars Parms{};
 
@@ -83,10 +75,8 @@ void ABP_FE2_Pillars_C::ExecuteUbergraph_BP_FE2_Pillars(int32 EntryPoint)
 
 void ABP_FE2_Pillars_C::Finalization_progress__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Pillars_C", "Finalization_progress__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Finalization_progress__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -97,10 +87,8 @@ void ABP_FE2_Pillars_C::Finalization_progress__FinishedFunc()
 
 void ABP_FE2_Pillars_C::Finalization_progress__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Pillars_C", "Finalization_progress__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Finalization_progress__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -111,10 +99,8 @@ void ABP_FE2_Pillars_C::Finalization_progress__UpdateFunc()
 
 void ABP_FE2_Pillars_C::OnActivated()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Pillars_C", "OnActivated");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnActivated", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -125,10 +111,8 @@ void ABP_FE2_Pillars_C::OnActivated()
 
 void ABP_FE2_Pillars_C::OnActivatedFromLoad()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Pillars_C", "OnActivatedFromLoad");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnActivatedFromLoad", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -141,10 +125,8 @@ void ABP_FE2_Pillars_C::OnActivatedFromLoad()
 
 void ABP_FE2_Pillars_C::OnChargingProgressUpdate(float Progress)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Pillars_C", "OnChargingProgressUpdate");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnChargingProgressUpdate", FnName));
 
 	Params::BP_FE2_Pillars_C_OnChargingProgressUpdate Parms{};
 
@@ -159,10 +141,8 @@ void ABP_FE2_Pillars_C::OnChargingProgressUpdate(float Progress)
 
 void ABP_FE2_Pillars_C::OnInfectionTaken()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Pillars_C", "OnInfectionTaken");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnInfectionTaken", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -175,10 +155,8 @@ void ABP_FE2_Pillars_C::OnInfectionTaken()
 
 void ABP_FE2_Pillars_C::OnStateChanged(ECrAntennaState NewState)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Pillars_C", "OnStateChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnStateChanged", FnName));
 
 	Params::BP_FE2_Pillars_C_OnStateChanged Parms{};
 
@@ -195,10 +173,8 @@ void ABP_FE2_Pillars_C::OnStateChanged(ECrAntennaState NewState)
 
 bool ABP_FE2_Pillars_C::PlayInteractionSuccessfulSound()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Pillars_C", "PlayInteractionSuccessfulSound");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PlayInteractionSuccessfulSound", FnName));
 
 	Params::BP_FE2_Pillars_C_PlayInteractionSuccessfulSound Parms{};
 
@@ -215,10 +191,8 @@ bool ABP_FE2_Pillars_C::PlayInteractionSuccessfulSound()
 
 bool ABP_FE2_Pillars_C::PlayInteractionUnSuccessfulSound()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Pillars_C", "PlayInteractionUnSuccessfulSound");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PlayInteractionUnSuccessfulSound", FnName));
 
 	Params::BP_FE2_Pillars_C_PlayInteractionUnSuccessfulSound Parms{};
 
@@ -233,10 +207,8 @@ bool ABP_FE2_Pillars_C::PlayInteractionUnSuccessfulSound()
 
 void ABP_FE2_Pillars_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Pillars_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -249,10 +221,8 @@ void ABP_FE2_Pillars_C::ReceiveBeginPlay()
 
 void ABP_FE2_Pillars_C::ReceiveTick(float DeltaSeconds)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Pillars_C", "ReceiveTick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveTick", FnName));
 
 	Params::BP_FE2_Pillars_C_ReceiveTick Parms{};
 
@@ -270,10 +240,8 @@ void ABP_FE2_Pillars_C::ReceiveTick(float DeltaSeconds)
 
 void ABP_FE2_Pillars_C::Set_Display_State(ECrAntennaState AntennaState, const struct FLinearColor& Color)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Pillars_C", "Set_Display_State");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Set_Display_State", FnName));
 
 	Params::BP_FE2_Pillars_C_Set_Display_State Parms{};
 
@@ -292,10 +260,8 @@ void ABP_FE2_Pillars_C::Set_Display_State(ECrAntennaState AntennaState, const st
 
 void ABP_FE2_Pillars_C::SetUI(ECrAntennaState InState, const struct FLinearColor& InColor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Pillars_C", "SetUI");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetUI", FnName));
 
 	Params::BP_FE2_Pillars_C_SetUI Parms{};
 
@@ -311,10 +277,8 @@ void ABP_FE2_Pillars_C::SetUI(ECrAntennaState InState, const struct FLinearColor
 
 void ABP_FE2_Pillars_C::StopLoopSound()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_FE2_Pillars_C", "StopLoopSound");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"StopLoopSound", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

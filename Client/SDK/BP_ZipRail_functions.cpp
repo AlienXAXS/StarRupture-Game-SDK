@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 bool ABP_ZipRail_C::CanBePooled()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipRail_C", "CanBePooled");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"CanBePooled", FnName));
 
 	Params::BP_ZipRail_C_CanBePooled Parms{};
 
@@ -43,10 +41,8 @@ bool ABP_ZipRail_C::CanBePooled()
 
 void ABP_ZipRail_C::EndZiprail(bool Jump_Off)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipRail_C", "EndZiprail");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"EndZiprail", FnName));
 
 	Params::BP_ZipRail_C_EndZiprail Parms{};
 
@@ -63,10 +59,8 @@ void ABP_ZipRail_C::EndZiprail(bool Jump_Off)
 
 void ABP_ZipRail_C::ExecuteUbergraph_BP_ZipRail(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipRail_C", "ExecuteUbergraph_BP_ZipRail");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_ZipRail_C", "ExecuteUbergraph_BP_ZipRail", FuncInfo);
 
 	Params::BP_ZipRail_C_ExecuteUbergraph_BP_ZipRail Parms{};
 
@@ -83,10 +77,8 @@ void ABP_ZipRail_C::ExecuteUbergraph_BP_ZipRail(int32 EntryPoint)
 
 double ABP_ZipRail_C::GetRampAngle()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipRail_C", "GetRampAngle");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetRampAngle", FnName));
 
 	Params::BP_ZipRail_C_GetRampAngle Parms{};
 
@@ -106,10 +98,8 @@ double ABP_ZipRail_C::GetRampAngle()
 
 void ABP_ZipRail_C::InpActEvt_Jump_K2Node_EnhancedInputActionEvent_0(const struct FInputActionValue& ActionValue, float ElapsedTime, float TriggeredTime, const class UInputAction* SourceAction)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipRail_C", "InpActEvt_Jump_K2Node_EnhancedInputActionEvent_0");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"InpActEvt_Jump_K2Node_EnhancedInputActionEvent_0", FnName));
 
 	Params::BP_ZipRail_C_InpActEvt_Jump_K2Node_EnhancedInputActionEvent_0 Parms{};
 
@@ -129,10 +119,8 @@ void ABP_ZipRail_C::InpActEvt_Jump_K2Node_EnhancedInputActionEvent_0(const struc
 
 bool ABP_ZipRail_C::IsLadder()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipRail_C", "IsLadder");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IsLadder", FnName));
 
 	Params::BP_ZipRail_C_IsLadder Parms{};
 
@@ -149,10 +137,8 @@ bool ABP_ZipRail_C::IsLadder()
 
 bool ABP_ZipRail_C::IsRamp()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipRail_C", "IsRamp");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IsRamp", FnName));
 
 	Params::BP_ZipRail_C_IsRamp Parms{};
 
@@ -169,10 +155,8 @@ bool ABP_ZipRail_C::IsRamp()
 
 void ABP_ZipRail_C::OnInteract(class APlayerController* InPc)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipRail_C", "OnInteract");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnInteract", FnName));
 
 	Params::BP_ZipRail_C_OnInteract Parms{};
 
@@ -189,10 +173,8 @@ void ABP_ZipRail_C::OnInteract(class APlayerController* InPc)
 
 void ABP_ZipRail_C::OnSplineReady(class USplineComponent* InSpline)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipRail_C", "OnSplineReady");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnSplineReady", FnName));
 
 	Params::BP_ZipRail_C_OnSplineReady Parms{};
 
@@ -207,10 +189,8 @@ void ABP_ZipRail_C::OnSplineReady(class USplineComponent* InSpline)
 
 void ABP_ZipRail_C::PrepareForGame()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipRail_C", "PrepareForGame");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PrepareForGame", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -221,10 +201,8 @@ void ABP_ZipRail_C::PrepareForGame()
 
 void ABP_ZipRail_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipRail_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -237,10 +215,8 @@ void ABP_ZipRail_C::ReceiveBeginPlay()
 
 void ABP_ZipRail_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipRail_C", "ReceiveEndPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveEndPlay", FnName));
 
 	Params::BP_ZipRail_C_ReceiveEndPlay Parms{};
 
@@ -257,10 +233,8 @@ void ABP_ZipRail_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 
 void ABP_ZipRail_C::ReceiveTick(float DeltaSeconds)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_ZipRail_C", "ReceiveTick");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveTick", FnName));
 
 	Params::BP_ZipRail_C_ReceiveTick Parms{};
 

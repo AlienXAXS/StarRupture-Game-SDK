@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_DeathSequenceActor_C::ExecuteUbergraph_BP_DeathSequenceActor(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DeathSequenceActor_C", "ExecuteUbergraph_BP_DeathSequenceActor");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_DeathSequenceActor_C", "ExecuteUbergraph_BP_DeathSequenceActor", FuncInfo);
 
 	Params::BP_DeathSequenceActor_C_ExecuteUbergraph_BP_DeathSequenceActor Parms{};
 
@@ -43,10 +41,8 @@ void ABP_DeathSequenceActor_C::ExecuteUbergraph_BP_DeathSequenceActor(int32 Entr
 
 void ABP_DeathSequenceActor_C::OnVisualVariationSeedChanged(const struct FVector& NewSeed)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DeathSequenceActor_C", "OnVisualVariationSeedChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnVisualVariationSeedChanged", FnName));
 
 	Params::BP_DeathSequenceActor_C_OnVisualVariationSeedChanged Parms{};
 

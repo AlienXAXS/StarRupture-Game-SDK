@@ -12,23 +12,27 @@
 
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
-#include "AudioPlatformConfiguration_structs.hpp"
+#include "Chaos_structs.hpp"
 #include "Engine_structs.hpp"
 #include "ClothingSystemRuntimeInterface_structs.hpp"
+#include "TypedElementRuntime_structs.hpp"
+#include "TypedElementRuntime_classes.hpp"
+#include "AudioPlatformConfiguration_structs.hpp"
+#include "InputCore_structs.hpp"
 #include "AudioExtensions_structs.hpp"
 #include "AudioExtensions_classes.hpp"
-#include "InputCore_structs.hpp"
-#include "DeveloperSettings_structs.hpp"
-#include "DeveloperSettings_classes.hpp"
 #include "RenderCore_structs.hpp"
 #include "PacketHandler_classes.hpp"
 #include "PhysicsCore_structs.hpp"
 #include "PhysicsCore_classes.hpp"
 #include "FieldNotification_structs.hpp"
-#include "Chaos_structs.hpp"
+#include "DeveloperSettings_structs.hpp"
+#include "DeveloperSettings_classes.hpp"
 #include "IrisCore_classes.hpp"
 #include "MeshDescription_classes.hpp"
+#include "TypedElementFramework_classes.hpp"
 #include "SlateCore_structs.hpp"
+#include "SlateCore_classes.hpp"
 #include "NetCore_structs.hpp"
 #include "NetCore_classes.hpp"
 
@@ -384,9 +388,12 @@ public:
 DUMPER7_ASSERTS_UMaterialExpressionBentNormalCustomOutput;
 
 // Class Engine.ActiveSoundUpdateInterface
-// 0x0000 (0x0000 - 0x0000)
-class IActiveSoundUpdateInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IActiveSoundUpdateInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -529,12 +536,48 @@ public:
 };
 DUMPER7_ASSERTS_UPoseWatch;
 
-// Class Engine.SoundBase
-// 0x0150 (0x0178 - 0x0028)
-class USoundBase : public UObject
+// Class Engine.Interface_AssetUserData
+// 0x0008 (0x0008 - 0x0000)
+class IInterface_AssetUserData
 {
 public:
-	uint8                                         Pad_28[0x10];                                      // 0x0028(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	bool AddAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	class UAssetUserData* GetAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	bool HasAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("Interface_AssetUserData")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"Interface_AssetUserData")
+	}
+	static class IInterface_AssetUserData* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<IInterface_AssetUserData>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_IInterface_AssetUserData;
+
+// Class Engine.SoundBase
+// 0x0150 (0x0178 - 0x0028)
+class USoundBase : public UObject, public IAudioPropertiesSheetAssetUserInterface, public IInterface_AssetUserData
+{
+public:
 	class USoundClass*                            SoundClassObject;                                  // 0x0038(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, AssetRegistrySearchable, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	uint8                                         bDebug : 1;                                        // 0x0040(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bOverrideConcurrency : 1;                          // 0x0040(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
@@ -577,6 +620,11 @@ public:
 	{
 		return GetDefaultObjImpl<USoundBase>();
 	}
+
+public:
+	bool AddAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	class UAssetUserData* GetAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	bool HasAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
 };
 DUMPER7_ASSERTS_USoundBase;
 
@@ -1358,12 +1406,75 @@ public:
 };
 DUMPER7_ASSERTS_APartitionActor;
 
-// Class Engine.ISMPartitionActor
-// 0x0010 (0x02B8 - 0x02A8)
-class AISMPartitionActor : public APartitionActor
+// Class Engine.SMInstanceManager
+// 0x0008 (0x0008 - 0x0000)
+class ISMInstanceManager
 {
 public:
-	uint8                                         Pad_2A8[0x10];                                     // 0x02A8(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("SMInstanceManager")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SMInstanceManager")
+	}
+	static class ISMInstanceManager* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ISMInstanceManager>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_ISMInstanceManager;
+
+// Class Engine.SMInstanceManagerProvider
+// 0x0008 (0x0008 - 0x0000)
+class ISMInstanceManagerProvider
+{
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("SMInstanceManagerProvider")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SMInstanceManagerProvider")
+	}
+	static class ISMInstanceManagerProvider* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ISMInstanceManagerProvider>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_ISMInstanceManagerProvider;
+
+// Class Engine.ISMPartitionActor
+// 0x0010 (0x02B8 - 0x02A8)
+class AISMPartitionActor : public APartitionActor, public ISMInstanceManager, public ISMInstanceManagerProvider
+{
+public:
 
 public:
 	static class UClass* StaticClass()
@@ -1494,12 +1605,44 @@ public:
 };
 DUMPER7_ASSERTS_UDeviceProfileFragment;
 
-// Class Engine.ActorComponent
-// 0x0090 (0x00B8 - 0x0028)
-class UActorComponent : public UObject
+// Class Engine.NavRelevantInterface
+// 0x0008 (0x0008 - 0x0000)
+class INavRelevantInterface
 {
 public:
-	uint8                                         Pad_28[0x10];                                      // 0x0028(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("NavRelevantInterface")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"NavRelevantInterface")
+	}
+	static class INavRelevantInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<INavRelevantInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_INavRelevantInterface;
+
+// Class Engine.ActorComponent
+// 0x0090 (0x00B8 - 0x0028)
+class UActorComponent : public UObject, public IInterface_AssetUserData
+{
+public:
+	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FActorComponentTickFunction            PrimaryComponentTick;                              // 0x0038(0x0030)(Edit, DisableEditOnInstance, NativeAccessSpecifierPublic)
 	TArray<class FName>                           ComponentTags;                                     // 0x0068(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<class UAssetUserData*>                 AssetUserData;                                     // 0x0078(0x0010)(Edit, ExportObject, ZeroConstructor, ContainsInstancedReference, AdvancedDisplay, Protected, UObjectWrapper, NativeAccessSpecifierProtected, TObjectPtr)
@@ -1568,6 +1711,11 @@ public:
 	{
 		return GetDefaultObjImpl<UActorComponent>();
 	}
+
+public:
+	bool AddAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	class UAssetUserData* GetAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	bool HasAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
 };
 DUMPER7_ASSERTS_UActorComponent;
 
@@ -1693,12 +1841,75 @@ public:
 };
 DUMPER7_ASSERTS_USceneComponent;
 
-// Class Engine.PrimitiveComponent
-// 0x02E0 (0x0530 - 0x0250)
-class UPrimitiveComponent : public USceneComponent
+// Class Engine.Interface_AsyncCompilation
+// 0x0008 (0x0008 - 0x0000)
+class IInterface_AsyncCompilation
 {
 public:
-	uint8                                         Pad_250[0x18];                                     // 0x0250(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("Interface_AsyncCompilation")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"Interface_AsyncCompilation")
+	}
+	static class IInterface_AsyncCompilation* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<IInterface_AsyncCompilation>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_IInterface_AsyncCompilation;
+
+// Class Engine.PhysicsComponent
+// 0x0008 (0x0008 - 0x0000)
+class IPhysicsComponent
+{
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("PhysicsComponent")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"PhysicsComponent")
+	}
+	static class IPhysicsComponent* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<IPhysicsComponent>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_IPhysicsComponent;
+
+// Class Engine.PrimitiveComponent
+// 0x02E0 (0x0530 - 0x0250)
+class UPrimitiveComponent : public USceneComponent, public INavRelevantInterface, public IInterface_AsyncCompilation, public IPhysicsComponent
+{
+public:
 	float                                         MinDrawDistance;                                   // 0x0268(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         LDMaxDrawDistance;                                 // 0x026C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         CachedMaxDrawDistance;                             // 0x0270(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -2000,12 +2211,44 @@ public:
 };
 DUMPER7_ASSERTS_UPrimitiveComponent;
 
-// Class Engine.ModelComponent
-// 0x0040 (0x0570 - 0x0530)
-class UModelComponent final : public UPrimitiveComponent
+// Class Engine.Interface_CollisionDataProvider
+// 0x0008 (0x0008 - 0x0000)
+class IInterface_CollisionDataProvider
 {
 public:
-	uint8                                         Pad_530[0x18];                                     // 0x0530(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("Interface_CollisionDataProvider")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"Interface_CollisionDataProvider")
+	}
+	static class IInterface_CollisionDataProvider* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<IInterface_CollisionDataProvider>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_IInterface_CollisionDataProvider;
+
+// Class Engine.ModelComponent
+// 0x0040 (0x0570 - 0x0530)
+class UModelComponent final : public UPrimitiveComponent, public IInterface_CollisionDataProvider
+{
+public:
+	uint8                                         Pad_538[0x10];                                     // 0x0538(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	class UBodySetup*                             ModelBodySetup;                                    // 0x0548(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	uint8                                         Pad_550[0x20];                                     // 0x0550(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
@@ -2316,12 +2559,52 @@ public:
 };
 DUMPER7_ASSERTS_UDialogueSoundWaveProxy;
 
-// Class Engine.LevelInstance
-// 0x00A0 (0x0348 - 0x02A8)
-class ALevelInstance : public AActor
+// Class Engine.LevelInstanceInterface
+// 0x0008 (0x0008 - 0x0000)
+class ILevelInstanceInterface
 {
 public:
-	uint8                                         Pad_2A8[0x8];                                      // 0x02A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	void LoadLevelInstance();
+	bool SetWorldAsset(TSoftObjectPtr<class UWorld> WorldAsset);
+	void UnloadLevelInstance();
+
+	class ULevel* GetLoadedLevel() const;
+	const TSoftObjectPtr<class UWorld> GetWorldAsset() const;
+	bool IsLoaded() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LevelInstanceInterface")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LevelInstanceInterface")
+	}
+	static class ILevelInstanceInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ILevelInstanceInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_ILevelInstanceInterface;
+
+// Class Engine.LevelInstance
+// 0x00A0 (0x0348 - 0x02A8)
+class ALevelInstance : public AActor, public ILevelInstanceInterface
+{
+public:
 	class ULevelInstanceComponent*                LevelInstanceComponent;                            // 0x02B0(0x0008)(Edit, ExportObject, ZeroConstructor, EditConst, InstancedReference, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
 	TSoftObjectPtr<class UWorld>                  CookedWorldAsset;                                  // 0x02B8(0x0028)(Net, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	struct FGuid                                  LevelInstanceSpawnGuid;                            // 0x02E0(0x0010)(Net, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -2340,6 +2623,14 @@ public:
 	{
 		return GetDefaultObjImpl<ALevelInstance>();
 	}
+
+public:
+	void LoadLevelInstance();
+	bool SetWorldAsset(TSoftObjectPtr<class UWorld> WorldAsset);
+	void UnloadLevelInstance();
+	class ULevel* GetLoadedLevel() const;
+	const TSoftObjectPtr<class UWorld> GetWorldAsset() const;
+	bool IsLoaded() const;
 };
 DUMPER7_ASSERTS_ALevelInstance;
 
@@ -2587,12 +2878,43 @@ public:
 };
 DUMPER7_ASSERTS_UAssetUserData;
 
-// Class Engine.AnimCurveMetaData
-// 0x0080 (0x00A8 - 0x0028)
-class UAnimCurveMetaData final : public UAssetUserData
+// Class Engine.Interface_AnimCurveMetaData
+// 0x0008 (0x0008 - 0x0000)
+class IInterface_AnimCurveMetaData
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("Interface_AnimCurveMetaData")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"Interface_AnimCurveMetaData")
+	}
+	static class IInterface_AnimCurveMetaData* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<IInterface_AnimCurveMetaData>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_IInterface_AnimCurveMetaData;
+
+// Class Engine.AnimCurveMetaData
+// 0x0080 (0x00A8 - 0x0028)
+class UAnimCurveMetaData final : public UAssetUserData, public IInterface_AnimCurveMetaData
+{
+public:
 	TMap<class FName, struct FCurveMetaData>      CurveMetaData;                                     // 0x0030(0x0050)(NativeAccessSpecifierPrivate)
 	uint8                                         Pad_80[0x28];                                      // 0x0080(0x0028)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
@@ -2888,10 +3210,9 @@ DUMPER7_ASSERTS_ASpotLight;
 
 // Class Engine.Texture
 // 0x0070 (0x0140 - 0x00D0)
-class UTexture : public UStreamableRenderAsset
+class UTexture : public UStreamableRenderAsset, public IInterface_AssetUserData, public IInterface_AsyncCompilation
 {
 public:
-	uint8                                         Pad_D0[0x10];                                      // 0x00D0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGuid                                  LightingGuid;                                      // 0x00E0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	int32                                         LevelIndex;                                        // 0x00F0(0x0004)(ZeroConstructor, Transient, DuplicateTransient, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         LODBias;                                           // 0x00F4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, AssetRegistrySearchable, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -2943,6 +3264,11 @@ public:
 	{
 		return GetDefaultObjImpl<UTexture>();
 	}
+
+public:
+	bool AddAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	class UAssetUserData* GetAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	bool HasAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
 };
 DUMPER7_ASSERTS_UTexture;
 
@@ -3058,12 +3384,43 @@ public:
 };
 DUMPER7_ASSERTS_UMaterialExpressionTextureBase;
 
-// Class Engine.MaterialInterface
-// 0x00C0 (0x00E8 - 0x0028)
-class UMaterialInterface : public UObject
+// Class Engine.BlendableInterface
+// 0x0008 (0x0008 - 0x0000)
+class IBlendableInterface
 {
 public:
-	uint8                                         Pad_28[0x10];                                      // 0x0028(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("BlendableInterface")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"BlendableInterface")
+	}
+	static class IBlendableInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<IBlendableInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_IBlendableInterface;
+
+// Class Engine.MaterialInterface
+// 0x00C0 (0x00E8 - 0x0028)
+class UMaterialInterface : public UObject, public IBlendableInterface, public IInterface_AssetUserData
+{
+public:
 	class USubsurfaceProfile*                     SubsurfaceProfile;                                 // 0x0038(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	TArray<class USubsurfaceProfile*>             SubsurfaceProfiles;                                // 0x0040(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
 	TArray<class USpecularProfile*>               SpecularProfiles;                                  // 0x0050(0x0010)(ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
@@ -3101,6 +3458,11 @@ public:
 	{
 		return GetDefaultObjImpl<UMaterialInterface>();
 	}
+
+public:
+	bool AddAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	class UAssetUserData* GetAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	bool HasAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
 };
 DUMPER7_ASSERTS_UMaterialInterface;
 
@@ -3310,12 +3672,44 @@ public:
 #pragma pack(pop)
 DUMPER7_ASSERTS_UMeshComponent;
 
-// Class Engine.SkinnedMeshComponent
-// 0x0390 (0x0910 - 0x0580)
-class USkinnedMeshComponent : public UMeshComponent
+// Class Engine.LODSyncInterface
+// 0x0008 (0x0008 - 0x0000)
+class ILODSyncInterface
 {
 public:
-	uint8                                         Pad_578[0x10];                                     // 0x0578(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("LODSyncInterface")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"LODSyncInterface")
+	}
+	static class ILODSyncInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ILODSyncInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_ILODSyncInterface;
+
+// Class Engine.SkinnedMeshComponent
+// 0x0390 (0x0910 - 0x0580)
+class USkinnedMeshComponent : public UMeshComponent, public ILODSyncInterface
+{
+public:
+	uint8                                         Pad_580[0x8];                                      // 0x0580(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class USkeletalMesh*                          SkeletalMesh;                                      // 0x0588(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	class USkinnedAsset*                          SkinnedAsset;                                      // 0x0590(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
 	TWeakObjectPtr<class USkinnedMeshComponent>   LeaderPoseComponent;                               // 0x0598(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -3449,10 +3843,9 @@ DUMPER7_ASSERTS_USkinnedMeshComponent;
 // Class Engine.SkeletalMeshComponent
 // 0x0730 (0x1040 - 0x0910)
 #pragma pack(push, 0x1)
-class SDK_ALIGN(0x10) USkeletalMeshComponent : public USkinnedMeshComponent
+class SDK_ALIGN(0x10) USkeletalMeshComponent : public USkinnedMeshComponent, public IInterface_CollisionDataProvider
 {
 public:
-	uint8                                         Pad_910[0x8];                                      // 0x0910(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TSubclassOf<class UAnimInstance>              AnimClass;                                         // 0x0918(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UAnimInstance*                          AnimScriptInstance;                                // 0x0920(0x0008)(ZeroConstructor, Transient, NonTransactional, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	TSubclassOf<class UAnimInstance>              OverridePostProcessAnimBP;                         // 0x0928(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -3726,9 +4119,12 @@ public:
 DUMPER7_ASSERTS_UMaterialExpressionStaticBool;
 
 // Class Engine.ActorInstanceManagerInterface
-// 0x0000 (0x0000 - 0x0000)
-class IActorInstanceManagerInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IActorInstanceManagerInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -4530,10 +4926,9 @@ DUMPER7_ASSERTS_ASkyLight;
 
 // Class Engine.InstancedStaticMeshComponent
 // 0x0390 (0x09C0 - 0x0630)
-class UInstancedStaticMeshComponent : public UStaticMeshComponent
+class UInstancedStaticMeshComponent : public UStaticMeshComponent, public ISMInstanceManager
 {
 public:
-	uint8                                         Pad_628[0x8];                                      // 0x0628(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FInstancedStaticMeshInstanceData> PerInstanceSMData;                               // 0x0630(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<struct FMatrix>                        PerInstancePrevTransform;                          // 0x0640(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
 	struct FTransform                             PreviousComponentTransform;                        // 0x0650(0x0060)(Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -4707,10 +5102,9 @@ DUMPER7_ASSERTS_UForceFeedbackAttenuation;
 
 // Class Engine.SoundWave
 // 0x0288 (0x0400 - 0x0178)
-class USoundWave : public USoundBase
+class USoundWave : public USoundBase, public MIPad::Pad<0x8, 0x180>, public IInterface_AsyncCompilation
 {
 public:
-	uint8                                         Pad_178[0x10];                                     // 0x0178(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         CompressionQuality;                                // 0x0188(0x0004)(Edit, ZeroConstructor, Config, IsPlainOldData, NoDestructor, AssetRegistrySearchable, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	int32                                         StreamingPriority;                                 // 0x018C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	ESoundwaveSampleRateSettings                  SampleRateQuality;                                 // 0x0190(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -5143,40 +5537,6 @@ public:
 };
 DUMPER7_ASSERTS_USoundEffectSourcePreset;
 
-// Class Engine.Interface_AssetUserData
-// 0x0000 (0x0000 - 0x0000)
-class IInterface_AssetUserData final
-{
-public:
-	bool AddAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
-	class UAssetUserData* GetAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
-	bool HasAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("Interface_AssetUserData")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"Interface_AssetUserData")
-	}
-	static class IInterface_AssetUserData* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<IInterface_AssetUserData>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_IInterface_AssetUserData;
-
 // Class Engine.StaticMeshActor
 // 0x0010 (0x02B8 - 0x02A8)
 class AStaticMeshActor : public AActor
@@ -5209,10 +5569,9 @@ DUMPER7_ASSERTS_AStaticMeshActor;
 
 // Class Engine.ActorElementCounterInterface
 // 0x0008 (0x0030 - 0x0028)
-class UActorElementCounterInterface final : public UObject
+class UActorElementCounterInterface final : public UObject, public ITypedElementCounterInterface
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -5546,12 +5905,43 @@ public:
 };
 DUMPER7_ASSERTS_UTimelineComponent;
 
-// Class Engine.AnimationAsset
-// 0x0058 (0x0080 - 0x0028)
-class UAnimationAsset : public UObject
+// Class Engine.Interface_PreviewMeshProvider
+// 0x0008 (0x0008 - 0x0000)
+class IInterface_PreviewMeshProvider
 {
 public:
-	uint8                                         Pad_28[0x10];                                      // 0x0028(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("Interface_PreviewMeshProvider")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"Interface_PreviewMeshProvider")
+	}
+	static class IInterface_PreviewMeshProvider* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<IInterface_PreviewMeshProvider>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_IInterface_PreviewMeshProvider;
+
+// Class Engine.AnimationAsset
+// 0x0058 (0x0080 - 0x0028)
+class UAnimationAsset : public UObject, public IInterface_AssetUserData, public IInterface_PreviewMeshProvider
+{
+public:
 	class USkeleton*                              Skeleton;                                          // 0x0038(0x0008)(Edit, ZeroConstructor, EditConst, NoDestructor, AssetRegistrySearchable, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
 	uint8                                         Pad_40[0x20];                                      // 0x0040(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<class UAnimMetaData*>                  MetaData;                                          // 0x0060(0x0010)(Edit, ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
@@ -5574,6 +5964,11 @@ public:
 	{
 		return GetDefaultObjImpl<UAnimationAsset>();
 	}
+
+public:
+	bool AddAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	class UAssetUserData* GetAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	bool HasAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
 };
 DUMPER7_ASSERTS_UAnimationAsset;
 
@@ -6415,9 +6810,12 @@ public:
 DUMPER7_ASSERTS_UTextureMipDataProviderFactory;
 
 // Class Engine.VisualLoggerDebugSnapshotInterface
-// 0x0000 (0x0000 - 0x0000)
-class IVisualLoggerDebugSnapshotInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IVisualLoggerDebugSnapshotInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -7570,35 +7968,6 @@ public:
 };
 DUMPER7_ASSERTS_UAnimBlueprintClassSubsystem_PropertyAccess;
 
-// Class Engine.Interface_AnimCurveMetaData
-// 0x0000 (0x0000 - 0x0000)
-class IInterface_AnimCurveMetaData final
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("Interface_AnimCurveMetaData")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"Interface_AnimCurveMetaData")
-	}
-	static class IInterface_AnimCurveMetaData* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<IInterface_AnimCurveMetaData>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_IInterface_AnimCurveMetaData;
-
 // Class Engine.AnimationDataModelNotifiesExtensions
 // 0x0000 (0x0028 - 0x0028)
 class UAnimationDataModelNotifiesExtensions final : public UBlueprintFunctionLibrary
@@ -7805,9 +8174,12 @@ public:
 DUMPER7_ASSERTS_UMaterialExpressionSubstrateSingleLayerWaterBSDF;
 
 // Class Engine.AnimLayerInterface
-// 0x0000 (0x0000 - 0x0000)
-class IAnimLayerInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IAnimLayerInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -8120,9 +8492,12 @@ public:
 DUMPER7_ASSERTS_UMaterialExpressionRuntimeVirtualTextureOutput;
 
 // Class Engine.AudioPanelWidgetInterface
-// 0x0000 (0x0000 - 0x0000)
-class IAudioPanelWidgetInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IAudioPanelWidgetInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	class FText GetEditorName();
 	class FName GetIconBrushName();
@@ -8612,10 +8987,10 @@ DUMPER7_ASSERTS_UAutoRTFMTestChildActorComponent;
 
 // Class Engine.Level
 // 0x03C8 (0x03F0 - 0x0028)
-class ULevel : public UObject
+class ULevel : public UObject, public IInterface_AssetUserData, public IEditorPathObjectInterface
 {
 public:
-	uint8                                         Pad_28[0x78];                                      // 0x0028(0x0078)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_38[0x68];                                      // 0x0038(0x0068)(Fixing Size After Last Property [ Dumper-7 ])
 	class TArray<class AActor*>                   Actors;                                            // 0x00A0(0x0010)(THIS IS THE ARRAY YOU'RE LOOKING FOR! [NOT AUTO-GENERATED PROPERTY])
 	uint8                                         Pad_B0[0x10];                                      // 0x00B0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	class UWorld*                                 OwningWorld;                                       // 0x00C0(0x0008)(ZeroConstructor, Transient, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
@@ -8671,6 +9046,11 @@ public:
 	{
 		return GetDefaultObjImpl<ULevel>();
 	}
+
+public:
+	bool AddAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	class UAssetUserData* GetAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	bool HasAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
 };
 DUMPER7_ASSERTS_ULevel;
 
@@ -8779,10 +9159,9 @@ DUMPER7_ASSERTS_UAutoRTFMTestLevel;
 
 // Class Engine.Font
 // 0x01B0 (0x01D8 - 0x0028)
-class UFont final : public UObject
+class UFont final : public UObject, public IFontProviderInterface
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	EFontCacheType                                FontCacheType;                                     // 0x0030(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FFontCharacter>                 Characters;                                        // 0x0038(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
@@ -8940,35 +9319,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UAutoRTFMTestPrimitiveComponent;
-
-// Class Engine.BlendableInterface
-// 0x0000 (0x0000 - 0x0000)
-class IBlendableInterface final
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("BlendableInterface")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"BlendableInterface")
-	}
-	static class IBlendableInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<IBlendableInterface>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_IBlendableInterface;
 
 // Class Engine.MaterialExpressionTextureSampleParameterCubeArray
 // 0x0000 (0x0228 - 0x0228)
@@ -9853,9 +10203,12 @@ public:
 DUMPER7_ASSERTS_UPlayer;
 
 // Class Engine.DestructibleInterface
-// 0x0000 (0x0000 - 0x0000)
-class IDestructibleInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IDestructibleInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -10929,10 +11282,9 @@ DUMPER7_ASSERTS_UDistributionVector;
 
 // Class Engine.ObjectElementSelectionInterface
 // 0x0008 (0x0030 - 0x0028)
-class UObjectElementSelectionInterface final : public UObject
+class UObjectElementSelectionInterface final : public UObject, public ITypedElementSelectionInterface
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -10947,6 +11299,15 @@ public:
 	{
 		return GetDefaultObjImpl<UObjectElementSelectionInterface>();
 	}
+
+public:
+	bool AllowSelectionModifiers(const struct FScriptTypedElementHandle& InElementHandle, const struct FScriptTypedElementListProxy& InSelectionSet);
+	bool CanDeselectElement(const struct FScriptTypedElementHandle& InElementHandle, const struct FTypedElementSelectionOptions& InSelectionOptions);
+	bool CanSelectElement(const struct FScriptTypedElementHandle& InElementHandle, const struct FTypedElementSelectionOptions& InSelectionOptions);
+	bool DeselectElement(const struct FScriptTypedElementHandle& InElementHandle, const struct FScriptTypedElementListProxy& InSelectionSet, const struct FTypedElementSelectionOptions& InSelectionOptions);
+	struct FScriptTypedElementHandle GetSelectionElement(const struct FScriptTypedElementHandle& InElementHandle, const struct FScriptTypedElementListProxy& InCurrentSelection, const ETypedElementSelectionMethod InSelectionMethod);
+	bool IsElementSelected(const struct FScriptTypedElementHandle& InElementHandle, const struct FScriptTypedElementListProxy& InSelectionSet, const struct FTypedElementIsSelectedOptions& InSelectionOptions);
+	bool SelectElement(const struct FScriptTypedElementHandle& InElementHandle, const struct FScriptTypedElementListProxy& InSelectionSet, const struct FTypedElementSelectionOptions& InSelectionOptions);
 };
 DUMPER7_ASSERTS_UObjectElementSelectionInterface;
 
@@ -11055,10 +11416,9 @@ DUMPER7_ASSERTS_UDistributionVectorParticleParameter;
 
 // Class Engine.SMInstanceElementPrimitiveCustomDataInterface
 // 0x0008 (0x0030 - 0x0028)
-class USMInstanceElementPrimitiveCustomDataInterface final : public UObject
+class USMInstanceElementPrimitiveCustomDataInterface final : public UObject, public ITypedElementPrimitiveCustomDataInterface
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -11073,6 +11433,10 @@ public:
 	{
 		return GetDefaultObjImpl<USMInstanceElementPrimitiveCustomDataInterface>();
 	}
+
+public:
+	void SetCustomData(const struct FScriptTypedElementHandle& InElementHandle, const TArray<float>& CustomDataFloats, bool bMarkRenderStateDirty);
+	void SetCustomDataValue(const struct FScriptTypedElementHandle& InElementHandle, int32 CustomDataIndex, float CustomDataValue, bool bMarkRenderStateDirty);
 };
 DUMPER7_ASSERTS_USMInstanceElementPrimitiveCustomDataInterface;
 
@@ -11366,12 +11730,47 @@ public:
 };
 DUMPER7_ASSERTS_AEmitter;
 
-// Class Engine.EmitterCameraLensEffectBase
-// 0x0098 (0x03B0 - 0x0318)
-class AEmitterCameraLensEffectBase final : public AEmitter
+// Class Engine.CameraLensEffectInterface
+// 0x0008 (0x0008 - 0x0000)
+class ICameraLensEffectInterface
 {
 public:
-	uint8                                         Pad_318[0x8];                                      // 0x0318(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	TArray<class UFXSystemComponent*> GetParticleComponents() const;
+	class UFXSystemComponent* GetPrimaryParticleComponent() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("CameraLensEffectInterface")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"CameraLensEffectInterface")
+	}
+	static class ICameraLensEffectInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ICameraLensEffectInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_ICameraLensEffectInterface;
+
+// Class Engine.EmitterCameraLensEffectBase
+// 0x0098 (0x03B0 - 0x0318)
+class AEmitterCameraLensEffectBase final : public AEmitter, public ICameraLensEffectInterface
+{
+public:
 	class UParticleSystem*                        PS_CameraEffect;                                   // 0x0320(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
 	class APlayerCameraManager*                   BaseCamera;                                        // 0x0328(0x0008)(ZeroConstructor, Transient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
 	struct FTransform                             RelativeTransform;                                 // 0x0330(0x0060)(Edit, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -11396,6 +11795,10 @@ public:
 	{
 		return GetDefaultObjImpl<AEmitterCameraLensEffectBase>();
 	}
+
+public:
+	TArray<class UFXSystemComponent*> GetParticleComponents() const;
+	class UFXSystemComponent* GetPrimaryParticleComponent() const;
 };
 DUMPER7_ASSERTS_AEmitterCameraLensEffectBase;
 
@@ -12686,12 +13089,43 @@ public:
 };
 DUMPER7_ASSERTS_UCanvasRenderTarget2D;
 
-// Class Engine.Controller
-// 0x00B0 (0x0358 - 0x02A8)
-class AController : public AActor
+// Class Engine.NavAgentInterface
+// 0x0008 (0x0008 - 0x0000)
+class INavAgentInterface
 {
 public:
-	uint8                                         Pad_2A8[0x8];                                      // 0x02A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("NavAgentInterface")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"NavAgentInterface")
+	}
+	static class INavAgentInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<INavAgentInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_INavAgentInterface;
+
+// Class Engine.Controller
+// 0x00B0 (0x0358 - 0x02A8)
+class AController : public AActor, public INavAgentInterface
+{
+public:
 	class APlayerState*                           PlayerState;                                       // 0x02B0(0x0008)(BlueprintVisible, BlueprintReadOnly, Net, ZeroConstructor, RepNotify, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	uint8                                         Pad_2B8[0x8];                                      // 0x02B8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TMulticastInlineDelegate<void(float Damage, const class UDamageType* DamageType, class AActor* DamagedActor, class AActor* DamageCauser)> OnInstigatedAnyDamage; // 0x02C0(0x0018)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
@@ -13173,9 +13607,12 @@ public:
 DUMPER7_ASSERTS_UWorldPartitionHLODSourceActorsFromLevel;
 
 // Class Engine.AnimationDataController
-// 0x0000 (0x0000 - 0x0000)
-class IAnimationDataController final
+// 0x0008 (0x0008 - 0x0000)
+class IAnimationDataController
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	bool AddAttribute(const struct FAnimationAttributeIdentifier& AttributeIdentifier, bool bShouldTransact);
 	bool AddBoneCurve(class FName BoneName, bool bShouldTransact);
@@ -13270,9 +13707,12 @@ public:
 DUMPER7_ASSERTS_UMaterialExpressionFeatureLevelSwitch;
 
 // Class Engine.AnimationDataModel
-// 0x0000 (0x0000 - 0x0000)
-class IAnimationDataModel final
+// 0x0008 (0x0008 - 0x0000)
+class IAnimationDataModel
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	class UAnimSequence* GetAnimationSequence() const;
 	const TArray<struct FBoneAnimationTrack> GetBoneAnimationTracks() const;
@@ -13317,9 +13757,12 @@ public:
 DUMPER7_ASSERTS_IAnimationDataModel;
 
 // Class Engine.AssetRegistryTagProviderInterface
-// 0x0000 (0x0000 - 0x0000)
-class IAssetRegistryTagProviderInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IAssetRegistryTagProviderInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -13443,9 +13886,12 @@ public:
 DUMPER7_ASSERTS_UInGameAdManager;
 
 // Class Engine.Interface_ActorSubobject
-// 0x0000 (0x0000 - 0x0000)
-class IInterface_ActorSubobject final
+// 0x0008 (0x0008 - 0x0000)
+class IInterface_ActorSubobject
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -13491,35 +13937,6 @@ public:
 };
 DUMPER7_ASSERTS_UAnimStateMachineTypes;
 
-// Class Engine.Interface_AsyncCompilation
-// 0x0000 (0x0000 - 0x0000)
-class IInterface_AsyncCompilation final
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("Interface_AsyncCompilation")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"Interface_AsyncCompilation")
-	}
-	static class IInterface_AsyncCompilation* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<IInterface_AsyncCompilation>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_IInterface_AsyncCompilation;
-
 // Class Engine.MaterialExpressionGetMaterialAttributes
 // 0x0040 (0x00F0 - 0x00B0)
 class UMaterialExpressionGetMaterialAttributes final : public UMaterialExpression
@@ -13545,9 +13962,12 @@ public:
 DUMPER7_ASSERTS_UMaterialExpressionGetMaterialAttributes;
 
 // Class Engine.BoneReferenceSkeletonProvider
-// 0x0000 (0x0000 - 0x0000)
-class IBoneReferenceSkeletonProvider final
+// 0x0008 (0x0008 - 0x0000)
+class IBoneReferenceSkeletonProvider
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -13573,39 +13993,13 @@ public:
 };
 DUMPER7_ASSERTS_IBoneReferenceSkeletonProvider;
 
-// Class Engine.Interface_CollisionDataProvider
-// 0x0000 (0x0000 - 0x0000)
-class IInterface_CollisionDataProvider final
+// Class Engine.BlendProfileProviderInterface
+// 0x0008 (0x0008 - 0x0000)
+class IBlendProfileProviderInterface
 {
 public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("Interface_CollisionDataProvider")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"Interface_CollisionDataProvider")
-	}
-	static class IInterface_CollisionDataProvider* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<IInterface_CollisionDataProvider>();
-	}
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
 
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_IInterface_CollisionDataProvider;
-
-// Class Engine.BlendProfileProviderInterface
-// 0x0000 (0x0000 - 0x0000)
-class IBlendProfileProviderInterface final
-{
 public:
 	static class UClass* StaticClass()
 	{
@@ -13632,9 +14026,12 @@ public:
 DUMPER7_ASSERTS_IBlendProfileProviderInterface;
 
 // Class Engine.Interface_PostProcessVolume
-// 0x0000 (0x0000 - 0x0000)
-class IInterface_PostProcessVolume final
+// 0x0008 (0x0008 - 0x0000)
+class IInterface_PostProcessVolume
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -13660,12 +14057,67 @@ public:
 };
 DUMPER7_ASSERTS_IInterface_PostProcessVolume;
 
-// Class Engine.ActorElementWorldInterface
-// 0x0008 (0x0030 - 0x0028)
-class UActorElementWorldInterface final : public UObject
+// Class Engine.TypedElementWorldInterface
+// 0x0008 (0x0008 - 0x0000)
+class ITypedElementWorldInterface
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	bool CanDeleteElement(const struct FScriptTypedElementHandle& InElementHandle);
+	bool CanDuplicateElement(const struct FScriptTypedElementHandle& InElementHandle);
+	bool CanEditElement(const struct FScriptTypedElementHandle& InElementHandle);
+	bool CanMoveElement(const struct FScriptTypedElementHandle& InElementHandle, const ETypedElementWorldType InWorldType);
+	bool CanPromoteElement(const struct FScriptTypedElementHandle& InElementHandle);
+	bool CanScaleElement(const struct FScriptTypedElementHandle& InElementHandle);
+	bool DeleteElement(const struct FScriptTypedElementHandle& InElementHandle, class UWorld* InWorld, class UTypedElementSelectionSet* InSelectionSet, const struct FTypedElementDeletionOptions& InDeletionOptions);
+	struct FScriptTypedElementHandle DuplicateElement(const struct FScriptTypedElementHandle& InElementHandle, class UWorld* InWorld, const struct FVector& InLocationOffset);
+	bool GetBounds(const struct FScriptTypedElementHandle& InElementHandle, struct FBoxSphereBounds* OutBounds);
+	class ULevel* GetOwnerLevel(const struct FScriptTypedElementHandle& InElementHandle);
+	class UWorld* GetOwnerWorld(const struct FScriptTypedElementHandle& InElementHandle);
+	bool GetPivotOffset(const struct FScriptTypedElementHandle& InElementHandle, struct FVector* OutPivotOffset);
+	bool GetRelativeTransform(const struct FScriptTypedElementHandle& InElementHandle, struct FTransform* OutTransform);
+	bool GetWorldTransform(const struct FScriptTypedElementHandle& InElementHandle, struct FTransform* OutTransform);
+	bool IsTemplateElement(const struct FScriptTypedElementHandle& InElementHandle);
+	void NotifyMovementEnded(const struct FScriptTypedElementHandle& InElementHandle);
+	void NotifyMovementOngoing(const struct FScriptTypedElementHandle& InElementHandle);
+	void NotifyMovementStarted(const struct FScriptTypedElementHandle& InElementHandle);
+	struct FScriptTypedElementHandle PromoteElement(const struct FScriptTypedElementHandle& InElementHandle, class UWorld* OverrideWorld);
+	bool SetPivotOffset(const struct FScriptTypedElementHandle& InElementHandle, const struct FVector& InPivotOffset);
+	bool SetRelativeTransform(const struct FScriptTypedElementHandle& InElementHandle, const struct FTransform& InTransform);
+	bool SetWorldTransform(const struct FScriptTypedElementHandle& InElementHandle, const struct FTransform& InTransform);
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("TypedElementWorldInterface")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"TypedElementWorldInterface")
+	}
+	static class ITypedElementWorldInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<ITypedElementWorldInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_ITypedElementWorldInterface;
+
+// Class Engine.ActorElementWorldInterface
+// 0x0008 (0x0030 - 0x0028)
+class UActorElementWorldInterface final : public UObject, public ITypedElementWorldInterface
+{
+public:
 
 public:
 	static class UClass* StaticClass()
@@ -13680,71 +14132,40 @@ public:
 	{
 		return GetDefaultObjImpl<UActorElementWorldInterface>();
 	}
+
+public:
+	bool CanDeleteElement(const struct FScriptTypedElementHandle& InElementHandle);
+	bool CanDuplicateElement(const struct FScriptTypedElementHandle& InElementHandle);
+	bool CanEditElement(const struct FScriptTypedElementHandle& InElementHandle);
+	bool CanMoveElement(const struct FScriptTypedElementHandle& InElementHandle, const ETypedElementWorldType InWorldType);
+	bool CanPromoteElement(const struct FScriptTypedElementHandle& InElementHandle);
+	bool CanScaleElement(const struct FScriptTypedElementHandle& InElementHandle);
+	bool DeleteElement(const struct FScriptTypedElementHandle& InElementHandle, class UWorld* InWorld, class UTypedElementSelectionSet* InSelectionSet, const struct FTypedElementDeletionOptions& InDeletionOptions);
+	struct FScriptTypedElementHandle DuplicateElement(const struct FScriptTypedElementHandle& InElementHandle, class UWorld* InWorld, const struct FVector& InLocationOffset);
+	bool GetBounds(const struct FScriptTypedElementHandle& InElementHandle, struct FBoxSphereBounds* OutBounds);
+	class ULevel* GetOwnerLevel(const struct FScriptTypedElementHandle& InElementHandle);
+	class UWorld* GetOwnerWorld(const struct FScriptTypedElementHandle& InElementHandle);
+	bool GetPivotOffset(const struct FScriptTypedElementHandle& InElementHandle, struct FVector* OutPivotOffset);
+	bool GetRelativeTransform(const struct FScriptTypedElementHandle& InElementHandle, struct FTransform* OutTransform);
+	bool GetWorldTransform(const struct FScriptTypedElementHandle& InElementHandle, struct FTransform* OutTransform);
+	bool IsTemplateElement(const struct FScriptTypedElementHandle& InElementHandle);
+	void NotifyMovementEnded(const struct FScriptTypedElementHandle& InElementHandle);
+	void NotifyMovementOngoing(const struct FScriptTypedElementHandle& InElementHandle);
+	void NotifyMovementStarted(const struct FScriptTypedElementHandle& InElementHandle);
+	struct FScriptTypedElementHandle PromoteElement(const struct FScriptTypedElementHandle& InElementHandle, class UWorld* OverrideWorld);
+	bool SetPivotOffset(const struct FScriptTypedElementHandle& InElementHandle, const struct FVector& InPivotOffset);
+	bool SetRelativeTransform(const struct FScriptTypedElementHandle& InElementHandle, const struct FTransform& InTransform);
+	bool SetWorldTransform(const struct FScriptTypedElementHandle& InElementHandle, const struct FTransform& InTransform);
 };
 DUMPER7_ASSERTS_UActorElementWorldInterface;
 
-// Class Engine.Interface_PreviewMeshProvider
-// 0x0000 (0x0000 - 0x0000)
-class IInterface_PreviewMeshProvider final
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("Interface_PreviewMeshProvider")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"Interface_PreviewMeshProvider")
-	}
-	static class IInterface_PreviewMeshProvider* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<IInterface_PreviewMeshProvider>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_IInterface_PreviewMeshProvider;
-
-// Class Engine.PhysicsComponent
-// 0x0000 (0x0000 - 0x0000)
-class IPhysicsComponent final
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("PhysicsComponent")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"PhysicsComponent")
-	}
-	static class IPhysicsComponent* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<IPhysicsComponent>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_IPhysicsComponent;
-
 // Class Engine.ISMPartitionInstanceManager
-// 0x0000 (0x0000 - 0x0000)
-class IISMPartitionInstanceManager final
+// 0x0008 (0x0008 - 0x0000)
+class IISMPartitionInstanceManager
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -13882,9 +14303,12 @@ public:
 DUMPER7_ASSERTS_UMaterialExpressionGenericConstant;
 
 // Class Engine.ISMPartitionInstanceManagerProvider
-// 0x0000 (0x0000 - 0x0000)
-class IISMPartitionInstanceManagerProvider final
+// 0x0008 (0x0008 - 0x0000)
+class IISMPartitionInstanceManagerProvider
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -13912,10 +14336,9 @@ DUMPER7_ASSERTS_IISMPartitionInstanceManagerProvider;
 
 // Class Engine.ComponentElementSelectionInterface
 // 0x0008 (0x0030 - 0x0028)
-class UComponentElementSelectionInterface final : public UObject
+class UComponentElementSelectionInterface final : public UObject, public ITypedElementSelectionInterface
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -13930,13 +14353,25 @@ public:
 	{
 		return GetDefaultObjImpl<UComponentElementSelectionInterface>();
 	}
+
+public:
+	bool AllowSelectionModifiers(const struct FScriptTypedElementHandle& InElementHandle, const struct FScriptTypedElementListProxy& InSelectionSet);
+	bool CanDeselectElement(const struct FScriptTypedElementHandle& InElementHandle, const struct FTypedElementSelectionOptions& InSelectionOptions);
+	bool CanSelectElement(const struct FScriptTypedElementHandle& InElementHandle, const struct FTypedElementSelectionOptions& InSelectionOptions);
+	bool DeselectElement(const struct FScriptTypedElementHandle& InElementHandle, const struct FScriptTypedElementListProxy& InSelectionSet, const struct FTypedElementSelectionOptions& InSelectionOptions);
+	struct FScriptTypedElementHandle GetSelectionElement(const struct FScriptTypedElementHandle& InElementHandle, const struct FScriptTypedElementListProxy& InCurrentSelection, const ETypedElementSelectionMethod InSelectionMethod);
+	bool IsElementSelected(const struct FScriptTypedElementHandle& InElementHandle, const struct FScriptTypedElementListProxy& InSelectionSet, const struct FTypedElementIsSelectedOptions& InSelectionOptions);
+	bool SelectElement(const struct FScriptTypedElementHandle& InElementHandle, const struct FScriptTypedElementListProxy& InSelectionSet, const struct FTypedElementSelectionOptions& InSelectionOptions);
 };
 DUMPER7_ASSERTS_UComponentElementSelectionInterface;
 
 // Class Engine.ViewportSelectableObject
-// 0x0000 (0x0000 - 0x0000)
-class IViewportSelectableObject final
+// 0x0008 (0x0008 - 0x0000)
+class IViewportSelectableObject
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -13983,9 +14418,12 @@ public:
 DUMPER7_ASSERTS_UMaterialExpressionIsFirstPerson;
 
 // Class Engine.WorldPartitionObjectResolver
-// 0x0000 (0x0000 - 0x0000)
-class IWorldPartitionObjectResolver final
+// 0x0008 (0x0008 - 0x0000)
+class IWorldPartitionObjectResolver
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -14156,59 +14594,6 @@ public:
 };
 DUMPER7_ASSERTS_UActorDescContainerInstance;
 
-// Class Engine.TypedElementWorldInterface
-// 0x0000 (0x0000 - 0x0000)
-class ITypedElementWorldInterface final
-{
-public:
-	bool CanDeleteElement(const struct FScriptTypedElementHandle& InElementHandle);
-	bool CanDuplicateElement(const struct FScriptTypedElementHandle& InElementHandle);
-	bool CanEditElement(const struct FScriptTypedElementHandle& InElementHandle);
-	bool CanMoveElement(const struct FScriptTypedElementHandle& InElementHandle, const ETypedElementWorldType InWorldType);
-	bool CanPromoteElement(const struct FScriptTypedElementHandle& InElementHandle);
-	bool CanScaleElement(const struct FScriptTypedElementHandle& InElementHandle);
-	bool DeleteElement(const struct FScriptTypedElementHandle& InElementHandle, class UWorld* InWorld, class UTypedElementSelectionSet* InSelectionSet, const struct FTypedElementDeletionOptions& InDeletionOptions);
-	struct FScriptTypedElementHandle DuplicateElement(const struct FScriptTypedElementHandle& InElementHandle, class UWorld* InWorld, const struct FVector& InLocationOffset);
-	bool GetBounds(const struct FScriptTypedElementHandle& InElementHandle, struct FBoxSphereBounds* OutBounds);
-	class ULevel* GetOwnerLevel(const struct FScriptTypedElementHandle& InElementHandle);
-	class UWorld* GetOwnerWorld(const struct FScriptTypedElementHandle& InElementHandle);
-	bool GetPivotOffset(const struct FScriptTypedElementHandle& InElementHandle, struct FVector* OutPivotOffset);
-	bool GetRelativeTransform(const struct FScriptTypedElementHandle& InElementHandle, struct FTransform* OutTransform);
-	bool GetWorldTransform(const struct FScriptTypedElementHandle& InElementHandle, struct FTransform* OutTransform);
-	bool IsTemplateElement(const struct FScriptTypedElementHandle& InElementHandle);
-	void NotifyMovementEnded(const struct FScriptTypedElementHandle& InElementHandle);
-	void NotifyMovementOngoing(const struct FScriptTypedElementHandle& InElementHandle);
-	void NotifyMovementStarted(const struct FScriptTypedElementHandle& InElementHandle);
-	struct FScriptTypedElementHandle PromoteElement(const struct FScriptTypedElementHandle& InElementHandle, class UWorld* OverrideWorld);
-	bool SetPivotOffset(const struct FScriptTypedElementHandle& InElementHandle, const struct FVector& InPivotOffset);
-	bool SetRelativeTransform(const struct FScriptTypedElementHandle& InElementHandle, const struct FTransform& InTransform);
-	bool SetWorldTransform(const struct FScriptTypedElementHandle& InElementHandle, const struct FTransform& InTransform);
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("TypedElementWorldInterface")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"TypedElementWorldInterface")
-	}
-	static class ITypedElementWorldInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ITypedElementWorldInterface>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_ITypedElementWorldInterface;
-
 // Class Engine.LevelInstanceContainerInstance
 // 0x0000 (0x0028 - 0x0028)
 class ULevelInstanceContainerInstance final : public UActorDescContainerInstance
@@ -14295,9 +14680,12 @@ public:
 DUMPER7_ASSERTS_UMaterialExpressionFunctionInput;
 
 // Class Engine.LevelInstanceEditorPivotInterface
-// 0x0000 (0x0000 - 0x0000)
-class ILevelInstanceEditorPivotInterface final
+// 0x0008 (0x0008 - 0x0000)
+class ILevelInstanceEditorPivotInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -14781,10 +15169,9 @@ DUMPER7_ASSERTS_UAimOffsetBlendSpace1D;
 
 // Class Engine.SoundClass
 // 0x01D8 (0x0200 - 0x0028)
-class USoundClass final : public UObject
+class USoundClass final : public UObject, public IInterface_AssetUserData
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSoundClassProperties                  Properties;                                        // 0x0030(0x0198)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
 	TArray<class USoundClass*>                    ChildClasses;                                      // 0x01C8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
 	TArray<struct FPassiveSoundMixModifier>       PassiveSoundMixModifiers;                          // 0x01D8(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
@@ -14804,6 +15191,11 @@ public:
 	{
 		return GetDefaultObjImpl<USoundClass>();
 	}
+
+public:
+	bool AddAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	class UAssetUserData* GetAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	bool HasAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
 };
 DUMPER7_ASSERTS_USoundClass;
 
@@ -14876,12 +15268,43 @@ public:
 };
 DUMPER7_ASSERTS_ULevelStreamingPersistent;
 
-// Class Engine.AnimBlueprintGeneratedClass
-// 0x0268 (0x05C8 - 0x0360)
-class UAnimBlueprintGeneratedClass final : public UBlueprintGeneratedClass
+// Class Engine.AnimClassInterface
+// 0x0008 (0x0008 - 0x0000)
+class IAnimClassInterface
 {
 public:
-	uint8                                         Pad_360[0x8];                                      // 0x0360(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("AnimClassInterface")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"AnimClassInterface")
+	}
+	static class IAnimClassInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<IAnimClassInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_IAnimClassInterface;
+
+// Class Engine.AnimBlueprintGeneratedClass
+// 0x0268 (0x05C8 - 0x0360)
+class UAnimBlueprintGeneratedClass final : public UBlueprintGeneratedClass, public IAnimClassInterface
+{
+public:
 	TArray<struct FBakedAnimationStateMachine>    BakedStateMachines;                                // 0x0368(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	class USkeleton*                              TargetSkeleton;                                    // 0x0378(0x0008)(ZeroConstructor, NoDestructor, AssetRegistrySearchable, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	TArray<struct FAnimNotifyEvent>               AnimNotifies;                                      // 0x0380(0x0010)(ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
@@ -15337,8 +15760,8 @@ public:
 DUMPER7_ASSERTS_UMapBuildDataRegistry;
 
 // Class Engine.SoundParameterControllerInterface
-// 0x0000 (0x0000 - 0x0000)
-class ISoundParameterControllerInterface final
+// 0x0000 (0x0008 - 0x0008)
+class ISoundParameterControllerInterface : public IAudioParameterControllerInterface
 {
 public:
 	static class UClass* StaticClass()
@@ -15677,10 +16100,9 @@ DUMPER7_ASSERTS_UMaterialExpressionArccosineFast;
 
 // Class Engine.SplineMeshComponent
 // 0x0130 (0x0760 - 0x0630)
-class USplineMeshComponent final : public UStaticMeshComponent
+class USplineMeshComponent final : public UStaticMeshComponent, public IInterface_CollisionDataProvider
 {
 public:
-	uint8                                         Pad_628[0x8];                                      // 0x0628(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FSplineMeshParams                      SplineParams;                                      // 0x0630(0x00B0)(Edit, NoDestructor, NativeAccessSpecifierPublic)
 	struct FVector                                SplineUpDir;                                       // 0x06E0(0x0018)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         SplineBoundaryMin;                                 // 0x06F8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -15844,9 +16266,12 @@ public:
 DUMPER7_ASSERTS_UMaterialExpressionNormalize;
 
 // Class Engine.WorldPartitionCookPackageObject
-// 0x0000 (0x0000 - 0x0000)
-class IWorldPartitionCookPackageObject final
+// 0x0008 (0x0008 - 0x0000)
+class IWorldPartitionCookPackageObject
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -17250,12 +17675,43 @@ public:
 };
 DUMPER7_ASSERTS_UMaterialExpressionConstant;
 
-// Class Engine.PreviewMeshCollection
-// 0x0020 (0x0050 - 0x0030)
-class UPreviewMeshCollection final : public UDataAsset
+// Class Engine.PreviewCollectionInterface
+// 0x0008 (0x0008 - 0x0000)
+class IPreviewCollectionInterface
 {
 public:
-	uint8                                         Pad_30[0x8];                                       // 0x0030(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("PreviewCollectionInterface")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"PreviewCollectionInterface")
+	}
+	static class IPreviewCollectionInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<IPreviewCollectionInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_IPreviewCollectionInterface;
+
+// Class Engine.PreviewMeshCollection
+// 0x0020 (0x0050 - 0x0030)
+class UPreviewMeshCollection final : public UDataAsset, public IPreviewCollectionInterface
+{
+public:
 	class USkeleton*                              Skeleton;                                          // 0x0038(0x0008)(Edit, ZeroConstructor, EditConst, NoDestructor, AssetRegistrySearchable, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	TArray<struct FPreviewMeshCollectionEntry>    SkeletalMeshes;                                    // 0x0040(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPublic)
 
@@ -17416,10 +17872,9 @@ DUMPER7_ASSERTS_UMaterialExpressionConstantBiasScale;
 
 // Class Engine.AnimBlueprint
 // 0x0028 (0x00D0 - 0x00A8)
-class UAnimBlueprint final : public UBlueprint
+class UAnimBlueprint final : public UBlueprint, public IInterface_PreviewMeshProvider
 {
 public:
-	uint8                                         Pad_A8[0x8];                                       // 0x00A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class USkeleton*                              TargetSkeleton;                                    // 0x00B0(0x0008)(Edit, ZeroConstructor, NoDestructor, AssetRegistrySearchable, AdvancedDisplay, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	TArray<struct FAnimGroupInfo>                 Groups;                                            // 0x00B8(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	bool                                          bIsTemplate;                                       // 0x00C8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, AssetRegistrySearchable, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -17469,12 +17924,43 @@ public:
 };
 DUMPER7_ASSERTS_UMaterialExpressionPostVolumeUserFlagTest;
 
-// Class Engine.WorldPartitionRuntimeCell
-// 0x0090 (0x00B8 - 0x0028)
-class UWorldPartitionRuntimeCell : public UObject
+// Class Engine.WorldPartitionCell
+// 0x0008 (0x0008 - 0x0000)
+class IWorldPartitionCell
 {
 public:
-	uint8                                         Pad_28[0x10];                                      // 0x0028(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("WorldPartitionCell")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"WorldPartitionCell")
+	}
+	static class IWorldPartitionCell* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<IWorldPartitionCell>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_IWorldPartitionCell;
+
+// Class Engine.WorldPartitionRuntimeCell
+// 0x0090 (0x00B8 - 0x0028)
+class UWorldPartitionRuntimeCell : public UObject, public IWorldPartitionCell, public IWorldPartitionCookPackageObject
+{
+public:
 	bool                                          bIsAlwaysLoaded;                                   // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	bool                                          bIsSpatiallyLoaded;                                // 0x0039(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_3A[0x6];                                       // 0x003A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
@@ -18102,35 +18588,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UMaterialExpressionDistanceCullFade;
-
-// Class Engine.SMInstanceManagerProvider
-// 0x0000 (0x0000 - 0x0000)
-class ISMInstanceManagerProvider final
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("SMInstanceManagerProvider")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"SMInstanceManagerProvider")
-	}
-	static class ISMInstanceManagerProvider* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ISMInstanceManagerProvider>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_ISMInstanceManagerProvider;
 
 // Class Engine.MaterialExpressionDistanceFieldGradient
 // 0x0030 (0x00E0 - 0x00B0)
@@ -19005,12 +19462,43 @@ public:
 };
 DUMPER7_ASSERTS_UWorldPartitionRuntimeCellTransformer;
 
-// Class Engine.RuntimeHashExternalStreamingObjectBase
-// 0x01A0 (0x01C8 - 0x0028)
-class URuntimeHashExternalStreamingObjectBase : public UObject
+// Class Engine.DataLayerInstanceProvider
+// 0x0008 (0x0008 - 0x0000)
+class IDataLayerInstanceProvider
 {
 public:
-	uint8                                         Pad_28[0x10];                                      // 0x0028(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("DataLayerInstanceProvider")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"DataLayerInstanceProvider")
+	}
+	static class IDataLayerInstanceProvider* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<IDataLayerInstanceProvider>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_IDataLayerInstanceProvider;
+
+// Class Engine.RuntimeHashExternalStreamingObjectBase
+// 0x01A0 (0x01C8 - 0x0028)
+class URuntimeHashExternalStreamingObjectBase : public UObject, public IWorldPartitionCookPackageObject, public IDataLayerInstanceProvider
+{
+public:
 	TMap<class FName, class FName>                SubObjectsToCellRemapping;                         // 0x0038(0x0050)(NativeAccessSpecifierPublic)
 	struct FWorldPartitionRuntimeContainerResolver ContainerResolver;                                // 0x0088(0x0058)(NativeAccessSpecifierPublic)
 	uint8                                         Pad_E0[0x10];                                      // 0x00E0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
@@ -19312,10 +19800,9 @@ DUMPER7_ASSERTS_USparseVolumeTexture;
 
 // Class Engine.StreamableSparseVolumeTexture
 // 0x0088 (0x00B0 - 0x0028)
-class UStreamableSparseVolumeTexture : public USparseVolumeTexture
+class UStreamableSparseVolumeTexture : public USparseVolumeTexture, public IInterface_AssetUserData
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FIntVector                             VolumeResolution;                                  // 0x0030(0x000C)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, AssetRegistrySearchable, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         NumMipLevels;                                      // 0x003C(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, AssetRegistrySearchable, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         NumFrames;                                         // 0x0040(0x0004)(Edit, ZeroConstructor, EditConst, IsPlainOldData, NoDestructor, AssetRegistrySearchable, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -19350,6 +19837,11 @@ public:
 	{
 		return GetDefaultObjImpl<UStreamableSparseVolumeTexture>();
 	}
+
+public:
+	bool AddAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	class UAssetUserData* GetAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	bool HasAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
 };
 DUMPER7_ASSERTS_UStreamableSparseVolumeTexture;
 
@@ -20060,12 +20552,43 @@ public:
 };
 DUMPER7_ASSERTS_UMaterialExpressionRotateAboutAxis;
 
-// Class Engine.WorldPartitionEditorLoaderAdapter
-// 0x0008 (0x0030 - 0x0028)
-class UWorldPartitionEditorLoaderAdapter final : public UObject
+// Class Engine.WorldPartitionActorLoaderInterface
+// 0x0008 (0x0008 - 0x0000)
+class IWorldPartitionActorLoaderInterface
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("WorldPartitionActorLoaderInterface")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"WorldPartitionActorLoaderInterface")
+	}
+	static class IWorldPartitionActorLoaderInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<IWorldPartitionActorLoaderInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_IWorldPartitionActorLoaderInterface;
+
+// Class Engine.WorldPartitionEditorLoaderAdapter
+// 0x0008 (0x0030 - 0x0028)
+class UWorldPartitionEditorLoaderAdapter final : public UObject, public IWorldPartitionActorLoaderInterface
+{
+public:
 
 public:
 	static class UClass* StaticClass()
@@ -21669,9 +22192,12 @@ public:
 DUMPER7_ASSERTS_UMaterialExpressionStep;
 
 // Class Engine.MeshDeformerProducer
-// 0x0000 (0x0000 - 0x0000)
-class IMeshDeformerProducer final
+// 0x0008 (0x0008 - 0x0000)
+class IMeshDeformerProducer
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -21855,9 +22381,12 @@ public:
 DUMPER7_ASSERTS_UMaterialExpressionSubstrateEyeBSDF;
 
 // Class Engine.NavigationDataInterface
-// 0x0000 (0x0000 - 0x0000)
-class INavigationDataInterface final
+// 0x0008 (0x0008 - 0x0000)
+class INavigationDataInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -21931,9 +22460,12 @@ public:
 DUMPER7_ASSERTS_UMaterialExpressionSubstrateUI;
 
 // Class Engine.NavPathObserverInterface
-// 0x0000 (0x0000 - 0x0000)
-class INavPathObserverInterface final
+// 0x0008 (0x0008 - 0x0000)
+class INavPathObserverInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -24335,12 +24867,44 @@ public:
 };
 DUMPER7_ASSERTS_UParticleModuleLocationWorldOffset;
 
-// Class Engine.LevelInstanceSubsystem
-// 0x0198 (0x01C8 - 0x0030)
-class ULevelInstanceSubsystem final : public UWorldSubsystem
+// Class Engine.StreamingWorldSubsystemInterface
+// 0x0008 (0x0008 - 0x0000)
+class IStreamingWorldSubsystemInterface
 {
 public:
-	uint8                                         Pad_30[0x198];                                     // 0x0030(0x0198)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("StreamingWorldSubsystemInterface")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"StreamingWorldSubsystemInterface")
+	}
+	static class IStreamingWorldSubsystemInterface* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<IStreamingWorldSubsystemInterface>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+DUMPER7_ASSERTS_IStreamingWorldSubsystemInterface;
+
+// Class Engine.LevelInstanceSubsystem
+// 0x0198 (0x01C8 - 0x0030)
+class ULevelInstanceSubsystem final : public UWorldSubsystem, public IStreamingWorldSubsystemInterface
+{
+public:
+	uint8                                         Pad_38[0x190];                                     // 0x0038(0x0190)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -24516,35 +25080,6 @@ public:
 };
 DUMPER7_ASSERTS_UMicroTransactionBase;
 
-// Class Engine.NavAgentInterface
-// 0x0000 (0x0000 - 0x0000)
-class INavAgentInterface final
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("NavAgentInterface")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"NavAgentInterface")
-	}
-	static class INavAgentInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<INavAgentInterface>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_INavAgentInterface;
-
 // Class Engine.NavAreaBase
 // 0x0008 (0x0030 - 0x0028)
 class UNavAreaBase : public UObject
@@ -24569,9 +25104,12 @@ public:
 DUMPER7_ASSERTS_UNavAreaBase;
 
 // Class Engine.NavEdgeProviderInterface
-// 0x0000 (0x0000 - 0x0000)
-class INavEdgeProviderInterface final
+// 0x0008 (0x0008 - 0x0000)
+class INavEdgeProviderInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -24598,9 +25136,12 @@ public:
 DUMPER7_ASSERTS_INavEdgeProviderInterface;
 
 // Class Engine.NavigationInvokerInterface
-// 0x0000 (0x0000 - 0x0000)
-class INavigationInvokerInterface final
+// 0x0008 (0x0008 - 0x0000)
+class INavigationInvokerInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -24652,9 +25193,12 @@ public:
 DUMPER7_ASSERTS_UNavLinkDefinition;
 
 // Class Engine.NavMovementInterface
-// 0x0000 (0x0000 - 0x0000)
-class INavMovementInterface final
+// 0x0008 (0x0008 - 0x0000)
+class INavMovementInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	void RequestDirectMove(const struct FVector& MoveVelocity, bool bForceMaxSpeed);
 	void RequestPathMove(const struct FVector& MoveInput);
@@ -24693,35 +25237,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_INavMovementInterface;
-
-// Class Engine.NavRelevantInterface
-// 0x0000 (0x0000 - 0x0000)
-class INavRelevantInterface final
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("NavRelevantInterface")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"NavRelevantInterface")
-	}
-	static class INavRelevantInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<INavRelevantInterface>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_INavRelevantInterface;
 
 // Class Engine.NetActorFactory
 // 0x0068 (0x00A0 - 0x0038)
@@ -24767,9 +25282,12 @@ public:
 DUMPER7_ASSERTS_UNetSubObjectFactory;
 
 // Class Engine.NetworkPredictionInterface
-// 0x0000 (0x0000 - 0x0000)
-class INetworkPredictionInterface final
+// 0x0008 (0x0008 - 0x0000)
+class INetworkPredictionInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -26560,9 +27078,12 @@ public:
 DUMPER7_ASSERTS_UParticleModuleVectorFieldScale;
 
 // Class Engine.WorldPartitionDestructibleInHLODInterface
-// 0x0000 (0x0000 - 0x0000)
-class IWorldPartitionDestructibleInHLODInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IWorldPartitionDestructibleInHLODInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	void SetHLODDestructionTag(const struct FWorldPartitionHLODDestructionTag& InDestructionTag);
 
@@ -26668,9 +27189,12 @@ public:
 DUMPER7_ASSERTS_UParticleSystemReplay;
 
 // Class Engine.PathFollowingAgentInterface
-// 0x0000 (0x0000 - 0x0000)
-class IPathFollowingAgentInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IPathFollowingAgentInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -26697,9 +27221,12 @@ public:
 DUMPER7_ASSERTS_IPathFollowingAgentInterface;
 
 // Class Engine.PhysicsBodyInstanceOwnerResolver
-// 0x0000 (0x0000 - 0x0000)
-class IPhysicsBodyInstanceOwnerResolver final
+// 0x0008 (0x0008 - 0x0000)
+class IPhysicsBodyInstanceOwnerResolver
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -27055,9 +27582,12 @@ public:
 DUMPER7_ASSERTS_ARadialForceActor;
 
 // Class Engine.ReplicatedObjectInterface
-// 0x0000 (0x0000 - 0x0000)
-class IReplicatedObjectInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IReplicatedObjectInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -27104,9 +27634,12 @@ public:
 DUMPER7_ASSERTS_URuntimePartitionLevelStreaming;
 
 // Class Engine.RVOAvoidanceInterface
-// 0x0000 (0x0000 - 0x0000)
-class IRVOAvoidanceInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IRVOAvoidanceInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -27209,9 +27742,12 @@ public:
 DUMPER7_ASSERTS_UShadowMapTexture2D;
 
 // Class Engine.SkeletalMeshHalfEdgeBufferAccessor
-// 0x0000 (0x0000 - 0x0000)
-class ISkeletalMeshHalfEdgeBufferAccessor final
+// 0x0008 (0x0008 - 0x0000)
+class ISkeletalMeshHalfEdgeBufferAccessor
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -27381,35 +27917,6 @@ public:
 };
 DUMPER7_ASSERTS_UContentBundleEngineSubsystem;
 
-// Class Engine.SMInstanceManager
-// 0x0000 (0x0000 - 0x0000)
-class ISMInstanceManager final
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("SMInstanceManager")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"SMInstanceManager")
-	}
-	static class ISMInstanceManager* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ISMInstanceManager>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_ISMInstanceManager;
-
 // Class Engine.SMInstanceProxyEditingObject
 // 0x0000 (0x0028 - 0x0028)
 class USMInstanceProxyEditingObject final : public UObject
@@ -27479,8 +27986,8 @@ public:
 DUMPER7_ASSERTS_USoundAttenuationEditorSettings;
 
 // Class Engine.SoundEffectPresetWidgetInterface
-// 0x0000 (0x0000 - 0x0000)
-class ISoundEffectPresetWidgetInterface final
+// 0x0000 (0x0008 - 0x0008)
+class ISoundEffectPresetWidgetInterface : public IAudioPanelWidgetInterface
 {
 public:
 	TSubclassOf<class USoundEffectPreset> GetClass();
@@ -27538,9 +28045,12 @@ public:
 DUMPER7_ASSERTS_USoundEffectSourcePresetChain;
 
 // Class Engine.SoundSubmixWidgetInterface
-// 0x0000 (0x0000 - 0x0000)
-class ISoundSubmixWidgetInterface final
+// 0x0008 (0x0008 - 0x0000)
+class ISoundSubmixWidgetInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	void OnConstructed(class USoundSubmixBase* SoundSubmix);
 
@@ -27705,10 +28215,9 @@ DUMPER7_ASSERTS_USphereReflectionCaptureComponent;
 
 // Class Engine.WorldPartitionStandaloneHLOD
 // 0x0098 (0x0340 - 0x02A8)
-class AWorldPartitionStandaloneHLOD final : public AActor
+class AWorldPartitionStandaloneHLOD final : public AActor, public ILevelInstanceInterface
 {
 public:
-	uint8                                         Pad_2A8[0x8];                                      // 0x02A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TSoftObjectPtr<class UWorld>                  WorldAsset;                                        // 0x02B0(0x0028)(Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	struct FGuid                                  LevelInstanceSpawnGuid;                            // 0x02D8(0x0010)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_2E8[0x58];                                     // 0x02E8(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -27726,6 +28235,14 @@ public:
 	{
 		return GetDefaultObjImpl<AWorldPartitionStandaloneHLOD>();
 	}
+
+public:
+	void LoadLevelInstance();
+	bool SetWorldAsset(TSoftObjectPtr<class UWorld> WorldAsset);
+	void UnloadLevelInstance();
+	class ULevel* GetLoadedLevel() const;
+	const TSoftObjectPtr<class UWorld> GetWorldAsset() const;
+	bool IsLoaded() const;
 };
 DUMPER7_ASSERTS_AWorldPartitionStandaloneHLOD;
 
@@ -27773,7 +28290,8 @@ public:
 	TArray<class UStaticMesh*>                    BlockedBuildings;                                  // 0x00A8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
 	TMap<class FString, bool>                     ComponentVisibility;                               // 0x00B8(0x0050)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
 	bool                                          InstanceDependent;                                 // 0x0108(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_109[0x7];                                      // 0x0109(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bInsideWall;                                       // 0x0109(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_10A[0x6];                                      // 0x010A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -27907,35 +28425,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UStereoLayerComponent;
-
-// Class Engine.StreamingWorldSubsystemInterface
-// 0x0000 (0x0000 - 0x0000)
-class IStreamingWorldSubsystemInterface final
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("StreamingWorldSubsystemInterface")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"StreamingWorldSubsystemInterface")
-	}
-	static class IStreamingWorldSubsystemInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<IStreamingWorldSubsystemInterface>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_IStreamingWorldSubsystemInterface;
 
 // Class Engine.SubUVAnimation
 // 0x0038 (0x0060 - 0x0028)
@@ -28514,10 +29003,9 @@ DUMPER7_ASSERTS_UWorldPartitionRuntimeHashSet;
 
 // Class Engine.WorldSettings
 // 0x0230 (0x04D8 - 0x02A8)
-class AWorldSettings : public AInfo
+class AWorldSettings : public AInfo, public IInterface_AssetUserData
 {
 public:
-	uint8                                         Pad_2A8[0x8];                                      // 0x02A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         VisibilityCellSize;                                // 0x02B0(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EVisibilityAggressiveness                     VisibilityAggressiveness;                          // 0x02B4(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         bPrecomputeVisibility : 1;                         // 0x02B5(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
@@ -28604,6 +29092,11 @@ public:
 	{
 		return GetDefaultObjImpl<AWorldSettings>();
 	}
+
+public:
+	bool AddAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	class UAssetUserData* GetAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	bool HasAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
 };
 DUMPER7_ASSERTS_AWorldSettings;
 
@@ -28940,10 +29433,10 @@ DUMPER7_ASSERTS_UAnimationSettings;
 
 // Class Engine.AnimBank
 // 0x0090 (0x0110 - 0x0080)
-class UAnimBank final : public UAnimationAsset
+class UAnimBank final : public UAnimationAsset, public IInterface_AsyncCompilation
 {
 public:
-	uint8                                         Pad_80[0x90];                                      // 0x0080(0x0090)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_88[0x88];                                      // 0x0088(0x0088)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -28983,10 +29476,9 @@ DUMPER7_ASSERTS_UAnimBlueprintGeneratedStruct;
 
 // Class Engine.Pawn
 // 0x0080 (0x0328 - 0x02A8)
-class APawn : public AActor
+class APawn : public AActor, public INavAgentInterface
 {
 public:
-	uint8                                         Pad_2A8[0x8];                                      // 0x02A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	uint8                                         bUseControllerRotationPitch : 1;                   // 0x02B0(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bUseControllerRotationYaw : 1;                     // 0x02B0(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
 	uint8                                         bUseControllerRotationRoll : 1;                    // 0x02B0(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, BlueprintVisible, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic))
@@ -29144,35 +29636,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UAnimBoneCompressionSettings;
-
-// Class Engine.AnimClassInterface
-// 0x0000 (0x0000 - 0x0000)
-class IAnimClassInterface final
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("AnimClassInterface")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"AnimClassInterface")
-	}
-	static class IAnimClassInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<IAnimClassInterface>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_IAnimClassInterface;
 
 // Class Engine.AnimComposite
 // 0x0010 (0x00C8 - 0x00B8)
@@ -29382,10 +29845,9 @@ DUMPER7_ASSERTS_UTextureCube;
 
 // Class Engine.AnimDataModel
 // 0x00B0 (0x00D8 - 0x0028)
-class UAnimDataModel final : public UObject
+class UAnimDataModel final : public UObject, public IAnimationDataModel
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	int32                                         BracketCounter;                                    // 0x0030(0x0004)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	TMulticastInlineDelegate<void(EAnimDataModelNotifyType NotifType, TScriptInterface<class IAnimationDataModel> Model, const struct FAnimDataModelNotifPayload& Payload)> ModifiedEventDynamic; // 0x0038(0x0018)(ZeroConstructor, Transient, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
@@ -29414,6 +29876,24 @@ public:
 	{
 		return GetDefaultObjImpl<UAnimDataModel>();
 	}
+
+public:
+	class UAnimSequence* GetAnimationSequence() const;
+	const TArray<struct FBoneAnimationTrack> GetBoneAnimationTracks() const;
+	const struct FBoneAnimationTrack GetBoneTrackByIndex(int32 TrackIndex) const;
+	const struct FBoneAnimationTrack GetBoneTrackByName(class FName TrackName) const;
+	int32 GetBoneTrackIndex(const struct FBoneAnimationTrack& Track) const;
+	int32 GetBoneTrackIndexByName(class FName TrackName) const;
+	void GetBoneTrackNames(TArray<class FName>* OutNames) const;
+	struct FFrameRate GetFrameRate() const;
+	int32 GetNumberOfFloatCurves() const;
+	int32 GetNumberOfFrames() const;
+	int32 GetNumberOfKeys() const;
+	int32 GetNumberOfTransformCurves() const;
+	int32 GetNumBoneTracks() const;
+	double GetPlayLength() const;
+	bool IsValidBoneTrackIndex(int32 TrackIndex) const;
+	bool IsValidBoneTrackName(const class FName& TrackName) const;
 };
 DUMPER7_ASSERTS_UAnimDataModel;
 
@@ -29923,9 +30403,12 @@ public:
 DUMPER7_ASSERTS_UCachedAnimDataLibrary;
 
 // Class Engine.CurveSourceInterface
-// 0x0000 (0x0000 - 0x0000)
-class ICurveSourceInterface final
+// 0x0008 (0x0008 - 0x0000)
+class ICurveSourceInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	class FName GetBindingName() const;
 	void GetCurves(TArray<struct FNamedCurveValue>* OutValues) const;
@@ -29985,9 +30468,12 @@ public:
 DUMPER7_ASSERTS_UMirrorDataTable;
 
 // Class Engine.NodeMappingProviderInterface
-// 0x0000 (0x0000 - 0x0000)
-class INodeMappingProviderInterface final
+// 0x0008 (0x0008 - 0x0000)
+class INodeMappingProviderInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -30070,35 +30556,6 @@ public:
 };
 DUMPER7_ASSERTS_UPoseAsset;
 
-// Class Engine.PreviewCollectionInterface
-// 0x0000 (0x0000 - 0x0000)
-class IPreviewCollectionInterface final
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("PreviewCollectionInterface")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"PreviewCollectionInterface")
-	}
-	static class IPreviewCollectionInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<IPreviewCollectionInterface>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_IPreviewCollectionInterface;
-
 // Class Engine.SkeletalMeshActor
 // 0x0080 (0x0328 - 0x02A8)
 class ASkeletalMeshActor : public AActor
@@ -30137,10 +30594,9 @@ DUMPER7_ASSERTS_ASkeletalMeshActor;
 
 // Class Engine.Skeleton
 // 0x0458 (0x0480 - 0x0028)
-class USkeleton final : public UObject
+class USkeleton final : public UObject, public IInterface_AssetUserData, public IInterface_PreviewMeshProvider
 {
 public:
-	uint8                                         Pad_28[0x10];                                      // 0x0028(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<struct FBoneNode>                      BoneTree;                                          // 0x0038(0x0010)(Edit, ZeroConstructor, EditConst, Protected, NativeAccessSpecifierProtected)
 	uint8                                         Pad_48[0x128];                                     // 0x0048(0x0128)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FGuid                                  VirtualBoneGuid;                                   // 0x0170(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -30175,6 +30631,11 @@ public:
 	{
 		return GetDefaultObjImpl<USkeleton>();
 	}
+
+public:
+	bool AddAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	class UAssetUserData* GetAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	bool HasAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
 };
 DUMPER7_ASSERTS_USkeleton;
 
@@ -30552,9 +31013,12 @@ public:
 DUMPER7_ASSERTS_AAudioVolume;
 
 // Class Engine.ActorSoundParameterInterface
-// 0x0000 (0x0000 - 0x0000)
-class IActorSoundParameterInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IActorSoundParameterInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	void GetActorSoundParams(TArray<struct FAudioParameter>* Params_0) const;
 
@@ -30879,39 +31343,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCameraProxyMeshComponent;
-
-// Class Engine.CameraLensEffectInterface
-// 0x0000 (0x0000 - 0x0000)
-class ICameraLensEffectInterface final
-{
-public:
-	TArray<class UFXSystemComponent*> GetParticleComponents() const;
-	class UFXSystemComponent* GetPrimaryParticleComponent() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("CameraLensEffectInterface")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"CameraLensEffectInterface")
-	}
-	static class ICameraLensEffectInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ICameraLensEffectInterface>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_ICameraLensEffectInterface;
 
 // Class Engine.CameraModifier
 // 0x0020 (0x0048 - 0x0028)
@@ -31475,10 +31906,11 @@ DUMPER7_ASSERTS_UInitialActiveSoundParams;
 
 // Class Engine.AudioComponent
 // 0x0AF0 (0x0D40 - 0x0250)
-class UAudioComponent : public USceneComponent
+#pragma pack(push, 0x1)
+class SDK_ALIGN(0x10) UAudioComponent : public USceneComponent, public ISoundParameterControllerInterface
 {
 public:
-	uint8                                         Pad_250[0x248];                                    // 0x0250(0x0248)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_258[0x240];                                    // 0x0258(0x0240)(Fixing Size After Last Property [ Dumper-7 ])
 	class USoundBase*                             Sound;                                             // 0x0498(0x0008)(Edit, BlueprintVisible, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	TArray<struct FAudioParameter>                DefaultParameters;                                 // 0x04A0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<struct FAudioParameter>                InstanceParameters;                                // 0x04B0(0x0010)(ZeroConstructor, Transient, NativeAccessSpecifierPublic)
@@ -31543,7 +31975,7 @@ public:
 	uint8                                         Pad_C28[0x10];                                     // 0x0C28(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	TWeakObjectPtr<class USceneComponent>         AutoAttachParent;                                  // 0x0C38(0x0008)(Edit, BlueprintVisible, ExportObject, ZeroConstructor, DisableEditOnTemplate, EditConst, InstancedReference, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FName                                   AutoAttachSocketName;                              // 0x0C40(0x0008)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C48[0xF8];                                     // 0x0C48(0x00F8)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_C48[0xF0];                                     // 0x0C48(0x00F0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void AddModulationRouting(const TSet<class USoundModulatorBase*>& Modulators, const EModulationDestination Destination);
@@ -31605,7 +32037,20 @@ public:
 	{
 		return GetDefaultObjImpl<UAudioComponent>();
 	}
+
+public:
+	void ResetParameters();
+	void SetBoolArrayParameter(class FName InName, const TArray<bool>& InValue);
+	void SetFloatArrayParameter(class FName InName, const TArray<float>& InValue);
+	void SetIntArrayParameter(class FName InName, const TArray<int32>& InValue);
+	void SetObjectArrayParameter(class FName InName, const TArray<class UObject*>& InValue);
+	void SetObjectParameter(class FName InName, class UObject* InValue);
+	void SetParameters_Blueprint(const TArray<struct FAudioParameter>& InParameters);
+	void SetStringArrayParameter(class FName InName, const TArray<class FString>& InValue);
+	void SetStringParameter(class FName InName, const class FString& InValue);
+	void SetTriggerParameter(class FName InName);
 };
+#pragma pack(pop)
 DUMPER7_ASSERTS_UAudioComponent;
 
 // Class Engine.BoundsCopyComponent
@@ -31751,10 +32196,9 @@ DUMPER7_ASSERTS_UCapsuleComponent;
 
 // Class Engine.NavMovementComponent
 // 0x0060 (0x0180 - 0x0120)
-class UNavMovementComponent : public UMovementComponent
+class UNavMovementComponent : public UMovementComponent, public INavMovementInterface
 {
 public:
-	uint8                                         Pad_120[0x8];                                      // 0x0120(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	float                                         FixedPathBrakingDistance;                          // 0x0128(0x0004)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         bUpdateNavAgentWithOwnersCollision : 1;            // 0x012C(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Deprecated, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
 	uint8                                         bUseAccelerationForPaths : 1;                      // 0x012C(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Config, GlobalConfig, Deprecated, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
@@ -31787,6 +32231,13 @@ public:
 	{
 		return GetDefaultObjImpl<UNavMovementComponent>();
 	}
+
+public:
+	void RequestDirectMove(const struct FVector& MoveVelocity, bool bForceMaxSpeed);
+	void RequestPathMove(const struct FVector& MoveInput);
+	void StopActiveMovement();
+	void StopMovementKeepPathing();
+	float GetMaxSpeedForNavMovement() const;
 };
 DUMPER7_ASSERTS_UNavMovementComponent;
 
@@ -31827,10 +32278,9 @@ DUMPER7_ASSERTS_UPawnMovementComponent;
 // Class Engine.CharacterMovementComponent
 // 0x0E68 (0x0FF0 - 0x0188)
 #pragma pack(push, 0x1)
-class SDK_ALIGN(0x10) UCharacterMovementComponent : public UPawnMovementComponent
+class SDK_ALIGN(0x10) UCharacterMovementComponent : public UPawnMovementComponent, public IRVOAvoidanceInterface, public INetworkPredictionInterface
 {
 public:
-	uint8                                         Pad_188[0x10];                                     // 0x0188(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	class ACharacter*                             CharacterOwner;                                    // 0x0198(0x0008)(ZeroConstructor, Transient, DuplicateTransient, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
 	bool                                          bRootMotionMovementEnabled;                        // 0x01A0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bZLocationSmoothingOnClientEnabled;                // 0x01A1(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -32956,10 +33406,10 @@ DUMPER7_ASSERTS_UPointLightComponent;
 
 // Class Engine.PostProcessComponent
 // 0x0780 (0x09D0 - 0x0250)
-class UPostProcessComponent final : public USceneComponent
+class UPostProcessComponent final : public USceneComponent, public IInterface_PostProcessVolume
 {
 public:
-	uint8                                         Pad_250[0x10];                                     // 0x0250(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_258[0x8];                                      // 0x0258(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPostProcessSettings                   Settings;                                          // 0x0260(0x0760)(Edit, BlueprintVisible, Interp, NativeAccessSpecifierPublic)
 	float                                         Priority;                                          // 0x09C0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         BlendRadius;                                       // 0x09C4(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -33844,9 +34294,12 @@ public:
 DUMPER7_ASSERTS_ADecalActor;
 
 // Class Engine.DeformableInterface
-// 0x0000 (0x0000 - 0x0000)
-class IDeformableInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IDeformableInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -34129,35 +34582,6 @@ public:
 };
 DUMPER7_ASSERTS_ADocumentationActor;
 
-// Class Engine.WorldPartitionCell
-// 0x0000 (0x0000 - 0x0000)
-class IWorldPartitionCell final
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("WorldPartitionCell")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"WorldPartitionCell")
-	}
-	static class IWorldPartitionCell* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<IWorldPartitionCell>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_IWorldPartitionCell;
-
 // Class Engine.DPICustomScalingRule
 // 0x0000 (0x0028 - 0x0028)
 class UDPICustomScalingRule final : public UObject
@@ -34220,10 +34644,9 @@ DUMPER7_ASSERTS_UThumbnailInfo;
 
 // Class Engine.ActorElementAssetDataInterface
 // 0x0008 (0x0030 - 0x0028)
-class UActorElementAssetDataInterface final : public UObject
+class UActorElementAssetDataInterface final : public UObject, public ITypedElementAssetDataInterface
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -34238,15 +34661,18 @@ public:
 	{
 		return GetDefaultObjImpl<UActorElementAssetDataInterface>();
 	}
+
+public:
+	TArray<struct FAssetData> GetAllReferencedAssetDatas(const struct FScriptTypedElementHandle& InElementHandle);
+	struct FAssetData GetAssetData(const struct FScriptTypedElementHandle& InElementHandle);
 };
 DUMPER7_ASSERTS_UActorElementAssetDataInterface;
 
 // Class Engine.ActorElementHierarchyInterface
 // 0x0008 (0x0030 - 0x0028)
-class UActorElementHierarchyInterface final : public UObject
+class UActorElementHierarchyInterface final : public UObject, public ITypedElementHierarchyInterface
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -34261,15 +34687,18 @@ public:
 	{
 		return GetDefaultObjImpl<UActorElementHierarchyInterface>();
 	}
+
+public:
+	void GetChildElements(const struct FScriptTypedElementHandle& InElementHandle, TArray<struct FScriptTypedElementHandle>* OutElementHandles, const bool bAllowCreate);
+	struct FScriptTypedElementHandle GetParentElement(const struct FScriptTypedElementHandle& InElementHandle, const bool bAllowCreate);
 };
 DUMPER7_ASSERTS_UActorElementHierarchyInterface;
 
 // Class Engine.ActorElementObjectInterface
 // 0x0008 (0x0030 - 0x0028)
-class UActorElementObjectInterface final : public UObject
+class UActorElementObjectInterface final : public UObject, public ITypedElementObjectInterface
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -34284,15 +34713,18 @@ public:
 	{
 		return GetDefaultObjImpl<UActorElementObjectInterface>();
 	}
+
+public:
+	class UObject* GetObject(const struct FScriptTypedElementHandle& InElementHandle);
+	class UClass* GetObjectClass(const struct FScriptTypedElementHandle& InElementHandle);
 };
 DUMPER7_ASSERTS_UActorElementObjectInterface;
 
 // Class Engine.ActorElementSelectionInterface
 // 0x0008 (0x0030 - 0x0028)
-class UActorElementSelectionInterface final : public UObject
+class UActorElementSelectionInterface final : public UObject, public ITypedElementSelectionInterface
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -34307,15 +34739,23 @@ public:
 	{
 		return GetDefaultObjImpl<UActorElementSelectionInterface>();
 	}
+
+public:
+	bool AllowSelectionModifiers(const struct FScriptTypedElementHandle& InElementHandle, const struct FScriptTypedElementListProxy& InSelectionSet);
+	bool CanDeselectElement(const struct FScriptTypedElementHandle& InElementHandle, const struct FTypedElementSelectionOptions& InSelectionOptions);
+	bool CanSelectElement(const struct FScriptTypedElementHandle& InElementHandle, const struct FTypedElementSelectionOptions& InSelectionOptions);
+	bool DeselectElement(const struct FScriptTypedElementHandle& InElementHandle, const struct FScriptTypedElementListProxy& InSelectionSet, const struct FTypedElementSelectionOptions& InSelectionOptions);
+	struct FScriptTypedElementHandle GetSelectionElement(const struct FScriptTypedElementHandle& InElementHandle, const struct FScriptTypedElementListProxy& InCurrentSelection, const ETypedElementSelectionMethod InSelectionMethod);
+	bool IsElementSelected(const struct FScriptTypedElementHandle& InElementHandle, const struct FScriptTypedElementListProxy& InSelectionSet, const struct FTypedElementIsSelectedOptions& InSelectionOptions);
+	bool SelectElement(const struct FScriptTypedElementHandle& InElementHandle, const struct FScriptTypedElementListProxy& InSelectionSet, const struct FTypedElementSelectionOptions& InSelectionOptions);
 };
 DUMPER7_ASSERTS_UActorElementSelectionInterface;
 
 // Class Engine.ComponentElementCounterInterface
 // 0x0008 (0x0030 - 0x0028)
-class UComponentElementCounterInterface final : public UObject
+class UComponentElementCounterInterface final : public UObject, public ITypedElementCounterInterface
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -34366,10 +34806,9 @@ DUMPER7_ASSERTS_USkeletalMeshLODSettings;
 
 // Class Engine.ComponentElementHierarchyInterface
 // 0x0008 (0x0030 - 0x0028)
-class UComponentElementHierarchyInterface final : public UObject
+class UComponentElementHierarchyInterface final : public UObject, public ITypedElementHierarchyInterface
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -34384,15 +34823,18 @@ public:
 	{
 		return GetDefaultObjImpl<UComponentElementHierarchyInterface>();
 	}
+
+public:
+	void GetChildElements(const struct FScriptTypedElementHandle& InElementHandle, TArray<struct FScriptTypedElementHandle>* OutElementHandles, const bool bAllowCreate);
+	struct FScriptTypedElementHandle GetParentElement(const struct FScriptTypedElementHandle& InElementHandle, const bool bAllowCreate);
 };
 DUMPER7_ASSERTS_UComponentElementHierarchyInterface;
 
 // Class Engine.ComponentElementObjectInterface
 // 0x0008 (0x0030 - 0x0028)
-class UComponentElementObjectInterface final : public UObject
+class UComponentElementObjectInterface final : public UObject, public ITypedElementObjectInterface
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -34407,15 +34849,18 @@ public:
 	{
 		return GetDefaultObjImpl<UComponentElementObjectInterface>();
 	}
+
+public:
+	class UObject* GetObject(const struct FScriptTypedElementHandle& InElementHandle);
+	class UClass* GetObjectClass(const struct FScriptTypedElementHandle& InElementHandle);
 };
 DUMPER7_ASSERTS_UComponentElementObjectInterface;
 
 // Class Engine.ComponentElementWorldInterface
 // 0x0008 (0x0030 - 0x0028)
-class UComponentElementWorldInterface final : public UObject
+class UComponentElementWorldInterface final : public UObject, public ITypedElementWorldInterface
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -34430,6 +34875,30 @@ public:
 	{
 		return GetDefaultObjImpl<UComponentElementWorldInterface>();
 	}
+
+public:
+	bool CanDeleteElement(const struct FScriptTypedElementHandle& InElementHandle);
+	bool CanDuplicateElement(const struct FScriptTypedElementHandle& InElementHandle);
+	bool CanEditElement(const struct FScriptTypedElementHandle& InElementHandle);
+	bool CanMoveElement(const struct FScriptTypedElementHandle& InElementHandle, const ETypedElementWorldType InWorldType);
+	bool CanPromoteElement(const struct FScriptTypedElementHandle& InElementHandle);
+	bool CanScaleElement(const struct FScriptTypedElementHandle& InElementHandle);
+	bool DeleteElement(const struct FScriptTypedElementHandle& InElementHandle, class UWorld* InWorld, class UTypedElementSelectionSet* InSelectionSet, const struct FTypedElementDeletionOptions& InDeletionOptions);
+	struct FScriptTypedElementHandle DuplicateElement(const struct FScriptTypedElementHandle& InElementHandle, class UWorld* InWorld, const struct FVector& InLocationOffset);
+	bool GetBounds(const struct FScriptTypedElementHandle& InElementHandle, struct FBoxSphereBounds* OutBounds);
+	class ULevel* GetOwnerLevel(const struct FScriptTypedElementHandle& InElementHandle);
+	class UWorld* GetOwnerWorld(const struct FScriptTypedElementHandle& InElementHandle);
+	bool GetPivotOffset(const struct FScriptTypedElementHandle& InElementHandle, struct FVector* OutPivotOffset);
+	bool GetRelativeTransform(const struct FScriptTypedElementHandle& InElementHandle, struct FTransform* OutTransform);
+	bool GetWorldTransform(const struct FScriptTypedElementHandle& InElementHandle, struct FTransform* OutTransform);
+	bool IsTemplateElement(const struct FScriptTypedElementHandle& InElementHandle);
+	void NotifyMovementEnded(const struct FScriptTypedElementHandle& InElementHandle);
+	void NotifyMovementOngoing(const struct FScriptTypedElementHandle& InElementHandle);
+	void NotifyMovementStarted(const struct FScriptTypedElementHandle& InElementHandle);
+	struct FScriptTypedElementHandle PromoteElement(const struct FScriptTypedElementHandle& InElementHandle, class UWorld* OverrideWorld);
+	bool SetPivotOffset(const struct FScriptTypedElementHandle& InElementHandle, const struct FVector& InPivotOffset);
+	bool SetRelativeTransform(const struct FScriptTypedElementHandle& InElementHandle, const struct FTransform& InTransform);
+	bool SetWorldTransform(const struct FScriptTypedElementHandle& InElementHandle, const struct FTransform& InTransform);
 };
 DUMPER7_ASSERTS_UComponentElementWorldInterface;
 
@@ -34492,10 +34961,9 @@ DUMPER7_ASSERTS_UTypedElementCommonActions;
 
 // Class Engine.ObjectElementAssetDataInterface
 // 0x0008 (0x0030 - 0x0028)
-class UObjectElementAssetDataInterface final : public UObject
+class UObjectElementAssetDataInterface final : public UObject, public ITypedElementAssetDataInterface
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -34510,6 +34978,10 @@ public:
 	{
 		return GetDefaultObjImpl<UObjectElementAssetDataInterface>();
 	}
+
+public:
+	TArray<struct FAssetData> GetAllReferencedAssetDatas(const struct FScriptTypedElementHandle& InElementHandle);
+	struct FAssetData GetAssetData(const struct FScriptTypedElementHandle& InElementHandle);
 };
 DUMPER7_ASSERTS_UObjectElementAssetDataInterface;
 
@@ -34535,10 +35007,9 @@ DUMPER7_ASSERTS_UInstancedPlacemenClientSettings;
 
 // Class Engine.ObjectElementCounterInterface
 // 0x0008 (0x0030 - 0x0028)
-class UObjectElementCounterInterface final : public UObject
+class UObjectElementCounterInterface final : public UObject, public ITypedElementCounterInterface
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -34558,10 +35029,9 @@ DUMPER7_ASSERTS_UObjectElementCounterInterface;
 
 // Class Engine.ObjectElementObjectInterface
 // 0x0008 (0x0030 - 0x0028)
-class UObjectElementObjectInterface final : public UObject
+class UObjectElementObjectInterface final : public UObject, public ITypedElementObjectInterface
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -34576,15 +35046,18 @@ public:
 	{
 		return GetDefaultObjImpl<UObjectElementObjectInterface>();
 	}
+
+public:
+	class UObject* GetObject(const struct FScriptTypedElementHandle& InElementHandle);
+	class UClass* GetObjectClass(const struct FScriptTypedElementHandle& InElementHandle);
 };
 DUMPER7_ASSERTS_UObjectElementObjectInterface;
 
 // Class Engine.SMInstanceElementAssetDataInterface
 // 0x0008 (0x0030 - 0x0028)
-class USMInstanceElementAssetDataInterface final : public UObject
+class USMInstanceElementAssetDataInterface final : public UObject, public ITypedElementAssetDataInterface
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -34599,15 +35072,18 @@ public:
 	{
 		return GetDefaultObjImpl<USMInstanceElementAssetDataInterface>();
 	}
+
+public:
+	TArray<struct FAssetData> GetAllReferencedAssetDatas(const struct FScriptTypedElementHandle& InElementHandle);
+	struct FAssetData GetAssetData(const struct FScriptTypedElementHandle& InElementHandle);
 };
 DUMPER7_ASSERTS_USMInstanceElementAssetDataInterface;
 
 // Class Engine.SMInstanceElementHierarchyInterface
 // 0x0008 (0x0030 - 0x0028)
-class USMInstanceElementHierarchyInterface final : public UObject
+class USMInstanceElementHierarchyInterface final : public UObject, public ITypedElementHierarchyInterface
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -34622,6 +35098,10 @@ public:
 	{
 		return GetDefaultObjImpl<USMInstanceElementHierarchyInterface>();
 	}
+
+public:
+	void GetChildElements(const struct FScriptTypedElementHandle& InElementHandle, TArray<struct FScriptTypedElementHandle>* OutElementHandles, const bool bAllowCreate);
+	struct FScriptTypedElementHandle GetParentElement(const struct FScriptTypedElementHandle& InElementHandle, const bool bAllowCreate);
 };
 DUMPER7_ASSERTS_USMInstanceElementHierarchyInterface;
 
@@ -34647,10 +35127,9 @@ DUMPER7_ASSERTS_USMInstanceElementIdMapTransactor;
 
 // Class Engine.SMInstanceElementSelectionInterface
 // 0x0008 (0x0030 - 0x0028)
-class USMInstanceElementSelectionInterface final : public UObject
+class USMInstanceElementSelectionInterface final : public UObject, public ITypedElementSelectionInterface
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -34665,15 +35144,23 @@ public:
 	{
 		return GetDefaultObjImpl<USMInstanceElementSelectionInterface>();
 	}
+
+public:
+	bool AllowSelectionModifiers(const struct FScriptTypedElementHandle& InElementHandle, const struct FScriptTypedElementListProxy& InSelectionSet);
+	bool CanDeselectElement(const struct FScriptTypedElementHandle& InElementHandle, const struct FTypedElementSelectionOptions& InSelectionOptions);
+	bool CanSelectElement(const struct FScriptTypedElementHandle& InElementHandle, const struct FTypedElementSelectionOptions& InSelectionOptions);
+	bool DeselectElement(const struct FScriptTypedElementHandle& InElementHandle, const struct FScriptTypedElementListProxy& InSelectionSet, const struct FTypedElementSelectionOptions& InSelectionOptions);
+	struct FScriptTypedElementHandle GetSelectionElement(const struct FScriptTypedElementHandle& InElementHandle, const struct FScriptTypedElementListProxy& InCurrentSelection, const ETypedElementSelectionMethod InSelectionMethod);
+	bool IsElementSelected(const struct FScriptTypedElementHandle& InElementHandle, const struct FScriptTypedElementListProxy& InSelectionSet, const struct FTypedElementIsSelectedOptions& InSelectionOptions);
+	bool SelectElement(const struct FScriptTypedElementHandle& InElementHandle, const struct FScriptTypedElementListProxy& InSelectionSet, const struct FTypedElementSelectionOptions& InSelectionOptions);
 };
 DUMPER7_ASSERTS_USMInstanceElementSelectionInterface;
 
 // Class Engine.SMInstanceElementWorldInterface
 // 0x0008 (0x0030 - 0x0028)
-class USMInstanceElementWorldInterface final : public UObject
+class USMInstanceElementWorldInterface final : public UObject, public ITypedElementWorldInterface
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -34688,6 +35175,30 @@ public:
 	{
 		return GetDefaultObjImpl<USMInstanceElementWorldInterface>();
 	}
+
+public:
+	bool CanDeleteElement(const struct FScriptTypedElementHandle& InElementHandle);
+	bool CanDuplicateElement(const struct FScriptTypedElementHandle& InElementHandle);
+	bool CanEditElement(const struct FScriptTypedElementHandle& InElementHandle);
+	bool CanMoveElement(const struct FScriptTypedElementHandle& InElementHandle, const ETypedElementWorldType InWorldType);
+	bool CanPromoteElement(const struct FScriptTypedElementHandle& InElementHandle);
+	bool CanScaleElement(const struct FScriptTypedElementHandle& InElementHandle);
+	bool DeleteElement(const struct FScriptTypedElementHandle& InElementHandle, class UWorld* InWorld, class UTypedElementSelectionSet* InSelectionSet, const struct FTypedElementDeletionOptions& InDeletionOptions);
+	struct FScriptTypedElementHandle DuplicateElement(const struct FScriptTypedElementHandle& InElementHandle, class UWorld* InWorld, const struct FVector& InLocationOffset);
+	bool GetBounds(const struct FScriptTypedElementHandle& InElementHandle, struct FBoxSphereBounds* OutBounds);
+	class ULevel* GetOwnerLevel(const struct FScriptTypedElementHandle& InElementHandle);
+	class UWorld* GetOwnerWorld(const struct FScriptTypedElementHandle& InElementHandle);
+	bool GetPivotOffset(const struct FScriptTypedElementHandle& InElementHandle, struct FVector* OutPivotOffset);
+	bool GetRelativeTransform(const struct FScriptTypedElementHandle& InElementHandle, struct FTransform* OutTransform);
+	bool GetWorldTransform(const struct FScriptTypedElementHandle& InElementHandle, struct FTransform* OutTransform);
+	bool IsTemplateElement(const struct FScriptTypedElementHandle& InElementHandle);
+	void NotifyMovementEnded(const struct FScriptTypedElementHandle& InElementHandle);
+	void NotifyMovementOngoing(const struct FScriptTypedElementHandle& InElementHandle);
+	void NotifyMovementStarted(const struct FScriptTypedElementHandle& InElementHandle);
+	struct FScriptTypedElementHandle PromoteElement(const struct FScriptTypedElementHandle& InElementHandle, class UWorld* OverrideWorld);
+	bool SetPivotOffset(const struct FScriptTypedElementHandle& InElementHandle, const struct FVector& InPivotOffset);
+	bool SetRelativeTransform(const struct FScriptTypedElementHandle& InElementHandle, const struct FTransform& InTransform);
+	bool SetWorldTransform(const struct FScriptTypedElementHandle& InElementHandle, const struct FTransform& InTransform);
 };
 DUMPER7_ASSERTS_USMInstanceElementWorldInterface;
 
@@ -34741,35 +35252,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UCancellableAsyncAction;
-
-// Class Engine.LODSyncInterface
-// 0x0000 (0x0000 - 0x0000)
-class ILODSyncInterface final
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("LODSyncInterface")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"LODSyncInterface")
-	}
-	static class ILODSyncInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ILODSyncInterface>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_ILODSyncInterface;
 
 // Class Engine.PoseWatchElement
 // 0x0000 (0x0028 - 0x0028)
@@ -35198,10 +35680,9 @@ DUMPER7_ASSERTS_UFloatingPawnMovement;
 
 // Class Engine.FontFace
 // 0x0068 (0x0090 - 0x0028)
-class UFontFace final : public UObject
+class UFontFace final : public UObject, public IFontFaceInterface
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class FString                                 SourceFilename;                                    // 0x0030(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EFontHinting                                  Hinting;                                           // 0x0040(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	EFontLoadingPolicy                            LoadingPolicy;                                     // 0x0041(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -36015,9 +36496,12 @@ public:
 DUMPER7_ASSERTS_UHLODProxyDesc;
 
 // Class Engine.ImportantToggleSettingInterface
-// 0x0000 (0x0000 - 0x0000)
-class IImportantToggleSettingInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IImportantToggleSettingInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -36825,10 +37309,9 @@ DUMPER7_ASSERTS_ULevelInstanceEditorObject;
 
 // Class Engine.LevelInstancePivot
 // 0x0008 (0x02B0 - 0x02A8)
-class ALevelInstancePivot final : public AActor
+class ALevelInstancePivot final : public AActor, public ILevelInstanceEditorPivotInterface
 {
 public:
-	uint8                                         Pad_2A8[0x8];                                      // 0x02A8(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -36845,44 +37328,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_ALevelInstancePivot;
-
-// Class Engine.LevelInstanceInterface
-// 0x0000 (0x0000 - 0x0000)
-class ILevelInstanceInterface final
-{
-public:
-	void LoadLevelInstance();
-	bool SetWorldAsset(TSoftObjectPtr<class UWorld> WorldAsset);
-	void UnloadLevelInstance();
-
-	class ULevel* GetLoadedLevel() const;
-	const TSoftObjectPtr<class UWorld> GetWorldAsset() const;
-	bool IsLoaded() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("LevelInstanceInterface")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"LevelInstanceInterface")
-	}
-	static class ILevelInstanceInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<ILevelInstanceInterface>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_ILevelInstanceInterface;
 
 // Class Engine.LevelStreamingLevelInstance
 // 0x0030 (0x0220 - 0x01F0)
@@ -37027,10 +37472,10 @@ DUMPER7_ASSERTS_ULightWeightInstanceBlueprintFunctionLibrary;
 
 // Class Engine.LightWeightInstanceManager
 // 0x00B8 (0x0360 - 0x02A8)
-class ALightWeightInstanceManager : public AActor
+class ALightWeightInstanceManager : public AActor, public IActorInstanceManagerInterface
 {
 public:
-	uint8                                         Pad_2A8[0x18];                                     // 0x02A8(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2B0[0x10];                                     // 0x02B0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	TSubclassOf<class AActor>                     RepresentedClass;                                  // 0x02C0(0x0008)(Edit, Net, ZeroConstructor, DisableEditOnInstance, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	TSubclassOf<class AActor>                     AcceptedClass;                                     // 0x02C8(0x0008)(ZeroConstructor, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	TArray<struct FTransform>                     InstanceTransforms;                                // 0x02D0(0x0010)(Edit, Net, ZeroConstructor, DisableEditOnTemplate, RepNotify, Protected, NativeAccessSpecifierProtected)
@@ -37061,10 +37506,9 @@ DUMPER7_ASSERTS_ALightWeightInstanceManager;
 
 // Class Engine.LightWeightInstanceStaticMeshManager
 // 0x0068 (0x03C8 - 0x0360)
-class ALightWeightInstanceStaticMeshManager final : public ALightWeightInstanceManager
+class ALightWeightInstanceStaticMeshManager final : public ALightWeightInstanceManager, public ISMInstanceManager
 {
 public:
-	uint8                                         Pad_360[0x8];                                      // 0x0360(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TSoftObjectPtr<class UStaticMesh>             StaticMesh;                                        // 0x0368(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, Net, DisableEditOnTemplate, RepNotify, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UInstancedStaticMeshComponent*          ISMComponent;                                      // 0x0390(0x0008)(Edit, BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, NoDestructor, AdvancedDisplay, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected, TObjectPtr)
 	TArray<int32>                                 RenderingIndicesToDataIndices;                     // 0x0398(0x0010)(Net, ZeroConstructor, Protected, NativeAccessSpecifierProtected)
@@ -37124,10 +37568,9 @@ DUMPER7_ASSERTS_ULocalPlayer;
 
 // Class Engine.LocationVolume
 // 0x0010 (0x02F0 - 0x02E0)
-class ALocationVolume final : public AVolume
+class ALocationVolume final : public AVolume, public IWorldPartitionActorLoaderInterface
 {
 public:
-	uint8                                         Pad_2E0[0x8];                                      // 0x02E0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FColor                                 DebugColor;                                        // 0x02E8(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_2EC[0x4];                                      // 0x02EC(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
@@ -37538,10 +37981,9 @@ DUMPER7_ASSERTS_AMeshMergeCullingVolume;
 
 // Class Engine.NavigationObjectBase
 // 0x0028 (0x02D0 - 0x02A8)
-class ANavigationObjectBase : public AActor
+class ANavigationObjectBase : public AActor, public INavAgentInterface
 {
 public:
-	uint8                                         Pad_2A8[0x8];                                      // 0x02A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class UCapsuleComponent*                      CapsuleComponent;                                  // 0x02B0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
 	class UBillboardComponent*                    GoodSprite;                                        // 0x02B8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
 	class UBillboardComponent*                    BadSprite;                                         // 0x02C0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
@@ -38444,10 +38886,9 @@ DUMPER7_ASSERTS_UPhysicalMaterialMask;
 
 // Class Engine.PhysicsAsset
 // 0x0128 (0x0150 - 0x0028)
-class UPhysicsAsset final : public UObject
+class UPhysicsAsset final : public UObject, public IInterface_PreviewMeshProvider
 {
 public:
-	uint8                                         Pad_28[0x8];                                       // 0x0028(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	TArray<int32>                                 BoundsBodies;                                      // 0x0030(0x0010)(ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<class USkeletalBodySetup*>             SkeletalBodySetups;                                // 0x0040(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
 	TArray<class UPhysicsConstraintTemplate*>     ConstraintSetup;                                   // 0x0050(0x0010)(ExportObject, ZeroConstructor, ContainsInstancedReference, UObjectWrapper, NativeAccessSpecifierPublic, TObjectPtr)
@@ -38914,10 +39355,10 @@ DUMPER7_ASSERTS_APlayerState;
 
 // Class Engine.PostProcessVolume
 // 0x0780 (0x0A60 - 0x02E0)
-class APostProcessVolume final : public AVolume
+class APostProcessVolume final : public AVolume, public IInterface_PostProcessVolume
 {
 public:
-	uint8                                         Pad_2E0[0x10];                                     // 0x02E0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2E8[0x8];                                      // 0x02E8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPostProcessSettings                   Settings;                                          // 0x02F0(0x0760)(Edit, BlueprintVisible, Interp, NativeAccessSpecifierPublic)
 	float                                         Priority;                                          // 0x0A50(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	float                                         BlendRadius;                                       // 0x0A54(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, Interp, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -39535,10 +39976,9 @@ DUMPER7_ASSERTS_USimpleConstructionScript;
 
 // Class Engine.SkinnedAsset
 // 0x0008 (0x00D8 - 0x00D0)
-class USkinnedAsset : public UStreamableRenderAsset
+class USkinnedAsset : public UStreamableRenderAsset, public IInterface_AsyncCompilation
 {
 public:
-	uint8                                         Pad_D0[0x8];                                       // 0x00D0(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	class USkeletalMeshSocket* FindSocket(class FName InSocketName) const;
@@ -39562,10 +40002,10 @@ DUMPER7_ASSERTS_USkinnedAsset;
 
 // Class Engine.SkeletalMesh
 // 0x0490 (0x0568 - 0x00D8)
-class USkeletalMesh final : public USkinnedAsset
+class USkeletalMesh final : public USkinnedAsset, public IInterface_CollisionDataProvider, public IInterface_AssetUserData, public INodeMappingProviderInterface
 {
 public:
-	uint8                                         Pad_D8[0x20];                                      // 0x00D8(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_F0[0x8];                                       // 0x00F0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class USkeleton*                              Skeleton;                                          // 0x00F8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, EditConst, NoDestructor, AssetRegistrySearchable, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	struct FBoxSphereBounds                       ImportedBounds;                                    // 0x0100(0x0038)(ZeroConstructor, Transient, DuplicateTransient, IsPlainOldData, NoDestructor, NativeAccessSpecifierPrivate)
 	struct FBoxSphereBounds                       ExtendedBounds;                                    // 0x0138(0x0038)(ZeroConstructor, Transient, DuplicateTransient, IsPlainOldData, NoDestructor, NativeAccessSpecifierPrivate)
@@ -39660,6 +40100,11 @@ public:
 	{
 		return GetDefaultObjImpl<USkeletalMesh>();
 	}
+
+public:
+	bool AddAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	class UAssetUserData* GetAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	bool HasAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
 };
 DUMPER7_ASSERTS_USkeletalMesh;
 
@@ -39712,9 +40157,12 @@ public:
 DUMPER7_ASSERTS_UCheckBoxStyleAsset;
 
 // Class Engine.SlateTextureAtlasInterface
-// 0x0000 (0x0000 - 0x0000)
-class ISlateTextureAtlasInterface final
+// 0x0008 (0x0008 - 0x0000)
+class ISlateTextureAtlasInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -40346,10 +40794,10 @@ DUMPER7_ASSERTS_ASplineMeshActor;
 
 // Class Engine.StaticMesh
 // 0x01C0 (0x0290 - 0x00D0)
-class UStaticMesh final : public UStreamableRenderAsset
+class UStaticMesh final : public UStreamableRenderAsset, public IInterface_CollisionDataProvider, public IInterface_AssetUserData, public IInterface_AsyncCompilation
 {
 public:
-	uint8                                         Pad_D0[0x20];                                      // 0x00D0(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_E8[0x8];                                       // 0x00E8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FPerQualityLevelInt                    MinQualityLevelLOD;                                // 0x00F0(0x0068)(NativeAccessSpecifierPublic)
 	struct FPerPlatformInt                        MinLOD;                                            // 0x0158(0x0004)(NoDestructor, NativeAccessSpecifierPublic)
 	int32                                         ElementToIgnoreForTexFactor;                       // 0x015C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -40429,6 +40877,11 @@ public:
 	{
 		return GetDefaultObjImpl<UStaticMesh>();
 	}
+
+public:
+	bool AddAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	class UAssetUserData* GetAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
+	bool HasAssetUserDataOfClass(TSubclassOf<class UAssetUserData> InUserDataClass);
 };
 DUMPER7_ASSERTS_UStaticMesh;
 
@@ -41412,10 +41865,10 @@ DUMPER7_ASSERTS_UContentBundleDuplicateForPIEHelper;
 
 // Class Engine.WorldDataLayers
 // 0x0588 (0x0830 - 0x02A8)
-class AWorldDataLayers final : public AInfo
+class AWorldDataLayers final : public AInfo, public IDataLayerInstanceProvider
 {
 public:
-	uint8                                         Pad_2A8[0xA8];                                     // 0x02A8(0x00A8)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_2B0[0xA0];                                     // 0x02B0(0x00A0)(Fixing Size After Last Property [ Dumper-7 ])
 	class UExternalDataLayerInstance*             RootExternalDataLayerInstance;                     // 0x0350(0x0008)(ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate, TObjectPtr)
 	TSet<class UDataLayerInstance*>               DataLayerInstances;                                // 0x0358(0x0050)(UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
 	TSet<class UDataLayerInstance*>               ExternalPackageDataLayerInstances;                 // 0x03A8(0x0050)(Transient, UObjectWrapper, NativeAccessSpecifierPrivate, TObjectPtr)
@@ -41520,35 +41973,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_UDataLayerInstancePrivate;
-
-// Class Engine.DataLayerInstanceProvider
-// 0x0000 (0x0000 - 0x0000)
-class IDataLayerInstanceProvider final
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("DataLayerInstanceProvider")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"DataLayerInstanceProvider")
-	}
-	static class IDataLayerInstanceProvider* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<IDataLayerInstanceProvider>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_IDataLayerInstanceProvider;
 
 // Class Engine.DeprecatedDataLayerInstance
 // 0x0018 (0x0060 - 0x0048)
@@ -41705,9 +42129,12 @@ public:
 DUMPER7_ASSERTS_UHLODLayer;
 
 // Class Engine.WorldPartitionHLODProvider
-// 0x0000 (0x0000 - 0x0000)
-class IWorldPartitionHLODProvider final
+// 0x0008 (0x0008 - 0x0000)
+class IWorldPartitionHLODProvider
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -41799,35 +42226,6 @@ public:
 	}
 };
 DUMPER7_ASSERTS_ANavigationDataChunkActor;
-
-// Class Engine.WorldPartitionActorLoaderInterface
-// 0x0000 (0x0000 - 0x0000)
-class IWorldPartitionActorLoaderInterface final
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("WorldPartitionActorLoaderInterface")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"WorldPartitionActorLoaderInterface")
-	}
-	static class IWorldPartitionActorLoaderInterface* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<IWorldPartitionActorLoaderInterface>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
-	}
-};
-DUMPER7_ASSERTS_IWorldPartitionActorLoaderInterface;
 
 // Class Engine.WorldPartitionEditorSpatialHash
 // 0x0000 (0x0028 - 0x0028)
@@ -42006,10 +42404,10 @@ DUMPER7_ASSERTS_UWorldPartitionRuntimeSpatialHash;
 
 // Class Engine.WorldPartitionSubsystem
 // 0x02C8 (0x0308 - 0x0040)
-class UWorldPartitionSubsystem final : public UTickableWorldSubsystem
+class UWorldPartitionSubsystem final : public UTickableWorldSubsystem, public IStreamingWorldSubsystemInterface
 {
 public:
-	uint8                                         Pad_40[0x2C8];                                     // 0x0040(0x02C8)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_48[0x2C0];                                     // 0x0048(0x02C0)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	bool IsAllStreamingCompleted();

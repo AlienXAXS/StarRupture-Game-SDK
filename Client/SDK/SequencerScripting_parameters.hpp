@@ -12,8 +12,8 @@
 
 #include "MovieScene_structs.hpp"
 #include "CoreUObject_structs.hpp"
-#include "SequencerScripting_structs.hpp"
 #include "Engine_structs.hpp"
+#include "SequencerScripting_structs.hpp"
 #include "MovieSceneTracks_structs.hpp"
 
 
@@ -1327,6 +1327,28 @@ public:
 	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 DUMPER7_ASSERTS_MovieSceneScriptingIntegerChannel_HasDefault;
+
+// Function SequencerScripting.MovieSceneDoubleVectorTrackExtensions.GetNumChannelsUsed
+// 0x0010 (0x0010 - 0x0000)
+struct MovieSceneDoubleVectorTrackExtensions_GetNumChannelsUsed final
+{
+public:
+	class UMovieSceneDoubleVectorTrack*           Track;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MovieSceneDoubleVectorTrackExtensions_GetNumChannelsUsed;
+
+// Function SequencerScripting.MovieSceneDoubleVectorTrackExtensions.SetNumChannelsUsed
+// 0x0010 (0x0010 - 0x0000)
+struct MovieSceneDoubleVectorTrackExtensions_SetNumChannelsUsed final
+{
+public:
+	class UMovieSceneDoubleVectorTrack*           Track;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         InNumChannelsUsed;                                 // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+DUMPER7_ASSERTS_MovieSceneDoubleVectorTrackExtensions_SetNumChannelsUsed;
 
 // Function SequencerScripting.MovieSceneScriptingObjectPathKey.SetTime
 // 0x000C (0x000C - 0x0000)
@@ -3560,28 +3582,6 @@ public:
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 DUMPER7_ASSERTS_MovieSceneFloatVectorTrackExtensions_SetNumChannelsUsed;
-
-// Function SequencerScripting.MovieSceneDoubleVectorTrackExtensions.GetNumChannelsUsed
-// 0x0010 (0x0010 - 0x0000)
-struct MovieSceneDoubleVectorTrackExtensions_GetNumChannelsUsed final
-{
-public:
-	class UMovieSceneDoubleVectorTrack*           Track;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MovieSceneDoubleVectorTrackExtensions_GetNumChannelsUsed;
-
-// Function SequencerScripting.MovieSceneDoubleVectorTrackExtensions.SetNumChannelsUsed
-// 0x0010 (0x0010 - 0x0000)
-struct MovieSceneDoubleVectorTrackExtensions_SetNumChannelsUsed final
-{
-public:
-	class UMovieSceneDoubleVectorTrack*           Track;                                             // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         InNumChannelsUsed;                                 // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-DUMPER7_ASSERTS_MovieSceneDoubleVectorTrackExtensions_SetNumChannelsUsed;
 
 // Function SequencerScripting.SequencerScriptingRangeExtensions.GetEndFrame
 // 0x0018 (0x0018 - 0x0000)

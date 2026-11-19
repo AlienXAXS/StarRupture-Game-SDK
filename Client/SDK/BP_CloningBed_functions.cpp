@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void ABP_CloningBed_C::BedFree_value__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloningBed_C", "BedFree value__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BedFree value__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -35,10 +33,8 @@ void ABP_CloningBed_C::BedFree_value__FinishedFunc()
 
 void ABP_CloningBed_C::BedFree_value__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloningBed_C", "BedFree value__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BedFree value__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -49,10 +45,8 @@ void ABP_CloningBed_C::BedFree_value__UpdateFunc()
 
 void ABP_CloningBed_C::BedOwnedTaken_value__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloningBed_C", "BedOwnedTaken value__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BedOwnedTaken value__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -63,10 +57,8 @@ void ABP_CloningBed_C::BedOwnedTaken_value__FinishedFunc()
 
 void ABP_CloningBed_C::BedOwnedTaken_value__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloningBed_C", "BedOwnedTaken value__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BedOwnedTaken value__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -79,10 +71,8 @@ void ABP_CloningBed_C::BedOwnedTaken_value__UpdateFunc()
 
 void ABP_CloningBed_C::ChangeWindowMaterial(class UMaterialInterface* Material)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloningBed_C", "ChangeWindowMaterial");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ChangeWindowMaterial", FnName));
 
 	Params::BP_CloningBed_C_ChangeWindowMaterial Parms{};
 
@@ -99,10 +89,8 @@ void ABP_CloningBed_C::ChangeWindowMaterial(class UMaterialInterface* Material)
 
 void ABP_CloningBed_C::ExecuteUbergraph_BP_CloningBed(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloningBed_C", "ExecuteUbergraph_BP_CloningBed");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_CloningBed_C", "ExecuteUbergraph_BP_CloningBed", FuncInfo);
 
 	Params::BP_CloningBed_C_ExecuteUbergraph_BP_CloningBed Parms{};
 
@@ -119,14 +107,30 @@ void ABP_CloningBed_C::ExecuteUbergraph_BP_CloningBed(int32 EntryPoint)
 
 void ABP_CloningBed_C::OnBuildingOwnershipChanged(ECrBuildingOwnership NewOwnership)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloningBed_C", "OnBuildingOwnershipChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBuildingOwnershipChanged", FnName));
 
 	Params::BP_CloningBed_C_OnBuildingOwnershipChanged Parms{};
 
 	Parms.NewOwnership = NewOwnership;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_CloningBed.BP_CloningBed_C.OnBuildWithInsideWallCheck
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bIsInsideWall                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_CloningBed_C::OnBuildWithInsideWallCheck(bool bIsInsideWall)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBuildWithInsideWallCheck", FnName));
+
+	Params::BP_CloningBed_C_OnBuildWithInsideWallCheck Parms{};
+
+	Parms.bIsInsideWall = bIsInsideWall;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -137,10 +141,8 @@ void ABP_CloningBed_C::OnBuildingOwnershipChanged(ECrBuildingOwnership NewOwners
 
 void ABP_CloningBed_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloningBed_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -151,10 +153,8 @@ void ABP_CloningBed_C::ReceiveBeginPlay()
 
 void ABP_CloningBed_C::Window_Opacity__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloningBed_C", "Window Opacity__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Window Opacity__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -165,10 +165,8 @@ void ABP_CloningBed_C::Window_Opacity__FinishedFunc()
 
 void ABP_CloningBed_C::Window_Opacity__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloningBed_C", "Window Opacity__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Window Opacity__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -182,10 +180,8 @@ void ABP_CloningBed_C::Window_Opacity__UpdateFunc()
 
 class FText ABP_CloningBed_C::GetInteractionAdditionalTextFromOwnership(ECrBuildingOwnership InOwnership) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_CloningBed_C", "GetInteractionAdditionalTextFromOwnership");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetInteractionAdditionalTextFromOwnership", FnName));
 
 	Params::BP_CloningBed_C_GetInteractionAdditionalTextFromOwnership Parms{};
 

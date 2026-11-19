@@ -16661,6 +16661,76 @@ void UGeometryScriptLibrary_PointSetSamplingFunctions::UnflattenPoints(const TAr
 }
 
 
+// Function GeometryScriptingCore.GeometryScriptLibrary_TextureMapFunctions.SampleTexture2DAtUVPositions
+// (Final, RequiredAPI, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FGeometryScriptUVList&     UVList                                                 (Parm, NativeAccessSpecifierPublic)
+// class UTexture2D*                       Texture                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGeometryScriptSampleTextureOptions&SampleOptions                                          (Parm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FGeometryScriptColorList*        ColorList                                              (Parm, OutParm, NativeAccessSpecifierPublic)
+// class UGeometryScriptDebug*             Debug                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGeometryScriptLibrary_TextureMapFunctions::SampleTexture2DAtUVPositions(const struct FGeometryScriptUVList& UVList, class UTexture2D* Texture, const struct FGeometryScriptSampleTextureOptions& SampleOptions, struct FGeometryScriptColorList* ColorList, class UGeometryScriptDebug* Debug)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GeometryScriptLibrary_TextureMapFunctions", "SampleTexture2DAtUVPositions");
+
+	Params::GeometryScriptLibrary_TextureMapFunctions_SampleTexture2DAtUVPositions Parms{};
+
+	Parms.UVList = std::move(UVList);
+	Parms.Texture = Texture;
+	Parms.SampleOptions = std::move(SampleOptions);
+	Parms.Debug = Debug;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (ColorList != nullptr)
+		*ColorList = std::move(Parms.ColorList);
+}
+
+
+// Function GeometryScriptingCore.GeometryScriptLibrary_TextureMapFunctions.SampleTextureRenderTarget2DAtUVPositions
+// (Final, RequiredAPI, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FGeometryScriptUVList&     UVList                                                 (Parm, NativeAccessSpecifierPublic)
+// class UTextureRenderTarget2D*           Texture                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGeometryScriptSampleTextureOptions&SampleOptions                                          (Parm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FGeometryScriptColorList*        ColorList                                              (Parm, OutParm, NativeAccessSpecifierPublic)
+// class UGeometryScriptDebug*             Debug                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGeometryScriptLibrary_TextureMapFunctions::SampleTextureRenderTarget2DAtUVPositions(const struct FGeometryScriptUVList& UVList, class UTextureRenderTarget2D* Texture, const struct FGeometryScriptSampleTextureOptions& SampleOptions, struct FGeometryScriptColorList* ColorList, class UGeometryScriptDebug* Debug)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("GeometryScriptLibrary_TextureMapFunctions", "SampleTextureRenderTarget2DAtUVPositions");
+
+	Params::GeometryScriptLibrary_TextureMapFunctions_SampleTextureRenderTarget2DAtUVPositions Parms{};
+
+	Parms.UVList = std::move(UVList);
+	Parms.Texture = Texture;
+	Parms.SampleOptions = std::move(SampleOptions);
+	Parms.Debug = Debug;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (ColorList != nullptr)
+		*ColorList = std::move(Parms.ColorList);
+}
+
+
 // Function GeometryScriptingCore.GeometryScriptLibrary_SimplePolygonFunctions.AddPolygonVertex
 // (Final, RequiredAPI, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -19775,76 +19845,6 @@ bool UGeometryScriptLibrary_BoxFunctions::TestPointInsideBox(const struct FBox& 
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function GeometryScriptingCore.GeometryScriptLibrary_TextureMapFunctions.SampleTexture2DAtUVPositions
-// (Final, RequiredAPI, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FGeometryScriptUVList&     UVList                                                 (Parm, NativeAccessSpecifierPublic)
-// class UTexture2D*                       Texture                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FGeometryScriptSampleTextureOptions&SampleOptions                                          (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// struct FGeometryScriptColorList*        ColorList                                              (Parm, OutParm, NativeAccessSpecifierPublic)
-// class UGeometryScriptDebug*             Debug                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UGeometryScriptLibrary_TextureMapFunctions::SampleTexture2DAtUVPositions(const struct FGeometryScriptUVList& UVList, class UTexture2D* Texture, const struct FGeometryScriptSampleTextureOptions& SampleOptions, struct FGeometryScriptColorList* ColorList, class UGeometryScriptDebug* Debug)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GeometryScriptLibrary_TextureMapFunctions", "SampleTexture2DAtUVPositions");
-
-	Params::GeometryScriptLibrary_TextureMapFunctions_SampleTexture2DAtUVPositions Parms{};
-
-	Parms.UVList = std::move(UVList);
-	Parms.Texture = Texture;
-	Parms.SampleOptions = std::move(SampleOptions);
-	Parms.Debug = Debug;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (ColorList != nullptr)
-		*ColorList = std::move(Parms.ColorList);
-}
-
-
-// Function GeometryScriptingCore.GeometryScriptLibrary_TextureMapFunctions.SampleTextureRenderTarget2DAtUVPositions
-// (Final, RequiredAPI, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FGeometryScriptUVList&     UVList                                                 (Parm, NativeAccessSpecifierPublic)
-// class UTextureRenderTarget2D*           Texture                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FGeometryScriptSampleTextureOptions&SampleOptions                                          (Parm, NoDestructor, NativeAccessSpecifierPublic)
-// struct FGeometryScriptColorList*        ColorList                                              (Parm, OutParm, NativeAccessSpecifierPublic)
-// class UGeometryScriptDebug*             Debug                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UGeometryScriptLibrary_TextureMapFunctions::SampleTextureRenderTarget2DAtUVPositions(const struct FGeometryScriptUVList& UVList, class UTextureRenderTarget2D* Texture, const struct FGeometryScriptSampleTextureOptions& SampleOptions, struct FGeometryScriptColorList* ColorList, class UGeometryScriptDebug* Debug)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("GeometryScriptLibrary_TextureMapFunctions", "SampleTextureRenderTarget2DAtUVPositions");
-
-	Params::GeometryScriptLibrary_TextureMapFunctions_SampleTextureRenderTarget2DAtUVPositions Parms{};
-
-	Parms.UVList = std::move(UVList);
-	Parms.Texture = Texture;
-	Parms.SampleOptions = std::move(SampleOptions);
-	Parms.Debug = Debug;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (ColorList != nullptr)
-		*ColorList = std::move(Parms.ColorList);
 }
 
 

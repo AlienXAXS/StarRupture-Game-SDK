@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_InventorySplitWindow_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventorySplitWindow_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -38,10 +36,8 @@ void UWBP_InventorySplitWindow_C::Construct()
 
 class UWidget* UWBP_InventorySplitWindow_C::DoCustomNavigation(EUINavigation Navigation_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventorySplitWindow_C", "DoCustomNavigation");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"DoCustomNavigation", FnName));
 
 	Params::WBP_InventorySplitWindow_C_DoCustomNavigation Parms{};
 
@@ -60,38 +56,12 @@ class UWidget* UWBP_InventorySplitWindow_C::DoCustomNavigation(EUINavigation Nav
 
 void UWBP_InventorySplitWindow_C::ExecuteUbergraph_WBP_InventorySplitWindow(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventorySplitWindow_C", "ExecuteUbergraph_WBP_InventorySplitWindow");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_InventorySplitWindow_C", "ExecuteUbergraph_WBP_InventorySplitWindow", FuncInfo);
 
 	Params::WBP_InventorySplitWindow_C_ExecuteUbergraph_WBP_InventorySplitWindow Parms{};
 
 	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function WBP_InventorySplitWindow.WBP_InventorySplitWindow_C.SetColors
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// const struct FLinearColor&              NormalOrangeColor                                      (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FLinearColor&              OrangeHighlightColor                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const struct FLinearColor&              NormalColor                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UWBP_InventorySplitWindow_C::SetColors(const struct FLinearColor& NormalOrangeColor, const struct FLinearColor& OrangeHighlightColor, const struct FLinearColor& NormalColor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventorySplitWindow_C", "SetColors");
-
-	Params::WBP_InventorySplitWindow_C_SetColors Parms{};
-
-	Parms.NormalOrangeColor = std::move(NormalOrangeColor);
-	Parms.OrangeHighlightColor = std::move(OrangeHighlightColor);
-	Parms.NormalColor = std::move(NormalColor);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -104,10 +74,8 @@ void UWBP_InventorySplitWindow_C::SetColors(const struct FLinearColor& NormalOra
 
 void UWBP_InventorySplitWindow_C::SetupWidget(const class FText& ItemName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventorySplitWindow_C", "SetupWidget");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetupWidget", FnName));
 
 	Params::WBP_InventorySplitWindow_C_SetupWidget Parms{};
 
@@ -124,10 +92,8 @@ void UWBP_InventorySplitWindow_C::SetupWidget(const class FText& ItemName)
 
 void UWBP_InventorySplitWindow_C::UpdateAmountText(int32 Amount)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_InventorySplitWindow_C", "UpdateAmountText");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateAmountText", FnName));
 
 	Params::WBP_InventorySplitWindow_C_UpdateAmountText Parms{};
 

@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_MenuButton_C::BP_OnClicked()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MenuButton_C", "BP_OnClicked");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnClicked", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -35,10 +33,8 @@ void UWBP_MenuButton_C::BP_OnClicked()
 
 void UWBP_MenuButton_C::BP_OnHovered()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MenuButton_C", "BP_OnHovered");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnHovered", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -49,10 +45,8 @@ void UWBP_MenuButton_C::BP_OnHovered()
 
 void UWBP_MenuButton_C::BP_OnUnhovered()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MenuButton_C", "BP_OnUnhovered");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnUnhovered", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -65,10 +59,8 @@ void UWBP_MenuButton_C::BP_OnUnhovered()
 
 void UWBP_MenuButton_C::ExecuteUbergraph_WBP_MenuButton(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MenuButton_C", "ExecuteUbergraph_WBP_MenuButton");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_MenuButton_C", "ExecuteUbergraph_WBP_MenuButton", FuncInfo);
 
 	Params::WBP_MenuButton_C_ExecuteUbergraph_WBP_MenuButton Parms{};
 
@@ -85,10 +77,8 @@ void UWBP_MenuButton_C::ExecuteUbergraph_WBP_MenuButton(int32 EntryPoint)
 
 void UWBP_MenuButton_C::UpdateButton(ECommonMessagingResult Action)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MenuButton_C", "UpdateButton");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateButton", FnName));
 
 	Params::WBP_MenuButton_C_UpdateButton Parms{};
 

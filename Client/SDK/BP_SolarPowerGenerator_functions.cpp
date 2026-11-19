@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_SolarPowerGenerator_C::ExecuteUbergraph_BP_SolarPowerGenerator(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SolarPowerGenerator_C", "ExecuteUbergraph_BP_SolarPowerGenerator");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_SolarPowerGenerator_C", "ExecuteUbergraph_BP_SolarPowerGenerator", FuncInfo);
 
 	Params::BP_SolarPowerGenerator_C_ExecuteUbergraph_BP_SolarPowerGenerator Parms{};
 
@@ -43,10 +41,8 @@ void ABP_SolarPowerGenerator_C::ExecuteUbergraph_BP_SolarPowerGenerator(int32 En
 
 void ABP_SolarPowerGenerator_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SolarPowerGenerator_C", "PostPlayBuildingEffect");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PostPlayBuildingEffect", FnName));
 
 	Params::BP_SolarPowerGenerator_C_PostPlayBuildingEffect Parms{};
 
@@ -61,10 +57,8 @@ void ABP_SolarPowerGenerator_C::PostPlayBuildingEffect(bool bWasBuildingEffectPl
 
 void ABP_SolarPowerGenerator_C::SetupSkeletalMesh()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SolarPowerGenerator_C", "SetupSkeletalMesh");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetupSkeletalMesh", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -79,10 +73,8 @@ void ABP_SolarPowerGenerator_C::SetupSkeletalMesh()
 
 void ABP_SolarPowerGenerator_C::Get_Meshes(class USceneComponent* Static_0, class USceneComponent* Animated_0, TArray<class UMeshComponent*>* NewParam) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_SolarPowerGenerator_C", "Get Meshes");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Get Meshes", FnName));
 
 	Params::BP_SolarPowerGenerator_C_Get_Meshes Parms{};
 

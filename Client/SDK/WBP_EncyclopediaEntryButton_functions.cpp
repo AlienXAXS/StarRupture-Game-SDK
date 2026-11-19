@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UWBP_EncyclopediaEntryButton_C::BP_OnSelectionChange()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EncyclopediaEntryButton_C", "BP_OnSelectionChange");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnSelectionChange", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -37,10 +35,8 @@ void UWBP_EncyclopediaEntryButton_C::BP_OnSelectionChange()
 
 void UWBP_EncyclopediaEntryButton_C::ExecuteUbergraph_WBP_EncyclopediaEntryButton(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EncyclopediaEntryButton_C", "ExecuteUbergraph_WBP_EncyclopediaEntryButton");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_EncyclopediaEntryButton_C", "ExecuteUbergraph_WBP_EncyclopediaEntryButton", FuncInfo);
 
 	Params::WBP_EncyclopediaEntryButton_C_ExecuteUbergraph_WBP_EncyclopediaEntryButton Parms{};
 
@@ -58,10 +54,8 @@ void UWBP_EncyclopediaEntryButton_C::ExecuteUbergraph_WBP_EncyclopediaEntryButto
 
 void UWBP_EncyclopediaEntryButton_C::OnMouseEnter(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EncyclopediaEntryButton_C", "OnMouseEnter");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnMouseEnter", FnName));
 
 	Params::WBP_EncyclopediaEntryButton_C_OnMouseEnter Parms{};
 
@@ -79,10 +73,8 @@ void UWBP_EncyclopediaEntryButton_C::OnMouseEnter(const struct FGeometry& MyGeom
 
 void UWBP_EncyclopediaEntryButton_C::OnMouseLeave(const struct FPointerEvent& MouseEvent)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EncyclopediaEntryButton_C", "OnMouseLeave");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnMouseLeave", FnName));
 
 	Params::WBP_EncyclopediaEntryButton_C_OnMouseLeave Parms{};
 
@@ -97,10 +89,8 @@ void UWBP_EncyclopediaEntryButton_C::OnMouseLeave(const struct FPointerEvent& Mo
 
 void UWBP_EncyclopediaEntryButton_C::UpdateFocusAndSelection()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_EncyclopediaEntryButton_C", "UpdateFocusAndSelection");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateFocusAndSelection", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

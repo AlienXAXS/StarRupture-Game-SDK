@@ -16,201 +16,6 @@
 
 SDK_NAMESPACE_START
 
-// Function MassAIPrototypeEnemyRuntime.CrAiActionUseNavlink.Create_CrAiActionUseNavlink
-// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UCrAiActionUseNavlink>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   ActorStartLocation_0                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   NavlinkStartLocation_0                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   NavlinkEndLocation                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FCrUseNavLinkActionConfiguration&InUseNavLinkActionConfiguration                        (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// bool                                    bPerformJumpEvenIfLocationNotFree_0                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bTeleport_0                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UCrAiActionUseNavlink*            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCrAiActionUseNavlink* UCrAiActionUseNavlink::Create_CrAiActionUseNavlink(TSubclassOf<class UCrAiActionUseNavlink> ActionType, float NewMaxLifetimeS, const struct FVector& ActorStartLocation_0, const struct FVector& NavlinkStartLocation_0, const struct FVector& NavlinkEndLocation, const struct FCrUseNavLinkActionConfiguration& InUseNavLinkActionConfiguration, bool bPerformJumpEvenIfLocationNotFree_0, bool bTeleport_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrAiActionUseNavlink", "Create_CrAiActionUseNavlink");
-
-	Params::CrAiActionUseNavlink_Create_CrAiActionUseNavlink Parms{};
-
-	Parms.ActionType = ActionType;
-	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
-	Parms.ActorStartLocation_0 = std::move(ActorStartLocation_0);
-	Parms.NavlinkStartLocation_0 = std::move(NavlinkStartLocation_0);
-	Parms.NavlinkEndLocation = std::move(NavlinkEndLocation);
-	Parms.InUseNavLinkActionConfiguration = std::move(InUseNavLinkActionConfiguration);
-	Parms.bPerformJumpEvenIfLocationNotFree_0 = bPerformJumpEvenIfLocationNotFree_0;
-	Parms.bTeleport_0 = bTeleport_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionUseNavlink.OnBeforeLand
-// (Final, Native, Public)
-
-void UCrAiActionUseNavlink::OnBeforeLand()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrAiActionUseNavlink", "OnBeforeLand");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionUseNavlink.OnCharacterMovementLanded
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// class AActor*                           AiActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void UCrAiActionUseNavlink::OnCharacterMovementLanded(class AActor* AiActor, const struct FHitResult& Hit)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrAiActionUseNavlink", "OnCharacterMovementLanded");
-
-	Params::CrAiActionUseNavlink_OnCharacterMovementLanded Parms{};
-
-	Parms.AiActor = AiActor;
-	Parms.Hit = std::move(Hit);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionUseNavlink.OnJumpAnimationEvent
-// (Final, Native, Public)
-// Parameters:
-// class AActor*                           AiActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrAiActionUseNavlink::OnJumpAnimationEvent(class AActor* AiActor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrAiActionUseNavlink", "OnJumpAnimationEvent");
-
-	Params::CrAiActionUseNavlink_OnJumpAnimationEvent Parms{};
-
-	Parms.AiActor = AiActor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionUseNavlink.OnLandAnimationEnded
-// (Final, Native, Public)
-
-void UCrAiActionUseNavlink::OnLandAnimationEnded()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrAiActionUseNavlink", "OnLandAnimationEnded");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionUseNavlink.OnLandAnimationEnded_Client
-// (Final, Native, Public)
-
-void UCrAiActionUseNavlink::OnLandAnimationEnded_Client()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrAiActionUseNavlink", "OnLandAnimationEnded_Client");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionUseNavlink.OnRep_CalculatedJumpVelocity
-// (Final, Native, Public)
-
-void UCrAiActionUseNavlink::OnRep_CalculatedJumpVelocity()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrAiActionUseNavlink", "OnRep_CalculatedJumpVelocity");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionUseNavlink.OnServerLanded
-// (Final, Native, Public)
-// Parameters:
-// class AActor*                           Actor                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrAiActionUseNavlink::OnServerLanded(class AActor* Actor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrAiActionUseNavlink", "OnServerLanded");
-
-	Params::CrAiActionUseNavlink_OnServerLanded Parms{};
-
-	Parms.Actor = Actor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function MassAIPrototypeEnemyRuntime.AbstractMassEnemySpawner.ActivateSpawner
 // (Net, NetReliable, Native, Event, Public, NetServer, BlueprintCallable)
 // Parameters:
@@ -366,10 +171,8 @@ bool AAbstractMassEnemySpawner::IsTriggerActive() const
 
 void ABaseAttackSpawnIndicator::BP_OnActivateVisuals()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BaseAttackSpawnIndicator", "BP_OnActivateVisuals");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnActivateVisuals", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -380,10 +183,8 @@ void ABaseAttackSpawnIndicator::BP_OnActivateVisuals()
 
 void ABaseAttackSpawnIndicator::BP_OnDelayedDestroyRequested()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BaseAttackSpawnIndicator", "BP_OnDelayedDestroyRequested");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnDelayedDestroyRequested", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -394,10 +195,8 @@ void ABaseAttackSpawnIndicator::BP_OnDelayedDestroyRequested()
 
 void ABaseAttackSpawnIndicator::BP_OnDied()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BaseAttackSpawnIndicator", "BP_OnDied");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnDied", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -446,10 +245,8 @@ void ABaseAttackSpawnIndicator::OnRep_Died()
 
 void IBaseAttackVisualizationInterface::OnActivateDonut()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("BaseAttackVisualizationInterface", "OnActivateDonut");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"OnActivateDonut", FnName));
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -467,10 +264,8 @@ void IBaseAttackVisualizationInterface::OnActivateDonut()
 
 void IBaseAttackVisualizationInterface::OnAttackIndicatorSpawned(const struct FVector& Location)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("BaseAttackVisualizationInterface", "OnAttackIndicatorSpawned");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"OnAttackIndicatorSpawned", FnName));
 
 	Params::BaseAttackVisualizationInterface_OnAttackIndicatorSpawned Parms{};
 
@@ -490,10 +285,8 @@ void IBaseAttackVisualizationInterface::OnAttackIndicatorSpawned(const struct FV
 
 void IBaseAttackVisualizationInterface::OnDeactivateDonut()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("BaseAttackVisualizationInterface", "OnDeactivateDonut");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"OnDeactivateDonut", FnName));
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -511,10 +304,8 @@ void IBaseAttackVisualizationInterface::OnDeactivateDonut()
 
 void IBaseAttackVisualizationInterface::SetFloatingTrailObjectCount(int32 Count)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("BaseAttackVisualizationInterface", "SetFloatingTrailObjectCount");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"SetFloatingTrailObjectCount", FnName));
 
 	Params::BaseAttackVisualizationInterface_SetFloatingTrailObjectCount Parms{};
 
@@ -584,10 +375,8 @@ void ADonutVisualizationActor::OnRep_FloatingTrails()
 
 void ADonutVisualizationActor::SetFloatingTrailObjectCount(int32 Count)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("DonutVisualizationActor", "SetFloatingTrailObjectCount");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetFloatingTrailObjectCount", FnName));
 
 	Params::DonutVisualizationActor_SetFloatingTrailObjectCount Parms{};
 
@@ -671,41 +460,60 @@ void ADonutVisualizationActor::UpdateFloatingTrails()
 }
 
 
-// Function MassAIPrototypeEnemyRuntime.CrAiActionSpawnEntity.Create_CrAiActionSpawnEntity
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UCrAiActionSpawnEntity>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FAuAPMassSpawnedEntityType&EntityType_0                                           (Parm, NativeAccessSpecifierPublic)
-// const struct FTransform&                SpawnTransform_0                                       (Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bSaveSpawnedEntity_0                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FBlackboardKeySelector&    SpawnedEntityBBKey_0                                   (Parm, NativeAccessSpecifierPublic)
-// class UCrAiActionSpawnEntity*           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function MassAIPrototypeEnemyRuntime.BaseAttackVisualizationInterface.OnActivateDonut
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 
-class UCrAiActionSpawnEntity* UCrAiActionSpawnEntity::Create_CrAiActionSpawnEntity(TSubclassOf<class UCrAiActionSpawnEntity> ActionType, float NewMaxLifetimeS, const struct FAuAPMassSpawnedEntityType& EntityType_0, const struct FTransform& SpawnTransform_0, bool bSaveSpawnedEntity_0, const struct FBlackboardKeySelector& SpawnedEntityBBKey_0)
+void ADonutVisualizationActor::OnActivateDonut()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrAiActionSpawnEntity", "Create_CrAiActionSpawnEntity");
-
-	Params::CrAiActionSpawnEntity_Create_CrAiActionSpawnEntity Parms{};
-
-	Parms.ActionType = ActionType;
-	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
-	Parms.EntityType_0 = std::move(EntityType_0);
-	Parms.SpawnTransform_0 = std::move(SpawnTransform_0);
-	Parms.bSaveSpawnedEntity_0 = bSaveSpawnedEntity_0;
-	Parms.SpawnedEntityBBKey_0 = std::move(SpawnedEntityBBKey_0);
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnActivateDonut", FnName));
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
+}
 
-	return Parms.ReturnValue;
+
+// Function MassAIPrototypeEnemyRuntime.BaseAttackVisualizationInterface.OnAttackIndicatorSpawned
+// (Native, Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FVector&                   Location                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ADonutVisualizationActor::OnAttackIndicatorSpawned(const struct FVector& Location)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnAttackIndicatorSpawned", FnName));
+
+	Params::BaseAttackVisualizationInterface_OnAttackIndicatorSpawned Parms{};
+
+	Parms.Location = std::move(Location);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.BaseAttackVisualizationInterface.OnDeactivateDonut
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+
+void ADonutVisualizationActor::OnDeactivateDonut()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnDeactivateDonut", FnName));
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -714,10 +522,8 @@ class UCrAiActionSpawnEntity* UCrAiActionSpawnEntity::Create_CrAiActionSpawnEnti
 
 void AMovingTowardsBaseActor::OnDespawnScheduled()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MovingTowardsBaseActor", "OnDespawnScheduled");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnDespawnScheduled", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -1004,4673 +810,6 @@ class UCrAiActionAttack* UCrAiActionAttack::Create_CrAiActionAttack(TSubclassOf<
 	Func->FunctionFlags |= 0x400;
 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionDealAoeDamage.Create_CrAiDealAoeDamage
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UCrAiActionDealAoeDamage>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   AttackLocation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   AttackRadius_0                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class UGameplayEffect>      DamageGameplayEffect_0                                 (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class UGameplayEffect>      DamageToAiGameplayEffect_0                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   BuildingInfectionDamage_0                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   MaxPushDistance_0                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   PushDuration_0                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   EnemyActorPushVelocity_0                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   EnemyEntityPushVelocity_0                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UCrAiActionDealAoeDamage*         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCrAiActionDealAoeDamage* UCrAiActionDealAoeDamage::Create_CrAiDealAoeDamage(TSubclassOf<class UCrAiActionDealAoeDamage> ActionType, float NewMaxLifetimeS, const struct FVector& AttackLocation_0, float AttackRadius_0, TSubclassOf<class UGameplayEffect> DamageGameplayEffect_0, TSubclassOf<class UGameplayEffect> DamageToAiGameplayEffect_0, float BuildingInfectionDamage_0, float MaxPushDistance_0, float PushDuration_0, float EnemyActorPushVelocity_0, float EnemyEntityPushVelocity_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrAiActionDealAoeDamage", "Create_CrAiDealAoeDamage");
-
-	Params::CrAiActionDealAoeDamage_Create_CrAiDealAoeDamage Parms{};
-
-	Parms.ActionType = ActionType;
-	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
-	Parms.AttackLocation_0 = std::move(AttackLocation_0);
-	Parms.AttackRadius_0 = AttackRadius_0;
-	Parms.DamageGameplayEffect_0 = DamageGameplayEffect_0;
-	Parms.DamageToAiGameplayEffect_0 = DamageToAiGameplayEffect_0;
-	Parms.BuildingInfectionDamage_0 = BuildingInfectionDamage_0;
-	Parms.MaxPushDistance_0 = MaxPushDistance_0;
-	Parms.PushDuration_0 = PushDuration_0;
-	Parms.EnemyActorPushVelocity_0 = EnemyActorPushVelocity_0;
-	Parms.EnemyEntityPushVelocity_0 = EnemyEntityPushVelocity_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionDealDamage.Create_CrAiDealDamage
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UCrAiActionDealDamage>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           NewTarget                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class UGameplayEffect>      NewDamageGameplayEffect                                (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewBuildingInfectionDamage                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewAllowedAttackDistance                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewAllowedBuildingAttackDistance                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewAllowedAttackConeHalfAngle                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UCrAiActionDealDamage*            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCrAiActionDealDamage* UCrAiActionDealDamage::Create_CrAiDealDamage(TSubclassOf<class UCrAiActionDealDamage> ActionType, float NewMaxLifetimeS, class AActor* NewTarget, TSubclassOf<class UGameplayEffect> NewDamageGameplayEffect, float NewBuildingInfectionDamage, float NewAllowedAttackDistance, float NewAllowedBuildingAttackDistance, float NewAllowedAttackConeHalfAngle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrAiActionDealDamage", "Create_CrAiDealDamage");
-
-	Params::CrAiActionDealDamage_Create_CrAiDealDamage Parms{};
-
-	Parms.ActionType = ActionType;
-	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
-	Parms.NewTarget = NewTarget;
-	Parms.NewDamageGameplayEffect = NewDamageGameplayEffect;
-	Parms.NewBuildingInfectionDamage = NewBuildingInfectionDamage;
-	Parms.NewAllowedAttackDistance = NewAllowedAttackDistance;
-	Parms.NewAllowedBuildingAttackDistance = NewAllowedBuildingAttackDistance;
-	Parms.NewAllowedAttackConeHalfAngle = NewAllowedAttackConeHalfAngle;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionDealLongAoeDamage.Create_CrAiDealLongAoeDamage
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UCrAiActionDealLongAoeDamage>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const TArray<struct FVector>&           AoePoints_0                                            (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// float                                   PushZDistance_0                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   AttackRadius_0                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class UGameplayEffect>      DamageGameplayEffect_0                                 (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class UGameplayEffect>      DamageToAiGameplayEffect_0                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   BuildingInfectionDamage_0                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   MaxPushDistance_0                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   PushDuration_0                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   EnemyActorPushVelocity_0                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   EnemyEntityPushVelocity_0                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UCrAiActionDealLongAoeDamage*     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCrAiActionDealLongAoeDamage* UCrAiActionDealLongAoeDamage::Create_CrAiDealLongAoeDamage(TSubclassOf<class UCrAiActionDealLongAoeDamage> ActionType, float NewMaxLifetimeS, const TArray<struct FVector>& AoePoints_0, float PushZDistance_0, float AttackRadius_0, TSubclassOf<class UGameplayEffect> DamageGameplayEffect_0, TSubclassOf<class UGameplayEffect> DamageToAiGameplayEffect_0, float BuildingInfectionDamage_0, float MaxPushDistance_0, float PushDuration_0, float EnemyActorPushVelocity_0, float EnemyEntityPushVelocity_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrAiActionDealLongAoeDamage", "Create_CrAiDealLongAoeDamage");
-
-	Params::CrAiActionDealLongAoeDamage_Create_CrAiDealLongAoeDamage Parms{};
-
-	Parms.ActionType = ActionType;
-	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
-	Parms.AoePoints_0 = std::move(AoePoints_0);
-	Parms.PushZDistance_0 = PushZDistance_0;
-	Parms.AttackRadius_0 = AttackRadius_0;
-	Parms.DamageGameplayEffect_0 = DamageGameplayEffect_0;
-	Parms.DamageToAiGameplayEffect_0 = DamageToAiGameplayEffect_0;
-	Parms.BuildingInfectionDamage_0 = BuildingInfectionDamage_0;
-	Parms.MaxPushDistance_0 = MaxPushDistance_0;
-	Parms.PushDuration_0 = PushDuration_0;
-	Parms.EnemyActorPushVelocity_0 = EnemyActorPushVelocity_0;
-	Parms.EnemyEntityPushVelocity_0 = EnemyEntityPushVelocity_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionDissolve.Create_CrAiActionDissolve
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UCrAiActionDissolve>  ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UCrAiActionDissolve*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCrAiActionDissolve* UCrAiActionDissolve::Create_CrAiActionDissolve(TSubclassOf<class UCrAiActionDissolve> ActionType, float NewMaxLifetimeS)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrAiActionDissolve", "Create_CrAiActionDissolve");
-
-	Params::CrAiActionDissolve_Create_CrAiActionDissolve Parms{};
-
-	Parms.ActionType = ActionType;
-	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionFinishMassAnim.Create_CrAiActionFinishMassAnim
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UCrAiActionFinishMassAnim>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bNewWaitForAnimFinishEvent                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bNewFinishImmediately                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bKeepRotatedToMovement_0                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UCrAiActionFinishMassAnim*        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCrAiActionFinishMassAnim* UCrAiActionFinishMassAnim::Create_CrAiActionFinishMassAnim(TSubclassOf<class UCrAiActionFinishMassAnim> ActionType, float NewMaxLifetimeS, bool bNewWaitForAnimFinishEvent, bool bNewFinishImmediately, bool bKeepRotatedToMovement_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrAiActionFinishMassAnim", "Create_CrAiActionFinishMassAnim");
-
-	Params::CrAiActionFinishMassAnim_Create_CrAiActionFinishMassAnim Parms{};
-
-	Parms.ActionType = ActionType;
-	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
-	Parms.bNewWaitForAnimFinishEvent = bNewWaitForAnimFinishEvent;
-	Parms.bNewFinishImmediately = bNewFinishImmediately;
-	Parms.bKeepRotatedToMovement_0 = bKeepRotatedToMovement_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionFinishMassAnim.OnAnimFinished
-// (Final, Native, Public)
-// Parameters:
-// class AActor*                           AiActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECrEnemyLocomotionType                  NewLocomotionType                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECrEnemyAttackType                      NewAttackType                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECrEnemyJumpState                       NewJumpState                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrAiActionFinishMassAnim::OnAnimFinished(class AActor* AiActor, ECrEnemyLocomotionType NewLocomotionType, ECrEnemyAttackType NewAttackType, ECrEnemyJumpState NewJumpState)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrAiActionFinishMassAnim", "OnAnimFinished");
-
-	Params::CrAiActionFinishMassAnim_OnAnimFinished Parms{};
-
-	Parms.AiActor = AiActor;
-	Parms.NewLocomotionType = NewLocomotionType;
-	Parms.NewAttackType = NewAttackType;
-	Parms.NewJumpState = NewJumpState;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionHitReaction.Create_CrAiActionHitReaction
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UCrAiActionHitReaction>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   NewHitWorldPosition_0                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   NewHitDirection                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bNewIsWeakpointDamage                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UCrAiActionHitReaction*           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCrAiActionHitReaction* UCrAiActionHitReaction::Create_CrAiActionHitReaction(TSubclassOf<class UCrAiActionHitReaction> ActionType, float NewMaxLifetimeS, const struct FVector& NewHitWorldPosition_0, const struct FVector& NewHitDirection, bool bNewIsWeakpointDamage)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrAiActionHitReaction", "Create_CrAiActionHitReaction");
-
-	Params::CrAiActionHitReaction_Create_CrAiActionHitReaction Parms{};
-
-	Parms.ActionType = ActionType;
-	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
-	Parms.NewHitWorldPosition_0 = std::move(NewHitWorldPosition_0);
-	Parms.NewHitDirection = std::move(NewHitDirection);
-	Parms.bNewIsWeakpointDamage = bNewIsWeakpointDamage;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionJumpAttack.Create_CrAiActionJumpAttack
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UCrAiActionAttack>    ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECrEnemyAttackType                      NewAttackType                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bNewWaitForAnimFinishEvent                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class UGameplayEffect>      NewDamageGameplayEffect                                (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewBuildingInfectionDamage                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewAllowedAttackDistance                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewAllowedAttackConeHalfAngle                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    NewKeepRotatedToMovement                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewJumpArcParam01                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewExpectedJumpDuration                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewJumpAttackFocusPriority                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewMinJumpVelocity                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewMaxJumpVelocity                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewMaxPushDistance                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewPushDuration                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UCrAiActionJumpAttack*            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCrAiActionJumpAttack* UCrAiActionJumpAttack::Create_CrAiActionJumpAttack(TSubclassOf<class UCrAiActionAttack> ActionType, float NewMaxLifetimeS, ECrEnemyAttackType NewAttackType, bool bNewWaitForAnimFinishEvent, TSubclassOf<class UGameplayEffect> NewDamageGameplayEffect, float NewBuildingInfectionDamage, float NewAllowedAttackDistance, float NewAllowedAttackConeHalfAngle, bool NewKeepRotatedToMovement, float NewJumpArcParam01, float NewExpectedJumpDuration, float NewJumpAttackFocusPriority, float NewMinJumpVelocity, float NewMaxJumpVelocity, float NewMaxPushDistance, float NewPushDuration)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrAiActionJumpAttack", "Create_CrAiActionJumpAttack");
-
-	Params::CrAiActionJumpAttack_Create_CrAiActionJumpAttack Parms{};
-
-	Parms.ActionType = ActionType;
-	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
-	Parms.NewAttackType = NewAttackType;
-	Parms.bNewWaitForAnimFinishEvent = bNewWaitForAnimFinishEvent;
-	Parms.NewDamageGameplayEffect = NewDamageGameplayEffect;
-	Parms.NewBuildingInfectionDamage = NewBuildingInfectionDamage;
-	Parms.NewAllowedAttackDistance = NewAllowedAttackDistance;
-	Parms.NewAllowedAttackConeHalfAngle = NewAllowedAttackConeHalfAngle;
-	Parms.NewKeepRotatedToMovement = NewKeepRotatedToMovement;
-	Parms.NewJumpArcParam01 = NewJumpArcParam01;
-	Parms.NewExpectedJumpDuration = NewExpectedJumpDuration;
-	Parms.NewJumpAttackFocusPriority = NewJumpAttackFocusPriority;
-	Parms.NewMinJumpVelocity = NewMinJumpVelocity;
-	Parms.NewMaxJumpVelocity = NewMaxJumpVelocity;
-	Parms.NewMaxPushDistance = NewMaxPushDistance;
-	Parms.NewPushDuration = NewPushDuration;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionJumpAttack.OnCharacterMovementLanded
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// class AActor*                           AiActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void UCrAiActionJumpAttack::OnCharacterMovementLanded(class AActor* AiActor, const struct FHitResult& Hit)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrAiActionJumpAttack", "OnCharacterMovementLanded");
-
-	Params::CrAiActionJumpAttack_OnCharacterMovementLanded Parms{};
-
-	Parms.AiActor = AiActor;
-	Parms.Hit = std::move(Hit);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionJumpAttack.OnCharacterMovementLanded_Client
-// (Final, Native, Public)
-// Parameters:
-// class AActor*                           AiActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrAiActionJumpAttack::OnCharacterMovementLanded_Client(class AActor* AiActor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrAiActionJumpAttack", "OnCharacterMovementLanded_Client");
-
-	Params::CrAiActionJumpAttack_OnCharacterMovementLanded_Client Parms{};
-
-	Parms.AiActor = AiActor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionJumpAttack.OnOwnerHit
-// (Final, Native, Public, HasOutParams, HasDefaults)
-// Parameters:
-// class AActor*                           AiActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   NormalImpulse                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void UCrAiActionJumpAttack::OnOwnerHit(class AActor* AiActor, class AActor* OtherActor, const struct FVector& NormalImpulse, const struct FHitResult& Hit)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrAiActionJumpAttack", "OnOwnerHit");
-
-	Params::CrAiActionJumpAttack_OnOwnerHit Parms{};
-
-	Parms.AiActor = AiActor;
-	Parms.OtherActor = OtherActor;
-	Parms.NormalImpulse = std::move(NormalImpulse);
-	Parms.Hit = std::move(Hit);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiMovementAttackInstigator.GetMovementAttackStage
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EMovementAttackStage                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EMovementAttackStage ICrAiMovementAttackInstigator::GetMovementAttackStage()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("CrAiMovementAttackInstigator", "GetMovementAttackStage");
-
-	Params::CrAiMovementAttackInstigator_GetMovementAttackStage Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiMovementAttackInstigator.SetMovementAttackStage
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EMovementAttackStage                    MovementAttackStage                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ICrAiMovementAttackInstigator::SetMovementAttackStage(EMovementAttackStage MovementAttackStage)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("CrAiMovementAttackInstigator", "SetMovementAttackStage");
-
-	Params::CrAiMovementAttackInstigator_SetMovementAttackStage Parms{};
-
-	Parms.MovementAttackStage = MovementAttackStage;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionMovementAttack.Create_CrAiActionMovementAttack
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UCrAiActionMovementAttack>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECrEnemyAttackType                      NewAttackType                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bNewWaitForAnimFinishEvent                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class UGameplayEffect>      NewDamageGameplayEffect                                (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewBuildingInfectionDamage                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewAllowedAttackDistance                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewAllowedAttackConeHalfAngle                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bNewKeepRotatedToMovement                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewMovementSpeed                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   NewMidAnimLoopsNum                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UCrAiActionMovementAttack*        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCrAiActionMovementAttack* UCrAiActionMovementAttack::Create_CrAiActionMovementAttack(TSubclassOf<class UCrAiActionMovementAttack> ActionType, float NewMaxLifetimeS, ECrEnemyAttackType NewAttackType, bool bNewWaitForAnimFinishEvent, TSubclassOf<class UGameplayEffect> NewDamageGameplayEffect, float NewBuildingInfectionDamage, float NewAllowedAttackDistance, float NewAllowedAttackConeHalfAngle, bool bNewKeepRotatedToMovement, float NewMovementSpeed, int32 NewMidAnimLoopsNum)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrAiActionMovementAttack", "Create_CrAiActionMovementAttack");
-
-	Params::CrAiActionMovementAttack_Create_CrAiActionMovementAttack Parms{};
-
-	Parms.ActionType = ActionType;
-	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
-	Parms.NewAttackType = NewAttackType;
-	Parms.bNewWaitForAnimFinishEvent = bNewWaitForAnimFinishEvent;
-	Parms.NewDamageGameplayEffect = NewDamageGameplayEffect;
-	Parms.NewBuildingInfectionDamage = NewBuildingInfectionDamage;
-	Parms.NewAllowedAttackDistance = NewAllowedAttackDistance;
-	Parms.NewAllowedAttackConeHalfAngle = NewAllowedAttackConeHalfAngle;
-	Parms.bNewKeepRotatedToMovement = bNewKeepRotatedToMovement;
-	Parms.NewMovementSpeed = NewMovementSpeed;
-	Parms.NewMidAnimLoopsNum = NewMidAnimLoopsNum;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionMoveTo.Create_CrAiActionMoveTo
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UCrAiActionMoveTo>    ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FCrAiActionDataMovement&   NewMovementActionData                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// ECrEnemyLocomotionType                  LocomotionType                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UCrAiActionMoveTo*                ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCrAiActionMoveTo* UCrAiActionMoveTo::Create_CrAiActionMoveTo(TSubclassOf<class UCrAiActionMoveTo> ActionType, float NewMaxLifetimeS, const struct FCrAiActionDataMovement& NewMovementActionData, ECrEnemyLocomotionType LocomotionType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrAiActionMoveTo", "Create_CrAiActionMoveTo");
-
-	Params::CrAiActionMoveTo_Create_CrAiActionMoveTo Parms{};
-
-	Parms.ActionType = ActionType;
-	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
-	Parms.NewMovementActionData = std::move(NewMovementActionData);
-	Parms.LocomotionType = LocomotionType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionMoveTo.OnEnterNavlink
-// (Final, Native, Public, HasDefaults)
-// Parameters:
-// class AActor*                           AiActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   Start                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   End                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrAiActionMoveTo::OnEnterNavlink(class AActor* AiActor, const struct FVector& Start, const struct FVector& End)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrAiActionMoveTo", "OnEnterNavlink");
-
-	Params::CrAiActionMoveTo_OnEnterNavlink Parms{};
-
-	Parms.AiActor = AiActor;
-	Parms.Start = std::move(Start);
-	Parms.End = std::move(End);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionMoveTo.OnNavlikJumpEnded
-// (Final, Native, Public)
-// Parameters:
-// class UCrAiAction*                      Action                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrAiActionMoveTo::OnNavlikJumpEnded(class UCrAiAction* Action)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrAiActionMoveTo", "OnNavlikJumpEnded");
-
-	Params::CrAiActionMoveTo_OnNavlikJumpEnded Parms{};
-
-	Parms.Action = Action;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionPlayAnimation.Create_CrAiActionPlayAnimation
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UCrAiActionPlayAnimation>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECrEnemyLocomotionType                  NewLocomotionState                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bWaitForAnimFinishEvent_0                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bNewFinishImmediately                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bKeepRotatedToMovement_0                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UCrAiActionPlayAnimation*         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCrAiActionPlayAnimation* UCrAiActionPlayAnimation::Create_CrAiActionPlayAnimation(TSubclassOf<class UCrAiActionPlayAnimation> ActionType, float NewMaxLifetimeS, ECrEnemyLocomotionType NewLocomotionState, bool bWaitForAnimFinishEvent_0, bool bNewFinishImmediately, bool bKeepRotatedToMovement_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrAiActionPlayAnimation", "Create_CrAiActionPlayAnimation");
-
-	Params::CrAiActionPlayAnimation_Create_CrAiActionPlayAnimation Parms{};
-
-	Parms.ActionType = ActionType;
-	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
-	Parms.NewLocomotionState = NewLocomotionState;
-	Parms.bWaitForAnimFinishEvent_0 = bWaitForAnimFinishEvent_0;
-	Parms.bNewFinishImmediately = bNewFinishImmediately;
-	Parms.bKeepRotatedToMovement_0 = bKeepRotatedToMovement_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionRotateToFocus.Create_CrAiActionRotateToFocus
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UCrAiActionRotateToFocus>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewThresholdAngleDeg                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UCrAiActionRotateToFocus*         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCrAiActionRotateToFocus* UCrAiActionRotateToFocus::Create_CrAiActionRotateToFocus(TSubclassOf<class UCrAiActionRotateToFocus> ActionType, float NewMaxLifetimeS, float NewThresholdAngleDeg)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrAiActionRotateToFocus", "Create_CrAiActionRotateToFocus");
-
-	Params::CrAiActionRotateToFocus_Create_CrAiActionRotateToFocus Parms{};
-
-	Parms.ActionType = ActionType;
-	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
-	Parms.NewThresholdAngleDeg = NewThresholdAngleDeg;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionSetEyeState.Create_CrAiActionSetEyeState
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UCrAiActionSetEyeState>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bModifyIsAggro_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bIsAggro_0                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bModifyIsBoosted_0                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bIsBoosted_0                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bModifyIsJumpWindup_0                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bIsJumpWindup_0                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bIsAggroFlare_0                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bIsBoostFlare_0                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UCrAiActionSetEyeState*           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCrAiActionSetEyeState* UCrAiActionSetEyeState::Create_CrAiActionSetEyeState(TSubclassOf<class UCrAiActionSetEyeState> ActionType, float NewMaxLifetimeS, bool bModifyIsAggro_0, bool bIsAggro_0, bool bModifyIsBoosted_0, bool bIsBoosted_0, bool bModifyIsJumpWindup_0, bool bIsJumpWindup_0, bool bIsAggroFlare_0, bool bIsBoostFlare_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrAiActionSetEyeState", "Create_CrAiActionSetEyeState");
-
-	Params::CrAiActionSetEyeState_Create_CrAiActionSetEyeState Parms{};
-
-	Parms.ActionType = ActionType;
-	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
-	Parms.bModifyIsAggro_0 = bModifyIsAggro_0;
-	Parms.bIsAggro_0 = bIsAggro_0;
-	Parms.bModifyIsBoosted_0 = bModifyIsBoosted_0;
-	Parms.bIsBoosted_0 = bIsBoosted_0;
-	Parms.bModifyIsJumpWindup_0 = bModifyIsJumpWindup_0;
-	Parms.bIsJumpWindup_0 = bIsJumpWindup_0;
-	Parms.bIsAggroFlare_0 = bIsAggroFlare_0;
-	Parms.bIsBoostFlare_0 = bIsBoostFlare_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionSetFocus.Create_CrAiActionSetFocus
-// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UCrAiActionSetFocus>  ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bNewClearFocus                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           NewFocusActor                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   NewFocusPosition                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   NewFocusPriority                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UCrAiActionSetFocus*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCrAiActionSetFocus* UCrAiActionSetFocus::Create_CrAiActionSetFocus(TSubclassOf<class UCrAiActionSetFocus> ActionType, float NewMaxLifetimeS, bool bNewClearFocus, class AActor* NewFocusActor, const struct FVector& NewFocusPosition, int32 NewFocusPriority)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrAiActionSetFocus", "Create_CrAiActionSetFocus");
-
-	Params::CrAiActionSetFocus_Create_CrAiActionSetFocus Parms{};
-
-	Parms.ActionType = ActionType;
-	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
-	Parms.bNewClearFocus = bNewClearFocus;
-	Parms.NewFocusActor = NewFocusActor;
-	Parms.NewFocusPosition = std::move(NewFocusPosition);
-	Parms.NewFocusPriority = NewFocusPriority;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionSetHasAggroTarget.Create_CrAiActionSetHasAggroTarget
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UCrAiActionSetHasAggroTarget>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bHasAggroTarget_0                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UCrAiActionSetHasAggroTarget*     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCrAiActionSetHasAggroTarget* UCrAiActionSetHasAggroTarget::Create_CrAiActionSetHasAggroTarget(TSubclassOf<class UCrAiActionSetHasAggroTarget> ActionType, float NewMaxLifetimeS, bool bHasAggroTarget_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrAiActionSetHasAggroTarget", "Create_CrAiActionSetHasAggroTarget");
-
-	Params::CrAiActionSetHasAggroTarget_Create_CrAiActionSetHasAggroTarget Parms{};
-
-	Parms.ActionType = ActionType;
-	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
-	Parms.bHasAggroTarget_0 = bHasAggroTarget_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionShoot.Create_CrAiActionShoot
-// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UCrAiActionShoot>     ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class ACrAiProjectileActor> PooledProjectileType_0                                 (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   StartLocation_0                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   EndLocation_0                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ArcParam_0                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   GravityOverride_0                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ShootVelocityVariance                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FName&                      ProjectileSpawnMeshSlotName                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECrEnemyAttackType                      NewAttackType                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class UGameplayEffect>      NewDamageGameplayEffect                                (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewBuildingInfectionDamage                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewAllowedAttackDistance                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewAllowedAttackConeHalfAngle                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UCrAiActionShoot*                 ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCrAiActionShoot* UCrAiActionShoot::Create_CrAiActionShoot(TSubclassOf<class UCrAiActionShoot> ActionType, float NewMaxLifetimeS, TSubclassOf<class ACrAiProjectileActor> PooledProjectileType_0, const struct FVector& StartLocation_0, const struct FVector& EndLocation_0, float ArcParam_0, float GravityOverride_0, float ShootVelocityVariance, const class FName& ProjectileSpawnMeshSlotName, ECrEnemyAttackType NewAttackType, TSubclassOf<class UGameplayEffect> NewDamageGameplayEffect, float NewBuildingInfectionDamage, float NewAllowedAttackDistance, float NewAllowedAttackConeHalfAngle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrAiActionShoot", "Create_CrAiActionShoot");
-
-	Params::CrAiActionShoot_Create_CrAiActionShoot Parms{};
-
-	Parms.ActionType = ActionType;
-	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
-	Parms.PooledProjectileType_0 = PooledProjectileType_0;
-	Parms.StartLocation_0 = std::move(StartLocation_0);
-	Parms.EndLocation_0 = std::move(EndLocation_0);
-	Parms.ArcParam_0 = ArcParam_0;
-	Parms.GravityOverride_0 = GravityOverride_0;
-	Parms.ShootVelocityVariance = ShootVelocityVariance;
-	Parms.ProjectileSpawnMeshSlotName = ProjectileSpawnMeshSlotName;
-	Parms.NewAttackType = NewAttackType;
-	Parms.NewDamageGameplayEffect = NewDamageGameplayEffect;
-	Parms.NewBuildingInfectionDamage = NewBuildingInfectionDamage;
-	Parms.NewAllowedAttackDistance = NewAllowedAttackDistance;
-	Parms.NewAllowedAttackConeHalfAngle = NewAllowedAttackConeHalfAngle;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionShoot.OnShootAnimEvent
-// (Native, Public)
-// Parameters:
-// class AActor*                           AiActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    OverrideSocketName                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrAiActionShoot::OnShootAnimEvent(class AActor* AiActor, const class FString& OverrideSocketName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrAiActionShoot", "OnShootAnimEvent");
-
-	Params::CrAiActionShoot_OnShootAnimEvent Parms{};
-
-	Parms.AiActor = AiActor;
-	Parms.OverrideSocketName = std::move(OverrideSocketName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionShoot.OnShootAnimEventOnClient
-// (Native, Public)
-// Parameters:
-// class AActor*                           AiActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    OverrideSocketName                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrAiActionShoot::OnShootAnimEventOnClient(class AActor* AiActor, const class FString& OverrideSocketName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrAiActionShoot", "OnShootAnimEventOnClient");
-
-	Params::CrAiActionShoot_OnShootAnimEventOnClient Parms{};
-
-	Parms.AiActor = AiActor;
-	Parms.OverrideSocketName = std::move(OverrideSocketName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionShootPreparedProjectile.Create_CrAiActionShootPreparedProjectile
-// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UCrAiActionShootPreparedProjectile>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class ACrAiProjectileActor> NewPooledProjectileType                                (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   NewStartLocation                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   NewEndLocation                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewArcParam                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewGravityOverride                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewShootVelocityVariance                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FName&                      NewProjectileSpawnMeshSlotName                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECrEnemyAttackType                      NewAttackType                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class UGameplayEffect>      NewDamageGameplayEffect                                (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewBuildingInfectionDamage                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewAllowedAttackDistance                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewAllowedAttackConeHalfAngle                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UCrAiActionShootPreparedProjectile*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCrAiActionShootPreparedProjectile* UCrAiActionShootPreparedProjectile::Create_CrAiActionShootPreparedProjectile(TSubclassOf<class UCrAiActionShootPreparedProjectile> ActionType, float NewMaxLifetimeS, TSubclassOf<class ACrAiProjectileActor> NewPooledProjectileType, const struct FVector& NewStartLocation, const struct FVector& NewEndLocation, float NewArcParam, float NewGravityOverride, float NewShootVelocityVariance, const class FName& NewProjectileSpawnMeshSlotName, ECrEnemyAttackType NewAttackType, TSubclassOf<class UGameplayEffect> NewDamageGameplayEffect, float NewBuildingInfectionDamage, float NewAllowedAttackDistance, float NewAllowedAttackConeHalfAngle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrAiActionShootPreparedProjectile", "Create_CrAiActionShootPreparedProjectile");
-
-	Params::CrAiActionShootPreparedProjectile_Create_CrAiActionShootPreparedProjectile Parms{};
-
-	Parms.ActionType = ActionType;
-	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
-	Parms.NewPooledProjectileType = NewPooledProjectileType;
-	Parms.NewStartLocation = std::move(NewStartLocation);
-	Parms.NewEndLocation = std::move(NewEndLocation);
-	Parms.NewArcParam = NewArcParam;
-	Parms.NewGravityOverride = NewGravityOverride;
-	Parms.NewShootVelocityVariance = NewShootVelocityVariance;
-	Parms.NewProjectileSpawnMeshSlotName = NewProjectileSpawnMeshSlotName;
-	Parms.NewAttackType = NewAttackType;
-	Parms.NewDamageGameplayEffect = NewDamageGameplayEffect;
-	Parms.NewBuildingInfectionDamage = NewBuildingInfectionDamage;
-	Parms.NewAllowedAttackDistance = NewAllowedAttackDistance;
-	Parms.NewAllowedAttackConeHalfAngle = NewAllowedAttackConeHalfAngle;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionShowMesh.Create_CrAiActionShowMesh
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UCrAiActionShowMesh>  ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UCrAiActionShowMesh*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCrAiActionShowMesh* UCrAiActionShowMesh::Create_CrAiActionShowMesh(TSubclassOf<class UCrAiActionShowMesh> ActionType, float NewMaxLifetimeS)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrAiActionShowMesh", "Create_CrAiActionShowMesh");
-
-	Params::CrAiActionShowMesh_Create_CrAiActionShowMesh Parms{};
-
-	Parms.ActionType = ActionType;
-	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionShowProjectileAndPrepareForLaunch.Create_CrAiActionShowProjectileAndPrepareForLaunch
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UCrAiActionShowProjectileAndPrepareForLaunch>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class ACrAiProjectileActor> PooledProjectileType_0                                 (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FName&                      ProjectileAttachMeshSlotName_0                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECrEnemyAttackType                      NewAttackType                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UCrAiActionShowProjectileAndPrepareForLaunch*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCrAiActionShowProjectileAndPrepareForLaunch* UCrAiActionShowProjectileAndPrepareForLaunch::Create_CrAiActionShowProjectileAndPrepareForLaunch(TSubclassOf<class UCrAiActionShowProjectileAndPrepareForLaunch> ActionType, float NewMaxLifetimeS, TSubclassOf<class ACrAiProjectileActor> PooledProjectileType_0, const class FName& ProjectileAttachMeshSlotName_0, ECrEnemyAttackType NewAttackType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrAiActionShowProjectileAndPrepareForLaunch", "Create_CrAiActionShowProjectileAndPrepareForLaunch");
-
-	Params::CrAiActionShowProjectileAndPrepareForLaunch_Create_CrAiActionShowProjectileAndPrepareForLaunch Parms{};
-
-	Parms.ActionType = ActionType;
-	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
-	Parms.PooledProjectileType_0 = PooledProjectileType_0;
-	Parms.ProjectileAttachMeshSlotName_0 = ProjectileAttachMeshSlotName_0;
-	Parms.NewAttackType = NewAttackType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionShowProjectileAndPrepareForLaunch.OnAnimFinished
-// (Final, Native, Public)
-// Parameters:
-// class AActor*                           Actor                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECrEnemyLocomotionType                  CrEnemyLocomotion                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECrEnemyAttackType                      CrEnemyAttack                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECrEnemyJumpState                       CrEnemyJumpState                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrAiActionShowProjectileAndPrepareForLaunch::OnAnimFinished(class AActor* Actor, ECrEnemyLocomotionType CrEnemyLocomotion, ECrEnemyAttackType CrEnemyAttack, ECrEnemyJumpState CrEnemyJumpState)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrAiActionShowProjectileAndPrepareForLaunch", "OnAnimFinished");
-
-	Params::CrAiActionShowProjectileAndPrepareForLaunch_OnAnimFinished Parms{};
-
-	Parms.Actor = Actor;
-	Parms.CrEnemyLocomotion = CrEnemyLocomotion;
-	Parms.CrEnemyAttack = CrEnemyAttack;
-	Parms.CrEnemyJumpState = CrEnemyJumpState;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionShowProjectileAndPrepareForLaunch.OnShootAnimEvent
-// (Final, Native, Public)
-// Parameters:
-// class AActor*                           AiActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    OverrideSocketName                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrAiActionShowProjectileAndPrepareForLaunch::OnShootAnimEvent(class AActor* AiActor, const class FString& OverrideSocketName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrAiActionShowProjectileAndPrepareForLaunch", "OnShootAnimEvent");
-
-	Params::CrAiActionShowProjectileAndPrepareForLaunch_OnShootAnimEvent Parms{};
-
-	Parms.AiActor = AiActor;
-	Parms.OverrideSocketName = std::move(OverrideSocketName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionShowProjectileAndPrepareForLaunch.OnShootAnimEventOnClient
-// (Final, Native, Public)
-// Parameters:
-// class AActor*                           AiActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    OverrideSocketName                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrAiActionShowProjectileAndPrepareForLaunch::OnShootAnimEventOnClient(class AActor* AiActor, const class FString& OverrideSocketName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrAiActionShowProjectileAndPrepareForLaunch", "OnShootAnimEventOnClient");
-
-	Params::CrAiActionShowProjectileAndPrepareForLaunch_OnShootAnimEventOnClient Parms{};
-
-	Parms.AiActor = AiActor;
-	Parms.OverrideSocketName = std::move(OverrideSocketName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionSignalEntity.Create_CrAiActionSignalEntity
-// (Final, Native, Static, Public)
-// Parameters:
-// TSubclassOf<class UCrAiActionSignalEntity>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FMassNetworkID&            NetworkID_0                                            (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FMassEntityHandle&         EntityHandle_0                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             SignalName_0                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UCrAiActionSignalEntity*          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCrAiActionSignalEntity* UCrAiActionSignalEntity::Create_CrAiActionSignalEntity(TSubclassOf<class UCrAiActionSignalEntity> ActionType, float NewMaxLifetimeS, const struct FMassNetworkID& NetworkID_0, const struct FMassEntityHandle& EntityHandle_0, class FName SignalName_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrAiActionSignalEntity", "Create_CrAiActionSignalEntity");
-
-	Params::CrAiActionSignalEntity_Create_CrAiActionSignalEntity Parms{};
-
-	Parms.ActionType = ActionType;
-	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
-	Parms.NetworkID_0 = std::move(NetworkID_0);
-	Parms.EntityHandle_0 = std::move(EntityHandle_0);
-	Parms.SignalName_0 = SignalName_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionSpawnAnimation.Create_CrAiActionSpawnAnimation
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UCrAiActionPlayAnimation>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECrEnemyLocomotionType                  NewLocomotionState                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bNewWaitForAnimFinishEvent                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bNewNewFinishImmediately                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bNewKeepRotatedToMovement                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECrEnemySpawnType                       InSpawnType                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UCrAiActionSpawnAnimation*        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCrAiActionSpawnAnimation* UCrAiActionSpawnAnimation::Create_CrAiActionSpawnAnimation(TSubclassOf<class UCrAiActionPlayAnimation> ActionType, float NewMaxLifetimeS, ECrEnemyLocomotionType NewLocomotionState, bool bNewWaitForAnimFinishEvent, bool bNewNewFinishImmediately, bool bNewKeepRotatedToMovement, ECrEnemySpawnType InSpawnType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrAiActionSpawnAnimation", "Create_CrAiActionSpawnAnimation");
-
-	Params::CrAiActionSpawnAnimation_Create_CrAiActionSpawnAnimation Parms{};
-
-	Parms.ActionType = ActionType;
-	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
-	Parms.NewLocomotionState = NewLocomotionState;
-	Parms.bNewWaitForAnimFinishEvent = bNewWaitForAnimFinishEvent;
-	Parms.bNewNewFinishImmediately = bNewNewFinishImmediately;
-	Parms.bNewKeepRotatedToMovement = bNewKeepRotatedToMovement;
-	Parms.InSpawnType = InSpawnType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionSpawnEnemyEntity.Create_CrAiActionSpawnEnemyEntity
-// (Final, Native, Static, Public, HasDefaults)
-// Parameters:
-// TSubclassOf<class UCrAiActionSpawnEnemyEntity>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FGameplayTagContainer&     AiType_0                                               (Parm, NativeAccessSpecifierPublic)
-// const struct FTransform&                SpawnTransform_0                                       (Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bInstantSpawn_0                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FMassEntityHandle&         ForcedTarget_0                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UCrAiActionSpawnEnemyEntity*      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCrAiActionSpawnEnemyEntity* UCrAiActionSpawnEnemyEntity::Create_CrAiActionSpawnEnemyEntity(TSubclassOf<class UCrAiActionSpawnEnemyEntity> ActionType, float NewMaxLifetimeS, const struct FGameplayTagContainer& AiType_0, const struct FTransform& SpawnTransform_0, bool bInstantSpawn_0, const struct FMassEntityHandle& ForcedTarget_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrAiActionSpawnEnemyEntity", "Create_CrAiActionSpawnEnemyEntity");
-
-	Params::CrAiActionSpawnEnemyEntity_Create_CrAiActionSpawnEnemyEntity Parms{};
-
-	Parms.ActionType = ActionType;
-	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
-	Parms.AiType_0 = std::move(AiType_0);
-	Parms.SpawnTransform_0 = std::move(SpawnTransform_0);
-	Parms.bInstantSpawn_0 = bInstantSpawn_0;
-	Parms.ForcedTarget_0 = std::move(ForcedTarget_0);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiActionTaunt.Create_CrAiActionTaunt
-// (Final, Native, Static, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UCrAiActionPlayAnimation>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECrEnemyLocomotionType                  NewLocomotionState                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bNewWaitForAnimFinishEvent                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bNewFinishImmediately                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bNewKeepRotatedToMovement                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const TArray<ECrEnemyTauntType>&        NewAvailableTauntTypes                                 (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
-// class UCrAiActionTaunt*                 ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCrAiActionTaunt* UCrAiActionTaunt::Create_CrAiActionTaunt(TSubclassOf<class UCrAiActionPlayAnimation> ActionType, float NewMaxLifetimeS, ECrEnemyLocomotionType NewLocomotionState, bool bNewWaitForAnimFinishEvent, bool bNewFinishImmediately, bool bNewKeepRotatedToMovement, const TArray<ECrEnemyTauntType>& NewAvailableTauntTypes)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("CrAiActionTaunt", "Create_CrAiActionTaunt");
-
-	Params::CrAiActionTaunt_Create_CrAiActionTaunt Parms{};
-
-	Parms.ActionType = ActionType;
-	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
-	Parms.NewLocomotionState = NewLocomotionState;
-	Parms.bNewWaitForAnimFinishEvent = bNewWaitForAnimFinishEvent;
-	Parms.bNewFinishImmediately = bNewFinishImmediately;
-	Parms.bNewKeepRotatedToMovement = bNewKeepRotatedToMovement;
-	Parms.NewAvailableTauntTypes = std::move(NewAvailableTauntTypes);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiPcgNavlinkSubsystem.InitNavlinkSubsystem
-// (Final, Native, Protected)
-
-void UCrAiPcgNavlinkSubsystem::InitNavlinkSubsystem()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrAiPcgNavlinkSubsystem", "InitNavlinkSubsystem");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiPcgNavlinkSubsystem.OnTileGenerated
-// (Final, Native, Protected)
-// Parameters:
-// int32                                   X                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Y                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ETileGenerationType                     TileGenerationType                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrAiPcgNavlinkSubsystem::OnTileGenerated(int32 X, int32 Y, ETileGenerationType TileGenerationType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrAiPcgNavlinkSubsystem", "OnTileGenerated");
-
-	Params::CrAiPcgNavlinkSubsystem_OnTileGenerated Parms{};
-
-	Parms.X = X;
-	Parms.Y = Y;
-	Parms.TileGenerationType = TileGenerationType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAiPcgNavlinkSubsystem.GetNavmeshEdgeData
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   MaxMoveInsideNavmeshOffset                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   MinMoveInsideNavmeshOffset                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   DistanceBetweenPoints                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   PosX                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   PosY                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TArray<struct FVector>*                 Points                                                 (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-// TArray<struct FVector>*                 Directions                                             (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-
-void UCrAiPcgNavlinkSubsystem::GetNavmeshEdgeData(float MaxMoveInsideNavmeshOffset, float MinMoveInsideNavmeshOffset, float DistanceBetweenPoints, int32 PosX, int32 PosY, TArray<struct FVector>* Points, TArray<struct FVector>* Directions) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrAiPcgNavlinkSubsystem", "GetNavmeshEdgeData");
-
-	Params::CrAiPcgNavlinkSubsystem_GetNavmeshEdgeData Parms{};
-
-	Parms.MaxMoveInsideNavmeshOffset = MaxMoveInsideNavmeshOffset;
-	Parms.MinMoveInsideNavmeshOffset = MinMoveInsideNavmeshOffset;
-	Parms.DistanceBetweenPoints = DistanceBetweenPoints;
-	Parms.PosX = PosX;
-	Parms.PosY = PosY;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (Points != nullptr)
-		*Points = std::move(Parms.Points);
-
-	if (Directions != nullptr)
-		*Directions = std::move(Parms.Directions);
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.CrAnimNotify_RunAiAction.CreateAiAction
-// (Native, Event, Public, BlueprintEvent, Const)
-// Parameters:
-// class AActor*                           Actor                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UCrAiAction*                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UCrAiAction* UCrAnimNotify_RunAiAction::CreateAiAction(class AActor* Actor) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrAnimNotify_RunAiAction", "CreateAiAction");
-
-	Params::CrAnimNotify_RunAiAction_CreateAiAction Parms{};
-
-	Parms.Actor = Actor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.BanCurrentTarget
-// (Native, Public)
-
-void IMassEnemyActor::BanCurrentTarget()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "BanCurrentTarget");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.ClearFocus
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// int32                                   FocusPriority                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyActor::ClearFocus(int32 FocusPriority)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "ClearFocus");
-
-	Params::MassEnemyActor_ClearFocus Parms{};
-
-	Parms.FocusPriority = FocusPriority;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.ClearYawRotationRatePriority
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// uint8                                   Priority                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyActor::ClearYawRotationRatePriority(uint8 Priority)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "ClearYawRotationRatePriority");
-
-	Params::MassEnemyActor_ClearYawRotationRatePriority Parms{};
-
-	Parms.Priority = Priority;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.GetArcParamOverride
-// (Native, Public)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float IMassEnemyActor::GetArcParamOverride()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "GetArcParamOverride");
-
-	Params::MassEnemyActor_GetArcParamOverride Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.GetFocusPosition
-// (Native, Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FVector IMassEnemyActor::GetFocusPosition()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "GetFocusPosition");
-
-	Params::MassEnemyActor_GetFocusPosition Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.GetMassEnemyInitializationState
-// (Native, Public)
-// Parameters:
-// EMassEnemyInitializationState           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EMassEnemyInitializationState IMassEnemyActor::GetMassEnemyInitializationState()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "GetMassEnemyInitializationState");
-
-	Params::MassEnemyActor_GetMassEnemyInitializationState Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.IsMovementBlocked
-// (Native, Public)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool IMassEnemyActor::IsMovementBlocked()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "IsMovementBlocked");
-
-	Params::MassEnemyActor_IsMovementBlocked Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.IsRotationBlocked
-// (Native, Public)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool IMassEnemyActor::IsRotationBlocked()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "IsRotationBlocked");
-
-	Params::MassEnemyActor_IsRotationBlocked Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.NotifyAnimationFinished
-// (Native, Public)
-
-void IMassEnemyActor::NotifyAnimationFinished()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "NotifyAnimationFinished");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.OnAnimationFinished
-// (Native, Public)
-// Parameters:
-// ECrEnemyLocomotionType                  LocomotionType                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECrEnemyAttackType                      AttackType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECrEnemyJumpState                       JumpState                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyActor::OnAnimationFinished(ECrEnemyLocomotionType LocomotionType, ECrEnemyAttackType AttackType, ECrEnemyJumpState JumpState)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "OnAnimationFinished");
-
-	Params::MassEnemyActor_OnAnimationFinished Parms{};
-
-	Parms.LocomotionType = LocomotionType;
-	Parms.AttackType = AttackType;
-	Parms.JumpState = JumpState;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.OnAttackAnimationFinished
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// ECrEnemyAttackType                      AttackType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyActor::OnAttackAnimationFinished(ECrEnemyAttackType AttackType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "OnAttackAnimationFinished");
-
-	Params::MassEnemyActor_OnAttackAnimationFinished Parms{};
-
-	Parms.AttackType = AttackType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.OnBeforeRepresentationChanged
-// (Native, Public)
-
-void IMassEnemyActor::OnBeforeRepresentationChanged()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "OnBeforeRepresentationChanged");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.OnDamageReceived
-// (Native, Public, HasOutParams, HasDefaults)
-// Parameters:
-// const struct FVector&                   HitWorldPosition                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   HitDirection                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bIsWeakpointDamage                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyActor::OnDamageReceived(const struct FVector& HitWorldPosition, const struct FVector& HitDirection, bool bIsWeakpointDamage)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "OnDamageReceived");
-
-	Params::MassEnemyActor_OnDamageReceived Parms{};
-
-	Parms.HitWorldPosition = std::move(HitWorldPosition);
-	Parms.HitDirection = std::move(HitDirection);
-	Parms.bIsWeakpointDamage = bIsWeakpointDamage;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.OnDealDamageAnimationEvent
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// ECrEnemyAttackType                      AttackType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyActor::OnDealDamageAnimationEvent(ECrEnemyAttackType AttackType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "OnDealDamageAnimationEvent");
-
-	Params::MassEnemyActor_OnDealDamageAnimationEvent Parms{};
-
-	Parms.AttackType = AttackType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.OnJumpedAnimationEvent
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-
-void IMassEnemyActor::OnJumpedAnimationEvent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "OnJumpedAnimationEvent");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.OnLandedAnimationEvent
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-
-void IMassEnemyActor::OnLandedAnimationEvent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "OnLandedAnimationEvent");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.OnShootAnimationEvent
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const class FString&                    OverrideSocketName                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyActor::OnShootAnimationEvent(const class FString& OverrideSocketName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "OnShootAnimationEvent");
-
-	Params::MassEnemyActor_OnShootAnimationEvent Parms{};
-
-	Parms.OverrideSocketName = std::move(OverrideSocketName);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetActorSyncData
-// (Native, Public)
-// Parameters:
-// const struct FMassEnemyAnimationSyncData&ActorSyncData                                          (Parm, NoDestructor, NativeAccessSpecifierPublic)
-
-void IMassEnemyActor::SetActorSyncData(const struct FMassEnemyAnimationSyncData& ActorSyncData)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetActorSyncData");
-
-	Params::MassEnemyActor_SetActorSyncData Parms{};
-
-	Parms.ActorSyncData = std::move(ActorSyncData);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetAggroFlare
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-
-void IMassEnemyActor::SetAggroFlare()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetAggroFlare");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetArcParamOverride
-// (Native, Public)
-// Parameters:
-// float                                   NewForcedArcParam                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyActor::SetArcParamOverride(float NewForcedArcParam)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetArcParamOverride");
-
-	Params::MassEnemyActor_SetArcParamOverride Parms{};
-
-	Parms.NewForcedArcParam = NewForcedArcParam;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetAttackType
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// ECrEnemyAttackType                      AttackType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyActor::SetAttackType(ECrEnemyAttackType AttackType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetAttackType");
-
-	Params::MassEnemyActor_SetAttackType Parms{};
-
-	Parms.AttackType = AttackType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetBoostFlare
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-
-void IMassEnemyActor::SetBoostFlare()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetBoostFlare");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetDissolveProgress
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// float                                   Progress                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyActor::SetDissolveProgress(float Progress)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetDissolveProgress");
-
-	Params::MassEnemyActor_SetDissolveProgress Parms{};
-
-	Parms.Progress = Progress;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetFocusActor
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class AActor*                           NewFocusActor                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   FocusPriority                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyActor::SetFocusActor(class AActor* NewFocusActor, int32 FocusPriority)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetFocusActor");
-
-	Params::MassEnemyActor_SetFocusActor Parms{};
-
-	Parms.NewFocusActor = NewFocusActor;
-	Parms.FocusPriority = FocusPriority;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetFocusPosition
-// (Native, Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FVector&                   NewFocusPosition                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   FocusPriority                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyActor::SetFocusPosition(const struct FVector& NewFocusPosition, int32 FocusPriority)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetFocusPosition");
-
-	Params::MassEnemyActor_SetFocusPosition Parms{};
-
-	Parms.NewFocusPosition = std::move(NewFocusPosition);
-	Parms.FocusPriority = FocusPriority;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetGroundHitResult
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FHitResult&                HitResult                                              (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void IMassEnemyActor::SetGroundHitResult(const struct FHitResult& HitResult)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetGroundHitResult");
-
-	Params::MassEnemyActor_SetGroundHitResult Parms{};
-
-	Parms.HitResult = std::move(HitResult);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetHasAggroTarget
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    bNewHasAggroTarget                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyActor::SetHasAggroTarget(bool bNewHasAggroTarget)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetHasAggroTarget");
-
-	Params::MassEnemyActor_SetHasAggroTarget Parms{};
-
-	Parms.bNewHasAggroTarget = bNewHasAggroTarget;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetIsAggroEyeColor
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    NewIsAggro                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyActor::SetIsAggroEyeColor(bool NewIsAggro)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetIsAggroEyeColor");
-
-	Params::MassEnemyActor_SetIsAggroEyeColor Parms{};
-
-	Parms.NewIsAggro = NewIsAggro;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetIsBoostedEyeColor
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    NewIsBoosted                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyActor::SetIsBoostedEyeColor(bool NewIsBoosted)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetIsBoostedEyeColor");
-
-	Params::MassEnemyActor_SetIsBoostedEyeColor Parms{};
-
-	Parms.NewIsBoosted = NewIsBoosted;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetIsJumpEyeBehaviour
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    NewIsJumpEyeBehaviour                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyActor::SetIsJumpEyeBehaviour(bool NewIsJumpEyeBehaviour)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetIsJumpEyeBehaviour");
-
-	Params::MassEnemyActor_SetIsJumpEyeBehaviour Parms{};
-
-	Parms.NewIsJumpEyeBehaviour = NewIsJumpEyeBehaviour;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetIsTurnInPlaceActive
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    NewIsTurnInPlaceActive                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyActor::SetIsTurnInPlaceActive(bool NewIsTurnInPlaceActive)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetIsTurnInPlaceActive");
-
-	Params::MassEnemyActor_SetIsTurnInPlaceActive Parms{};
-
-	Parms.NewIsTurnInPlaceActive = NewIsTurnInPlaceActive;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetJumpLandAnimPlayRation
-// (Native, Public, HasOutParams)
-// Parameters:
-// const float&                            Time                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyActor::SetJumpLandAnimPlayRation(const float& Time)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetJumpLandAnimPlayRation");
-
-	Params::MassEnemyActor_SetJumpLandAnimPlayRation Parms{};
-
-	Parms.Time = Time;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetJumpLandVelocity
-// (Native, Public, HasOutParams, HasDefaults)
-// Parameters:
-// const struct FVector&                   LandVelocity                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyActor::SetJumpLandVelocity(const struct FVector& LandVelocity)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetJumpLandVelocity");
-
-	Params::MassEnemyActor_SetJumpLandVelocity Parms{};
-
-	Parms.LandVelocity = std::move(LandVelocity);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetJumpLaunchVelocity
-// (Native, Public, HasOutParams, HasDefaults)
-// Parameters:
-// const struct FVector&                   LaunchVelocity                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyActor::SetJumpLaunchVelocity(const struct FVector& LaunchVelocity)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetJumpLaunchVelocity");
-
-	Params::MassEnemyActor_SetJumpLaunchVelocity Parms{};
-
-	Parms.LaunchVelocity = std::move(LaunchVelocity);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetJumpState
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// ECrEnemyJumpState                       NewJumpState                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyActor::SetJumpState(ECrEnemyJumpState NewJumpState)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetJumpState");
-
-	Params::MassEnemyActor_SetJumpState Parms{};
-
-	Parms.NewJumpState = NewJumpState;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetJumpTime
-// (Native, Public, HasOutParams)
-// Parameters:
-// const float&                            Time                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyActor::SetJumpTime(const float& Time)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetJumpTime");
-
-	Params::MassEnemyActor_SetJumpTime Parms{};
-
-	Parms.Time = Time;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetLocomotionType
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// ECrEnemyLocomotionType                  NewLocomotionType                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECrEnemyLocomotionType                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-ECrEnemyLocomotionType IMassEnemyActor::SetLocomotionType(ECrEnemyLocomotionType NewLocomotionType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetLocomotionType");
-
-	Params::MassEnemyActor_SetLocomotionType Parms{};
-
-	Parms.NewLocomotionType = NewLocomotionType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetMassEnemyInitializationState
-// (Native, Public)
-// Parameters:
-// EMassEnemyInitializationState           InitializationState                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyActor::SetMassEnemyInitializationState(EMassEnemyInitializationState InitializationState)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetMassEnemyInitializationState");
-
-	Params::MassEnemyActor_SetMassEnemyInitializationState Parms{};
-
-	Parms.InitializationState = InitializationState;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetMassSpawnerFenceData
-// (Native, Public, HasOutParams, HasDefaults)
-// Parameters:
-// ECrSpawnFenceType                       FenceType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FBox&                      FenceBox                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyActor::SetMassSpawnerFenceData(ECrSpawnFenceType FenceType, const struct FBox& FenceBox)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetMassSpawnerFenceData");
-
-	Params::MassEnemyActor_SetMassSpawnerFenceData Parms{};
-
-	Parms.FenceType = FenceType;
-	Parms.FenceBox = std::move(FenceBox);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetMaxSpeed
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// float                                   NewMaxSpeed                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bUpdateAnimGraphMaxSpeed                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float IMassEnemyActor::SetMaxSpeed(float NewMaxSpeed, bool bUpdateAnimGraphMaxSpeed)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetMaxSpeed");
-
-	Params::MassEnemyActor_SetMaxSpeed Parms{};
-
-	Parms.NewMaxSpeed = NewMaxSpeed;
-	Parms.bUpdateAnimGraphMaxSpeed = bUpdateAnimGraphMaxSpeed;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetOrientRotationToMovement
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    NewOrientRotationToMovement                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyActor::SetOrientRotationToMovement(bool NewOrientRotationToMovement)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetOrientRotationToMovement");
-
-	Params::MassEnemyActor_SetOrientRotationToMovement Parms{};
-
-	Parms.NewOrientRotationToMovement = NewOrientRotationToMovement;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetSpawnType
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// ECrEnemySpawnType                       SpawnType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyActor::SetSpawnType(ECrEnemySpawnType SpawnType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetSpawnType");
-
-	Params::MassEnemyActor_SetSpawnType Parms{};
-
-	Parms.SpawnType = SpawnType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetTauntType
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// ECrEnemyTauntType                       TauntType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyActor::SetTauntType(ECrEnemyTauntType TauntType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetTauntType");
-
-	Params::MassEnemyActor_SetTauntType Parms{};
-
-	Parms.TauntType = TauntType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetVisibilityBasedAnimTickOption
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EVisibilityBasedAnimTickOption          NewVisiblityBvBasedAnimTickOption                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyActor::SetVisibilityBasedAnimTickOption(EVisibilityBasedAnimTickOption NewVisiblityBvBasedAnimTickOption)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetVisibilityBasedAnimTickOption");
-
-	Params::MassEnemyActor_SetVisibilityBasedAnimTickOption Parms{};
-
-	Parms.NewVisiblityBvBasedAnimTickOption = NewVisiblityBvBasedAnimTickOption;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetYawRotationRate
-// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// float                                   NewYawRotationRate                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// uint8                                   Priority                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Lifetime                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FName&                      DebugName                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyActor::SetYawRotationRate(float NewYawRotationRate, uint8 Priority, float Lifetime, const class FName& DebugName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetYawRotationRate");
-
-	Params::MassEnemyActor_SetYawRotationRate Parms{};
-
-	Parms.NewYawRotationRate = NewYawRotationRate;
-	Parms.Priority = Priority;
-	Parms.Lifetime = Lifetime;
-	Parms.DebugName = DebugName;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.GetIdleEyeColor
-// (Native, Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// struct FColor                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FColor IMassEnemyActor::GetIdleEyeColor() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "GetIdleEyeColor");
-
-	Params::MassEnemyActor_GetIdleEyeColor Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyAiController.GetNavAgentQueryExtent
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FVector AMassEnemyAiController::GetNavAgentQueryExtent() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyAiController", "GetNavAgentQueryExtent");
-
-	Params::MassEnemyAiController_GetNavAgentQueryExtent Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyAiSpawner.DespawnAll
-// (Final, Native, Public, BlueprintCallable)
-
-void AMassEnemyAiSpawner::DespawnAll()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyAiSpawner", "DespawnAll");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyAiSpawner.DisableActivationTrigger
-// (Native, Public, BlueprintCallable)
-
-void AMassEnemyAiSpawner::DisableActivationTrigger()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyAiSpawner", "DisableActivationTrigger");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyAiSpawner.DisableSpawning
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bPermanently                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMassEnemyAiSpawner::DisableSpawning(bool bPermanently)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyAiSpawner", "DisableSpawning");
-
-	Params::MassEnemyAiSpawner_DisableSpawning Parms{};
-
-	Parms.bPermanently = bPermanently;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyAiSpawner.EnableActivationTrigger
-// (Native, Public, BlueprintCallable)
-
-void AMassEnemyAiSpawner::EnableActivationTrigger()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyAiSpawner", "EnableActivationTrigger");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyAiSpawner.EnableSpawning
-// (Native, Public, BlueprintCallable)
-
-void AMassEnemyAiSpawner::EnableSpawning()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyAiSpawner", "EnableSpawning");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.AddAnimDebugData
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   Channel                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             Data                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Lifetime                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMassEnemyAnimationInstance::AddAnimDebugData(int32 Channel, class FName Data, float Lifetime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyAnimationInstance", "AddAnimDebugData");
-
-	Params::MassEnemyAnimationInstance_AddAnimDebugData Parms{};
-
-	Parms.Channel = Channel;
-	Parms.Data = Data;
-	Parms.Lifetime = Lifetime;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.BPOnAttackTypeChanged
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// ECrEnemyAttackType                      OldAttackType                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECrEnemyAttackType                      NewAttackType                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMassEnemyAnimationInstance::BPOnAttackTypeChanged(ECrEnemyAttackType OldAttackType, ECrEnemyAttackType NewAttackType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyAnimationInstance", "BPOnAttackTypeChanged");
-
-	Params::MassEnemyAnimationInstance_BPOnAttackTypeChanged Parms{};
-
-	Parms.OldAttackType = OldAttackType;
-	Parms.NewAttackType = NewAttackType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.BPOnDamageReceived
-// (Native, Event, Public, BlueprintEvent)
-
-void UMassEnemyAnimationInstance::BPOnDamageReceived()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyAnimationInstance", "BPOnDamageReceived");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.BPOnLocomotionTypeChanged
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// ECrEnemyLocomotionType                  OldLocomotionType                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECrEnemyLocomotionType                  NewLocomotionType                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMassEnemyAnimationInstance::BPOnLocomotionTypeChanged(ECrEnemyLocomotionType OldLocomotionType, ECrEnemyLocomotionType NewLocomotionType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyAnimationInstance", "BPOnLocomotionTypeChanged");
-
-	Params::MassEnemyAnimationInstance_BPOnLocomotionTypeChanged Parms{};
-
-	Parms.OldLocomotionType = OldLocomotionType;
-	Parms.NewLocomotionType = NewLocomotionType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.ClearAnimDebugDataChannel
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   Channel                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMassEnemyAnimationInstance::ClearAnimDebugDataChannel(int32 Channel)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyAnimationInstance", "ClearAnimDebugDataChannel");
-
-	Params::MassEnemyAnimationInstance_ClearAnimDebugDataChannel Parms{};
-
-	Parms.Channel = Channel;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.GetAnimationSyncData
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const struct FMassEnemyAnimationSyncDataReturnValue                                            (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-const struct FMassEnemyAnimationSyncData UMassEnemyAnimationInstance::GetAnimationSyncData()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyAnimationInstance", "GetAnimationSyncData");
-
-	Params::MassEnemyAnimationInstance_GetAnimationSyncData Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.InitWithAnimSyncData
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FMassEnemyAnimationSyncData&NewMassEnemyAnimationSyncData                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UMassEnemyAnimationInstance::InitWithAnimSyncData(const struct FMassEnemyAnimationSyncData& NewMassEnemyAnimationSyncData)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyAnimationInstance", "InitWithAnimSyncData");
-
-	Params::MassEnemyAnimationInstance_InitWithAnimSyncData Parms{};
-
-	Parms.NewMassEnemyAnimationSyncData = std::move(NewMassEnemyAnimationSyncData);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.NotifyAnimationFinished
-// (Final, Native, Public, BlueprintCallable)
-
-void UMassEnemyAnimationInstance::NotifyAnimationFinished()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyAnimationInstance", "NotifyAnimationFinished");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.NotifyAttackAnimationFinishedAnimEvent
-// (Final, Native, Protected, BlueprintCallable)
-
-void UMassEnemyAnimationInstance::NotifyAttackAnimationFinishedAnimEvent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyAnimationInstance", "NotifyAttackAnimationFinishedAnimEvent");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.NotifyDealDamageAnimationEvent
-// (Final, Native, Protected, BlueprintCallable)
-
-void UMassEnemyAnimationInstance::NotifyDealDamageAnimationEvent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyAnimationInstance", "NotifyDealDamageAnimationEvent");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.NotifyJumpedAnimationEvent
-// (Final, Native, Protected, BlueprintCallable)
-
-void UMassEnemyAnimationInstance::NotifyJumpedAnimationEvent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyAnimationInstance", "NotifyJumpedAnimationEvent");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.NotifyLandedAnimationEvent
-// (Final, Native, Protected, BlueprintCallable)
-
-void UMassEnemyAnimationInstance::NotifyLandedAnimationEvent()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyAnimationInstance", "NotifyLandedAnimationEvent");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.OnJumpTimeSet
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   Time                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMassEnemyAnimationInstance::OnJumpTimeSet(float Time)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyAnimationInstance", "OnJumpTimeSet");
-
-	Params::MassEnemyAnimationInstance_OnJumpTimeSet Parms{};
-
-	Parms.Time = Time;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.OnOwnerHit
-// (Native, Event, Public, BlueprintEvent)
-
-void UMassEnemyAnimationInstance::OnOwnerHit()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyAnimationInstance", "OnOwnerHit");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.ResetVertexAnimSyncData
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-
-void UMassEnemyAnimationInstance::ResetVertexAnimSyncData()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyAnimationInstance", "ResetVertexAnimSyncData");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.SetVertexAnimationState
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EMassEnemyVertexAnimState               VertexAnimState                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMassEnemyAnimationInstance::SetVertexAnimationState(EMassEnemyVertexAnimState VertexAnimState)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyAnimationInstance", "SetVertexAnimationState");
-
-	Params::MassEnemyAnimationInstance_SetVertexAnimationState Parms{};
-
-	Parms.VertexAnimState = VertexAnimState;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.UpdateYawRotationRateForAttackType
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// ECrEnemyAttackType                      OldAttackType                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECrEnemyAttackType                      NewAttackType                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMassEnemyAnimationInstance::UpdateYawRotationRateForAttackType(ECrEnemyAttackType OldAttackType, ECrEnemyAttackType NewAttackType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyAnimationInstance", "UpdateYawRotationRateForAttackType");
-
-	Params::MassEnemyAnimationInstance_UpdateYawRotationRateForAttackType Parms{};
-
-	Parms.OldAttackType = OldAttackType;
-	Parms.NewAttackType = NewAttackType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.UpdateYawRotationRateForLocomotionState
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// ECrEnemyLocomotionType                  OldLocomotionType                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECrEnemyLocomotionType                  NewLocomotionType                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMassEnemyAnimationInstance::UpdateYawRotationRateForLocomotionState(ECrEnemyLocomotionType OldLocomotionType, ECrEnemyLocomotionType NewLocomotionType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyAnimationInstance", "UpdateYawRotationRateForLocomotionState");
-
-	Params::MassEnemyAnimationInstance_UpdateYawRotationRateForLocomotionState Parms{};
-
-	Parms.OldLocomotionType = OldLocomotionType;
-	Parms.NewLocomotionType = NewLocomotionType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.BanCurrentTarget
-// (Native, Public, BlueprintCallable)
-
-void AMassEnemyCharacterBase::BanCurrentTarget()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "BanCurrentTarget");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.GetMassEnemyInitializationState
-// (Native, Public, BlueprintCallable)
-// Parameters:
-// EMassEnemyInitializationState           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EMassEnemyInitializationState AMassEnemyCharacterBase::GetMassEnemyInitializationState()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "GetMassEnemyInitializationState");
-
-	Params::MassEnemyCharacterBase_GetMassEnemyInitializationState Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.Multicast_OnAiDied
-// (Net, NetReliable, Native, Event, NetMulticast, Public, BlueprintCallable)
-// Parameters:
-// const struct FHitResult&                HitResult                                              (ConstParm, Parm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// const struct FGameplayTag&              KillingDamageTag                                       (ConstParm, Parm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMassEnemyCharacterBase::Multicast_OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "Multicast_OnAiDied");
-
-	Params::MassEnemyCharacterBase_Multicast_OnAiDied Parms{};
-
-	Parms.HitResult = std::move(HitResult);
-	Parms.KillingDamageTag = std::move(KillingDamageTag);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.Multicast_StartDeathSequence
-// (Net, NetReliable, Native, Event, NetMulticast, Public, BlueprintCallable)
-// Parameters:
-// const struct FCrAiDeathSequenceParameters&DeathSequenceParameters                                (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void AMassEnemyCharacterBase::Multicast_StartDeathSequence(const struct FCrAiDeathSequenceParameters& DeathSequenceParameters)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "Multicast_StartDeathSequence");
-
-	Params::MassEnemyCharacterBase_Multicast_StartDeathSequence Parms{};
-
-	Parms.DeathSequenceParameters = std::move(DeathSequenceParameters);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.NotifyAggroTargetChanged
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bHasAggroTarget                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bSetAggroFlare                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMassEnemyCharacterBase::NotifyAggroTargetChanged(bool bHasAggroTarget, bool bSetAggroFlare)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "NotifyAggroTargetChanged");
-
-	Params::MassEnemyCharacterBase_NotifyAggroTargetChanged Parms{};
-
-	Parms.bHasAggroTarget = bHasAggroTarget;
-	Parms.bSetAggroFlare = bSetAggroFlare;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.NotifyNearbyPlayerCharactersAboutSpawn
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AMassEnemyCharacterBase::NotifyNearbyPlayerCharactersAboutSpawn()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "NotifyNearbyPlayerCharactersAboutSpawn");
-
-	Params::MassEnemyCharacterBase_NotifyNearbyPlayerCharactersAboutSpawn Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnAggroTargetChange
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bHasAggroTarget                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMassEnemyCharacterBase::OnAggroTargetChange(bool bHasAggroTarget)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "OnAggroTargetChange");
-
-	Params::MassEnemyCharacterBase_OnAggroTargetChange Parms{};
-
-	Parms.bHasAggroTarget = bHasAggroTarget;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnAiDied
-// (Native, Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// const struct FHitResult&                HitResult                                              (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// const struct FGameplayTag&              KillingDamageTag                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMassEnemyCharacterBase::OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "OnAiDied");
-
-	Params::MassEnemyCharacterBase_OnAiDied Parms{};
-
-	Parms.HitResult = std::move(HitResult);
-	Parms.KillingDamageTag = std::move(KillingDamageTag);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnBeforeRepresentationChanged
-// (Net, Native, Event, NetMulticast, Public)
-
-void AMassEnemyCharacterBase::OnBeforeRepresentationChanged()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "OnBeforeRepresentationChanged");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnBlackboardConfigured
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// class UMassEnemyDataAsset*              Config                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMassEnemyCharacterBase::OnBlackboardConfigured(class UMassEnemyDataAsset* Config)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "OnBlackboardConfigured");
-
-	Params::MassEnemyCharacterBase_OnBlackboardConfigured Parms{};
-
-	Parms.Config = Config;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnDamage
-// (Native, Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// class AActor*                           Actor                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FHitResult&                HitResult                                              (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// float                                   InDamage                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMassEnemyCharacterBase::OnDamage(class AActor* Actor, const struct FHitResult& HitResult, float InDamage)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "OnDamage");
-
-	Params::MassEnemyCharacterBase_OnDamage Parms{};
-
-	Parms.Actor = Actor;
-	Parms.HitResult = std::move(HitResult);
-	Parms.InDamage = InDamage;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnDiedFromGas
-// (Event, Protected, HasOutParams, BlueprintEvent)
-// Parameters:
-// const struct FHitResult&                LastHit                                                (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// const struct FGameplayTag&              KillingDamageTag                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMassEnemyCharacterBase::OnDiedFromGas(const struct FHitResult& LastHit, const struct FGameplayTag& KillingDamageTag)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "OnDiedFromGas");
-
-	Params::MassEnemyCharacterBase_OnDiedFromGas Parms{};
-
-	Parms.LastHit = std::move(LastHit);
-	Parms.KillingDamageTag = std::move(KillingDamageTag);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnDissolveValueSet
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// float                                   NewDissolveProgress                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMassEnemyCharacterBase::OnDissolveValueSet(float NewDissolveProgress)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "OnDissolveValueSet");
-
-	Params::MassEnemyCharacterBase_OnDissolveValueSet Parms{};
-
-	Parms.NewDissolveProgress = NewDissolveProgress;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnEyeStateColorGradientChanged
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// float                                   NewGetEyeStateColorGradientCoord                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMassEnemyCharacterBase::OnEyeStateColorGradientChanged(float NewGetEyeStateColorGradientCoord)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "OnEyeStateColorGradientChanged");
-
-	Params::MassEnemyCharacterBase_OnEyeStateColorGradientChanged Parms{};
-
-	Parms.NewGetEyeStateColorGradientCoord = NewGetEyeStateColorGradientCoord;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnPrepareForGame
-// (Event, Public, BlueprintEvent)
-
-void AMassEnemyCharacterBase::OnPrepareForGame()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "OnPrepareForGame");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnPrepareForPooling
-// (Event, Public, BlueprintEvent)
-
-void AMassEnemyCharacterBase::OnPrepareForPooling()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "OnPrepareForPooling");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnRep_Dissolve
-// (Final, Native, Protected)
-
-void AMassEnemyCharacterBase::OnRep_Dissolve()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "OnRep_Dissolve");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnRep_EyeStateColorGradientCoord
-// (Final, Native, Protected)
-
-void AMassEnemyCharacterBase::OnRep_EyeStateColorGradientCoord()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "OnRep_EyeStateColorGradientCoord");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnRep_InitializationState
-// (Final, Native, Public)
-
-void AMassEnemyCharacterBase::OnRep_InitializationState()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "OnRep_InitializationState");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnRep_IsInPool
-// (Final, Native, Public)
-
-void AMassEnemyCharacterBase::OnRep_IsInPool()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "OnRep_IsInPool");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnRep_UniformScale
-// (Final, Native, Protected)
-
-void AMassEnemyCharacterBase::OnRep_UniformScale()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "OnRep_UniformScale");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnRep_VisualVariation
-// (Final, Native, Protected)
-
-void AMassEnemyCharacterBase::OnRep_VisualVariation()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "OnRep_VisualVariation");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnStartDeathSequence
-// (Native, Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// const struct FCrAiDeathSequenceParameters&DeathSequenceParameters                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void AMassEnemyCharacterBase::OnStartDeathSequence(const struct FCrAiDeathSequenceParameters& DeathSequenceParameters)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "OnStartDeathSequence");
-
-	Params::MassEnemyCharacterBase_OnStartDeathSequence Parms{};
-
-	Parms.DeathSequenceParameters = std::move(DeathSequenceParameters);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnVisualVariationChanged
-// (Native, Event, Public, HasOutParams, HasDefaults, BlueprintEvent)
-// Parameters:
-// const struct FVector&                   NewVisualVariationSeed                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMassEnemyCharacterBase::OnVisualVariationChanged(const struct FVector& NewVisualVariationSeed)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "OnVisualVariationChanged");
-
-	Params::MassEnemyCharacterBase_OnVisualVariationChanged Parms{};
-
-	Parms.NewVisualVariationSeed = std::move(NewVisualVariationSeed);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.PostSetupPooledActorData
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bNewIsInPool                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMassEnemyCharacterBase::PostSetupPooledActorData(bool bNewIsInPool)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "PostSetupPooledActorData");
-
-	Params::MassEnemyCharacterBase_PostSetupPooledActorData Parms{};
-
-	Parms.bNewIsInPool = bNewIsInPool;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.ServerOnLanded_Multicast
-// (Net, NetReliable, Native, Event, NetMulticast, Protected)
-
-void AMassEnemyCharacterBase::ServerOnLanded_Multicast()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "ServerOnLanded_Multicast");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.SetDynamicMaterial
-// (Final, Native, Protected, BlueprintCallable)
-// Parameters:
-// int32                                   MeshMaterialIndex                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UMaterialInterface*               NewMaterial                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMassEnemyCharacterBase::SetDynamicMaterial(int32 MeshMaterialIndex, class UMaterialInterface* NewMaterial)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "SetDynamicMaterial");
-
-	Params::MassEnemyCharacterBase_SetDynamicMaterial Parms{};
-
-	Parms.MeshMaterialIndex = MeshMaterialIndex;
-	Parms.NewMaterial = NewMaterial;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.SetMaterialParameterFloatValue
-// (Final, Native, Protected, HasOutParams, BlueprintCallable)
-// Parameters:
-// int32                                   MeshMaterialIndex                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FName&                      ParameterName                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AMassEnemyCharacterBase::SetMaterialParameterFloatValue(int32 MeshMaterialIndex, const class FName& ParameterName, float NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "SetMaterialParameterFloatValue");
-
-	Params::MassEnemyCharacterBase_SetMaterialParameterFloatValue Parms{};
-
-	Parms.MeshMaterialIndex = MeshMaterialIndex;
-	Parms.ParameterName = ParameterName;
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.DealDamageToCurrentAggroTarget
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AMassEnemyCharacterBase::DealDamageToCurrentAggroTarget() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "DealDamageToCurrentAggroTarget");
-
-	Params::MassEnemyCharacterBase_DealDamageToCurrentAggroTarget Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.GetActiveFenceBox
-// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FBox                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FBox AMassEnemyCharacterBase::GetActiveFenceBox() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "GetActiveFenceBox");
-
-	Params::MassEnemyCharacterBase_GetActiveFenceBox Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.GetAiTag
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// struct FGameplayTag                     ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FGameplayTag AMassEnemyCharacterBase::GetAiTag() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "GetAiTag");
-
-	Params::MassEnemyCharacterBase_GetAiTag Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.GetDamageReceivedInTime
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   Times                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float AMassEnemyCharacterBase::GetDamageReceivedInTime(float Times) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "GetDamageReceivedInTime");
-
-	Params::MassEnemyCharacterBase_GetDamageReceivedInTime Parms{};
-
-	Parms.Times = Times;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.GetTargetEntity
-// (Final, Native, Public, Const)
-// Parameters:
-// struct FMassEntityHandle                ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FMassEntityHandle AMassEnemyCharacterBase::GetTargetEntity() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "GetTargetEntity");
-
-	Params::MassEnemyCharacterBase_GetTargetEntity Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.HasAttackSlotForActor
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECrAttackSlotType                       AttackSlotType                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   RequestLifetime                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AMassEnemyCharacterBase::HasAttackSlotForActor(class AActor* Target, ECrAttackSlotType AttackSlotType, float RequestLifetime) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "HasAttackSlotForActor");
-
-	Params::MassEnemyCharacterBase_HasAttackSlotForActor Parms{};
-
-	Parms.Target = Target;
-	Parms.AttackSlotType = AttackSlotType;
-	Parms.RequestLifetime = RequestLifetime;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.IsAnyDamageRegisteredInTime
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   Times                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AMassEnemyCharacterBase::IsAnyDamageRegisteredInTime(float Times) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "IsAnyDamageRegisteredInTime");
-
-	Params::MassEnemyCharacterBase_IsAnyDamageRegisteredInTime Parms{};
-
-	Parms.Times = Times;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.IsInActiveFence
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AMassEnemyCharacterBase::IsInActiveFence() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "IsInActiveFence");
-
-	Params::MassEnemyCharacterBase_IsInActiveFence Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnMeshVisibilityUpdated
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent, Const)
-// Parameters:
-// bool                                    bIsMeshHidden                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AMassEnemyCharacterBase::OnMeshVisibilityUpdated(bool bIsMeshHidden) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "OnMeshVisibilityUpdated");
-
-	Params::MassEnemyCharacterBase_OnMeshVisibilityUpdated Parms{};
-
-	Parms.bIsMeshHidden = bIsMeshHidden;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnRep_SpawnType
-// (Final, Native, Protected, Const)
-
-void AMassEnemyCharacterBase::OnRep_SpawnType() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyCharacterBase", "OnRep_SpawnType");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetAllowedAttackConeHalfAngle
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// float                                   NewAttackConeHalfAngle                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyDamageInterface::SetAllowedAttackConeHalfAngle(float NewAttackConeHalfAngle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "SetAllowedAttackConeHalfAngle");
-
-	Params::MassEnemyDamageInterface_SetAllowedAttackConeHalfAngle Parms{};
-
-	Parms.NewAttackConeHalfAngle = NewAttackConeHalfAngle;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetAllowedAttackDistance
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// float                                   NewAttackDistance                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyDamageInterface::SetAllowedAttackDistance(float NewAttackDistance)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "SetAllowedAttackDistance");
-
-	Params::MassEnemyDamageInterface_SetAllowedAttackDistance Parms{};
-
-	Parms.NewAttackDistance = NewAttackDistance;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetAllowedBuildingAttackDistance
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// float                                   NewAttackDistance                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyDamageInterface::SetAllowedBuildingAttackDistance(float NewAttackDistance)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "SetAllowedBuildingAttackDistance");
-
-	Params::MassEnemyDamageInterface_SetAllowedBuildingAttackDistance Parms{};
-
-	Parms.NewAttackDistance = NewAttackDistance;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetAttackTargetPosition
-// (Native, Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const struct FVector&                   NewAttackTargetPosition                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyDamageInterface::SetAttackTargetPosition(const struct FVector& NewAttackTargetPosition)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "SetAttackTargetPosition");
-
-	Params::MassEnemyDamageInterface_SetAttackTargetPosition Parms{};
-
-	Parms.NewAttackTargetPosition = std::move(NewAttackTargetPosition);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetBuildingInfectionDamage
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// float                                   NewBuildingInfectionDamage                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyDamageInterface::SetBuildingInfectionDamage(float NewBuildingInfectionDamage)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "SetBuildingInfectionDamage");
-
-	Params::MassEnemyDamageInterface_SetBuildingInfectionDamage Parms{};
-
-	Parms.NewBuildingInfectionDamage = NewBuildingInfectionDamage;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetDamageGameplayEffect
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// TSubclassOf<class UGameplayEffect>      DamageEffect                                           (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyDamageInterface::SetDamageGameplayEffect(TSubclassOf<class UGameplayEffect> DamageEffect)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "SetDamageGameplayEffect");
-
-	Params::MassEnemyDamageInterface_SetDamageGameplayEffect Parms{};
-
-	Parms.DamageEffect = DamageEffect;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetAggroTargetActor
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class AActor* IMassEnemyDamageInterface::GetAggroTargetActor() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "GetAggroTargetActor");
-
-	Params::MassEnemyDamageInterface_GetAggroTargetActor Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetAllowedAttackConeHalfAngle
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float IMassEnemyDamageInterface::GetAllowedAttackConeHalfAngle() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "GetAllowedAttackConeHalfAngle");
-
-	Params::MassEnemyDamageInterface_GetAllowedAttackConeHalfAngle Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetAllowedAttackDistance
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float IMassEnemyDamageInterface::GetAllowedAttackDistance() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "GetAllowedAttackDistance");
-
-	Params::MassEnemyDamageInterface_GetAllowedAttackDistance Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetAllowedBuildingAttackDistance
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float IMassEnemyDamageInterface::GetAllowedBuildingAttackDistance() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "GetAllowedBuildingAttackDistance");
-
-	Params::MassEnemyDamageInterface_GetAllowedBuildingAttackDistance Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetAttackTargetPosition
-// (Native, Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FVector IMassEnemyDamageInterface::GetAttackTargetPosition() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "GetAttackTargetPosition");
-
-	Params::MassEnemyDamageInterface_GetAttackTargetPosition Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetBuildingInfectionDamage
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float IMassEnemyDamageInterface::GetBuildingInfectionDamage() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "GetBuildingInfectionDamage");
-
-	Params::MassEnemyDamageInterface_GetBuildingInfectionDamage Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetDamageGameplayEffect
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// TSubclassOf<class UGameplayEffect>      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-TSubclassOf<class UGameplayEffect> IMassEnemyDamageInterface::GetDamageGameplayEffect() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyDamageInterface", "GetDamageGameplayEffect");
-
-	Params::MassEnemyDamageInterface_GetDamageGameplayEffect Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyEntityCollisionIsmWrapperSubsystem.GetOrCreateEntityCollisionIsmWrapperActor
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const TSoftObjectPtr<class UStaticMesh>&CollisionSM                                            (ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AMassEnemyEntityCollisionIsmWrapperActor*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class AMassEnemyEntityCollisionIsmWrapperActor* UMassEnemyEntityCollisionIsmWrapperSubsystem::GetOrCreateEntityCollisionIsmWrapperActor(const class UObject* WorldContextObject, const TSoftObjectPtr<class UStaticMesh>& CollisionSM)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyEntityCollisionIsmWrapperSubsystem", "GetOrCreateEntityCollisionIsmWrapperActor");
-
-	Params::MassEnemyEntityCollisionIsmWrapperSubsystem_GetOrCreateEntityCollisionIsmWrapperActor Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-	Parms.CollisionSM = CollisionSM;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyEventQueueSubsystem.DealDamageToAiActor
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class UGameplayEffect>      AiDamageEffect                                         (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           AttackerActor                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMassEnemyEventQueueSubsystem::DealDamageToAiActor(TSubclassOf<class UGameplayEffect> AiDamageEffect, class AActor* AttackerActor, class AActor* TargetActor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyEventQueueSubsystem", "DealDamageToAiActor");
-
-	Params::MassEnemyEventQueueSubsystem_DealDamageToAiActor Parms{};
-
-	Parms.AiDamageEffect = AiDamageEffect;
-	Parms.AttackerActor = AttackerActor;
-	Parms.TargetActor = TargetActor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyEventQueueSubsystem.DealDamageToAiASC
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FGameplayEffectSpecHandle& SpecHandle                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// class UAbilitySystemComponent*          InstigatorASC                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UAbilitySystemComponent*          TargetASC                                              (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMassEnemyEventQueueSubsystem::DealDamageToAiASC(const struct FGameplayEffectSpecHandle& SpecHandle, class UAbilitySystemComponent* InstigatorASC, class UAbilitySystemComponent* TargetASC)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyEventQueueSubsystem", "DealDamageToAiASC");
-
-	Params::MassEnemyEventQueueSubsystem_DealDamageToAiASC Parms{};
-
-	Parms.SpecHandle = std::move(SpecHandle);
-	Parms.InstigatorASC = InstigatorASC;
-	Parms.TargetASC = TargetASC;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyEventQueueSubsystem.NotifyAiSpawn
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class ACrAIBase*                        SpawnedAiActor                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMassEnemyEventQueueSubsystem::NotifyAiSpawn(class ACrAIBase* SpawnedAiActor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyEventQueueSubsystem", "NotifyAiSpawn");
-
-	Params::MassEnemyEventQueueSubsystem_NotifyAiSpawn Parms{};
-
-	Parms.SpawnedAiActor = SpawnedAiActor;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyFXEventSubsystem.RegisterEvent
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const class AMassEnemyCharacterBase*    Character                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FGameplayTag&              EventTag                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMassEnemyFXEventSubsystem::RegisterEvent(const class AMassEnemyCharacterBase* Character, const struct FGameplayTag& EventTag)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemyFXEventSubsystem", "RegisterEvent");
-
-	Params::MassEnemyFXEventSubsystem_RegisterEvent Parms{};
-
-	Parms.Character = Character;
-	Parms.EventTag = std::move(EventTag);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemyPooledActorComponentInterface.OnPooledOwnerActivityChanged
-// (Native, Public)
-// Parameters:
-// bool                                    bNewEnabled                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IMassEnemyPooledActorComponentInterface::OnPooledOwnerActivityChanged(bool bNewEnabled)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("MassEnemyPooledActorComponentInterface", "OnPooledOwnerActivityChanged");
-
-	Params::MassEnemyPooledActorComponentInterface_OnPooledOwnerActivityChanged Parms{};
-
-	Parms.bNewEnabled = bNewEnabled;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemySpawnerTriggerSphere.OnSphereBeginOverlap
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FHitResult&                SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void UMassEnemySpawnerTriggerSphere::OnSphereBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemySpawnerTriggerSphere", "OnSphereBeginOverlap");
-
-	Params::MassEnemySpawnerTriggerSphere_OnSphereBeginOverlap Parms{};
-
-	Parms.OverlappedComponent = OverlappedComponent;
-	Parms.OtherActor = OtherActor;
-	Parms.OtherComp = OtherComp;
-	Parms.OtherBodyIndex = OtherBodyIndex;
-	Parms.bFromSweep = bFromSweep;
-	Parms.SweepResult = std::move(SweepResult);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemySpawnerTriggerSphere.OnSphereEndOverlap
-// (Final, Native, Public)
-// Parameters:
-// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMassEnemySpawnerTriggerSphere::OnSphereEndOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemySpawnerTriggerSphere", "OnSphereEndOverlap");
-
-	Params::MassEnemySpawnerTriggerSphere_OnSphereEndOverlap Parms{};
-
-	Parms.OverlappedComponent = OverlappedComponent;
-	Parms.OtherActor = OtherActor;
-	Parms.OtherComp = OtherComp;
-	Parms.OtherBodyIndex = OtherBodyIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemySpawnerTriggerBox.OnBoxBeginOverlap
-// (Final, Native, Public, HasOutParams)
-// Parameters:
-// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FHitResult&                SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void UMassEnemySpawnerTriggerBox::OnBoxBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemySpawnerTriggerBox", "OnBoxBeginOverlap");
-
-	Params::MassEnemySpawnerTriggerBox_OnBoxBeginOverlap Parms{};
-
-	Parms.OverlappedComponent = OverlappedComponent;
-	Parms.OtherActor = OtherActor;
-	Parms.OtherComp = OtherComp;
-	Parms.OtherBodyIndex = OtherBodyIndex;
-	Parms.bFromSweep = bFromSweep;
-	Parms.SweepResult = std::move(SweepResult);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemySpawnerTriggerBox.OnBoxEndOverlap
-// (Final, Native, Public)
-// Parameters:
-// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMassEnemySpawnerTriggerBox::OnBoxEndOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemySpawnerTriggerBox", "OnBoxEndOverlap");
-
-	Params::MassEnemySpawnerTriggerBox_OnBoxEndOverlap Parms{};
-
-	Parms.OverlappedComponent = OverlappedComponent;
-	Parms.OtherActor = OtherActor;
-	Parms.OtherComp = OtherComp;
-	Parms.OtherBodyIndex = OtherBodyIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemySpawnSubsystem.ClearDebugSpawnPreset
-// (Final, Native, Public, BlueprintCallable)
-
-void UMassEnemySpawnSubsystem::ClearDebugSpawnPreset()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemySpawnSubsystem", "ClearDebugSpawnPreset");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.MassEnemySpawnSubsystem.OnPreSaveStart
-// (Final, Native, Private)
-
-void UMassEnemySpawnSubsystem::OnPreSaveStart()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MassEnemySpawnSubsystem", "OnPreSaveStart");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.NavLinkGeneratorBox.QueuePcgGeneration
-// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
-// Parameters:
-// const struct FIntPoint&                 Request                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ANavLinkGeneratorBox::QueuePcgGeneration(const struct FIntPoint& Request)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("NavLinkGeneratorBox", "QueuePcgGeneration");
-
-	Params::NavLinkGeneratorBox_QueuePcgGeneration Parms{};
-
-	Parms.Request = std::move(Request);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.NavLinkGeneratorBox.StartPcgGeneration
-// (Final, Native, Public, BlueprintCallable)
-
-void ANavLinkGeneratorBox::StartPcgGeneration()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("NavLinkGeneratorBox", "StartPcgGeneration");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function MassAIPrototypeEnemyRuntime.NavLinkGeneratorBox.IsGenerating
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool ANavLinkGeneratorBox::IsGenerating() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("NavLinkGeneratorBox", "IsGenerating");
-
-	Params::NavLinkGeneratorBox_IsGenerating Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 
@@ -7733,6 +2872,6454 @@ bool UAiFunctionLibrary::TryStartRagdollForMassEnemy(class UMassEnemyEventQueueS
 
 	if (StateFragment != nullptr)
 		*StateFragment = std::move(Parms.StateFragment);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionDealAoeDamage.Create_CrAiDealAoeDamage
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UCrAiActionDealAoeDamage>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   AttackLocation_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   AttackRadius_0                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UGameplayEffect>      DamageGameplayEffect_0                                 (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UGameplayEffect>      DamageToAiGameplayEffect_0                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   BuildingInfectionDamage_0                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   MaxPushDistance_0                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   PushDuration_0                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   EnemyActorPushVelocity_0                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   EnemyEntityPushVelocity_0                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrAiActionDealAoeDamage*         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrAiActionDealAoeDamage* UCrAiActionDealAoeDamage::Create_CrAiDealAoeDamage(TSubclassOf<class UCrAiActionDealAoeDamage> ActionType, float NewMaxLifetimeS, const struct FVector& AttackLocation_0, float AttackRadius_0, TSubclassOf<class UGameplayEffect> DamageGameplayEffect_0, TSubclassOf<class UGameplayEffect> DamageToAiGameplayEffect_0, float BuildingInfectionDamage_0, float MaxPushDistance_0, float PushDuration_0, float EnemyActorPushVelocity_0, float EnemyEntityPushVelocity_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrAiActionDealAoeDamage", "Create_CrAiDealAoeDamage");
+
+	Params::CrAiActionDealAoeDamage_Create_CrAiDealAoeDamage Parms{};
+
+	Parms.ActionType = ActionType;
+	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
+	Parms.AttackLocation_0 = std::move(AttackLocation_0);
+	Parms.AttackRadius_0 = AttackRadius_0;
+	Parms.DamageGameplayEffect_0 = DamageGameplayEffect_0;
+	Parms.DamageToAiGameplayEffect_0 = DamageToAiGameplayEffect_0;
+	Parms.BuildingInfectionDamage_0 = BuildingInfectionDamage_0;
+	Parms.MaxPushDistance_0 = MaxPushDistance_0;
+	Parms.PushDuration_0 = PushDuration_0;
+	Parms.EnemyActorPushVelocity_0 = EnemyActorPushVelocity_0;
+	Parms.EnemyEntityPushVelocity_0 = EnemyEntityPushVelocity_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionDealDamage.Create_CrAiDealDamage
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UCrAiActionDealDamage>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           NewTarget                                              (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UGameplayEffect>      NewDamageGameplayEffect                                (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewBuildingInfectionDamage                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewAllowedAttackDistance                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewAllowedBuildingAttackDistance                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewAllowedAttackConeHalfAngle                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrAiActionDealDamage*            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrAiActionDealDamage* UCrAiActionDealDamage::Create_CrAiDealDamage(TSubclassOf<class UCrAiActionDealDamage> ActionType, float NewMaxLifetimeS, class AActor* NewTarget, TSubclassOf<class UGameplayEffect> NewDamageGameplayEffect, float NewBuildingInfectionDamage, float NewAllowedAttackDistance, float NewAllowedBuildingAttackDistance, float NewAllowedAttackConeHalfAngle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrAiActionDealDamage", "Create_CrAiDealDamage");
+
+	Params::CrAiActionDealDamage_Create_CrAiDealDamage Parms{};
+
+	Parms.ActionType = ActionType;
+	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
+	Parms.NewTarget = NewTarget;
+	Parms.NewDamageGameplayEffect = NewDamageGameplayEffect;
+	Parms.NewBuildingInfectionDamage = NewBuildingInfectionDamage;
+	Parms.NewAllowedAttackDistance = NewAllowedAttackDistance;
+	Parms.NewAllowedBuildingAttackDistance = NewAllowedBuildingAttackDistance;
+	Parms.NewAllowedAttackConeHalfAngle = NewAllowedAttackConeHalfAngle;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionDealLongAoeDamage.Create_CrAiDealLongAoeDamage
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UCrAiActionDealLongAoeDamage>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<struct FVector>&           AoePoints_0                                            (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// float                                   PushZDistance_0                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   AttackRadius_0                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UGameplayEffect>      DamageGameplayEffect_0                                 (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UGameplayEffect>      DamageToAiGameplayEffect_0                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   BuildingInfectionDamage_0                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   MaxPushDistance_0                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   PushDuration_0                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   EnemyActorPushVelocity_0                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   EnemyEntityPushVelocity_0                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrAiActionDealLongAoeDamage*     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrAiActionDealLongAoeDamage* UCrAiActionDealLongAoeDamage::Create_CrAiDealLongAoeDamage(TSubclassOf<class UCrAiActionDealLongAoeDamage> ActionType, float NewMaxLifetimeS, const TArray<struct FVector>& AoePoints_0, float PushZDistance_0, float AttackRadius_0, TSubclassOf<class UGameplayEffect> DamageGameplayEffect_0, TSubclassOf<class UGameplayEffect> DamageToAiGameplayEffect_0, float BuildingInfectionDamage_0, float MaxPushDistance_0, float PushDuration_0, float EnemyActorPushVelocity_0, float EnemyEntityPushVelocity_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrAiActionDealLongAoeDamage", "Create_CrAiDealLongAoeDamage");
+
+	Params::CrAiActionDealLongAoeDamage_Create_CrAiDealLongAoeDamage Parms{};
+
+	Parms.ActionType = ActionType;
+	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
+	Parms.AoePoints_0 = std::move(AoePoints_0);
+	Parms.PushZDistance_0 = PushZDistance_0;
+	Parms.AttackRadius_0 = AttackRadius_0;
+	Parms.DamageGameplayEffect_0 = DamageGameplayEffect_0;
+	Parms.DamageToAiGameplayEffect_0 = DamageToAiGameplayEffect_0;
+	Parms.BuildingInfectionDamage_0 = BuildingInfectionDamage_0;
+	Parms.MaxPushDistance_0 = MaxPushDistance_0;
+	Parms.PushDuration_0 = PushDuration_0;
+	Parms.EnemyActorPushVelocity_0 = EnemyActorPushVelocity_0;
+	Parms.EnemyEntityPushVelocity_0 = EnemyEntityPushVelocity_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionDissolve.Create_CrAiActionDissolve
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UCrAiActionDissolve>  ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrAiActionDissolve*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrAiActionDissolve* UCrAiActionDissolve::Create_CrAiActionDissolve(TSubclassOf<class UCrAiActionDissolve> ActionType, float NewMaxLifetimeS)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrAiActionDissolve", "Create_CrAiActionDissolve");
+
+	Params::CrAiActionDissolve_Create_CrAiActionDissolve Parms{};
+
+	Parms.ActionType = ActionType;
+	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionFinishMassAnim.Create_CrAiActionFinishMassAnim
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UCrAiActionFinishMassAnim>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bNewWaitForAnimFinishEvent                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bNewFinishImmediately                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bKeepRotatedToMovement_0                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrAiActionFinishMassAnim*        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrAiActionFinishMassAnim* UCrAiActionFinishMassAnim::Create_CrAiActionFinishMassAnim(TSubclassOf<class UCrAiActionFinishMassAnim> ActionType, float NewMaxLifetimeS, bool bNewWaitForAnimFinishEvent, bool bNewFinishImmediately, bool bKeepRotatedToMovement_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrAiActionFinishMassAnim", "Create_CrAiActionFinishMassAnim");
+
+	Params::CrAiActionFinishMassAnim_Create_CrAiActionFinishMassAnim Parms{};
+
+	Parms.ActionType = ActionType;
+	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
+	Parms.bNewWaitForAnimFinishEvent = bNewWaitForAnimFinishEvent;
+	Parms.bNewFinishImmediately = bNewFinishImmediately;
+	Parms.bKeepRotatedToMovement_0 = bKeepRotatedToMovement_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionFinishMassAnim.OnAnimFinished
+// (Final, Native, Public)
+// Parameters:
+// class AActor*                           AiActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrEnemyLocomotionType                  NewLocomotionType                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrEnemyAttackType                      NewAttackType                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrEnemyJumpState                       NewJumpState                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrAiActionFinishMassAnim::OnAnimFinished(class AActor* AiActor, ECrEnemyLocomotionType NewLocomotionType, ECrEnemyAttackType NewAttackType, ECrEnemyJumpState NewJumpState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrAiActionFinishMassAnim", "OnAnimFinished");
+
+	Params::CrAiActionFinishMassAnim_OnAnimFinished Parms{};
+
+	Parms.AiActor = AiActor;
+	Parms.NewLocomotionType = NewLocomotionType;
+	Parms.NewAttackType = NewAttackType;
+	Parms.NewJumpState = NewJumpState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionHitReaction.Create_CrAiActionHitReaction
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UCrAiActionHitReaction>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   NewHitWorldPosition_0                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   NewHitDirection                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bNewIsWeakpointDamage                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrAiActionHitReaction*           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrAiActionHitReaction* UCrAiActionHitReaction::Create_CrAiActionHitReaction(TSubclassOf<class UCrAiActionHitReaction> ActionType, float NewMaxLifetimeS, const struct FVector& NewHitWorldPosition_0, const struct FVector& NewHitDirection, bool bNewIsWeakpointDamage)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrAiActionHitReaction", "Create_CrAiActionHitReaction");
+
+	Params::CrAiActionHitReaction_Create_CrAiActionHitReaction Parms{};
+
+	Parms.ActionType = ActionType;
+	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
+	Parms.NewHitWorldPosition_0 = std::move(NewHitWorldPosition_0);
+	Parms.NewHitDirection = std::move(NewHitDirection);
+	Parms.bNewIsWeakpointDamage = bNewIsWeakpointDamage;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionJumpAttack.Create_CrAiActionJumpAttack
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UCrAiActionAttack>    ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrEnemyAttackType                      NewAttackType                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bNewWaitForAnimFinishEvent                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UGameplayEffect>      NewDamageGameplayEffect                                (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewBuildingInfectionDamage                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewAllowedAttackDistance                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewAllowedAttackConeHalfAngle                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    NewKeepRotatedToMovement                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewJumpArcParam01                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewExpectedJumpDuration                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewJumpAttackFocusPriority                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewMinJumpVelocity                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewMaxJumpVelocity                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewMaxPushDistance                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewPushDuration                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrAiActionJumpAttack*            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrAiActionJumpAttack* UCrAiActionJumpAttack::Create_CrAiActionJumpAttack(TSubclassOf<class UCrAiActionAttack> ActionType, float NewMaxLifetimeS, ECrEnemyAttackType NewAttackType, bool bNewWaitForAnimFinishEvent, TSubclassOf<class UGameplayEffect> NewDamageGameplayEffect, float NewBuildingInfectionDamage, float NewAllowedAttackDistance, float NewAllowedAttackConeHalfAngle, bool NewKeepRotatedToMovement, float NewJumpArcParam01, float NewExpectedJumpDuration, float NewJumpAttackFocusPriority, float NewMinJumpVelocity, float NewMaxJumpVelocity, float NewMaxPushDistance, float NewPushDuration)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrAiActionJumpAttack", "Create_CrAiActionJumpAttack");
+
+	Params::CrAiActionJumpAttack_Create_CrAiActionJumpAttack Parms{};
+
+	Parms.ActionType = ActionType;
+	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
+	Parms.NewAttackType = NewAttackType;
+	Parms.bNewWaitForAnimFinishEvent = bNewWaitForAnimFinishEvent;
+	Parms.NewDamageGameplayEffect = NewDamageGameplayEffect;
+	Parms.NewBuildingInfectionDamage = NewBuildingInfectionDamage;
+	Parms.NewAllowedAttackDistance = NewAllowedAttackDistance;
+	Parms.NewAllowedAttackConeHalfAngle = NewAllowedAttackConeHalfAngle;
+	Parms.NewKeepRotatedToMovement = NewKeepRotatedToMovement;
+	Parms.NewJumpArcParam01 = NewJumpArcParam01;
+	Parms.NewExpectedJumpDuration = NewExpectedJumpDuration;
+	Parms.NewJumpAttackFocusPriority = NewJumpAttackFocusPriority;
+	Parms.NewMinJumpVelocity = NewMinJumpVelocity;
+	Parms.NewMaxJumpVelocity = NewMaxJumpVelocity;
+	Parms.NewMaxPushDistance = NewMaxPushDistance;
+	Parms.NewPushDuration = NewPushDuration;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionJumpAttack.OnCharacterMovementLanded
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// class AActor*                           AiActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void UCrAiActionJumpAttack::OnCharacterMovementLanded(class AActor* AiActor, const struct FHitResult& Hit)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrAiActionJumpAttack", "OnCharacterMovementLanded");
+
+	Params::CrAiActionJumpAttack_OnCharacterMovementLanded Parms{};
+
+	Parms.AiActor = AiActor;
+	Parms.Hit = std::move(Hit);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionJumpAttack.OnCharacterMovementLanded_Client
+// (Final, Native, Public)
+// Parameters:
+// class AActor*                           AiActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrAiActionJumpAttack::OnCharacterMovementLanded_Client(class AActor* AiActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrAiActionJumpAttack", "OnCharacterMovementLanded_Client");
+
+	Params::CrAiActionJumpAttack_OnCharacterMovementLanded_Client Parms{};
+
+	Parms.AiActor = AiActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionJumpAttack.OnOwnerHit
+// (Final, Native, Public, HasOutParams, HasDefaults)
+// Parameters:
+// class AActor*                           AiActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   NormalImpulse                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void UCrAiActionJumpAttack::OnOwnerHit(class AActor* AiActor, class AActor* OtherActor, const struct FVector& NormalImpulse, const struct FHitResult& Hit)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrAiActionJumpAttack", "OnOwnerHit");
+
+	Params::CrAiActionJumpAttack_OnOwnerHit Parms{};
+
+	Parms.AiActor = AiActor;
+	Parms.OtherActor = OtherActor;
+	Parms.NormalImpulse = std::move(NormalImpulse);
+	Parms.Hit = std::move(Hit);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiMovementAttackInstigator.GetMovementAttackStage
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EMovementAttackStage                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EMovementAttackStage ICrAiMovementAttackInstigator::GetMovementAttackStage()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"GetMovementAttackStage", FnName));
+
+	Params::CrAiMovementAttackInstigator_GetMovementAttackStage Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiMovementAttackInstigator.SetMovementAttackStage
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EMovementAttackStage                    MovementAttackStage                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ICrAiMovementAttackInstigator::SetMovementAttackStage(EMovementAttackStage MovementAttackStage)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"SetMovementAttackStage", FnName));
+
+	Params::CrAiMovementAttackInstigator_SetMovementAttackStage Parms{};
+
+	Parms.MovementAttackStage = MovementAttackStage;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionMovementAttack.Create_CrAiActionMovementAttack
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UCrAiActionMovementAttack>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrEnemyAttackType                      NewAttackType                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bNewWaitForAnimFinishEvent                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UGameplayEffect>      NewDamageGameplayEffect                                (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewBuildingInfectionDamage                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewAllowedAttackDistance                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewAllowedAttackConeHalfAngle                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bNewKeepRotatedToMovement                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewMovementSpeed                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   NewMidAnimLoopsNum                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrAiActionMovementAttack*        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrAiActionMovementAttack* UCrAiActionMovementAttack::Create_CrAiActionMovementAttack(TSubclassOf<class UCrAiActionMovementAttack> ActionType, float NewMaxLifetimeS, ECrEnemyAttackType NewAttackType, bool bNewWaitForAnimFinishEvent, TSubclassOf<class UGameplayEffect> NewDamageGameplayEffect, float NewBuildingInfectionDamage, float NewAllowedAttackDistance, float NewAllowedAttackConeHalfAngle, bool bNewKeepRotatedToMovement, float NewMovementSpeed, int32 NewMidAnimLoopsNum)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrAiActionMovementAttack", "Create_CrAiActionMovementAttack");
+
+	Params::CrAiActionMovementAttack_Create_CrAiActionMovementAttack Parms{};
+
+	Parms.ActionType = ActionType;
+	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
+	Parms.NewAttackType = NewAttackType;
+	Parms.bNewWaitForAnimFinishEvent = bNewWaitForAnimFinishEvent;
+	Parms.NewDamageGameplayEffect = NewDamageGameplayEffect;
+	Parms.NewBuildingInfectionDamage = NewBuildingInfectionDamage;
+	Parms.NewAllowedAttackDistance = NewAllowedAttackDistance;
+	Parms.NewAllowedAttackConeHalfAngle = NewAllowedAttackConeHalfAngle;
+	Parms.bNewKeepRotatedToMovement = bNewKeepRotatedToMovement;
+	Parms.NewMovementSpeed = NewMovementSpeed;
+	Parms.NewMidAnimLoopsNum = NewMidAnimLoopsNum;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionMoveTo.Create_CrAiActionMoveTo
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UCrAiActionMoveTo>    ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FCrAiActionDataMovement&   NewMovementActionData                                  (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// ECrEnemyLocomotionType                  LocomotionType                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrAiActionMoveTo*                ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrAiActionMoveTo* UCrAiActionMoveTo::Create_CrAiActionMoveTo(TSubclassOf<class UCrAiActionMoveTo> ActionType, float NewMaxLifetimeS, const struct FCrAiActionDataMovement& NewMovementActionData, ECrEnemyLocomotionType LocomotionType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrAiActionMoveTo", "Create_CrAiActionMoveTo");
+
+	Params::CrAiActionMoveTo_Create_CrAiActionMoveTo Parms{};
+
+	Parms.ActionType = ActionType;
+	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
+	Parms.NewMovementActionData = std::move(NewMovementActionData);
+	Parms.LocomotionType = LocomotionType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionMoveTo.OnEnterNavlink
+// (Final, Native, Public, HasDefaults)
+// Parameters:
+// class AActor*                           AiActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Start                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   End                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrAiActionMoveTo::OnEnterNavlink(class AActor* AiActor, const struct FVector& Start, const struct FVector& End)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrAiActionMoveTo", "OnEnterNavlink");
+
+	Params::CrAiActionMoveTo_OnEnterNavlink Parms{};
+
+	Parms.AiActor = AiActor;
+	Parms.Start = std::move(Start);
+	Parms.End = std::move(End);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionMoveTo.OnNavlikJumpEnded
+// (Final, Native, Public)
+// Parameters:
+// class UCrAiAction*                      Action                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrAiActionMoveTo::OnNavlikJumpEnded(class UCrAiAction* Action)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrAiActionMoveTo", "OnNavlikJumpEnded");
+
+	Params::CrAiActionMoveTo_OnNavlikJumpEnded Parms{};
+
+	Parms.Action = Action;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionPlayAnimation.Create_CrAiActionPlayAnimation
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UCrAiActionPlayAnimation>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrEnemyLocomotionType                  NewLocomotionState                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bWaitForAnimFinishEvent_0                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bNewFinishImmediately                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bKeepRotatedToMovement_0                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrAiActionPlayAnimation*         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrAiActionPlayAnimation* UCrAiActionPlayAnimation::Create_CrAiActionPlayAnimation(TSubclassOf<class UCrAiActionPlayAnimation> ActionType, float NewMaxLifetimeS, ECrEnemyLocomotionType NewLocomotionState, bool bWaitForAnimFinishEvent_0, bool bNewFinishImmediately, bool bKeepRotatedToMovement_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrAiActionPlayAnimation", "Create_CrAiActionPlayAnimation");
+
+	Params::CrAiActionPlayAnimation_Create_CrAiActionPlayAnimation Parms{};
+
+	Parms.ActionType = ActionType;
+	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
+	Parms.NewLocomotionState = NewLocomotionState;
+	Parms.bWaitForAnimFinishEvent_0 = bWaitForAnimFinishEvent_0;
+	Parms.bNewFinishImmediately = bNewFinishImmediately;
+	Parms.bKeepRotatedToMovement_0 = bKeepRotatedToMovement_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionRotateToFocus.Create_CrAiActionRotateToFocus
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UCrAiActionRotateToFocus>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewThresholdAngleDeg                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrAiActionRotateToFocus*         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrAiActionRotateToFocus* UCrAiActionRotateToFocus::Create_CrAiActionRotateToFocus(TSubclassOf<class UCrAiActionRotateToFocus> ActionType, float NewMaxLifetimeS, float NewThresholdAngleDeg)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrAiActionRotateToFocus", "Create_CrAiActionRotateToFocus");
+
+	Params::CrAiActionRotateToFocus_Create_CrAiActionRotateToFocus Parms{};
+
+	Parms.ActionType = ActionType;
+	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
+	Parms.NewThresholdAngleDeg = NewThresholdAngleDeg;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionSetEyeState.Create_CrAiActionSetEyeState
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UCrAiActionSetEyeState>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bModifyIsAggro_0                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bIsAggro_0                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bModifyIsBoosted_0                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bIsBoosted_0                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bModifyIsJumpWindup_0                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bIsJumpWindup_0                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bIsAggroFlare_0                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bIsBoostFlare_0                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrAiActionSetEyeState*           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrAiActionSetEyeState* UCrAiActionSetEyeState::Create_CrAiActionSetEyeState(TSubclassOf<class UCrAiActionSetEyeState> ActionType, float NewMaxLifetimeS, bool bModifyIsAggro_0, bool bIsAggro_0, bool bModifyIsBoosted_0, bool bIsBoosted_0, bool bModifyIsJumpWindup_0, bool bIsJumpWindup_0, bool bIsAggroFlare_0, bool bIsBoostFlare_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrAiActionSetEyeState", "Create_CrAiActionSetEyeState");
+
+	Params::CrAiActionSetEyeState_Create_CrAiActionSetEyeState Parms{};
+
+	Parms.ActionType = ActionType;
+	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
+	Parms.bModifyIsAggro_0 = bModifyIsAggro_0;
+	Parms.bIsAggro_0 = bIsAggro_0;
+	Parms.bModifyIsBoosted_0 = bModifyIsBoosted_0;
+	Parms.bIsBoosted_0 = bIsBoosted_0;
+	Parms.bModifyIsJumpWindup_0 = bModifyIsJumpWindup_0;
+	Parms.bIsJumpWindup_0 = bIsJumpWindup_0;
+	Parms.bIsAggroFlare_0 = bIsAggroFlare_0;
+	Parms.bIsBoostFlare_0 = bIsBoostFlare_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionSetFocus.Create_CrAiActionSetFocus
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UCrAiActionSetFocus>  ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bNewClearFocus                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           NewFocusActor                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   NewFocusPosition                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   NewFocusPriority                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrAiActionSetFocus*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrAiActionSetFocus* UCrAiActionSetFocus::Create_CrAiActionSetFocus(TSubclassOf<class UCrAiActionSetFocus> ActionType, float NewMaxLifetimeS, bool bNewClearFocus, class AActor* NewFocusActor, const struct FVector& NewFocusPosition, int32 NewFocusPriority)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrAiActionSetFocus", "Create_CrAiActionSetFocus");
+
+	Params::CrAiActionSetFocus_Create_CrAiActionSetFocus Parms{};
+
+	Parms.ActionType = ActionType;
+	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
+	Parms.bNewClearFocus = bNewClearFocus;
+	Parms.NewFocusActor = NewFocusActor;
+	Parms.NewFocusPosition = std::move(NewFocusPosition);
+	Parms.NewFocusPriority = NewFocusPriority;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionSetHasAggroTarget.Create_CrAiActionSetHasAggroTarget
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UCrAiActionSetHasAggroTarget>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bHasAggroTarget_0                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrAiActionSetHasAggroTarget*     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrAiActionSetHasAggroTarget* UCrAiActionSetHasAggroTarget::Create_CrAiActionSetHasAggroTarget(TSubclassOf<class UCrAiActionSetHasAggroTarget> ActionType, float NewMaxLifetimeS, bool bHasAggroTarget_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrAiActionSetHasAggroTarget", "Create_CrAiActionSetHasAggroTarget");
+
+	Params::CrAiActionSetHasAggroTarget_Create_CrAiActionSetHasAggroTarget Parms{};
+
+	Parms.ActionType = ActionType;
+	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
+	Parms.bHasAggroTarget_0 = bHasAggroTarget_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionShoot.Create_CrAiActionShoot
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UCrAiActionShoot>     ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class ACrAiProjectileActor> PooledProjectileType_0                                 (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   StartLocation_0                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   EndLocation_0                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ArcParam_0                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   GravityOverride_0                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ShootVelocityVariance                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      ProjectileSpawnMeshSlotName                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrEnemyAttackType                      NewAttackType                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class UGameplayEffect>      NewDamageGameplayEffect                                (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewBuildingInfectionDamage                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewAllowedAttackDistance                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewAllowedAttackConeHalfAngle                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bClampToMaxShootAngles_0                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ShootHorizontalMaxAngle_0                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ShootVerticalMaxAngle_0                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bUseActualTargetActorLocation_0                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           TargetActor_0                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrAiActionShoot*                 ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrAiActionShoot* UCrAiActionShoot::Create_CrAiActionShoot(TSubclassOf<class UCrAiActionShoot> ActionType, float NewMaxLifetimeS, TSubclassOf<class ACrAiProjectileActor> PooledProjectileType_0, const struct FVector& StartLocation_0, const struct FVector& EndLocation_0, float ArcParam_0, float GravityOverride_0, float ShootVelocityVariance, const class FName& ProjectileSpawnMeshSlotName, ECrEnemyAttackType NewAttackType, TSubclassOf<class UGameplayEffect> NewDamageGameplayEffect, float NewBuildingInfectionDamage, float NewAllowedAttackDistance, float NewAllowedAttackConeHalfAngle, bool bClampToMaxShootAngles_0, float ShootHorizontalMaxAngle_0, float ShootVerticalMaxAngle_0, bool bUseActualTargetActorLocation_0, class AActor* TargetActor_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrAiActionShoot", "Create_CrAiActionShoot");
+
+	Params::CrAiActionShoot_Create_CrAiActionShoot Parms{};
+
+	Parms.ActionType = ActionType;
+	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
+	Parms.PooledProjectileType_0 = PooledProjectileType_0;
+	Parms.StartLocation_0 = std::move(StartLocation_0);
+	Parms.EndLocation_0 = std::move(EndLocation_0);
+	Parms.ArcParam_0 = ArcParam_0;
+	Parms.GravityOverride_0 = GravityOverride_0;
+	Parms.ShootVelocityVariance = ShootVelocityVariance;
+	Parms.ProjectileSpawnMeshSlotName = ProjectileSpawnMeshSlotName;
+	Parms.NewAttackType = NewAttackType;
+	Parms.NewDamageGameplayEffect = NewDamageGameplayEffect;
+	Parms.NewBuildingInfectionDamage = NewBuildingInfectionDamage;
+	Parms.NewAllowedAttackDistance = NewAllowedAttackDistance;
+	Parms.NewAllowedAttackConeHalfAngle = NewAllowedAttackConeHalfAngle;
+	Parms.bClampToMaxShootAngles_0 = bClampToMaxShootAngles_0;
+	Parms.ShootHorizontalMaxAngle_0 = ShootHorizontalMaxAngle_0;
+	Parms.ShootVerticalMaxAngle_0 = ShootVerticalMaxAngle_0;
+	Parms.bUseActualTargetActorLocation_0 = bUseActualTargetActorLocation_0;
+	Parms.TargetActor_0 = TargetActor_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionShoot.OnShootAnimEvent
+// (Native, Public)
+// Parameters:
+// class AActor*                           AiActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    OverrideSocketName                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrAiActionShoot::OnShootAnimEvent(class AActor* AiActor, const class FString& OverrideSocketName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrAiActionShoot", "OnShootAnimEvent");
+
+	Params::CrAiActionShoot_OnShootAnimEvent Parms{};
+
+	Parms.AiActor = AiActor;
+	Parms.OverrideSocketName = std::move(OverrideSocketName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionShoot.OnShootAnimEventOnClient
+// (Native, Public)
+// Parameters:
+// class AActor*                           AiActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    OverrideSocketName                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrAiActionShoot::OnShootAnimEventOnClient(class AActor* AiActor, const class FString& OverrideSocketName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrAiActionShoot", "OnShootAnimEventOnClient");
+
+	Params::CrAiActionShoot_OnShootAnimEventOnClient Parms{};
+
+	Parms.AiActor = AiActor;
+	Parms.OverrideSocketName = std::move(OverrideSocketName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionShowMesh.Create_CrAiActionShowMesh
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UCrAiActionShowMesh>  ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrAiActionShowMesh*              ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrAiActionShowMesh* UCrAiActionShowMesh::Create_CrAiActionShowMesh(TSubclassOf<class UCrAiActionShowMesh> ActionType, float NewMaxLifetimeS)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrAiActionShowMesh", "Create_CrAiActionShowMesh");
+
+	Params::CrAiActionShowMesh_Create_CrAiActionShowMesh Parms{};
+
+	Parms.ActionType = ActionType;
+	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionSignalEntity.Create_CrAiActionSignalEntity
+// (Final, Native, Static, Public)
+// Parameters:
+// TSubclassOf<class UCrAiActionSignalEntity>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FMassNetworkID&            NetworkID_0                                            (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FMassEntityHandle&         EntityHandle_0                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             SignalName_0                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrAiActionSignalEntity*          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrAiActionSignalEntity* UCrAiActionSignalEntity::Create_CrAiActionSignalEntity(TSubclassOf<class UCrAiActionSignalEntity> ActionType, float NewMaxLifetimeS, const struct FMassNetworkID& NetworkID_0, const struct FMassEntityHandle& EntityHandle_0, class FName SignalName_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrAiActionSignalEntity", "Create_CrAiActionSignalEntity");
+
+	Params::CrAiActionSignalEntity_Create_CrAiActionSignalEntity Parms{};
+
+	Parms.ActionType = ActionType;
+	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
+	Parms.NetworkID_0 = std::move(NetworkID_0);
+	Parms.EntityHandle_0 = std::move(EntityHandle_0);
+	Parms.SignalName_0 = SignalName_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionSpawnAnimation.Create_CrAiActionSpawnAnimation
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UCrAiActionPlayAnimation>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrEnemyLocomotionType                  NewLocomotionState                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bNewWaitForAnimFinishEvent                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bNewNewFinishImmediately                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bNewKeepRotatedToMovement                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrEnemySpawnType                       InSpawnType                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrAiActionSpawnAnimation*        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrAiActionSpawnAnimation* UCrAiActionSpawnAnimation::Create_CrAiActionSpawnAnimation(TSubclassOf<class UCrAiActionPlayAnimation> ActionType, float NewMaxLifetimeS, ECrEnemyLocomotionType NewLocomotionState, bool bNewWaitForAnimFinishEvent, bool bNewNewFinishImmediately, bool bNewKeepRotatedToMovement, ECrEnemySpawnType InSpawnType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrAiActionSpawnAnimation", "Create_CrAiActionSpawnAnimation");
+
+	Params::CrAiActionSpawnAnimation_Create_CrAiActionSpawnAnimation Parms{};
+
+	Parms.ActionType = ActionType;
+	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
+	Parms.NewLocomotionState = NewLocomotionState;
+	Parms.bNewWaitForAnimFinishEvent = bNewWaitForAnimFinishEvent;
+	Parms.bNewNewFinishImmediately = bNewNewFinishImmediately;
+	Parms.bNewKeepRotatedToMovement = bNewKeepRotatedToMovement;
+	Parms.InSpawnType = InSpawnType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionSpawnEnemyEntity.Create_CrAiActionSpawnEnemyEntity
+// (Final, Native, Static, Public, HasDefaults)
+// Parameters:
+// TSubclassOf<class UCrAiActionSpawnEnemyEntity>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTagContainer&     AiType_0                                               (Parm, NativeAccessSpecifierPublic)
+// const struct FTransform&                SpawnTransform_0                                       (Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bInstantSpawn_0                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FMassEntityHandle&         ForcedTarget_0                                         (Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrAiActionSpawnEnemyEntity*      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrAiActionSpawnEnemyEntity* UCrAiActionSpawnEnemyEntity::Create_CrAiActionSpawnEnemyEntity(TSubclassOf<class UCrAiActionSpawnEnemyEntity> ActionType, float NewMaxLifetimeS, const struct FGameplayTagContainer& AiType_0, const struct FTransform& SpawnTransform_0, bool bInstantSpawn_0, const struct FMassEntityHandle& ForcedTarget_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrAiActionSpawnEnemyEntity", "Create_CrAiActionSpawnEnemyEntity");
+
+	Params::CrAiActionSpawnEnemyEntity_Create_CrAiActionSpawnEnemyEntity Parms{};
+
+	Parms.ActionType = ActionType;
+	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
+	Parms.AiType_0 = std::move(AiType_0);
+	Parms.SpawnTransform_0 = std::move(SpawnTransform_0);
+	Parms.bInstantSpawn_0 = bInstantSpawn_0;
+	Parms.ForcedTarget_0 = std::move(ForcedTarget_0);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionSpawnEntity.Create_CrAiActionSpawnEntity
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UCrAiActionSpawnEntity>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FAuAPMassSpawnedEntityType&EntityType_0                                           (Parm, NativeAccessSpecifierPublic)
+// const struct FTransform&                SpawnTransform_0                                       (Parm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bSaveSpawnedEntity_0                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FBlackboardKeySelector&    SpawnedEntityBBKey_0                                   (Parm, NativeAccessSpecifierPublic)
+// class UCrAiActionSpawnEntity*           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrAiActionSpawnEntity* UCrAiActionSpawnEntity::Create_CrAiActionSpawnEntity(TSubclassOf<class UCrAiActionSpawnEntity> ActionType, float NewMaxLifetimeS, const struct FAuAPMassSpawnedEntityType& EntityType_0, const struct FTransform& SpawnTransform_0, bool bSaveSpawnedEntity_0, const struct FBlackboardKeySelector& SpawnedEntityBBKey_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrAiActionSpawnEntity", "Create_CrAiActionSpawnEntity");
+
+	Params::CrAiActionSpawnEntity_Create_CrAiActionSpawnEntity Parms{};
+
+	Parms.ActionType = ActionType;
+	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
+	Parms.EntityType_0 = std::move(EntityType_0);
+	Parms.SpawnTransform_0 = std::move(SpawnTransform_0);
+	Parms.bSaveSpawnedEntity_0 = bSaveSpawnedEntity_0;
+	Parms.SpawnedEntityBBKey_0 = std::move(SpawnedEntityBBKey_0);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionTaunt.Create_CrAiActionTaunt
+// (Final, Native, Static, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UCrAiActionPlayAnimation>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrEnemyLocomotionType                  NewLocomotionState                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bNewWaitForAnimFinishEvent                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bNewFinishImmediately                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bNewKeepRotatedToMovement                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TArray<ECrEnemyTauntType>&        NewAvailableTauntTypes                                 (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+// class UCrAiActionTaunt*                 ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrAiActionTaunt* UCrAiActionTaunt::Create_CrAiActionTaunt(TSubclassOf<class UCrAiActionPlayAnimation> ActionType, float NewMaxLifetimeS, ECrEnemyLocomotionType NewLocomotionState, bool bNewWaitForAnimFinishEvent, bool bNewFinishImmediately, bool bNewKeepRotatedToMovement, const TArray<ECrEnemyTauntType>& NewAvailableTauntTypes)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrAiActionTaunt", "Create_CrAiActionTaunt");
+
+	Params::CrAiActionTaunt_Create_CrAiActionTaunt Parms{};
+
+	Parms.ActionType = ActionType;
+	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
+	Parms.NewLocomotionState = NewLocomotionState;
+	Parms.bNewWaitForAnimFinishEvent = bNewWaitForAnimFinishEvent;
+	Parms.bNewFinishImmediately = bNewFinishImmediately;
+	Parms.bNewKeepRotatedToMovement = bNewKeepRotatedToMovement;
+	Parms.NewAvailableTauntTypes = std::move(NewAvailableTauntTypes);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionUseNavlink.Create_CrAiActionUseNavlink
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UCrAiActionUseNavlink>ActionType                                             (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewMaxLifetimeS                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   ActorStartLocation_0                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   NavlinkStartLocation_0                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   NavlinkEndLocation                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FCrUseNavLinkActionConfiguration&InUseNavLinkActionConfiguration                        (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// bool                                    bPerformJumpEvenIfLocationNotFree_0                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bTeleport_0                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrAiActionUseNavlink*            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrAiActionUseNavlink* UCrAiActionUseNavlink::Create_CrAiActionUseNavlink(TSubclassOf<class UCrAiActionUseNavlink> ActionType, float NewMaxLifetimeS, const struct FVector& ActorStartLocation_0, const struct FVector& NavlinkStartLocation_0, const struct FVector& NavlinkEndLocation, const struct FCrUseNavLinkActionConfiguration& InUseNavLinkActionConfiguration, bool bPerformJumpEvenIfLocationNotFree_0, bool bTeleport_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("CrAiActionUseNavlink", "Create_CrAiActionUseNavlink");
+
+	Params::CrAiActionUseNavlink_Create_CrAiActionUseNavlink Parms{};
+
+	Parms.ActionType = ActionType;
+	Parms.NewMaxLifetimeS = NewMaxLifetimeS;
+	Parms.ActorStartLocation_0 = std::move(ActorStartLocation_0);
+	Parms.NavlinkStartLocation_0 = std::move(NavlinkStartLocation_0);
+	Parms.NavlinkEndLocation = std::move(NavlinkEndLocation);
+	Parms.InUseNavLinkActionConfiguration = std::move(InUseNavLinkActionConfiguration);
+	Parms.bPerformJumpEvenIfLocationNotFree_0 = bPerformJumpEvenIfLocationNotFree_0;
+	Parms.bTeleport_0 = bTeleport_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionUseNavlink.OnBeforeLand
+// (Final, Native, Public)
+
+void UCrAiActionUseNavlink::OnBeforeLand()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrAiActionUseNavlink", "OnBeforeLand");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionUseNavlink.OnCharacterMovementLanded
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// class AActor*                           AiActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void UCrAiActionUseNavlink::OnCharacterMovementLanded(class AActor* AiActor, const struct FHitResult& Hit)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrAiActionUseNavlink", "OnCharacterMovementLanded");
+
+	Params::CrAiActionUseNavlink_OnCharacterMovementLanded Parms{};
+
+	Parms.AiActor = AiActor;
+	Parms.Hit = std::move(Hit);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionUseNavlink.OnJumpAnimationEvent
+// (Final, Native, Public)
+// Parameters:
+// class AActor*                           AiActor                                                (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrAiActionUseNavlink::OnJumpAnimationEvent(class AActor* AiActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrAiActionUseNavlink", "OnJumpAnimationEvent");
+
+	Params::CrAiActionUseNavlink_OnJumpAnimationEvent Parms{};
+
+	Parms.AiActor = AiActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionUseNavlink.OnLandAnimationEnded
+// (Final, Native, Public)
+
+void UCrAiActionUseNavlink::OnLandAnimationEnded()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrAiActionUseNavlink", "OnLandAnimationEnded");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionUseNavlink.OnLandAnimationEnded_Client
+// (Final, Native, Public)
+
+void UCrAiActionUseNavlink::OnLandAnimationEnded_Client()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrAiActionUseNavlink", "OnLandAnimationEnded_Client");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionUseNavlink.OnRep_CalculatedJumpVelocity
+// (Final, Native, Public)
+
+void UCrAiActionUseNavlink::OnRep_CalculatedJumpVelocity()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrAiActionUseNavlink", "OnRep_CalculatedJumpVelocity");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiActionUseNavlink.OnServerLanded
+// (Final, Native, Public)
+// Parameters:
+// class AActor*                           Actor                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrAiActionUseNavlink::OnServerLanded(class AActor* Actor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrAiActionUseNavlink", "OnServerLanded");
+
+	Params::CrAiActionUseNavlink_OnServerLanded Parms{};
+
+	Parms.Actor = Actor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiPcgNavlinkSubsystem.InitNavlinkSubsystem
+// (Final, Native, Protected)
+
+void UCrAiPcgNavlinkSubsystem::InitNavlinkSubsystem()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrAiPcgNavlinkSubsystem", "InitNavlinkSubsystem");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiPcgNavlinkSubsystem.OnTileGenerated
+// (Final, Native, Protected)
+// Parameters:
+// int32                                   X                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Y                                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ETileGenerationType                     TileGenerationType                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrAiPcgNavlinkSubsystem::OnTileGenerated(int32 X, int32 Y, ETileGenerationType TileGenerationType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrAiPcgNavlinkSubsystem", "OnTileGenerated");
+
+	Params::CrAiPcgNavlinkSubsystem_OnTileGenerated Parms{};
+
+	Parms.X = X;
+	Parms.Y = Y;
+	Parms.TileGenerationType = TileGenerationType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAiPcgNavlinkSubsystem.GetNavmeshEdgeData
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   MaxMoveInsideNavmeshOffset                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   MinMoveInsideNavmeshOffset                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   DistanceBetweenPoints                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   PosX                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   PosY                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<struct FVector>*                 Points                                                 (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// TArray<struct FVector>*                 Directions                                             (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void UCrAiPcgNavlinkSubsystem::GetNavmeshEdgeData(float MaxMoveInsideNavmeshOffset, float MinMoveInsideNavmeshOffset, float DistanceBetweenPoints, int32 PosX, int32 PosY, TArray<struct FVector>* Points, TArray<struct FVector>* Directions) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrAiPcgNavlinkSubsystem", "GetNavmeshEdgeData");
+
+	Params::CrAiPcgNavlinkSubsystem_GetNavmeshEdgeData Parms{};
+
+	Parms.MaxMoveInsideNavmeshOffset = MaxMoveInsideNavmeshOffset;
+	Parms.MinMoveInsideNavmeshOffset = MinMoveInsideNavmeshOffset;
+	Parms.DistanceBetweenPoints = DistanceBetweenPoints;
+	Parms.PosX = PosX;
+	Parms.PosY = PosY;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (Points != nullptr)
+		*Points = std::move(Parms.Points);
+
+	if (Directions != nullptr)
+		*Directions = std::move(Parms.Directions);
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.CrAnimNotify_RunAiAction.CreateAiAction
+// (Native, Event, Public, BlueprintEvent, Const)
+// Parameters:
+// class AActor*                           Actor                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UCrAiAction*                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UCrAiAction* UCrAnimNotify_RunAiAction::CreateAiAction(class AActor* Actor) const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"CreateAiAction", FnName));
+
+	Params::CrAnimNotify_RunAiAction_CreateAiAction Parms{};
+
+	Parms.Actor = Actor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.BanCurrentTarget
+// (Native, Public)
+
+void IMassEnemyActor::BanCurrentTarget()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "BanCurrentTarget");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.ClearFocus
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   FocusPriority                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyActor::ClearFocus(int32 FocusPriority)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"ClearFocus", FnName));
+
+	Params::MassEnemyActor_ClearFocus Parms{};
+
+	Parms.FocusPriority = FocusPriority;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.ClearYawRotationRatePriority
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// uint8                                   Priority                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyActor::ClearYawRotationRatePriority(uint8 Priority)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"ClearYawRotationRatePriority", FnName));
+
+	Params::MassEnemyActor_ClearYawRotationRatePriority Parms{};
+
+	Parms.Priority = Priority;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.GetArcParamOverride
+// (Native, Public)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float IMassEnemyActor::GetArcParamOverride()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "GetArcParamOverride");
+
+	Params::MassEnemyActor_GetArcParamOverride Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.GetFocusPosition
+// (Native, Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector IMassEnemyActor::GetFocusPosition()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"GetFocusPosition", FnName));
+
+	Params::MassEnemyActor_GetFocusPosition Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.GetMassEnemyInitializationState
+// (Native, Public)
+// Parameters:
+// EMassEnemyInitializationState           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EMassEnemyInitializationState IMassEnemyActor::GetMassEnemyInitializationState()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "GetMassEnemyInitializationState");
+
+	Params::MassEnemyActor_GetMassEnemyInitializationState Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.IsMovementBlocked
+// (Native, Public)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool IMassEnemyActor::IsMovementBlocked()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "IsMovementBlocked");
+
+	Params::MassEnemyActor_IsMovementBlocked Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.IsRotationBlocked
+// (Native, Public)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool IMassEnemyActor::IsRotationBlocked()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "IsRotationBlocked");
+
+	Params::MassEnemyActor_IsRotationBlocked Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.NotifyAnimationFinished
+// (Native, Public)
+
+void IMassEnemyActor::NotifyAnimationFinished()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "NotifyAnimationFinished");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.OnAnimationFinished
+// (Native, Public)
+// Parameters:
+// ECrEnemyLocomotionType                  LocomotionType                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrEnemyAttackType                      AttackType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrEnemyJumpState                       JumpState                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyActor::OnAnimationFinished(ECrEnemyLocomotionType LocomotionType, ECrEnemyAttackType AttackType, ECrEnemyJumpState JumpState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "OnAnimationFinished");
+
+	Params::MassEnemyActor_OnAnimationFinished Parms{};
+
+	Parms.LocomotionType = LocomotionType;
+	Parms.AttackType = AttackType;
+	Parms.JumpState = JumpState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.OnAttackAnimationFinished
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ECrEnemyAttackType                      AttackType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyActor::OnAttackAnimationFinished(ECrEnemyAttackType AttackType)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"OnAttackAnimationFinished", FnName));
+
+	Params::MassEnemyActor_OnAttackAnimationFinished Parms{};
+
+	Parms.AttackType = AttackType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.OnBeforeRepresentationChanged
+// (Native, Public)
+
+void IMassEnemyActor::OnBeforeRepresentationChanged()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "OnBeforeRepresentationChanged");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.OnDamageReceived
+// (Native, Public, HasOutParams, HasDefaults)
+// Parameters:
+// const struct FVector&                   HitWorldPosition                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   HitDirection                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bIsWeakpointDamage                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyActor::OnDamageReceived(const struct FVector& HitWorldPosition, const struct FVector& HitDirection, bool bIsWeakpointDamage)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "OnDamageReceived");
+
+	Params::MassEnemyActor_OnDamageReceived Parms{};
+
+	Parms.HitWorldPosition = std::move(HitWorldPosition);
+	Parms.HitDirection = std::move(HitDirection);
+	Parms.bIsWeakpointDamage = bIsWeakpointDamage;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.OnDealDamageAnimationEvent
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ECrEnemyAttackType                      AttackType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyActor::OnDealDamageAnimationEvent(ECrEnemyAttackType AttackType)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"OnDealDamageAnimationEvent", FnName));
+
+	Params::MassEnemyActor_OnDealDamageAnimationEvent Parms{};
+
+	Parms.AttackType = AttackType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.OnJumpedAnimationEvent
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+
+void IMassEnemyActor::OnJumpedAnimationEvent()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"OnJumpedAnimationEvent", FnName));
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.OnLandedAnimationEvent
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+
+void IMassEnemyActor::OnLandedAnimationEvent()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"OnLandedAnimationEvent", FnName));
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.OnShootAnimationEvent
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const class FString&                    OverrideSocketName                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyActor::OnShootAnimationEvent(const class FString& OverrideSocketName)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"OnShootAnimationEvent", FnName));
+
+	Params::MassEnemyActor_OnShootAnimationEvent Parms{};
+
+	Parms.OverrideSocketName = std::move(OverrideSocketName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetActorSyncData
+// (Native, Public)
+// Parameters:
+// const struct FMassEnemyAnimationSyncData&ActorSyncData                                          (Parm, NoDestructor, NativeAccessSpecifierPublic)
+
+void IMassEnemyActor::SetActorSyncData(const struct FMassEnemyAnimationSyncData& ActorSyncData)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetActorSyncData");
+
+	Params::MassEnemyActor_SetActorSyncData Parms{};
+
+	Parms.ActorSyncData = std::move(ActorSyncData);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetAggroFlare
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+
+void IMassEnemyActor::SetAggroFlare()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"SetAggroFlare", FnName));
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetArcParamOverride
+// (Native, Public)
+// Parameters:
+// float                                   NewForcedArcParam                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyActor::SetArcParamOverride(float NewForcedArcParam)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetArcParamOverride");
+
+	Params::MassEnemyActor_SetArcParamOverride Parms{};
+
+	Parms.NewForcedArcParam = NewForcedArcParam;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetAttackType
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ECrEnemyAttackType                      AttackType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyActor::SetAttackType(ECrEnemyAttackType AttackType)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"SetAttackType", FnName));
+
+	Params::MassEnemyActor_SetAttackType Parms{};
+
+	Parms.AttackType = AttackType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetBoostFlare
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+
+void IMassEnemyActor::SetBoostFlare()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"SetBoostFlare", FnName));
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetDissolveProgress
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   Progress                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyActor::SetDissolveProgress(float Progress)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"SetDissolveProgress", FnName));
+
+	Params::MassEnemyActor_SetDissolveProgress Parms{};
+
+	Parms.Progress = Progress;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetFocusActor
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AActor*                           NewFocusActor                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   FocusPriority                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyActor::SetFocusActor(class AActor* NewFocusActor, int32 FocusPriority)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"SetFocusActor", FnName));
+
+	Params::MassEnemyActor_SetFocusActor Parms{};
+
+	Parms.NewFocusActor = NewFocusActor;
+	Parms.FocusPriority = FocusPriority;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetFocusPosition
+// (Native, Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FVector&                   NewFocusPosition                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   FocusPriority                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyActor::SetFocusPosition(const struct FVector& NewFocusPosition, int32 FocusPriority)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"SetFocusPosition", FnName));
+
+	Params::MassEnemyActor_SetFocusPosition Parms{};
+
+	Parms.NewFocusPosition = std::move(NewFocusPosition);
+	Parms.FocusPriority = FocusPriority;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetGroundHitResult
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FHitResult&                HitResult                                              (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void IMassEnemyActor::SetGroundHitResult(const struct FHitResult& HitResult)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"SetGroundHitResult", FnName));
+
+	Params::MassEnemyActor_SetGroundHitResult Parms{};
+
+	Parms.HitResult = std::move(HitResult);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetHasAggroTarget
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bNewHasAggroTarget                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyActor::SetHasAggroTarget(bool bNewHasAggroTarget)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"SetHasAggroTarget", FnName));
+
+	Params::MassEnemyActor_SetHasAggroTarget Parms{};
+
+	Parms.bNewHasAggroTarget = bNewHasAggroTarget;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetIsAggroEyeColor
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    NewIsAggro                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyActor::SetIsAggroEyeColor(bool NewIsAggro)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"SetIsAggroEyeColor", FnName));
+
+	Params::MassEnemyActor_SetIsAggroEyeColor Parms{};
+
+	Parms.NewIsAggro = NewIsAggro;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetIsBoostedEyeColor
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    NewIsBoosted                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyActor::SetIsBoostedEyeColor(bool NewIsBoosted)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"SetIsBoostedEyeColor", FnName));
+
+	Params::MassEnemyActor_SetIsBoostedEyeColor Parms{};
+
+	Parms.NewIsBoosted = NewIsBoosted;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetIsJumpEyeBehaviour
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    NewIsJumpEyeBehaviour                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyActor::SetIsJumpEyeBehaviour(bool NewIsJumpEyeBehaviour)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"SetIsJumpEyeBehaviour", FnName));
+
+	Params::MassEnemyActor_SetIsJumpEyeBehaviour Parms{};
+
+	Parms.NewIsJumpEyeBehaviour = NewIsJumpEyeBehaviour;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetIsTurnInPlaceActive
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    NewIsTurnInPlaceActive                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyActor::SetIsTurnInPlaceActive(bool NewIsTurnInPlaceActive)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"SetIsTurnInPlaceActive", FnName));
+
+	Params::MassEnemyActor_SetIsTurnInPlaceActive Parms{};
+
+	Parms.NewIsTurnInPlaceActive = NewIsTurnInPlaceActive;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetJumpLandAnimPlayRation
+// (Native, Public, HasOutParams)
+// Parameters:
+// const float&                            Time                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyActor::SetJumpLandAnimPlayRation(const float& Time)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetJumpLandAnimPlayRation");
+
+	Params::MassEnemyActor_SetJumpLandAnimPlayRation Parms{};
+
+	Parms.Time = Time;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetJumpLandVelocity
+// (Native, Public, HasOutParams, HasDefaults)
+// Parameters:
+// const struct FVector&                   LandVelocity                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyActor::SetJumpLandVelocity(const struct FVector& LandVelocity)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetJumpLandVelocity");
+
+	Params::MassEnemyActor_SetJumpLandVelocity Parms{};
+
+	Parms.LandVelocity = std::move(LandVelocity);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetJumpLaunchVelocity
+// (Native, Public, HasOutParams, HasDefaults)
+// Parameters:
+// const struct FVector&                   LaunchVelocity                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyActor::SetJumpLaunchVelocity(const struct FVector& LaunchVelocity)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetJumpLaunchVelocity");
+
+	Params::MassEnemyActor_SetJumpLaunchVelocity Parms{};
+
+	Parms.LaunchVelocity = std::move(LaunchVelocity);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetJumpState
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ECrEnemyJumpState                       NewJumpState                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyActor::SetJumpState(ECrEnemyJumpState NewJumpState)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"SetJumpState", FnName));
+
+	Params::MassEnemyActor_SetJumpState Parms{};
+
+	Parms.NewJumpState = NewJumpState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetJumpTime
+// (Native, Public, HasOutParams)
+// Parameters:
+// const float&                            Time                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyActor::SetJumpTime(const float& Time)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetJumpTime");
+
+	Params::MassEnemyActor_SetJumpTime Parms{};
+
+	Parms.Time = Time;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetLocomotionType
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ECrEnemyLocomotionType                  NewLocomotionType                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrEnemyLocomotionType                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+ECrEnemyLocomotionType IMassEnemyActor::SetLocomotionType(ECrEnemyLocomotionType NewLocomotionType)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"SetLocomotionType", FnName));
+
+	Params::MassEnemyActor_SetLocomotionType Parms{};
+
+	Parms.NewLocomotionType = NewLocomotionType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetMassEnemyInitializationState
+// (Native, Public)
+// Parameters:
+// EMassEnemyInitializationState           InitializationState                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyActor::SetMassEnemyInitializationState(EMassEnemyInitializationState InitializationState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetMassEnemyInitializationState");
+
+	Params::MassEnemyActor_SetMassEnemyInitializationState Parms{};
+
+	Parms.InitializationState = InitializationState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetMassSpawnerFenceData
+// (Native, Public, HasOutParams, HasDefaults)
+// Parameters:
+// ECrSpawnFenceType                       FenceType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FBox&                      FenceBox                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyActor::SetMassSpawnerFenceData(ECrSpawnFenceType FenceType, const struct FBox& FenceBox)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("MassEnemyActor", "SetMassSpawnerFenceData");
+
+	Params::MassEnemyActor_SetMassSpawnerFenceData Parms{};
+
+	Parms.FenceType = FenceType;
+	Parms.FenceBox = std::move(FenceBox);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetMaxSpeed
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   NewMaxSpeed                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bUpdateAnimGraphMaxSpeed                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float IMassEnemyActor::SetMaxSpeed(float NewMaxSpeed, bool bUpdateAnimGraphMaxSpeed)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"SetMaxSpeed", FnName));
+
+	Params::MassEnemyActor_SetMaxSpeed Parms{};
+
+	Parms.NewMaxSpeed = NewMaxSpeed;
+	Parms.bUpdateAnimGraphMaxSpeed = bUpdateAnimGraphMaxSpeed;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetOrientRotationToMovement
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    NewOrientRotationToMovement                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyActor::SetOrientRotationToMovement(bool NewOrientRotationToMovement)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"SetOrientRotationToMovement", FnName));
+
+	Params::MassEnemyActor_SetOrientRotationToMovement Parms{};
+
+	Parms.NewOrientRotationToMovement = NewOrientRotationToMovement;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetSpawnType
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ECrEnemySpawnType                       SpawnType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyActor::SetSpawnType(ECrEnemySpawnType SpawnType)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"SetSpawnType", FnName));
+
+	Params::MassEnemyActor_SetSpawnType Parms{};
+
+	Parms.SpawnType = SpawnType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetTauntType
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ECrEnemyTauntType                       TauntType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyActor::SetTauntType(ECrEnemyTauntType TauntType)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"SetTauntType", FnName));
+
+	Params::MassEnemyActor_SetTauntType Parms{};
+
+	Parms.TauntType = TauntType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetVisibilityBasedAnimTickOption
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EVisibilityBasedAnimTickOption          NewVisiblityBvBasedAnimTickOption                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyActor::SetVisibilityBasedAnimTickOption(EVisibilityBasedAnimTickOption NewVisiblityBvBasedAnimTickOption)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"SetVisibilityBasedAnimTickOption", FnName));
+
+	Params::MassEnemyActor_SetVisibilityBasedAnimTickOption Parms{};
+
+	Parms.NewVisiblityBvBasedAnimTickOption = NewVisiblityBvBasedAnimTickOption;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetYawRotationRate
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   NewYawRotationRate                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint8                                   Priority                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Lifetime                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      DebugName                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyActor::SetYawRotationRate(float NewYawRotationRate, uint8 Priority, float Lifetime, const class FName& DebugName)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"SetYawRotationRate", FnName));
+
+	Params::MassEnemyActor_SetYawRotationRate Parms{};
+
+	Parms.NewYawRotationRate = NewYawRotationRate;
+	Parms.Priority = Priority;
+	Parms.Lifetime = Lifetime;
+	Parms.DebugName = DebugName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.GetIdleEyeColor
+// (Native, Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// struct FColor                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FColor IMassEnemyActor::GetIdleEyeColor() const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"GetIdleEyeColor", FnName));
+
+	Params::MassEnemyActor_GetIdleEyeColor Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyAiController.GetNavAgentQueryExtent
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector AMassEnemyAiController::GetNavAgentQueryExtent() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyAiController", "GetNavAgentQueryExtent");
+
+	Params::MassEnemyAiController_GetNavAgentQueryExtent Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyAiSpawner.DespawnAll
+// (Final, Native, Public, BlueprintCallable)
+
+void AMassEnemyAiSpawner::DespawnAll()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyAiSpawner", "DespawnAll");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyAiSpawner.DisableActivationTrigger
+// (Native, Public, BlueprintCallable)
+
+void AMassEnemyAiSpawner::DisableActivationTrigger()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyAiSpawner", "DisableActivationTrigger");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyAiSpawner.DisableSpawning
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bPermanently                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyAiSpawner::DisableSpawning(bool bPermanently)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyAiSpawner", "DisableSpawning");
+
+	Params::MassEnemyAiSpawner_DisableSpawning Parms{};
+
+	Parms.bPermanently = bPermanently;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyAiSpawner.EnableActivationTrigger
+// (Native, Public, BlueprintCallable)
+
+void AMassEnemyAiSpawner::EnableActivationTrigger()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyAiSpawner", "EnableActivationTrigger");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyAiSpawner.EnableSpawning
+// (Native, Public, BlueprintCallable)
+
+void AMassEnemyAiSpawner::EnableSpawning()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyAiSpawner", "EnableSpawning");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.AddAnimDebugData
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   Channel                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             Data                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Lifetime                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMassEnemyAnimationInstance::AddAnimDebugData(int32 Channel, class FName Data, float Lifetime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyAnimationInstance", "AddAnimDebugData");
+
+	Params::MassEnemyAnimationInstance_AddAnimDebugData Parms{};
+
+	Parms.Channel = Channel;
+	Parms.Data = Data;
+	Parms.Lifetime = Lifetime;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.BPOnAttackTypeChanged
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// ECrEnemyAttackType                      OldAttackType                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrEnemyAttackType                      NewAttackType                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMassEnemyAnimationInstance::BPOnAttackTypeChanged(ECrEnemyAttackType OldAttackType, ECrEnemyAttackType NewAttackType)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BPOnAttackTypeChanged", FnName));
+
+	Params::MassEnemyAnimationInstance_BPOnAttackTypeChanged Parms{};
+
+	Parms.OldAttackType = OldAttackType;
+	Parms.NewAttackType = NewAttackType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.BPOnDamageReceived
+// (Native, Event, Public, BlueprintEvent)
+
+void UMassEnemyAnimationInstance::BPOnDamageReceived()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BPOnDamageReceived", FnName));
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.BPOnLocomotionTypeChanged
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// ECrEnemyLocomotionType                  OldLocomotionType                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrEnemyLocomotionType                  NewLocomotionType                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMassEnemyAnimationInstance::BPOnLocomotionTypeChanged(ECrEnemyLocomotionType OldLocomotionType, ECrEnemyLocomotionType NewLocomotionType)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BPOnLocomotionTypeChanged", FnName));
+
+	Params::MassEnemyAnimationInstance_BPOnLocomotionTypeChanged Parms{};
+
+	Parms.OldLocomotionType = OldLocomotionType;
+	Parms.NewLocomotionType = NewLocomotionType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.ClearAnimDebugDataChannel
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   Channel                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMassEnemyAnimationInstance::ClearAnimDebugDataChannel(int32 Channel)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyAnimationInstance", "ClearAnimDebugDataChannel");
+
+	Params::MassEnemyAnimationInstance_ClearAnimDebugDataChannel Parms{};
+
+	Parms.Channel = Channel;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.GetAnimationSyncData
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const struct FMassEnemyAnimationSyncDataReturnValue                                            (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+const struct FMassEnemyAnimationSyncData UMassEnemyAnimationInstance::GetAnimationSyncData()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyAnimationInstance", "GetAnimationSyncData");
+
+	Params::MassEnemyAnimationInstance_GetAnimationSyncData Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.InitWithAnimSyncData
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FMassEnemyAnimationSyncData&NewMassEnemyAnimationSyncData                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UMassEnemyAnimationInstance::InitWithAnimSyncData(const struct FMassEnemyAnimationSyncData& NewMassEnemyAnimationSyncData)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyAnimationInstance", "InitWithAnimSyncData");
+
+	Params::MassEnemyAnimationInstance_InitWithAnimSyncData Parms{};
+
+	Parms.NewMassEnemyAnimationSyncData = std::move(NewMassEnemyAnimationSyncData);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.NotifyAnimationFinished
+// (Final, Native, Public, BlueprintCallable)
+
+void UMassEnemyAnimationInstance::NotifyAnimationFinished()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyAnimationInstance", "NotifyAnimationFinished");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.NotifyAttackAnimationFinishedAnimEvent
+// (Final, Native, Protected, BlueprintCallable)
+
+void UMassEnemyAnimationInstance::NotifyAttackAnimationFinishedAnimEvent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyAnimationInstance", "NotifyAttackAnimationFinishedAnimEvent");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.NotifyDealDamageAnimationEvent
+// (Final, Native, Protected, BlueprintCallable)
+
+void UMassEnemyAnimationInstance::NotifyDealDamageAnimationEvent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyAnimationInstance", "NotifyDealDamageAnimationEvent");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.NotifyJumpedAnimationEvent
+// (Final, Native, Protected, BlueprintCallable)
+
+void UMassEnemyAnimationInstance::NotifyJumpedAnimationEvent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyAnimationInstance", "NotifyJumpedAnimationEvent");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.NotifyLandedAnimationEvent
+// (Final, Native, Protected, BlueprintCallable)
+
+void UMassEnemyAnimationInstance::NotifyLandedAnimationEvent()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyAnimationInstance", "NotifyLandedAnimationEvent");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.OnJumpTimeSet
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   Time                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMassEnemyAnimationInstance::OnJumpTimeSet(float Time)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnJumpTimeSet", FnName));
+
+	Params::MassEnemyAnimationInstance_OnJumpTimeSet Parms{};
+
+	Parms.Time = Time;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.OnOwnerHit
+// (Native, Event, Public, BlueprintEvent)
+
+void UMassEnemyAnimationInstance::OnOwnerHit()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnOwnerHit", FnName));
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.ResetVertexAnimSyncData
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+
+void UMassEnemyAnimationInstance::ResetVertexAnimSyncData()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ResetVertexAnimSyncData", FnName));
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.SetVertexAnimationState
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EMassEnemyVertexAnimState               VertexAnimState                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMassEnemyAnimationInstance::SetVertexAnimationState(EMassEnemyVertexAnimState VertexAnimState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyAnimationInstance", "SetVertexAnimationState");
+
+	Params::MassEnemyAnimationInstance_SetVertexAnimationState Parms{};
+
+	Parms.VertexAnimState = VertexAnimState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.UpdateYawRotationRateForAttackType
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ECrEnemyAttackType                      OldAttackType                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrEnemyAttackType                      NewAttackType                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMassEnemyAnimationInstance::UpdateYawRotationRateForAttackType(ECrEnemyAttackType OldAttackType, ECrEnemyAttackType NewAttackType)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateYawRotationRateForAttackType", FnName));
+
+	Params::MassEnemyAnimationInstance_UpdateYawRotationRateForAttackType Parms{};
+
+	Parms.OldAttackType = OldAttackType;
+	Parms.NewAttackType = NewAttackType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyAnimationInstance.UpdateYawRotationRateForLocomotionState
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ECrEnemyLocomotionType                  OldLocomotionType                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrEnemyLocomotionType                  NewLocomotionType                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMassEnemyAnimationInstance::UpdateYawRotationRateForLocomotionState(ECrEnemyLocomotionType OldLocomotionType, ECrEnemyLocomotionType NewLocomotionType)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateYawRotationRateForLocomotionState", FnName));
+
+	Params::MassEnemyAnimationInstance_UpdateYawRotationRateForLocomotionState Parms{};
+
+	Parms.OldLocomotionType = OldLocomotionType;
+	Parms.NewLocomotionType = NewLocomotionType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetAllowedAttackConeHalfAngle
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   NewAttackConeHalfAngle                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyDamageInterface::SetAllowedAttackConeHalfAngle(float NewAttackConeHalfAngle)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"SetAllowedAttackConeHalfAngle", FnName));
+
+	Params::MassEnemyDamageInterface_SetAllowedAttackConeHalfAngle Parms{};
+
+	Parms.NewAttackConeHalfAngle = NewAttackConeHalfAngle;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetAllowedAttackDistance
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   NewAttackDistance                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyDamageInterface::SetAllowedAttackDistance(float NewAttackDistance)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"SetAllowedAttackDistance", FnName));
+
+	Params::MassEnemyDamageInterface_SetAllowedAttackDistance Parms{};
+
+	Parms.NewAttackDistance = NewAttackDistance;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetAllowedBuildingAttackDistance
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   NewAttackDistance                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyDamageInterface::SetAllowedBuildingAttackDistance(float NewAttackDistance)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"SetAllowedBuildingAttackDistance", FnName));
+
+	Params::MassEnemyDamageInterface_SetAllowedBuildingAttackDistance Parms{};
+
+	Parms.NewAttackDistance = NewAttackDistance;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetAttackTargetPosition
+// (Native, Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FVector&                   NewAttackTargetPosition                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyDamageInterface::SetAttackTargetPosition(const struct FVector& NewAttackTargetPosition)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"SetAttackTargetPosition", FnName));
+
+	Params::MassEnemyDamageInterface_SetAttackTargetPosition Parms{};
+
+	Parms.NewAttackTargetPosition = std::move(NewAttackTargetPosition);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetBuildingInfectionDamage
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   NewBuildingInfectionDamage                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyDamageInterface::SetBuildingInfectionDamage(float NewBuildingInfectionDamage)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"SetBuildingInfectionDamage", FnName));
+
+	Params::MassEnemyDamageInterface_SetBuildingInfectionDamage Parms{};
+
+	Parms.NewBuildingInfectionDamage = NewBuildingInfectionDamage;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetDamageGameplayEffect
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TSubclassOf<class UGameplayEffect>      DamageEffect                                           (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyDamageInterface::SetDamageGameplayEffect(TSubclassOf<class UGameplayEffect> DamageEffect)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"SetDamageGameplayEffect", FnName));
+
+	Params::MassEnemyDamageInterface_SetDamageGameplayEffect Parms{};
+
+	Parms.DamageEffect = DamageEffect;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetAggroTargetActor
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AActor* IMassEnemyDamageInterface::GetAggroTargetActor() const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"GetAggroTargetActor", FnName));
+
+	Params::MassEnemyDamageInterface_GetAggroTargetActor Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetAllowedAttackConeHalfAngle
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float IMassEnemyDamageInterface::GetAllowedAttackConeHalfAngle() const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"GetAllowedAttackConeHalfAngle", FnName));
+
+	Params::MassEnemyDamageInterface_GetAllowedAttackConeHalfAngle Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetAllowedAttackDistance
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float IMassEnemyDamageInterface::GetAllowedAttackDistance() const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"GetAllowedAttackDistance", FnName));
+
+	Params::MassEnemyDamageInterface_GetAllowedAttackDistance Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetAllowedBuildingAttackDistance
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float IMassEnemyDamageInterface::GetAllowedBuildingAttackDistance() const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"GetAllowedBuildingAttackDistance", FnName));
+
+	Params::MassEnemyDamageInterface_GetAllowedBuildingAttackDistance Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetAttackTargetPosition
+// (Native, Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector IMassEnemyDamageInterface::GetAttackTargetPosition() const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"GetAttackTargetPosition", FnName));
+
+	Params::MassEnemyDamageInterface_GetAttackTargetPosition Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetBuildingInfectionDamage
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float IMassEnemyDamageInterface::GetBuildingInfectionDamage() const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"GetBuildingInfectionDamage", FnName));
+
+	Params::MassEnemyDamageInterface_GetBuildingInfectionDamage Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetDamageGameplayEffect
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// TSubclassOf<class UGameplayEffect>      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+TSubclassOf<class UGameplayEffect> IMassEnemyDamageInterface::GetDamageGameplayEffect() const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(AsUObject(), GetStaticName(L"GetDamageGameplayEffect", FnName));
+
+	Params::MassEnemyDamageInterface_GetDamageGameplayEffect Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.BanCurrentTarget
+// (Native, Public, BlueprintCallable)
+
+void AMassEnemyCharacterBase::BanCurrentTarget()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyCharacterBase", "BanCurrentTarget");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.GetMassEnemyInitializationState
+// (Native, Public, BlueprintCallable)
+// Parameters:
+// EMassEnemyInitializationState           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EMassEnemyInitializationState AMassEnemyCharacterBase::GetMassEnemyInitializationState()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyCharacterBase", "GetMassEnemyInitializationState");
+
+	Params::MassEnemyCharacterBase_GetMassEnemyInitializationState Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.Multicast_OnAiDied
+// (Net, NetReliable, Native, Event, NetMulticast, Public, BlueprintCallable)
+// Parameters:
+// const struct FHitResult&                HitResult                                              (ConstParm, Parm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              KillingDamageTag                                       (ConstParm, Parm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::Multicast_OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyCharacterBase", "Multicast_OnAiDied");
+
+	Params::MassEnemyCharacterBase_Multicast_OnAiDied Parms{};
+
+	Parms.HitResult = std::move(HitResult);
+	Parms.KillingDamageTag = std::move(KillingDamageTag);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.Multicast_StartDeathSequence
+// (Net, NetReliable, Native, Event, NetMulticast, Public, BlueprintCallable)
+// Parameters:
+// const struct FCrAiDeathSequenceParameters&DeathSequenceParameters                                (ConstParm, Parm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::Multicast_StartDeathSequence(const struct FCrAiDeathSequenceParameters& DeathSequenceParameters)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyCharacterBase", "Multicast_StartDeathSequence");
+
+	Params::MassEnemyCharacterBase_Multicast_StartDeathSequence Parms{};
+
+	Parms.DeathSequenceParameters = std::move(DeathSequenceParameters);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.NotifyAggroTargetChanged
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bHasAggroTarget                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bSetAggroFlare                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::NotifyAggroTargetChanged(bool bHasAggroTarget, bool bSetAggroFlare)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"NotifyAggroTargetChanged", FnName));
+
+	Params::MassEnemyCharacterBase_NotifyAggroTargetChanged Parms{};
+
+	Parms.bHasAggroTarget = bHasAggroTarget;
+	Parms.bSetAggroFlare = bSetAggroFlare;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.NotifyNearbyPlayerCharactersAboutSpawn
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AMassEnemyCharacterBase::NotifyNearbyPlayerCharactersAboutSpawn()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"NotifyNearbyPlayerCharactersAboutSpawn", FnName));
+
+	Params::MassEnemyCharacterBase_NotifyNearbyPlayerCharactersAboutSpawn Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnAggroTargetChange
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bHasAggroTarget                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::OnAggroTargetChange(bool bHasAggroTarget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyCharacterBase", "OnAggroTargetChange");
+
+	Params::MassEnemyCharacterBase_OnAggroTargetChange Parms{};
+
+	Parms.bHasAggroTarget = bHasAggroTarget;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnAiDied
+// (Native, Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const struct FHitResult&                HitResult                                              (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              KillingDamageTag                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnAiDied", FnName));
+
+	Params::MassEnemyCharacterBase_OnAiDied Parms{};
+
+	Parms.HitResult = std::move(HitResult);
+	Parms.KillingDamageTag = std::move(KillingDamageTag);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnBeforeRepresentationChanged
+// (Net, Native, Event, NetMulticast, Public)
+
+void AMassEnemyCharacterBase::OnBeforeRepresentationChanged()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyCharacterBase", "OnBeforeRepresentationChanged");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnBlackboardConfigured
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// class UMassEnemyDataAsset*              Config                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::OnBlackboardConfigured(class UMassEnemyDataAsset* Config)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBlackboardConfigured", FnName));
+
+	Params::MassEnemyCharacterBase_OnBlackboardConfigured Parms{};
+
+	Parms.Config = Config;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnDamage
+// (Native, Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// class AActor*                           Actor                                                  (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FHitResult&                HitResult                                              (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// float                                   InDamage                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::OnDamage(class AActor* Actor, const struct FHitResult& HitResult, float InDamage)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnDamage", FnName));
+
+	Params::MassEnemyCharacterBase_OnDamage Parms{};
+
+	Parms.Actor = Actor;
+	Parms.HitResult = std::move(HitResult);
+	Parms.InDamage = InDamage;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnDiedFromGas
+// (Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// const struct FHitResult&                LastHit                                                (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              KillingDamageTag                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::OnDiedFromGas(const struct FHitResult& LastHit, const struct FGameplayTag& KillingDamageTag)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnDiedFromGas", FnName));
+
+	Params::MassEnemyCharacterBase_OnDiedFromGas Parms{};
+
+	Parms.LastHit = std::move(LastHit);
+	Parms.KillingDamageTag = std::move(KillingDamageTag);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnDissolveValueSet
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// float                                   NewDissolveProgress                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::OnDissolveValueSet(float NewDissolveProgress)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnDissolveValueSet", FnName));
+
+	Params::MassEnemyCharacterBase_OnDissolveValueSet Parms{};
+
+	Parms.NewDissolveProgress = NewDissolveProgress;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnEyeStateColorGradientChanged
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   NewGetEyeStateColorGradientCoord                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::OnEyeStateColorGradientChanged(float NewGetEyeStateColorGradientCoord)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnEyeStateColorGradientChanged", FnName));
+
+	Params::MassEnemyCharacterBase_OnEyeStateColorGradientChanged Parms{};
+
+	Parms.NewGetEyeStateColorGradientCoord = NewGetEyeStateColorGradientCoord;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnPrepareForGame
+// (Event, Public, BlueprintEvent)
+
+void AMassEnemyCharacterBase::OnPrepareForGame()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPrepareForGame", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnPrepareForPooling
+// (Event, Public, BlueprintEvent)
+
+void AMassEnemyCharacterBase::OnPrepareForPooling()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPrepareForPooling", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnRep_Dissolve
+// (Final, Native, Protected)
+
+void AMassEnemyCharacterBase::OnRep_Dissolve()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyCharacterBase", "OnRep_Dissolve");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnRep_EyeStateColorGradientCoord
+// (Final, Native, Protected)
+
+void AMassEnemyCharacterBase::OnRep_EyeStateColorGradientCoord()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyCharacterBase", "OnRep_EyeStateColorGradientCoord");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnRep_InitializationState
+// (Final, Native, Public)
+
+void AMassEnemyCharacterBase::OnRep_InitializationState()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyCharacterBase", "OnRep_InitializationState");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnRep_IsInPool
+// (Final, Native, Public)
+
+void AMassEnemyCharacterBase::OnRep_IsInPool()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyCharacterBase", "OnRep_IsInPool");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnRep_UniformScale
+// (Final, Native, Protected)
+
+void AMassEnemyCharacterBase::OnRep_UniformScale()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyCharacterBase", "OnRep_UniformScale");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnRep_VisualVariation
+// (Final, Native, Protected)
+
+void AMassEnemyCharacterBase::OnRep_VisualVariation()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyCharacterBase", "OnRep_VisualVariation");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnStartDeathSequence
+// (Native, Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const struct FCrAiDeathSequenceParameters&DeathSequenceParameters                                (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::OnStartDeathSequence(const struct FCrAiDeathSequenceParameters& DeathSequenceParameters)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnStartDeathSequence", FnName));
+
+	Params::MassEnemyCharacterBase_OnStartDeathSequence Parms{};
+
+	Parms.DeathSequenceParameters = std::move(DeathSequenceParameters);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnVisualVariationChanged
+// (Native, Event, Public, HasOutParams, HasDefaults, BlueprintEvent)
+// Parameters:
+// const struct FVector&                   NewVisualVariationSeed                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::OnVisualVariationChanged(const struct FVector& NewVisualVariationSeed)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnVisualVariationChanged", FnName));
+
+	Params::MassEnemyCharacterBase_OnVisualVariationChanged Parms{};
+
+	Parms.NewVisualVariationSeed = std::move(NewVisualVariationSeed);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.PostSetupPooledActorData
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bNewIsInPool                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::PostSetupPooledActorData(bool bNewIsInPool)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PostSetupPooledActorData", FnName));
+
+	Params::MassEnemyCharacterBase_PostSetupPooledActorData Parms{};
+
+	Parms.bNewIsInPool = bNewIsInPool;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.ServerOnLanded_Multicast
+// (Net, NetReliable, Native, Event, NetMulticast, Protected)
+
+void AMassEnemyCharacterBase::ServerOnLanded_Multicast()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyCharacterBase", "ServerOnLanded_Multicast");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.SetDynamicMaterial
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// int32                                   MeshMaterialIndex                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UMaterialInterface*               NewMaterial                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::SetDynamicMaterial(int32 MeshMaterialIndex, class UMaterialInterface* NewMaterial)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyCharacterBase", "SetDynamicMaterial");
+
+	Params::MassEnemyCharacterBase_SetDynamicMaterial Parms{};
+
+	Parms.MeshMaterialIndex = MeshMaterialIndex;
+	Parms.NewMaterial = NewMaterial;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.SetMaterialParameterFloatValue
+// (Final, Native, Protected, HasOutParams, BlueprintCallable)
+// Parameters:
+// int32                                   MeshMaterialIndex                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      ParameterName                                          (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AMassEnemyCharacterBase::SetMaterialParameterFloatValue(int32 MeshMaterialIndex, const class FName& ParameterName, float NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyCharacterBase", "SetMaterialParameterFloatValue");
+
+	Params::MassEnemyCharacterBase_SetMaterialParameterFloatValue Parms{};
+
+	Parms.MeshMaterialIndex = MeshMaterialIndex;
+	Parms.ParameterName = ParameterName;
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.DealDamageToCurrentAggroTarget
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AMassEnemyCharacterBase::DealDamageToCurrentAggroTarget() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyCharacterBase", "DealDamageToCurrentAggroTarget");
+
+	Params::MassEnemyCharacterBase_DealDamageToCurrentAggroTarget Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.GetActiveFenceBox
+// (Final, Native, Public, HasDefaults, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FBox                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FBox AMassEnemyCharacterBase::GetActiveFenceBox() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyCharacterBase", "GetActiveFenceBox");
+
+	Params::MassEnemyCharacterBase_GetActiveFenceBox Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.GetAiTag
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// struct FGameplayTag                     ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FGameplayTag AMassEnemyCharacterBase::GetAiTag() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyCharacterBase", "GetAiTag");
+
+	Params::MassEnemyCharacterBase_GetAiTag Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.GetBaseDamageEffectFromConfig
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// TSubclassOf<class UGameplayEffect>      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+TSubclassOf<class UGameplayEffect> AMassEnemyCharacterBase::GetBaseDamageEffectFromConfig() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyCharacterBase", "GetBaseDamageEffectFromConfig");
+
+	Params::MassEnemyCharacterBase_GetBaseDamageEffectFromConfig Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.GetDamageReceivedInTime
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   Times                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float AMassEnemyCharacterBase::GetDamageReceivedInTime(float Times) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyCharacterBase", "GetDamageReceivedInTime");
+
+	Params::MassEnemyCharacterBase_GetDamageReceivedInTime Parms{};
+
+	Parms.Times = Times;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.GetTargetEntity
+// (Final, Native, Public, Const)
+// Parameters:
+// struct FMassEntityHandle                ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FMassEntityHandle AMassEnemyCharacterBase::GetTargetEntity() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyCharacterBase", "GetTargetEntity");
+
+	Params::MassEnemyCharacterBase_GetTargetEntity Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.HasAttackSlotForActor
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class AActor*                           Target                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrAttackSlotType                       AttackSlotType                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   RequestLifetime                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AMassEnemyCharacterBase::HasAttackSlotForActor(class AActor* Target, ECrAttackSlotType AttackSlotType, float RequestLifetime) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyCharacterBase", "HasAttackSlotForActor");
+
+	Params::MassEnemyCharacterBase_HasAttackSlotForActor Parms{};
+
+	Parms.Target = Target;
+	Parms.AttackSlotType = AttackSlotType;
+	Parms.RequestLifetime = RequestLifetime;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.IsAnyDamageRegisteredInTime
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   Times                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AMassEnemyCharacterBase::IsAnyDamageRegisteredInTime(float Times) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyCharacterBase", "IsAnyDamageRegisteredInTime");
+
+	Params::MassEnemyCharacterBase_IsAnyDamageRegisteredInTime Parms{};
+
+	Parms.Times = Times;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.IsInActiveFence
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AMassEnemyCharacterBase::IsInActiveFence() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyCharacterBase", "IsInActiveFence");
+
+	Params::MassEnemyCharacterBase_IsInActiveFence Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnMeshVisibilityUpdated
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent, Const)
+// Parameters:
+// bool                                    bIsMeshHidden                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::OnMeshVisibilityUpdated(bool bIsMeshHidden) const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnMeshVisibilityUpdated", FnName));
+
+	Params::MassEnemyCharacterBase_OnMeshVisibilityUpdated Parms{};
+
+	Parms.bIsMeshHidden = bIsMeshHidden;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCharacterBase.OnRep_SpawnType
+// (Final, Native, Protected, Const)
+
+void AMassEnemyCharacterBase::OnRep_SpawnType() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyCharacterBase", "OnRep_SpawnType");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.ClearFocus
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// int32                                   FocusPriority                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::ClearFocus(int32 FocusPriority)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ClearFocus", FnName));
+
+	Params::MassEnemyActor_ClearFocus Parms{};
+
+	Parms.FocusPriority = FocusPriority;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.ClearYawRotationRatePriority
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// uint8                                   Priority                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::ClearYawRotationRatePriority(uint8 Priority)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ClearYawRotationRatePriority", FnName));
+
+	Params::MassEnemyActor_ClearYawRotationRatePriority Parms{};
+
+	Parms.Priority = Priority;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.GetArcParamOverride
+// (Native, Public)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float AMassEnemyCharacterBase::GetArcParamOverride()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetArcParamOverride", FnName));
+
+	Params::MassEnemyActor_GetArcParamOverride Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.GetFocusPosition
+// (Native, Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector AMassEnemyCharacterBase::GetFocusPosition()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetFocusPosition", FnName));
+
+	Params::MassEnemyActor_GetFocusPosition Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.IsMovementBlocked
+// (Native, Public)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AMassEnemyCharacterBase::IsMovementBlocked()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IsMovementBlocked", FnName));
+
+	Params::MassEnemyActor_IsMovementBlocked Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.IsRotationBlocked
+// (Native, Public)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AMassEnemyCharacterBase::IsRotationBlocked()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IsRotationBlocked", FnName));
+
+	Params::MassEnemyActor_IsRotationBlocked Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.NotifyAnimationFinished
+// (Native, Public)
+
+void AMassEnemyCharacterBase::NotifyAnimationFinished()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"NotifyAnimationFinished", FnName));
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.OnAnimationFinished
+// (Native, Public)
+// Parameters:
+// ECrEnemyLocomotionType                  LocomotionType                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrEnemyAttackType                      AttackType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrEnemyJumpState                       JumpState                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::OnAnimationFinished(ECrEnemyLocomotionType LocomotionType, ECrEnemyAttackType AttackType, ECrEnemyJumpState JumpState)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnAnimationFinished", FnName));
+
+	Params::MassEnemyActor_OnAnimationFinished Parms{};
+
+	Parms.LocomotionType = LocomotionType;
+	Parms.AttackType = AttackType;
+	Parms.JumpState = JumpState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.OnAttackAnimationFinished
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ECrEnemyAttackType                      AttackType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::OnAttackAnimationFinished(ECrEnemyAttackType AttackType)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnAttackAnimationFinished", FnName));
+
+	Params::MassEnemyActor_OnAttackAnimationFinished Parms{};
+
+	Parms.AttackType = AttackType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.OnDamageReceived
+// (Native, Public, HasOutParams, HasDefaults)
+// Parameters:
+// const struct FVector&                   HitWorldPosition                                       (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   HitDirection                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bIsWeakpointDamage                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::OnDamageReceived(const struct FVector& HitWorldPosition, const struct FVector& HitDirection, bool bIsWeakpointDamage)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnDamageReceived", FnName));
+
+	Params::MassEnemyActor_OnDamageReceived Parms{};
+
+	Parms.HitWorldPosition = std::move(HitWorldPosition);
+	Parms.HitDirection = std::move(HitDirection);
+	Parms.bIsWeakpointDamage = bIsWeakpointDamage;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.OnDealDamageAnimationEvent
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ECrEnemyAttackType                      AttackType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::OnDealDamageAnimationEvent(ECrEnemyAttackType AttackType)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnDealDamageAnimationEvent", FnName));
+
+	Params::MassEnemyActor_OnDealDamageAnimationEvent Parms{};
+
+	Parms.AttackType = AttackType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.OnJumpedAnimationEvent
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+
+void AMassEnemyCharacterBase::OnJumpedAnimationEvent()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnJumpedAnimationEvent", FnName));
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.OnLandedAnimationEvent
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+
+void AMassEnemyCharacterBase::OnLandedAnimationEvent()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnLandedAnimationEvent", FnName));
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.OnShootAnimationEvent
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const class FString&                    OverrideSocketName                                     (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::OnShootAnimationEvent(const class FString& OverrideSocketName)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnShootAnimationEvent", FnName));
+
+	Params::MassEnemyActor_OnShootAnimationEvent Parms{};
+
+	Parms.OverrideSocketName = std::move(OverrideSocketName);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetActorSyncData
+// (Native, Public)
+// Parameters:
+// const struct FMassEnemyAnimationSyncData&ActorSyncData                                          (Parm, NoDestructor, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::SetActorSyncData(const struct FMassEnemyAnimationSyncData& ActorSyncData)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetActorSyncData", FnName));
+
+	Params::MassEnemyActor_SetActorSyncData Parms{};
+
+	Parms.ActorSyncData = std::move(ActorSyncData);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetAggroFlare
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+
+void AMassEnemyCharacterBase::SetAggroFlare()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetAggroFlare", FnName));
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetArcParamOverride
+// (Native, Public)
+// Parameters:
+// float                                   NewForcedArcParam                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::SetArcParamOverride(float NewForcedArcParam)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetArcParamOverride", FnName));
+
+	Params::MassEnemyActor_SetArcParamOverride Parms{};
+
+	Parms.NewForcedArcParam = NewForcedArcParam;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetAttackType
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ECrEnemyAttackType                      AttackType                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::SetAttackType(ECrEnemyAttackType AttackType)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetAttackType", FnName));
+
+	Params::MassEnemyActor_SetAttackType Parms{};
+
+	Parms.AttackType = AttackType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetBoostFlare
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+
+void AMassEnemyCharacterBase::SetBoostFlare()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetBoostFlare", FnName));
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetDissolveProgress
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   Progress                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::SetDissolveProgress(float Progress)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetDissolveProgress", FnName));
+
+	Params::MassEnemyActor_SetDissolveProgress Parms{};
+
+	Parms.Progress = Progress;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetFocusActor
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class AActor*                           NewFocusActor                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   FocusPriority                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::SetFocusActor(class AActor* NewFocusActor, int32 FocusPriority)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetFocusActor", FnName));
+
+	Params::MassEnemyActor_SetFocusActor Parms{};
+
+	Parms.NewFocusActor = NewFocusActor;
+	Parms.FocusPriority = FocusPriority;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetFocusPosition
+// (Native, Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FVector&                   NewFocusPosition                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   FocusPriority                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::SetFocusPosition(const struct FVector& NewFocusPosition, int32 FocusPriority)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetFocusPosition", FnName));
+
+	Params::MassEnemyActor_SetFocusPosition Parms{};
+
+	Parms.NewFocusPosition = std::move(NewFocusPosition);
+	Parms.FocusPriority = FocusPriority;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetGroundHitResult
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FHitResult&                HitResult                                              (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::SetGroundHitResult(const struct FHitResult& HitResult)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetGroundHitResult", FnName));
+
+	Params::MassEnemyActor_SetGroundHitResult Parms{};
+
+	Parms.HitResult = std::move(HitResult);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetHasAggroTarget
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bNewHasAggroTarget                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::SetHasAggroTarget(bool bNewHasAggroTarget)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetHasAggroTarget", FnName));
+
+	Params::MassEnemyActor_SetHasAggroTarget Parms{};
+
+	Parms.bNewHasAggroTarget = bNewHasAggroTarget;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetIsAggroEyeColor
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    NewIsAggro                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::SetIsAggroEyeColor(bool NewIsAggro)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetIsAggroEyeColor", FnName));
+
+	Params::MassEnemyActor_SetIsAggroEyeColor Parms{};
+
+	Parms.NewIsAggro = NewIsAggro;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetIsBoostedEyeColor
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    NewIsBoosted                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::SetIsBoostedEyeColor(bool NewIsBoosted)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetIsBoostedEyeColor", FnName));
+
+	Params::MassEnemyActor_SetIsBoostedEyeColor Parms{};
+
+	Parms.NewIsBoosted = NewIsBoosted;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetIsJumpEyeBehaviour
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    NewIsJumpEyeBehaviour                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::SetIsJumpEyeBehaviour(bool NewIsJumpEyeBehaviour)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetIsJumpEyeBehaviour", FnName));
+
+	Params::MassEnemyActor_SetIsJumpEyeBehaviour Parms{};
+
+	Parms.NewIsJumpEyeBehaviour = NewIsJumpEyeBehaviour;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetIsTurnInPlaceActive
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    NewIsTurnInPlaceActive                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::SetIsTurnInPlaceActive(bool NewIsTurnInPlaceActive)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetIsTurnInPlaceActive", FnName));
+
+	Params::MassEnemyActor_SetIsTurnInPlaceActive Parms{};
+
+	Parms.NewIsTurnInPlaceActive = NewIsTurnInPlaceActive;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetJumpLandAnimPlayRation
+// (Native, Public, HasOutParams)
+// Parameters:
+// const float&                            Time                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::SetJumpLandAnimPlayRation(const float& Time)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetJumpLandAnimPlayRation", FnName));
+
+	Params::MassEnemyActor_SetJumpLandAnimPlayRation Parms{};
+
+	Parms.Time = Time;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetJumpLandVelocity
+// (Native, Public, HasOutParams, HasDefaults)
+// Parameters:
+// const struct FVector&                   LandVelocity                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::SetJumpLandVelocity(const struct FVector& LandVelocity)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetJumpLandVelocity", FnName));
+
+	Params::MassEnemyActor_SetJumpLandVelocity Parms{};
+
+	Parms.LandVelocity = std::move(LandVelocity);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetJumpLaunchVelocity
+// (Native, Public, HasOutParams, HasDefaults)
+// Parameters:
+// const struct FVector&                   LaunchVelocity                                         (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::SetJumpLaunchVelocity(const struct FVector& LaunchVelocity)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetJumpLaunchVelocity", FnName));
+
+	Params::MassEnemyActor_SetJumpLaunchVelocity Parms{};
+
+	Parms.LaunchVelocity = std::move(LaunchVelocity);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetJumpState
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ECrEnemyJumpState                       NewJumpState                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::SetJumpState(ECrEnemyJumpState NewJumpState)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetJumpState", FnName));
+
+	Params::MassEnemyActor_SetJumpState Parms{};
+
+	Parms.NewJumpState = NewJumpState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetJumpTime
+// (Native, Public, HasOutParams)
+// Parameters:
+// const float&                            Time                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::SetJumpTime(const float& Time)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetJumpTime", FnName));
+
+	Params::MassEnemyActor_SetJumpTime Parms{};
+
+	Parms.Time = Time;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetLocomotionType
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ECrEnemyLocomotionType                  NewLocomotionType                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECrEnemyLocomotionType                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+ECrEnemyLocomotionType AMassEnemyCharacterBase::SetLocomotionType(ECrEnemyLocomotionType NewLocomotionType)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetLocomotionType", FnName));
+
+	Params::MassEnemyActor_SetLocomotionType Parms{};
+
+	Parms.NewLocomotionType = NewLocomotionType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetMassEnemyInitializationState
+// (Native, Public)
+// Parameters:
+// EMassEnemyInitializationState           InitializationState                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::SetMassEnemyInitializationState(EMassEnemyInitializationState InitializationState)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetMassEnemyInitializationState", FnName));
+
+	Params::MassEnemyActor_SetMassEnemyInitializationState Parms{};
+
+	Parms.InitializationState = InitializationState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetMassSpawnerFenceData
+// (Native, Public, HasOutParams, HasDefaults)
+// Parameters:
+// ECrSpawnFenceType                       FenceType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FBox&                      FenceBox                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::SetMassSpawnerFenceData(ECrSpawnFenceType FenceType, const struct FBox& FenceBox)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetMassSpawnerFenceData", FnName));
+
+	Params::MassEnemyActor_SetMassSpawnerFenceData Parms{};
+
+	Parms.FenceType = FenceType;
+	Parms.FenceBox = std::move(FenceBox);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetMaxSpeed
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   NewMaxSpeed                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bUpdateAnimGraphMaxSpeed                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float AMassEnemyCharacterBase::SetMaxSpeed(float NewMaxSpeed, bool bUpdateAnimGraphMaxSpeed)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetMaxSpeed", FnName));
+
+	Params::MassEnemyActor_SetMaxSpeed Parms{};
+
+	Parms.NewMaxSpeed = NewMaxSpeed;
+	Parms.bUpdateAnimGraphMaxSpeed = bUpdateAnimGraphMaxSpeed;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetOrientRotationToMovement
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    NewOrientRotationToMovement                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::SetOrientRotationToMovement(bool NewOrientRotationToMovement)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetOrientRotationToMovement", FnName));
+
+	Params::MassEnemyActor_SetOrientRotationToMovement Parms{};
+
+	Parms.NewOrientRotationToMovement = NewOrientRotationToMovement;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetSpawnType
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ECrEnemySpawnType                       SpawnType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::SetSpawnType(ECrEnemySpawnType SpawnType)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetSpawnType", FnName));
+
+	Params::MassEnemyActor_SetSpawnType Parms{};
+
+	Parms.SpawnType = SpawnType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetTauntType
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// ECrEnemyTauntType                       TauntType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::SetTauntType(ECrEnemyTauntType TauntType)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetTauntType", FnName));
+
+	Params::MassEnemyActor_SetTauntType Parms{};
+
+	Parms.TauntType = TauntType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetVisibilityBasedAnimTickOption
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EVisibilityBasedAnimTickOption          NewVisiblityBvBasedAnimTickOption                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::SetVisibilityBasedAnimTickOption(EVisibilityBasedAnimTickOption NewVisiblityBvBasedAnimTickOption)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetVisibilityBasedAnimTickOption", FnName));
+
+	Params::MassEnemyActor_SetVisibilityBasedAnimTickOption Parms{};
+
+	Parms.NewVisiblityBvBasedAnimTickOption = NewVisiblityBvBasedAnimTickOption;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.SetYawRotationRate
+// (Native, Event, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   NewYawRotationRate                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint8                                   Priority                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Lifetime                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      DebugName                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::SetYawRotationRate(float NewYawRotationRate, uint8 Priority, float Lifetime, const class FName& DebugName)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetYawRotationRate", FnName));
+
+	Params::MassEnemyActor_SetYawRotationRate Parms{};
+
+	Parms.NewYawRotationRate = NewYawRotationRate;
+	Parms.Priority = Priority;
+	Parms.Lifetime = Lifetime;
+	Parms.DebugName = DebugName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyActor.GetIdleEyeColor
+// (Native, Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// struct FColor                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FColor AMassEnemyCharacterBase::GetIdleEyeColor() const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetIdleEyeColor", FnName));
+
+	Params::MassEnemyActor_GetIdleEyeColor Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetAllowedAttackConeHalfAngle
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   NewAttackConeHalfAngle                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::SetAllowedAttackConeHalfAngle(float NewAttackConeHalfAngle)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetAllowedAttackConeHalfAngle", FnName));
+
+	Params::MassEnemyDamageInterface_SetAllowedAttackConeHalfAngle Parms{};
+
+	Parms.NewAttackConeHalfAngle = NewAttackConeHalfAngle;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetAllowedAttackDistance
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   NewAttackDistance                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::SetAllowedAttackDistance(float NewAttackDistance)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetAllowedAttackDistance", FnName));
+
+	Params::MassEnemyDamageInterface_SetAllowedAttackDistance Parms{};
+
+	Parms.NewAttackDistance = NewAttackDistance;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetAllowedBuildingAttackDistance
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   NewAttackDistance                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::SetAllowedBuildingAttackDistance(float NewAttackDistance)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetAllowedBuildingAttackDistance", FnName));
+
+	Params::MassEnemyDamageInterface_SetAllowedBuildingAttackDistance Parms{};
+
+	Parms.NewAttackDistance = NewAttackDistance;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetAttackTargetPosition
+// (Native, Event, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const struct FVector&                   NewAttackTargetPosition                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::SetAttackTargetPosition(const struct FVector& NewAttackTargetPosition)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetAttackTargetPosition", FnName));
+
+	Params::MassEnemyDamageInterface_SetAttackTargetPosition Parms{};
+
+	Parms.NewAttackTargetPosition = std::move(NewAttackTargetPosition);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetBuildingInfectionDamage
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// float                                   NewBuildingInfectionDamage                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::SetBuildingInfectionDamage(float NewBuildingInfectionDamage)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetBuildingInfectionDamage", FnName));
+
+	Params::MassEnemyDamageInterface_SetBuildingInfectionDamage Parms{};
+
+	Parms.NewBuildingInfectionDamage = NewBuildingInfectionDamage;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.SetDamageGameplayEffect
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// TSubclassOf<class UGameplayEffect>      DamageEffect                                           (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AMassEnemyCharacterBase::SetDamageGameplayEffect(TSubclassOf<class UGameplayEffect> DamageEffect)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetDamageGameplayEffect", FnName));
+
+	Params::MassEnemyDamageInterface_SetDamageGameplayEffect Parms{};
+
+	Parms.DamageEffect = DamageEffect;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetAggroTargetActor
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// class AActor*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AActor* AMassEnemyCharacterBase::GetAggroTargetActor() const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetAggroTargetActor", FnName));
+
+	Params::MassEnemyDamageInterface_GetAggroTargetActor Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetAllowedAttackConeHalfAngle
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float AMassEnemyCharacterBase::GetAllowedAttackConeHalfAngle() const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetAllowedAttackConeHalfAngle", FnName));
+
+	Params::MassEnemyDamageInterface_GetAllowedAttackConeHalfAngle Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetAllowedAttackDistance
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float AMassEnemyCharacterBase::GetAllowedAttackDistance() const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetAllowedAttackDistance", FnName));
+
+	Params::MassEnemyDamageInterface_GetAllowedAttackDistance Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetAllowedBuildingAttackDistance
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float AMassEnemyCharacterBase::GetAllowedBuildingAttackDistance() const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetAllowedBuildingAttackDistance", FnName));
+
+	Params::MassEnemyDamageInterface_GetAllowedBuildingAttackDistance Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetAttackTargetPosition
+// (Native, Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector AMassEnemyCharacterBase::GetAttackTargetPosition() const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetAttackTargetPosition", FnName));
+
+	Params::MassEnemyDamageInterface_GetAttackTargetPosition Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetBuildingInfectionDamage
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float AMassEnemyCharacterBase::GetBuildingInfectionDamage() const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetBuildingInfectionDamage", FnName));
+
+	Params::MassEnemyDamageInterface_GetBuildingInfectionDamage Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyDamageInterface.GetDamageGameplayEffect
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// TSubclassOf<class UGameplayEffect>      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+TSubclassOf<class UGameplayEffect> AMassEnemyCharacterBase::GetDamageGameplayEffect() const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetDamageGameplayEffect", FnName));
+
+	Params::MassEnemyDamageInterface_GetDamageGameplayEffect Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassActors.MassActorPoolableInterface.CanBePooled
+// (RequiredAPI, Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AMassEnemyCharacterBase::CanBePooled()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"CanBePooled", FnName));
+
+	Params::MassActorPoolableInterface_CanBePooled Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassActors.MassActorPoolableInterface.PrepareForGame
+// (RequiredAPI, Native, Event, Public, BlueprintCallable, BlueprintEvent)
+
+void AMassEnemyCharacterBase::PrepareForGame()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PrepareForGame", FnName));
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassActors.MassActorPoolableInterface.PrepareForPooling
+// (RequiredAPI, Native, Event, Public, BlueprintCallable, BlueprintEvent)
+
+void AMassEnemyCharacterBase::PrepareForPooling()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PrepareForPooling", FnName));
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCheatManagerExtension.killemAll
+// (Final, Exec, Native, Public)
+
+void UMassEnemyCheatManagerExtension::killemAll()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyCheatManagerExtension", "killemAll");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCheatManagerExtension.killemAllInRange
+// (Final, Exec, Native, Public)
+// Parameters:
+// float                                   Range                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMassEnemyCheatManagerExtension::killemAllInRange(float Range)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyCheatManagerExtension", "killemAllInRange");
+
+	Params::MassEnemyCheatManagerExtension_killemAllInRange Parms{};
+
+	Parms.Range = Range;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyCheatManagerExtension.killemClosest
+// (Final, Exec, Native, Public)
+
+void UMassEnemyCheatManagerExtension::killemClosest()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyCheatManagerExtension", "killemClosest");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyEntityCollisionIsmWrapperSubsystem.GetOrCreateEntityCollisionIsmWrapperActor
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TSoftObjectPtr<class UStaticMesh>&CollisionSM                                            (ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AMassEnemyEntityCollisionIsmWrapperActor*ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class AMassEnemyEntityCollisionIsmWrapperActor* UMassEnemyEntityCollisionIsmWrapperSubsystem::GetOrCreateEntityCollisionIsmWrapperActor(const class UObject* WorldContextObject, const TSoftObjectPtr<class UStaticMesh>& CollisionSM)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyEntityCollisionIsmWrapperSubsystem", "GetOrCreateEntityCollisionIsmWrapperActor");
+
+	Params::MassEnemyEntityCollisionIsmWrapperSubsystem_GetOrCreateEntityCollisionIsmWrapperActor Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.CollisionSM = CollisionSM;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyEventQueueSubsystem.DealDamageToAiActor
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class UGameplayEffect>      AiDamageEffect                                         (Parm, ZeroConstructor, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           AttackerActor                                          (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           TargetActor                                            (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMassEnemyEventQueueSubsystem::DealDamageToAiActor(TSubclassOf<class UGameplayEffect> AiDamageEffect, class AActor* AttackerActor, class AActor* TargetActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyEventQueueSubsystem", "DealDamageToAiActor");
+
+	Params::MassEnemyEventQueueSubsystem_DealDamageToAiActor Parms{};
+
+	Parms.AiDamageEffect = AiDamageEffect;
+	Parms.AttackerActor = AttackerActor;
+	Parms.TargetActor = TargetActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyEventQueueSubsystem.DealDamageToAiASC
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FGameplayEffectSpecHandle& SpecHandle                                             (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// class UAbilitySystemComponent*          InstigatorASC                                          (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UAbilitySystemComponent*          TargetASC                                              (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMassEnemyEventQueueSubsystem::DealDamageToAiASC(const struct FGameplayEffectSpecHandle& SpecHandle, class UAbilitySystemComponent* InstigatorASC, class UAbilitySystemComponent* TargetASC)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyEventQueueSubsystem", "DealDamageToAiASC");
+
+	Params::MassEnemyEventQueueSubsystem_DealDamageToAiASC Parms{};
+
+	Parms.SpecHandle = std::move(SpecHandle);
+	Parms.InstigatorASC = InstigatorASC;
+	Parms.TargetASC = TargetASC;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyEventQueueSubsystem.NotifyAiSpawn
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class ACrAIBase*                        SpawnedAiActor                                         (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMassEnemyEventQueueSubsystem::NotifyAiSpawn(class ACrAIBase* SpawnedAiActor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyEventQueueSubsystem", "NotifyAiSpawn");
+
+	Params::MassEnemyEventQueueSubsystem_NotifyAiSpawn Parms{};
+
+	Parms.SpawnedAiActor = SpawnedAiActor;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyEventQueueSubsystem.OnEntitiesMarkedForKillByPanicButton
+// (Final, Native, Protected)
+// Parameters:
+// const TArray<struct FMassEntityHandle>& Entities                                               (Parm, ZeroConstructor, NativeAccessSpecifierPublic)
+
+void UMassEnemyEventQueueSubsystem::OnEntitiesMarkedForKillByPanicButton(const TArray<struct FMassEntityHandle>& Entities)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyEventQueueSubsystem", "OnEntitiesMarkedForKillByPanicButton");
+
+	Params::MassEnemyEventQueueSubsystem_OnEntitiesMarkedForKillByPanicButton Parms{};
+
+	Parms.Entities = std::move(Entities);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyFXEventSubsystem.RegisterEvent
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class AMassEnemyCharacterBase*    Character                                              (ConstParm, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGameplayTag&              EventTag                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMassEnemyFXEventSubsystem::RegisterEvent(const class AMassEnemyCharacterBase* Character, const struct FGameplayTag& EventTag)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemyFXEventSubsystem", "RegisterEvent");
+
+	Params::MassEnemyFXEventSubsystem_RegisterEvent Parms{};
+
+	Parms.Character = Character;
+	Parms.EventTag = std::move(EventTag);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemyPooledActorComponentInterface.OnPooledOwnerActivityChanged
+// (Native, Public)
+// Parameters:
+// bool                                    bNewEnabled                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IMassEnemyPooledActorComponentInterface::OnPooledOwnerActivityChanged(bool bNewEnabled)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("MassEnemyPooledActorComponentInterface", "OnPooledOwnerActivityChanged");
+
+	Params::MassEnemyPooledActorComponentInterface_OnPooledOwnerActivityChanged Parms{};
+
+	Parms.bNewEnabled = bNewEnabled;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemySpawnerTriggerSphere.OnSphereBeginOverlap
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FHitResult&                SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void UMassEnemySpawnerTriggerSphere::OnSphereBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemySpawnerTriggerSphere", "OnSphereBeginOverlap");
+
+	Params::MassEnemySpawnerTriggerSphere_OnSphereBeginOverlap Parms{};
+
+	Parms.OverlappedComponent = OverlappedComponent;
+	Parms.OtherActor = OtherActor;
+	Parms.OtherComp = OtherComp;
+	Parms.OtherBodyIndex = OtherBodyIndex;
+	Parms.bFromSweep = bFromSweep;
+	Parms.SweepResult = std::move(SweepResult);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemySpawnerTriggerSphere.OnSphereEndOverlap
+// (Final, Native, Public)
+// Parameters:
+// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMassEnemySpawnerTriggerSphere::OnSphereEndOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemySpawnerTriggerSphere", "OnSphereEndOverlap");
+
+	Params::MassEnemySpawnerTriggerSphere_OnSphereEndOverlap Parms{};
+
+	Parms.OverlappedComponent = OverlappedComponent;
+	Parms.OtherActor = OtherActor;
+	Parms.OtherComp = OtherComp;
+	Parms.OtherBodyIndex = OtherBodyIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrAISpawnerTriggerInterface.OnPlayerEnter
+// (Native, Public)
+// Parameters:
+// class ACrPlayerControllerBase*          Player                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMassEnemySpawnerTriggerSphere::OnPlayerEnter(class ACrPlayerControllerBase* Player)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPlayerEnter", FnName));
+
+	Params::CrAISpawnerTriggerInterface_OnPlayerEnter Parms{};
+
+	Parms.Player = Player;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrAISpawnerTriggerInterface.OnPlayerExit
+// (Native, Public)
+// Parameters:
+// class ACrPlayerControllerBase*          Player                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMassEnemySpawnerTriggerSphere::OnPlayerExit(class ACrPlayerControllerBase* Player)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPlayerExit", FnName));
+
+	Params::CrAISpawnerTriggerInterface_OnPlayerExit Parms{};
+
+	Parms.Player = Player;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrAISpawnerTriggerInterface.GetActivateAiAggroOnEnter
+// (Native, Public, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UMassEnemySpawnerTriggerSphere::GetActivateAiAggroOnEnter() const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetActivateAiAggroOnEnter", FnName));
+
+	Params::CrAISpawnerTriggerInterface_GetActivateAiAggroOnEnter Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrAISpawnerTriggerInterface.GetAsBox
+// (Native, Public, HasDefaults, Const)
+// Parameters:
+// struct FBox                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FBox UMassEnemySpawnerTriggerSphere::GetAsBox() const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetAsBox", FnName));
+
+	Params::CrAISpawnerTriggerInterface_GetAsBox Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrAISpawnerTriggerInterface.GetAsSphere
+// (Native, Public, HasDefaults, Const)
+// Parameters:
+// struct FSphere                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FSphere UMassEnemySpawnerTriggerSphere::GetAsSphere() const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetAsSphere", FnName));
+
+	Params::CrAISpawnerTriggerInterface_GetAsSphere Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrAISpawnerTriggerInterface.GetTriggerType
+// (Native, Public, Const)
+// Parameters:
+// EMassEnemySpawnerTriggerType            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EMassEnemySpawnerTriggerType UMassEnemySpawnerTriggerSphere::GetTriggerType() const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetTriggerType", FnName));
+
+	Params::CrAISpawnerTriggerInterface_GetTriggerType Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrAISpawnerTriggerInterface.IsSphereShape
+// (Native, Public, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UMassEnemySpawnerTriggerSphere::IsSphereShape() const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IsSphereShape", FnName));
+
+	Params::CrAISpawnerTriggerInterface_IsSphereShape Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrAISpawnerEditorVisibilityInterface.SetEditorVisibility
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bIsVisible                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMassEnemySpawnerTriggerSphere::SetEditorVisibility(bool bIsVisible)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetEditorVisibility", FnName));
+
+	Params::CrAISpawnerEditorVisibilityInterface_SetEditorVisibility Parms{};
+
+	Parms.bIsVisible = bIsVisible;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemySpawnerTriggerBox.OnBoxBeginOverlap
+// (Final, Native, Public, HasOutParams)
+// Parameters:
+// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FHitResult&                SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void UMassEnemySpawnerTriggerBox::OnBoxBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemySpawnerTriggerBox", "OnBoxBeginOverlap");
+
+	Params::MassEnemySpawnerTriggerBox_OnBoxBeginOverlap Parms{};
+
+	Parms.OverlappedComponent = OverlappedComponent;
+	Parms.OtherActor = OtherActor;
+	Parms.OtherComp = OtherComp;
+	Parms.OtherBodyIndex = OtherBodyIndex;
+	Parms.bFromSweep = bFromSweep;
+	Parms.SweepResult = std::move(SweepResult);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemySpawnerTriggerBox.OnBoxEndOverlap
+// (Final, Native, Public)
+// Parameters:
+// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMassEnemySpawnerTriggerBox::OnBoxEndOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemySpawnerTriggerBox", "OnBoxEndOverlap");
+
+	Params::MassEnemySpawnerTriggerBox_OnBoxEndOverlap Parms{};
+
+	Parms.OverlappedComponent = OverlappedComponent;
+	Parms.OtherActor = OtherActor;
+	Parms.OtherComp = OtherComp;
+	Parms.OtherBodyIndex = OtherBodyIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrAISpawnerTriggerInterface.OnPlayerEnter
+// (Native, Public)
+// Parameters:
+// class ACrPlayerControllerBase*          Player                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMassEnemySpawnerTriggerBox::OnPlayerEnter(class ACrPlayerControllerBase* Player)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPlayerEnter", FnName));
+
+	Params::CrAISpawnerTriggerInterface_OnPlayerEnter Parms{};
+
+	Parms.Player = Player;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrAISpawnerTriggerInterface.OnPlayerExit
+// (Native, Public)
+// Parameters:
+// class ACrPlayerControllerBase*          Player                                                 (Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMassEnemySpawnerTriggerBox::OnPlayerExit(class ACrPlayerControllerBase* Player)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPlayerExit", FnName));
+
+	Params::CrAISpawnerTriggerInterface_OnPlayerExit Parms{};
+
+	Parms.Player = Player;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrAISpawnerTriggerInterface.GetActivateAiAggroOnEnter
+// (Native, Public, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UMassEnemySpawnerTriggerBox::GetActivateAiAggroOnEnter() const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetActivateAiAggroOnEnter", FnName));
+
+	Params::CrAISpawnerTriggerInterface_GetActivateAiAggroOnEnter Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrAISpawnerTriggerInterface.GetAsBox
+// (Native, Public, HasDefaults, Const)
+// Parameters:
+// struct FBox                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FBox UMassEnemySpawnerTriggerBox::GetAsBox() const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetAsBox", FnName));
+
+	Params::CrAISpawnerTriggerInterface_GetAsBox Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrAISpawnerTriggerInterface.GetAsSphere
+// (Native, Public, HasDefaults, Const)
+// Parameters:
+// struct FSphere                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FSphere UMassEnemySpawnerTriggerBox::GetAsSphere() const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetAsSphere", FnName));
+
+	Params::CrAISpawnerTriggerInterface_GetAsSphere Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrAISpawnerTriggerInterface.GetTriggerType
+// (Native, Public, Const)
+// Parameters:
+// EMassEnemySpawnerTriggerType            ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EMassEnemySpawnerTriggerType UMassEnemySpawnerTriggerBox::GetTriggerType() const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetTriggerType", FnName));
+
+	Params::CrAISpawnerTriggerInterface_GetTriggerType Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrAISpawnerTriggerInterface.IsSphereShape
+// (Native, Public, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UMassEnemySpawnerTriggerBox::IsSphereShape() const
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"IsSphereShape", FnName));
+
+	Params::CrAISpawnerTriggerInterface_IsSphereShape Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function Chimera.CrAISpawnerEditorVisibilityInterface.SetEditorVisibility
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bIsVisible                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMassEnemySpawnerTriggerBox::SetEditorVisibility(bool bIsVisible)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetEditorVisibility", FnName));
+
+	Params::CrAISpawnerEditorVisibilityInterface_SetEditorVisibility Parms{};
+
+	Parms.bIsVisible = bIsVisible;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function Chimera.CrAISpawnerEditorVisibilityInterface.SetEditorVisibility
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bIsVisible                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMassEnemySpawnPositionComponent::SetEditorVisibility(bool bIsVisible)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetEditorVisibility", FnName));
+
+	Params::CrAISpawnerEditorVisibilityInterface_SetEditorVisibility Parms{};
+
+	Parms.bIsVisible = bIsVisible;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemySpawnSubsystem.ClearDebugSpawnPreset
+// (Final, Native, Public, BlueprintCallable)
+
+void UMassEnemySpawnSubsystem::ClearDebugSpawnPreset()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemySpawnSubsystem", "ClearDebugSpawnPreset");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.MassEnemySpawnSubsystem.OnPreSaveStart
+// (Final, Native, Private)
+
+void UMassEnemySpawnSubsystem::OnPreSaveStart()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MassEnemySpawnSubsystem", "OnPreSaveStart");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.NavLinkGeneratorBox.QueuePcgGeneration
+// (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FIntPoint&                 Request                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ANavLinkGeneratorBox::QueuePcgGeneration(const struct FIntPoint& Request)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("NavLinkGeneratorBox", "QueuePcgGeneration");
+
+	Params::NavLinkGeneratorBox_QueuePcgGeneration Parms{};
+
+	Parms.Request = std::move(Request);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.NavLinkGeneratorBox.StartPcgGeneration
+// (Final, Native, Public, BlueprintCallable)
+
+void ANavLinkGeneratorBox::StartPcgGeneration()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("NavLinkGeneratorBox", "StartPcgGeneration");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function MassAIPrototypeEnemyRuntime.NavLinkGeneratorBox.IsGenerating
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ANavLinkGeneratorBox::IsGenerating() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("NavLinkGeneratorBox", "IsGenerating");
+
+	Params::NavLinkGeneratorBox_IsGenerating Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 }

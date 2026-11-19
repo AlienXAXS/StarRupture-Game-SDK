@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_Foundable_Base_C::ExecuteUbergraph_BP_Foundable_Base(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Foundable_Base_C", "ExecuteUbergraph_BP_Foundable_Base");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Foundable_Base_C", "ExecuteUbergraph_BP_Foundable_Base", FuncInfo);
 
 	Params::BP_Foundable_Base_C_ExecuteUbergraph_BP_Foundable_Base Parms{};
 
@@ -43,10 +41,8 @@ void ABP_Foundable_Base_C::ExecuteUbergraph_BP_Foundable_Base(int32 EntryPoint)
 
 bool ABP_Foundable_Base_C::OnStorageEmptied()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Foundable_Base_C", "OnStorageEmptied");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnStorageEmptied", FnName));
 
 	Params::BP_Foundable_Base_C_OnStorageEmptied Parms{};
 
@@ -61,10 +57,8 @@ bool ABP_Foundable_Base_C::OnStorageEmptied()
 
 void ABP_Foundable_Base_C::PlayEmptiedSound()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Foundable_Base_C", "PlayEmptiedSound");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PlayEmptiedSound", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -75,10 +69,8 @@ void ABP_Foundable_Base_C::PlayEmptiedSound()
 
 void ABP_Foundable_Base_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Foundable_Base_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -91,10 +83,8 @@ void ABP_Foundable_Base_C::ReceiveBeginPlay()
 
 void ABP_Foundable_Base_C::UpdateFoundableVisibilityForStorageState(bool BeginPlay)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Foundable_Base_C", "UpdateFoundableVisibilityForStorageState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateFoundableVisibilityForStorageState", FnName));
 
 	Params::BP_Foundable_Base_C_UpdateFoundableVisibilityForStorageState Parms{};
 
@@ -109,10 +99,8 @@ void ABP_Foundable_Base_C::UpdateFoundableVisibilityForStorageState(bool BeginPl
 
 void ABP_Foundable_Base_C::UpdateMaterialsForStorageState()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Foundable_Base_C", "UpdateMaterialsForStorageState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateMaterialsForStorageState", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

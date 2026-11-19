@@ -18,9 +18,12 @@
 SDK_NAMESPACE_START
 
 // Class ContextualDialog.ContextualDialogInterface
-// 0x0000 (0x0000 - 0x0000)
-class IContextualDialogInterface final
+// 0x0008 (0x0008 - 0x0000)
+class IContextualDialogInterface
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	bool CanExecuteAnyContextualResponse(bool bIsImportant);
 	bool ExecuteContextualResponse(const struct FContextualResponsePayload& ResponseData, class FName RuleNameContainingResponseData);
@@ -159,7 +162,7 @@ public:
 	bool ClearCooldownsData();
 	class UContextualRuleObject* ConstructContextualRuleObject(class FName InRuleName, const struct FRuleData& RuleData);
 	void DebugLogAllRulesCountForEachContextType();
-	bool ExecuteQueuedResponse(class AActor* TargetActor);
+	bool ExecuteQueuedResponse(class AActor* TargetActor, bool bIgnoreActorAndAcceptFirst);
 	bool ExecuteRuleResponseForTargetActor(class AActor* TargetActor, class UContextualRuleObject* RuleObject);
 	class UContextualRuleObject* FindMatchingRuleForQuery(class UContextualQueryObject* QueryObject, bool* RuleFound);
 	TArray<class AActor*> GetActorsWithContextualDialogInterface();

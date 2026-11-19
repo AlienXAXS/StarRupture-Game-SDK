@@ -10,13 +10,13 @@
 
 #include "Basic.hpp"
 
-#include "DeveloperSettings_classes.hpp"
 #include "CameraCalibrationCore_structs.hpp"
 #include "CinematicCamera_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
 #include "ProceduralMeshComponent_classes.hpp"
 #include "Engine_classes.hpp"
+#include "DeveloperSettings_classes.hpp"
 
 
 SDK_NAMESPACE_START
@@ -251,6 +251,26 @@ public:
 };
 DUMPER7_ASSERTS_UCameraCalibrationEditorSettings;
 
+// Class CameraCalibrationCore.SphericalLensModel
+// 0x0000 (0x0028 - 0x0028)
+class USphericalLensModel final : public ULensModel
+{
+public:
+	static class UClass* StaticClass()
+	{
+		STATIC_CLASS_IMPL("SphericalLensModel")
+	}
+	static const class FName& StaticName()
+	{
+		STATIC_NAME_IMPL(L"SphericalLensModel")
+	}
+	static class USphericalLensModel* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<USphericalLensModel>();
+	}
+};
+DUMPER7_ASSERTS_USphericalLensModel;
+
 // Class CameraCalibrationCore.CameraCalibrationStep
 // 0x0000 (0x0028 - 0x0028)
 class UCameraCalibrationStep final : public UObject
@@ -478,25 +498,5 @@ public:
 	}
 };
 DUMPER7_ASSERTS_USphericalLensDistortionModelHandler;
-
-// Class CameraCalibrationCore.SphericalLensModel
-// 0x0000 (0x0028 - 0x0028)
-class USphericalLensModel final : public ULensModel
-{
-public:
-	static class UClass* StaticClass()
-	{
-		STATIC_CLASS_IMPL("SphericalLensModel")
-	}
-	static const class FName& StaticName()
-	{
-		STATIC_NAME_IMPL(L"SphericalLensModel")
-	}
-	static class USphericalLensModel* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<USphericalLensModel>();
-	}
-};
-DUMPER7_ASSERTS_USphericalLensModel;
 
 SDK_NAMESPACE_END

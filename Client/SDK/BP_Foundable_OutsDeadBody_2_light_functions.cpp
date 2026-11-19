@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 bool ABP_Foundable_OutsDeadBody_2_light_C::OnStorageEmptied()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Foundable_OutsDeadBody_2_light_C", "OnStorageEmptied");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnStorageEmptied", FnName));
 
 	Params::BP_Foundable_OutsDeadBody_2_light_C_OnStorageEmptied Parms{};
 

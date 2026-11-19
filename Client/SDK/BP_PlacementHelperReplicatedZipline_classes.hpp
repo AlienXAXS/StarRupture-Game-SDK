@@ -10,33 +10,33 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "Chimera_classes.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_PlacementHelperReplicatedZipline.BP_PlacementHelperReplicatedZipline_C
-// 0x00B0 (0x0C00 - 0x0B50)
+// 0x00B0 (0x0D60 - 0x0CB0)
 class ABP_PlacementHelperReplicatedZipline_C final : public ACrAPHelperActorZipline
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0B50(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UNiagaraComponent*                      Beams;                                             // 0x0B58(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	TArray<class USplineMeshComponent*>           ConnectingSplines;                                 // 0x0B60(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
-	TArray<class USplineComponent*>               Splines;                                           // 0x0B70(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
-	struct FColor                                 SplineColor;                                       // 0x0B80(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_B84[0x4];                                      // 0x0B84(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<struct FVector>                        AcceptedLocations;                                 // 0x0B88(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	TArray<struct FVector>                        BlockedLocations;                                  // 0x0B98(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	class FString                                 BeamEnabledString;                                 // 0x0BA8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
-	class FName                                   BeamEnabledName;                                   // 0x0BB8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 BeamPositionString;                                // 0x0BC0(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
-	class FName                                   BeamPositionName;                                  // 0x0BD0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 BeamBlockedString;                                 // 0x0BD8(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
-	class FName                                   BeamBlockedName;                                   // 0x0BE8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         BeamOffsetNumber;                                  // 0x0BF0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0CB0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UNiagaraComponent*                      Beams;                                             // 0x0CB8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	TArray<class USplineMeshComponent*>           ConnectingSplines;                                 // 0x0CC0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
+	TArray<class USplineComponent*>               Splines;                                           // 0x0CD0(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance, ContainsInstancedReference)
+	struct FColor                                 SplineColor;                                       // 0x0CE0(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_CE4[0x4];                                      // 0x0CE4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<struct FVector>                        AcceptedLocations;                                 // 0x0CE8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	TArray<struct FVector>                        BlockedLocations;                                  // 0x0CF8(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	class FString                                 BeamEnabledString;                                 // 0x0D08(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	class FName                                   BeamEnabledName;                                   // 0x0D18(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 BeamPositionString;                                // 0x0D20(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	class FName                                   BeamPositionName;                                  // 0x0D30(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 BeamBlockedString;                                 // 0x0D38(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, HasGetValueTypeHash)
+	class FName                                   BeamBlockedName;                                   // 0x0D48(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         BeamOffsetNumber;                                  // 0x0D50(0x0004)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_PlacementHelperReplicatedZipline(int32 EntryPoint);

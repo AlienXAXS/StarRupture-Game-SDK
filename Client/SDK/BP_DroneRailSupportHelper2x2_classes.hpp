@@ -17,14 +17,14 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_DroneRailSupportHelper2x2.BP_DroneRailSupportHelper2x2_C
-// 0x0020 (0x0A30 - 0x0A10)
+// 0x0020 (0x0B90 - 0x0B70)
 class ABP_DroneRailSupportHelper2x2_C final : public ACrAPHelperActorBase
 {
 public:
-	uint8                                         Pad_A08[0x8];                                      // 0x0A08(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0A10(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UInstancedStaticMeshComponent*          TileIndicatorsISM;                                 // 0x0A18(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UMaterialInstanceDynamic*               TileIndicatorISMDynamicMaterial;                   // 0x0A20(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_B68[0x8];                                      // 0x0B68(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0B70(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UInstancedStaticMeshComponent*          TileIndicatorsISM;                                 // 0x0B78(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               TileIndicatorISMDynamicMaterial;                   // 0x0B80(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_BP_DroneRailSupportHelper2x2(int32 EntryPoint);

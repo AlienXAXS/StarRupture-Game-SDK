@@ -61,12 +61,26 @@ using namespace UC;
 */
 namespace Offsets
 {
-	constexpr int32 GObjects          = 0x0E359240;
-	constexpr int32 AppendString      = 0x014B4970;
-	constexpr int32 GNames            = 0x0E21BC00;
-	constexpr int32 GWorld            = 0x0E0236D0;
-	constexpr int32 ProcessEvent      = 0x0177FB20;
-	constexpr int32 ProcessEventIdx   = 0x0000004C;
+	constexpr int32 GObjects             = 0x0E464FC0;
+	constexpr int32 AppendString         = 0x014BA610;
+	constexpr int32 GNames               = 0x0E380BC0;
+	constexpr int32 GWorld               = 0x0E12C6D0;
+	constexpr int32 ProcessEvent         = 0x017857E0;
+	constexpr int32 ProcessEventIdx      = 0x0000004C;
+	constexpr int32 FindFunctionChecked  = 0x01780910;
+}
+
+// Forward declarations because in-line forward declarations make the compiler think 'GetStaticClass()' is a class template
+class UClass;
+class UObject;
+class UFunction;
+class UScriptStruct;
+class FName;
+
+namespace MIPad
+{
+	template<unsigned long long N, unsigned long long Tag>
+	struct alignas(1) Pad { unsigned char _pad[N]; };
 }
 
 namespace InSDKUtils
@@ -87,15 +101,16 @@ namespace InSDKUtils
 	{
 		return Function(std::forward<ParamTypes>(Args)...);
 	}
+
+	inline UFunction* FindFunctionChecked(const UObject* Obj, const FName& Name)
+	{
+		using FFindFunctionCheckedType = UFunction*(__fastcall*)(const UObject*, uint64);
+		auto FindFunctionCheckedAddress = reinterpret_cast<FFindFunctionCheckedType>(GetImageBase() + Offsets::FindFunctionChecked);
+
+		return CallGameFunction(FindFunctionCheckedAddress, Obj, *reinterpret_cast<const uint64*>(&Name));
+	}
 }
 
-
-// Forward declarations because in-line forward declarations make the compiler think 'GetStaticClass()' is a class template
-class UClass;
-class UObject;
-class UFunction;
-class UScriptStruct;
-class FName;
 
 namespace BasicFilesImplUtils
 {
@@ -112,6 +127,10 @@ namespace BasicFilesImplUtils
 	UObject* GetObjectByIndex(int32 Index);
 
 	UFunction* FindFunctionByFName(const FName* Name);
+
+	UFunction* FindFunctionViaClass(UClass* SearchClass, const char* OuterClassName, const char* FuncName);
+
+	uint64 GetObjectOuterFNameAsUInt64(UObject* Obj);
 
 	FName StringToName(const wchar_t* Name);
 
@@ -217,6 +236,10 @@ ClassType* GetDefaultObjImpl()
     static FName Name = FName(); \
     return GetStaticName(NameString, Name); \
 }
+
+struct ReloadableFuncInfo;
+
+UFunction* GetStaticFunction(UClass* SearchClass, const char* OuterClassName, const char* FuncName, ReloadableFuncInfo& FuncInfo);
 
 // Predefined struct FUObjectItem
 // 0x0018 (0x0018 - 0x0000)
@@ -861,6 +884,16 @@ public:
 	{
 		return EnumValue <=> static_cast<UnderlyingType>(Other);
 	}
+
+	constexpr operator EnumType() const
+	{
+		return static_cast<EnumType>(EnumValue);
+	}
+
+	constexpr explicit operator UnderlyingType() const
+	{
+		return EnumValue;
+	}
 };
 
 template<typename EnumType>
@@ -1339,6 +1372,30 @@ public:
 	class FProperty*                              ValueProperty;                                     // 0x0070(0x0008)(NOT AUTO-GENERATED PROPERTY)
 };
 DUMPER7_ASSERTS_FOptionalProperty;
+
+struct ReloadableFuncInfo
+{
+    int32 Index = 0;
+    FName Name;
+    FName OuterName;
+};
+
+
+/* Workaround for clang not supporting the statement from #else. */
+template<typename Derived, typename Interface>
+consteval size_t GetInterfaceOffset()
+{
+#if defined(__clang__)
+    return __builtin_constant_p(0)
+        ? reinterpret_cast<const char*>(
+              &static_cast<const Interface*>(
+                  reinterpret_cast<const Derived*>(0x1000))->VTable)
+            - reinterpret_cast<const char*>(0x1000)
+        : 0;
+#else
+    return offsetof(Derived, Interface::VTable);
+#endif
+}
 
 namespace CyclicDependencyFixupImpl
 {

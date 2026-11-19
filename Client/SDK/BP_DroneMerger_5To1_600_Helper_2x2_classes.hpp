@@ -16,11 +16,11 @@
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_DroneMerger_5To1_600_Helper_2x2.BP_DroneMerger_5To1_600_Helper_2x2_C
-// 0x0000 (0x0A30 - 0x0A30)
+// 0x0000 (0x0B90 - 0x0B90)
 class ABP_DroneMerger_5To1_600_Helper_2x2_C final : public ABP_PlacementHelperReplicatedBase_C
 {
 public:
-	class UStaticMeshComponent*                   Pole;                                              // 0x0A28(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   Pole;                                              // 0x0B88(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()

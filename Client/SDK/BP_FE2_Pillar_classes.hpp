@@ -13,56 +13,76 @@
 #include "Engine_structs.hpp"
 #include "Chimera_structs.hpp"
 #include "Chimera_classes.hpp"
+#include "E_FE2_Pillar_states_structs.hpp"
 
 
 SDK_NAMESPACE_START
 
 // BlueprintGeneratedClass BP_FE2_Pillar.BP_FE2_Pillar_C
-// 0x0098 (0x0840 - 0x07A8)
-class ABP_FE2_Pillar_C final : public ACrAntena
+// 0x00D8 (0x0888 - 0x07B0)
+class ABP_FE2_Pillar_C : public ACrAntena
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x07A8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UAudioComponent*                        SoundComponent_Antenna_Alarm;                      // 0x07B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UAudioComponent*                        SoundComponent_Antenna;                            // 0x07B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UAudioComponent*                        SoundComponent_Display;                            // 0x07C0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x07B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UTextRenderComponent*                   TextRender;                                        // 0x07B8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        Animated;                                          // 0x07C0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
 	class UWidgetComponent*                       Widget_Display;                                    // 0x07C8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UStaticMeshComponent*                   SM_Antena_main_body;                               // 0x07D0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USceneComponent*                        Animated;                                          // 0x07D8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USceneComponent*                        Static;                                            // 0x07E0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UBoxComponent*                          NavmeshObstacle;                                   // 0x07E8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USceneComponent*                        Meshes;                                            // 0x07F0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	float                                         Finalization_progress_Anim_progress_4E44D21345B715367B39CA867A77F553; // 0x07F8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ETimelineDirection                            Finalization_progress__Direction_4E44D21345B715367B39CA867A77F553; // 0x07FC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_7FD[0x3];                                      // 0x07FD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTimelineComponent*                     Finalization_progress;                             // 0x0800(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	float                                         Activation_progress_Anim_progress_B442ECAB466BEE8D495A4B84A93AFC5F; // 0x0808(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ETimelineDirection                            Activation_progress__Direction_B442ECAB466BEE8D495A4B84A93AFC5F; // 0x080C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_80D[0x3];                                      // 0x080D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UTimelineComponent*                     Activation_progress;                               // 0x0810(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	TArray<class FName>                           BonesNames;                                        // 0x0818(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
-	class UAudioComponent*                        LoopedSound;                                       // 0x0828(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	class UAudioComponent*                        LoopedSound_Alarm;                                 // 0x0830(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	double                                        LastTimeInfectionTaken;                            // 0x0838(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   LightBar;                                          // 0x07D0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   SM_FE2_Pillar_body;                                // 0x07D8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UStaticMeshComponent*                   SM_Antena_main_body;                               // 0x07E0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UAudioComponent*                        SoundComponent_Antenna_Alarm;                      // 0x07E8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UAudioComponent*                        SoundComponent_Antenna;                            // 0x07F0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UAudioComponent*                        SoundComponent_Display;                            // 0x07F8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        Slide;                                             // 0x0800(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UBoxComponent*                          NavmeshObstacle;                                   // 0x0808(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        Meshes;                                            // 0x0810(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	float                                         Timeline_Anim_progress_12858CD947CC1880735E07A8B61D9C30; // 0x0818(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ETimelineDirection                            Timeline__Direction_12858CD947CC1880735E07A8B61D9C30; // 0x081C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_81D[0x3];                                      // 0x081D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTimelineComponent*                     Timeline;                                          // 0x0820(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	float                                         Finalization_progress_Anim_progress_4E44D21345B715367B39CA867A77F553; // 0x0828(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ETimelineDirection                            Finalization_progress__Direction_4E44D21345B715367B39CA867A77F553; // 0x082C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_82D[0x3];                                      // 0x082D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTimelineComponent*                     Finalization_progress;                             // 0x0830(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	float                                         Activation_progress_Anim_progress_B442ECAB466BEE8D495A4B84A93AFC5F; // 0x0838(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ETimelineDirection                            Activation_progress__Direction_B442ECAB466BEE8D495A4B84A93AFC5F; // 0x083C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_83D[0x3];                                      // 0x083D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UTimelineComponent*                     Activation_progress;                               // 0x0840(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	TArray<class FName>                           BonesNames;                                        // 0x0848(0x0010)(Edit, BlueprintVisible, DisableEditOnInstance)
+	class UAudioComponent*                        LoopedSound;                                       // 0x0858(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	class UAudioComponent*                        LoopedSound_Alarm;                                 // 0x0860(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	double                                        LastTimeInfectionTaken;                            // 0x0868(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMaterialInstanceDynamic*               MI_Light;                                          // 0x0870(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	class ABP_FE2_main_C*                         AsBP_FE2_main;                                     // 0x0878(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnTemplate, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
+	E_FE2_Pillar_states                           StateFromMain;                                     // 0x0880(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
+	void Set_Display_State(ECrAntennaState AntennaState, const struct FLinearColor& Color);
+	bool PlayInteractionUnSuccessfulSound();
+	bool PlayInteractionSuccessfulSound();
 	void Activation_progress__FinishedFunc();
 	void Activation_progress__UpdateFunc();
-	void ExecuteUbergraph_BP_FE2_Pillar(int32 EntryPoint);
 	void Finalization_progress__FinishedFunc();
 	void Finalization_progress__UpdateFunc();
-	void OnActivated();
-	void OnActivatedFromLoad();
-	void OnChargingProgressUpdate(float Progress);
-	void OnInfectionTaken();
-	void OnStateChanged(ECrAntennaState NewState);
-	bool PlayInteractionSuccessfulSound();
-	bool PlayInteractionUnSuccessfulSound();
+	void Timeline__FinishedFunc();
+	void Timeline__UpdateFunc();
 	void ReceiveBeginPlay();
-	void ReceiveTick(float DeltaSeconds);
-	void Set_Display_State(ECrAntennaState AntennaState, const struct FLinearColor& Color);
-	void SetUI(ECrAntennaState InState, const struct FLinearColor& InColor);
+	void OnActivated();
+	void OnChargingProgressUpdate(float Progress);
 	void StopLoopSound();
+	void SetUI(ECrAntennaState InState, const struct FLinearColor& InColor);
+	void OnInfectionTaken();
+	void OnActivatedFromLoad();
+	void OnStateChanged(ECrAntennaState NewState);
+	void ReceiveTick(float DeltaSeconds);
+	void SlideUp();
+	void SlideDown();
+	void OpenPillar();
+	void FuelError();
+	void FixedFuel();
+	void SetLightON();
+	void SetLightError();
+	void ExecuteUbergraph_BP_FE2_Pillar(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_WindPowerGeneratorTier2_C::ExecuteUbergraph_BP_WindPowerGeneratorTier2(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WindPowerGeneratorTier2_C", "ExecuteUbergraph_BP_WindPowerGeneratorTier2");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_WindPowerGeneratorTier2_C", "ExecuteUbergraph_BP_WindPowerGeneratorTier2", FuncInfo);
 
 	Params::BP_WindPowerGeneratorTier2_C_ExecuteUbergraph_BP_WindPowerGeneratorTier2 Parms{};
 
@@ -43,10 +41,8 @@ void ABP_WindPowerGeneratorTier2_C::ExecuteUbergraph_BP_WindPowerGeneratorTier2(
 
 void ABP_WindPowerGeneratorTier2_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WindPowerGeneratorTier2_C", "PostPlayBuildingEffect");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PostPlayBuildingEffect", FnName));
 
 	Params::BP_WindPowerGeneratorTier2_C_PostPlayBuildingEffect Parms{};
 
@@ -61,10 +57,8 @@ void ABP_WindPowerGeneratorTier2_C::PostPlayBuildingEffect(bool bWasBuildingEffe
 
 void ABP_WindPowerGeneratorTier2_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_WindPowerGeneratorTier2_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

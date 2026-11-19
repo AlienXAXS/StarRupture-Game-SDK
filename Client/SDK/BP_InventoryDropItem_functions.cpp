@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_InventoryDropItem_C::CanPlaySound(bool* bRet)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_InventoryDropItem_C", "CanPlaySound");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"CanPlaySound", FnName));
 
 	Params::BP_InventoryDropItem_C_CanPlaySound Parms{};
 
@@ -44,10 +42,8 @@ void ABP_InventoryDropItem_C::CanPlaySound(bool* bRet)
 
 void ABP_InventoryDropItem_C::ExecuteUbergraph_BP_InventoryDropItem(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_InventoryDropItem_C", "ExecuteUbergraph_BP_InventoryDropItem");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_InventoryDropItem_C", "ExecuteUbergraph_BP_InventoryDropItem", FuncInfo);
 
 	Params::BP_InventoryDropItem_C_ExecuteUbergraph_BP_InventoryDropItem Parms{};
 
@@ -62,10 +58,8 @@ void ABP_InventoryDropItem_C::ExecuteUbergraph_BP_InventoryDropItem(int32 EntryP
 
 void ABP_InventoryDropItem_C::InitItemTextureInDynamicMaterial()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_InventoryDropItem_C", "InitItemTextureInDynamicMaterial");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"InitItemTextureInDynamicMaterial", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -76,10 +70,8 @@ void ABP_InventoryDropItem_C::InitItemTextureInDynamicMaterial()
 
 void ABP_InventoryDropItem_C::OnItemAddedToStorage()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_InventoryDropItem_C", "OnItemAddedToStorage");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnItemAddedToStorage", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -92,10 +84,8 @@ void ABP_InventoryDropItem_C::OnItemAddedToStorage()
 
 bool ABP_InventoryDropItem_C::OnStorageEmptied()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_InventoryDropItem_C", "OnStorageEmptied");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnStorageEmptied", FnName));
 
 	Params::BP_InventoryDropItem_C_OnStorageEmptied Parms{};
 
@@ -110,10 +100,8 @@ bool ABP_InventoryDropItem_C::OnStorageEmptied()
 
 void ABP_InventoryDropItem_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_InventoryDropItem_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -126,10 +114,8 @@ void ABP_InventoryDropItem_C::ReceiveBeginPlay()
 
 void ABP_InventoryDropItem_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_InventoryDropItem_C", "ReceiveEndPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveEndPlay", FnName));
 
 	Params::BP_InventoryDropItem_C_ReceiveEndPlay Parms{};
 

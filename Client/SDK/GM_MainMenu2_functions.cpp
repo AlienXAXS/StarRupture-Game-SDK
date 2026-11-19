@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void AGM_MainMenu2_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GM_MainMenu2_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -37,10 +35,8 @@ void AGM_MainMenu2_C::ReceiveBeginPlay()
 
 void AGM_MainMenu2_C::ExecuteUbergraph_GM_MainMenu2(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GM_MainMenu2_C", "ExecuteUbergraph_GM_MainMenu2");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "GM_MainMenu2_C", "ExecuteUbergraph_GM_MainMenu2", FuncInfo);
 
 	Params::GM_MainMenu2_C_ExecuteUbergraph_GM_MainMenu2 Parms{};
 

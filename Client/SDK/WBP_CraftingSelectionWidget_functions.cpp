@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_CraftingSelectionWidget_C::BndEvt__WBP_CraftingSelectionWidget_ScrollBox_0_K2Node_ComponentBoundEvent_0_OnScrollBarVisibilityChangedEvent__DelegateSignature(ESlateVisibility NewVisibility)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CraftingSelectionWidget_C", "BndEvt__WBP_CraftingSelectionWidget_ScrollBox_0_K2Node_ComponentBoundEvent_0_OnScrollBarVisibilityChangedEvent__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__WBP_CraftingSelectionWidget_ScrollBox_0_K2Node_ComponentBoundEvent_0_OnScrollBarVisibilityChangedEvent__DelegateSignature", FnName));
 
 	Params::WBP_CraftingSelectionWidget_C_BndEvt__WBP_CraftingSelectionWidget_ScrollBox_0_K2Node_ComponentBoundEvent_0_OnScrollBarVisibilityChangedEvent__DelegateSignature Parms{};
 
@@ -41,10 +39,8 @@ void UWBP_CraftingSelectionWidget_C::BndEvt__WBP_CraftingSelectionWidget_ScrollB
 
 void UWBP_CraftingSelectionWidget_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CraftingSelectionWidget_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -57,10 +53,8 @@ void UWBP_CraftingSelectionWidget_C::Construct()
 
 void UWBP_CraftingSelectionWidget_C::ExecuteUbergraph_WBP_CraftingSelectionWidget(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CraftingSelectionWidget_C", "ExecuteUbergraph_WBP_CraftingSelectionWidget");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_CraftingSelectionWidget_C", "ExecuteUbergraph_WBP_CraftingSelectionWidget", FuncInfo);
 
 	Params::WBP_CraftingSelectionWidget_C_ExecuteUbergraph_WBP_CraftingSelectionWidget Parms{};
 
@@ -75,10 +69,8 @@ void UWBP_CraftingSelectionWidget_C::ExecuteUbergraph_WBP_CraftingSelectionWidge
 
 void UWBP_CraftingSelectionWidget_C::SetListStateVisual()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CraftingSelectionWidget_C", "SetListStateVisual");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetListStateVisual", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

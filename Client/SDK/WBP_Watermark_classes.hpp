@@ -17,16 +17,18 @@
 SDK_NAMESPACE_START
 
 // WidgetBlueprintGeneratedClass WBP_Watermark.WBP_Watermark_C
-// 0x0010 (0x03B0 - 0x03A0)
+// 0x0018 (0x03B8 - 0x03A0)
 class UWBP_Watermark_C final : public UUserWidget
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x03A0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	class UTextBlock*                             WatermarkText;                                     // 0x03A8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UTextBlock*                             CustomGameText;                                    // 0x03B0(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, DisableEditOnInstance, InstancedReference, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
 	void Construct();
 	void ExecuteUbergraph_WBP_Watermark(int32 EntryPoint);
+	struct FEventReply OnMouseButtonDown(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent);
 
 public:
 	static class UClass* StaticClass()

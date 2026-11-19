@@ -16,6 +16,18 @@
 
 SDK_NAMESPACE_START
 
+// Function BP_Exploder_Tier3_CystActor.BP_Exploder_Tier3_CystActor_C.DeactivateVFX
+// (Net, NetMulticast, BlueprintCallable, BlueprintEvent)
+
+void ABP_Exploder_Tier3_CystActor_C::DeactivateVFX()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"DeactivateVFX", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_Exploder_Tier3_CystActor.BP_Exploder_Tier3_CystActor_C.ExecuteUbergraph_BP_Exploder_Tier3_CystActor
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -23,10 +35,8 @@ SDK_NAMESPACE_START
 
 void ABP_Exploder_Tier3_CystActor_C::ExecuteUbergraph_BP_Exploder_Tier3_CystActor(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_CystActor_C", "ExecuteUbergraph_BP_Exploder_Tier3_CystActor");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Exploder_Tier3_CystActor_C", "ExecuteUbergraph_BP_Exploder_Tier3_CystActor", FuncInfo);
 
 	Params::BP_Exploder_Tier3_CystActor_C_ExecuteUbergraph_BP_Exploder_Tier3_CystActor Parms{};
 
@@ -36,37 +46,35 @@ void ABP_Exploder_Tier3_CystActor_C::ExecuteUbergraph_BP_Exploder_Tier3_CystActo
 }
 
 
+// Function BP_Exploder_Tier3_CystActor.BP_Exploder_Tier3_CystActor_C.HideVisuals
+// (Net, NetMulticast, BlueprintCallable, BlueprintEvent)
+
+void ABP_Exploder_Tier3_CystActor_C::HideVisuals()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"HideVisuals", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BP_Exploder_Tier3_CystActor.BP_Exploder_Tier3_CystActor_C.OnCystDestroyed_Event
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
 // class AExploderT3CystActor*             Cyst                                                   (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+// bool                                    bKilledManually                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Exploder_Tier3_CystActor_C::OnCystDestroyed_Event(class AExploderT3CystActor* Cyst)
+void ABP_Exploder_Tier3_CystActor_C::OnCystDestroyed_Event(class AExploderT3CystActor* Cyst, bool bKilledManually)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_CystActor_C", "OnCystDestroyed_Event");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnCystDestroyed_Event", FnName));
 
 	Params::BP_Exploder_Tier3_CystActor_C_OnCystDestroyed_Event Parms{};
 
 	Parms.Cyst = Cyst;
+	Parms.bKilledManually = bKilledManually;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BP_Exploder_Tier3_CystActor.BP_Exploder_Tier3_CystActor_C.OnRep_CystDestroyed
-// (BlueprintCallable, BlueprintEvent)
-
-void ABP_Exploder_Tier3_CystActor_C::OnRep_CystDestroyed()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_CystActor_C", "OnRep_CystDestroyed");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -75,10 +83,8 @@ void ABP_Exploder_Tier3_CystActor_C::OnRep_CystDestroyed()
 
 void ABP_Exploder_Tier3_CystActor_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_CystActor_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -91,10 +97,8 @@ void ABP_Exploder_Tier3_CystActor_C::ReceiveBeginPlay()
 
 void ABP_Exploder_Tier3_CystActor_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_CystActor_C", "ReceiveEndPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveEndPlay", FnName));
 
 	Params::BP_Exploder_Tier3_CystActor_C_ReceiveEndPlay Parms{};
 
@@ -109,10 +113,32 @@ void ABP_Exploder_Tier3_CystActor_C::ReceiveEndPlay(EEndPlayReason EndPlayReason
 
 void ABP_Exploder_Tier3_CystActor_C::SpawnEnemy()
 {
-	static class UFunction* Func = nullptr;
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SpawnEnemy", FnName));
 
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Exploder_Tier3_CystActor_C", "SpawnEnemy");
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier3_CystActor.BP_Exploder_Tier3_CystActor_C.Timeline__FinishedFunc
+// (BlueprintEvent)
+
+void ABP_Exploder_Tier3_CystActor_C::Timeline__FinishedFunc()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__FinishedFunc", FnName));
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_Exploder_Tier3_CystActor.BP_Exploder_Tier3_CystActor_C.Timeline__UpdateFunc
+// (BlueprintEvent)
+
+void ABP_Exploder_Tier3_CystActor_C::Timeline__UpdateFunc()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

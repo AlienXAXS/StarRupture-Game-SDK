@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void ABP_Melee_Tier3_Actor_Character_C::AttachWeakpoint()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "AttachWeakpoint");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"AttachWeakpoint", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -37,10 +35,8 @@ void ABP_Melee_Tier3_Actor_Character_C::AttachWeakpoint()
 
 void ABP_Melee_Tier3_Actor_Character_C::CacheLongAoePoints(const TArray<struct FVector>& Points)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "CacheLongAoePoints");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"CacheLongAoePoints", FnName));
 
 	Params::BP_Melee_Tier3_Actor_Character_C_CacheLongAoePoints Parms{};
 
@@ -57,10 +53,8 @@ void ABP_Melee_Tier3_Actor_Character_C::CacheLongAoePoints(const TArray<struct F
 
 void ABP_Melee_Tier3_Actor_Character_C::ExecuteUbergraph_BP_Melee_Tier3_Actor_Character(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "ExecuteUbergraph_BP_Melee_Tier3_Actor_Character");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Melee_Tier3_Actor_Character_C", "ExecuteUbergraph_BP_Melee_Tier3_Actor_Character", FuncInfo);
 
 	Params::BP_Melee_Tier3_Actor_Character_C_ExecuteUbergraph_BP_Melee_Tier3_Actor_Character Parms{};
 
@@ -77,10 +71,8 @@ void ABP_Melee_Tier3_Actor_Character_C::ExecuteUbergraph_BP_Melee_Tier3_Actor_Ch
 
 TArray<struct FVector> ABP_Melee_Tier3_Actor_Character_C::GetCachedLongAoePoints()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "GetCachedLongAoePoints");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetCachedLongAoePoints", FnName));
 
 	Params::BP_Melee_Tier3_Actor_Character_C_GetCachedLongAoePoints Parms{};
 
@@ -97,10 +89,8 @@ TArray<struct FVector> ABP_Melee_Tier3_Actor_Character_C::GetCachedLongAoePoints
 
 EMovementAttackStage ABP_Melee_Tier3_Actor_Character_C::GetMovementAttackStage()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "GetMovementAttackStage");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetMovementAttackStage", FnName));
 
 	Params::BP_Melee_Tier3_Actor_Character_C_GetMovementAttackStage Parms{};
 
@@ -117,10 +107,8 @@ EMovementAttackStage ABP_Melee_Tier3_Actor_Character_C::GetMovementAttackStage()
 
 void ABP_Melee_Tier3_Actor_Character_C::GetNiagaraEyeSystem(class UNiagaraComponent** NewParam)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "GetNiagaraEyeSystem");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetNiagaraEyeSystem", FnName));
 
 	Params::BP_Melee_Tier3_Actor_Character_C_GetNiagaraEyeSystem Parms{};
 
@@ -139,10 +127,8 @@ void ABP_Melee_Tier3_Actor_Character_C::GetNiagaraEyeSystem(class UNiagaraCompon
 
 void ABP_Melee_Tier3_Actor_Character_C::OnAiDied(const struct FHitResult& HitResult, const struct FGameplayTag& KillingDamageTag)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "OnAiDied");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnAiDied", FnName));
 
 	Params::BP_Melee_Tier3_Actor_Character_C_OnAiDied Parms{};
 
@@ -160,10 +146,8 @@ void ABP_Melee_Tier3_Actor_Character_C::OnAiDied(const struct FHitResult& HitRes
 
 void ABP_Melee_Tier3_Actor_Character_C::OnBlackboardConfigured(class UMassEnemyDataAsset* Config)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "OnBlackboardConfigured");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnBlackboardConfigured", FnName));
 
 	Params::BP_Melee_Tier3_Actor_Character_C_OnBlackboardConfigured Parms{};
 
@@ -178,10 +162,8 @@ void ABP_Melee_Tier3_Actor_Character_C::OnBlackboardConfigured(class UMassEnemyD
 
 void ABP_Melee_Tier3_Actor_Character_C::OnEnterActorPool()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "OnEnterActorPool");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnEnterActorPool", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -192,10 +174,8 @@ void ABP_Melee_Tier3_Actor_Character_C::OnEnterActorPool()
 
 void ABP_Melee_Tier3_Actor_Character_C::OnExitActorPool()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "OnExitActorPool");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnExitActorPool", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -206,10 +186,8 @@ void ABP_Melee_Tier3_Actor_Character_C::OnExitActorPool()
 
 void ABP_Melee_Tier3_Actor_Character_C::OnPrepareForGame()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "OnPrepareForGame");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPrepareForGame", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -220,10 +198,8 @@ void ABP_Melee_Tier3_Actor_Character_C::OnPrepareForGame()
 
 void ABP_Melee_Tier3_Actor_Character_C::OnPrepareForPooling()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "OnPrepareForPooling");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnPrepareForPooling", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -234,10 +210,8 @@ void ABP_Melee_Tier3_Actor_Character_C::OnPrepareForPooling()
 
 void ABP_Melee_Tier3_Actor_Character_C::OnRangedAttackTimerFinished()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "OnRangedAttackTimerFinished");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnRangedAttackTimerFinished", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -248,10 +222,8 @@ void ABP_Melee_Tier3_Actor_Character_C::OnRangedAttackTimerFinished()
 
 void ABP_Melee_Tier3_Actor_Character_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -264,10 +236,8 @@ void ABP_Melee_Tier3_Actor_Character_C::ReceiveBeginPlay()
 
 void ABP_Melee_Tier3_Actor_Character_C::ReceiveEndPlay(EEndPlayReason EndPlayReason)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "ReceiveEndPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveEndPlay", FnName));
 
 	Params::BP_Melee_Tier3_Actor_Character_C_ReceiveEndPlay Parms{};
 
@@ -284,10 +254,8 @@ void ABP_Melee_Tier3_Actor_Character_C::ReceiveEndPlay(EEndPlayReason EndPlayRea
 
 void ABP_Melee_Tier3_Actor_Character_C::SetHasAggroTarget(bool bNewHasAggroTarget)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "SetHasAggroTarget");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetHasAggroTarget", FnName));
 
 	Params::BP_Melee_Tier3_Actor_Character_C_SetHasAggroTarget Parms{};
 
@@ -304,10 +272,8 @@ void ABP_Melee_Tier3_Actor_Character_C::SetHasAggroTarget(bool bNewHasAggroTarge
 
 void ABP_Melee_Tier3_Actor_Character_C::SetIsCoverActive(bool bNewIsCoverActive)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "SetIsCoverActive");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetIsCoverActive", FnName));
 
 	Params::BP_Melee_Tier3_Actor_Character_C_SetIsCoverActive Parms{};
 
@@ -324,10 +290,8 @@ void ABP_Melee_Tier3_Actor_Character_C::SetIsCoverActive(bool bNewIsCoverActive)
 
 void ABP_Melee_Tier3_Actor_Character_C::SetIsInSlowRotationRange(bool bNewIsInSlowRotationRange)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "SetIsInSlowRotationRange");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetIsInSlowRotationRange", FnName));
 
 	Params::BP_Melee_Tier3_Actor_Character_C_SetIsInSlowRotationRange Parms{};
 
@@ -344,10 +308,8 @@ void ABP_Melee_Tier3_Actor_Character_C::SetIsInSlowRotationRange(bool bNewIsInSl
 
 void ABP_Melee_Tier3_Actor_Character_C::SetIsUpCover(bool bNewIsUpCover)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "SetIsUpCover");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetIsUpCover", FnName));
 
 	Params::BP_Melee_Tier3_Actor_Character_C_SetIsUpCover Parms{};
 
@@ -364,10 +326,8 @@ void ABP_Melee_Tier3_Actor_Character_C::SetIsUpCover(bool bNewIsUpCover)
 
 void ABP_Melee_Tier3_Actor_Character_C::SetMovementAttackStage(EMovementAttackStage MovementAttackStage_0)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "SetMovementAttackStage");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetMovementAttackStage", FnName));
 
 	Params::BP_Melee_Tier3_Actor_Character_C_SetMovementAttackStage Parms{};
 
@@ -385,10 +345,8 @@ void ABP_Melee_Tier3_Actor_Character_C::SetMovementAttackStage(EMovementAttackSt
 
 void ABP_Melee_Tier3_Actor_Character_C::SetRangedAttackTimer(bool SetTimerActive, double TimeToRangedAttack)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "SetRangedAttackTimer");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetRangedAttackTimer", FnName));
 
 	Params::BP_Melee_Tier3_Actor_Character_C_SetRangedAttackTimer Parms{};
 
@@ -404,10 +362,8 @@ void ABP_Melee_Tier3_Actor_Character_C::SetRangedAttackTimer(bool SetTimerActive
 
 void ABP_Melee_Tier3_Actor_Character_C::ShowLongAoeAttackEffect()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "ShowLongAoeAttackEffect");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ShowLongAoeAttackEffect", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -418,10 +374,8 @@ void ABP_Melee_Tier3_Actor_Character_C::ShowLongAoeAttackEffect()
 
 void ABP_Melee_Tier3_Actor_Character_C::UpdateAnimState()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "UpdateAnimState");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateAnimState", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -432,10 +386,8 @@ void ABP_Melee_Tier3_Actor_Character_C::UpdateAnimState()
 
 void ABP_Melee_Tier3_Actor_Character_C::UserConstructionScript()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "UserConstructionScript");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UserConstructionScript", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -448,10 +400,8 @@ void ABP_Melee_Tier3_Actor_Character_C::UserConstructionScript()
 
 void ABP_Melee_Tier3_Actor_Character_C::OnMeshVisibilityUpdated(bool bIsMeshHidden) const
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Melee_Tier3_Actor_Character_C", "OnMeshVisibilityUpdated");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnMeshVisibilityUpdated", FnName));
 
 	Params::BP_Melee_Tier3_Actor_Character_C_OnMeshVisibilityUpdated Parms{};
 

@@ -11,11 +11,11 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "SlateCore_structs.hpp"
-#include "UMG_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "ChimeraUI_classes.hpp"
 #include "CommonInput_structs.hpp"
+#include "UMG_structs.hpp"
 
 
 SDK_NAMESPACE_START
@@ -38,6 +38,7 @@ public:
 	struct FLinearColor                           HighlightColor;                                    // 0x0B70(0x0010)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          IsEnabled;                                         // 0x0B80(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          NewVar;                                            // 0x0B81(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          UseStyleColorsForText;                             // 0x0B82(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
 	void BndEvt__WBP_ActionButton_InputActionWidget_K2Node_ComponentBoundEvent_2_OnInputMethodChanged__DelegateSignature(bool bUsingGamepad);
@@ -49,6 +50,7 @@ public:
 	void PreConstruct(bool IsDesignTime);
 	void SetActionNamePadding(bool bSet);
 	void SetAlignment(EHorizontalAlignment Alignment);
+	void SetAndApplayUseStyleColorsForText(bool InUseStyleColorsForText);
 	void SetButtonEnabled(bool bEnabled);
 	void SetColors(const class UCrCommonUIColorsDevSettings* Settings);
 	void SetDefault(bool bInDefault);

@@ -29,7 +29,7 @@ public:
 DUMPER7_ASSERTS_WBP_ActionButton_C_BndEvt__WBP_ActionButton_InputActionWidget_K2Node_ComponentBoundEvent_2_OnInputMethodChanged__DelegateSignature;
 
 // Function WBP_ActionButton.WBP_ActionButton_C.ExecuteUbergraph_WBP_ActionButton
-// 0x0F30 (0x0F30 - 0x0000)
+// 0x0F10 (0x0F10 - 0x0000)
 struct WBP_ActionButton_C_ExecuteUbergraph_WBP_ActionButton final
 {
 public:
@@ -37,40 +37,38 @@ public:
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	const class UCrCommonUIColorsDevSettings*     K2Node_Event_Settings;                             // 0x0008(0x0008)(ConstParm, ZeroConstructor, NoDestructor, HasGetValueTypeHash)
 	struct FSlateColor                            K2Node_MakeStruct_SlateColor;                      // 0x0010(0x0014)()
-	uint8                                         Pad_24[0xC];                                       // 0x0024(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush;                      // 0x0030(0x00B0)()
-	struct FSlateColor                            K2Node_MakeStruct_SlateColor_1;                    // 0x00E0(0x0014)()
-	uint8                                         Pad_F4[0xC];                                       // 0x00F4(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_1;                    // 0x0100(0x00B0)()
-	struct FSlateColor                            K2Node_MakeStruct_SlateColor_2;                    // 0x01B0(0x0014)()
-	struct FSlateColor                            K2Node_MakeStruct_SlateColor_3;                    // 0x01C4(0x0014)()
-	uint8                                         Pad_1D8[0x8];                                      // 0x01D8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_2;                    // 0x01E0(0x00B0)()
-	struct FSlateColor                            K2Node_MakeStruct_SlateColor_4;                    // 0x0290(0x0014)()
-	struct FSlateColor                            K2Node_MakeStruct_SlateColor_5;                    // 0x02A4(0x0014)()
-	uint8                                         Pad_2B8[0x8];                                      // 0x02B8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_3;                    // 0x02C0(0x00B0)()
-	struct FSlateColor                            K2Node_MakeStruct_SlateColor_6;                    // 0x0370(0x0014)()
-	uint8                                         Pad_384[0xC];                                      // 0x0384(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FButtonStyle                           K2Node_MakeStruct_ButtonStyle;                     // 0x0390(0x0390)()
-	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_4;                    // 0x0720(0x00B0)()
-	struct FButtonStyle                           K2Node_MakeStruct_ButtonStyle_1;                   // 0x07D0(0x0390)()
-	struct FButtonStyle                           K2Node_MakeStruct_ButtonStyle_2;                   // 0x0B60(0x0390)()
-	bool                                          K2Node_Event_bEnabled;                             // 0x0EF0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_ComponentBoundEvent_bUsingGamepad;          // 0x0EF1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_Event_IsDesignTime;                         // 0x0EF2(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_Event_bSet;                                 // 0x0EF3(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_EF4[0x4];                                      // 0x0EF4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UOverlaySlot*                           CallFunc_SlotAsOverlaySlot_ReturnValue;            // 0x0EF8(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
-	struct FMargin                                K2Node_MakeStruct_Margin;                          // 0x0F00(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	struct FMargin                                K2Node_MakeStruct_Margin_1;                        // 0x0F10(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	class UCommonInputSubsystem*                  CallFunc_GetLocalPlayerSubsystem_ReturnValue;      // 0x0F20(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
-	ECommonInputType                              CallFunc_GetCurrentInputType_ReturnValue;          // 0x0F28(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0F29(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ESlateVisibility                              CallFunc_GetVisibility_ReturnValue;                // 0x0F2A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x0F2B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_1;        // 0x0F2C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x0F2D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSlateColor                            K2Node_MakeStruct_SlateColor_1;                    // 0x0024(0x0014)()
+	struct FSlateColor                            K2Node_MakeStruct_SlateColor_2;                    // 0x0038(0x0014)()
+	struct FSlateColor                            K2Node_MakeStruct_SlateColor_3;                    // 0x004C(0x0014)()
+	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush;                      // 0x0060(0x00B0)()
+	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_1;                    // 0x0110(0x00B0)()
+	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_2;                    // 0x01C0(0x00B0)()
+	struct FSlateColor                            K2Node_MakeStruct_SlateColor_4;                    // 0x0270(0x0014)()
+	struct FSlateColor                            K2Node_MakeStruct_SlateColor_5;                    // 0x0284(0x0014)()
+	uint8                                         Pad_298[0x8];                                      // 0x0298(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_3;                    // 0x02A0(0x00B0)()
+	struct FSlateColor                            K2Node_MakeStruct_SlateColor_6;                    // 0x0350(0x0014)()
+	uint8                                         Pad_364[0xC];                                      // 0x0364(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FButtonStyle                           K2Node_MakeStruct_ButtonStyle;                     // 0x0370(0x0390)()
+	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_4;                    // 0x0700(0x00B0)()
+	struct FButtonStyle                           K2Node_MakeStruct_ButtonStyle_1;                   // 0x07B0(0x0390)()
+	struct FButtonStyle                           K2Node_MakeStruct_ButtonStyle_2;                   // 0x0B40(0x0390)()
+	bool                                          K2Node_Event_bEnabled;                             // 0x0ED0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_ComponentBoundEvent_bUsingGamepad;          // 0x0ED1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_Event_IsDesignTime;                         // 0x0ED2(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_Event_bSet;                                 // 0x0ED3(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_ED4[0x4];                                      // 0x0ED4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UOverlaySlot*                           CallFunc_SlotAsOverlaySlot_ReturnValue;            // 0x0ED8(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
+	struct FMargin                                K2Node_MakeStruct_Margin;                          // 0x0EE0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FMargin                                K2Node_MakeStruct_Margin_1;                        // 0x0EF0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	class UCommonInputSubsystem*                  CallFunc_GetLocalPlayerSubsystem_ReturnValue;      // 0x0F00(0x0008)(ZeroConstructor, NoDestructor, HasGetValueTypeHash)
+	ECommonInputType                              CallFunc_GetCurrentInputType_ReturnValue;          // 0x0F08(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_SwitchEnum_CmpSuccess;                      // 0x0F09(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ESlateVisibility                              CallFunc_GetVisibility_ReturnValue;                // 0x0F0A(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x0F0B(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_1;        // 0x0F0C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_BooleanOR_ReturnValue;                    // 0x0F0D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_CustomEvent_InUseStyleColorsForText;        // 0x0F0E(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_ActionButton_C_ExecuteUbergraph_WBP_ActionButton;
 
@@ -112,6 +110,15 @@ public:
 	class UOverlaySlot*                           CallFunc_SlotAsOverlaySlot_ReturnValue;            // 0x0008(0x0008)(ZeroConstructor, InstancedReference, NoDestructor, HasGetValueTypeHash)
 };
 DUMPER7_ASSERTS_WBP_ActionButton_C_SetAlignment;
+
+// Function WBP_ActionButton.WBP_ActionButton_C.SetAndApplayUseStyleColorsForText
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_ActionButton_C_SetAndApplayUseStyleColorsForText final
+{
+public:
+	bool                                          InUseStyleColorsForText;                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+DUMPER7_ASSERTS_WBP_ActionButton_C_SetAndApplayUseStyleColorsForText;
 
 // Function WBP_ActionButton.WBP_ActionButton_C.SetButtonEnabled
 // 0x0001 (0x0001 - 0x0000)

@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_MaterializedItemCrate_C::ExecuteUbergraph_BP_MaterializedItemCrate(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MaterializedItemCrate_C", "ExecuteUbergraph_BP_MaterializedItemCrate");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_MaterializedItemCrate_C", "ExecuteUbergraph_BP_MaterializedItemCrate", FuncInfo);
 
 	Params::BP_MaterializedItemCrate_C_ExecuteUbergraph_BP_MaterializedItemCrate Parms{};
 
@@ -43,10 +41,8 @@ void ABP_MaterializedItemCrate_C::ExecuteUbergraph_BP_MaterializedItemCrate(int3
 
 void ABP_MaterializedItemCrate_C::Interrupt(bool Visibility)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MaterializedItemCrate_C", "Interrupt");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Interrupt", FnName));
 
 	Params::BP_MaterializedItemCrate_C_Interrupt Parms{};
 
@@ -60,17 +56,17 @@ void ABP_MaterializedItemCrate_C::Interrupt(bool Visibility)
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
 // double                                  Duration_0                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Ignore_Visility                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_MaterializedItemCrate_C::Materialize_Package_In_Loop(double Duration_0)
+void ABP_MaterializedItemCrate_C::Materialize_Package_In_Loop(double Duration_0, bool Ignore_Visility)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MaterializedItemCrate_C", "Materialize Package In Loop");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Materialize Package In Loop", FnName));
 
 	Params::BP_MaterializedItemCrate_C_Materialize_Package_In_Loop Parms{};
 
 	Parms.Duration_0 = Duration_0;
+	Parms.Ignore_Visility = Ignore_Visility;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -80,17 +76,17 @@ void ABP_MaterializedItemCrate_C::Materialize_Package_In_Loop(double Duration_0)
 // (BlueprintCallable, BlueprintEvent)
 // Parameters:
 // double                                  Duration_0                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    Ignore_Visility                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_MaterializedItemCrate_C::MaterializePackageOnce(double Duration_0)
+void ABP_MaterializedItemCrate_C::MaterializePackageOnce(double Duration_0, bool Ignore_Visility)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MaterializedItemCrate_C", "MaterializePackageOnce");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"MaterializePackageOnce", FnName));
 
 	Params::BP_MaterializedItemCrate_C_MaterializePackageOnce Parms{};
 
 	Parms.Duration_0 = Duration_0;
+	Parms.Ignore_Visility = Ignore_Visility;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -101,10 +97,8 @@ void ABP_MaterializedItemCrate_C::MaterializePackageOnce(double Duration_0)
 
 void ABP_MaterializedItemCrate_C::PlaySound()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MaterializedItemCrate_C", "PlaySound");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PlaySound", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -115,12 +109,46 @@ void ABP_MaterializedItemCrate_C::PlaySound()
 
 void ABP_MaterializedItemCrate_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MaterializedItemCrate_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BP_MaterializedItemCrate.BP_MaterializedItemCrate_C.Set Elements Visibility
+// (Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    bNewVisibility                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_MaterializedItemCrate_C::Set_Elements_Visibility(bool bNewVisibility)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Set Elements Visibility", FnName));
+
+	Params::BP_MaterializedItemCrate_C_Set_Elements_Visibility Parms{};
+
+	Parms.bNewVisibility = bNewVisibility;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BP_MaterializedItemCrate.BP_MaterializedItemCrate_C.SetPackageVisibility
+// (BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    New_Visibility                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void ABP_MaterializedItemCrate_C::SetPackageVisibility(bool New_Visibility)
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetPackageVisibility", FnName));
+
+	Params::BP_MaterializedItemCrate_C_SetPackageVisibility Parms{};
+
+	Parms.New_Visibility = New_Visibility;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -129,10 +157,8 @@ void ABP_MaterializedItemCrate_C::ReceiveBeginPlay()
 
 void ABP_MaterializedItemCrate_C::UserConstructionScript()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_MaterializedItemCrate_C", "UserConstructionScript");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UserConstructionScript", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

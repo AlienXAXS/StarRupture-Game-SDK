@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void AMap_MainMenu_C::ReceiveEndPlay(EEndPlayReason EndPlayReason_ReceiveEndPlay)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Map_MainMenu_C", "ReceiveEndPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveEndPlay", FnName));
 
 	Params::Map_MainMenu_C_ReceiveEndPlay Parms{};
 
@@ -41,10 +39,8 @@ void AMap_MainMenu_C::ReceiveEndPlay(EEndPlayReason EndPlayReason_ReceiveEndPlay
 
 void AMap_MainMenu_C::ReceiveDestroyed()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Map_MainMenu_C", "ReceiveDestroyed");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveDestroyed", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -55,10 +51,8 @@ void AMap_MainMenu_C::ReceiveDestroyed()
 
 void AMap_MainMenu_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Map_MainMenu_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -69,10 +63,20 @@ void AMap_MainMenu_C::ReceiveBeginPlay()
 
 void AMap_MainMenu_C::getLevelName()
 {
-	static class UFunction* Func = nullptr;
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"getLevelName", FnName));
 
-	if (Func == nullptr)
-		Func = Class->GetFunction("Map_MainMenu_C", "getLevelName");
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function Map_MainMenu.Map_MainMenu_C.getContinueButton
+// (BlueprintCallable, BlueprintEvent)
+
+void AMap_MainMenu_C::getContinueButton()
+{
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"getContinueButton", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -83,10 +87,8 @@ void AMap_MainMenu_C::getLevelName()
 
 void AMap_MainMenu_C::getCL()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Map_MainMenu_C", "getCL");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"getCL", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -99,10 +101,8 @@ void AMap_MainMenu_C::getCL()
 
 void AMap_MainMenu_C::ExecuteUbergraph_Map_MainMenu(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Map_MainMenu_C", "ExecuteUbergraph_Map_MainMenu");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "Map_MainMenu_C", "ExecuteUbergraph_Map_MainMenu", FuncInfo);
 
 	Params::Map_MainMenu_C_ExecuteUbergraph_Map_MainMenu Parms{};
 
@@ -117,10 +117,8 @@ void AMap_MainMenu_C::ExecuteUbergraph_Map_MainMenu(int32 EntryPoint)
 
 void AMap_MainMenu_C::droneFPV()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Map_MainMenu_C", "droneFPV");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"droneFPV", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

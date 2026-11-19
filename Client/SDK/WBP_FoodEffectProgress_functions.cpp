@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_FoodEffectProgress_C::ExecuteUbergraph_WBP_FoodEffectProgress(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_FoodEffectProgress_C", "ExecuteUbergraph_WBP_FoodEffectProgress");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_FoodEffectProgress_C", "ExecuteUbergraph_WBP_FoodEffectProgress", FuncInfo);
 
 	Params::WBP_FoodEffectProgress_C_ExecuteUbergraph_WBP_FoodEffectProgress Parms{};
 
@@ -41,10 +39,8 @@ void UWBP_FoodEffectProgress_C::ExecuteUbergraph_WBP_FoodEffectProgress(int32 En
 
 void UWBP_FoodEffectProgress_C::SetBlackTint()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_FoodEffectProgress_C", "SetBlackTint");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetBlackTint", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -55,10 +51,8 @@ void UWBP_FoodEffectProgress_C::SetBlackTint()
 
 void UWBP_FoodEffectProgress_C::SetGreyTint()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_FoodEffectProgress_C", "SetGreyTint");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetGreyTint", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -71,10 +65,8 @@ void UWBP_FoodEffectProgress_C::SetGreyTint()
 
 void UWBP_FoodEffectProgress_C::SetProgress(float Value)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_FoodEffectProgress_C", "SetProgress");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetProgress", FnName));
 
 	Params::WBP_FoodEffectProgress_C_SetProgress Parms{};
 
@@ -91,10 +83,8 @@ void UWBP_FoodEffectProgress_C::SetProgress(float Value)
 
 void UWBP_FoodEffectProgress_C::SetProgressPercent(double ProgressPercentage)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_FoodEffectProgress_C", "SetProgressPercent");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetProgressPercent", FnName));
 
 	Params::WBP_FoodEffectProgress_C_SetProgressPercent Parms{};
 
@@ -109,10 +99,8 @@ void UWBP_FoodEffectProgress_C::SetProgressPercent(double ProgressPercentage)
 
 void UWBP_FoodEffectProgress_C::SetWhiteTint()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_FoodEffectProgress_C", "SetWhiteTint");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetWhiteTint", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

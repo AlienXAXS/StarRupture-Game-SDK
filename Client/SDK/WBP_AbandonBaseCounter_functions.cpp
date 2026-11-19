@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_AbandonBaseCounter_C::ExecuteUbergraph_WBP_AbandonBaseCounter(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_AbandonBaseCounter_C", "ExecuteUbergraph_WBP_AbandonBaseCounter");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_AbandonBaseCounter_C", "ExecuteUbergraph_WBP_AbandonBaseCounter", FuncInfo);
 
 	Params::WBP_AbandonBaseCounter_C_ExecuteUbergraph_WBP_AbandonBaseCounter Parms{};
 
@@ -43,10 +41,8 @@ void UWBP_AbandonBaseCounter_C::ExecuteUbergraph_WBP_AbandonBaseCounter(int32 En
 
 void UWBP_AbandonBaseCounter_C::SetFinishedTextStyle(bool bFinished)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_AbandonBaseCounter_C", "SetFinishedTextStyle");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetFinishedTextStyle", FnName));
 
 	Params::WBP_AbandonBaseCounter_C_SetFinishedTextStyle Parms{};
 
@@ -61,10 +57,8 @@ void UWBP_AbandonBaseCounter_C::SetFinishedTextStyle(bool bFinished)
 
 void UWBP_AbandonBaseCounter_C::SetNameByType()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_AbandonBaseCounter_C", "SetNameByType");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetNameByType", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

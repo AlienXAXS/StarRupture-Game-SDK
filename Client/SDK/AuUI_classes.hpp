@@ -16,8 +16,8 @@
 #include "Slate_structs.hpp"
 #include "DeveloperSettings_classes.hpp"
 #include "Engine_classes.hpp"
-#include "AuItems_structs.hpp"
 #include "SlateCore_structs.hpp"
+#include "AuItems_structs.hpp"
 #include "UMG_classes.hpp"
 
 
@@ -44,9 +44,12 @@ public:
 DUMPER7_ASSERTS_UAuItemAttributeProvider;
 
 // Class AuUI.AuItemViewWidgetOwner
-// 0x0000 (0x0000 - 0x0000)
-class IAuItemViewWidgetOwner final
+// 0x0008 (0x0008 - 0x0000)
+class IAuItemViewWidgetOwner
 {
+public:
+	void*                                         VTable;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -549,10 +552,10 @@ DUMPER7_ASSERTS_UAuWidget_ItemSlotView;
 
 // Class AuUI.AuWidget_ItemView
 // 0x0078 (0x0418 - 0x03A0)
-class UAuWidget_ItemView final : public UUserWidget
+class UAuWidget_ItemView final : public UUserWidget, public IAuItemViewWidgetOwner
 {
 public:
-	uint8                                         Pad_3A0[0x78];                                     // 0x03A0(0x0078)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_3A8[0x70];                                     // 0x03A8(0x0070)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void OnItemAdded(const struct FSlateBrush& Icon, const class FText& Name_0, const int32& Count);

@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void UWBP_DropDownButton_C::BndEvt__WBP_ActionButton_InputActionWidget_K2Node_ComponentBoundEvent_2_OnInputMethodChanged__DelegateSignature(bool bUsingGamepad)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_DropDownButton_C", "BndEvt__WBP_ActionButton_InputActionWidget_K2Node_ComponentBoundEvent_2_OnInputMethodChanged__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__WBP_ActionButton_InputActionWidget_K2Node_ComponentBoundEvent_2_OnInputMethodChanged__DelegateSignature", FnName));
 
 	Params::WBP_DropDownButton_C_BndEvt__WBP_ActionButton_InputActionWidget_K2Node_ComponentBoundEvent_2_OnInputMethodChanged__DelegateSignature Parms{};
 
@@ -41,10 +39,8 @@ void UWBP_DropDownButton_C::BndEvt__WBP_ActionButton_InputActionWidget_K2Node_Co
 
 void UWBP_DropDownButton_C::BndEvt__WBP_ActionButton_OverlayButton_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_DropDownButton_C", "BndEvt__WBP_ActionButton_OverlayButton_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__WBP_ActionButton_OverlayButton_K2Node_ComponentBoundEvent_0_OnButtonHoverEvent__DelegateSignature", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -55,10 +51,8 @@ void UWBP_DropDownButton_C::BndEvt__WBP_ActionButton_OverlayButton_K2Node_Compon
 
 void UWBP_DropDownButton_C::BndEvt__WBP_ActionButton_OverlayButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_DropDownButton_C", "BndEvt__WBP_ActionButton_OverlayButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__WBP_ActionButton_OverlayButton_K2Node_ComponentBoundEvent_1_OnButtonHoverEvent__DelegateSignature", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -69,10 +63,8 @@ void UWBP_DropDownButton_C::BndEvt__WBP_ActionButton_OverlayButton_K2Node_Compon
 
 void UWBP_DropDownButton_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_DropDownButton_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -85,10 +77,8 @@ void UWBP_DropDownButton_C::Construct()
 
 void UWBP_DropDownButton_C::ExecuteUbergraph_WBP_DropDownButton(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_DropDownButton_C", "ExecuteUbergraph_WBP_DropDownButton");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "WBP_DropDownButton_C", "ExecuteUbergraph_WBP_DropDownButton", FuncInfo);
 
 	Params::WBP_DropDownButton_C_ExecuteUbergraph_WBP_DropDownButton Parms{};
 
@@ -105,10 +95,8 @@ void UWBP_DropDownButton_C::ExecuteUbergraph_WBP_DropDownButton(int32 EntryPoint
 
 void UWBP_DropDownButton_C::GetHeightSize(double* Height)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_DropDownButton_C", "GetHeightSize");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"GetHeightSize", FnName));
 
 	Params::WBP_DropDownButton_C_GetHeightSize Parms{};
 
@@ -126,10 +114,8 @@ void UWBP_DropDownButton_C::GetHeightSize(double* Height)
 
 void UWBP_DropDownButton_C::PreConstruct(bool IsDesignTime)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_DropDownButton_C", "PreConstruct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PreConstruct", FnName));
 
 	Params::WBP_DropDownButton_C_PreConstruct Parms{};
 
@@ -146,10 +132,8 @@ void UWBP_DropDownButton_C::PreConstruct(bool IsDesignTime)
 
 void UWBP_DropDownButton_C::SetAlignment(EHorizontalAlignment Alignment)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_DropDownButton_C", "SetAlignment");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetAlignment", FnName));
 
 	Params::WBP_DropDownButton_C_SetAlignment Parms{};
 
@@ -166,10 +150,8 @@ void UWBP_DropDownButton_C::SetAlignment(EHorizontalAlignment Alignment)
 
 void UWBP_DropDownButton_C::SetButtonEnabled(bool bEnabled)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_DropDownButton_C", "SetButtonEnabled");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetButtonEnabled", FnName));
 
 	Params::WBP_DropDownButton_C_SetButtonEnabled Parms{};
 
@@ -186,10 +168,8 @@ void UWBP_DropDownButton_C::SetButtonEnabled(bool bEnabled)
 
 void UWBP_DropDownButton_C::SetColors(const class UCrCommonUIColorsDevSettings* Settings)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_DropDownButton_C", "SetColors");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetColors", FnName));
 
 	Params::WBP_DropDownButton_C_SetColors Parms{};
 
@@ -206,10 +186,8 @@ void UWBP_DropDownButton_C::SetColors(const class UCrCommonUIColorsDevSettings* 
 
 void UWBP_DropDownButton_C::SetDefault(bool bInDefault)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_DropDownButton_C", "SetDefault");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetDefault", FnName));
 
 	Params::WBP_DropDownButton_C_SetDefault Parms{};
 
@@ -227,10 +205,8 @@ void UWBP_DropDownButton_C::SetDefault(bool bInDefault)
 
 void UWBP_DropDownButton_C::SetFontSize(int32 FontSize, bool BoldFont)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_DropDownButton_C", "SetFontSize");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetFontSize", FnName));
 
 	Params::WBP_DropDownButton_C_SetFontSize Parms{};
 
@@ -249,10 +225,8 @@ void UWBP_DropDownButton_C::SetFontSize(int32 FontSize, bool BoldFont)
 
 void UWBP_DropDownButton_C::SetSize(int32 Width, int32 Height)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_DropDownButton_C", "SetSize");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetSize", FnName));
 
 	Params::WBP_DropDownButton_C_SetSize Parms{};
 
@@ -270,10 +244,8 @@ void UWBP_DropDownButton_C::SetSize(int32 Width, int32 Height)
 
 void UWBP_DropDownButton_C::SetText(const class FText& InText)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_DropDownButton_C", "SetText");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetText", FnName));
 
 	Params::WBP_DropDownButton_C_SetText Parms{};
 
@@ -290,10 +262,8 @@ void UWBP_DropDownButton_C::SetText(const class FText& InText)
 
 void UWBP_DropDownButton_C::SetTextMaxWidth(int32 Size)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_DropDownButton_C", "SetTextMaxWidth");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetTextMaxWidth", FnName));
 
 	Params::WBP_DropDownButton_C_SetTextMaxWidth Parms{};
 
@@ -313,10 +283,8 @@ void UWBP_DropDownButton_C::SetTextMaxWidth(int32 Size)
 
 void UWBP_DropDownButton_C::SetTextStyle(int32 FontSize, bool ToUpper, bool BlackFont, const struct FLinearColor& FontColor)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_DropDownButton_C", "SetTextStyle");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetTextStyle", FnName));
 
 	Params::WBP_DropDownButton_C_SetTextStyle Parms{};
 

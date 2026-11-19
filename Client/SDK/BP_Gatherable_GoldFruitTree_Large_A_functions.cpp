@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_Gatherable_GoldFruitTree_Large_A_C::BP_OnLightsVisualsTriggered(bool bLightsOn)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Gatherable_GoldFruitTree_Large_A_C", "BP_OnLightsVisualsTriggered");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BP_OnLightsVisualsTriggered", FnName));
 
 	Params::BP_Gatherable_GoldFruitTree_Large_A_C_BP_OnLightsVisualsTriggered Parms{};
 
@@ -43,10 +41,8 @@ void ABP_Gatherable_GoldFruitTree_Large_A_C::BP_OnLightsVisualsTriggered(bool bL
 
 void ABP_Gatherable_GoldFruitTree_Large_A_C::ExecuteUbergraph_BP_Gatherable_GoldFruitTree_Large_A(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Gatherable_GoldFruitTree_Large_A_C", "ExecuteUbergraph_BP_Gatherable_GoldFruitTree_Large_A");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_Gatherable_GoldFruitTree_Large_A_C", "ExecuteUbergraph_BP_Gatherable_GoldFruitTree_Large_A", FuncInfo);
 
 	Params::BP_Gatherable_GoldFruitTree_Large_A_C_ExecuteUbergraph_BP_Gatherable_GoldFruitTree_Large_A Parms{};
 

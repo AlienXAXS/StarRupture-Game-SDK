@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_PersonalStorage_C::ExecuteUbergraph_BP_PersonalStorage(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PersonalStorage_C", "ExecuteUbergraph_BP_PersonalStorage");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_PersonalStorage_C", "ExecuteUbergraph_BP_PersonalStorage", FuncInfo);
 
 	Params::BP_PersonalStorage_C_ExecuteUbergraph_BP_PersonalStorage Parms{};
 
@@ -43,10 +41,8 @@ void ABP_PersonalStorage_C::ExecuteUbergraph_BP_PersonalStorage(int32 EntryPoint
 
 void ABP_PersonalStorage_C::OnNameChanged(const class FString& NewName)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PersonalStorage_C", "OnNameChanged");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnNameChanged", FnName));
 
 	Params::BP_PersonalStorage_C_OnNameChanged Parms{};
 
@@ -63,10 +59,8 @@ void ABP_PersonalStorage_C::OnNameChanged(const class FString& NewName)
 
 void ABP_PersonalStorage_C::OnUIOpened(bool bOpened)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PersonalStorage_C", "OnUIOpened");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnUIOpened", FnName));
 
 	Params::BP_PersonalStorage_C_OnUIOpened Parms{};
 
@@ -81,10 +75,8 @@ void ABP_PersonalStorage_C::OnUIOpened(bool bOpened)
 
 void ABP_PersonalStorage_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PersonalStorage_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -95,10 +87,8 @@ void ABP_PersonalStorage_C::ReceiveBeginPlay()
 
 void ABP_PersonalStorage_C::UpdateDisplayedPersonalStorageName()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_PersonalStorage_C", "UpdateDisplayedPersonalStorageName");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"UpdateDisplayedPersonalStorageName", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

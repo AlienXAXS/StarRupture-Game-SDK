@@ -45,10 +45,9 @@ DUMPER7_ASSERTS_UAuTestAttributeSet;
 
 // Class AuGameplayTests.AuItemsActorBaseTest
 // 0x0030 (0x02D8 - 0x02A8)
-class AAuItemsActorBaseTest final : public AActor
+class AAuItemsActorBaseTest final : public AActor, public IAbilitySystemInterface
 {
 public:
-	uint8                                         Pad_2A8[0x8];                                      // 0x02A8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class UAuTestAttributeSet*                    Attributes;                                        // 0x02B0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	class UAbilitySystemComponent*                ASC;                                               // 0x02B8(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)
 	class UAuItemsComponent*                      ItemsA;                                            // 0x02C0(0x0008)(ExportObject, ZeroConstructor, InstancedReference, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic, TObjectPtr)

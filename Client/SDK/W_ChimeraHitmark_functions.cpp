@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void UW_ChimeraHitmark_C::Construct()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_ChimeraHitmark_C", "Construct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Construct", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -37,10 +35,8 @@ void UW_ChimeraHitmark_C::Construct()
 
 void UW_ChimeraHitmark_C::ExecuteUbergraph_W_ChimeraHitmark(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_ChimeraHitmark_C", "ExecuteUbergraph_W_ChimeraHitmark");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "W_ChimeraHitmark_C", "ExecuteUbergraph_W_ChimeraHitmark", FuncInfo);
 
 	Params::W_ChimeraHitmark_C_ExecuteUbergraph_W_ChimeraHitmark Parms{};
 
@@ -55,10 +51,8 @@ void UW_ChimeraHitmark_C::ExecuteUbergraph_W_ChimeraHitmark(int32 EntryPoint)
 
 void UW_ChimeraHitmark_C::OnAnimShowFinished()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_ChimeraHitmark_C", "OnAnimShowFinished");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnAnimShowFinished", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -71,10 +65,8 @@ void UW_ChimeraHitmark_C::OnAnimShowFinished()
 
 void UW_ChimeraHitmark_C::OnLoaded_EBCC1DA0D442DF17FBC7149AE1073925(class UObject* Loaded)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_ChimeraHitmark_C", "OnLoaded_EBCC1DA0D442DF17FBC7149AE1073925");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnLoaded_EBCC1DA0D442DF17FBC7149AE1073925", FnName));
 
 	Params::W_ChimeraHitmark_C_OnLoaded_EBCC1DA0D442DF17FBC7149AE1073925 Parms{};
 
@@ -91,10 +83,8 @@ void UW_ChimeraHitmark_C::OnLoaded_EBCC1DA0D442DF17FBC7149AE1073925(class UObjec
 
 void UW_ChimeraHitmark_C::PreConstruct(bool IsDesignTime)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_ChimeraHitmark_C", "PreConstruct");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PreConstruct", FnName));
 
 	Params::W_ChimeraHitmark_C_PreConstruct Parms{};
 
@@ -109,10 +99,8 @@ void UW_ChimeraHitmark_C::PreConstruct(bool IsDesignTime)
 
 void UW_ChimeraHitmark_C::ResetAnim()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_ChimeraHitmark_C", "ResetAnim");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ResetAnim", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -125,10 +113,8 @@ void UW_ChimeraHitmark_C::ResetAnim()
 
 void UW_ChimeraHitmark_C::StopSound(double Fade_Out_Duration)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("W_ChimeraHitmark_C", "StopSound");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"StopSound", FnName));
 
 	Params::W_ChimeraHitmark_C_StopSound Parms{};
 

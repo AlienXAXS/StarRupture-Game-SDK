@@ -23,10 +23,8 @@ SDK_NAMESPACE_START
 
 void ABP_DroneStation_C::ExecuteUbergraph_BP_DroneStation(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneStation_C", "ExecuteUbergraph_BP_DroneStation");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_DroneStation_C", "ExecuteUbergraph_BP_DroneStation", FuncInfo);
 
 	Params::BP_DroneStation_C_ExecuteUbergraph_BP_DroneStation Parms{};
 
@@ -41,10 +39,8 @@ void ABP_DroneStation_C::ExecuteUbergraph_BP_DroneStation(int32 EntryPoint)
 
 void ABP_DroneStation_C::PlayBuildingEffect()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneStation_C", "PlayBuildingEffect");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PlayBuildingEffect", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -57,10 +53,8 @@ void ABP_DroneStation_C::PlayBuildingEffect()
 
 void ABP_DroneStation_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneStation_C", "PostPlayBuildingEffect");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"PostPlayBuildingEffect", FnName));
 
 	Params::BP_DroneStation_C_PostPlayBuildingEffect Parms{};
 
@@ -75,10 +69,8 @@ void ABP_DroneStation_C::PostPlayBuildingEffect(bool bWasBuildingEffectPlayed)
 
 void ABP_DroneStation_C::ReceiveBeginPlay()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneStation_C", "ReceiveBeginPlay");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"ReceiveBeginPlay", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -89,10 +81,8 @@ void ABP_DroneStation_C::ReceiveBeginPlay()
 
 void ABP_DroneStation_C::SetupSkeletalMesh()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneStation_C", "SetupSkeletalMesh");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"SetupSkeletalMesh", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -103,10 +93,8 @@ void ABP_DroneStation_C::SetupSkeletalMesh()
 
 void ABP_DroneStation_C::Timeline__FinishedFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneStation_C", "Timeline__FinishedFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__FinishedFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -117,10 +105,8 @@ void ABP_DroneStation_C::Timeline__FinishedFunc()
 
 void ABP_DroneStation_C::Timeline__UpdateFunc()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_DroneStation_C", "Timeline__UpdateFunc");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"Timeline__UpdateFunc", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }

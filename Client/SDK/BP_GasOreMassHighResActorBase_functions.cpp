@@ -21,10 +21,8 @@ SDK_NAMESPACE_START
 
 void ABP_GasOreMassHighResActorBase_C::OnResourceDepletedCosmeticsStart()
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GasOreMassHighResActorBase_C", "OnResourceDepletedCosmeticsStart");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnResourceDepletedCosmeticsStart", FnName));
 
 	UObject::ProcessEvent(Func, nullptr);
 }
@@ -37,10 +35,8 @@ void ABP_GasOreMassHighResActorBase_C::OnResourceDepletedCosmeticsStart()
 
 void ABP_GasOreMassHighResActorBase_C::OnMiningWeakSpotDepletedCosmeticsStart(const struct FTransform& CosmeticTransform_OnMiningWeakSpotDepletedCosmeticsStart)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GasOreMassHighResActorBase_C", "OnMiningWeakSpotDepletedCosmeticsStart");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnMiningWeakSpotDepletedCosmeticsStart", FnName));
 
 	Params::BP_GasOreMassHighResActorBase_C_OnMiningWeakSpotDepletedCosmeticsStart Parms{};
 
@@ -57,10 +53,8 @@ void ABP_GasOreMassHighResActorBase_C::OnMiningWeakSpotDepletedCosmeticsStart(co
 
 void ABP_GasOreMassHighResActorBase_C::OnLoaded_F2A55B714CA31962EC2B1182DF4424C3(class UObject* Loaded)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GasOreMassHighResActorBase_C", "OnLoaded_F2A55B714CA31962EC2B1182DF4424C3");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnLoaded_F2A55B714CA31962EC2B1182DF4424C3", FnName));
 
 	Params::BP_GasOreMassHighResActorBase_C_OnLoaded_F2A55B714CA31962EC2B1182DF4424C3 Parms{};
 
@@ -77,10 +71,8 @@ void ABP_GasOreMassHighResActorBase_C::OnLoaded_F2A55B714CA31962EC2B1182DF4424C3
 
 void ABP_GasOreMassHighResActorBase_C::OnLoaded_24996BB14058AF5058B4EB86D574B71F(class UObject* Loaded)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GasOreMassHighResActorBase_C", "OnLoaded_24996BB14058AF5058B4EB86D574B71F");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"OnLoaded_24996BB14058AF5058B4EB86D574B71F", FnName));
 
 	Params::BP_GasOreMassHighResActorBase_C_OnLoaded_24996BB14058AF5058B4EB86D574B71F Parms{};
 
@@ -97,10 +89,8 @@ void ABP_GasOreMassHighResActorBase_C::OnLoaded_24996BB14058AF5058B4EB86D574B71F
 
 void ABP_GasOreMassHighResActorBase_C::ExecuteUbergraph_BP_GasOreMassHighResActorBase(int32 EntryPoint)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GasOreMassHighResActorBase_C", "ExecuteUbergraph_BP_GasOreMassHighResActorBase");
+	static ReloadableFuncInfo FuncInfo;
+	class UFunction* Func = GetStaticFunction(Class, "BP_GasOreMassHighResActorBase_C", "ExecuteUbergraph_BP_GasOreMassHighResActorBase", FuncInfo);
 
 	Params::BP_GasOreMassHighResActorBase_C_ExecuteUbergraph_BP_GasOreMassHighResActorBase Parms{};
 
@@ -117,10 +107,8 @@ void ABP_GasOreMassHighResActorBase_C::ExecuteUbergraph_BP_GasOreMassHighResActo
 
 void ABP_GasOreMassHighResActorBase_C::BndEvt__BP_OreMassHighResActorBase_DepletedWeakSpotSystem_K2Node_ComponentBoundEvent_0_OnNiagaraSystemFinished__DelegateSignature(class UNiagaraComponent* PSystem)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GasOreMassHighResActorBase_C", "BndEvt__BP_OreMassHighResActorBase_DepletedWeakSpotSystem_K2Node_ComponentBoundEvent_0_OnNiagaraSystemFinished__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__BP_OreMassHighResActorBase_DepletedWeakSpotSystem_K2Node_ComponentBoundEvent_0_OnNiagaraSystemFinished__DelegateSignature", FnName));
 
 	Params::BP_GasOreMassHighResActorBase_C_BndEvt__BP_OreMassHighResActorBase_DepletedWeakSpotSystem_K2Node_ComponentBoundEvent_0_OnNiagaraSystemFinished__DelegateSignature Parms{};
 
@@ -137,10 +125,8 @@ void ABP_GasOreMassHighResActorBase_C::BndEvt__BP_OreMassHighResActorBase_Deplet
 
 void ABP_GasOreMassHighResActorBase_C::BndEvt__BP_OreMassHighResActorBase_DepletedNiagaraSystem_K2Node_ComponentBoundEvent_1_OnNiagaraSystemFinished__DelegateSignature(class UNiagaraComponent* PSystem)
 {
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BP_GasOreMassHighResActorBase_C", "BndEvt__BP_OreMassHighResActorBase_DepletedNiagaraSystem_K2Node_ComponentBoundEvent_1_OnNiagaraSystemFinished__DelegateSignature");
+	static class FName FnName;
+	class UFunction* Func = InSDKUtils::FindFunctionChecked(this, GetStaticName(L"BndEvt__BP_OreMassHighResActorBase_DepletedNiagaraSystem_K2Node_ComponentBoundEvent_1_OnNiagaraSystemFinished__DelegateSignature", FnName));
 
 	Params::BP_GasOreMassHighResActorBase_C_BndEvt__BP_OreMassHighResActorBase_DepletedNiagaraSystem_K2Node_ComponentBoundEvent_1_OnNiagaraSystemFinished__DelegateSignature Parms{};
 
